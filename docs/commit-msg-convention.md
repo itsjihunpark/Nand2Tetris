@@ -2,7 +2,7 @@
 
 ## Structure
 
-<type>[optional scope]: <description>
+`<type>[optional scope]: <description>`
 
 [optional body]
 
@@ -24,10 +24,10 @@
 
 ## Example
 
-feat: add user login functionality
+- feat: add user login functionality
 
-fix: correct typo in payment validation
+- fix: correct typo in payment validation
 
-chore: reset project to clean state
+- chore: reset project to clean state
 
-refactor(core): simplify state management logic
+- refactor(core): simplify state management logic
