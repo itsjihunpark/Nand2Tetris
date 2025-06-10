@@ -30,10 +30,10 @@ In this project, I am building a simple instruction set, 16bit, Von Neumann vari
 | 0 | 1 | 1 |
 | 1 | 1 | 0 |
 
-*API*:
-Chip name: Nand
-Input: a, b
-Output: out
+*API*:<br>
+Chip name: Nand<br>
+Input: a, b<br>
+Output: out<br>
 Function: if ( (a == 1) and (b == 1) ) then out  = 0 else out = 1
 
 #### Not: a.k.a., inverter, outputs the opposite value of its input:
@@ -43,10 +43,10 @@ Function: if ( (a == 1) and (b == 1) ) then out  = 0 else out = 1
 | 0 | 1 |
 | 1 | 0 |
 
-*API*:
-Chip name: Not
-Input: in
-Output: out
+*API*:<br>
+Chip name: Not<br>
+Input: in<br>
+Output: out<br>
 Function: if (a == 1)  then out  = 0 else out = 1
 
 #### And: Returns 1 when both its inputs are 1, and 0 otherwise:
@@ -58,10 +58,10 @@ Function: if (a == 1)  then out  = 0 else out = 1
 | 0 | 1 | 0 |
 | 1 | 1 | 1 |
 
-*API*:
-Chip name: And
-Input: a,b
-Output: out
+*API*:<br>
+Chip name: And<br>
+Input: a,b<br>
+Output: out<br>
 Function:  if ( (a == 1) and (b == 1) ) then out  = 1 else out = 0
 
 #### Or Gate: Returns 1 when at least one of its input is 1, and 0 otherwise:
@@ -73,10 +73,10 @@ Function:  if ( (a == 1) and (b == 1) ) then out  = 1 else out = 0
 | 0 | 1 | 1 |
 | 1 | 1 | 1 |
 
-*API*:
-Chip name: Or
-Input: a,b
-Output: out
+*API*:<br>
+Chip name: Or<br>
+Input: a,b<br>
+Output: out<br>
 Function:  if ( (a == 0) and (b == 0) ) then out  = 0 else out = 1
 
 #### Xor Gate: a.k.a., exclusive or, returns 1 when exactly one of its inputs is 1, and 0 otherwise:
@@ -88,10 +88,10 @@ Function:  if ( (a == 0) and (b == 0) ) then out  = 0 else out = 1
 | 0 | 1 | 1 |
 | 1 | 1 | 0 |
 
-*API*:
-Chip name: Xor
-Input: a,b
-Output: out
+*API*:<br>
+Chip name: Xor<br>
+Input: a,b<br>
+Output: out<br>
 Function:  if ( (a != b) ) then out  = 1 else out = 0
 
 #### Multiplexer  
