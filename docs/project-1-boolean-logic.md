@@ -104,3 +104,32 @@ Chip name: DMux<br>
 Input: in, sel<br>
 Output: a, b<br>
 Function:  if (sel==0) then {a, b} = {in, 0}, else {a, b} = {0, in}
+
+### Multi-bit Basic Gates
+#### Multi-bit Not (16 bit): An n-bit Not gate applies Boolean operation Not to every one of the bits in its n-bit input:
+*API*:<br>
+Chip name: Not16<br>
+Input: in[16]<br>
+Output: out[16]<br>
+Function: for i = 0..15 out[i] = Not (in[i])  
+
+#### Multi-bit And (16 bit): An n-bit And gate applies Boolean operation And to every respective pair in its two n-bit inputs:
+*API*:<br>
+Chip name: And16<br>
+Input: in[16]<br>
+Output: out[16]<br>
+Function: for i = 0..15 out[i] = And (a[i], a[i])  
+
+#### Multi-bit Or (16 bit): An n-bit Or gate applies Boolean operation Or to every respective pair in its two n-bit inputs:
+*API*:<br>
+Chip name: Or16<br>
+Input: in[16]<br>
+Output: out[16]<br>
+Function: for i = 0..15 out[i] = Or(a[i], a[i])  
+
+#### Multi-bit Multiplexer(16 bit): An n-bit multiplexer applies operates exactly the same as a basic multiplexor, except that its inputs and outputs are n-bit wide:
+*API*:<br>
+Chip name: Mux16<br>
+Input: a[16], b[16], sel<br>
+Output: out[16]<br>
+Function: if (sel ==0) then for i in = 0..15 out[i]=a[i], else for i = 0..15 out[i] = b[i]
