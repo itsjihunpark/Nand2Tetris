@@ -1,7 +1,7 @@
 # Nand 2 to Tetris  Project: Building a modern computer from first principles
 In this project, I am building a simple instruction set, 16bit, Von Neumann variant hardware platform from elemental logic gate (Nand) defined with Hardware Definition Language (HDL). This project based learning is credited entirely to the book:  [The Elements of Computing Systems: Building a Modern Computer from First Principles (The MIT Press): Nisan, Noam, Schocken, Shimon](https://www.amazon.co.uk/Elements-Computing-Systems-Building-Principles/dp/0262640686)
 
-
+## Project checkpoints
 | Project | Time required | Hardware/Software | Current Status | Tasks | 
 |----------|---------------|----------|---------|---------------------------------|
 | Boolean Logic | > 5 hours  | Hardware | started | Implement chips by writing HDL for (given the provided Nand gate) and test them using compare files: <br> *Basic Gates*<br> - [ ] **Not** Gate <br> - [ ] **And** Gate <br> - [ ] **Or** Gate <br> - [ ] **Xor** Gate <br> - [ ] **Multiplexer** <br> - [ ] **Demultiplexer** <br> - [ ] **Multi-bit Not** Gate (16 bit) <br><br>*Multi-bit Basic Gates*<br> - [ ] **Multi-bit And** Gate (16 bit) <br> - [ ] **Multi-bit Or** Gate (16 bit) <br> - [ ] **Multi-bit Multiplexer** Gate (16 bit) <br><br>*Multi-way Basic Gates*<br> - [ ] **Multi-way Or** Gate (8 way) <br> - [ ] **Multi-way/Multi-bit Multiplexer** Gate (4-way, 16 bit) <br> - [ ] **Multi-way/Multi-bit Multiplexer** Gate (8-way, 16 bit) <br> - [ ] **Multi-way/Multi-bit Demultiplexer** Gate (4-way, 1 bit) <br> - [ ] **Multi-way/Multi-bit Demultiplexer** Gate (8-way, 1 bit)
@@ -16,3 +16,5 @@ In this project, I am building a simple instruction set, 16bit, Von Neumann vari
 | Compiler I: Syntax Analysis | > 5 hours  | Software | not started | 
 | Compiler II: Compiler II: Code Generation | > 5 hours  | Hardware | not started | 
 | Operating System | > 5 hours  | Software | not started | 
+
+## Project 1: Boolean logic
