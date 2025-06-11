@@ -41,7 +41,7 @@ carry: MSB of a + b + c <br>
 
 #### Adder (16 bit)
 *API*:<br>
-Chip name: FullAdder<br>
+Chip name: Add16<br>
 Input: a[16], b[16]<br>
 Output: out[16]<br>
 Function: Adds two 16-bit numbers.<br>
