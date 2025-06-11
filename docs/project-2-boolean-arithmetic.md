@@ -1,5 +1,5 @@
 
-## Project 2: Boolean algebra
+## Project 2: Boolean Arithmetic
 ### Adders
 #### Half-adder
 *Truth table:*
