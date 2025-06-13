@@ -11,7 +11,6 @@ CHIP Inc16 {
     OUT out[16];
 
     PARTS:
-    
     Add16 (a[0]=true, a[1..15]=false, b=in, out=out);
     
 }
