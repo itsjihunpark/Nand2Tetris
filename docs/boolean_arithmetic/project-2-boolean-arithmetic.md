@@ -1,4 +1,3 @@
-
 ## Project 2: Boolean Arithmetic
 ### Adders
 #### Half-adder
