@@ -28,108 +28,69 @@ Contract: The assembly program must be tested against the test script (Fill.tst)
 
 
 ### Notes
+```
 //selects RAM and ROM address (We care only about ROM when jumping)
-
 @10
-
 // Jump condition (here we jump unconditionally)
-
 0;JMP
+```
 
 ### Example
 
-
 Pseudo Code
-
+```
 i = 1
-
 sum = 0
-
 LOOP:
-
     if (i > R0) goto STOP
-
     sum = sum + i
-
     i = i + 1
-
     goto LOOP
-
 STOP
-
     R1 = sum
-
-
+```
 Implementation:
-
+```
 // i = 1
-
 @i
-
 M=1
 
 // sum = 0
-
 @sum
-
 M=0
-
 (LOOP)
 
 // if (i > R0) goto STOP
-
 @i
-
 D=M
-
 @R0
-
 D=D-M
-
 @STOP
-
 D;JGT
 
 // sum = sum + i
-
 @sum
-
 D=M
-
 @i
-
 D=D+M
-
 @sum
-
 M=D
 
 // i = i + 1
 @i
-
 M=M+1
 
 // goto LOOP
-
 @LOOP
-
 0;JMP
-
 (STOP)
 
 // R1 = sum
-
 @sum
-
 D=M
-
 @R1
-
 M=D
-
 (END)
-
 @END
-
 0;JMP
-
+```
