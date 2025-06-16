@@ -33,6 +33,7 @@ CLEAR
         if (i>screen_memory_map) goto CLEAR_LOOP
         addr = SCREEN + i
         RAM[addr] = -1
+        i = i + 1
         goto CLEAR_LOOP
 
 FILL
@@ -42,6 +43,7 @@ FILL
         if (i>screen_memory_map) goto FILL_LOOP
         addr = SCREEN + i
         RAM[addr] = 0
+        i = i + 1
         goto FILL_LOOP
 ```
 
