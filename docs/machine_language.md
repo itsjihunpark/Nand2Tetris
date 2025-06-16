@@ -204,7 +204,7 @@ Implementation
 ```
 // PointerDemo
 // Starting at base address R0, sets the first R1 words to -1
-n = 0
+// n = 0
 @n
 M = 0
 (LOOP)
