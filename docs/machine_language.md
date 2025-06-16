@@ -78,14 +78,6 @@ M=-1
 M = M - 1
 
 // sum = sum + x
-@x
-D = M
-@sum
-M = M + D
-
-or similarly implemented
-
-// sum = sum + x
 @sum
 D = M
 @x
