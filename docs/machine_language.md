@@ -187,3 +187,50 @@ M=D
 @END
 0;JMP
 ```
+#### 3. PointerDemo.asm
+Pseudo Code
+```
+// PointerDemo
+// Starting at base address R0, sets the first R1 words to -1
+n = 0
+LOOP:
+    if (n==R1) goto END
+    *(R0 + n) = -1
+    n = n + 1
+    goto LOOP
+END:
+```
+Implementation
+```
+// PointerDemo
+// Starting at base address R0, sets the first R1 words to -1
+n = 0
+@n
+M = 0
+(LOOP)
+    // if (n==R1) goto END
+    @n
+    D = M
+    @R1
+    D = M-D
+    @END
+    D;JEQ
+
+    //*(R0 + n) = -1
+    @R0
+    D = M
+    @n
+    A = D + M
+    M = -1
+
+    //n = n + 1
+    @n
+    M = M + 1
+
+    @LOOP
+    0;JMP
+
+(END)
+    @END
+    0;JMP
+```
