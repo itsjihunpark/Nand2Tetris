@@ -6,9 +6,19 @@ Multiplies R0 and R1 and stores the result in R2.<br>
 (R0, R1, R2 refer to RAM[0], RAM[1], and RAM[2], respectively.)<br>
 The algorithm is based on repetitive addition.<br>
 
-#### Pseudo code
-R2=R0 * R1 is equivalent to R2 = R0_0 + R0_1 + R0_2 ... R0_n where n = R1
-
+// Pseudo code:
+```
+R0 = 10
+R1 = 10
+i = 0
+LOOP
+    if (i==R1) goto END
+    R2 =  R2 + R0
+    i = i + 1
+    goto LOOP
+END
+    goto END
+```
 
 
 
