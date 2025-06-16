@@ -6,7 +6,7 @@ Multiplies R0 and R1 and stores the result in R2.<br>
 (R0, R1, R2 refer to RAM[0], RAM[1], and RAM[2], respectively.)<br>
 The algorithm is based on repetitive addition.<br>
 
-// Pseudo code:
+Pseudo code:
 ```
 R2 = 0
 i = 0
@@ -19,15 +19,31 @@ END
     goto END
 ```
 
-
-
-
 ### I/O Handling (Fill.asm)
 Runs an infinite loop that listens to the keyboard input. <br>
 When a key is pressed (any key), the program blackens the screen,<br>
 i.e. writes "black" in every pixel. When no key is pressed, <br>
 the screen should be cleared.<br>
-#### Pseudo code
+// Pseudo code:
+```
+CLEAR
+    i = 0
+    CLEAR_LOOP
+        if (KBD != 0) goto FILL
+        if (i>screen_memory_map) goto CLEAR_LOOP
+        addr = SCREEN + i
+        RAM[addr] = -1
+        goto CLEAR_LOOP
+
+FILL
+    i = 0
+    FILL_LOOP
+        if (KBD == 0) goto CLEAR
+        if (i>screen_memory_map) goto FILL_LOOP
+        addr = SCREEN + i
+        RAM[addr] = 0
+        goto FILL_LOOP
+```
 
 
 ### Notes
