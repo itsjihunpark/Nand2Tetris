@@ -8,8 +8,7 @@ The algorithm is based on repetitive addition.<br>
 
 // Pseudo code:
 ```
-R0 = 10
-R1 = 10
+R2 = 0
 i = 0
 LOOP
     if (i==R1) goto END
