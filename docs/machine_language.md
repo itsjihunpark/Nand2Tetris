@@ -28,12 +28,68 @@ Contract: The assembly program must be tested against the test script (Fill.tst)
 
 
 ### Notes
+#### Memory access examples
 ```
-//selects RAM and ROM address (We care only about ROM when jumping)
+// D = 17
+@17
+D = A
+
+// RAM[100] = 17
+@17
+D = A
+@100
+M = D
+
+// RAM[100] = RAM[200]
+@200
+D = M
+@100
+M = D
+```
+
+#### Branching 
+Unconditional jump to selected ROM address
+```
+// goto 29
 @10
-// Jump condition (here we jump unconditionally)
 0;JMP
 ```
+Conditional jump to selected ROM address
+```
+// if D > 0 goto 10
+@1
+D=A
+@10
+D;JGT
+```
+
+#### Variable use examples
+```
+// x = -1
+@x
+M=-1
+
+// count = count - 1
+@count
+M = M - 1
+
+// sum = sum + x
+@x
+D = M
+@sum
+M = M + D
+
+or similarly
+
+// sum = sum + x
+@sum
+D = M
+@x
+D = D + M
+@sum
+M=D
+```
+
 
 ### Example
 
