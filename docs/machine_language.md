@@ -1,13 +1,10 @@
 ## Project 4: Machine Language
 ### Multiplication (Mult.asm)
-#### API
-Inputs: Value stored in R0 and R1 (RAM[0] and RAM[1])
-Outputs: Value that must be stored in R2
-Function: Computes the product of R0 and R1 and stores it into R2
-Comment:
-Assume that R0>=0, R1>=0, and R0*R1<32768. The Program need not test these assertions.
+File name: projects/4/Mult.asm
 
-Contract: The assembly program must successfully pass the supplied Mult.tst and Mult.cmp scripts designed to test the program on representative data values. 
+Multiplies R0 and R1 and stores the result in R2.<br>
+(R0, R1, R2 refer to RAM[0], RAM[1], and RAM[2], respectively.)<br>
+The algorithm is based on repetitive addition.<br>
 
 #### Pseudo code
 R2=R0 * R1 is equivalent to R2 = R0_0 + R0_1 + R0_2 ... R0_n where n = R1
@@ -17,13 +14,10 @@ R2=R0 * R1 is equivalent to R2 = R0_0 + R0_1 + R0_2 ... R0_n where n = R1
 
 
 ### I/O Handling (Fill.asm)
-#### API
-This program runs an infinite loop that listens to the keyboard. When a key is pressed (any key), the program blackens the screen by writing black in every pixel. When no key is pressed, the program clears the screen by writing white in every pixel.
-
-How the screen is blackened and cleared, in whichever spatial pattern is up to the assembly writer, so long as pressing any key continuously long enough will result in a cleared screen, and not pressing any key for long enough will result in a cleared screen. 
-
-Contract: The assembly program must be tested against the test script (Fill.tst). There are no compare file - it should be checked by visibly inspecting the simulated screen in the CPU emulator.
-
+Runs an infinite loop that listens to the keyboard input. <br>
+When a key is pressed (any key), the program blackens the screen,<br>
+i.e. writes "black" in every pixel. When no key is pressed, <br>
+the screen should be cleared.<br>
 #### Pseudo code
 
 
@@ -79,7 +73,7 @@ D = M
 @sum
 M = M + D
 
-or similarly
+or similarly implemented
 
 // sum = sum + x
 @sum
@@ -92,9 +86,48 @@ M=D
 
 
 ### Example
-
+#### 1. Add.asm
 Pseudo Code
 ```
+// Program: Add.asm
+// Computes: RAM[0] + RAM[1] + 17
+// Usage: put values in RAM[0] and in RAM[1]
+
+D = RAM[0]
+D = D + RAM[1]
+D = D + 17
+RAM[2] = D
+```
+Implementation
+```
+// Program: Add.asm
+// Computes: RAM[0] + RAM[1] + 17
+// Usage: put values in RAM[0] and in RAM[1]
+
+//D = RAM[0]
+@R0
+D = M
+
+//D = D + RAM[1]
+@R1
+D = D + M
+
+//D = D + 17
+@17
+D = D + A
+
+//RAM[2] = D
+@R2
+M = D
+```
+
+#### 2. Sum1ToN.asm
+Pseudo Code
+```
+// File: Sum1ToN.asm
+// Computes: RAM[1]=1+2+3+...+RAM[0]
+// Usage: put a value>=1 in RAM[0]
+
 i = 1
 sum = 0
 LOOP:
@@ -105,8 +138,12 @@ LOOP:
 STOP
     R1 = sum
 ```
-Implementation:
+Implementation
 ```
+// File: Sum1ToN.asm
+// Computes RAM[1]=1+2+3+...+RAM[0]
+// Usage: put a value>=1 in RAM[0]
+
 // i = 1
 @i
 M=1
