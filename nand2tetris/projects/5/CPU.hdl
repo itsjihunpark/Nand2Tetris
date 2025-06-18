@@ -32,5 +32,68 @@ CHIP CPU {
         pc[15];          // address of next instruction
 
     PARTS:
-	//// Replace this comment with your code.
+	Not(in=instruction[15], out=notOpCode);
+
+	Mux16(a=outALU, b=instruction, sel=notOpCode,out=inAReg);
+	
+	Or(a=notOpCode, b=instruction[5], out=loadAReg);
+		
+	ARegister(in=inAReg, load=loadAReg, out=outAReg, out[0..14]=addressM); // A-register
+	
+	And(a=instruction[15], b=instruction[4], out=loadDReg);
+
+	DRegister(in=outALU, load=loadDReg, out=outDReg); // D-Register	
+	
+	And(a=instruction[15], b=instruction[12], out=selAOrM);
+	Mux16(a=outAReg, b=inM, sel=selAOrM, out=AOrM);
+	
+	ALU(x=outDReg, y=AOrM, zx=instruction[11], nx=instruction[10], zy=instruction[9], ny=instruction[8], f=instruction[7], no=instruction[6], out=outALU,out=outM, zr=zr, ng=ng);
+	
+	Not(in=zr, out=notZr);
+	Not(in=ng, out=notNg);
+
+	And(a=notZr, b=notNg, out=ps); // ALU output positive?
+	
+
+	And(a=instruction[15],b=instruction[0],out=sel0);	
+	And(a=instruction[15],b=instruction[1],out=sel1);
+	And(a=instruction[15],b=instruction[2],out=sel2);
+		
+	DMux8Way(in=true, sel[0]=sel0, sel[1]=sel1, sel[2]=sel2, a=null,b=jgt,c=jeq,d=jge,e=jlt,f=jne,g=jle,h=jmp);
+	
+	//check if jgt and outALU>0
+	And(a=jgt, b=ps, out=gt);
+	//check if jeq and outALU=0
+	And(a=jeq, b=zr, out=eq);
+	
+	// check if jge and outALU=0 or outALU>0
+	And(a=jge, b=ps, out=ge1);
+	And(a=jge, b=zr, out=ge2);
+	Or(a=ge1, b=ge2, out=ge);
+
+	// check if jlt and outALU<0
+	And(a=jlt, b=ng, out=lt);
+	
+	// check if jne and outALU!0
+	And(a=jne, b=notZr, out=ne);
+
+	// check if jle and outALU=0 or outALU<0
+	And(a=jle, b=zr, out=le1);
+	And(a=jle, b=ng, out=le2);
+	Or(a=le1, a=le2, out=le);
+
+	Or8Way(in[0]=null, in[1]=gt, in[2]=eq, in[3]=ge, in[4]=lt, in[5]=ne, in[6]=le, in[7]=jmp, out=outJmpLoad1);
+		
+	Not(in=null, out=outJmpload2);
+	And(a=outJmpLoad1, b=outJmpload2, out=outJmpload);
+	Not(in=outJmpload, out=notOutJmpLoad);	
+
+	Not(in=reset, out=notReset);
+	And(a=outJmpload, b=notReset, out=load);
+	And(a=notOutJmpLoad, b=notReset, out=inc);
+
+	PC(in=outAReg, load=load, reset=reset, inc=inc, out[0..14]=pc);
+	
+	And(a=instruction[15], b=instruction[3], out=writeM);
+	
 }
