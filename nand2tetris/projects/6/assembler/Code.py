@@ -33,13 +33,13 @@ class Code:
         if mnemonics:
             for char in mnemonics:
                 dest_binary[char]=1
-        return list(dest_binary.values())
+        return  str(list(dest_binary.values())).replace(",","").replace(" ","").replace("[","").replace("]","")
         
     def comp(self, mnemonics: str) -> str:
         """
             Returns: 7 bits, as a string
         """
-        a_bit = [0] # 1 if M else A
+        a_bit = "0" # 1 if M else A
         comp_map = {
             r"^[0]$":[1,0,1,0,1,0],
             r"^[1]$":[1,1,1,1,1,1],
@@ -65,9 +65,9 @@ class Code:
             if found_match:
                 M_found = re.findall(mnemonics, "M")
                 if M_found:
-                    a_bit[0]=1
+                    a_bit="1"
 
-                return a_bit, comp_map[key]
+                return a_bit, str(list(comp_map[key])).replace(",","").replace(" ","").replace("[","").replace("]","")
             else:
                 continue
         if not found_match:
@@ -87,5 +87,5 @@ class Code:
             "JLE": [1,1,0],
             "JMP": [1,1,1]
         }
-        return map[mnemonics]
+        return str(list(map[mnemonics])).replace(",","").replace(" ","").replace("[","").replace("]","")
 

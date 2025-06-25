@@ -43,9 +43,9 @@ class Parser:
         self.line_number = 0
         self.current_instruction = None
         self.current_instruction_type = None
+        self.inpname = argv[1]
 
-        inpname = argv[1]
-        with open(inpname, "r") as f:
+        with open(self.inpname , "r") as f:
             self.source =  f.readlines()
 
     def hasMoreLines(self)-> bool:
@@ -63,14 +63,17 @@ class Parser:
             line = next(self)
             if line:
                 line = line.replace(" ", "").strip()
-                comment = re.findall("(\/\/)|^\s*$", line)
-                if not comment:
+                comment_or_blank_line = re.findall("(\/\/)|^\s*$", line)
+                if not comment_or_blank_line:
                     break
             else:
-                exit()
-
-        self.line_number+=1
+                return None
+                
         self.current_instruction = line
+        type = self.instructionType()
+        if type!="L_INSTRUCTION":
+            self.line_number+=1
+        
         return line
         
         
@@ -86,7 +89,7 @@ class Parser:
 
         instruction_type = None
         A_INSTRUCTION = re.findall("^\@([0-9]*|[A-Za-z_\.\:\$]+[0-9]*)$", self.current_instruction)
-        L_INSTRUCTION = re.findall(r"^\([A-Za-z_\.\:\$]+[1-9]*\)$" , self.current_instruction)
+        L_INSTRUCTION = re.findall(r"^\([A-Za-z_\.\:\$]+[0-9]*\)$" , self.current_instruction)
         C_INSTRUCTION = re.findall("^[-|!|]?((?!.*(.).*\1)[ADM|1]{1,3}|0)[=]?([A|D|M|-]?[\-|\+|0|1|\|\&)]?[A|D|M|1|]?)|[;][J|M|P|E|Q|L|N|G|T|]{3}$" , self.current_instruction)
 
 
