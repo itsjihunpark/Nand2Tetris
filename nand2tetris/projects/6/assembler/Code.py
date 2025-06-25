@@ -63,7 +63,8 @@ class Code:
         for key in comp_map.keys():
             found_match = re.findall(key, mnemonics)
             if found_match:
-                M_found = re.findall(mnemonics, "M")
+                M_found = re.findall(r"M", mnemonics)
+               
                 if M_found:
                     a_bit="1"
 

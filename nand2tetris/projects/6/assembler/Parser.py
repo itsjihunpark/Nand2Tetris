@@ -40,7 +40,7 @@ class Parser:
         Returns: returns nothing
 
         """
-        self.line_number = 0
+        self.line_number = -1
         self.current_instruction = None
         self.current_instruction_type = None
         self.inpname = argv[1]
