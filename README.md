@@ -2,7 +2,13 @@
 
 
 # Nand 2 to Tetris  Project: Building a modern computer from first principles
-In this project, I am building a simple instruction set, 16bit, Von Neumann variant hardware platform from elemental logic gate (Nand) defined with Hardware Definition Language (HDL). This project based learning is credited entirely to the book:  [The Elements of Computing Systems: Building a Modern Computer from First Principles (The MIT Press): Nisan, Noam, Schocken, Shimon](https://www.amazon.co.uk/Elements-Computing-Systems-Building-Principles/dp/0262640686)
+This project based learning is credited entirely to the book:  [The Elements of Computing Systems: Building a Modern Computer from First Principles (The MIT Press): Nisan, Noam, Schocken, Shimon](https://www.amazon.co.uk/Elements-Computing-Systems-Building-Principles/dp/0262640686)
+
+This project is made up of two parts: Hardware and Software. 
+
+For the Hardware project I have built a simple instruction set, 16bit, Von Neumann variant hardware platform from elemental logic gate (Nand) defined with Hardware Definition Language (HDL). In addition, an assembler which translates the symbolic machine code (assembly), to binary machine code which can be executed on this hardware platform. 
+
+For the Software project ... (tbc)
 
 "What I cannot create, I do not understand" - Richard Feynman
 
