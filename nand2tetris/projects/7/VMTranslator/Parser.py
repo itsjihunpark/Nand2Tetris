@@ -20,7 +20,25 @@ class Parser:
         Returns: returns nothing
 
         """
-        self.ARITHMETIC_OPERATIONS = ["add", "sub", "neg", "eq", "gt", "lt", "and", "or", "not"]
+        self.OPERATIONS = {
+            "add":"C_ARITHMETIC", 
+            "sub":"C_ARITHMETIC", 
+            "neg":"C_ARITHMETIC", 
+            "eq":"C_ARITHMETIC", 
+            "gt":"C_ARITHMETIC", 
+            "lt":"C_ARITHMETIC", 
+            "and":"C_ARITHMETIC", 
+            "or":"C_ARITHMETIC", 
+            "not":"C_ARITHMETIC",
+            "push":"C_PUSH",
+            "pop": "C_POP",
+            "function": "C_FUNCTION",
+            "return": "C_RETURN",
+            "label": "C_LABEL",
+            "goto": "C_GOTO",
+            "if-goto": "C_IF",
+            "call": "C_CALL"
+            }
 
         self.line_number = -1
         self.current_command = None
@@ -47,7 +65,7 @@ class Parser:
                 line = line.strip()
                 comments = re.findall(r"(\/\/.*)", line)
                 for comment in comments:
-                    line = line.replace(comment,"")
+                    line = line.replace(comment,r"")
                 
                 blank_line = re.findall(r"^\s*$", line)
                 
@@ -56,33 +74,22 @@ class Parser:
             else:
                 return None
                 
-        self.current_command = line
-        type = self.commandType()
-        
-        return line
+        self.current_command = line.strip()
+        self.current_command_type = self.commandType()
+
+        return self.current_command
     
     
     def commandType(self):
         args = self.current_command.split(" ")
-        commandType = ""
-        
-        if len(args)==3:
-            # c_push/c_pop or c_another
-            if args[0] == "push":
-                commandType = "C_PUSH"
-            elif args[0] == "pop":
-                commandType = "C_POP"
-        else:
-            if args[0] in self.ARITHMETIC_OPERATIONS:
-            # c_arithmetic or c_return 
-                commandType = "C_ARITHMETIC"
-            elif args[0] == "function":
-                commandType = "C_FUNCTION"
+        return self.OPERATIONS[args[0]]
 
-        return commandType
 
     def arg1(self):
-        pass
-
+        if self.current_command_type == "C_ARITHMETIC":
+            return self.current_command
+        else:
+            return self.current_command.split(" ")[1]
     def arg2(self):
-        pass
+        return self.current_command.split(" ")[2]
+
