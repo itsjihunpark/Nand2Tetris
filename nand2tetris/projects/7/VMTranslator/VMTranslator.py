@@ -19,7 +19,7 @@ def main():
             arg2 = parser.arg2()
 
         if current_command_type in ["C_PUSH", "C_POP"]:
-           codeWriter.writePushPop(current_command_type, arg1, arg2) 
+           codeWriter.writePushPop(current_command_type, arg1, int(arg2)) 
 
 
         debug = f"{current_command_type}        arg1: {arg1} arg2: {arg2}          {parser.current_command}"

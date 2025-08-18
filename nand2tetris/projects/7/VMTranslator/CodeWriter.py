@@ -25,7 +25,7 @@ class CodeWriter:
             elif segment == "temp":
                 source_addr = 5 + index # TEMP segment is set at RAM[5-12]
             elif segment == "pointer":
-                source_addr = 3+index # pointer segment is mapped directly onto address 3 and 4
+                source_addr = 3 + index # pointer segment is mapped directly onto address 3 and 4
             else:
                 source_segment = self.memory_segment_mapping[segment]
                 source_addr = index
