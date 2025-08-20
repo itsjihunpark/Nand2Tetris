@@ -62,9 +62,14 @@ class Parser:
         while True:
             line = next(self)
             if line:
-                line = line.replace(" ", "").strip()
-                comment_or_blank_line = re.findall(r"(\/\/)|^\s*$", line)
-                if not comment_or_blank_line:
+                line = line.strip()
+                comments = re.findall(r"(\/\/.*)", line)
+                for comment in comments:
+                    line = line.replace(comment,r"")
+                
+                blank_line = re.findall(r"^\s*$", line)
+                
+                if not blank_line:
                     break
             else:
                 return None

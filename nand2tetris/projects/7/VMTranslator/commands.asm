@@ -34,6 +34,7 @@ M=M+1
 //Pop (To static memory segment)
 @SP
 M=M-1
+A=M
 D=M 
 
 @[Filename.index]
@@ -88,3 +89,43 @@ M=D-A // M = pop value
 
 
 
+// Arithmetics:
+RAM[13]
+RAM[14]
+
+
+//ADD
+@13 // first pop value
+D=M 
+@14 // second pop value
+M=M+D
+
+//SUB
+@13 // first pop value
+D=M 
+@14 // second pop value
+M=M-D
+
+//NEG
+@13 // first pop value
+M=-M
+
+//EQ
+//GT
+//LT
+
+//AND
+@13 // first pop value
+D=M 
+@14 // second pop value
+M = M&D
+
+//OR
+@13 // first pop value
+D=M 
+@14 // second pop value
+M = M|D
+
+//NOT
+@13 // first pop value
+M=!M

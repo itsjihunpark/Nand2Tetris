@@ -13,18 +13,19 @@ def main():
         
         parser.advance()
         current_command_type = parser.current_command_type
-        if current_command_type != "C_RETURN":
-            arg1 = parser.arg1()
-        if current_command_type in ["C_PUSH", "C_POP", "C_FUNCTION", "C_CALL"]:
-            arg2 = parser.arg2()
+        arg1 = parser.arg1() if current_command_type != "C_RETURN" else None
+        arg2 = parser.arg2() if current_command_type in {"C_PUSH", "C_POP", "C_FUNCTION", "C_CALL"} else None
 
-        if current_command_type in ["C_PUSH", "C_POP"]:
-           codeWriter.writePushPop(current_command_type, arg1, int(arg2)) 
+        if current_command_type in {"C_PUSH", "C_POP"}:
+            codeWriter.writePushPop(current_command_type, arg1, int(arg2))
+
+        elif current_command_type == "C_ARITHMETIC":
+            codeWriter.writeArithmetic(arg1)  # likely arg1 contains the arithmetic command
 
 
         debug = f"{current_command_type}        arg1: {arg1} arg2: {arg2}          {parser.current_command}"
             
         print(debug)
-
+    codeWriter.close()
 if __name__ == "__main__":
     main()
