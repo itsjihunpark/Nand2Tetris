@@ -7,11 +7,36 @@ class CodeWriter:
             "this": "THIS",
             "that": "THAT"
         }
+        self.arithmetic_asm_commands = {
+            "add":["//ADD","@13 // Y","D=M", "@14 // X","M=M+D",],
+            "sub": ["//SUB","@13 // Y","D=M", "@14 // X","M=M-D",],
+            "neg":["//NEG", "@14 // X", "M=-M",],
+            "eq": ["//EQ","@13 // y","D=M", "@14 // x","D=M-D", 
+                   "@EQ","D;JEQ","D=0","@ENDEQ","0;JMP","(EQ)","D=-1","(ENDEQ)","@14","M=D",
+            ],
+            "gt":["//GT","@13  // Y","D=M", "@14 // X","D=M-D",
+                  "@GT", "D;JGT","D=0","@ENDGT","0;JMP","(GT)","D=-1","(ENDGT)","@14","M=D",],
+            "lt":["//LT","@13  // Y","D=M", "@14 // X","D=M-D",
+                  "@LT", "D;JLT","D=0","@ENDLT","0;JMP","(LT)","D=-1","(ENDLT)","@14","M=D",],
+            "and":["//AND","@13 // first pop value","D=M", 
+                   "@14 // second pop value","M = M&D",],
+            "or":["//OR","@13 // first pop value","D=M", 
+                  "@14 // second pop value","M = M|D",],
+            "not":["//NOT","@14 // first pop value","M=!M",]
+        }
+
         self.dest_file_name = argv[1].split("\\")[-1].replace(".vm","")
         self.dest_file = open(f"{self.dest_file_name}.asm","w")
 
     def writeArithmetic(self, command:str):
-        pass
+        
+        self.write_pop(None, 13)
+        if command not in ["not", "neg"]:
+            self.write_pop(None, 14)
+        self.dest_file.writelines(cmd+"\n" for cmd in self.arithmetic_asm_commands[command])
+        for cmd in self.arithmetic_asm_commands[command]:
+            print(cmd)
+        self.write_push(None, 14)
 
     def writePushPop(self, command:str, segment:str, index:int):
         if command == "C_PUSH":
@@ -42,8 +67,7 @@ class CodeWriter:
     
     def write_pop(self, dest_segment, dest_addr):
         if dest_segment:
-            pop_command = ["@SP","M=M-1","A=M","D=M", 
-                           "@13 // memory space needed by VM translator",
+            pop_command = ["@13 // memory space needed by VM translator",
                            "M=D // load value from the top of stack",
                            f"@{dest_addr}", "D=A", f"@{dest_segment}","D=D+A",
                            "@14", "M=D // load target memory segment address",

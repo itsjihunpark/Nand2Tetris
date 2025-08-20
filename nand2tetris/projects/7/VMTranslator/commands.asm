@@ -94,38 +94,82 @@ RAM[13]
 RAM[14]
 
 
-//ADD
-@13 // first pop value
-D=M 
-@14 // second pop value
-M=M+D
+"//ADD",
+"@13 // Y",
+"D=M", 
+"@14 // X",
+"M=M+D",
 
-//SUB
-@13 // first pop value
-D=M 
-@14 // second pop value
-M=M-D
+"//SUB",
+"@13 // Y",
+"D=M", 
+"@14 // X",
+"M=M-D",
 
-//NEG
-@13 // first pop value
-M=-M
+"//NEG",
+"@14 // X",
+"M=-M",
 
-//EQ
-//GT
-//LT
+"//EQ",
+"@13 // y",
+"D=M", 
+"@14 // x",
+"D=M-D", 
+"@EQ",
+"D;JEQ",
+"D=0",
+"@ENDEQ",
+"0;JMP",
+"(EQ)",
+"D=-1",
+"(ENDEQ)",
+"@14",
+"M=D",
 
-//AND
-@13 // first pop value
-D=M 
-@14 // second pop value
-M = M&D
+"//GT",
+"@13  // Y",
+"D=M", 
+"@14 // X",
+"D=M-D",
+"@GT", 
+"D;JGT",
+"D=0",
+"@ENDGT",
+"0;JMP",
+"(GT)",
+"D=-1",
+"(ENDGT)",
+"@14",
+"M=D",
 
-//OR
-@13 // first pop value
-D=M 
-@14 // second pop value
-M = M|D
+"//LT
+"@13  // Y",
+"D=M", 
+"@14 // X",
+"D=M-D",
+"@LT", 
+"D;JLT",
+"D=0",
+"@ENDLT",
+"0;JMP",
+"(LT)",
+"D=-1",
+"(ENDLT)",
+"@14",
+"M=D",
 
-//NOT
-@13 // first pop value
-M=!M
+"//AND",
+"@13 // first pop value",
+"D=M", 
+"@14 // second pop value",
+"M = M&D",
+
+"//OR",
+"@13 // first pop value",
+"D=M", 
+"@14 // second pop value",
+"M = M|D",
+
+"//NOT",
+"@14 // first pop value",
+"M=!M",
