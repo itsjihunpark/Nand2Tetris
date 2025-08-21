@@ -1,12 +1,12 @@
 @7
-D=M
+D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
 @8
-D=M
+D=A
 @SP
 A=M
 M=D

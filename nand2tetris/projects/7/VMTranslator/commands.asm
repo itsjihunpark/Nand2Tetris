@@ -13,7 +13,7 @@ M=M+1
 
 // Push (From constant or static memory segment)
 @[Filename.index]
-D=M 
+D=A
 
 @SP
 A=M 
