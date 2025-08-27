@@ -38,8 +38,7 @@ M=D
 @SP
 M=M+1
 @SP
-A=M
-D=A
+D=M
 @5
 D=D-A
 @0
@@ -53,7 +52,9 @@ M=D
 @Sys.init
 0;JMP
 (Sys.init$ret.0)
+//C_FUNCTION arg1: Sys.init arg2: 0 function Sys.init 0
 (Sys.init)
+//C_PUSH arg1: constant arg2: 4 push constant 4
 @4
 D=A
 @SP
@@ -61,6 +62,7 @@ A=M
 M=D
 @SP
 M=M+1
+//C_CALL arg1: Main.fibonacci arg2: 1 call Main.fibonacci 1
 @Main.fibonacci$ret.0
 D=A
 @SP
@@ -97,8 +99,7 @@ M=D
 @SP
 M=M+1
 @SP
-A=M
-D=A
+D=M
 @5
 D=D-A
 @1
@@ -112,10 +113,14 @@ M=D
 @Main.fibonacci
 0;JMP
 (Main.fibonacci$ret.0)
+//C_LABEL arg1: END arg2: None label END
 (Sys.init$END)
+//C_GOTO arg1: END arg2: None goto END
 @Sys.init$END
 0;JMP
+//C_FUNCTION arg1: Main.fibonacci arg2: 0 function Main.fibonacci 0
 (Main.fibonacci)
+//C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
 @ARG
@@ -126,6 +131,7 @@ A=M
 M=D
 @SP
 M=M+1
+//C_PUSH arg1: constant arg2: 2 push constant 2
 @2
 D=A
 @SP
@@ -133,7 +139,8 @@ A=M
 M=D
 @SP
 M=M+1
-@SP // command 113 (lt command start)
+//C_ARITHMETIC arg1: lt arg2: None lt
+@SP
 M=M-1
 A=M
 D=M
@@ -157,7 +164,7 @@ D=0
 0;JMP
 (LT0)
 D=-1
-(ENDLT0) 
+(ENDLT0)
 @14
 M=D
 @14
@@ -167,6 +174,7 @@ A=M
 M=D
 @SP
 M=M+1
+//C_IF arg1: N_LT_2 arg2: None if-goto N_LT_2
 @SP
 M=M-1
 A=M
@@ -177,9 +185,12 @@ M=D
 D=M
 @Main.fibonacci$N_LT_2
 D;JNE
+//C_GOTO arg1: N_GE_2 arg2: None goto N_GE_2
 @Main.fibonacci$N_GE_2
 0;JMP
+//C_LABEL arg1: N_LT_2 arg2: None label N_LT_2
 (Main.fibonacci$N_LT_2)
+//C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
 @ARG
@@ -190,6 +201,7 @@ A=M
 M=D
 @SP
 M=M+1
+//C_RETURN arg1: None arg2: None return
 //frame = LCL
 @LCL
 D=M
@@ -200,6 +212,8 @@ M=D
 D=A
 @13
 D=M-D
+A=D
+D=M
 @14 // retAddr
 M=D
 @SP
@@ -256,7 +270,9 @@ M=D
 @14
 A=M
 0;JMP
+//C_LABEL arg1: N_GE_2 arg2: None label N_GE_2
 (Main.fibonacci$N_GE_2)
+//C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
 @ARG
@@ -267,6 +283,7 @@ A=M
 M=D
 @SP
 M=M+1
+//C_PUSH arg1: constant arg2: 2 push constant 2
 @2
 D=A
 @SP
@@ -274,6 +291,7 @@ A=M
 M=D
 @SP
 M=M+1
+//C_ARITHMETIC arg1: sub arg2: None sub
 @SP
 M=M-1
 A=M
@@ -298,6 +316,7 @@ A=M
 M=D
 @SP
 M=M+1
+//C_CALL arg1: Main.fibonacci arg2: 1 call Main.fibonacci 1
 @Main.fibonacci$ret.1
 D=A
 @SP
@@ -334,8 +353,7 @@ M=D
 @SP
 M=M+1
 @SP
-A=M
-D=A
+D=M
 @5
 D=D-A
 @1
@@ -349,6 +367,7 @@ M=D
 @Main.fibonacci
 0;JMP
 (Main.fibonacci$ret.1)
+//C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
 @ARG
@@ -359,6 +378,7 @@ A=M
 M=D
 @SP
 M=M+1
+//C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
@@ -366,6 +386,7 @@ A=M
 M=D
 @SP
 M=M+1
+//C_ARITHMETIC arg1: sub arg2: None sub
 @SP
 M=M-1
 A=M
@@ -390,6 +411,7 @@ A=M
 M=D
 @SP
 M=M+1
+//C_CALL arg1: Main.fibonacci arg2: 1 call Main.fibonacci 1
 @Main.fibonacci$ret.2
 D=A
 @SP
@@ -426,8 +448,7 @@ M=D
 @SP
 M=M+1
 @SP
-A=M
-D=A
+D=M
 @5
 D=D-A
 @1
@@ -441,6 +462,7 @@ M=D
 @Main.fibonacci
 0;JMP
 (Main.fibonacci$ret.2)
+//C_ARITHMETIC arg1: add arg2: None add
 @SP
 M=M-1
 A=M
@@ -465,6 +487,7 @@ A=M
 M=D
 @SP
 M=M+1
+//C_RETURN arg1: None arg2: None return
 //frame = LCL
 @LCL
 D=M
@@ -475,6 +498,8 @@ M=D
 D=A
 @13
 D=M-D
+A=D
+D=M
 @14 // retAddr
 M=D
 @SP

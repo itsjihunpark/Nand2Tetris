@@ -107,7 +107,7 @@ class CodeWriter:
         self.write_push(None,"THAT")
         self.function_chain[functionName]+=1
         
-        call_command = ["@SP", "A=M","D=A", "@5", "D=D-A", f"@{nArgs}",
+        call_command = ["@SP", "D=M", "@5", "D=D-A", f"@{nArgs}",
                         "D=D-A", "@ARG", "M=D", "@SP","D=M", "@LCL", 
                         "M=D", f"@{functionName}","0;JMP"]
         self.dest_file.writelines(cmd+"\n" for cmd in call_command)
@@ -120,7 +120,7 @@ class CodeWriter:
         return_command = ["//frame = LCL","@LCL","D=M", 
                             "@13 // frame","M=D",
                             "//retAddr = frame-5","@5",
-                            "D=A","@13","D=M-D"
+                            "D=A","@13","D=M-D", "A=D", "D=M"
                             ,"@14 // retAddr","M=D"]
         for cmd in return_command:
             print(cmd)
