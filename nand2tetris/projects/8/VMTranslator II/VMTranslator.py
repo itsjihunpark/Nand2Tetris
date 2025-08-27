@@ -44,7 +44,8 @@ def main():
         elif current_command_type == "C_RETURN":
             codeWriter.writeReturn()
 
-        
     codeWriter.close()
+
+    
 if __name__ == "__main__":
     main()
