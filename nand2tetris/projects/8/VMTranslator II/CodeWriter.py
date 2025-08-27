@@ -120,7 +120,7 @@ class CodeWriter:
         return_command = ["//frame = LCL","@LCL","D=M", 
                             "@13 // frame","M=D",
                             "//retAddr = frame-5","@5",
-                            "D=A","@13","D=M-D", "A=D", "D=M"
+                            "D=A","@13","D=M-D // RAM address that has the return address (ROM)", "A=D", "D=M //return address itself"
                             ,"@14 // retAddr","M=D"]
         for cmd in return_command:
             print(cmd)
