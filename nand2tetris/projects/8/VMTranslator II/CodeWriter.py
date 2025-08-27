@@ -193,7 +193,8 @@ class CodeWriter:
         selected_addr = ""
         
         if segment == "static":
-            selected_addr = f"{self.file_name}.{index}"
+            filename = self.current_function.split(".")[0]
+            selected_addr = f"{filename}.{index}"
         elif segment == "constant":
             selected_segment = "constant"
             selected_addr = index

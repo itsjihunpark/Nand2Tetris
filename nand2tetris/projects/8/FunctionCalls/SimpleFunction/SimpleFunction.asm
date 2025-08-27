@@ -1,3 +1,58 @@
+@256
+D=A
+@SP
+M=D
+@Sys.init$ret.0
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+@SP
+D=M
+@5
+D=D-A
+@0
+D=D-A
+@ARG
+M=D
+@SP
+D=M
+@LCL
+M=D
+@Sys.init
+0;JMP
+(Sys.init$ret.0)
+//C_FUNCTION arg1: SimpleFunction.test arg2: 2 function SimpleFunction.test 2
 (SimpleFunction.test)
 @0
 D=A
@@ -13,6 +68,7 @@ A=M
 M=D
 @SP
 M=M+1
+//C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
 @LCL
@@ -23,6 +79,7 @@ A=M
 M=D
 @SP
 M=M+1
+//C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
 @LCL
@@ -33,6 +90,7 @@ A=M
 M=D
 @SP
 M=M+1
+//C_ARITHMETIC arg1: add arg2: None add
 @SP
 M=M-1
 A=M
@@ -57,6 +115,7 @@ A=M
 M=D
 @SP
 M=M+1
+//C_ARITHMETIC arg1: not arg2: None not
 @SP
 M=M-1
 A=M
@@ -73,6 +132,7 @@ A=M
 M=D
 @SP
 M=M+1
+//C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
 @ARG
@@ -83,6 +143,7 @@ A=M
 M=D
 @SP
 M=M+1
+//C_ARITHMETIC arg1: add arg2: None add
 @SP
 M=M-1
 A=M
@@ -107,6 +168,7 @@ A=M
 M=D
 @SP
 M=M+1
+//C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
 @ARG
@@ -117,6 +179,7 @@ A=M
 M=D
 @SP
 M=M+1
+//C_ARITHMETIC arg1: sub arg2: None sub
 @SP
 M=M-1
 A=M
@@ -141,6 +204,7 @@ A=M
 M=D
 @SP
 M=M+1
+//C_RETURN arg1: None arg2: None return
 //frame = LCL
 @LCL
 D=M
@@ -150,7 +214,9 @@ M=D
 @5
 D=A
 @13
-D=M-D
+D=M-D // RAM address that has the return address (ROM)
+A=D
+D=M //return address itself
 @14 // retAddr
 M=D
 @SP

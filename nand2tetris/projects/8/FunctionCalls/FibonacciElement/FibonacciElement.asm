@@ -211,9 +211,9 @@ M=D
 @5
 D=A
 @13
-D=M-D
+D=M-D // RAM address that has the return address (ROM)
 A=D
-D=M
+D=M //return address itself
 @14 // retAddr
 M=D
 @SP
@@ -497,9 +497,9 @@ M=D
 @5
 D=A
 @13
-D=M-D
+D=M-D // RAM address that has the return address (ROM)
 A=D
-D=M
+D=M //return address itself
 @14 // retAddr
 M=D
 @SP
