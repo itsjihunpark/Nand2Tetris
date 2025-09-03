@@ -2,14 +2,12 @@
 
 C_ARITHMETIC_ADD = [
     "@SP // pop from stack to memory address 13 and 14",
-    "M=M-1",
-    "A=M",
+    "AM=M-1",
     "D=M",
     "@13",
     "M=D",
     "@SP",
-    "M=M-1",
-    "A=M",
+    "AM=M-1",
     "D=M",
     "@14",
     "M=D",
@@ -20,23 +18,20 @@ C_ARITHMETIC_ADD = [
     "@14 // push memory address 14 to stack ",
     "D=M",
     "@SP", 
-    "A=M", 
-    "M=D", 
-    "@SP", 
-    "M=M+1"
+    "M=M+1", 
+    "A=M-1",  
+    "M=D"
 
 ]
 
 C_ARITHMETIC_SUB = [
     "@SP // pop from stack to memory address 13 and 14",
-    "M=M-1",
-    "A=M",
+    "AM=M-1",
     "D=M",
     "@13",
     "M=D",
     "@SP",
-    "M=M-1",
-    "A=M",
+    "AM=M-1",
     "D=M",
     "@14",
     "M=D",
@@ -47,17 +42,15 @@ C_ARITHMETIC_SUB = [
     "@14 // push memory address 14 to stack ",
     "D=M",
     "@SP", 
-    "A=M", 
-    "M=D", 
-    "@SP", 
-    "M=M+1"
+    "M=M+1", 
+    "A=M-1",  
+    "M=D"
 
 ]
 
 C_ARITHMETIC_NEG = [
     "@SP // pop from stack to memory address 13",
-    "M=M-1",
-    "A=M",
+    "AM=M-1",
     "D=M",
     "@13",
     "M=D"
@@ -66,23 +59,20 @@ C_ARITHMETIC_NEG = [
     "@14 // push memory address 14 to stack ",
     "D=M",
     "@SP", 
-    "A=M", 
-    "M=D", 
-    "@SP", 
-    "M=M+1"
+    "M=M+1", 
+    "A=M-1",  
+    "M=D"
 
 ]
 
 C_ARITHMETIC_EQ = [
     "@SP // pop from stack to memory address 13 and 14",
-    "M=M-1",
-    "A=M",
+    "AM=M-1",
     "D=M",
     "@13",
     "M=D",
     "@SP",
-    "M=M-1",
-    "A=M",
+    "AM=M-1",
     "D=M",
     "@14",
     "M=D",
@@ -103,22 +93,19 @@ C_ARITHMETIC_EQ = [
     "@14 // push memory address 14 to stack ",
     "D=M",
     "@SP", 
-    "A=M", 
-    "M=D", 
-    "@SP", 
-    "M=M+1"
+    "M=M+1", 
+    "A=M-1",  
+    "M=D"
 ]
 
 C_ARITHMETIC_GT = [
     "@SP // pop from stack to memory address 13 and 14",
-    "M=M-1",
-    "A=M",
+    "AM=M-1",
     "D=M",
     "@13",
     "M=D",
     "@SP",
-    "M=M-1",
-    "A=M",
+    "AM=M-1",
     "D=M",
     "@14",
     "M=D",
@@ -139,22 +126,19 @@ C_ARITHMETIC_GT = [
     "@14 // push memory address 14 to stack",
     "D=M",
     "@SP", 
-    "A=M", 
-    "M=D", 
-    "@SP", 
-    "M=M+1"
+    "M=M+1", 
+    "A=M-1",  
+    "M=D"
 ]
 
 C_ARITHMETIC_LT = [
     "@SP // pop from stack to memory address 13 and 14",
-    "M=M-1",
-    "A=M",
+    "AM=M-1",
     "D=M",
     "@13",
     "M=D",
     "@SP",
-    "M=M-1",
-    "A=M",
+    "AM=M-1",
     "D=M",
     "@14",
     "M=D",
@@ -175,22 +159,19 @@ C_ARITHMETIC_LT = [
     "@14 // push memory address 14 to stack ",
     "D=M",
     "@SP", 
-    "A=M", 
-    "M=D", 
-    "@SP", 
-    "M=M+1"
+    "M=M+1", 
+    "A=M-1",  
+    "M=D"
 ]
 
 C_ARITHMETIC_AND = [
     "@SP // pop from stack to memory address 13 and 14",
-    "M=M-1",
-    "A=M",
+    "AM=M-1",
     "D=M",
     "@13",
     "M=D",
     "@SP",
-    "M=M-1",
-    "A=M",
+    "AM=M-1",
     "D=M",
     "@14",
     "M=D",
@@ -201,21 +182,18 @@ C_ARITHMETIC_AND = [
     "@14 // push memory address 14 to stack ",
     "D=M"
     "@SP", 
-    "A=M", 
-    "M=D", 
-    "@SP", 
-    "M=M+1"
+    "M=M+1", 
+    "A=M-1",  
+    "M=D"
 ]
 C_ARITHMETIC_OR = [
     "@SP // pop from stack to memory address 13 and 14",
-    "M=M-1",
-    "A=M",
+    "AM=M-1",
     "D=M",
     "@13",
     "M=D",
     "@SP",
-    "M=M-1",
-    "A=M",
+    "AM=M-1",
     "D=M",
     "@14",
     "M=D",
@@ -226,15 +204,13 @@ C_ARITHMETIC_OR = [
     "@14 // push memory address 14 to stack ",
     "D=M",
     "@SP", 
-    "A=M", 
-    "M=D", 
-    "@SP", 
-    "M=M+1"
+    "M=M+1", 
+    "A=M-1",  
+    "M=D"
 ]
 C_ARITHMETIC_NOT = [
     "@SP // pop from stack to memory address 13",
-    "M=M-1",
-    "A=M",
+    "AM=M-1",
     "D=M",
     "@13",
     "M=D",
@@ -243,10 +219,9 @@ C_ARITHMETIC_NOT = [
     "@14 // push memory address 14 to stack ",
     "D=M",
     "@SP", 
-    "A=M", 
-    "M=D", 
-    "@SP", 
-    "M=M+1"
+    "M=M+1", 
+    "A=M-1",  
+    "M=D"
 ]
 
 C_LABEL =[
@@ -260,8 +235,7 @@ C_GOTO =[
 
 C_IF = [
     "@SP // pop from stack to memory address 13", 
-    "M=M-1",
-    "A=M",
+    "AM=M-1",
     "D=M",
     "@13",
     "M=D",
@@ -278,43 +252,38 @@ C_FUNCTION = [
     "//@SP", 
     "//M=M+D"
 ]
-# NEED TO REPLACE PLACEHOLDER 
+ 
 C_CALL = [
     "@{returnLabel} // push return label",
     "D=A",
     "@SP", 
-    "A=M", 
-    "M=D", 
-    "@SP", 
-    "M=M+1",
+    "M=M+1", 
+    "A=M-1",  
+    "M=D",
     "@LCL // push LCL pointer",
     "D=M",
     "@SP", 
-    "A=M", 
-    "M=D", 
-    "@SP", 
-    "M=M+1",
+    "M=M+1", 
+    "A=M-1",  
+    "M=D",
     "@ARG // push ARG pointer",
     "D=M",
     "@SP", 
-    "A=M", 
-    "M=D", 
-    "@SP", 
-    "M=M+1",
+    "M=M+1", 
+    "A=M-1",  
+    "M=D",
     "@THIS // push THIS pointer",
     "D=M",
     "@SP", 
-    "A=M", 
-    "M=D", 
-    "@SP", 
-    "M=M+1",
+    "M=M+1", 
+    "A=M-1",  
+    "M=D",
     "@THAT // push THAT pointer",
     "D=M",
     "@SP", 
-    "A=M", 
-    "M=D", 
-    "@SP", 
-    "M=M+1",
+    "M=M+1", 
+    "A=M-1",  
+    "M=D",
     "@SP // reposition ARG pointer to be SP - 5 - nArgs", 
     "D=M", 
     "@5", 
@@ -334,6 +303,9 @@ C_CALL = [
 
 
 C_RETURN = [
+    "@BOOTSTRAP",
+    "0;JMP",
+    "(RETURN)",
     "@LCL //frame = LCL",
     "D=M",
     "@13 // frame",

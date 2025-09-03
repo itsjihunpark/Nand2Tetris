@@ -1,481 +1,11 @@
-@256
-D=A
-@SP
-M=D
-@Sys.init$ret.0
-D=A
-@SP
-A=M
-M=D
-@SP
-M=M+1
-@LCL
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-@ARG
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-@THIS
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-@THAT
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-@SP
-D=M
-@5
-D=D-A
-@0
-D=D-A
-@ARG
-M=D
-@SP
-D=M
-@LCL
-M=D
-@Sys.init
+@BOOTSTRAP
 0;JMP
-(Sys.init$ret.0)
-//C_FUNCTION arg1: Sys.init arg2: 0 function Sys.init 0
-(Sys.init)
-//C_CALL arg1: Memory.init arg2: 0 call Memory.init 0
-@Memory.init$ret.0
-D=A
-@SP
-A=M
-M=D
-@SP
-M=M+1
-@LCL
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-@ARG
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-@THIS
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-@THAT
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-@SP
-D=M
-@5
-D=D-A
-@0
-D=D-A
-@ARG
-M=D
-@SP
-D=M
-@LCL
-M=D
-@Memory.init
-0;JMP
-(Memory.init$ret.0)
-//C_POP arg1: temp arg2: 0 pop temp 0
-@SP
-M=M-1
-A=M
-D=M
-@5
-M=D
-//C_CALL arg1: Math.init arg2: 0 call Math.init 0
-@Math.init$ret.0
-D=A
-@SP
-A=M
-M=D
-@SP
-M=M+1
-@LCL
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-@ARG
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-@THIS
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-@THAT
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-@SP
-D=M
-@5
-D=D-A
-@0
-D=D-A
-@ARG
-M=D
-@SP
-D=M
-@LCL
-M=D
-@Math.init
-0;JMP
-(Math.init$ret.0)
-//C_POP arg1: temp arg2: 0 pop temp 0
-@SP
-M=M-1
-A=M
-D=M
-@5
-M=D
-//C_CALL arg1: Screen.init arg2: 0 call Screen.init 0
-@Screen.init$ret.0
-D=A
-@SP
-A=M
-M=D
-@SP
-M=M+1
-@LCL
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-@ARG
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-@THIS
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-@THAT
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-@SP
-D=M
-@5
-D=D-A
-@0
-D=D-A
-@ARG
-M=D
-@SP
-D=M
-@LCL
-M=D
-@Screen.init
-0;JMP
-(Screen.init$ret.0)
-//C_POP arg1: temp arg2: 0 pop temp 0
-@SP
-M=M-1
-A=M
-D=M
-@5
-M=D
-//C_CALL arg1: Output.init arg2: 0 call Output.init 0
-@Output.init$ret.0
-D=A
-@SP
-A=M
-M=D
-@SP
-M=M+1
-@LCL
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-@ARG
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-@THIS
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-@THAT
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-@SP
-D=M
-@5
-D=D-A
-@0
-D=D-A
-@ARG
-M=D
-@SP
-D=M
-@LCL
-M=D
-@Output.init
-0;JMP
-(Output.init$ret.0)
-//C_POP arg1: temp arg2: 0 pop temp 0
-@SP
-M=M-1
-A=M
-D=M
-@5
-M=D
-//C_CALL arg1: Keyboard.init arg2: 0 call Keyboard.init 0
-@Keyboard.init$ret.0
-D=A
-@SP
-A=M
-M=D
-@SP
-M=M+1
-@LCL
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-@ARG
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-@THIS
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-@THAT
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-@SP
-D=M
-@5
-D=D-A
-@0
-D=D-A
-@ARG
-M=D
-@SP
-D=M
-@LCL
-M=D
-@Keyboard.init
-0;JMP
-(Keyboard.init$ret.0)
-//C_POP arg1: temp arg2: 0 pop temp 0
-@SP
-M=M-1
-A=M
-D=M
-@5
-M=D
-//C_CALL arg1: Main.main arg2: 0 call Main.main 0
-@Main.main$ret.0
-D=A
-@SP
-A=M
-M=D
-@SP
-M=M+1
-@LCL
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-@ARG
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-@THIS
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-@THAT
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-@SP
-D=M
-@5
-D=D-A
-@0
-D=D-A
-@ARG
-M=D
-@SP
-D=M
-@LCL
-M=D
-@Main.main
-0;JMP
-(Main.main$ret.0)
-//C_POP arg1: temp arg2: 0 pop temp 0
-@SP
-M=M-1
-A=M
-D=M
-@5
-M=D
-//C_CALL arg1: Sys.halt arg2: 0 call Sys.halt 0
-@Sys.halt$ret.0
-D=A
-@SP
-A=M
-M=D
-@SP
-M=M+1
-@LCL
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-@ARG
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-@THIS
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-@THAT
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-@SP
-D=M
-@5
-D=D-A
-@0
-D=D-A
-@ARG
-M=D
-@SP
-D=M
-@LCL
-M=D
-@Sys.halt
-0;JMP
-(Sys.halt$ret.0)
-//C_POP arg1: temp arg2: 0 pop temp 0
-@SP
-M=M-1
-A=M
-D=M
-@5
-M=D
-//C_PUSH arg1: constant arg2: 0 push constant 0
-@0
-D=A
-@SP
-A=M
-M=D
-@SP
-M=M+1
-//C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
+(RETURN)
+@LCL //frame = LCL
 D=M
 @13 // frame
 M=D
-//retAddr = frame-5
-@5
+@5 //retAddr = frame-5
 D=A
 @13
 D=M-D // RAM address that has the return address (ROM)
@@ -483,31 +13,24 @@ A=D
 D=M //return address itself
 @14 // retAddr
 M=D
-@SP
+@SP // reposition return value to arg 0
 M=M-1
 A=M
 D=M
-@15
-M=D
-@15
-D=M
 @ARG
 A=M
 M=D
-//SP = ARG+1
-@ARG
+@ARG //SP = ARG+1
 D=M
 @SP
 M=D+1
-//THAT = *frame-1
-@13
+@13 //THAT = *frame-1
 D=M-1
 A=D
 D=M
 @THAT
 M=D
-//THIS = *frame-2
-@13
+@13 //THIS = *frame-2
 D=M
 @2
 D=D-A
@@ -515,8 +38,7 @@ A=D
 D=M
 @THIS
 M=D
-//ARG = *frame-3
-@13
+@13 //ARG = *frame-3
 D=M
 @3
 D=D-A
@@ -524,8 +46,7 @@ A=D
 D=M
 @ARG
 M=D
-//LCL = *frame-4
-@13
+@13 //LCL = *frame-4
 D=M
 @4
 D=D-A
@@ -533,33 +54,503 @@ A=D
 D=M
 @LCL
 M=D
-//goto retAddr
-@14
+@14 //goto retAddr
 A=M
 0;JMP
-//C_FUNCTION arg1: Sys.halt arg2: 0 function Sys.halt 0
-(Sys.halt)
-//C_LABEL arg1: WHILE_EXP0 arg2: None label WHILE_EXP0
-(Sys.halt$WHILE_EXP0)
-//C_PUSH arg1: constant arg2: 0 push constant 0
-@0
+(BOOTSTRAP)
+@256
+D=A
+@SP
+M=D
+@Sys.init$ret.0 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-//C_ARITHMETIC arg1: not arg2: None not
+@LCL // push LCL pointer
+D=M
 @SP
+A=M
+M=D
+@SP
+M=M+1
+@ARG // push ARG pointer
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+@THIS // push THIS pointer
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+@THAT // push THAT pointer
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+@SP // reposition ARG pointer to be SP - 5 - nArgs
+D=M
+@5
+D=D-A
+@0
+D=D-A
+@ARG
+M=D
+@SP // reposition LCL pointer to be that of SP
+D=M
+@LCL
+M=D
+@Sys.init // make jump
+0;JMP
+(Sys.init$ret.0)
+//C_FUNCTION arg1: Sys.init arg2: 0 function Sys.init 0
+(Sys.init)
+//@0
+//D=A
+//@SP
+//M=M+D
+//C_CALL arg1: Memory.init arg2: 0 call Memory.init 0
+@Memory.init$ret.0 // push return label
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1
+@LCL // push LCL pointer
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+@ARG // push ARG pointer
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+@THIS // push THIS pointer
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+@THAT // push THAT pointer
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+@SP // reposition ARG pointer to be SP - 5 - nArgs
+D=M
+@5
+D=D-A
+@0
+D=D-A
+@ARG
+M=D
+@SP // reposition LCL pointer to be that of SP
+D=M
+@LCL
+M=D
+@Memory.init // make jump
+0;JMP
+(Memory.init$ret.0)
+//C_POP arg1: temp arg2: 0 pop temp 0
+@SP
+AM=M-1
+D=M
+@5
+M=D
+//C_CALL arg1: Math.init arg2: 0 call Math.init 0
+@Math.init$ret.0 // push return label
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1
+@LCL // push LCL pointer
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+@ARG // push ARG pointer
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+@THIS // push THIS pointer
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+@THAT // push THAT pointer
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+@SP // reposition ARG pointer to be SP - 5 - nArgs
+D=M
+@5
+D=D-A
+@0
+D=D-A
+@ARG
+M=D
+@SP // reposition LCL pointer to be that of SP
+D=M
+@LCL
+M=D
+@Math.init // make jump
+0;JMP
+(Math.init$ret.0)
+//C_POP arg1: temp arg2: 0 pop temp 0
+@SP
+AM=M-1
+D=M
+@5
+M=D
+//C_CALL arg1: Screen.init arg2: 0 call Screen.init 0
+@Screen.init$ret.0 // push return label
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1
+@LCL // push LCL pointer
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+@ARG // push ARG pointer
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+@THIS // push THIS pointer
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+@THAT // push THAT pointer
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+@SP // reposition ARG pointer to be SP - 5 - nArgs
+D=M
+@5
+D=D-A
+@0
+D=D-A
+@ARG
+M=D
+@SP // reposition LCL pointer to be that of SP
+D=M
+@LCL
+M=D
+@Screen.init // make jump
+0;JMP
+(Screen.init$ret.0)
+//C_POP arg1: temp arg2: 0 pop temp 0
+@SP
+AM=M-1
+D=M
+@5
+M=D
+//C_CALL arg1: Output.init arg2: 0 call Output.init 0
+@Output.init$ret.0 // push return label
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1
+@LCL // push LCL pointer
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+@ARG // push ARG pointer
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+@THIS // push THIS pointer
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+@THAT // push THAT pointer
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+@SP // reposition ARG pointer to be SP - 5 - nArgs
+D=M
+@5
+D=D-A
+@0
+D=D-A
+@ARG
+M=D
+@SP // reposition LCL pointer to be that of SP
+D=M
+@LCL
+M=D
+@Output.init // make jump
+0;JMP
+(Output.init$ret.0)
+//C_POP arg1: temp arg2: 0 pop temp 0
+@SP
+AM=M-1
+D=M
+@5
+M=D
+//C_CALL arg1: Keyboard.init arg2: 0 call Keyboard.init 0
+@Keyboard.init$ret.0 // push return label
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1
+@LCL // push LCL pointer
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+@ARG // push ARG pointer
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+@THIS // push THIS pointer
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+@THAT // push THAT pointer
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+@SP // reposition ARG pointer to be SP - 5 - nArgs
+D=M
+@5
+D=D-A
+@0
+D=D-A
+@ARG
+M=D
+@SP // reposition LCL pointer to be that of SP
+D=M
+@LCL
+M=D
+@Keyboard.init // make jump
+0;JMP
+(Keyboard.init$ret.0)
+//C_POP arg1: temp arg2: 0 pop temp 0
+@SP
+AM=M-1
+D=M
+@5
+M=D
+//C_CALL arg1: Main.main arg2: 0 call Main.main 0
+@Main.main$ret.0 // push return label
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1
+@LCL // push LCL pointer
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+@ARG // push ARG pointer
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+@THIS // push THIS pointer
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+@THAT // push THAT pointer
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+@SP // reposition ARG pointer to be SP - 5 - nArgs
+D=M
+@5
+D=D-A
+@0
+D=D-A
+@ARG
+M=D
+@SP // reposition LCL pointer to be that of SP
+D=M
+@LCL
+M=D
+@Main.main // make jump
+0;JMP
+(Main.main$ret.0)
+//C_POP arg1: temp arg2: 0 pop temp 0
+@SP
+AM=M-1
+D=M
+@5
+M=D
+//C_CALL arg1: Sys.halt arg2: 0 call Sys.halt 0
+@Sys.halt$ret.0 // push return label
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1
+@LCL // push LCL pointer
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+@ARG // push ARG pointer
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+@THIS // push THIS pointer
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+@THAT // push THAT pointer
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+@SP // reposition ARG pointer to be SP - 5 - nArgs
+D=M
+@5
+D=D-A
+@0
+D=D-A
+@ARG
+M=D
+@SP // reposition LCL pointer to be that of SP
+D=M
+@LCL
+M=D
+@Sys.halt // make jump
+0;JMP
+(Sys.halt$ret.0)
+//C_POP arg1: temp arg2: 0 pop temp 0
+@SP
+AM=M-1
+D=M
+@5
+M=D
+//C_PUSH arg1: constant arg2: 0 push constant 0
+@0
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_RETURN arg1: None arg2: None return
+@RETURN
+0;JMP
+//C_FUNCTION arg1: Sys.halt arg2: 0 function Sys.halt 0
+(Sys.halt)
+//@0
+//D=A
+//@SP
+//M=M+D
+//C_LABEL arg1: WHILE_EXP0 arg2: None label WHILE_EXP0
+(Sys.halt$WHILE_EXP0)//C_PUSH arg1: constant arg2: 0 push constant 0
+@0
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_ARITHMETIC arg1: not arg2: None not
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
 M=D
-//NOT
 @14 // first pop value
 M=!M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -567,16 +558,15 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: not arg2: None not
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
 M=D
-//NOT
 @14 // first pop value
 M=!M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -584,7 +574,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -598,93 +588,28 @@ D;JNE
 @Sys.halt$WHILE_EXP0
 0;JMP
 //C_LABEL arg1: WHILE_END0 arg2: None label WHILE_END0
-(Sys.halt$WHILE_END0)
-//C_PUSH arg1: constant arg2: 0 push constant 0
+(Sys.halt$WHILE_END0)//C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: Sys.wait arg2: 1 function Sys.wait 1
 (Sys.wait)
+//@1
+//D=A
+//@SP
+//M=M+D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -692,20 +617,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -717,7 +640,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -732,7 +654,7 @@ D=-1
 (ENDLT2)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -740,7 +662,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -754,52 +676,50 @@ D;JNE
 @Sys.wait$IF_FALSE0
 0;JMP
 //C_LABEL arg1: IF_TRUE0 arg2: None label IF_TRUE0
-(Sys.wait$IF_TRUE0)
-//C_PUSH arg1: constant arg2: 1 push constant 1
+(Sys.wait$IF_TRUE0)//C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Sys.error arg2: 1 call Sys.error 1
-@Sys.error$ret.0
+@Sys.error$ret.0 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -807,45 +727,40 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Sys.error
+@Sys.error // make jump
 0;JMP
 (Sys.error$ret.0)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_LABEL arg1: IF_FALSE0 arg2: None label IF_FALSE0
-(Sys.wait$IF_FALSE0)
-//C_LABEL arg1: WHILE_EXP0 arg2: None label WHILE_EXP0
-(Sys.wait$WHILE_EXP0)
-//C_PUSH arg1: argument arg2: 0 push argument 0
+(Sys.wait$IF_FALSE0)//C_LABEL arg1: WHILE_EXP0 arg2: None label WHILE_EXP0
+(Sys.wait$WHILE_EXP0)//C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
 @ARG
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -857,7 +772,6 @@ A=M
 D=M
 @14
 M=D
-//GT
 @13  // Y
 D=M
 @14 // X
@@ -872,7 +786,7 @@ D=-1
 (ENDGT3)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack
 D=M
 @SP
 A=M
@@ -880,16 +794,15 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: not arg2: None not
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
 M=D
-//NOT
 @14 // first pop value
 M=!M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -897,7 +810,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -911,14 +824,12 @@ D;JNE
 @50
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -934,28 +845,25 @@ D=M
 A=M
 M=D
 //C_LABEL arg1: WHILE_EXP1 arg2: None label WHILE_EXP1
-(Sys.wait$WHILE_EXP1)
-//C_PUSH arg1: local arg2: 0 push local 0
+(Sys.wait$WHILE_EXP1)//C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -967,7 +875,6 @@ A=M
 D=M
 @14
 M=D
-//GT
 @13  // Y
 D=M
 @14 // X
@@ -982,7 +889,7 @@ D=-1
 (ENDGT5)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack
 D=M
 @SP
 A=M
@@ -990,16 +897,15 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: not arg2: None not
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
 M=D
-//NOT
 @14 // first pop value
 M=!M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -1007,7 +913,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: WHILE_END1 arg2: None if-goto WHILE_END1
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -1024,20 +930,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -1049,12 +953,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -1063,8 +966,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -1083,28 +985,25 @@ M=D
 @Sys.wait$WHILE_EXP1
 0;JMP
 //C_LABEL arg1: WHILE_END1 arg2: None label WHILE_END1
-(Sys.wait$WHILE_END1)
-//C_PUSH arg1: argument arg2: 0 push argument 0
+(Sys.wait$WHILE_END1)//C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
 @ARG
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -1116,12 +1015,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -1130,8 +1028,7 @@ M=D
 M=M+1
 //C_POP arg1: argument arg2: 0 pop argument 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -1150,131 +1047,66 @@ M=D
 @Sys.wait$WHILE_EXP0
 0;JMP
 //C_LABEL arg1: WHILE_END0 arg2: None label WHILE_END0
-(Sys.wait$WHILE_END0)
-//C_PUSH arg1: constant arg2: 0 push constant 0
+(Sys.wait$WHILE_END0)//C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: Sys.error arg2: 0 function Sys.error 0
 (Sys.error)
+//@0
+//D=A
+//@SP
+//M=M+D
 //C_PUSH arg1: constant arg2: 69 push constant 69
 @69
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.printChar arg2: 1 call Output.printChar 1
-@Output.printChar$ret.0
+@Output.printChar$ret.0 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -1282,17 +1114,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.printChar
+@Output.printChar // make jump
 0;JMP
 (Output.printChar$ret.0)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -1300,47 +1131,46 @@ M=D
 @82
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.printChar arg2: 1 call Output.printChar 1
-@Output.printChar$ret.1
+@Output.printChar$ret.1 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -1348,17 +1178,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.printChar
+@Output.printChar // make jump
 0;JMP
 (Output.printChar$ret.1)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -1366,47 +1195,46 @@ M=D
 @82
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.printChar arg2: 1 call Output.printChar 1
-@Output.printChar$ret.2
+@Output.printChar$ret.2 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -1414,17 +1242,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.printChar
+@Output.printChar // make jump
 0;JMP
 (Output.printChar$ret.2)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -1435,47 +1262,46 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.printInt arg2: 1 call Output.printInt 1
-@Output.printInt$ret.0
+@Output.printInt$ret.0 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -1483,57 +1309,56 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.printInt
+@Output.printInt // make jump
 0;JMP
 (Output.printInt$ret.0)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_CALL arg1: Sys.halt arg2: 0 call Sys.halt 0
-@Sys.halt$ret.1
+@Sys.halt$ret.1 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -1541,17 +1366,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Sys.halt
+@Sys.halt // make jump
 0;JMP
 (Sys.halt$ret.1)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -1559,81 +1383,18 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: Array.new arg2: 0 function Array.new 0
 (Array.new)
+//@0
+//D=A
+//@SP
+//M=M+D
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -1641,20 +1402,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -1666,7 +1425,6 @@ A=M
 D=M
 @14
 M=D
-//GT
 @13  // Y
 D=M
 @14 // X
@@ -1681,7 +1439,7 @@ D=-1
 (ENDGT9)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack
 D=M
 @SP
 A=M
@@ -1689,16 +1447,15 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: not arg2: None not
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
 M=D
-//NOT
 @14 // first pop value
 M=!M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -1706,7 +1463,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -1720,52 +1477,50 @@ D;JNE
 @Array.new$IF_FALSE0
 0;JMP
 //C_LABEL arg1: IF_TRUE0 arg2: None label IF_TRUE0
-(Array.new$IF_TRUE0)
-//C_PUSH arg1: constant arg2: 2 push constant 2
+(Array.new$IF_TRUE0)//C_PUSH arg1: constant arg2: 2 push constant 2
 @2
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Sys.error arg2: 1 call Sys.error 1
-@Sys.error$ret.1
+@Sys.error$ret.1 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -1773,70 +1528,67 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Sys.error
+@Sys.error // make jump
 0;JMP
 (Sys.error$ret.1)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_LABEL arg1: IF_FALSE0 arg2: None label IF_FALSE0
-(Array.new$IF_FALSE0)
-//C_PUSH arg1: argument arg2: 0 push argument 0
+(Array.new$IF_FALSE0)//C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
 @ARG
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Memory.alloc arg2: 1 call Memory.alloc 1
-@Memory.alloc$ret.0
+@Memory.alloc$ret.0 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -1844,84 +1596,22 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Memory.alloc
+@Memory.alloc // make jump
 0;JMP
 (Memory.alloc$ret.0)
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: Array.dispose arg2: 0 function Array.dispose 0
 (Array.dispose)
+//@0
+//D=A
+//@SP
+//M=M+D
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -1929,14 +1619,12 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: pointer arg2: 0 pop pointer 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @3
 M=D
@@ -1944,47 +1632,46 @@ M=D
 @3
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Memory.deAlloc arg2: 1 call Memory.deAlloc 1
-@Memory.deAlloc$ret.0
+@Memory.deAlloc$ret.0 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -1992,17 +1679,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Memory.deAlloc
+@Memory.deAlloc // make jump
 0;JMP
 (Memory.deAlloc$ret.0)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -2010,205 +1696,78 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: Keyboard.init arg2: 0 function Keyboard.init 0
 (Keyboard.init)
+//@0
+//D=A
+//@SP
+//M=M+D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: Keyboard.keyPressed arg2: 0 function Keyboard.keyPressed 0
 (Keyboard.keyPressed)
+//@0
+//D=A
+//@SP
+//M=M+D
 //C_PUSH arg1: constant arg2: 24576 push constant 24576
 @24576
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Memory.peek arg2: 1 call Memory.peek 1
-@Memory.peek$ret.0
+@Memory.peek$ret.0 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -2216,143 +1775,78 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Memory.peek
+@Memory.peek // make jump
 0;JMP
 (Memory.peek$ret.0)
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: Keyboard.readChar arg2: 2 function Keyboard.readChar 2
 (Keyboard.readChar)
+//@2
+//D=A
+//@SP
+//M=M+D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.printChar arg2: 1 call Output.printChar 1
-@Output.printChar$ret.3
+@Output.printChar$ret.3 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -2360,43 +1854,39 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.printChar
+@Output.printChar // make jump
 0;JMP
 (Output.printChar$ret.3)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_LABEL arg1: WHILE_EXP0 arg2: None label WHILE_EXP0
-(Keyboard.readChar$WHILE_EXP0)
-//C_PUSH arg1: local arg2: 1 push local 1
+(Keyboard.readChar$WHILE_EXP0)//C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -2408,7 +1898,6 @@ A=M
 D=M
 @14
 M=D
-//EQ
 @13 // y
 D=M
 @14 // x
@@ -2423,7 +1912,7 @@ D=-1
 (ENDEQ11)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -2437,20 +1926,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -2462,7 +1949,6 @@ A=M
 D=M
 @14
 M=D
-//GT
 @13  // Y
 D=M
 @14 // X
@@ -2477,7 +1963,7 @@ D=-1
 (ENDGT12)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack
 D=M
 @SP
 A=M
@@ -2485,7 +1971,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: or arg2: None or
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -2497,12 +1983,11 @@ A=M
 D=M
 @14
 M=D
-//OR
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M|D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -2510,16 +1995,15 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: not arg2: None not
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
 M=D
-//NOT
 @14 // first pop value
 M=!M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -2527,7 +2011,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -2538,42 +2022,42 @@ D=M
 @Keyboard.readChar$WHILE_END0
 D;JNE
 //C_CALL arg1: Keyboard.keyPressed arg2: 0 call Keyboard.keyPressed 0
-@Keyboard.keyPressed$ret.0
+@Keyboard.keyPressed$ret.0 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -2581,17 +2065,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Keyboard.keyPressed
+@Keyboard.keyPressed // make jump
 0;JMP
 (Keyboard.keyPressed$ret.0)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -2613,20 +2096,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -2638,7 +2119,6 @@ A=M
 D=M
 @14
 M=D
-//GT
 @13  // Y
 D=M
 @14 // X
@@ -2653,7 +2133,7 @@ D=-1
 (ENDGT15)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack
 D=M
 @SP
 A=M
@@ -2661,7 +2141,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -2675,22 +2155,19 @@ D;JNE
 @Keyboard.readChar$IF_FALSE0
 0;JMP
 //C_LABEL arg1: IF_TRUE0 arg2: None label IF_TRUE0
-(Keyboard.readChar$IF_TRUE0)
-//C_PUSH arg1: local arg2: 0 push local 0
+(Keyboard.readChar$IF_TRUE0)//C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: local arg2: 1 pop local 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -2706,49 +2183,47 @@ D=M
 A=M
 M=D
 //C_LABEL arg1: IF_FALSE0 arg2: None label IF_FALSE0
-(Keyboard.readChar$IF_FALSE0)
-//C_GOTO arg1: WHILE_EXP0 arg2: None goto WHILE_EXP0
+(Keyboard.readChar$IF_FALSE0)//C_GOTO arg1: WHILE_EXP0 arg2: None goto WHILE_EXP0
 @Keyboard.readChar$WHILE_EXP0
 0;JMP
 //C_LABEL arg1: WHILE_END0 arg2: None label WHILE_END0
-(Keyboard.readChar$WHILE_END0)
-//C_CALL arg1: String.backSpace arg2: 0 call String.backSpace 0
-@String.backSpace$ret.0
+(Keyboard.readChar$WHILE_END0)//C_CALL arg1: String.backSpace arg2: 0 call String.backSpace 0
+@String.backSpace$ret.0 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -2756,50 +2231,50 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@String.backSpace
+@String.backSpace // make jump
 0;JMP
 (String.backSpace$ret.0)
 //C_CALL arg1: Output.printChar arg2: 1 call Output.printChar 1
-@Output.printChar$ret.4
+@Output.printChar$ret.4 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -2807,17 +2282,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.printChar
+@Output.printChar // make jump
 0;JMP
 (Output.printChar$ret.4)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -2828,47 +2302,46 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.printChar arg2: 1 call Output.printChar 1
-@Output.printChar$ret.5
+@Output.printChar$ret.5 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -2876,17 +2349,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.printChar
+@Output.printChar // make jump
 0;JMP
 (Output.printChar$ret.5)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -2897,161 +2369,92 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: Keyboard.readLine arg2: 5 function Keyboard.readLine 5
 (Keyboard.readLine)
+//@5
+//D=A
+//@SP
+//M=M+D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 80 push constant 80
 @80
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: String.new arg2: 1 call String.new 1
-@String.new$ret.0
+@String.new$ret.0 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -3059,17 +2462,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@String.new
+@String.new // make jump
 0;JMP
 (String.new$ret.0)
 //C_POP arg1: local arg2: 3 pop local 3
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -3091,47 +2493,46 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.printString arg2: 1 call Output.printString 1
-@Output.printString$ret.0
+@Output.printString$ret.0 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -3139,57 +2540,56 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.printString
+@Output.printString // make jump
 0;JMP
 (Output.printString$ret.0)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_CALL arg1: String.newLine arg2: 0 call String.newLine 0
-@String.newLine$ret.0
+@String.newLine$ret.0 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -3197,17 +2597,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@String.newLine
+@String.newLine // make jump
 0;JMP
 (String.newLine$ret.0)
 //C_POP arg1: local arg2: 1 pop local 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -3223,42 +2622,42 @@ D=M
 A=M
 M=D
 //C_CALL arg1: String.backSpace arg2: 0 call String.backSpace 0
-@String.backSpace$ret.1
+@String.backSpace$ret.1 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -3266,17 +2665,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@String.backSpace
+@String.backSpace // make jump
 0;JMP
 (String.backSpace$ret.1)
 //C_POP arg1: local arg2: 2 pop local 2
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -3292,29 +2690,26 @@ D=M
 A=M
 M=D
 //C_LABEL arg1: WHILE_EXP0 arg2: None label WHILE_EXP0
-(Keyboard.readLine$WHILE_EXP0)
-//C_PUSH arg1: local arg2: 4 push local 4
+(Keyboard.readLine$WHILE_EXP0)//C_PUSH arg1: local arg2: 4 push local 4
 @4
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: not arg2: None not
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
 M=D
-//NOT
 @14 // first pop value
 M=!M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -3322,16 +2717,15 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: not arg2: None not
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
 M=D
-//NOT
 @14 // first pop value
 M=!M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -3339,7 +2733,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -3350,42 +2744,42 @@ D=M
 @Keyboard.readLine$WHILE_END0
 D;JNE
 //C_CALL arg1: Keyboard.readChar arg2: 0 call Keyboard.readChar 0
-@Keyboard.readChar$ret.0
+@Keyboard.readChar$ret.0 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -3393,17 +2787,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Keyboard.readChar
+@Keyboard.readChar // make jump
 0;JMP
 (Keyboard.readChar$ret.0)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -3425,10 +2818,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
@@ -3436,12 +2828,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -3453,7 +2844,6 @@ A=M
 D=M
 @14
 M=D
-//EQ
 @13 // y
 D=M
 @14 // x
@@ -3468,7 +2858,7 @@ D=-1
 (ENDEQ18)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -3477,8 +2867,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 4 pop local 4
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -3500,21 +2889,19 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: not arg2: None not
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
 M=D
-//NOT
 @14 // first pop value
 M=!M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -3522,7 +2909,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -3536,18 +2923,16 @@ D;JNE
 @Keyboard.readLine$IF_FALSE0
 0;JMP
 //C_LABEL arg1: IF_TRUE0 arg2: None label IF_TRUE0
-(Keyboard.readLine$IF_TRUE0)
-//C_PUSH arg1: local arg2: 0 push local 0
+(Keyboard.readLine$IF_TRUE0)//C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 2 push local 2
 @2
 D=A
@@ -3555,12 +2940,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -3572,7 +2956,6 @@ A=M
 D=M
 @14
 M=D
-//EQ
 @13 // y
 D=M
 @14 // x
@@ -3587,7 +2970,7 @@ D=-1
 (ENDEQ20)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -3595,7 +2978,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -3609,55 +2992,53 @@ D;JNE
 @Keyboard.readLine$IF_FALSE1
 0;JMP
 //C_LABEL arg1: IF_TRUE1 arg2: None label IF_TRUE1
-(Keyboard.readLine$IF_TRUE1)
-//C_PUSH arg1: local arg2: 3 push local 3
+(Keyboard.readLine$IF_TRUE1)//C_PUSH arg1: local arg2: 3 push local 3
 @3
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: String.eraseLastChar arg2: 1 call String.eraseLastChar 1
-@String.eraseLastChar$ret.0
+@String.eraseLastChar$ret.0 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -3665,17 +3046,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@String.eraseLastChar
+@String.eraseLastChar // make jump
 0;JMP
 (String.eraseLastChar$ret.0)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -3683,18 +3063,16 @@ M=D
 @Keyboard.readLine$IF_END1
 0;JMP
 //C_LABEL arg1: IF_FALSE1 arg2: None label IF_FALSE1
-(Keyboard.readLine$IF_FALSE1)
-//C_PUSH arg1: local arg2: 3 push local 3
+(Keyboard.readLine$IF_FALSE1)//C_PUSH arg1: local arg2: 3 push local 3
 @3
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -3702,47 +3080,46 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
-@String.appendChar$ret.0
+@String.appendChar$ret.0 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -3750,17 +3127,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@String.appendChar
+@String.appendChar // make jump
 0;JMP
 (String.appendChar$ret.0)
 //C_POP arg1: local arg2: 3 pop local 3
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -3776,110 +3152,42 @@ D=M
 A=M
 M=D
 //C_LABEL arg1: IF_END1 arg2: None label IF_END1
-(Keyboard.readLine$IF_END1)
-//C_LABEL arg1: IF_FALSE0 arg2: None label IF_FALSE0
-(Keyboard.readLine$IF_FALSE0)
-//C_GOTO arg1: WHILE_EXP0 arg2: None goto WHILE_EXP0
+(Keyboard.readLine$IF_END1)//C_LABEL arg1: IF_FALSE0 arg2: None label IF_FALSE0
+(Keyboard.readLine$IF_FALSE0)//C_GOTO arg1: WHILE_EXP0 arg2: None goto WHILE_EXP0
 @Keyboard.readLine$WHILE_EXP0
 0;JMP
 //C_LABEL arg1: WHILE_END0 arg2: None label WHILE_END0
-(Keyboard.readLine$WHILE_END0)
-//C_PUSH arg1: local arg2: 3 push local 3
+(Keyboard.readLine$WHILE_END0)//C_PUSH arg1: local arg2: 3 push local 3
 @3
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: Keyboard.readInt arg2: 2 function Keyboard.readInt 2
 (Keyboard.readInt)
+//@2
+//D=A
+//@SP
+//M=M+D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -3887,47 +3195,46 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Keyboard.readLine arg2: 1 call Keyboard.readLine 1
-@Keyboard.readLine$ret.0
+@Keyboard.readLine$ret.0 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -3935,17 +3242,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Keyboard.readLine
+@Keyboard.readLine // make jump
 0;JMP
 (Keyboard.readLine$ret.0)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -3967,47 +3273,46 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: String.intValue arg2: 1 call String.intValue 1
-@String.intValue$ret.0
+@String.intValue$ret.0 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -4015,17 +3320,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@String.intValue
+@String.intValue // make jump
 0;JMP
 (String.intValue$ret.0)
 //C_POP arg1: local arg2: 1 pop local 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -4047,47 +3351,46 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: String.dispose arg2: 1 call String.dispose 1
-@String.dispose$ret.0
+@String.dispose$ret.0 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -4095,17 +3398,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@String.dispose
+@String.dispose // make jump
 0;JMP
 (String.dispose$ret.0)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -4116,133 +3418,68 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: Math.init arg2: 1 function Math.init 1
 (Math.init)
+//@1
+//D=A
+//@SP
+//M=M+D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 16 push constant 16
 @16
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Array.new arg2: 1 call Array.new 1
-@Array.new$ret.0
+@Array.new$ret.0 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -4250,17 +3487,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Array.new
+@Array.new // make jump
 0;JMP
 (Array.new$ret.0)
 //C_POP arg1: static arg2: 1 pop static 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Math.1
 M=D
@@ -4268,47 +3504,46 @@ M=D
 @16
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Array.new arg2: 1 call Array.new 1
-@Array.new$ret.1
+@Array.new$ret.1 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -4316,17 +3551,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Array.new
+@Array.new // make jump
 0;JMP
 (Array.new$ret.1)
 //C_POP arg1: static arg2: 0 pop static 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Math.0
 M=D
@@ -4334,20 +3568,18 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: static arg2: 0 push static 0
 @Math.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -4359,12 +3591,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -4375,21 +3606,18 @@ M=M+1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -4397,14 +3625,12 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: that arg2: 0 pop that 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -4420,28 +3646,25 @@ D=M
 A=M
 M=D
 //C_LABEL arg1: WHILE_EXP0 arg2: None label WHILE_EXP0
-(Math.init$WHILE_EXP0)
-//C_PUSH arg1: local arg2: 0 push local 0
+(Math.init$WHILE_EXP0)//C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 15 push constant 15
 @15
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -4453,7 +3676,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -4468,7 +3690,7 @@ D=-1
 (ENDLT22)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -4476,16 +3698,15 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: not arg2: None not
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
 M=D
-//NOT
 @14 // first pop value
 M=!M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -4493,7 +3714,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -4510,20 +3731,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -4535,12 +3754,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -4549,8 +3767,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -4572,20 +3789,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: static arg2: 0 push static 0
 @Math.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -4597,12 +3812,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -4616,20 +3830,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -4641,12 +3853,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -4657,12 +3868,11 @@ M=M+1
 @Math.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -4674,12 +3884,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -4688,8 +3897,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -4700,10 +3908,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -4711,20 +3918,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -4736,12 +3941,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -4752,12 +3956,11 @@ M=M+1
 @Math.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -4769,12 +3972,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -4783,8 +3985,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -4795,12 +3996,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -4812,12 +4012,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -4826,15 +4025,13 @@ M=D
 M=M+1
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -4842,14 +4039,12 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: that arg2: 0 pop that 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -4868,86 +4063,22 @@ M=D
 @Math.init$WHILE_EXP0
 0;JMP
 //C_LABEL arg1: WHILE_END0 arg2: None label WHILE_END0
-(Math.init$WHILE_END0)
-//C_PUSH arg1: constant arg2: 0 push constant 0
+(Math.init$WHILE_END0)//C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: Math.abs arg2: 0 function Math.abs 0
 (Math.abs)
+//@0
+//D=A
+//@SP
+//M=M+D
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -4955,20 +4086,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -4980,7 +4109,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -4995,7 +4123,7 @@ D=-1
 (ENDLT31)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -5003,7 +4131,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -5017,29 +4145,25 @@ D;JNE
 @Math.abs$IF_FALSE0
 0;JMP
 //C_LABEL arg1: IF_TRUE0 arg2: None label IF_TRUE0
-(Math.abs$IF_TRUE0)
-//C_PUSH arg1: argument arg2: 0 push argument 0
+(Math.abs$IF_TRUE0)//C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
 @ARG
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: neg arg2: None neg
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
-M=D
-//NEG
-@14 // X
+M=D@14 // X
 M=-M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -5048,8 +4172,7 @@ M=D
 M=M+1
 //C_POP arg1: argument arg2: 0 pop argument 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -5065,124 +4188,55 @@ D=M
 A=M
 M=D
 //C_LABEL arg1: IF_FALSE0 arg2: None label IF_FALSE0
-(Math.abs$IF_FALSE0)
-//C_PUSH arg1: argument arg2: 0 push argument 0
+(Math.abs$IF_FALSE0)//C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
 @ARG
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: Math.multiply arg2: 5 function Math.multiply 5
 (Math.multiply)
+//@5
+//D=A
+//@SP
+//M=M+D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -5190,20 +4244,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -5215,7 +4267,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -5230,7 +4281,7 @@ D=-1
 (ENDLT33)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -5244,20 +4295,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -5269,7 +4318,6 @@ A=M
 D=M
 @14
 M=D
-//GT
 @13  // Y
 D=M
 @14 // X
@@ -5284,7 +4332,7 @@ D=-1
 (ENDGT34)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack
 D=M
 @SP
 A=M
@@ -5292,7 +4340,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: and arg2: None and
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -5304,14 +4352,12 @@ A=M
 D=M
 @14
 M=D
-//AND
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M&D
-@14
-D=M
-@SP
+@14 // push memory address 14 to stack 
+D=M@SP
 A=M
 M=D
 @SP
@@ -5323,20 +4369,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -5348,7 +4392,6 @@ A=M
 D=M
 @14
 M=D
-//GT
 @13  // Y
 D=M
 @14 // X
@@ -5363,7 +4406,7 @@ D=-1
 (ENDGT36)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack
 D=M
 @SP
 A=M
@@ -5377,20 +4420,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -5402,7 +4443,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -5417,7 +4457,7 @@ D=-1
 (ENDLT37)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -5425,7 +4465,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: and arg2: None and
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -5437,20 +4477,18 @@ A=M
 D=M
 @14
 M=D
-//AND
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M&D
-@14
-D=M
-@SP
+@14 // push memory address 14 to stack 
+D=M@SP
 A=M
 M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: or arg2: None or
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -5462,12 +4500,11 @@ A=M
 D=M
 @14
 M=D
-//OR
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M|D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -5476,8 +4513,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 4 pop local 4
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -5499,47 +4535,46 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Math.abs arg2: 1 call Math.abs 1
-@Math.abs$ret.0
+@Math.abs$ret.0 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -5547,17 +4582,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Math.abs
+@Math.abs // make jump
 0;JMP
 (Math.abs$ret.0)
 //C_POP arg1: argument arg2: 0 pop argument 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -5579,47 +4613,46 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Math.abs arg2: 1 call Math.abs 1
-@Math.abs$ret.1
+@Math.abs$ret.1 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -5627,17 +4660,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Math.abs
+@Math.abs // make jump
 0;JMP
 (Math.abs$ret.1)
 //C_POP arg1: argument arg2: 1 pop argument 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -5659,10 +4691,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -5670,12 +4701,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -5687,7 +4717,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -5702,7 +4731,7 @@ D=-1
 (ENDLT40)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -5710,7 +4739,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -5724,22 +4753,19 @@ D;JNE
 @Math.multiply$IF_FALSE0
 0;JMP
 //C_LABEL arg1: IF_TRUE0 arg2: None label IF_TRUE0
-(Math.multiply$IF_TRUE0)
-//C_PUSH arg1: argument arg2: 0 push argument 0
+(Math.multiply$IF_TRUE0)//C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
 @ARG
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: local arg2: 1 pop local 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -5761,14 +4787,12 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: argument arg2: 0 pop argument 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -5790,14 +4814,12 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: argument arg2: 1 pop argument 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -5813,30 +4835,26 @@ D=M
 A=M
 M=D
 //C_LABEL arg1: IF_FALSE0 arg2: None label IF_FALSE0
-(Math.multiply$IF_FALSE0)
-//C_LABEL arg1: WHILE_EXP0 arg2: None label WHILE_EXP0
-(Math.multiply$WHILE_EXP0)
-//C_PUSH arg1: local arg2: 2 push local 2
+(Math.multiply$IF_FALSE0)//C_LABEL arg1: WHILE_EXP0 arg2: None label WHILE_EXP0
+(Math.multiply$WHILE_EXP0)//C_PUSH arg1: local arg2: 2 push local 2
 @2
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -5848,12 +4866,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -5867,20 +4884,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -5892,12 +4907,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -5905,7 +4919,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -5917,7 +4931,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -5932,7 +4945,7 @@ D=-1
 (ENDLT43)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -5940,16 +4953,15 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: not arg2: None not
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
 M=D
-//NOT
 @14 // first pop value
 M=!M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -5957,7 +4969,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -5974,20 +4986,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: static arg2: 0 push static 0
 @Math.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -5999,12 +5009,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -6013,8 +5022,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -6025,10 +5033,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -6036,12 +5043,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: and arg2: None and
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -6053,14 +5059,12 @@ A=M
 D=M
 @14
 M=D
-//AND
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M&D
-@14
-D=M
-@SP
+@14 // push memory address 14 to stack 
+D=M@SP
 A=M
 M=D
 @SP
@@ -6069,12 +5073,11 @@ M=M+1
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -6086,7 +5089,6 @@ A=M
 D=M
 @14
 M=D
-//EQ
 @13 // y
 D=M
 @14 // x
@@ -6101,7 +5103,7 @@ D=-1
 (ENDEQ47)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -6109,16 +5111,15 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: not arg2: None not
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
 M=D
-//NOT
 @14 // first pop value
 M=!M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -6126,7 +5127,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -6140,18 +5141,16 @@ D;JNE
 @Math.multiply$IF_FALSE1
 0;JMP
 //C_LABEL arg1: IF_TRUE1 arg2: None label IF_TRUE1
-(Math.multiply$IF_TRUE1)
-//C_PUSH arg1: local arg2: 0 push local 0
+(Math.multiply$IF_TRUE1)//C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -6159,12 +5158,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -6176,12 +5174,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -6190,8 +5187,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -6213,10 +5209,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 3 push local 3
 @3
 D=A
@@ -6224,20 +5219,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: static arg2: 0 push static 0
 @Math.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -6249,12 +5242,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -6263,8 +5255,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -6275,12 +5266,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -6292,12 +5282,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -6306,8 +5295,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 2 pop local 2
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -6323,7 +5311,16 @@ D=M
 A=M
 M=D
 //C_LABEL arg1: IF_FALSE1 arg2: None label IF_FALSE1
-(Math.multiply$IF_FALSE1)
+(Math.multiply$IF_FALSE1)//C_PUSH arg1: argument arg2: 0 push argument 0
+@0
+D=A
+@ARG
+A=M+D
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -6331,23 +5328,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
-//C_PUSH arg1: argument arg2: 0 push argument 0
-@0
-D=A
-@ARG
-A=M+D
-D=M
-@SP
-A=M
+A=M-1
 M=D
-@SP
-M=M+1
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -6359,12 +5344,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -6373,8 +5357,7 @@ M=D
 M=M+1
 //C_POP arg1: argument arg2: 0 pop argument 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -6396,20 +5379,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -6421,12 +5402,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -6435,8 +5415,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 3 pop local 3
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -6455,20 +5434,18 @@ M=D
 @Math.multiply$WHILE_EXP0
 0;JMP
 //C_LABEL arg1: WHILE_END0 arg2: None label WHILE_END0
-(Math.multiply$WHILE_END0)
-//C_PUSH arg1: local arg2: 4 push local 4
+(Math.multiply$WHILE_END0)//C_PUSH arg1: local arg2: 4 push local 4
 @4
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_IF arg1: IF_TRUE2 arg2: None if-goto IF_TRUE2
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -6482,29 +5459,25 @@ D;JNE
 @Math.multiply$IF_FALSE2
 0;JMP
 //C_LABEL arg1: IF_TRUE2 arg2: None label IF_TRUE2
-(Math.multiply$IF_TRUE2)
-//C_PUSH arg1: local arg2: 0 push local 0
+(Math.multiply$IF_TRUE2)//C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: neg arg2: None neg
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
-M=D
-//NEG
-@14 // X
+M=D@14 // X
 M=-M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -6513,8 +5486,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -6530,117 +5502,49 @@ D=M
 A=M
 M=D
 //C_LABEL arg1: IF_FALSE2 arg2: None label IF_FALSE2
-(Math.multiply$IF_FALSE2)
-//C_PUSH arg1: local arg2: 0 push local 0
+(Math.multiply$IF_FALSE2)//C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: Math.divide arg2: 4 function Math.divide 4
 (Math.divide)
+//@4
+//D=A
+//@SP
+//M=M+D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -6648,20 +5552,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -6673,7 +5575,6 @@ A=M
 D=M
 @14
 M=D
-//EQ
 @13 // y
 D=M
 @14 // x
@@ -6688,7 +5589,7 @@ D=-1
 (ENDEQ55)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -6696,7 +5597,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -6710,52 +5611,50 @@ D;JNE
 @Math.divide$IF_FALSE0
 0;JMP
 //C_LABEL arg1: IF_TRUE0 arg2: None label IF_TRUE0
-(Math.divide$IF_TRUE0)
-//C_PUSH arg1: constant arg2: 3 push constant 3
+(Math.divide$IF_TRUE0)//C_PUSH arg1: constant arg2: 3 push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Sys.error arg2: 1 call Sys.error 1
-@Sys.error$ret.2
+@Sys.error$ret.2 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -6763,43 +5662,39 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Sys.error
+@Sys.error // make jump
 0;JMP
 (Sys.error$ret.2)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_LABEL arg1: IF_FALSE0 arg2: None label IF_FALSE0
-(Math.divide$IF_FALSE0)
-//C_PUSH arg1: argument arg2: 0 push argument 0
+(Math.divide$IF_FALSE0)//C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
 @ARG
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -6811,7 +5706,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -6826,7 +5720,7 @@ D=-1
 (ENDLT56)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -6840,20 +5734,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -6865,7 +5757,6 @@ A=M
 D=M
 @14
 M=D
-//GT
 @13  // Y
 D=M
 @14 // X
@@ -6880,7 +5771,7 @@ D=-1
 (ENDGT57)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack
 D=M
 @SP
 A=M
@@ -6888,7 +5779,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: and arg2: None and
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -6900,14 +5791,12 @@ A=M
 D=M
 @14
 M=D
-//AND
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M&D
-@14
-D=M
-@SP
+@14 // push memory address 14 to stack 
+D=M@SP
 A=M
 M=D
 @SP
@@ -6919,20 +5808,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -6944,7 +5831,6 @@ A=M
 D=M
 @14
 M=D
-//GT
 @13  // Y
 D=M
 @14 // X
@@ -6959,7 +5845,7 @@ D=-1
 (ENDGT59)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack
 D=M
 @SP
 A=M
@@ -6973,20 +5859,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -6998,7 +5882,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -7013,7 +5896,7 @@ D=-1
 (ENDLT60)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -7021,7 +5904,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: and arg2: None and
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -7033,20 +5916,18 @@ A=M
 D=M
 @14
 M=D
-//AND
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M&D
-@14
-D=M
-@SP
+@14 // push memory address 14 to stack 
+D=M@SP
 A=M
 M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: or arg2: None or
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -7058,12 +5939,11 @@ A=M
 D=M
 @14
 M=D
-//OR
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M|D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -7072,8 +5952,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 2 pop local 2
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -7092,20 +5971,18 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: static arg2: 1 push static 1
 @Math.1
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -7117,12 +5994,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -7136,47 +6012,46 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Math.abs arg2: 1 call Math.abs 1
-@Math.abs$ret.2
+@Math.abs$ret.2 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -7184,24 +6059,22 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Math.abs
+@Math.abs // make jump
 0;JMP
 (Math.abs$ret.2)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -7209,14 +6082,12 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: that arg2: 0 pop that 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -7238,47 +6109,46 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Math.abs arg2: 1 call Math.abs 1
-@Math.abs$ret.3
+@Math.abs$ret.3 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -7286,17 +6156,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Math.abs
+@Math.abs // make jump
 0;JMP
 (Math.abs$ret.3)
 //C_POP arg1: argument arg2: 0 pop argument 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -7312,28 +6181,25 @@ D=M
 A=M
 M=D
 //C_LABEL arg1: WHILE_EXP0 arg2: None label WHILE_EXP0
-(Math.divide$WHILE_EXP0)
-//C_PUSH arg1: local arg2: 0 push local 0
+(Math.divide$WHILE_EXP0)//C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 15 push constant 15
 @15
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -7345,7 +6211,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -7360,7 +6225,7 @@ D=-1
 (ENDLT64)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -7374,21 +6239,19 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: not arg2: None not
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
 M=D
-//NOT
 @14 // first pop value
 M=!M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -7396,7 +6259,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: and arg2: None and
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -7408,29 +6271,26 @@ A=M
 D=M
 @14
 M=D
-//AND
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M&D
-@14
-D=M
-@SP
+@14 // push memory address 14 to stack 
+D=M@SP
 A=M
 M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: not arg2: None not
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
 M=D
-//NOT
 @14 // first pop value
 M=!M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -7438,7 +6298,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -7452,10 +6312,9 @@ D;JNE
 @32767
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -7463,20 +6322,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: static arg2: 1 push static 1
 @Math.1
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -7488,12 +6345,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -7502,8 +6358,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -7514,20 +6369,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -7539,12 +6392,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -7552,7 +6404,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -7564,12 +6416,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -7583,20 +6434,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: static arg2: 1 push static 1
 @Math.1
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -7608,12 +6457,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -7622,8 +6470,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -7634,20 +6481,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -7659,12 +6504,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -7672,7 +6516,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -7684,7 +6528,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -7699,7 +6542,7 @@ D=-1
 (ENDLT73)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -7708,8 +6551,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 3 pop local 3
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -7731,21 +6573,19 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: not arg2: None not
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
 M=D
-//NOT
 @14 // first pop value
 M=!M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -7753,7 +6593,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -7767,28 +6607,25 @@ D;JNE
 @Math.divide$IF_FALSE1
 0;JMP
 //C_LABEL arg1: IF_TRUE1 arg2: None label IF_TRUE1
-(Math.divide$IF_TRUE1)
-//C_PUSH arg1: local arg2: 0 push local 0
+(Math.divide$IF_TRUE1)//C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -7800,12 +6637,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -7816,12 +6652,11 @@ M=M+1
 @Math.1
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -7833,12 +6668,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -7852,20 +6686,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: static arg2: 1 push static 1
 @Math.1
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -7877,12 +6709,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -7891,8 +6722,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -7903,10 +6733,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -7914,20 +6743,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: static arg2: 1 push static 1
 @Math.1
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -7939,12 +6766,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -7953,8 +6779,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -7965,12 +6790,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -7982,12 +6806,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -7996,15 +6819,13 @@ M=D
 M=M+1
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -8012,14 +6833,12 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: that arg2: 0 pop that 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -8041,20 +6860,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -8066,12 +6883,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -8082,12 +6898,11 @@ M=M+1
 @Math.1
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -8099,12 +6914,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -8113,8 +6927,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -8125,20 +6938,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -8150,12 +6961,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -8169,20 +6979,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -8194,12 +7002,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -8207,7 +7014,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -8219,7 +7026,6 @@ A=M
 D=M
 @14
 M=D
-//GT
 @13  // Y
 D=M
 @14 // X
@@ -8234,7 +7040,7 @@ D=-1
 (ENDGT84)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack
 D=M
 @SP
 A=M
@@ -8243,8 +7049,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 3 pop local 3
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -8266,21 +7071,19 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: not arg2: None not
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
 M=D
-//NOT
 @14 // first pop value
 M=!M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -8288,7 +7091,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE2 arg2: None if-goto IF_TRUE2
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -8302,28 +7105,25 @@ D;JNE
 @Math.divide$IF_FALSE2
 0;JMP
 //C_LABEL arg1: IF_TRUE2 arg2: None label IF_TRUE2
-(Math.divide$IF_TRUE2)
-//C_PUSH arg1: local arg2: 0 push local 0
+(Math.divide$IF_TRUE2)//C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -8335,12 +7135,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -8349,8 +7148,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -8366,46 +7164,38 @@ D=M
 A=M
 M=D
 //C_LABEL arg1: IF_FALSE2 arg2: None label IF_FALSE2
-(Math.divide$IF_FALSE2)
-//C_LABEL arg1: IF_FALSE1 arg2: None label IF_FALSE1
-(Math.divide$IF_FALSE1)
-//C_GOTO arg1: WHILE_EXP0 arg2: None goto WHILE_EXP0
+(Math.divide$IF_FALSE2)//C_LABEL arg1: IF_FALSE1 arg2: None label IF_FALSE1
+(Math.divide$IF_FALSE1)//C_GOTO arg1: WHILE_EXP0 arg2: None goto WHILE_EXP0
 @Math.divide$WHILE_EXP0
 0;JMP
 //C_LABEL arg1: WHILE_END0 arg2: None label WHILE_END0
-(Math.divide$WHILE_END0)
-//C_LABEL arg1: WHILE_EXP1 arg2: None label WHILE_EXP1
-(Math.divide$WHILE_EXP1)
-//C_PUSH arg1: local arg2: 0 push local 0
+(Math.divide$WHILE_END0)//C_LABEL arg1: WHILE_EXP1 arg2: None label WHILE_EXP1
+(Math.divide$WHILE_EXP1)//C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: neg arg2: None neg
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
-M=D
-//NEG
-@14 // X
+M=D@14 // X
 M=-M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -8413,7 +7203,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -8425,7 +7215,6 @@ A=M
 D=M
 @14
 M=D
-//GT
 @13  // Y
 D=M
 @14 // X
@@ -8440,7 +7229,7 @@ D=-1
 (ENDGT88)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack
 D=M
 @SP
 A=M
@@ -8448,16 +7237,15 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: not arg2: None not
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
 M=D
-//NOT
 @14 // first pop value
 M=!M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -8465,7 +7253,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: WHILE_END1 arg2: None if-goto WHILE_END1
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -8482,20 +7270,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: static arg2: 1 push static 1
 @Math.1
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -8507,12 +7293,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -8521,8 +7306,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -8533,20 +7317,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -8558,12 +7340,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -8577,20 +7358,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -8602,12 +7381,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -8615,7 +7393,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -8627,7 +7405,6 @@ A=M
 D=M
 @14
 M=D
-//GT
 @13  // Y
 D=M
 @14 // X
@@ -8642,7 +7419,7 @@ D=-1
 (ENDGT93)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack
 D=M
 @SP
 A=M
@@ -8650,16 +7427,15 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: not arg2: None not
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
 M=D
-//NOT
 @14 // first pop value
 M=!M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -8667,7 +7443,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE3 arg2: None if-goto IF_TRUE3
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -8681,18 +7457,16 @@ D;JNE
 @Math.divide$IF_FALSE3
 0;JMP
 //C_LABEL arg1: IF_TRUE3 arg2: None label IF_TRUE3
-(Math.divide$IF_TRUE3)
-//C_PUSH arg1: local arg2: 1 push local 1
+(Math.divide$IF_TRUE3)//C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -8700,20 +7474,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: static arg2: 0 push static 0
 @Math.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -8725,12 +7497,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -8739,8 +7510,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -8751,12 +7521,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -8768,12 +7537,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -8782,8 +7550,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 1 pop local 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -8805,10 +7572,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -8816,20 +7582,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: static arg2: 1 push static 1
 @Math.1
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -8841,12 +7605,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -8855,8 +7618,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -8867,12 +7629,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -8884,12 +7645,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -8898,8 +7658,7 @@ M=D
 M=M+1
 //C_POP arg1: argument arg2: 0 pop argument 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -8915,28 +7674,25 @@ D=M
 A=M
 M=D
 //C_LABEL arg1: IF_FALSE3 arg2: None label IF_FALSE3
-(Math.divide$IF_FALSE3)
-//C_PUSH arg1: local arg2: 0 push local 0
+(Math.divide$IF_FALSE3)//C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -8948,12 +7704,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -8962,8 +7717,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -8982,20 +7736,18 @@ M=D
 @Math.divide$WHILE_EXP1
 0;JMP
 //C_LABEL arg1: WHILE_END1 arg2: None label WHILE_END1
-(Math.divide$WHILE_END1)
-//C_PUSH arg1: local arg2: 2 push local 2
+(Math.divide$WHILE_END1)//C_PUSH arg1: local arg2: 2 push local 2
 @2
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_IF arg1: IF_TRUE4 arg2: None if-goto IF_TRUE4
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -9009,29 +7761,25 @@ D;JNE
 @Math.divide$IF_FALSE4
 0;JMP
 //C_LABEL arg1: IF_TRUE4 arg2: None label IF_TRUE4
-(Math.divide$IF_TRUE4)
-//C_PUSH arg1: local arg2: 1 push local 1
+(Math.divide$IF_TRUE4)//C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: neg arg2: None neg
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
-M=D
-//NEG
-@14 // X
+M=D@14 // X
 M=-M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -9040,8 +7788,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 1 pop local 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -9057,117 +7804,49 @@ D=M
 A=M
 M=D
 //C_LABEL arg1: IF_FALSE4 arg2: None label IF_FALSE4
-(Math.divide$IF_FALSE4)
-//C_PUSH arg1: local arg2: 1 push local 1
+(Math.divide$IF_FALSE4)//C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: Math.sqrt arg2: 4 function Math.sqrt 4
 (Math.sqrt)
+//@4
+//D=A
+//@SP
+//M=M+D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -9175,20 +7854,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -9200,7 +7877,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -9215,7 +7891,7 @@ D=-1
 (ENDLT101)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -9223,7 +7899,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -9237,52 +7913,50 @@ D;JNE
 @Math.sqrt$IF_FALSE0
 0;JMP
 //C_LABEL arg1: IF_TRUE0 arg2: None label IF_TRUE0
-(Math.sqrt$IF_TRUE0)
-//C_PUSH arg1: constant arg2: 4 push constant 4
+(Math.sqrt$IF_TRUE0)//C_PUSH arg1: constant arg2: 4 push constant 4
 @4
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Sys.error arg2: 1 call Sys.error 1
-@Sys.error$ret.3
+@Sys.error$ret.3 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -9290,34 +7964,30 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Sys.error
+@Sys.error // make jump
 0;JMP
 (Sys.error$ret.3)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_LABEL arg1: IF_FALSE0 arg2: None label IF_FALSE0
-(Math.sqrt$IF_FALSE0)
-//C_PUSH arg1: constant arg2: 7 push constant 7
+(Math.sqrt$IF_FALSE0)//C_PUSH arg1: constant arg2: 7 push constant 7
 @7
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -9333,37 +8003,32 @@ D=M
 A=M
 M=D
 //C_LABEL arg1: WHILE_EXP0 arg2: None label WHILE_EXP0
-(Math.sqrt$WHILE_EXP0)
-//C_PUSH arg1: local arg2: 0 push local 0
+(Math.sqrt$WHILE_EXP0)//C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: neg arg2: None neg
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
-M=D
-//NEG
-@14 // X
+M=D@14 // X
 M=-M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -9371,7 +8036,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -9383,7 +8048,6 @@ A=M
 D=M
 @14
 M=D
-//GT
 @13  // Y
 D=M
 @14 // X
@@ -9398,7 +8062,7 @@ D=-1
 (ENDGT103)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack
 D=M
 @SP
 A=M
@@ -9406,16 +8070,15 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: not arg2: None not
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
 M=D
-//NOT
 @14 // first pop value
 M=!M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -9423,7 +8086,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -9440,10 +8103,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -9451,20 +8113,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: static arg2: 0 push static 0
 @Math.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -9476,12 +8136,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -9490,8 +8149,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -9502,12 +8160,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -9519,12 +8176,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -9533,8 +8189,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 1 pop local 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -9556,10 +8211,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
@@ -9567,47 +8221,46 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Math.multiply arg2: 2 call Math.multiply 2
-@Math.multiply$ret.0
+@Math.multiply$ret.0 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -9615,17 +8268,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Math.multiply
+@Math.multiply // make jump
 0;JMP
 (Math.multiply$ret.0)
 //C_POP arg1: local arg2: 2 pop local 2
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -9647,10 +8299,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -9658,12 +8309,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -9675,7 +8325,6 @@ A=M
 D=M
 @14
 M=D
-//GT
 @13  // Y
 D=M
 @14 // X
@@ -9690,7 +8339,7 @@ D=-1
 (ENDGT107)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack
 D=M
 @SP
 A=M
@@ -9698,16 +8347,15 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: not arg2: None not
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
 M=D
-//NOT
 @14 // first pop value
 M=!M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -9721,20 +8369,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -9746,7 +8392,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -9761,7 +8406,7 @@ D=-1
 (ENDLT109)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -9769,16 +8414,15 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: not arg2: None not
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
 M=D
-//NOT
 @14 // first pop value
 M=!M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -9786,7 +8430,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: and arg2: None and
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -9798,20 +8442,18 @@ A=M
 D=M
 @14
 M=D
-//AND
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M&D
-@14
-D=M
-@SP
+@14 // push memory address 14 to stack 
+D=M@SP
 A=M
 M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -9825,22 +8467,19 @@ D;JNE
 @Math.sqrt$IF_FALSE1
 0;JMP
 //C_LABEL arg1: IF_TRUE1 arg2: None label IF_TRUE1
-(Math.sqrt$IF_TRUE1)
-//C_PUSH arg1: local arg2: 1 push local 1
+(Math.sqrt$IF_TRUE1)//C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: local arg2: 3 pop local 3
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -9856,28 +8495,25 @@ D=M
 A=M
 M=D
 //C_LABEL arg1: IF_FALSE1 arg2: None label IF_FALSE1
-(Math.sqrt$IF_FALSE1)
-//C_PUSH arg1: local arg2: 0 push local 0
+(Math.sqrt$IF_FALSE1)//C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -9889,12 +8525,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -9903,8 +8538,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -9923,89 +8557,25 @@ M=D
 @Math.sqrt$WHILE_EXP0
 0;JMP
 //C_LABEL arg1: WHILE_END0 arg2: None label WHILE_END0
-(Math.sqrt$WHILE_END0)
-//C_PUSH arg1: local arg2: 3 push local 3
+(Math.sqrt$WHILE_END0)//C_PUSH arg1: local arg2: 3 push local 3
 @3
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: Math.max arg2: 0 function Math.max 0
 (Math.max)
+//@0
+//D=A
+//@SP
+//M=M+D
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -10013,10 +8583,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -10024,12 +8593,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -10041,7 +8609,6 @@ A=M
 D=M
 @14
 M=D
-//GT
 @13  // Y
 D=M
 @14 // X
@@ -10056,7 +8623,7 @@ D=-1
 (ENDGT113)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack
 D=M
 @SP
 A=M
@@ -10064,7 +8631,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -10078,22 +8645,19 @@ D;JNE
 @Math.max$IF_FALSE0
 0;JMP
 //C_LABEL arg1: IF_TRUE0 arg2: None label IF_TRUE0
-(Math.max$IF_TRUE0)
-//C_PUSH arg1: argument arg2: 0 push argument 0
+(Math.max$IF_TRUE0)//C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
 @ARG
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: argument arg2: 1 pop argument 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -10109,89 +8673,25 @@ D=M
 A=M
 M=D
 //C_LABEL arg1: IF_FALSE0 arg2: None label IF_FALSE0
-(Math.max$IF_FALSE0)
-//C_PUSH arg1: argument arg2: 1 push argument 1
+(Math.max$IF_FALSE0)//C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
 @ARG
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: Math.min arg2: 0 function Math.min 0
 (Math.min)
+//@0
+//D=A
+//@SP
+//M=M+D
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -10199,10 +8699,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -10210,12 +8709,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -10227,7 +8725,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -10242,7 +8739,7 @@ D=-1
 (ENDLT114)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -10250,7 +8747,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -10264,22 +8761,19 @@ D;JNE
 @Math.min$IF_FALSE0
 0;JMP
 //C_LABEL arg1: IF_TRUE0 arg2: None label IF_TRUE0
-(Math.min$IF_TRUE0)
-//C_PUSH arg1: argument arg2: 0 push argument 0
+(Math.min$IF_TRUE0)//C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
 @ARG
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: argument arg2: 1 pop argument 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -10295,101 +8789,35 @@ D=M
 A=M
 M=D
 //C_LABEL arg1: IF_FALSE0 arg2: None label IF_FALSE0
-(Math.min$IF_FALSE0)
-//C_PUSH arg1: argument arg2: 1 push argument 1
+(Math.min$IF_FALSE0)//C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
 @ARG
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: Memory.init arg2: 0 function Memory.init 0
 (Memory.init)
+//@0
+//D=A
+//@SP
+//M=M+D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: static arg2: 0 pop static 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Memory.0
 M=D
@@ -10397,20 +8825,18 @@ M=D
 @2048
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: static arg2: 0 push static 0
 @Memory.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -10422,12 +8848,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -10438,21 +8863,18 @@ M=M+1
 @14334
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -10460,14 +8882,12 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: that arg2: 0 pop that 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -10486,20 +8906,18 @@ M=D
 @2049
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: static arg2: 0 push static 0
 @Memory.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -10511,12 +8929,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -10527,21 +8944,18 @@ M=M+1
 @2050
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -10549,14 +8963,12 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: that arg2: 0 pop that 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -10575,81 +8987,18 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: Memory.peek arg2: 0 function Memory.peek 0
 (Memory.peek)
+//@0
+//D=A
+//@SP
+//M=M+D
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -10657,20 +9006,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: static arg2: 0 push static 0
 @Memory.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -10682,12 +9029,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -10696,8 +9042,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -10708,81 +9053,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: Memory.poke arg2: 0 function Memory.poke 0
 (Memory.poke)
+//@0
+//D=A
+//@SP
+//M=M+D
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -10790,20 +9072,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: static arg2: 0 push static 0
 @Memory.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -10815,12 +9095,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -10834,21 +9113,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -10856,14 +9132,12 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: that arg2: 0 pop that 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -10882,95 +9156,30 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: Memory.alloc arg2: 2 function Memory.alloc 2
 (Memory.alloc)
+//@2
+//D=A
+//@SP
+//M=M+D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -10978,20 +9187,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -11003,7 +9210,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -11018,7 +9224,7 @@ D=-1
 (ENDLT119)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -11026,7 +9232,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -11040,52 +9246,50 @@ D;JNE
 @Memory.alloc$IF_FALSE0
 0;JMP
 //C_LABEL arg1: IF_TRUE0 arg2: None label IF_TRUE0
-(Memory.alloc$IF_TRUE0)
-//C_PUSH arg1: constant arg2: 5 push constant 5
+(Memory.alloc$IF_TRUE0)//C_PUSH arg1: constant arg2: 5 push constant 5
 @5
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Sys.error arg2: 1 call Sys.error 1
-@Sys.error$ret.4
+@Sys.error$ret.4 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -11093,43 +9297,39 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Sys.error
+@Sys.error // make jump
 0;JMP
 (Sys.error$ret.4)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_LABEL arg1: IF_FALSE0 arg2: None label IF_FALSE0
-(Memory.alloc$IF_FALSE0)
-//C_PUSH arg1: argument arg2: 0 push argument 0
+(Memory.alloc$IF_FALSE0)//C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
 @ARG
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -11141,7 +9341,6 @@ A=M
 D=M
 @14
 M=D
-//EQ
 @13 // y
 D=M
 @14 // x
@@ -11156,7 +9355,7 @@ D=-1
 (ENDEQ120)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -11164,7 +9363,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -11178,19 +9377,16 @@ D;JNE
 @Memory.alloc$IF_FALSE1
 0;JMP
 //C_LABEL arg1: IF_TRUE1 arg2: None label IF_TRUE1
-(Memory.alloc$IF_TRUE1)
-//C_PUSH arg1: constant arg2: 1 push constant 1
+(Memory.alloc$IF_TRUE1)//C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: argument arg2: 0 pop argument 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -11206,19 +9402,16 @@ D=M
 A=M
 M=D
 //C_LABEL arg1: IF_FALSE1 arg2: None label IF_FALSE1
-(Memory.alloc$IF_FALSE1)
-//C_PUSH arg1: constant arg2: 2048 push constant 2048
+(Memory.alloc$IF_FALSE1)//C_PUSH arg1: constant arg2: 2048 push constant 2048
 @2048
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -11234,28 +9427,25 @@ D=M
 A=M
 M=D
 //C_LABEL arg1: WHILE_EXP0 arg2: None label WHILE_EXP0
-(Memory.alloc$WHILE_EXP0)
-//C_PUSH arg1: local arg2: 0 push local 0
+(Memory.alloc$WHILE_EXP0)//C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 16383 push constant 16383
 @16383
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -11267,7 +9457,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -11282,7 +9471,7 @@ D=-1
 (ENDLT121)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -11293,10 +9482,9 @@ M=M+1
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -11304,12 +9492,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -11321,12 +9508,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -11335,8 +9521,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -11347,10 +9532,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -11358,12 +9542,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -11375,7 +9558,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -11390,7 +9572,7 @@ D=-1
 (ENDLT123)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -11398,7 +9580,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: and arg2: None and
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -11410,29 +9592,26 @@ A=M
 D=M
 @14
 M=D
-//AND
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M&D
-@14
-D=M
-@SP
+@14 // push memory address 14 to stack 
+D=M@SP
 A=M
 M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: not arg2: None not
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
 M=D
-//NOT
 @14 // first pop value
 M=!M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -11440,7 +9619,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -11454,10 +9633,9 @@ D;JNE
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -11465,12 +9643,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -11482,12 +9659,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -11496,8 +9672,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -11508,14 +9683,12 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: local arg2: 1 pop local 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -11534,10 +9707,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -11545,12 +9717,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -11562,12 +9733,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -11576,8 +9746,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -11588,20 +9757,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -11613,7 +9780,6 @@ A=M
 D=M
 @14
 M=D
-//EQ
 @13 // y
 D=M
 @14 // x
@@ -11628,7 +9794,7 @@ D=-1
 (ENDEQ128)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -11642,20 +9808,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 16382 push constant 16382
 @16382
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -11667,7 +9831,6 @@ A=M
 D=M
 @14
 M=D
-//GT
 @13  // Y
 D=M
 @14 // X
@@ -11682,7 +9845,7 @@ D=-1
 (ENDGT129)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack
 D=M
 @SP
 A=M
@@ -11690,7 +9853,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: or arg2: None or
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -11702,12 +9865,11 @@ A=M
 D=M
 @14
 M=D
-//OR
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M|D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -11718,10 +9880,9 @@ M=M+1
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
@@ -11729,12 +9890,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -11746,12 +9906,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -11760,8 +9919,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -11772,20 +9930,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -11797,7 +9953,6 @@ A=M
 D=M
 @14
 M=D
-//EQ
 @13 // y
 D=M
 @14 // x
@@ -11812,7 +9967,7 @@ D=-1
 (ENDEQ132)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -11820,7 +9975,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: or arg2: None or
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -11832,12 +9987,11 @@ A=M
 D=M
 @14
 M=D
-//OR
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M|D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -11845,7 +9999,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE2 arg2: None if-goto IF_TRUE2
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -11859,22 +10013,19 @@ D;JNE
 @Memory.alloc$IF_FALSE2
 0;JMP
 //C_LABEL arg1: IF_TRUE2 arg2: None label IF_TRUE2
-(Memory.alloc$IF_TRUE2)
-//C_PUSH arg1: local arg2: 1 push local 1
+(Memory.alloc$IF_TRUE2)//C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -11893,15 +10044,13 @@ M=D
 @Memory.alloc$IF_END2
 0;JMP
 //C_LABEL arg1: IF_FALSE2 arg2: None label IF_FALSE2
-(Memory.alloc$IF_FALSE2)
-//C_PUSH arg1: constant arg2: 0 push constant 0
+(Memory.alloc$IF_FALSE2)//C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -11909,12 +10058,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -11926,12 +10074,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -11942,10 +10089,9 @@ M=M+1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -11953,12 +10099,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -11970,12 +10115,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -11984,8 +10128,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -11996,10 +10139,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -12007,12 +10149,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -12024,12 +10165,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -12040,10 +10180,9 @@ M=M+1
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
@@ -12051,12 +10190,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -12068,12 +10206,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -12082,8 +10219,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -12094,12 +10230,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -12111,12 +10246,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -12125,15 +10259,13 @@ M=D
 M=M+1
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -12141,14 +10273,12 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: that arg2: 0 pop that 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -12167,10 +10297,9 @@ M=D
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
@@ -12178,12 +10307,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -12195,12 +10323,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -12209,8 +10336,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -12221,10 +10347,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
@@ -12232,20 +10357,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 2 push constant 2
 @2
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -12257,12 +10380,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -12270,7 +10392,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -12282,7 +10404,6 @@ A=M
 D=M
 @14
 M=D
-//EQ
 @13 // y
 D=M
 @14 // x
@@ -12297,7 +10418,7 @@ D=-1
 (ENDEQ141)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -12305,7 +10426,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE3 arg2: None if-goto IF_TRUE3
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -12319,15 +10440,13 @@ D;JNE
 @Memory.alloc$IF_FALSE3
 0;JMP
 //C_LABEL arg1: IF_TRUE3 arg2: None label IF_TRUE3
-(Memory.alloc$IF_TRUE3)
-//C_PUSH arg1: constant arg2: 1 push constant 1
+(Memory.alloc$IF_TRUE3)//C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -12335,12 +10454,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -12352,12 +10470,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -12371,20 +10488,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 2 push constant 2
 @2
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -12396,12 +10511,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -12410,15 +10524,13 @@ M=D
 M=M+1
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -12426,14 +10538,12 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: that arg2: 0 pop that 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -12452,15 +10562,13 @@ M=D
 @Memory.alloc$IF_END3
 0;JMP
 //C_LABEL arg1: IF_FALSE3 arg2: None label IF_FALSE3
-(Memory.alloc$IF_FALSE3)
-//C_PUSH arg1: constant arg2: 1 push constant 1
+(Memory.alloc$IF_FALSE3)//C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -12468,12 +10576,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -12485,12 +10592,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -12501,10 +10607,9 @@ M=M+1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
@@ -12512,12 +10617,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -12529,12 +10633,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -12543,8 +10646,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -12555,21 +10657,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -12577,14 +10676,12 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: that arg2: 0 pop that 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -12600,25 +10697,21 @@ D=M
 A=M
 M=D
 //C_LABEL arg1: IF_END3 arg2: None label IF_END3
-(Memory.alloc$IF_END3)
-//C_LABEL arg1: IF_END2 arg2: None label IF_END2
-(Memory.alloc$IF_END2)
-//C_GOTO arg1: WHILE_EXP0 arg2: None goto WHILE_EXP0
+(Memory.alloc$IF_END3)//C_LABEL arg1: IF_END2 arg2: None label IF_END2
+(Memory.alloc$IF_END2)//C_GOTO arg1: WHILE_EXP0 arg2: None goto WHILE_EXP0
 @Memory.alloc$WHILE_EXP0
 0;JMP
 //C_LABEL arg1: WHILE_END0 arg2: None label WHILE_END0
-(Memory.alloc$WHILE_END0)
-//C_PUSH arg1: local arg2: 0 push local 0
+(Memory.alloc$WHILE_END0)//C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -12626,12 +10719,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -12643,12 +10735,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -12659,12 +10750,11 @@ M=M+1
 @16379
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -12676,7 +10766,6 @@ A=M
 D=M
 @14
 M=D
-//GT
 @13  // Y
 D=M
 @14 // X
@@ -12691,7 +10780,7 @@ D=-1
 (ENDGT147)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack
 D=M
 @SP
 A=M
@@ -12699,7 +10788,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE4 arg2: None if-goto IF_TRUE4
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -12713,52 +10802,50 @@ D;JNE
 @Memory.alloc$IF_FALSE4
 0;JMP
 //C_LABEL arg1: IF_TRUE4 arg2: None label IF_TRUE4
-(Memory.alloc$IF_TRUE4)
-//C_PUSH arg1: constant arg2: 6 push constant 6
+(Memory.alloc$IF_TRUE4)//C_PUSH arg1: constant arg2: 6 push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Sys.error arg2: 1 call Sys.error 1
-@Sys.error$ret.5
+@Sys.error$ret.5 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -12766,30 +10853,27 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Sys.error
+@Sys.error // make jump
 0;JMP
 (Sys.error$ret.5)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_LABEL arg1: IF_FALSE4 arg2: None label IF_FALSE4
-(Memory.alloc$IF_FALSE4)
-//C_PUSH arg1: constant arg2: 0 push constant 0
+(Memory.alloc$IF_FALSE4)//C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -12797,12 +10881,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -12814,12 +10897,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -12828,8 +10910,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -12840,10 +10921,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -12851,20 +10931,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 2 push constant 2
 @2
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -12876,12 +10954,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -12889,7 +10966,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -12901,7 +10978,6 @@ A=M
 D=M
 @14
 M=D
-//GT
 @13  // Y
 D=M
 @14 // X
@@ -12916,7 +10992,7 @@ D=-1
 (ENDGT150)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack
 D=M
 @SP
 A=M
@@ -12924,7 +11000,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE5 arg2: None if-goto IF_TRUE5
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -12938,28 +11014,25 @@ D;JNE
 @Memory.alloc$IF_FALSE5
 0;JMP
 //C_LABEL arg1: IF_TRUE5 arg2: None label IF_TRUE5
-(Memory.alloc$IF_TRUE5)
-//C_PUSH arg1: argument arg2: 0 push argument 0
+(Memory.alloc$IF_TRUE5)//C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
 @ARG
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 2 push constant 2
 @2
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -12971,12 +11044,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -12990,12 +11062,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -13007,12 +11078,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -13023,10 +11093,9 @@ M=M+1
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -13034,12 +11103,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -13051,12 +11119,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -13065,8 +11132,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -13077,10 +11143,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -13088,12 +11153,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -13105,12 +11169,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -13121,12 +11184,11 @@ M=M+1
 @2
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -13138,12 +11200,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -13152,15 +11213,13 @@ M=D
 M=M+1
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -13168,14 +11227,12 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: that arg2: 0 pop that 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -13194,10 +11251,9 @@ M=D
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -13205,12 +11261,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -13222,12 +11277,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -13236,8 +11290,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -13248,10 +11301,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -13259,20 +11311,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 2 push constant 2
 @2
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -13284,12 +11334,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -13297,7 +11346,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -13309,7 +11358,6 @@ A=M
 D=M
 @14
 M=D
-//EQ
 @13 // y
 D=M
 @14 // x
@@ -13324,7 +11372,7 @@ D=-1
 (ENDEQ158)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -13332,7 +11380,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE6 arg2: None if-goto IF_TRUE6
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -13346,28 +11394,25 @@ D;JNE
 @Memory.alloc$IF_FALSE6
 0;JMP
 //C_LABEL arg1: IF_TRUE6 arg2: None label IF_TRUE6
-(Memory.alloc$IF_TRUE6)
-//C_PUSH arg1: argument arg2: 0 push argument 0
+(Memory.alloc$IF_TRUE6)//C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
 @ARG
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 3 push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -13379,12 +11424,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -13398,12 +11442,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -13415,12 +11458,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -13434,10 +11476,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -13445,12 +11486,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -13462,12 +11502,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -13478,12 +11517,11 @@ M=M+1
 @4
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -13495,12 +11533,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -13509,15 +11546,13 @@ M=D
 M=M+1
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -13525,14 +11560,12 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: that arg2: 0 pop that 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -13551,28 +11584,25 @@ M=D
 @Memory.alloc$IF_END6
 0;JMP
 //C_LABEL arg1: IF_FALSE6 arg2: None label IF_FALSE6
-(Memory.alloc$IF_FALSE6)
-//C_PUSH arg1: argument arg2: 0 push argument 0
+(Memory.alloc$IF_FALSE6)//C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
 @ARG
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 3 push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -13584,12 +11614,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -13603,12 +11632,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -13620,12 +11648,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -13636,10 +11663,9 @@ M=M+1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -13647,12 +11673,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -13664,12 +11689,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -13678,8 +11702,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -13690,21 +11713,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -13712,14 +11732,12 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: that arg2: 0 pop that 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -13735,15 +11753,13 @@ D=M
 A=M
 M=D
 //C_LABEL arg1: IF_END6 arg2: None label IF_END6
-(Memory.alloc$IF_END6)
-//C_PUSH arg1: constant arg2: 1 push constant 1
+(Memory.alloc$IF_END6)//C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -13751,12 +11767,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -13768,12 +11783,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -13787,10 +11801,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -13798,12 +11811,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -13815,12 +11827,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -13831,12 +11842,11 @@ M=M+1
 @2
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -13848,12 +11858,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -13862,15 +11871,13 @@ M=D
 M=M+1
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -13878,14 +11885,12 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: that arg2: 0 pop that 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -13901,15 +11906,13 @@ D=M
 A=M
 M=D
 //C_LABEL arg1: IF_FALSE5 arg2: None label IF_FALSE5
-(Memory.alloc$IF_FALSE5)
-//C_PUSH arg1: constant arg2: 0 push constant 0
+(Memory.alloc$IF_FALSE5)//C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -13917,12 +11920,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -13934,12 +11936,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -13950,21 +11951,18 @@ M=M+1
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -13972,14 +11970,12 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: that arg2: 0 pop that 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -14001,20 +11997,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 2 push constant 2
 @2
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -14026,12 +12020,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -14039,90 +12032,26 @@ M=D
 @SP
 M=M+1
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: Memory.deAlloc arg2: 2 function Memory.deAlloc 2
 (Memory.deAlloc)
+//@2
+//D=A
+//@SP
+//M=M+D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -14130,20 +12059,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 2 push constant 2
 @2
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -14155,12 +12082,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -14169,8 +12095,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -14189,10 +12114,9 @@ M=D
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -14200,12 +12124,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -14217,12 +12140,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -14231,8 +12153,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -14243,14 +12164,12 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: local arg2: 1 pop local 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -14269,10 +12188,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
@@ -14280,12 +12198,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -14297,12 +12214,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -14311,8 +12227,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -14323,20 +12238,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -14348,7 +12261,6 @@ A=M
 D=M
 @14
 M=D
-//EQ
 @13 // y
 D=M
 @14 // x
@@ -14363,7 +12275,7 @@ D=-1
 (ENDEQ174)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -14371,7 +12283,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -14385,15 +12297,13 @@ D;JNE
 @Memory.deAlloc$IF_FALSE0
 0;JMP
 //C_LABEL arg1: IF_TRUE0 arg2: None label IF_TRUE0
-(Memory.deAlloc$IF_TRUE0)
-//C_PUSH arg1: constant arg2: 0 push constant 0
+(Memory.deAlloc$IF_TRUE0)//C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -14401,12 +12311,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -14418,12 +12327,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -14434,10 +12342,9 @@ M=M+1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -14445,12 +12352,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -14462,12 +12368,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -14476,8 +12381,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -14488,10 +12392,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -14499,12 +12402,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -14516,12 +12418,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -14532,12 +12433,11 @@ M=M+1
 @2
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -14549,12 +12449,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -14563,15 +12462,13 @@ M=D
 M=M+1
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -14579,14 +12476,12 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: that arg2: 0 pop that 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -14605,15 +12500,13 @@ M=D
 @Memory.deAlloc$IF_END0
 0;JMP
 //C_LABEL arg1: IF_FALSE0 arg2: None label IF_FALSE0
-(Memory.deAlloc$IF_FALSE0)
-//C_PUSH arg1: constant arg2: 0 push constant 0
+(Memory.deAlloc$IF_FALSE0)//C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -14621,12 +12514,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -14638,12 +12530,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -14654,10 +12545,9 @@ M=M+1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -14665,12 +12555,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -14682,12 +12571,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -14696,8 +12584,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -14708,10 +12595,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -14719,12 +12605,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -14736,12 +12621,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -14752,10 +12636,9 @@ M=M+1
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
@@ -14763,12 +12646,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -14780,12 +12662,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -14794,8 +12675,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -14806,12 +12686,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -14823,12 +12702,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -14837,15 +12715,13 @@ M=D
 M=M+1
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -14853,14 +12729,12 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: that arg2: 0 pop that 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -14879,10 +12753,9 @@ M=D
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
@@ -14890,12 +12763,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -14907,12 +12779,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -14921,8 +12792,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -14933,10 +12803,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
@@ -14944,20 +12813,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 2 push constant 2
 @2
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -14969,12 +12836,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -14982,7 +12848,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -14994,7 +12860,6 @@ A=M
 D=M
 @14
 M=D
-//EQ
 @13 // y
 D=M
 @14 // x
@@ -15009,7 +12874,7 @@ D=-1
 (ENDEQ186)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -15017,7 +12882,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -15031,15 +12896,13 @@ D;JNE
 @Memory.deAlloc$IF_FALSE1
 0;JMP
 //C_LABEL arg1: IF_TRUE1 arg2: None label IF_TRUE1
-(Memory.deAlloc$IF_TRUE1)
-//C_PUSH arg1: constant arg2: 1 push constant 1
+(Memory.deAlloc$IF_TRUE1)//C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -15047,12 +12910,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -15064,12 +12926,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -15083,20 +12944,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 2 push constant 2
 @2
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -15108,12 +12967,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -15122,15 +12980,13 @@ M=D
 M=M+1
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -15138,14 +12994,12 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: that arg2: 0 pop that 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -15164,15 +13018,13 @@ M=D
 @Memory.deAlloc$IF_END1
 0;JMP
 //C_LABEL arg1: IF_FALSE1 arg2: None label IF_FALSE1
-(Memory.deAlloc$IF_FALSE1)
-//C_PUSH arg1: constant arg2: 1 push constant 1
+(Memory.deAlloc$IF_FALSE1)//C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -15180,12 +13032,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -15197,12 +13048,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -15213,10 +13063,9 @@ M=M+1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
@@ -15224,12 +13073,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -15241,12 +13089,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -15255,8 +13102,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -15267,21 +13113,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -15289,14 +13132,12 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: that arg2: 0 pop that 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -15312,100 +13153,33 @@ D=M
 A=M
 M=D
 //C_LABEL arg1: IF_END1 arg2: None label IF_END1
-(Memory.deAlloc$IF_END1)
-//C_LABEL arg1: IF_END0 arg2: None label IF_END0
-(Memory.deAlloc$IF_END0)
-//C_PUSH arg1: constant arg2: 0 push constant 0
+(Memory.deAlloc$IF_END1)//C_LABEL arg1: IF_END0 arg2: None label IF_END0
+(Memory.deAlloc$IF_END0)//C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: Output.init arg2: 0 function Output.init 0
 (Output.init)
+//@0
+//D=A
+//@SP
+//M=M+D
 //C_PUSH arg1: constant arg2: 16384 push constant 16384
 @16384
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: static arg2: 4 pop static 4
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.4
 M=D
@@ -15413,21 +13187,19 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: not arg2: None not
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
 M=D
-//NOT
 @14 // first pop value
 M=!M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -15436,8 +13208,7 @@ M=D
 M=M+1
 //C_POP arg1: static arg2: 2 pop static 2
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.2
 M=D
@@ -15445,14 +13216,12 @@ M=D
 @32
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: static arg2: 1 pop static 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.1
 M=D
@@ -15460,14 +13229,12 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: static arg2: 0 pop static 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.0
 M=D
@@ -15475,47 +13242,46 @@ M=D
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: String.new arg2: 1 call String.new 1
-@String.new$ret.1
+@String.new$ret.1 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -15523,57 +13289,56 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@String.new
+@String.new // make jump
 0;JMP
 (String.new$ret.1)
 //C_POP arg1: static arg2: 3 pop static 3
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.3
 M=D
 //C_CALL arg1: Output.initMap arg2: 0 call Output.initMap 0
-@Output.initMap$ret.0
+@Output.initMap$ret.0 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -15581,57 +13346,56 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.initMap
+@Output.initMap // make jump
 0;JMP
 (Output.initMap$ret.0)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_CALL arg1: Output.createShiftedMap arg2: 0 call Output.createShiftedMap 0
-@Output.createShiftedMap$ret.0
+@Output.createShiftedMap$ret.0 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -15639,17 +13403,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.createShiftedMap
+@Output.createShiftedMap // make jump
 0;JMP
 (Output.createShiftedMap$ret.0)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -15657,126 +13420,62 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: Output.initMap arg2: 0 function Output.initMap 0
 (Output.initMap)
+//@0
+//D=A
+//@SP
+//M=M+D
 //C_PUSH arg1: constant arg2: 127 push constant 127
 @127
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Array.new arg2: 1 call Array.new 1
-@Array.new$ret.2
+@Array.new$ret.2 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -15784,17 +13483,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Array.new
+@Array.new // make jump
 0;JMP
 (Array.new$ret.2)
 //C_POP arg1: static arg2: 5 pop static 5
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.5
 M=D
@@ -15802,135 +13500,123 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 63 push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 63 push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 63 push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 63 push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 63 push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 63 push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 63 push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 63 push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 63 push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.0
+@Output.create$ret.0 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -15938,17 +13624,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.0)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -15956,135 +13641,123 @@ M=D
 @32
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.1
+@Output.create$ret.1 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -16092,17 +13765,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.1)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -16110,135 +13782,123 @@ M=D
 @33
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.2
+@Output.create$ret.2 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -16246,17 +13906,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.2)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -16264,135 +13923,123 @@ M=D
 @34
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 54 push constant 54
 @54
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 54 push constant 54
 @54
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 20 push constant 20
 @20
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.3
+@Output.create$ret.3 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -16400,17 +14047,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.3)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -16418,135 +14064,123 @@ M=D
 @35
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 18 push constant 18
 @18
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 18 push constant 18
 @18
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 63 push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 18 push constant 18
 @18
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 18 push constant 18
 @18
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 63 push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 18 push constant 18
 @18
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 18 push constant 18
 @18
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.4
+@Output.create$ret.4 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -16554,17 +14188,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.4)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -16572,135 +14205,123 @@ M=D
 @36
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 3 push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 48 push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.5
+@Output.create$ret.5 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -16708,17 +14329,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.5)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -16726,135 +14346,123 @@ M=D
 @37
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 35 push constant 35
 @35
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 24 push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 6 push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 49 push constant 49
 @49
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.6
+@Output.create$ret.6 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -16862,17 +14470,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.6)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -16880,135 +14487,123 @@ M=D
 @38
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 54 push constant 54
 @54
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 27 push constant 27
 @27
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 27 push constant 27
 @27
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 27 push constant 27
 @27
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 54 push constant 54
 @54
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.7
+@Output.create$ret.7 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -17016,17 +14611,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.7)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -17034,135 +14628,123 @@ M=D
 @39
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 6 push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.8
+@Output.create$ret.8 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -17170,17 +14752,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.8)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -17188,135 +14769,123 @@ M=D
 @40
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 24 push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 6 push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 6 push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 6 push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 6 push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 6 push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 24 push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.9
+@Output.create$ret.9 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -17324,17 +14893,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.9)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -17342,135 +14910,123 @@ M=D
 @41
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 6 push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 24 push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 24 push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 24 push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 24 push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 24 push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 6 push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.10
+@Output.create$ret.10 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -17478,17 +15034,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.10)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -17496,135 +15051,123 @@ M=D
 @42
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 63 push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.11
+@Output.create$ret.11 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -17632,17 +15175,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.11)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -17650,135 +15192,123 @@ M=D
 @43
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 63 push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.12
+@Output.create$ret.12 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -17786,17 +15316,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.12)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -17804,135 +15333,123 @@ M=D
 @44
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 6 push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.13
+@Output.create$ret.13 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -17940,17 +15457,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.13)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -17958,135 +15474,123 @@ M=D
 @45
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 63 push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.14
+@Output.create$ret.14 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -18094,17 +15598,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.14)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -18112,135 +15615,123 @@ M=D
 @46
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.15
+@Output.create$ret.15 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -18248,17 +15739,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.15)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -18266,135 +15756,123 @@ M=D
 @47
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 32 push constant 32
 @32
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 48 push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 24 push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 6 push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 3 push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.16
+@Output.create$ret.16 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -18402,17 +15880,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.16)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -18420,135 +15897,123 @@ M=D
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.17
+@Output.create$ret.17 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -18556,17 +16021,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.17)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -18574,135 +16038,123 @@ M=D
 @49
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 14 push constant 14
 @14
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 15 push constant 15
 @15
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 63 push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.18
+@Output.create$ret.18 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -18710,17 +16162,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.18)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -18728,135 +16179,123 @@ M=D
 @50
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 48 push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 24 push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 6 push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 3 push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 63 push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.19
+@Output.create$ret.19 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -18864,17 +16303,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.19)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -18882,135 +16320,123 @@ M=D
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 48 push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 48 push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 28 push constant 28
 @28
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 48 push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 48 push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.20
+@Output.create$ret.20 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -19018,17 +16444,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.20)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -19036,135 +16461,123 @@ M=D
 @52
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 16 push constant 16
 @16
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 24 push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 28 push constant 28
 @28
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 26 push constant 26
 @26
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 25 push constant 25
 @25
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 63 push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 24 push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 24 push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 60 push constant 60
 @60
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.21
+@Output.create$ret.21 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -19172,17 +16585,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.21)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -19190,135 +16602,123 @@ M=D
 @53
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 63 push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 3 push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 3 push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 31 push constant 31
 @31
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 48 push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 48 push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 48 push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.22
+@Output.create$ret.22 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -19326,17 +16726,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.22)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -19344,135 +16743,123 @@ M=D
 @54
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 28 push constant 28
 @28
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 6 push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 3 push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 3 push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 31 push constant 31
 @31
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.23
+@Output.create$ret.23 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -19480,17 +16867,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.23)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -19498,135 +16884,123 @@ M=D
 @55
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 63 push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 49 push constant 49
 @49
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 48 push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 48 push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 24 push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.24
+@Output.create$ret.24 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -19634,17 +17008,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.24)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -19652,135 +17025,123 @@ M=D
 @56
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.25
+@Output.create$ret.25 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -19788,17 +17149,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.25)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -19806,135 +17166,123 @@ M=D
 @57
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 62 push constant 62
 @62
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 48 push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 48 push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 24 push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 14 push constant 14
 @14
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.26
+@Output.create$ret.26 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -19942,17 +17290,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.26)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -19960,135 +17307,123 @@ M=D
 @58
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.27
+@Output.create$ret.27 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -20096,17 +17431,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.27)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -20114,135 +17448,123 @@ M=D
 @59
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 6 push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.28
+@Output.create$ret.28 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -20250,17 +17572,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.28)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -20268,135 +17589,123 @@ M=D
 @60
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 24 push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 6 push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 3 push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 6 push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 24 push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.29
+@Output.create$ret.29 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -20404,17 +17713,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.29)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -20422,135 +17730,123 @@ M=D
 @61
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 63 push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 63 push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.30
+@Output.create$ret.30 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -20558,17 +17854,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.30)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -20576,135 +17871,123 @@ M=D
 @62
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 3 push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 6 push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 24 push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 6 push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 3 push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.31
+@Output.create$ret.31 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -20712,17 +17995,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.31)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -20730,135 +18012,123 @@ M=D
 @64
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 59 push constant 59
 @59
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 59 push constant 59
 @59
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 59 push constant 59
 @59
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 27 push constant 27
 @27
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 3 push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.32
+@Output.create$ret.32 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -20866,17 +18136,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.32)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -20884,135 +18153,123 @@ M=D
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 24 push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.33
+@Output.create$ret.33 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -21020,17 +18277,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.33)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -21038,135 +18294,123 @@ M=D
 @65
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 63 push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.34
+@Output.create$ret.34 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -21174,17 +18418,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.34)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -21192,135 +18435,123 @@ M=D
 @66
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 31 push constant 31
 @31
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 31 push constant 31
 @31
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 31 push constant 31
 @31
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.35
+@Output.create$ret.35 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -21328,17 +18559,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.35)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -21346,135 +18576,123 @@ M=D
 @67
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 28 push constant 28
 @28
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 54 push constant 54
 @54
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 35 push constant 35
 @35
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 3 push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 3 push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 3 push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 35 push constant 35
 @35
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 54 push constant 54
 @54
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 28 push constant 28
 @28
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.36
+@Output.create$ret.36 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -21482,17 +18700,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.36)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -21500,135 +18717,123 @@ M=D
 @68
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 15 push constant 15
 @15
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 27 push constant 27
 @27
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 27 push constant 27
 @27
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 15 push constant 15
 @15
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.37
+@Output.create$ret.37 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -21636,17 +18841,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.37)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -21654,135 +18858,123 @@ M=D
 @69
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 63 push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 35 push constant 35
 @35
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 11 push constant 11
 @11
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 15 push constant 15
 @15
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 11 push constant 11
 @11
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 35 push constant 35
 @35
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 63 push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.38
+@Output.create$ret.38 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -21790,17 +18982,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.38)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -21808,135 +18999,123 @@ M=D
 @70
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 63 push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 35 push constant 35
 @35
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 11 push constant 11
 @11
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 15 push constant 15
 @15
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 11 push constant 11
 @11
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 3 push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 3 push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 3 push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.39
+@Output.create$ret.39 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -21944,17 +19123,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.39)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -21962,135 +19140,123 @@ M=D
 @71
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 28 push constant 28
 @28
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 54 push constant 54
 @54
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 35 push constant 35
 @35
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 3 push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 59 push constant 59
 @59
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 54 push constant 54
 @54
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 44 push constant 44
 @44
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.40
+@Output.create$ret.40 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -22098,17 +19264,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.40)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -22116,135 +19281,123 @@ M=D
 @72
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 63 push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.41
+@Output.create$ret.41 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -22252,17 +19405,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.41)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -22270,135 +19422,123 @@ M=D
 @73
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.42
+@Output.create$ret.42 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -22406,17 +19546,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.42)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -22424,135 +19563,123 @@ M=D
 @74
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 60 push constant 60
 @60
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 24 push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 24 push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 24 push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 24 push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 24 push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 27 push constant 27
 @27
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 27 push constant 27
 @27
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 14 push constant 14
 @14
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.43
+@Output.create$ret.43 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -22560,17 +19687,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.43)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -22578,135 +19704,123 @@ M=D
 @75
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 27 push constant 27
 @27
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 15 push constant 15
 @15
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 27 push constant 27
 @27
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.44
+@Output.create$ret.44 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -22714,17 +19828,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.44)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -22732,135 +19845,123 @@ M=D
 @76
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 3 push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 3 push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 3 push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 3 push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 3 push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 3 push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 35 push constant 35
 @35
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 63 push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.45
+@Output.create$ret.45 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -22868,17 +19969,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.45)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -22886,135 +19986,123 @@ M=D
 @77
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 33 push constant 33
 @33
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 63 push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 63 push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.46
+@Output.create$ret.46 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -23022,17 +20110,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.46)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -23040,135 +20127,123 @@ M=D
 @78
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 55 push constant 55
 @55
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 55 push constant 55
 @55
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 63 push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 59 push constant 59
 @59
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 59 push constant 59
 @59
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.47
+@Output.create$ret.47 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -23176,17 +20251,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.47)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -23194,135 +20268,123 @@ M=D
 @79
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.48
+@Output.create$ret.48 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -23330,17 +20392,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.48)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -23348,135 +20409,123 @@ M=D
 @80
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 31 push constant 31
 @31
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 31 push constant 31
 @31
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 3 push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 3 push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 3 push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 3 push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.49
+@Output.create$ret.49 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -23484,17 +20533,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.49)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -23502,135 +20550,123 @@ M=D
 @81
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 63 push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 59 push constant 59
 @59
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 48 push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.50
+@Output.create$ret.50 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -23638,17 +20674,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.50)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -23656,135 +20691,123 @@ M=D
 @82
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 31 push constant 31
 @31
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 31 push constant 31
 @31
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 27 push constant 27
 @27
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.51
+@Output.create$ret.51 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -23792,17 +20815,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.51)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -23810,135 +20832,123 @@ M=D
 @83
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 6 push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 28 push constant 28
 @28
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 48 push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.52
+@Output.create$ret.52 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -23946,17 +20956,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.52)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -23964,135 +20973,123 @@ M=D
 @84
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 63 push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 63 push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 45 push constant 45
 @45
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.53
+@Output.create$ret.53 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -24100,17 +21097,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.53)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -24118,135 +21114,123 @@ M=D
 @85
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.54
+@Output.create$ret.54 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -24254,17 +21238,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.54)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -24272,135 +21255,123 @@ M=D
 @86
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.55
+@Output.create$ret.55 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -24408,17 +21379,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.55)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -24426,135 +21396,123 @@ M=D
 @87
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 63 push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 63 push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 63 push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 18 push constant 18
 @18
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.56
+@Output.create$ret.56 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -24562,17 +21520,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.56)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -24580,135 +21537,123 @@ M=D
 @88
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.57
+@Output.create$ret.57 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -24716,17 +21661,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.57)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -24734,135 +21678,123 @@ M=D
 @89
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.58
+@Output.create$ret.58 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -24870,17 +21802,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.58)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -24888,135 +21819,123 @@ M=D
 @90
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 63 push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 49 push constant 49
 @49
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 24 push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 6 push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 35 push constant 35
 @35
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 63 push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.59
+@Output.create$ret.59 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -25024,17 +21943,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.59)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -25042,135 +21960,123 @@ M=D
 @91
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 6 push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 6 push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 6 push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 6 push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 6 push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 6 push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 6 push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.60
+@Output.create$ret.60 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -25178,17 +22084,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.60)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -25196,135 +22101,123 @@ M=D
 @92
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 3 push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 6 push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 24 push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 48 push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 32 push constant 32
 @32
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.61
+@Output.create$ret.61 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -25332,17 +22225,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.61)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -25350,135 +22242,123 @@ M=D
 @93
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 24 push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 24 push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 24 push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 24 push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 24 push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 24 push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 24 push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.62
+@Output.create$ret.62 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -25486,17 +22366,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.62)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -25504,135 +22383,123 @@ M=D
 @94
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 8 push constant 8
 @8
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 28 push constant 28
 @28
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 54 push constant 54
 @54
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.63
+@Output.create$ret.63 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -25640,17 +22507,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.63)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -25658,135 +22524,123 @@ M=D
 @95
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 63 push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.64
+@Output.create$ret.64 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -25794,17 +22648,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.64)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -25812,135 +22665,123 @@ M=D
 @96
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 6 push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 24 push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.65
+@Output.create$ret.65 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -25948,17 +22789,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.65)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -25966,135 +22806,123 @@ M=D
 @97
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 14 push constant 14
 @14
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 24 push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 27 push constant 27
 @27
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 27 push constant 27
 @27
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 54 push constant 54
 @54
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.66
+@Output.create$ret.66 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -26102,17 +22930,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.66)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -26120,135 +22947,123 @@ M=D
 @98
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 3 push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 3 push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 3 push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 15 push constant 15
 @15
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 27 push constant 27
 @27
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.67
+@Output.create$ret.67 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -26256,17 +23071,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.67)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -26274,135 +23088,123 @@ M=D
 @99
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 3 push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 3 push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.68
+@Output.create$ret.68 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -26410,17 +23212,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.68)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -26428,135 +23229,123 @@ M=D
 @100
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 48 push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 48 push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 48 push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 60 push constant 60
 @60
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 54 push constant 54
 @54
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.69
+@Output.create$ret.69 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -26564,17 +23353,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.69)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -26582,135 +23370,123 @@ M=D
 @101
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 63 push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 3 push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.70
+@Output.create$ret.70 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -26718,17 +23494,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.70)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -26736,135 +23511,123 @@ M=D
 @102
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 28 push constant 28
 @28
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 54 push constant 54
 @54
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 38 push constant 38
 @38
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 6 push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 15 push constant 15
 @15
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 6 push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 6 push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 6 push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 15 push constant 15
 @15
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.71
+@Output.create$ret.71 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -26872,17 +23635,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.71)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -26890,135 +23652,123 @@ M=D
 @103
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 62 push constant 62
 @62
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 48 push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.72
+@Output.create$ret.72 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -27026,17 +23776,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.72)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -27044,135 +23793,123 @@ M=D
 @104
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 3 push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 3 push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 3 push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 27 push constant 27
 @27
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 55 push constant 55
 @55
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.73
+@Output.create$ret.73 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -27180,17 +23917,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.73)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -27198,135 +23934,123 @@ M=D
 @105
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 14 push constant 14
 @14
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.74
+@Output.create$ret.74 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -27334,17 +24058,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.74)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -27352,135 +24075,123 @@ M=D
 @106
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 48 push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 48 push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 56 push constant 56
 @56
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 48 push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 48 push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 48 push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 48 push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.75
+@Output.create$ret.75 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -27488,17 +24199,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.75)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -27506,135 +24216,123 @@ M=D
 @107
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 3 push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 3 push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 3 push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 27 push constant 27
 @27
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 15 push constant 15
 @15
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 15 push constant 15
 @15
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 27 push constant 27
 @27
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.76
+@Output.create$ret.76 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -27642,17 +24340,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.76)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -27660,135 +24357,123 @@ M=D
 @108
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 14 push constant 14
 @14
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.77
+@Output.create$ret.77 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -27796,17 +24481,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.77)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -27814,135 +24498,123 @@ M=D
 @109
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 29 push constant 29
 @29
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 63 push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 43 push constant 43
 @43
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 43 push constant 43
 @43
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 43 push constant 43
 @43
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 43 push constant 43
 @43
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.78
+@Output.create$ret.78 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -27950,17 +24622,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.78)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -27968,135 +24639,123 @@ M=D
 @110
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 29 push constant 29
 @29
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.79
+@Output.create$ret.79 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -28104,17 +24763,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.79)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -28122,135 +24780,123 @@ M=D
 @111
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.80
+@Output.create$ret.80 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -28258,17 +24904,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.80)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -28276,135 +24921,123 @@ M=D
 @112
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 31 push constant 31
 @31
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 3 push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 3 push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.81
+@Output.create$ret.81 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -28412,17 +25045,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.81)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -28430,135 +25062,123 @@ M=D
 @113
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 62 push constant 62
 @62
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 48 push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 48 push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.82
+@Output.create$ret.82 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -28566,17 +25186,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.82)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -28584,135 +25203,123 @@ M=D
 @114
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 29 push constant 29
 @29
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 55 push constant 55
 @55
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 3 push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 3 push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 7 push constant 7
 @7
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.83
+@Output.create$ret.83 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -28720,17 +25327,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.83)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -28738,135 +25344,123 @@ M=D
 @115
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 6 push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 24 push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.84
+@Output.create$ret.84 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -28874,17 +25468,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.84)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -28892,135 +25485,123 @@ M=D
 @116
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 4 push constant 4
 @4
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 6 push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 6 push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 15 push constant 15
 @15
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 6 push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 6 push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 6 push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 54 push constant 54
 @54
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 28 push constant 28
 @28
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.85
+@Output.create$ret.85 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -29028,17 +25609,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.85)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -29046,135 +25626,123 @@ M=D
 @117
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 27 push constant 27
 @27
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 27 push constant 27
 @27
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 27 push constant 27
 @27
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 27 push constant 27
 @27
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 27 push constant 27
 @27
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 54 push constant 54
 @54
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.86
+@Output.create$ret.86 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -29182,17 +25750,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.86)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -29200,135 +25767,123 @@ M=D
 @118
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.87
+@Output.create$ret.87 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -29336,17 +25891,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.87)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -29354,135 +25908,123 @@ M=D
 @119
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 63 push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 63 push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 18 push constant 18
 @18
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.88
+@Output.create$ret.88 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -29490,17 +26032,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.88)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -29508,135 +26049,123 @@ M=D
 @120
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 30 push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.89
+@Output.create$ret.89 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -29644,17 +26173,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.89)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -29662,135 +26190,123 @@ M=D
 @121
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 62 push constant 62
 @62
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 48 push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 24 push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 15 push constant 15
 @15
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.90
+@Output.create$ret.90 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -29798,17 +26314,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.90)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -29816,135 +26331,123 @@ M=D
 @122
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 63 push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 27 push constant 27
 @27
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 6 push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 51 push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 63 push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.91
+@Output.create$ret.91 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -29952,17 +26455,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.91)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -29970,135 +26472,123 @@ M=D
 @123
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 56 push constant 56
 @56
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 7 push constant 7
 @7
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 56 push constant 56
 @56
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.92
+@Output.create$ret.92 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -30106,17 +26596,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.92)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -30124,135 +26613,123 @@ M=D
 @124
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.93
+@Output.create$ret.93 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -30260,17 +26737,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.93)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -30278,135 +26754,123 @@ M=D
 @125
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 7 push constant 7
 @7
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 56 push constant 56
 @56
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 7 push constant 7
 @7
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.94
+@Output.create$ret.94 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -30414,17 +26878,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.94)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -30432,135 +26895,123 @@ M=D
 @126
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 38 push constant 38
 @38
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 45 push constant 45
 @45
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 25 push constant 25
 @25
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.95
+@Output.create$ret.95 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -30568,17 +27019,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.create
+@Output.create // make jump
 0;JMP
 (Output.create$ret.95)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -30586,133 +27036,68 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: Output.create arg2: 1 function Output.create 1
 (Output.create)
+//@1
+//D=A
+//@SP
+//M=M+D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 11 push constant 11
 @11
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Array.new arg2: 1 call Array.new 1
-@Array.new$ret.3
+@Array.new$ret.3 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -30720,17 +27105,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Array.new
+@Array.new // make jump
 0;JMP
 (Array.new$ret.3)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -30752,20 +27136,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: static arg2: 5 push static 5
 @Output.5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -30777,12 +27159,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -30796,21 +27177,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -30818,14 +27196,12 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: that arg2: 0 pop that 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -30844,10 +27220,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -30855,12 +27230,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -30872,12 +27246,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -30891,21 +27264,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -30913,14 +27283,12 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: that arg2: 0 pop that 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -30939,10 +27307,9 @@ M=D
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -30950,12 +27317,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -30967,12 +27333,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -30986,21 +27351,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -31008,14 +27370,12 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: that arg2: 0 pop that 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -31034,10 +27394,9 @@ M=D
 @2
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -31045,12 +27404,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -31062,12 +27420,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -31081,21 +27438,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -31103,14 +27457,12 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: that arg2: 0 pop that 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -31129,10 +27481,9 @@ M=D
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -31140,12 +27491,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -31157,12 +27507,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -31176,21 +27525,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -31198,14 +27544,12 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: that arg2: 0 pop that 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -31224,10 +27568,9 @@ M=D
 @4
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -31235,12 +27578,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -31252,12 +27594,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -31271,21 +27612,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -31293,14 +27631,12 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: that arg2: 0 pop that 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -31319,10 +27655,9 @@ M=D
 @5
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -31330,12 +27665,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -31347,12 +27681,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -31366,21 +27699,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -31388,14 +27718,12 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: that arg2: 0 pop that 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -31414,10 +27742,9 @@ M=D
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -31425,12 +27752,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -31442,12 +27768,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -31461,21 +27786,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -31483,14 +27805,12 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: that arg2: 0 pop that 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -31509,10 +27829,9 @@ M=D
 @7
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -31520,12 +27839,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -31537,12 +27855,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -31556,21 +27873,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -31578,14 +27892,12 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: that arg2: 0 pop that 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -31604,10 +27916,9 @@ M=D
 @8
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -31615,12 +27926,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -31632,12 +27942,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -31651,21 +27960,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -31673,14 +27979,12 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: that arg2: 0 pop that 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -31699,10 +28003,9 @@ M=D
 @9
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -31710,12 +28013,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -31727,12 +28029,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -31746,21 +28047,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -31768,14 +28066,12 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: that arg2: 0 pop that 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -31794,10 +28090,9 @@ M=D
 @10
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -31805,12 +28100,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -31822,12 +28116,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -31841,21 +28134,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -31863,14 +28153,12 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: that arg2: 0 pop that 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -31889,154 +28177,86 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: Output.createShiftedMap arg2: 4 function Output.createShiftedMap 4
 (Output.createShiftedMap)
+//@4
+//D=A
+//@SP
+//M=M+D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 127 push constant 127
 @127
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Array.new arg2: 1 call Array.new 1
-@Array.new$ret.4
+@Array.new$ret.4 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -32044,17 +28264,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Array.new
+@Array.new // make jump
 0;JMP
 (Array.new$ret.4)
 //C_POP arg1: static arg2: 6 pop static 6
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.6
 M=D
@@ -32062,14 +28281,12 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: local arg2: 2 pop local 2
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -32085,28 +28302,25 @@ D=M
 A=M
 M=D
 //C_LABEL arg1: WHILE_EXP0 arg2: None label WHILE_EXP0
-(Output.createShiftedMap$WHILE_EXP0)
-//C_PUSH arg1: local arg2: 2 push local 2
+(Output.createShiftedMap$WHILE_EXP0)//C_PUSH arg1: local arg2: 2 push local 2
 @2
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 127 push constant 127
 @127
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -32118,7 +28332,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -32133,7 +28346,7 @@ D=-1
 (ENDLT204)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -32141,16 +28354,15 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: not arg2: None not
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
 M=D
-//NOT
 @14 // first pop value
 M=!M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -32158,7 +28370,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -32175,20 +28387,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: static arg2: 5 push static 5
 @Output.5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -32200,12 +28410,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -32214,8 +28423,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -32226,14 +28434,12 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -32252,47 +28458,46 @@ M=D
 @11
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Array.new arg2: 1 call Array.new 1
-@Array.new$ret.5
+@Array.new$ret.5 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -32300,17 +28505,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Array.new
+@Array.new // make jump
 0;JMP
 (Array.new$ret.5)
 //C_POP arg1: local arg2: 1 pop local 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -32332,20 +28536,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: static arg2: 6 push static 6
 @Output.6
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -32357,12 +28559,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -32376,21 +28577,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -32398,14 +28596,12 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: that arg2: 0 pop that 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -32424,14 +28620,12 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: local arg2: 3 pop local 3
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -32447,28 +28641,25 @@ D=M
 A=M
 M=D
 //C_LABEL arg1: WHILE_EXP1 arg2: None label WHILE_EXP1
-(Output.createShiftedMap$WHILE_EXP1)
-//C_PUSH arg1: local arg2: 3 push local 3
+(Output.createShiftedMap$WHILE_EXP1)//C_PUSH arg1: local arg2: 3 push local 3
 @3
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 11 push constant 11
 @11
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -32480,7 +28671,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -32495,7 +28685,7 @@ D=-1
 (ENDLT208)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -32503,16 +28693,15 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: not arg2: None not
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
 M=D
-//NOT
 @14 // first pop value
 M=!M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -32520,7 +28709,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: WHILE_END1 arg2: None if-goto WHILE_END1
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -32537,10 +28726,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
@@ -32548,12 +28736,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -32565,12 +28752,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -32584,10 +28770,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -32595,12 +28780,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -32612,12 +28796,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -32626,8 +28809,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -32638,55 +28820,53 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 256 push constant 256
 @256
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Math.multiply arg2: 2 call Math.multiply 2
-@Math.multiply$ret.1
+@Math.multiply$ret.1 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -32694,24 +28874,22 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Math.multiply
+@Math.multiply // make jump
 0;JMP
 (Math.multiply$ret.1)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -32719,14 +28897,12 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: that arg2: 0 pop that 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -32748,20 +28924,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -32773,12 +28947,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -32787,8 +28960,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 3 pop local 3
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -32807,28 +28979,25 @@ M=D
 @Output.createShiftedMap$WHILE_EXP1
 0;JMP
 //C_LABEL arg1: WHILE_END1 arg2: None label WHILE_END1
-(Output.createShiftedMap$WHILE_END1)
-//C_PUSH arg1: local arg2: 2 push local 2
+(Output.createShiftedMap$WHILE_END1)//C_PUSH arg1: local arg2: 2 push local 2
 @2
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -32840,7 +29009,6 @@ A=M
 D=M
 @14
 M=D
-//EQ
 @13 // y
 D=M
 @14 // x
@@ -32855,7 +29023,7 @@ D=-1
 (ENDEQ213)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -32863,7 +29031,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -32877,19 +29045,16 @@ D;JNE
 @Output.createShiftedMap$IF_FALSE0
 0;JMP
 //C_LABEL arg1: IF_TRUE0 arg2: None label IF_TRUE0
-(Output.createShiftedMap$IF_TRUE0)
-//C_PUSH arg1: constant arg2: 32 push constant 32
+(Output.createShiftedMap$IF_TRUE0)//C_PUSH arg1: constant arg2: 32 push constant 32
 @32
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: local arg2: 2 pop local 2
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -32908,28 +29073,25 @@ M=D
 @Output.createShiftedMap$IF_END0
 0;JMP
 //C_LABEL arg1: IF_FALSE0 arg2: None label IF_FALSE0
-(Output.createShiftedMap$IF_FALSE0)
-//C_PUSH arg1: local arg2: 2 push local 2
+(Output.createShiftedMap$IF_FALSE0)//C_PUSH arg1: local arg2: 2 push local 2
 @2
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -32941,12 +29103,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -32955,8 +29116,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 2 pop local 2
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -32972,98 +29132,32 @@ D=M
 A=M
 M=D
 //C_LABEL arg1: IF_END0 arg2: None label IF_END0
-(Output.createShiftedMap$IF_END0)
-//C_GOTO arg1: WHILE_EXP0 arg2: None goto WHILE_EXP0
+(Output.createShiftedMap$IF_END0)//C_GOTO arg1: WHILE_EXP0 arg2: None goto WHILE_EXP0
 @Output.createShiftedMap$WHILE_EXP0
 0;JMP
 //C_LABEL arg1: WHILE_END0 arg2: None label WHILE_END0
-(Output.createShiftedMap$WHILE_END0)
-//C_PUSH arg1: constant arg2: 0 push constant 0
+(Output.createShiftedMap$WHILE_END0)//C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: Output.getMap arg2: 1 function Output.getMap 1
 (Output.getMap)
+//@1
+//D=A
+//@SP
+//M=M+D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -33071,20 +29165,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 32 push constant 32
 @32
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -33096,7 +29188,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -33111,7 +29202,7 @@ D=-1
 (ENDLT215)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -33125,20 +29216,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 126 push constant 126
 @126
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -33150,7 +29239,6 @@ A=M
 D=M
 @14
 M=D
-//GT
 @13  // Y
 D=M
 @14 // X
@@ -33165,7 +29253,7 @@ D=-1
 (ENDGT216)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack
 D=M
 @SP
 A=M
@@ -33173,7 +29261,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: or arg2: None or
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -33185,12 +29273,11 @@ A=M
 D=M
 @14
 M=D
-//OR
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M|D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -33198,7 +29285,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -33212,19 +29299,16 @@ D;JNE
 @Output.getMap$IF_FALSE0
 0;JMP
 //C_LABEL arg1: IF_TRUE0 arg2: None label IF_TRUE0
-(Output.getMap$IF_TRUE0)
-//C_PUSH arg1: constant arg2: 0 push constant 0
+(Output.getMap$IF_TRUE0)//C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: argument arg2: 0 pop argument 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -33240,17 +29324,15 @@ D=M
 A=M
 M=D
 //C_LABEL arg1: IF_FALSE0 arg2: None label IF_FALSE0
-(Output.getMap$IF_FALSE0)
-//C_PUSH arg1: static arg2: 2 push static 2
+(Output.getMap$IF_FALSE0)//C_PUSH arg1: static arg2: 2 push static 2
 @Output.2
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -33264,28 +29346,25 @@ D;JNE
 @Output.getMap$IF_FALSE1
 0;JMP
 //C_LABEL arg1: IF_TRUE1 arg2: None label IF_TRUE1
-(Output.getMap$IF_TRUE1)
-//C_PUSH arg1: argument arg2: 0 push argument 0
+(Output.getMap$IF_TRUE1)//C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
 @ARG
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: static arg2: 5 push static 5
 @Output.5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -33297,12 +29376,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -33311,8 +29389,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -33323,14 +29400,12 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -33349,28 +29424,25 @@ M=D
 @Output.getMap$IF_END1
 0;JMP
 //C_LABEL arg1: IF_FALSE1 arg2: None label IF_FALSE1
-(Output.getMap$IF_FALSE1)
-//C_PUSH arg1: argument arg2: 0 push argument 0
+(Output.getMap$IF_FALSE1)//C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
 @ARG
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: static arg2: 6 push static 6
 @Output.6
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -33382,12 +29454,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -33396,8 +29467,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -33408,14 +29478,12 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -33431,117 +29499,49 @@ D=M
 A=M
 M=D
 //C_LABEL arg1: IF_END1 arg2: None label IF_END1
-(Output.getMap$IF_END1)
-//C_PUSH arg1: local arg2: 0 push local 0
+(Output.getMap$IF_END1)//C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: Output.drawChar arg2: 4 function Output.drawChar 4
 (Output.drawChar)
+//@4
+//D=A
+//@SP
+//M=M+D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -33549,47 +29549,46 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.getMap arg2: 1 call Output.getMap 1
-@Output.getMap$ret.0
+@Output.getMap$ret.0 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -33597,17 +29596,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.getMap
+@Output.getMap // make jump
 0;JMP
 (Output.getMap$ret.0)
 //C_POP arg1: local arg2: 2 pop local 2
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -33626,14 +29624,12 @@ M=D
 @Output.1
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -33649,28 +29645,25 @@ D=M
 A=M
 M=D
 //C_LABEL arg1: WHILE_EXP0 arg2: None label WHILE_EXP0
-(Output.drawChar$WHILE_EXP0)
-//C_PUSH arg1: local arg2: 1 push local 1
+(Output.drawChar$WHILE_EXP0)//C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 11 push constant 11
 @11
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -33682,7 +29675,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -33697,7 +29689,7 @@ D=-1
 (ENDLT220)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -33705,16 +29697,15 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: not arg2: None not
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
 M=D
-//NOT
 @14 // first pop value
 M=!M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -33722,7 +29713,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -33736,12 +29727,11 @@ D;JNE
 @Output.2
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -33755,28 +29745,25 @@ D;JNE
 @Output.drawChar$IF_FALSE0
 0;JMP
 //C_LABEL arg1: IF_TRUE0 arg2: None label IF_TRUE0
-(Output.drawChar$IF_TRUE0)
-//C_PUSH arg1: local arg2: 0 push local 0
+(Output.drawChar$IF_TRUE0)//C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: static arg2: 4 push static 4
 @Output.4
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -33788,12 +29775,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -33802,8 +29788,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -33814,29 +29799,25 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 256 push constant 256
 @256
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: neg arg2: None neg
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
-M=D
-//NEG
-@14 // X
+M=D@14 // X
 M=-M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -33844,7 +29825,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: and arg2: None and
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -33856,22 +29837,19 @@ A=M
 D=M
 @14
 M=D
-//AND
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M&D
-@14
-D=M
-@SP
+@14 // push memory address 14 to stack 
+D=M@SP
 A=M
 M=D
 @SP
 M=M+1
 //C_POP arg1: local arg2: 3 pop local 3
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -33890,28 +29868,25 @@ M=D
 @Output.drawChar$IF_END0
 0;JMP
 //C_LABEL arg1: IF_FALSE0 arg2: None label IF_FALSE0
-(Output.drawChar$IF_FALSE0)
-//C_PUSH arg1: local arg2: 0 push local 0
+(Output.drawChar$IF_FALSE0)//C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: static arg2: 4 push static 4
 @Output.4
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -33923,12 +29898,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -33937,8 +29911,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -33949,20 +29922,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 255 push constant 255
 @255
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: and arg2: None and
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -33974,22 +29945,19 @@ A=M
 D=M
 @14
 M=D
-//AND
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M&D
-@14
-D=M
-@SP
+@14 // push memory address 14 to stack 
+D=M@SP
 A=M
 M=D
 @SP
 M=M+1
 //C_POP arg1: local arg2: 3 pop local 3
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -34005,28 +29973,25 @@ D=M
 A=M
 M=D
 //C_LABEL arg1: IF_END0 arg2: None label IF_END0
-(Output.drawChar$IF_END0)
-//C_PUSH arg1: local arg2: 0 push local 0
+(Output.drawChar$IF_END0)//C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: static arg2: 4 push static 4
 @Output.4
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -34038,12 +30003,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -34057,10 +30021,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 2 push local 2
 @2
 D=A
@@ -34068,12 +30031,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -34085,12 +30047,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -34099,8 +30060,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -34111,10 +30071,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 3 push local 3
 @3
 D=A
@@ -34122,12 +30081,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: or arg2: None or
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -34139,12 +30097,11 @@ A=M
 D=M
 @14
 M=D
-//OR
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M|D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -34153,15 +30110,13 @@ M=D
 M=M+1
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -34169,14 +30124,12 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: that arg2: 0 pop that 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -34198,20 +30151,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 32 push constant 32
 @32
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -34223,12 +30174,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -34237,8 +30187,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -34260,20 +30209,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -34285,12 +30232,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -34299,8 +30245,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 1 pop local 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -34319,86 +30264,22 @@ M=D
 @Output.drawChar$WHILE_EXP0
 0;JMP
 //C_LABEL arg1: WHILE_END0 arg2: None label WHILE_END0
-(Output.drawChar$WHILE_END0)
-//C_PUSH arg1: constant arg2: 0 push constant 0
+(Output.drawChar$WHILE_END0)//C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: Output.moveCursor arg2: 0 function Output.moveCursor 0
 (Output.moveCursor)
+//@0
+//D=A
+//@SP
+//M=M+D
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -34406,20 +30287,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -34431,7 +30310,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -34446,7 +30324,7 @@ D=-1
 (ENDLT232)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -34460,20 +30338,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 22 push constant 22
 @22
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -34485,7 +30361,6 @@ A=M
 D=M
 @14
 M=D
-//GT
 @13  // Y
 D=M
 @14 // X
@@ -34500,7 +30375,7 @@ D=-1
 (ENDGT233)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack
 D=M
 @SP
 A=M
@@ -34508,7 +30383,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: or arg2: None or
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -34520,12 +30395,11 @@ A=M
 D=M
 @14
 M=D
-//OR
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M|D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -34539,20 +30413,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -34564,7 +30436,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -34579,7 +30450,7 @@ D=-1
 (ENDLT235)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -34587,7 +30458,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: or arg2: None or
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -34599,12 +30470,11 @@ A=M
 D=M
 @14
 M=D
-//OR
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M|D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -34618,20 +30488,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 63 push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -34643,7 +30511,6 @@ A=M
 D=M
 @14
 M=D
-//GT
 @13  // Y
 D=M
 @14 // X
@@ -34658,7 +30525,7 @@ D=-1
 (ENDGT237)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack
 D=M
 @SP
 A=M
@@ -34666,7 +30533,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: or arg2: None or
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -34678,12 +30545,11 @@ A=M
 D=M
 @14
 M=D
-//OR
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M|D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -34691,7 +30557,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -34705,52 +30571,50 @@ D;JNE
 @Output.moveCursor$IF_FALSE0
 0;JMP
 //C_LABEL arg1: IF_TRUE0 arg2: None label IF_TRUE0
-(Output.moveCursor$IF_TRUE0)
-//C_PUSH arg1: constant arg2: 20 push constant 20
+(Output.moveCursor$IF_TRUE0)//C_PUSH arg1: constant arg2: 20 push constant 20
 @20
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Sys.error arg2: 1 call Sys.error 1
-@Sys.error$ret.6
+@Sys.error$ret.6 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -34758,78 +30622,74 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Sys.error
+@Sys.error // make jump
 0;JMP
 (Sys.error$ret.6)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_LABEL arg1: IF_FALSE0 arg2: None label IF_FALSE0
-(Output.moveCursor$IF_FALSE0)
-//C_PUSH arg1: argument arg2: 1 push argument 1
+(Output.moveCursor$IF_FALSE0)//C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
 @ARG
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 2 push constant 2
 @2
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Math.divide arg2: 2 call Math.divide 2
-@Math.divide$ret.0
+@Math.divide$ret.0 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -34837,17 +30697,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Math.divide
+@Math.divide // make jump
 0;JMP
 (Math.divide$ret.0)
 //C_POP arg1: static arg2: 0 pop static 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.0
 M=D
@@ -34855,10 +30714,9 @@ M=D
 @32
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -34866,55 +30724,53 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 352 push constant 352
 @352
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Math.multiply arg2: 2 call Math.multiply 2
-@Math.multiply$ret.2
+@Math.multiply$ret.2 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -34922,15 +30778,15 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Math.multiply
+@Math.multiply // make jump
 0;JMP
 (Math.multiply$ret.2)
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -34942,12 +30798,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -34958,12 +30813,11 @@ M=M+1
 @Output.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -34975,12 +30829,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -34989,8 +30842,7 @@ M=D
 M=M+1
 //C_POP arg1: static arg2: 1 pop static 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.1
 M=D
@@ -35001,63 +30853,60 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: static arg2: 0 push static 0
 @Output.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 2 push constant 2
 @2
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Math.multiply arg2: 2 call Math.multiply 2
-@Math.multiply$ret.3
+@Math.multiply$ret.3 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -35065,15 +30914,15 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Math.multiply
+@Math.multiply // make jump
 0;JMP
 (Math.multiply$ret.3)
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -35085,7 +30934,6 @@ A=M
 D=M
 @14
 M=D
-//EQ
 @13 // y
 D=M
 @14 // x
@@ -35100,7 +30948,7 @@ D=-1
 (ENDEQ241)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -35109,8 +30957,7 @@ M=D
 M=M+1
 //C_POP arg1: static arg2: 2 pop static 2
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.2
 M=D
@@ -35118,47 +30965,46 @@ M=D
 @32
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.drawChar arg2: 1 call Output.drawChar 1
-@Output.drawChar$ret.0
+@Output.drawChar$ret.0 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -35166,17 +31012,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.drawChar
+@Output.drawChar // make jump
 0;JMP
 (Output.drawChar$ret.0)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -35184,81 +31029,18 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: Output.printChar arg2: 0 function Output.printChar 0
 (Output.printChar)
+//@0
+//D=A
+//@SP
+//M=M+D
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -35266,47 +31048,46 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: String.newLine arg2: 0 call String.newLine 0
-@String.newLine$ret.1
+@String.newLine$ret.1 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -35314,15 +31095,15 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@String.newLine
+@String.newLine // make jump
 0;JMP
 (String.newLine$ret.1)
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -35334,7 +31115,6 @@ A=M
 D=M
 @14
 M=D
-//EQ
 @13 // y
 D=M
 @14 // x
@@ -35349,7 +31129,7 @@ D=-1
 (ENDEQ242)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -35357,7 +31137,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -35371,44 +31151,43 @@ D;JNE
 @Output.printChar$IF_FALSE0
 0;JMP
 //C_LABEL arg1: IF_TRUE0 arg2: None label IF_TRUE0
-(Output.printChar$IF_TRUE0)
-//C_CALL arg1: Output.println arg2: 0 call Output.println 0
-@Output.println$ret.0
+(Output.printChar$IF_TRUE0)//C_CALL arg1: Output.println arg2: 0 call Output.println 0
+@Output.println$ret.0 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -35416,17 +31195,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.println
+@Output.println // make jump
 0;JMP
 (Output.println$ret.0)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -35434,55 +31212,53 @@ M=D
 @Output.printChar$IF_END0
 0;JMP
 //C_LABEL arg1: IF_FALSE0 arg2: None label IF_FALSE0
-(Output.printChar$IF_FALSE0)
-//C_PUSH arg1: argument arg2: 0 push argument 0
+(Output.printChar$IF_FALSE0)//C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
 @ARG
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: String.backSpace arg2: 0 call String.backSpace 0
-@String.backSpace$ret.2
+@String.backSpace$ret.2 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -35490,15 +31266,15 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@String.backSpace
+@String.backSpace // make jump
 0;JMP
 (String.backSpace$ret.2)
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -35510,7 +31286,6 @@ A=M
 D=M
 @14
 M=D
-//EQ
 @13 // y
 D=M
 @14 // x
@@ -35525,7 +31300,7 @@ D=-1
 (ENDEQ243)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -35533,7 +31308,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -35547,44 +31322,43 @@ D;JNE
 @Output.printChar$IF_FALSE1
 0;JMP
 //C_LABEL arg1: IF_TRUE1 arg2: None label IF_TRUE1
-(Output.printChar$IF_TRUE1)
-//C_CALL arg1: Output.backSpace arg2: 0 call Output.backSpace 0
-@Output.backSpace$ret.0
+(Output.printChar$IF_TRUE1)//C_CALL arg1: Output.backSpace arg2: 0 call Output.backSpace 0
+@Output.backSpace$ret.0 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -35592,17 +31366,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.backSpace
+@Output.backSpace // make jump
 0;JMP
 (Output.backSpace$ret.0)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -35610,55 +31383,53 @@ M=D
 @Output.printChar$IF_END1
 0;JMP
 //C_LABEL arg1: IF_FALSE1 arg2: None label IF_FALSE1
-(Output.printChar$IF_FALSE1)
-//C_PUSH arg1: argument arg2: 0 push argument 0
+(Output.printChar$IF_FALSE1)//C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
 @ARG
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.drawChar arg2: 1 call Output.drawChar 1
-@Output.drawChar$ret.1
+@Output.drawChar$ret.1 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -35666,17 +31437,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.drawChar
+@Output.drawChar // make jump
 0;JMP
 (Output.drawChar$ret.1)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -35684,21 +31454,19 @@ M=D
 @Output.2
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: not arg2: None not
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
 M=D
-//NOT
 @14 // first pop value
 M=!M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -35706,7 +31474,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE2 arg2: None if-goto IF_TRUE2
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -35720,25 +31488,22 @@ D;JNE
 @Output.printChar$IF_FALSE2
 0;JMP
 //C_LABEL arg1: IF_TRUE2 arg2: None label IF_TRUE2
-(Output.printChar$IF_TRUE2)
-//C_PUSH arg1: static arg2: 0 push static 0
+(Output.printChar$IF_TRUE2)//C_PUSH arg1: static arg2: 0 push static 0
 @Output.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -35750,12 +31515,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -35764,8 +31528,7 @@ M=D
 M=M+1
 //C_POP arg1: static arg2: 0 pop static 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.0
 M=D
@@ -35773,20 +31536,18 @@ M=D
 @Output.1
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -35798,12 +31559,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -35812,31 +31572,27 @@ M=D
 M=M+1
 //C_POP arg1: static arg2: 1 pop static 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.1
 M=D
 //C_LABEL arg1: IF_FALSE2 arg2: None label IF_FALSE2
-(Output.printChar$IF_FALSE2)
-//C_PUSH arg1: static arg2: 0 push static 0
+(Output.printChar$IF_FALSE2)//C_PUSH arg1: static arg2: 0 push static 0
 @Output.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 32 push constant 32
 @32
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -35848,7 +31604,6 @@ A=M
 D=M
 @14
 M=D
-//EQ
 @13 // y
 D=M
 @14 // x
@@ -35863,7 +31618,7 @@ D=-1
 (ENDEQ247)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -35871,7 +31626,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE3 arg2: None if-goto IF_TRUE3
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -35885,44 +31640,43 @@ D;JNE
 @Output.printChar$IF_FALSE3
 0;JMP
 //C_LABEL arg1: IF_TRUE3 arg2: None label IF_TRUE3
-(Output.printChar$IF_TRUE3)
-//C_CALL arg1: Output.println arg2: 0 call Output.println 0
-@Output.println$ret.1
+(Output.printChar$IF_TRUE3)//C_CALL arg1: Output.println arg2: 0 call Output.println 0
+@Output.println$ret.1 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -35930,17 +31684,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.println
+@Output.println // make jump
 0;JMP
 (Output.println$ret.1)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -35948,26 +31701,23 @@ M=D
 @Output.printChar$IF_END3
 0;JMP
 //C_LABEL arg1: IF_FALSE3 arg2: None label IF_FALSE3
-(Output.printChar$IF_FALSE3)
-//C_PUSH arg1: static arg2: 2 push static 2
+(Output.printChar$IF_FALSE3)//C_PUSH arg1: static arg2: 2 push static 2
 @Output.2
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: not arg2: None not
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
 M=D
-//NOT
 @14 // first pop value
 M=!M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -35976,110 +31726,41 @@ M=D
 M=M+1
 //C_POP arg1: static arg2: 2 pop static 2
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.2
 M=D
 //C_LABEL arg1: IF_END3 arg2: None label IF_END3
-(Output.printChar$IF_END3)
-//C_LABEL arg1: IF_END1 arg2: None label IF_END1
-(Output.printChar$IF_END1)
-//C_LABEL arg1: IF_END0 arg2: None label IF_END0
-(Output.printChar$IF_END0)
-//C_PUSH arg1: constant arg2: 0 push constant 0
+(Output.printChar$IF_END3)//C_LABEL arg1: IF_END1 arg2: None label IF_END1
+(Output.printChar$IF_END1)//C_LABEL arg1: IF_END0 arg2: None label IF_END0
+(Output.printChar$IF_END0)//C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: Output.printString arg2: 2 function Output.printString 2
 (Output.printString)
+//@2
+//D=A
+//@SP
+//M=M+D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -36087,47 +31768,46 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: String.length arg2: 1 call String.length 1
-@String.length$ret.0
+@String.length$ret.0 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -36135,17 +31815,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@String.length
+@String.length // make jump
 0;JMP
 (String.length$ret.0)
 //C_POP arg1: local arg2: 1 pop local 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -36161,18 +31840,16 @@ D=M
 A=M
 M=D
 //C_LABEL arg1: WHILE_EXP0 arg2: None label WHILE_EXP0
-(Output.printString$WHILE_EXP0)
-//C_PUSH arg1: local arg2: 0 push local 0
+(Output.printString$WHILE_EXP0)//C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
@@ -36180,12 +31857,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -36197,7 +31873,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -36212,7 +31887,7 @@ D=-1
 (ENDLT249)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -36220,16 +31895,15 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: not arg2: None not
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
 M=D
-//NOT
 @14 // first pop value
 M=!M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -36237,7 +31911,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -36254,10 +31928,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -36265,47 +31938,46 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: String.charAt arg2: 2 call String.charAt 2
-@String.charAt$ret.0
+@String.charAt$ret.0 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -36313,50 +31985,50 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@String.charAt
+@String.charAt // make jump
 0;JMP
 (String.charAt$ret.0)
 //C_CALL arg1: Output.printChar arg2: 1 call Output.printChar 1
-@Output.printChar$ret.6
+@Output.printChar$ret.6 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -36364,17 +32036,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.printChar
+@Output.printChar // make jump
 0;JMP
 (Output.printChar$ret.6)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -36385,20 +32056,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -36410,12 +32079,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -36424,8 +32092,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -36444,94 +32111,29 @@ M=D
 @Output.printString$WHILE_EXP0
 0;JMP
 //C_LABEL arg1: WHILE_END0 arg2: None label WHILE_END0
-(Output.printString$WHILE_END0)
-//C_PUSH arg1: constant arg2: 0 push constant 0
+(Output.printString$WHILE_END0)//C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: Output.printInt arg2: 0 function Output.printInt 0
 (Output.printInt)
+//@0
+//D=A
+//@SP
+//M=M+D
 //C_PUSH arg1: static arg2: 3 push static 3
 @Output.3
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -36539,47 +32141,46 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: String.setInt arg2: 2 call String.setInt 2
-@String.setInt$ret.0
+@String.setInt$ret.0 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -36587,17 +32188,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@String.setInt
+@String.setInt // make jump
 0;JMP
 (String.setInt$ret.0)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -36605,47 +32205,46 @@ M=D
 @Output.3
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.printString arg2: 1 call Output.printString 1
-@Output.printString$ret.1
+@Output.printString$ret.1 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -36653,17 +32252,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.printString
+@Output.printString // make jump
 0;JMP
 (Output.printString$ret.1)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -36671,99 +32269,34 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: Output.println arg2: 0 function Output.println 0
 (Output.println)
+//@0
+//D=A
+//@SP
+//M=M+D
 //C_PUSH arg1: static arg2: 1 push static 1
 @Output.1
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 352 push constant 352
 @352
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -36775,12 +32308,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -36791,12 +32323,11 @@ M=M+1
 @Output.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -36808,12 +32339,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -36822,8 +32352,7 @@ M=D
 M=M+1
 //C_POP arg1: static arg2: 1 pop static 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.1
 M=D
@@ -36831,14 +32360,12 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: static arg2: 0 pop static 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.0
 M=D
@@ -36846,21 +32373,19 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: not arg2: None not
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
 M=D
-//NOT
 @14 // first pop value
 M=!M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -36869,8 +32394,7 @@ M=D
 M=M+1
 //C_POP arg1: static arg2: 2 pop static 2
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.2
 M=D
@@ -36878,20 +32402,18 @@ M=D
 @Output.1
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 8128 push constant 8128
 @8128
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -36903,7 +32425,6 @@ A=M
 D=M
 @14
 M=D
-//EQ
 @13 // y
 D=M
 @14 // x
@@ -36918,7 +32439,7 @@ D=-1
 (ENDEQ255)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -36926,7 +32447,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -36940,113 +32461,45 @@ D;JNE
 @Output.println$IF_FALSE0
 0;JMP
 //C_LABEL arg1: IF_TRUE0 arg2: None label IF_TRUE0
-(Output.println$IF_TRUE0)
-//C_PUSH arg1: constant arg2: 32 push constant 32
+(Output.println$IF_TRUE0)//C_PUSH arg1: constant arg2: 32 push constant 32
 @32
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: static arg2: 1 pop static 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.1
 M=D
 //C_LABEL arg1: IF_FALSE0 arg2: None label IF_FALSE0
-(Output.println$IF_FALSE0)
-//C_PUSH arg1: constant arg2: 0 push constant 0
+(Output.println$IF_FALSE0)//C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: Output.backSpace arg2: 0 function Output.backSpace 0
 (Output.backSpace)
+//@0
+//D=A
+//@SP
+//M=M+D
 //C_PUSH arg1: static arg2: 2 push static 2
 @Output.2
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -37060,25 +32513,22 @@ D;JNE
 @Output.backSpace$IF_FALSE0
 0;JMP
 //C_LABEL arg1: IF_TRUE0 arg2: None label IF_TRUE0
-(Output.backSpace$IF_TRUE0)
-//C_PUSH arg1: static arg2: 0 push static 0
+(Output.backSpace$IF_TRUE0)//C_PUSH arg1: static arg2: 0 push static 0
 @Output.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -37090,7 +32540,6 @@ A=M
 D=M
 @14
 M=D
-//GT
 @13  // Y
 D=M
 @14 // X
@@ -37105,7 +32554,7 @@ D=-1
 (ENDGT256)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack
 D=M
 @SP
 A=M
@@ -37113,7 +32562,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -37127,25 +32576,22 @@ D;JNE
 @Output.backSpace$IF_FALSE1
 0;JMP
 //C_LABEL arg1: IF_TRUE1 arg2: None label IF_TRUE1
-(Output.backSpace$IF_TRUE1)
-//C_PUSH arg1: static arg2: 0 push static 0
+(Output.backSpace$IF_TRUE1)//C_PUSH arg1: static arg2: 0 push static 0
 @Output.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -37157,12 +32603,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -37171,8 +32616,7 @@ M=D
 M=M+1
 //C_POP arg1: static arg2: 0 pop static 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.0
 M=D
@@ -37180,20 +32624,18 @@ M=D
 @Output.1
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -37205,12 +32647,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -37219,8 +32660,7 @@ M=D
 M=M+1
 //C_POP arg1: static arg2: 1 pop static 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.1
 M=D
@@ -37228,19 +32668,16 @@ M=D
 @Output.backSpace$IF_END1
 0;JMP
 //C_LABEL arg1: IF_FALSE1 arg2: None label IF_FALSE1
-(Output.backSpace$IF_FALSE1)
-//C_PUSH arg1: constant arg2: 31 push constant 31
+(Output.backSpace$IF_FALSE1)//C_PUSH arg1: constant arg2: 31 push constant 31
 @31
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: static arg2: 0 pop static 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.0
 M=D
@@ -37248,20 +32685,18 @@ M=D
 @Output.1
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 32 push constant 32
 @32
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -37273,7 +32708,6 @@ A=M
 D=M
 @14
 M=D
-//EQ
 @13 // y
 D=M
 @14 // x
@@ -37288,7 +32722,7 @@ D=-1
 (ENDEQ259)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -37296,7 +32730,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE2 arg2: None if-goto IF_TRUE2
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -37310,42 +32744,36 @@ D;JNE
 @Output.backSpace$IF_FALSE2
 0;JMP
 //C_LABEL arg1: IF_TRUE2 arg2: None label IF_TRUE2
-(Output.backSpace$IF_TRUE2)
-//C_PUSH arg1: constant arg2: 8128 push constant 8128
+(Output.backSpace$IF_TRUE2)//C_PUSH arg1: constant arg2: 8128 push constant 8128
 @8128
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: static arg2: 1 pop static 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.1
 M=D
 //C_LABEL arg1: IF_FALSE2 arg2: None label IF_FALSE2
-(Output.backSpace$IF_FALSE2)
-//C_PUSH arg1: static arg2: 1 push static 1
+(Output.backSpace$IF_FALSE2)//C_PUSH arg1: static arg2: 1 push static 1
 @Output.1
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 321 push constant 321
 @321
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -37357,12 +32785,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -37371,25 +32798,21 @@ M=D
 M=M+1
 //C_POP arg1: static arg2: 1 pop static 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.1
 M=D
 //C_LABEL arg1: IF_END1 arg2: None label IF_END1
-(Output.backSpace$IF_END1)
-//C_PUSH arg1: constant arg2: 0 push constant 0
+(Output.backSpace$IF_END1)//C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: static arg2: 2 pop static 2
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.2
 M=D
@@ -37397,26 +32820,23 @@ M=D
 @Output.backSpace$IF_END0
 0;JMP
 //C_LABEL arg1: IF_FALSE0 arg2: None label IF_FALSE0
-(Output.backSpace$IF_FALSE0)
-//C_PUSH arg1: constant arg2: 0 push constant 0
+(Output.backSpace$IF_FALSE0)//C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: not arg2: None not
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
 M=D
-//NOT
 @14 // first pop value
 M=!M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -37425,58 +32845,55 @@ M=D
 M=M+1
 //C_POP arg1: static arg2: 2 pop static 2
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.2
 M=D
 //C_LABEL arg1: IF_END0 arg2: None label IF_END0
-(Output.backSpace$IF_END0)
-//C_PUSH arg1: constant arg2: 32 push constant 32
+(Output.backSpace$IF_END0)//C_PUSH arg1: constant arg2: 32 push constant 32
 @32
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Output.drawChar arg2: 1 call Output.drawChar 1
-@Output.drawChar$ret.2
+@Output.drawChar$ret.2 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -37484,17 +32901,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Output.drawChar
+@Output.drawChar // make jump
 0;JMP
 (Output.drawChar$ret.2)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -37502,100 +32918,34 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: Screen.init arg2: 1 function Screen.init 1
 (Screen.init)
+//@1
+//D=A
+//@SP
+//M=M+D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 16384 push constant 16384
 @16384
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: static arg2: 1 pop static 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Screen.1
 M=D
@@ -37603,21 +32953,19 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: not arg2: None not
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
 M=D
-//NOT
 @14 // first pop value
 M=!M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -37626,8 +32974,7 @@ M=D
 M=M+1
 //C_POP arg1: static arg2: 2 pop static 2
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Screen.2
 M=D
@@ -37635,47 +32982,46 @@ M=D
 @17
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Array.new arg2: 1 call Array.new 1
-@Array.new$ret.6
+@Array.new$ret.6 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -37683,17 +33029,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Array.new
+@Array.new // make jump
 0;JMP
 (Array.new$ret.6)
 //C_POP arg1: static arg2: 0 pop static 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Screen.0
 M=D
@@ -37701,20 +33046,18 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: static arg2: 0 push static 0
 @Screen.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -37726,12 +33069,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -37742,21 +33084,18 @@ M=M+1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -37764,14 +33103,12 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: that arg2: 0 pop that 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -37787,28 +33124,25 @@ D=M
 A=M
 M=D
 //C_LABEL arg1: WHILE_EXP0 arg2: None label WHILE_EXP0
-(Screen.init$WHILE_EXP0)
-//C_PUSH arg1: local arg2: 0 push local 0
+(Screen.init$WHILE_EXP0)//C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 16 push constant 16
 @16
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -37820,7 +33154,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -37835,7 +33168,7 @@ D=-1
 (ENDLT264)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -37843,16 +33176,15 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: not arg2: None not
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
 M=D
-//NOT
 @14 // first pop value
 M=!M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -37860,7 +33192,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -37877,20 +33209,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -37902,12 +33232,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -37916,8 +33245,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -37939,20 +33267,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: static arg2: 0 push static 0
 @Screen.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -37964,12 +33290,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -37983,20 +33308,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -38008,12 +33331,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -38024,12 +33346,11 @@ M=M+1
 @Screen.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -38041,12 +33362,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -38055,8 +33375,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -38067,10 +33386,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -38078,20 +33396,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -38103,12 +33419,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -38119,12 +33434,11 @@ M=M+1
 @Screen.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -38136,12 +33450,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -38150,8 +33463,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -38162,12 +33474,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -38179,12 +33490,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -38193,15 +33503,13 @@ M=D
 M=M+1
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -38209,14 +33517,12 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: that arg2: 0 pop that 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -38235,116 +33541,48 @@ M=D
 @Screen.init$WHILE_EXP0
 0;JMP
 //C_LABEL arg1: WHILE_END0 arg2: None label WHILE_END0
-(Screen.init$WHILE_END0)
-//C_PUSH arg1: constant arg2: 0 push constant 0
+(Screen.init$WHILE_END0)//C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: Screen.clearScreen arg2: 1 function Screen.clearScreen 1
 (Screen.clearScreen)
+//@1
+//D=A
+//@SP
+//M=M+D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_LABEL arg1: WHILE_EXP0 arg2: None label WHILE_EXP0
-(Screen.clearScreen$WHILE_EXP0)
-//C_PUSH arg1: local arg2: 0 push local 0
+(Screen.clearScreen$WHILE_EXP0)//C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 8192 push constant 8192
 @8192
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -38356,7 +33594,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -38371,7 +33608,7 @@ D=-1
 (ENDLT273)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -38379,16 +33616,15 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: not arg2: None not
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
 M=D
-//NOT
 @14 // first pop value
 M=!M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -38396,7 +33632,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -38413,20 +33649,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: static arg2: 1 push static 1
 @Screen.1
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -38438,12 +33672,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -38454,21 +33687,18 @@ M=M+1
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -38476,14 +33706,12 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: that arg2: 0 pop that 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -38505,20 +33733,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -38530,12 +33756,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -38544,8 +33769,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -38564,96 +33788,31 @@ M=D
 @Screen.clearScreen$WHILE_EXP0
 0;JMP
 //C_LABEL arg1: WHILE_END0 arg2: None label WHILE_END0
-(Screen.clearScreen$WHILE_END0)
-//C_PUSH arg1: constant arg2: 0 push constant 0
+(Screen.clearScreen$WHILE_END0)//C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: Screen.updateLocation arg2: 0 function Screen.updateLocation 0
 (Screen.updateLocation)
+//@0
+//D=A
+//@SP
+//M=M+D
 //C_PUSH arg1: static arg2: 2 push static 2
 @Screen.2
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -38667,28 +33826,25 @@ D;JNE
 @Screen.updateLocation$IF_FALSE0
 0;JMP
 //C_LABEL arg1: IF_TRUE0 arg2: None label IF_TRUE0
-(Screen.updateLocation$IF_TRUE0)
-//C_PUSH arg1: argument arg2: 0 push argument 0
+(Screen.updateLocation$IF_TRUE0)//C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
 @ARG
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: static arg2: 1 push static 1
 @Screen.1
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -38700,12 +33856,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -38719,20 +33874,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: static arg2: 1 push static 1
 @Screen.1
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -38744,12 +33897,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -38758,8 +33910,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -38770,10 +33921,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -38781,12 +33931,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: or arg2: None or
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -38798,12 +33947,11 @@ A=M
 D=M
 @14
 M=D
-//OR
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M|D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -38812,15 +33960,13 @@ M=D
 M=M+1
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -38828,14 +33974,12 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: that arg2: 0 pop that 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -38854,28 +33998,25 @@ M=D
 @Screen.updateLocation$IF_END0
 0;JMP
 //C_LABEL arg1: IF_FALSE0 arg2: None label IF_FALSE0
-(Screen.updateLocation$IF_FALSE0)
-//C_PUSH arg1: argument arg2: 0 push argument 0
+(Screen.updateLocation$IF_FALSE0)//C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
 @ARG
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: static arg2: 1 push static 1
 @Screen.1
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -38887,12 +34028,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -38906,20 +34046,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: static arg2: 1 push static 1
 @Screen.1
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -38931,12 +34069,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -38945,8 +34082,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -38957,10 +34093,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -38968,21 +34103,19 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: not arg2: None not
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
 M=D
-//NOT
 @14 // first pop value
 M=!M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -38990,7 +34123,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: and arg2: None and
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -39002,29 +34135,25 @@ A=M
 D=M
 @14
 M=D
-//AND
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M&D
-@14
-D=M
-@SP
+@14 // push memory address 14 to stack 
+D=M@SP
 A=M
 M=D
 @SP
 M=M+1
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -39032,14 +34161,12 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: that arg2: 0 pop that 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -39055,86 +34182,22 @@ D=M
 A=M
 M=D
 //C_LABEL arg1: IF_END0 arg2: None label IF_END0
-(Screen.updateLocation$IF_END0)
-//C_PUSH arg1: constant arg2: 0 push constant 0
+(Screen.updateLocation$IF_END0)//C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: Screen.setColor arg2: 0 function Screen.setColor 0
 (Screen.setColor)
+//@0
+//D=A
+//@SP
+//M=M+D
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -39142,14 +34205,12 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: static arg2: 2 pop static 2
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Screen.2
 M=D
@@ -39157,102 +34218,36 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: Screen.drawPixel arg2: 3 function Screen.drawPixel 3
 (Screen.drawPixel)
+//@3
+//D=A
+//@SP
+//M=M+D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -39260,20 +34255,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -39285,7 +34278,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -39300,7 +34292,7 @@ D=-1
 (ENDLT284)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -39314,20 +34306,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 511 push constant 511
 @511
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -39339,7 +34329,6 @@ A=M
 D=M
 @14
 M=D
-//GT
 @13  // Y
 D=M
 @14 // X
@@ -39354,7 +34343,7 @@ D=-1
 (ENDGT285)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack
 D=M
 @SP
 A=M
@@ -39362,7 +34351,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: or arg2: None or
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -39374,12 +34363,11 @@ A=M
 D=M
 @14
 M=D
-//OR
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M|D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -39393,20 +34381,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -39418,7 +34404,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -39433,7 +34418,7 @@ D=-1
 (ENDLT287)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -39441,7 +34426,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: or arg2: None or
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -39453,12 +34438,11 @@ A=M
 D=M
 @14
 M=D
-//OR
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M|D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -39472,20 +34456,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 255 push constant 255
 @255
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -39497,7 +34479,6 @@ A=M
 D=M
 @14
 M=D
-//GT
 @13  // Y
 D=M
 @14 // X
@@ -39512,7 +34493,7 @@ D=-1
 (ENDGT289)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack
 D=M
 @SP
 A=M
@@ -39520,7 +34501,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: or arg2: None or
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -39532,12 +34513,11 @@ A=M
 D=M
 @14
 M=D
-//OR
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M|D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -39545,7 +34525,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -39559,52 +34539,50 @@ D;JNE
 @Screen.drawPixel$IF_FALSE0
 0;JMP
 //C_LABEL arg1: IF_TRUE0 arg2: None label IF_TRUE0
-(Screen.drawPixel$IF_TRUE0)
-//C_PUSH arg1: constant arg2: 7 push constant 7
+(Screen.drawPixel$IF_TRUE0)//C_PUSH arg1: constant arg2: 7 push constant 7
 @7
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Sys.error arg2: 1 call Sys.error 1
-@Sys.error$ret.7
+@Sys.error$ret.7 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -39612,78 +34590,74 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Sys.error
+@Sys.error // make jump
 0;JMP
 (Sys.error$ret.7)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_LABEL arg1: IF_FALSE0 arg2: None label IF_FALSE0
-(Screen.drawPixel$IF_FALSE0)
-//C_PUSH arg1: argument arg2: 0 push argument 0
+(Screen.drawPixel$IF_FALSE0)//C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
 @ARG
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 16 push constant 16
 @16
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Math.divide arg2: 2 call Math.divide 2
-@Math.divide$ret.1
+@Math.divide$ret.1 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -39691,17 +34665,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Math.divide
+@Math.divide // make jump
 0;JMP
 (Math.divide$ret.1)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -39723,10 +34696,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -39734,55 +34706,53 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 16 push constant 16
 @16
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Math.multiply arg2: 2 call Math.multiply 2
-@Math.multiply$ret.4
+@Math.multiply$ret.4 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -39790,15 +34760,15 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Math.multiply
+@Math.multiply // make jump
 0;JMP
 (Math.multiply$ret.4)
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -39810,12 +34780,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -39824,8 +34793,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 1 pop local 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -39847,55 +34815,53 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 32 push constant 32
 @32
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Math.multiply arg2: 2 call Math.multiply 2
-@Math.multiply$ret.5
+@Math.multiply$ret.5 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -39903,11 +34869,11 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Math.multiply
+@Math.multiply // make jump
 0;JMP
 (Math.multiply$ret.5)
 //C_PUSH arg1: local arg2: 0 push local 0
@@ -39917,12 +34883,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -39934,12 +34899,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -39948,8 +34912,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 2 pop local 2
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -39971,10 +34934,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
@@ -39982,20 +34944,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: static arg2: 0 push static 0
 @Screen.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -40007,12 +34967,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -40021,8 +34980,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -40033,47 +34991,46 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Screen.updateLocation arg2: 2 call Screen.updateLocation 2
-@Screen.updateLocation$ret.0
+@Screen.updateLocation$ret.0 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -40081,17 +35038,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Screen.updateLocation
+@Screen.updateLocation // make jump
 0;JMP
 (Screen.updateLocation$ret.0)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -40099,81 +35055,18 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: Screen.drawConditional arg2: 0 function Screen.drawConditional 0
 (Screen.drawConditional)
+//@0
+//D=A
+//@SP
+//M=M+D
 //C_PUSH arg1: argument arg2: 2 push argument 2
 @2
 D=A
@@ -40181,12 +35074,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -40200,18 +35092,16 @@ D;JNE
 @Screen.drawConditional$IF_FALSE0
 0;JMP
 //C_LABEL arg1: IF_TRUE0 arg2: None label IF_TRUE0
-(Screen.drawConditional$IF_TRUE0)
-//C_PUSH arg1: argument arg2: 1 push argument 1
+(Screen.drawConditional$IF_TRUE0)//C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
 @ARG
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -40219,47 +35109,46 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Screen.drawPixel arg2: 2 call Screen.drawPixel 2
-@Screen.drawPixel$ret.0
+@Screen.drawPixel$ret.0 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -40267,17 +35156,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Screen.drawPixel
+@Screen.drawPixel // make jump
 0;JMP
 (Screen.drawPixel$ret.0)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -40285,18 +35173,16 @@ M=D
 @Screen.drawConditional$IF_END0
 0;JMP
 //C_LABEL arg1: IF_FALSE0 arg2: None label IF_FALSE0
-(Screen.drawConditional$IF_FALSE0)
-//C_PUSH arg1: argument arg2: 0 push argument 0
+(Screen.drawConditional$IF_FALSE0)//C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
 @ARG
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -40304,47 +35190,46 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Screen.drawPixel arg2: 2 call Screen.drawPixel 2
-@Screen.drawPixel$ret.1
+@Screen.drawPixel$ret.1 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -40352,178 +35237,102 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Screen.drawPixel
+@Screen.drawPixel // make jump
 0;JMP
 (Screen.drawPixel$ret.1)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_LABEL arg1: IF_END0 arg2: None label IF_END0
-(Screen.drawConditional$IF_END0)
-//C_PUSH arg1: constant arg2: 0 push constant 0
+(Screen.drawConditional$IF_END0)//C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: Screen.drawLine arg2: 11 function Screen.drawLine 11
 (Screen.drawLine)
+//@11
+//D=A
+//@SP
+//M=M+D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -40531,20 +35340,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -40556,7 +35363,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -40571,7 +35377,7 @@ D=-1
 (ENDLT294)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -40585,20 +35391,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 511 push constant 511
 @511
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -40610,7 +35414,6 @@ A=M
 D=M
 @14
 M=D
-//GT
 @13  // Y
 D=M
 @14 // X
@@ -40625,7 +35428,7 @@ D=-1
 (ENDGT295)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack
 D=M
 @SP
 A=M
@@ -40633,7 +35436,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: or arg2: None or
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -40645,12 +35448,11 @@ A=M
 D=M
 @14
 M=D
-//OR
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M|D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -40664,20 +35466,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -40689,7 +35489,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -40704,7 +35503,7 @@ D=-1
 (ENDLT297)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -40712,7 +35511,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: or arg2: None or
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -40724,12 +35523,11 @@ A=M
 D=M
 @14
 M=D
-//OR
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M|D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -40743,20 +35541,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 255 push constant 255
 @255
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -40768,7 +35564,6 @@ A=M
 D=M
 @14
 M=D
-//GT
 @13  // Y
 D=M
 @14 // X
@@ -40783,7 +35578,7 @@ D=-1
 (ENDGT299)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack
 D=M
 @SP
 A=M
@@ -40791,7 +35586,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: or arg2: None or
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -40803,12 +35598,11 @@ A=M
 D=M
 @14
 M=D
-//OR
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M|D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -40816,7 +35610,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -40830,52 +35624,50 @@ D;JNE
 @Screen.drawLine$IF_FALSE0
 0;JMP
 //C_LABEL arg1: IF_TRUE0 arg2: None label IF_TRUE0
-(Screen.drawLine$IF_TRUE0)
-//C_PUSH arg1: constant arg2: 8 push constant 8
+(Screen.drawLine$IF_TRUE0)//C_PUSH arg1: constant arg2: 8 push constant 8
 @8
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Sys.error arg2: 1 call Sys.error 1
-@Sys.error$ret.8
+@Sys.error$ret.8 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -40883,33 +35675,30 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Sys.error
+@Sys.error // make jump
 0;JMP
 (Sys.error$ret.8)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_LABEL arg1: IF_FALSE0 arg2: None label IF_FALSE0
-(Screen.drawLine$IF_FALSE0)
-//C_PUSH arg1: argument arg2: 2 push argument 2
+(Screen.drawLine$IF_FALSE0)//C_PUSH arg1: argument arg2: 2 push argument 2
 @2
 D=A
 @ARG
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -40917,12 +35706,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -40934,12 +35722,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -40947,42 +35734,42 @@ M=D
 @SP
 M=M+1
 //C_CALL arg1: Math.abs arg2: 1 call Math.abs 1
-@Math.abs$ret.4
+@Math.abs$ret.4 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -40990,17 +35777,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Math.abs
+@Math.abs // make jump
 0;JMP
 (Math.abs$ret.4)
 //C_POP arg1: local arg2: 3 pop local 3
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -41022,10 +35808,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -41033,12 +35818,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -41050,12 +35834,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -41063,42 +35846,42 @@ M=D
 @SP
 M=M+1
 //C_CALL arg1: Math.abs arg2: 1 call Math.abs 1
-@Math.abs$ret.5
+@Math.abs$ret.5 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -41106,17 +35889,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Math.abs
+@Math.abs // make jump
 0;JMP
 (Math.abs$ret.5)
 //C_POP arg1: local arg2: 2 pop local 2
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -41138,10 +35920,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 2 push local 2
 @2
 D=A
@@ -41149,12 +35930,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -41166,7 +35946,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -41181,7 +35960,7 @@ D=-1
 (ENDLT303)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -41190,8 +35969,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 6 pop local 6
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -41213,10 +35991,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 3 push argument 3
 @3
 D=A
@@ -41224,10 +36001,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -41235,12 +36011,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -41252,7 +36027,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -41267,7 +36041,7 @@ D=-1
 (ENDLT304)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -41275,7 +36049,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: and arg2: None and
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -41287,14 +36061,12 @@ A=M
 D=M
 @14
 M=D
-//AND
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M&D
-@14
-D=M
-@SP
+@14 // push memory address 14 to stack 
+D=M@SP
 A=M
 M=D
 @SP
@@ -41306,21 +36078,19 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: not arg2: None not
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
 M=D
-//NOT
 @14 // first pop value
 M=!M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -41334,10 +36104,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -41345,12 +36114,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -41362,7 +36130,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -41377,7 +36144,7 @@ D=-1
 (ENDLT307)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -41385,7 +36152,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: and arg2: None and
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -41397,20 +36164,18 @@ A=M
 D=M
 @14
 M=D
-//AND
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M&D
-@14
-D=M
-@SP
+@14 // push memory address 14 to stack 
+D=M@SP
 A=M
 M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: or arg2: None or
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -41422,12 +36187,11 @@ A=M
 D=M
 @14
 M=D
-//OR
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M|D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -41435,7 +36199,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -41449,22 +36213,19 @@ D;JNE
 @Screen.drawLine$IF_FALSE1
 0;JMP
 //C_LABEL arg1: IF_TRUE1 arg2: None label IF_TRUE1
-(Screen.drawLine$IF_TRUE1)
-//C_PUSH arg1: argument arg2: 0 push argument 0
+(Screen.drawLine$IF_TRUE1)//C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
 @ARG
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: local arg2: 4 pop local 4
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -41486,14 +36247,12 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: argument arg2: 0 pop argument 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -41515,14 +36274,12 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: argument arg2: 2 pop argument 2
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -41544,14 +36301,12 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: local arg2: 4 pop local 4
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -41573,14 +36328,12 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: argument arg2: 1 pop argument 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -41602,14 +36355,12 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: argument arg2: 3 pop argument 3
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -41625,20 +36376,18 @@ D=M
 A=M
 M=D
 //C_LABEL arg1: IF_FALSE1 arg2: None label IF_FALSE1
-(Screen.drawLine$IF_FALSE1)
-//C_PUSH arg1: local arg2: 6 push local 6
+(Screen.drawLine$IF_FALSE1)//C_PUSH arg1: local arg2: 6 push local 6
 @6
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_IF arg1: IF_TRUE2 arg2: None if-goto IF_TRUE2
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -41652,22 +36401,19 @@ D;JNE
 @Screen.drawLine$IF_FALSE2
 0;JMP
 //C_LABEL arg1: IF_TRUE2 arg2: None label IF_TRUE2
-(Screen.drawLine$IF_TRUE2)
-//C_PUSH arg1: local arg2: 3 push local 3
+(Screen.drawLine$IF_TRUE2)//C_PUSH arg1: local arg2: 3 push local 3
 @3
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: local arg2: 4 pop local 4
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -41689,14 +36435,12 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: local arg2: 3 pop local 3
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -41718,14 +36462,12 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: local arg2: 2 pop local 2
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -41747,14 +36489,12 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: local arg2: 1 pop local 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -41776,14 +36516,12 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -41805,14 +36543,12 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: local arg2: 8 pop local 8
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -41834,10 +36570,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 2 push argument 2
 @2
 D=A
@@ -41845,12 +36580,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -41862,7 +36596,6 @@ A=M
 D=M
 @14
 M=D
-//GT
 @13  // Y
 D=M
 @14 // X
@@ -41877,7 +36610,7 @@ D=-1
 (ENDGT310)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack
 D=M
 @SP
 A=M
@@ -41886,8 +36619,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 7 pop local 7
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -41906,22 +36638,19 @@ M=D
 @Screen.drawLine$IF_END2
 0;JMP
 //C_LABEL arg1: IF_FALSE2 arg2: None label IF_FALSE2
-(Screen.drawLine$IF_FALSE2)
-//C_PUSH arg1: argument arg2: 0 push argument 0
+(Screen.drawLine$IF_FALSE2)//C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
 @ARG
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: local arg2: 1 pop local 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -41943,14 +36672,12 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -41972,14 +36699,12 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: local arg2: 8 pop local 8
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -42001,10 +36726,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 3 push argument 3
 @3
 D=A
@@ -42012,12 +36736,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -42029,7 +36752,6 @@ A=M
 D=M
 @14
 M=D
-//GT
 @13  // Y
 D=M
 @14 // X
@@ -42044,7 +36766,7 @@ D=-1
 (ENDGT311)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack
 D=M
 @SP
 A=M
@@ -42053,8 +36775,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 7 pop local 7
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -42070,15 +36791,13 @@ D=M
 A=M
 M=D
 //C_LABEL arg1: IF_END2 arg2: None label IF_END2
-(Screen.drawLine$IF_END2)
-//C_PUSH arg1: constant arg2: 2 push constant 2
+(Screen.drawLine$IF_END2)//C_PUSH arg1: constant arg2: 2 push constant 2
 @2
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 2 push local 2
 @2
 D=A
@@ -42086,47 +36805,46 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Math.multiply arg2: 2 call Math.multiply 2
-@Math.multiply$ret.6
+@Math.multiply$ret.6 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -42134,11 +36852,11 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Math.multiply
+@Math.multiply // make jump
 0;JMP
 (Math.multiply$ret.6)
 //C_PUSH arg1: local arg2: 3 push local 3
@@ -42148,12 +36866,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -42165,12 +36882,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -42179,8 +36895,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 5 pop local 5
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -42199,10 +36914,9 @@ M=D
 @2
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 2 push local 2
 @2
 D=A
@@ -42210,47 +36924,46 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Math.multiply arg2: 2 call Math.multiply 2
-@Math.multiply$ret.7
+@Math.multiply$ret.7 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -42258,17 +36971,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Math.multiply
+@Math.multiply // make jump
 0;JMP
 (Math.multiply$ret.7)
 //C_POP arg1: local arg2: 9 pop local 9
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -42287,10 +36999,9 @@ M=D
 @2
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 2 push local 2
 @2
 D=A
@@ -42298,10 +37009,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 3 push local 3
 @3
 D=A
@@ -42309,12 +37019,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -42326,12 +37035,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -42339,42 +37047,42 @@ M=D
 @SP
 M=M+1
 //C_CALL arg1: Math.multiply arg2: 2 call Math.multiply 2
-@Math.multiply$ret.8
+@Math.multiply$ret.8 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -42382,17 +37090,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Math.multiply
+@Math.multiply // make jump
 0;JMP
 (Math.multiply$ret.8)
 //C_POP arg1: local arg2: 10 pop local 10
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -42414,10 +37121,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -42425,10 +37131,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 6 push local 6
 @6
 D=A
@@ -42436,47 +37141,46 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Screen.drawConditional arg2: 3 call Screen.drawConditional 3
-@Screen.drawConditional$ret.0
+@Screen.drawConditional$ret.0 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -42484,33 +37188,30 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Screen.drawConditional
+@Screen.drawConditional // make jump
 0;JMP
 (Screen.drawConditional$ret.0)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_LABEL arg1: WHILE_EXP0 arg2: None label WHILE_EXP0
-(Screen.drawLine$WHILE_EXP0)
-//C_PUSH arg1: local arg2: 1 push local 1
+(Screen.drawLine$WHILE_EXP0)//C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 8 push local 8
 @8
 D=A
@@ -42518,12 +37219,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -42535,7 +37235,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -42550,7 +37249,7 @@ D=-1
 (ENDLT314)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -42558,16 +37257,15 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: not arg2: None not
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
 M=D
-//NOT
 @14 // first pop value
 M=!M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -42575,7 +37273,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -42592,20 +37290,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -42617,7 +37313,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -42632,7 +37327,7 @@ D=-1
 (ENDLT316)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -42640,7 +37335,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE3 arg2: None if-goto IF_TRUE3
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -42654,18 +37349,16 @@ D;JNE
 @Screen.drawLine$IF_FALSE3
 0;JMP
 //C_LABEL arg1: IF_TRUE3 arg2: None label IF_TRUE3
-(Screen.drawLine$IF_TRUE3)
-//C_PUSH arg1: local arg2: 5 push local 5
+(Screen.drawLine$IF_TRUE3)//C_PUSH arg1: local arg2: 5 push local 5
 @5
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 9 push local 9
 @9
 D=A
@@ -42673,12 +37366,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -42690,12 +37382,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -42704,8 +37395,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 5 pop local 5
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -42724,18 +37414,16 @@ M=D
 @Screen.drawLine$IF_END3
 0;JMP
 //C_LABEL arg1: IF_FALSE3 arg2: None label IF_FALSE3
-(Screen.drawLine$IF_FALSE3)
-//C_PUSH arg1: local arg2: 5 push local 5
+(Screen.drawLine$IF_FALSE3)//C_PUSH arg1: local arg2: 5 push local 5
 @5
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 10 push local 10
 @10
 D=A
@@ -42743,12 +37431,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -42760,12 +37447,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -42774,8 +37460,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 5 pop local 5
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -42797,12 +37482,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_IF arg1: IF_TRUE4 arg2: None if-goto IF_TRUE4
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -42816,28 +37500,25 @@ D;JNE
 @Screen.drawLine$IF_FALSE4
 0;JMP
 //C_LABEL arg1: IF_TRUE4 arg2: None label IF_TRUE4
-(Screen.drawLine$IF_TRUE4)
-//C_PUSH arg1: local arg2: 0 push local 0
+(Screen.drawLine$IF_TRUE4)//C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -42849,12 +37530,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -42863,8 +37543,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -42883,28 +37562,25 @@ M=D
 @Screen.drawLine$IF_END4
 0;JMP
 //C_LABEL arg1: IF_FALSE4 arg2: None label IF_FALSE4
-(Screen.drawLine$IF_FALSE4)
-//C_PUSH arg1: local arg2: 0 push local 0
+(Screen.drawLine$IF_FALSE4)//C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -42916,12 +37592,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -42930,8 +37605,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -42947,30 +37621,26 @@ D=M
 A=M
 M=D
 //C_LABEL arg1: IF_END4 arg2: None label IF_END4
-(Screen.drawLine$IF_END4)
-//C_LABEL arg1: IF_END3 arg2: None label IF_END3
-(Screen.drawLine$IF_END3)
-//C_PUSH arg1: local arg2: 1 push local 1
+(Screen.drawLine$IF_END4)//C_LABEL arg1: IF_END3 arg2: None label IF_END3
+(Screen.drawLine$IF_END3)//C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -42982,12 +37652,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -42996,8 +37665,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 1 pop local 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -43019,10 +37687,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -43030,10 +37697,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 6 push local 6
 @6
 D=A
@@ -43041,47 +37707,46 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Screen.drawConditional arg2: 3 call Screen.drawConditional 3
-@Screen.drawConditional$ret.1
+@Screen.drawConditional$ret.1 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -43089,17 +37754,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Screen.drawConditional
+@Screen.drawConditional // make jump
 0;JMP
 (Screen.drawConditional$ret.1)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -43107,149 +37771,76 @@ M=D
 @Screen.drawLine$WHILE_EXP0
 0;JMP
 //C_LABEL arg1: WHILE_END0 arg2: None label WHILE_END0
-(Screen.drawLine$WHILE_END0)
-//C_PUSH arg1: constant arg2: 0 push constant 0
+(Screen.drawLine$WHILE_END0)//C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: Screen.drawRectangle arg2: 9 function Screen.drawRectangle 9
 (Screen.drawRectangle)
+//@9
+//D=A
+//@SP
+//M=M+D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -43257,10 +37848,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 2 push argument 2
 @2
 D=A
@@ -43268,12 +37858,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -43285,7 +37874,6 @@ A=M
 D=M
 @14
 M=D
-//GT
 @13  // Y
 D=M
 @14 // X
@@ -43300,7 +37888,7 @@ D=-1
 (ENDGT322)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack
 D=M
 @SP
 A=M
@@ -43314,10 +37902,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 3 push argument 3
 @3
 D=A
@@ -43325,12 +37912,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -43342,7 +37928,6 @@ A=M
 D=M
 @14
 M=D
-//GT
 @13  // Y
 D=M
 @14 // X
@@ -43357,7 +37942,7 @@ D=-1
 (ENDGT323)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack
 D=M
 @SP
 A=M
@@ -43365,7 +37950,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: or arg2: None or
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -43377,12 +37962,11 @@ A=M
 D=M
 @14
 M=D
-//OR
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M|D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -43396,20 +37980,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -43421,7 +38003,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -43436,7 +38017,7 @@ D=-1
 (ENDLT325)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -43444,7 +38025,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: or arg2: None or
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -43456,12 +38037,11 @@ A=M
 D=M
 @14
 M=D
-//OR
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M|D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -43475,20 +38055,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 511 push constant 511
 @511
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -43500,7 +38078,6 @@ A=M
 D=M
 @14
 M=D
-//GT
 @13  // Y
 D=M
 @14 // X
@@ -43515,7 +38092,7 @@ D=-1
 (ENDGT327)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack
 D=M
 @SP
 A=M
@@ -43523,7 +38100,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: or arg2: None or
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -43535,12 +38112,11 @@ A=M
 D=M
 @14
 M=D
-//OR
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M|D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -43554,20 +38130,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -43579,7 +38153,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -43594,7 +38167,7 @@ D=-1
 (ENDLT329)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -43602,7 +38175,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: or arg2: None or
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -43614,12 +38187,11 @@ A=M
 D=M
 @14
 M=D
-//OR
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M|D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -43633,20 +38205,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 255 push constant 255
 @255
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -43658,7 +38228,6 @@ A=M
 D=M
 @14
 M=D
-//GT
 @13  // Y
 D=M
 @14 // X
@@ -43673,7 +38242,7 @@ D=-1
 (ENDGT331)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack
 D=M
 @SP
 A=M
@@ -43681,7 +38250,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: or arg2: None or
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -43693,12 +38262,11 @@ A=M
 D=M
 @14
 M=D
-//OR
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M|D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -43706,7 +38274,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -43720,52 +38288,50 @@ D;JNE
 @Screen.drawRectangle$IF_FALSE0
 0;JMP
 //C_LABEL arg1: IF_TRUE0 arg2: None label IF_TRUE0
-(Screen.drawRectangle$IF_TRUE0)
-//C_PUSH arg1: constant arg2: 9 push constant 9
+(Screen.drawRectangle$IF_TRUE0)//C_PUSH arg1: constant arg2: 9 push constant 9
 @9
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Sys.error arg2: 1 call Sys.error 1
-@Sys.error$ret.9
+@Sys.error$ret.9 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -43773,78 +38339,74 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Sys.error
+@Sys.error // make jump
 0;JMP
 (Sys.error$ret.9)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_LABEL arg1: IF_FALSE0 arg2: None label IF_FALSE0
-(Screen.drawRectangle$IF_FALSE0)
-//C_PUSH arg1: argument arg2: 0 push argument 0
+(Screen.drawRectangle$IF_FALSE0)//C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
 @ARG
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 16 push constant 16
 @16
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Math.divide arg2: 2 call Math.divide 2
-@Math.divide$ret.2
+@Math.divide$ret.2 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -43852,17 +38414,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Math.divide
+@Math.divide // make jump
 0;JMP
 (Math.divide$ret.2)
 //C_POP arg1: local arg2: 3 pop local 3
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -43884,10 +38445,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 3 push local 3
 @3
 D=A
@@ -43895,55 +38455,53 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 16 push constant 16
 @16
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Math.multiply arg2: 2 call Math.multiply 2
-@Math.multiply$ret.9
+@Math.multiply$ret.9 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -43951,15 +38509,15 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Math.multiply
+@Math.multiply // make jump
 0;JMP
 (Math.multiply$ret.9)
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -43971,12 +38529,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -43985,8 +38542,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 7 pop local 7
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -44008,55 +38564,53 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 16 push constant 16
 @16
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Math.divide arg2: 2 call Math.divide 2
-@Math.divide$ret.3
+@Math.divide$ret.3 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -44064,17 +38618,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Math.divide
+@Math.divide // make jump
 0;JMP
 (Math.divide$ret.3)
 //C_POP arg1: local arg2: 4 pop local 4
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -44096,10 +38649,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 4 push local 4
 @4
 D=A
@@ -44107,55 +38659,53 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 16 push constant 16
 @16
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Math.multiply arg2: 2 call Math.multiply 2
-@Math.multiply$ret.10
+@Math.multiply$ret.10 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -44163,15 +38713,15 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Math.multiply
+@Math.multiply // make jump
 0;JMP
 (Math.multiply$ret.10)
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -44183,12 +38733,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -44197,8 +38746,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 8 pop local 8
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -44220,20 +38768,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: static arg2: 0 push static 0
 @Screen.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -44245,12 +38791,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -44259,8 +38804,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -44271,20 +38815,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -44296,12 +38838,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -44309,16 +38850,15 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: not arg2: None not
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
 M=D
-//NOT
 @14 // first pop value
 M=!M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -44327,8 +38867,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 6 pop local 6
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -44350,20 +38889,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -44375,12 +38912,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -44391,12 +38927,11 @@ M=M+1
 @Screen.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -44408,12 +38943,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -44422,8 +38956,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -44434,20 +38967,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -44459,12 +38990,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -44473,8 +39003,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 5 pop local 5
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -44496,55 +39025,53 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 32 push constant 32
 @32
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Math.multiply arg2: 2 call Math.multiply 2
-@Math.multiply$ret.11
+@Math.multiply$ret.11 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -44552,11 +39079,11 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Math.multiply
+@Math.multiply // make jump
 0;JMP
 (Math.multiply$ret.11)
 //C_PUSH arg1: local arg2: 3 push local 3
@@ -44566,12 +39093,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -44583,12 +39109,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -44597,8 +39122,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -44620,10 +39144,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 3 push local 3
 @3
 D=A
@@ -44631,12 +39154,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -44648,12 +39170,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -44662,8 +39183,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 2 pop local 2
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -44679,18 +39199,16 @@ D=M
 A=M
 M=D
 //C_LABEL arg1: WHILE_EXP0 arg2: None label WHILE_EXP0
-(Screen.drawRectangle$WHILE_EXP0)
-//C_PUSH arg1: argument arg2: 1 push argument 1
+(Screen.drawRectangle$WHILE_EXP0)//C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
 @ARG
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 3 push argument 3
 @3
 D=A
@@ -44698,12 +39216,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -44715,7 +39232,6 @@ A=M
 D=M
 @14
 M=D
-//GT
 @13  // Y
 D=M
 @14 // X
@@ -44730,7 +39246,7 @@ D=-1
 (ENDGT343)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack
 D=M
 @SP
 A=M
@@ -44738,16 +39254,15 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: not arg2: None not
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
 M=D
-//NOT
 @14 // first pop value
 M=!M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -44755,16 +39270,15 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: not arg2: None not
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
 M=D
-//NOT
 @14 // first pop value
 M=!M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -44772,7 +39286,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -44789,10 +39303,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 2 push local 2
 @2
 D=A
@@ -44800,12 +39313,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -44817,12 +39329,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -44831,8 +39342,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 1 pop local 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -44854,20 +39364,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -44879,7 +39387,6 @@ A=M
 D=M
 @14
 M=D
-//EQ
 @13 // y
 D=M
 @14 // x
@@ -44894,7 +39401,7 @@ D=-1
 (ENDEQ347)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -44902,7 +39409,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -44916,18 +39423,16 @@ D;JNE
 @Screen.drawRectangle$IF_FALSE1
 0;JMP
 //C_LABEL arg1: IF_TRUE1 arg2: None label IF_TRUE1
-(Screen.drawRectangle$IF_TRUE1)
-//C_PUSH arg1: local arg2: 0 push local 0
+(Screen.drawRectangle$IF_TRUE1)//C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 5 push local 5
 @5
 D=A
@@ -44935,10 +39440,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 6 push local 6
 @6
 D=A
@@ -44946,12 +39450,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: and arg2: None and
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -44963,55 +39466,53 @@ A=M
 D=M
 @14
 M=D
-//AND
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M&D
-@14
-D=M
-@SP
+@14 // push memory address 14 to stack 
+D=M@SP
 A=M
 M=D
 @SP
 M=M+1
 //C_CALL arg1: Screen.updateLocation arg2: 2 call Screen.updateLocation 2
-@Screen.updateLocation$ret.1
+@Screen.updateLocation$ret.1 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -45019,17 +39520,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Screen.updateLocation
+@Screen.updateLocation // make jump
 0;JMP
 (Screen.updateLocation$ret.1)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -45037,18 +39537,16 @@ M=D
 @Screen.drawRectangle$IF_END1
 0;JMP
 //C_LABEL arg1: IF_FALSE1 arg2: None label IF_FALSE1
-(Screen.drawRectangle$IF_FALSE1)
-//C_PUSH arg1: local arg2: 0 push local 0
+(Screen.drawRectangle$IF_FALSE1)//C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 6 push local 6
 @6
 D=A
@@ -45056,47 +39554,46 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Screen.updateLocation arg2: 2 call Screen.updateLocation 2
-@Screen.updateLocation$ret.2
+@Screen.updateLocation$ret.2 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -45104,17 +39601,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Screen.updateLocation
+@Screen.updateLocation // make jump
 0;JMP
 (Screen.updateLocation$ret.2)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -45125,20 +39621,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -45150,12 +39644,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -45164,8 +39657,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -45181,18 +39673,16 @@ D=M
 A=M
 M=D
 //C_LABEL arg1: WHILE_EXP1 arg2: None label WHILE_EXP1
-(Screen.drawRectangle$WHILE_EXP1)
-//C_PUSH arg1: local arg2: 0 push local 0
+(Screen.drawRectangle$WHILE_EXP1)//C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
@@ -45200,12 +39690,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -45217,7 +39706,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -45232,7 +39720,7 @@ D=-1
 (ENDLT350)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -45240,16 +39728,15 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: not arg2: None not
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
 M=D
-//NOT
 @14 // first pop value
 M=!M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -45257,7 +39744,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: WHILE_END1 arg2: None if-goto WHILE_END1
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -45274,29 +39761,25 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: neg arg2: None neg
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
-M=D
-//NEG
-@14 // X
+M=D@14 // X
 M=-M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -45304,42 +39787,42 @@ M=D
 @SP
 M=M+1
 //C_CALL arg1: Screen.updateLocation arg2: 2 call Screen.updateLocation 2
-@Screen.updateLocation$ret.3
+@Screen.updateLocation$ret.3 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -45347,17 +39830,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Screen.updateLocation
+@Screen.updateLocation // make jump
 0;JMP
 (Screen.updateLocation$ret.3)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -45368,20 +39850,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -45393,12 +39873,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -45407,8 +39886,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -45427,18 +39905,16 @@ M=D
 @Screen.drawRectangle$WHILE_EXP1
 0;JMP
 //C_LABEL arg1: WHILE_END1 arg2: None label WHILE_END1
-(Screen.drawRectangle$WHILE_END1)
-//C_PUSH arg1: local arg2: 1 push local 1
+(Screen.drawRectangle$WHILE_END1)//C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 5 push local 5
 @5
 D=A
@@ -45446,47 +39922,46 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Screen.updateLocation arg2: 2 call Screen.updateLocation 2
-@Screen.updateLocation$ret.4
+@Screen.updateLocation$ret.4 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -45494,43 +39969,39 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Screen.updateLocation
+@Screen.updateLocation // make jump
 0;JMP
 (Screen.updateLocation$ret.4)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_LABEL arg1: IF_END1 arg2: None label IF_END1
-(Screen.drawRectangle$IF_END1)
-//C_PUSH arg1: argument arg2: 1 push argument 1
+(Screen.drawRectangle$IF_END1)//C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
 @ARG
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -45542,12 +40013,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -45556,8 +40026,7 @@ M=D
 M=M+1
 //C_POP arg1: argument arg2: 1 pop argument 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -45579,20 +40048,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 32 push constant 32
 @32
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -45604,12 +40071,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -45623,12 +40089,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -45640,12 +40105,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -45654,8 +40118,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -45674,163 +40137,88 @@ M=D
 @Screen.drawRectangle$WHILE_EXP0
 0;JMP
 //C_LABEL arg1: WHILE_END0 arg2: None label WHILE_END0
-(Screen.drawRectangle$WHILE_END0)
-//C_PUSH arg1: constant arg2: 0 push constant 0
+(Screen.drawRectangle$WHILE_END0)//C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: Screen.drawHorizontal arg2: 11 function Screen.drawHorizontal 11
 (Screen.drawHorizontal)
+//@11
+//D=A
+//@SP
+//M=M+D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -45838,10 +40226,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 2 push argument 2
 @2
 D=A
@@ -45849,47 +40236,46 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Math.min arg2: 2 call Math.min 2
-@Math.min$ret.0
+@Math.min$ret.0 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -45897,17 +40283,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Math.min
+@Math.min // make jump
 0;JMP
 (Math.min$ret.0)
 //C_POP arg1: local arg2: 7 pop local 7
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -45929,10 +40314,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 2 push argument 2
 @2
 D=A
@@ -45940,47 +40324,46 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Math.max arg2: 2 call Math.max 2
-@Math.max$ret.0
+@Math.max$ret.0 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -45988,17 +40371,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Math.max
+@Math.max // make jump
 0;JMP
 (Math.max$ret.0)
 //C_POP arg1: local arg2: 8 pop local 8
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -46020,29 +40402,25 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: neg arg2: None neg
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
-M=D
-//NEG
-@14 // X
+M=D@14 // X
 M=-M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -46050,7 +40428,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -46062,7 +40440,6 @@ A=M
 D=M
 @14
 M=D
-//GT
 @13  // Y
 D=M
 @14 // X
@@ -46077,7 +40454,7 @@ D=-1
 (ENDGT358)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack
 D=M
 @SP
 A=M
@@ -46091,20 +40468,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 256 push constant 256
 @256
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -46116,7 +40491,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -46131,7 +40505,7 @@ D=-1
 (ENDLT359)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -46139,7 +40513,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: and arg2: None and
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -46151,14 +40525,12 @@ A=M
 D=M
 @14
 M=D
-//AND
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M&D
-@14
-D=M
-@SP
+@14 // push memory address 14 to stack 
+D=M@SP
 A=M
 M=D
 @SP
@@ -46170,20 +40542,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 512 push constant 512
 @512
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -46195,7 +40565,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -46210,7 +40579,7 @@ D=-1
 (ENDLT361)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -46218,7 +40587,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: and arg2: None and
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -46230,14 +40599,12 @@ A=M
 D=M
 @14
 M=D
-//AND
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M&D
-@14
-D=M
-@SP
+@14 // push memory address 14 to stack 
+D=M@SP
 A=M
 M=D
 @SP
@@ -46249,29 +40616,25 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: neg arg2: None neg
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
-M=D
-//NEG
-@14 // X
+M=D@14 // X
 M=-M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -46279,7 +40642,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -46291,7 +40654,6 @@ A=M
 D=M
 @14
 M=D
-//GT
 @13  // Y
 D=M
 @14 // X
@@ -46306,7 +40668,7 @@ D=-1
 (ENDGT364)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack
 D=M
 @SP
 A=M
@@ -46314,7 +40676,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: and arg2: None and
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -46326,20 +40688,18 @@ A=M
 D=M
 @14
 M=D
-//AND
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M&D
-@14
-D=M
-@SP
+@14 // push memory address 14 to stack 
+D=M@SP
 A=M
 M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -46353,63 +40713,60 @@ D;JNE
 @Screen.drawHorizontal$IF_FALSE0
 0;JMP
 //C_LABEL arg1: IF_TRUE0 arg2: None label IF_TRUE0
-(Screen.drawHorizontal$IF_TRUE0)
-//C_PUSH arg1: local arg2: 7 push local 7
+(Screen.drawHorizontal$IF_TRUE0)//C_PUSH arg1: local arg2: 7 push local 7
 @7
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Math.max arg2: 2 call Math.max 2
-@Math.max$ret.1
+@Math.max$ret.1 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -46417,17 +40774,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Math.max
+@Math.max // make jump
 0;JMP
 (Math.max$ret.1)
 //C_POP arg1: local arg2: 7 pop local 7
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -46449,55 +40805,53 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 511 push constant 511
 @511
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Math.min arg2: 2 call Math.min 2
-@Math.min$ret.1
+@Math.min$ret.1 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -46505,17 +40859,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Math.min
+@Math.min // make jump
 0;JMP
 (Math.min$ret.1)
 //C_POP arg1: local arg2: 8 pop local 8
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -46537,55 +40890,53 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 16 push constant 16
 @16
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Math.divide arg2: 2 call Math.divide 2
-@Math.divide$ret.4
+@Math.divide$ret.4 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -46593,17 +40944,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Math.divide
+@Math.divide // make jump
 0;JMP
 (Math.divide$ret.4)
 //C_POP arg1: local arg2: 1 pop local 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -46625,10 +40975,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
@@ -46636,55 +40985,53 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 16 push constant 16
 @16
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Math.multiply arg2: 2 call Math.multiply 2
-@Math.multiply$ret.12
+@Math.multiply$ret.12 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -46692,15 +41039,15 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Math.multiply
+@Math.multiply // make jump
 0;JMP
 (Math.multiply$ret.12)
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -46712,12 +41059,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -46726,8 +41072,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 9 pop local 9
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -46749,55 +41094,53 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 16 push constant 16
 @16
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Math.divide arg2: 2 call Math.divide 2
-@Math.divide$ret.5
+@Math.divide$ret.5 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -46805,17 +41148,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Math.divide
+@Math.divide // make jump
 0;JMP
 (Math.divide$ret.5)
 //C_POP arg1: local arg2: 2 pop local 2
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -46837,10 +41179,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 2 push local 2
 @2
 D=A
@@ -46848,55 +41189,53 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 16 push constant 16
 @16
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Math.multiply arg2: 2 call Math.multiply 2
-@Math.multiply$ret.13
+@Math.multiply$ret.13 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -46904,15 +41243,15 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Math.multiply
+@Math.multiply // make jump
 0;JMP
 (Math.multiply$ret.13)
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -46924,12 +41263,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -46938,8 +41276,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 10 pop local 10
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -46961,20 +41298,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: static arg2: 0 push static 0
 @Screen.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -46986,12 +41321,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -47000,8 +41334,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -47012,20 +41345,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -47037,12 +41368,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -47050,16 +41380,15 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: not arg2: None not
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
 M=D
-//NOT
 @14 // first pop value
 M=!M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -47068,8 +41397,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 5 pop local 5
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -47091,20 +41419,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -47116,12 +41442,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -47132,12 +41457,11 @@ M=M+1
 @Screen.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -47149,12 +41473,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -47163,8 +41486,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -47175,20 +41497,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -47200,12 +41520,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -47214,8 +41533,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 4 pop local 4
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -47237,55 +41555,53 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 32 push constant 32
 @32
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Math.multiply arg2: 2 call Math.multiply 2
-@Math.multiply$ret.14
+@Math.multiply$ret.14 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -47293,11 +41609,11 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Math.multiply
+@Math.multiply // make jump
 0;JMP
 (Math.multiply$ret.14)
 //C_PUSH arg1: local arg2: 1 push local 1
@@ -47307,12 +41623,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -47324,12 +41639,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -47338,8 +41652,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -47361,10 +41674,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
@@ -47372,12 +41684,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -47389,12 +41700,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -47403,8 +41713,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 6 pop local 6
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -47426,10 +41735,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 6 push local 6
 @6
 D=A
@@ -47437,12 +41745,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -47454,12 +41761,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -47468,8 +41774,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 3 pop local 3
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -47491,20 +41796,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -47516,7 +41819,6 @@ A=M
 D=M
 @14
 M=D
-//EQ
 @13 // y
 D=M
 @14 // x
@@ -47531,7 +41833,7 @@ D=-1
 (ENDEQ377)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -47539,7 +41841,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -47553,18 +41855,16 @@ D;JNE
 @Screen.drawHorizontal$IF_FALSE1
 0;JMP
 //C_LABEL arg1: IF_TRUE1 arg2: None label IF_TRUE1
-(Screen.drawHorizontal$IF_TRUE1)
-//C_PUSH arg1: local arg2: 0 push local 0
+(Screen.drawHorizontal$IF_TRUE1)//C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 4 push local 4
 @4
 D=A
@@ -47572,10 +41872,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 5 push local 5
 @5
 D=A
@@ -47583,12 +41882,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: and arg2: None and
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -47600,55 +41898,53 @@ A=M
 D=M
 @14
 M=D
-//AND
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M&D
-@14
-D=M
-@SP
+@14 // push memory address 14 to stack 
+D=M@SP
 A=M
 M=D
 @SP
 M=M+1
 //C_CALL arg1: Screen.updateLocation arg2: 2 call Screen.updateLocation 2
-@Screen.updateLocation$ret.5
+@Screen.updateLocation$ret.5 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -47656,17 +41952,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Screen.updateLocation
+@Screen.updateLocation // make jump
 0;JMP
 (Screen.updateLocation$ret.5)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -47674,18 +41969,16 @@ M=D
 @Screen.drawHorizontal$IF_END1
 0;JMP
 //C_LABEL arg1: IF_FALSE1 arg2: None label IF_FALSE1
-(Screen.drawHorizontal$IF_FALSE1)
-//C_PUSH arg1: local arg2: 0 push local 0
+(Screen.drawHorizontal$IF_FALSE1)//C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 5 push local 5
 @5
 D=A
@@ -47693,47 +41986,46 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Screen.updateLocation arg2: 2 call Screen.updateLocation 2
-@Screen.updateLocation$ret.6
+@Screen.updateLocation$ret.6 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -47741,17 +42033,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Screen.updateLocation
+@Screen.updateLocation // make jump
 0;JMP
 (Screen.updateLocation$ret.6)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -47762,20 +42053,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -47787,12 +42076,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -47801,8 +42089,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -47818,18 +42105,16 @@ D=M
 A=M
 M=D
 //C_LABEL arg1: WHILE_EXP0 arg2: None label WHILE_EXP0
-(Screen.drawHorizontal$WHILE_EXP0)
-//C_PUSH arg1: local arg2: 0 push local 0
+(Screen.drawHorizontal$WHILE_EXP0)//C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 3 push local 3
 @3
 D=A
@@ -47837,12 +42122,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -47854,7 +42138,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -47869,7 +42152,7 @@ D=-1
 (ENDLT380)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -47877,16 +42160,15 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: not arg2: None not
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
 M=D
-//NOT
 @14 // first pop value
 M=!M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -47894,7 +42176,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -47911,29 +42193,25 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: neg arg2: None neg
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
-M=D
-//NEG
-@14 // X
+M=D@14 // X
 M=-M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -47941,42 +42219,42 @@ M=D
 @SP
 M=M+1
 //C_CALL arg1: Screen.updateLocation arg2: 2 call Screen.updateLocation 2
-@Screen.updateLocation$ret.7
+@Screen.updateLocation$ret.7 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -47984,17 +42262,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Screen.updateLocation
+@Screen.updateLocation // make jump
 0;JMP
 (Screen.updateLocation$ret.7)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -48005,20 +42282,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -48030,12 +42305,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -48044,8 +42318,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -48064,18 +42337,16 @@ M=D
 @Screen.drawHorizontal$WHILE_EXP0
 0;JMP
 //C_LABEL arg1: WHILE_END0 arg2: None label WHILE_END0
-(Screen.drawHorizontal$WHILE_END0)
-//C_PUSH arg1: local arg2: 3 push local 3
+(Screen.drawHorizontal$WHILE_END0)//C_PUSH arg1: local arg2: 3 push local 3
 @3
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 4 push local 4
 @4
 D=A
@@ -48083,47 +42354,46 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Screen.updateLocation arg2: 2 call Screen.updateLocation 2
-@Screen.updateLocation$ret.8
+@Screen.updateLocation$ret.8 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -48131,103 +42401,37 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Screen.updateLocation
+@Screen.updateLocation // make jump
 0;JMP
 (Screen.updateLocation$ret.8)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_LABEL arg1: IF_END1 arg2: None label IF_END1
-(Screen.drawHorizontal$IF_END1)
-//C_LABEL arg1: IF_FALSE0 arg2: None label IF_FALSE0
-(Screen.drawHorizontal$IF_FALSE0)
-//C_PUSH arg1: constant arg2: 0 push constant 0
+(Screen.drawHorizontal$IF_END1)//C_LABEL arg1: IF_FALSE0 arg2: None label IF_FALSE0
+(Screen.drawHorizontal$IF_FALSE0)//C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: Screen.drawSymetric arg2: 0 function Screen.drawSymetric 0
 (Screen.drawSymetric)
+//@0
+//D=A
+//@SP
+//M=M+D
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -48235,10 +42439,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 3 push argument 3
 @3
 D=A
@@ -48246,12 +42449,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -48263,12 +42465,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -48282,10 +42483,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 2 push argument 2
 @2
 D=A
@@ -48293,12 +42493,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -48310,12 +42509,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -48329,10 +42527,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 2 push argument 2
 @2
 D=A
@@ -48340,12 +42537,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -48357,12 +42553,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -48370,42 +42565,42 @@ M=D
 @SP
 M=M+1
 //C_CALL arg1: Screen.drawHorizontal arg2: 3 call Screen.drawHorizontal 3
-@Screen.drawHorizontal$ret.0
+@Screen.drawHorizontal$ret.0 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -48413,17 +42608,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Screen.drawHorizontal
+@Screen.drawHorizontal // make jump
 0;JMP
 (Screen.drawHorizontal$ret.0)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -48434,10 +42628,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 3 push argument 3
 @3
 D=A
@@ -48445,12 +42638,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -48462,12 +42654,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -48481,10 +42672,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 2 push argument 2
 @2
 D=A
@@ -48492,12 +42682,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -48509,12 +42698,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -48528,10 +42716,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 2 push argument 2
 @2
 D=A
@@ -48539,12 +42726,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -48556,12 +42742,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -48569,42 +42754,42 @@ M=D
 @SP
 M=M+1
 //C_CALL arg1: Screen.drawHorizontal arg2: 3 call Screen.drawHorizontal 3
-@Screen.drawHorizontal$ret.1
+@Screen.drawHorizontal$ret.1 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -48612,17 +42797,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Screen.drawHorizontal
+@Screen.drawHorizontal // make jump
 0;JMP
 (Screen.drawHorizontal$ret.1)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -48633,10 +42817,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 2 push argument 2
 @2
 D=A
@@ -48644,12 +42827,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -48661,12 +42843,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -48680,10 +42861,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 3 push argument 3
 @3
 D=A
@@ -48691,12 +42871,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -48708,12 +42887,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -48727,10 +42905,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 3 push argument 3
 @3
 D=A
@@ -48738,12 +42915,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -48755,12 +42931,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -48768,42 +42943,42 @@ M=D
 @SP
 M=M+1
 //C_CALL arg1: Screen.drawHorizontal arg2: 3 call Screen.drawHorizontal 3
-@Screen.drawHorizontal$ret.2
+@Screen.drawHorizontal$ret.2 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -48811,17 +42986,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Screen.drawHorizontal
+@Screen.drawHorizontal // make jump
 0;JMP
 (Screen.drawHorizontal$ret.2)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -48832,10 +43006,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 2 push argument 2
 @2
 D=A
@@ -48843,12 +43016,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -48860,12 +43032,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -48879,10 +43050,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 3 push argument 3
 @3
 D=A
@@ -48890,12 +43060,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -48907,12 +43076,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -48926,10 +43094,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 3 push argument 3
 @3
 D=A
@@ -48937,12 +43104,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -48954,12 +43120,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -48967,42 +43132,42 @@ M=D
 @SP
 M=M+1
 //C_CALL arg1: Screen.drawHorizontal arg2: 3 call Screen.drawHorizontal 3
-@Screen.drawHorizontal$ret.3
+@Screen.drawHorizontal$ret.3 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -49010,17 +43175,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Screen.drawHorizontal
+@Screen.drawHorizontal // make jump
 0;JMP
 (Screen.drawHorizontal$ret.3)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -49028,102 +43192,36 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: Screen.drawCircle arg2: 3 function Screen.drawCircle 3
 (Screen.drawCircle)
+//@3
+//D=A
+//@SP
+//M=M+D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -49131,20 +43229,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -49156,7 +43252,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -49171,7 +43266,7 @@ D=-1
 (ENDLT396)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -49185,20 +43280,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 511 push constant 511
 @511
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -49210,7 +43303,6 @@ A=M
 D=M
 @14
 M=D
-//GT
 @13  // Y
 D=M
 @14 // X
@@ -49225,7 +43317,7 @@ D=-1
 (ENDGT397)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack
 D=M
 @SP
 A=M
@@ -49233,7 +43325,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: or arg2: None or
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -49245,12 +43337,11 @@ A=M
 D=M
 @14
 M=D
-//OR
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M|D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -49264,20 +43355,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -49289,7 +43378,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -49304,7 +43392,7 @@ D=-1
 (ENDLT399)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -49312,7 +43400,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: or arg2: None or
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -49324,12 +43412,11 @@ A=M
 D=M
 @14
 M=D
-//OR
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M|D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -49343,20 +43430,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 255 push constant 255
 @255
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -49368,7 +43453,6 @@ A=M
 D=M
 @14
 M=D
-//GT
 @13  // Y
 D=M
 @14 // X
@@ -49383,7 +43467,7 @@ D=-1
 (ENDGT401)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack
 D=M
 @SP
 A=M
@@ -49391,7 +43475,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: or arg2: None or
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -49403,12 +43487,11 @@ A=M
 D=M
 @14
 M=D
-//OR
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M|D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -49416,7 +43499,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -49430,52 +43513,50 @@ D;JNE
 @Screen.drawCircle$IF_FALSE0
 0;JMP
 //C_LABEL arg1: IF_TRUE0 arg2: None label IF_TRUE0
-(Screen.drawCircle$IF_TRUE0)
-//C_PUSH arg1: constant arg2: 12 push constant 12
+(Screen.drawCircle$IF_TRUE0)//C_PUSH arg1: constant arg2: 12 push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Sys.error arg2: 1 call Sys.error 1
-@Sys.error$ret.10
+@Sys.error$ret.10 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -49483,33 +43564,30 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Sys.error
+@Sys.error // make jump
 0;JMP
 (Sys.error$ret.10)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_LABEL arg1: IF_FALSE0 arg2: None label IF_FALSE0
-(Screen.drawCircle$IF_FALSE0)
-//C_PUSH arg1: argument arg2: 0 push argument 0
+(Screen.drawCircle$IF_FALSE0)//C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
 @ARG
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 2 push argument 2
 @2
 D=A
@@ -49517,12 +43595,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -49534,12 +43611,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -49550,12 +43626,11 @@ M=M+1
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -49567,7 +43642,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -49582,7 +43656,7 @@ D=-1
 (ENDLT404)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -49596,10 +43670,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 2 push argument 2
 @2
 D=A
@@ -49607,12 +43680,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -49624,12 +43696,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -49640,12 +43711,11 @@ M=M+1
 @511
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -49657,7 +43727,6 @@ A=M
 D=M
 @14
 M=D
-//GT
 @13  // Y
 D=M
 @14 // X
@@ -49672,7 +43741,7 @@ D=-1
 (ENDGT406)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack
 D=M
 @SP
 A=M
@@ -49680,7 +43749,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: or arg2: None or
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -49692,12 +43761,11 @@ A=M
 D=M
 @14
 M=D
-//OR
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M|D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -49711,10 +43779,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 2 push argument 2
 @2
 D=A
@@ -49722,12 +43789,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -49739,12 +43805,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -49755,12 +43820,11 @@ M=M+1
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -49772,7 +43836,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -49787,7 +43850,7 @@ D=-1
 (ENDLT409)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -49795,7 +43858,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: or arg2: None or
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -49807,12 +43870,11 @@ A=M
 D=M
 @14
 M=D
-//OR
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M|D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -49826,10 +43888,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 2 push argument 2
 @2
 D=A
@@ -49837,12 +43898,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -49854,12 +43914,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -49870,12 +43929,11 @@ M=M+1
 @255
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -49887,7 +43945,6 @@ A=M
 D=M
 @14
 M=D
-//GT
 @13  // Y
 D=M
 @14 // X
@@ -49902,7 +43959,7 @@ D=-1
 (ENDGT412)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack
 D=M
 @SP
 A=M
@@ -49910,7 +43967,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: or arg2: None or
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -49922,12 +43979,11 @@ A=M
 D=M
 @14
 M=D
-//OR
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M|D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -49935,7 +43991,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -49949,52 +44005,50 @@ D;JNE
 @Screen.drawCircle$IF_FALSE1
 0;JMP
 //C_LABEL arg1: IF_TRUE1 arg2: None label IF_TRUE1
-(Screen.drawCircle$IF_TRUE1)
-//C_PUSH arg1: constant arg2: 13 push constant 13
+(Screen.drawCircle$IF_TRUE1)//C_PUSH arg1: constant arg2: 13 push constant 13
 @13
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Sys.error arg2: 1 call Sys.error 1
-@Sys.error$ret.11
+@Sys.error$ret.11 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -50002,37 +44056,33 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Sys.error
+@Sys.error // make jump
 0;JMP
 (Sys.error$ret.11)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_LABEL arg1: IF_FALSE1 arg2: None label IF_FALSE1
-(Screen.drawCircle$IF_FALSE1)
-//C_PUSH arg1: argument arg2: 2 push argument 2
+(Screen.drawCircle$IF_FALSE1)//C_PUSH arg1: argument arg2: 2 push argument 2
 @2
 D=A
 @ARG
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: local arg2: 1 pop local 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -50051,10 +44101,9 @@ M=D
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 2 push argument 2
 @2
 D=A
@@ -50062,12 +44111,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -50079,12 +44127,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -50093,8 +44140,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 2 pop local 2
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -50116,10 +44162,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -50127,10 +44172,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -50138,10 +44182,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
@@ -50149,47 +44192,46 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Screen.drawSymetric arg2: 4 call Screen.drawSymetric 4
-@Screen.drawSymetric$ret.0
+@Screen.drawSymetric$ret.0 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -50197,33 +44239,30 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Screen.drawSymetric
+@Screen.drawSymetric // make jump
 0;JMP
 (Screen.drawSymetric$ret.0)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_LABEL arg1: WHILE_EXP0 arg2: None label WHILE_EXP0
-(Screen.drawCircle$WHILE_EXP0)
-//C_PUSH arg1: local arg2: 1 push local 1
+(Screen.drawCircle$WHILE_EXP0)//C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -50231,12 +44270,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -50248,7 +44286,6 @@ A=M
 D=M
 @14
 M=D
-//GT
 @13  // Y
 D=M
 @14 // X
@@ -50263,7 +44300,7 @@ D=-1
 (ENDGT415)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack
 D=M
 @SP
 A=M
@@ -50271,16 +44308,15 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: not arg2: None not
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
 M=D
-//NOT
 @14 // first pop value
 M=!M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -50288,7 +44324,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -50305,20 +44341,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -50330,7 +44364,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -50345,7 +44378,7 @@ D=-1
 (ENDLT417)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -50353,7 +44386,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE2 arg2: None if-goto IF_TRUE2
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -50367,26 +44400,23 @@ D;JNE
 @Screen.drawCircle$IF_FALSE2
 0;JMP
 //C_LABEL arg1: IF_TRUE2 arg2: None label IF_TRUE2
-(Screen.drawCircle$IF_TRUE2)
-//C_PUSH arg1: local arg2: 2 push local 2
+(Screen.drawCircle$IF_TRUE2)//C_PUSH arg1: local arg2: 2 push local 2
 @2
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 2 push constant 2
 @2
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -50394,47 +44424,46 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Math.multiply arg2: 2 call Math.multiply 2
-@Math.multiply$ret.15
+@Math.multiply$ret.15 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -50442,15 +44471,15 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Math.multiply
+@Math.multiply // make jump
 0;JMP
 (Math.multiply$ret.15)
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -50462,12 +44491,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -50478,12 +44506,11 @@ M=M+1
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -50495,12 +44522,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -50509,8 +44535,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 2 pop local 2
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -50529,26 +44554,23 @@ M=D
 @Screen.drawCircle$IF_END2
 0;JMP
 //C_LABEL arg1: IF_FALSE2 arg2: None label IF_FALSE2
-(Screen.drawCircle$IF_FALSE2)
-//C_PUSH arg1: local arg2: 2 push local 2
+(Screen.drawCircle$IF_FALSE2)//C_PUSH arg1: local arg2: 2 push local 2
 @2
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 2 push constant 2
 @2
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -50556,10 +44578,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
@@ -50567,12 +44588,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -50584,12 +44604,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -50597,42 +44616,42 @@ M=D
 @SP
 M=M+1
 //C_CALL arg1: Math.multiply arg2: 2 call Math.multiply 2
-@Math.multiply$ret.16
+@Math.multiply$ret.16 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -50640,15 +44659,15 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Math.multiply
+@Math.multiply // make jump
 0;JMP
 (Math.multiply$ret.16)
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -50660,12 +44679,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -50676,12 +44694,11 @@ M=M+1
 @5
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -50693,12 +44710,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -50707,8 +44723,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 2 pop local 2
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -50730,20 +44745,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -50755,12 +44768,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -50769,8 +44781,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 1 pop local 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -50786,28 +44797,25 @@ D=M
 A=M
 M=D
 //C_LABEL arg1: IF_END2 arg2: None label IF_END2
-(Screen.drawCircle$IF_END2)
-//C_PUSH arg1: local arg2: 0 push local 0
+(Screen.drawCircle$IF_END2)//C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -50819,12 +44827,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -50833,8 +44840,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -50856,10 +44862,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -50867,10 +44872,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -50878,10 +44882,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
@@ -50889,47 +44892,46 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Screen.drawSymetric arg2: 4 call Screen.drawSymetric 4
-@Screen.drawSymetric$ret.1
+@Screen.drawSymetric$ret.1 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -50937,17 +44939,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Screen.drawSymetric
+@Screen.drawSymetric // make jump
 0;JMP
 (Screen.drawSymetric$ret.1)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -50955,131 +44956,66 @@ M=D
 @Screen.drawCircle$WHILE_EXP0
 0;JMP
 //C_LABEL arg1: WHILE_END0 arg2: None label WHILE_END0
-(Screen.drawCircle$WHILE_END0)
-//C_PUSH arg1: constant arg2: 0 push constant 0
+(Screen.drawCircle$WHILE_END0)//C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: String.new arg2: 0 function String.new 0
 (String.new)
+//@0
+//D=A
+//@SP
+//M=M+D
 //C_PUSH arg1: constant arg2: 3 push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Memory.alloc arg2: 1 call Memory.alloc 1
-@Memory.alloc$ret.1
+@Memory.alloc$ret.1 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -51087,17 +45023,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Memory.alloc
+@Memory.alloc // make jump
 0;JMP
 (Memory.alloc$ret.1)
 //C_POP arg1: pointer arg2: 0 pop pointer 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @3
 M=D
@@ -51108,20 +45043,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -51133,7 +45066,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -51148,7 +45080,7 @@ D=-1
 (ENDLT425)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -51156,7 +45088,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -51170,52 +45102,50 @@ D;JNE
 @String.new$IF_FALSE0
 0;JMP
 //C_LABEL arg1: IF_TRUE0 arg2: None label IF_TRUE0
-(String.new$IF_TRUE0)
-//C_PUSH arg1: constant arg2: 14 push constant 14
+(String.new$IF_TRUE0)//C_PUSH arg1: constant arg2: 14 push constant 14
 @14
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Sys.error arg2: 1 call Sys.error 1
-@Sys.error$ret.12
+@Sys.error$ret.12 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -51223,43 +45153,39 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Sys.error
+@Sys.error // make jump
 0;JMP
 (Sys.error$ret.12)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_LABEL arg1: IF_FALSE0 arg2: None label IF_FALSE0
-(String.new$IF_FALSE0)
-//C_PUSH arg1: argument arg2: 0 push argument 0
+(String.new$IF_FALSE0)//C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
 @ARG
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -51271,7 +45197,6 @@ A=M
 D=M
 @14
 M=D
-//GT
 @13  // Y
 D=M
 @14 // X
@@ -51286,7 +45211,7 @@ D=-1
 (ENDGT426)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack
 D=M
 @SP
 A=M
@@ -51294,7 +45219,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -51308,55 +45233,53 @@ D;JNE
 @String.new$IF_FALSE1
 0;JMP
 //C_LABEL arg1: IF_TRUE1 arg2: None label IF_TRUE1
-(String.new$IF_TRUE1)
-//C_PUSH arg1: argument arg2: 0 push argument 0
+(String.new$IF_TRUE1)//C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
 @ARG
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Array.new arg2: 1 call Array.new 1
-@Array.new$ret.7
+@Array.new$ret.7 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -51364,17 +45287,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Array.new
+@Array.new // make jump
 0;JMP
 (Array.new$ret.7)
 //C_POP arg1: this arg2: 1 pop this 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -51390,22 +45312,19 @@ D=M
 A=M
 M=D
 //C_LABEL arg1: IF_FALSE1 arg2: None label IF_FALSE1
-(String.new$IF_FALSE1)
-//C_PUSH arg1: argument arg2: 0 push argument 0
+(String.new$IF_FALSE1)//C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
 @ARG
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: this arg2: 0 pop this 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -51424,14 +45343,12 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: this arg2: 2 pop this 2
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -51450,81 +45367,18 @@ M=D
 @3
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: String.dispose arg2: 0 function String.dispose 0
 (String.dispose)
+//@0
+//D=A
+//@SP
+//M=M+D
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -51532,14 +45386,12 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: pointer arg2: 0 pop pointer 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @3
 M=D
@@ -51550,20 +45402,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -51575,7 +45425,6 @@ A=M
 D=M
 @14
 M=D
-//GT
 @13  // Y
 D=M
 @14 // X
@@ -51590,7 +45439,7 @@ D=-1
 (ENDGT427)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack
 D=M
 @SP
 A=M
@@ -51598,7 +45447,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -51612,55 +45461,53 @@ D;JNE
 @String.dispose$IF_FALSE0
 0;JMP
 //C_LABEL arg1: IF_TRUE0 arg2: None label IF_TRUE0
-(String.dispose$IF_TRUE0)
-//C_PUSH arg1: this arg2: 1 push this 1
+(String.dispose$IF_TRUE0)//C_PUSH arg1: this arg2: 1 push this 1
 @1
 D=A
 @THIS
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Array.dispose arg2: 1 call Array.dispose 1
-@Array.dispose$ret.0
+@Array.dispose$ret.0 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -51668,67 +45515,64 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Array.dispose
+@Array.dispose // make jump
 0;JMP
 (Array.dispose$ret.0)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_LABEL arg1: IF_FALSE0 arg2: None label IF_FALSE0
-(String.dispose$IF_FALSE0)
-//C_PUSH arg1: pointer arg2: 0 push pointer 0
+(String.dispose$IF_FALSE0)//C_PUSH arg1: pointer arg2: 0 push pointer 0
 @3
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Memory.deAlloc arg2: 1 call Memory.deAlloc 1
-@Memory.deAlloc$ret.1
+@Memory.deAlloc$ret.1 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -51736,17 +45580,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Memory.deAlloc
+@Memory.deAlloc // make jump
 0;JMP
 (Memory.deAlloc$ret.1)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -51754,81 +45597,18 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: String.length arg2: 0 function String.length 0
 (String.length)
+//@0
+//D=A
+//@SP
+//M=M+D
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -51836,14 +45616,12 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: pointer arg2: 0 pop pointer 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @3
 M=D
@@ -51854,81 +45632,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: String.charAt arg2: 0 function String.charAt 0
 (String.charAt)
+//@0
+//D=A
+//@SP
+//M=M+D
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -51936,14 +45651,12 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: pointer arg2: 0 pop pointer 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @3
 M=D
@@ -51954,20 +45667,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -51979,7 +45690,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -51994,7 +45704,7 @@ D=-1
 (ENDLT428)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -52008,10 +45718,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: this arg2: 2 push this 2
 @2
 D=A
@@ -52019,12 +45728,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -52036,7 +45744,6 @@ A=M
 D=M
 @14
 M=D
-//GT
 @13  // Y
 D=M
 @14 // X
@@ -52051,7 +45758,7 @@ D=-1
 (ENDGT429)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack
 D=M
 @SP
 A=M
@@ -52059,7 +45766,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: or arg2: None or
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -52071,12 +45778,11 @@ A=M
 D=M
 @14
 M=D
-//OR
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M|D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -52090,10 +45796,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: this arg2: 2 push this 2
 @2
 D=A
@@ -52101,12 +45806,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -52118,7 +45822,6 @@ A=M
 D=M
 @14
 M=D
-//EQ
 @13 // y
 D=M
 @14 // x
@@ -52133,7 +45836,7 @@ D=-1
 (ENDEQ431)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -52141,7 +45844,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: or arg2: None or
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -52153,12 +45856,11 @@ A=M
 D=M
 @14
 M=D
-//OR
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M|D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -52166,7 +45868,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -52180,52 +45882,50 @@ D;JNE
 @String.charAt$IF_FALSE0
 0;JMP
 //C_LABEL arg1: IF_TRUE0 arg2: None label IF_TRUE0
-(String.charAt$IF_TRUE0)
-//C_PUSH arg1: constant arg2: 15 push constant 15
+(String.charAt$IF_TRUE0)//C_PUSH arg1: constant arg2: 15 push constant 15
 @15
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Sys.error arg2: 1 call Sys.error 1
-@Sys.error$ret.13
+@Sys.error$ret.13 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -52233,33 +45933,30 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Sys.error
+@Sys.error // make jump
 0;JMP
 (Sys.error$ret.13)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_LABEL arg1: IF_FALSE0 arg2: None label IF_FALSE0
-(String.charAt$IF_FALSE0)
-//C_PUSH arg1: argument arg2: 1 push argument 1
+(String.charAt$IF_FALSE0)//C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
 @ARG
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: this arg2: 1 push this 1
 @1
 D=A
@@ -52267,12 +45964,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -52284,12 +45980,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -52298,8 +45993,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -52310,81 +46004,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: String.setCharAt arg2: 0 function String.setCharAt 0
 (String.setCharAt)
+//@0
+//D=A
+//@SP
+//M=M+D
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -52392,14 +46023,12 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: pointer arg2: 0 pop pointer 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @3
 M=D
@@ -52410,20 +46039,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -52435,7 +46062,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -52450,7 +46076,7 @@ D=-1
 (ENDLT434)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -52464,10 +46090,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: this arg2: 2 push this 2
 @2
 D=A
@@ -52475,12 +46100,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -52492,7 +46116,6 @@ A=M
 D=M
 @14
 M=D
-//GT
 @13  // Y
 D=M
 @14 // X
@@ -52507,7 +46130,7 @@ D=-1
 (ENDGT435)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack
 D=M
 @SP
 A=M
@@ -52515,7 +46138,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: or arg2: None or
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -52527,12 +46150,11 @@ A=M
 D=M
 @14
 M=D
-//OR
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M|D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -52546,10 +46168,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: this arg2: 2 push this 2
 @2
 D=A
@@ -52557,12 +46178,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -52574,7 +46194,6 @@ A=M
 D=M
 @14
 M=D
-//EQ
 @13 // y
 D=M
 @14 // x
@@ -52589,7 +46208,7 @@ D=-1
 (ENDEQ437)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -52597,7 +46216,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: or arg2: None or
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -52609,12 +46228,11 @@ A=M
 D=M
 @14
 M=D
-//OR
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M|D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -52622,7 +46240,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -52636,52 +46254,50 @@ D;JNE
 @String.setCharAt$IF_FALSE0
 0;JMP
 //C_LABEL arg1: IF_TRUE0 arg2: None label IF_TRUE0
-(String.setCharAt$IF_TRUE0)
-//C_PUSH arg1: constant arg2: 16 push constant 16
+(String.setCharAt$IF_TRUE0)//C_PUSH arg1: constant arg2: 16 push constant 16
 @16
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Sys.error arg2: 1 call Sys.error 1
-@Sys.error$ret.14
+@Sys.error$ret.14 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -52689,33 +46305,30 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Sys.error
+@Sys.error // make jump
 0;JMP
 (Sys.error$ret.14)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_LABEL arg1: IF_FALSE0 arg2: None label IF_FALSE0
-(String.setCharAt$IF_FALSE0)
-//C_PUSH arg1: argument arg2: 1 push argument 1
+(String.setCharAt$IF_FALSE0)//C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
 @ARG
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: this arg2: 1 push this 1
 @1
 D=A
@@ -52723,12 +46336,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -52740,12 +46352,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -52759,21 +46370,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -52781,14 +46389,12 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: that arg2: 0 pop that 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -52807,81 +46413,18 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: String.appendChar arg2: 0 function String.appendChar 0
 (String.appendChar)
+//@0
+//D=A
+//@SP
+//M=M+D
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -52889,14 +46432,12 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: pointer arg2: 0 pop pointer 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @3
 M=D
@@ -52907,10 +46448,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: this arg2: 0 push this 0
 @0
 D=A
@@ -52918,12 +46458,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -52935,7 +46474,6 @@ A=M
 D=M
 @14
 M=D
-//EQ
 @13 // y
 D=M
 @14 // x
@@ -52950,7 +46488,7 @@ D=-1
 (ENDEQ440)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -52958,7 +46496,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -52972,52 +46510,50 @@ D;JNE
 @String.appendChar$IF_FALSE0
 0;JMP
 //C_LABEL arg1: IF_TRUE0 arg2: None label IF_TRUE0
-(String.appendChar$IF_TRUE0)
-//C_PUSH arg1: constant arg2: 17 push constant 17
+(String.appendChar$IF_TRUE0)//C_PUSH arg1: constant arg2: 17 push constant 17
 @17
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Sys.error arg2: 1 call Sys.error 1
-@Sys.error$ret.15
+@Sys.error$ret.15 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -53025,33 +46561,30 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Sys.error
+@Sys.error // make jump
 0;JMP
 (Sys.error$ret.15)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_LABEL arg1: IF_FALSE0 arg2: None label IF_FALSE0
-(String.appendChar$IF_FALSE0)
-//C_PUSH arg1: this arg2: 2 push this 2
+(String.appendChar$IF_FALSE0)//C_PUSH arg1: this arg2: 2 push this 2
 @2
 D=A
 @THIS
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: this arg2: 1 push this 1
 @1
 D=A
@@ -53059,12 +46592,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -53076,12 +46608,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -53095,21 +46626,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -53117,14 +46645,12 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: that arg2: 0 pop that 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -53146,20 +46672,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -53171,12 +46695,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -53185,8 +46708,7 @@ M=D
 M=M+1
 //C_POP arg1: this arg2: 2 pop this 2
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -53205,81 +46727,18 @@ M=D
 @3
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: String.eraseLastChar arg2: 0 function String.eraseLastChar 0
 (String.eraseLastChar)
+//@0
+//D=A
+//@SP
+//M=M+D
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -53287,14 +46746,12 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: pointer arg2: 0 pop pointer 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @3
 M=D
@@ -53305,20 +46762,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -53330,7 +46785,6 @@ A=M
 D=M
 @14
 M=D
-//EQ
 @13 // y
 D=M
 @14 // x
@@ -53345,7 +46799,7 @@ D=-1
 (ENDEQ443)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -53353,7 +46807,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -53367,52 +46821,50 @@ D;JNE
 @String.eraseLastChar$IF_FALSE0
 0;JMP
 //C_LABEL arg1: IF_TRUE0 arg2: None label IF_TRUE0
-(String.eraseLastChar$IF_TRUE0)
-//C_PUSH arg1: constant arg2: 18 push constant 18
+(String.eraseLastChar$IF_TRUE0)//C_PUSH arg1: constant arg2: 18 push constant 18
 @18
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Sys.error arg2: 1 call Sys.error 1
-@Sys.error$ret.16
+@Sys.error$ret.16 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -53420,43 +46872,39 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Sys.error
+@Sys.error // make jump
 0;JMP
 (Sys.error$ret.16)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_LABEL arg1: IF_FALSE0 arg2: None label IF_FALSE0
-(String.eraseLastChar$IF_FALSE0)
-//C_PUSH arg1: this arg2: 2 push this 2
+(String.eraseLastChar$IF_FALSE0)//C_PUSH arg1: this arg2: 2 push this 2
 @2
 D=A
 @THIS
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -53468,12 +46916,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -53482,8 +46929,7 @@ M=D
 M=M+1
 //C_POP arg1: this arg2: 2 pop this 2
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -53502,116 +46948,48 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: String.intValue arg2: 5 function String.intValue 5
 (String.intValue)
+//@5
+//D=A
+//@SP
+//M=M+D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -53619,14 +46997,12 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: pointer arg2: 0 pop pointer 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @3
 M=D
@@ -53637,20 +47013,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -53662,7 +47036,6 @@ A=M
 D=M
 @14
 M=D
-//EQ
 @13 // y
 D=M
 @14 // x
@@ -53677,7 +47050,7 @@ D=-1
 (ENDEQ445)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -53685,7 +47058,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -53699,105 +47072,34 @@ D;JNE
 @String.intValue$IF_FALSE0
 0;JMP
 //C_LABEL arg1: IF_TRUE0 arg2: None label IF_TRUE0
-(String.intValue$IF_TRUE0)
-//C_PUSH arg1: constant arg2: 0 push constant 0
+(String.intValue$IF_TRUE0)//C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_LABEL arg1: IF_FALSE0 arg2: None label IF_FALSE0
-(String.intValue$IF_FALSE0)
-//C_PUSH arg1: constant arg2: 0 push constant 0
+(String.intValue$IF_FALSE0)//C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: not arg2: None not
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
 M=D
-//NOT
 @14 // first pop value
 M=!M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -53806,8 +47108,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 3 pop local 3
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -53826,10 +47127,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: this arg2: 1 push this 1
 @1
 D=A
@@ -53837,12 +47137,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -53854,12 +47153,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -53868,8 +47166,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -53880,20 +47177,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 45 push constant 45
 @45
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -53905,7 +47200,6 @@ A=M
 D=M
 @14
 M=D
-//EQ
 @13 // y
 D=M
 @14 // x
@@ -53920,7 +47214,7 @@ D=-1
 (ENDEQ448)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -53928,7 +47222,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -53942,26 +47236,23 @@ D;JNE
 @String.intValue$IF_FALSE1
 0;JMP
 //C_LABEL arg1: IF_TRUE1 arg2: None label IF_TRUE1
-(String.intValue$IF_TRUE1)
-//C_PUSH arg1: constant arg2: 0 push constant 0
+(String.intValue$IF_TRUE1)//C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: not arg2: None not
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
 M=D
-//NOT
 @14 // first pop value
 M=!M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -53970,8 +47261,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 4 pop local 4
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -53990,14 +47280,12 @@ M=D
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -54013,20 +47301,17 @@ D=M
 A=M
 M=D
 //C_LABEL arg1: IF_FALSE1 arg2: None label IF_FALSE1
-(String.intValue$IF_FALSE1)
-//C_LABEL arg1: WHILE_EXP0 arg2: None label WHILE_EXP0
-(String.intValue$WHILE_EXP0)
-//C_PUSH arg1: local arg2: 0 push local 0
+(String.intValue$IF_FALSE1)//C_LABEL arg1: WHILE_EXP0 arg2: None label WHILE_EXP0
+(String.intValue$WHILE_EXP0)//C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: this arg2: 2 push this 2
 @2
 D=A
@@ -54034,12 +47319,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -54051,7 +47335,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -54066,7 +47349,7 @@ D=-1
 (ENDLT450)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -54080,12 +47363,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: and arg2: None and
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -54097,29 +47379,26 @@ A=M
 D=M
 @14
 M=D
-//AND
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M&D
-@14
-D=M
-@SP
+@14 // push memory address 14 to stack 
+D=M@SP
 A=M
 M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: not arg2: None not
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
 M=D
-//NOT
 @14 // first pop value
 M=!M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -54127,7 +47406,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -54144,10 +47423,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: this arg2: 1 push this 1
 @1
 D=A
@@ -54155,12 +47433,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -54172,12 +47449,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -54186,8 +47462,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -54198,20 +47473,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 48 push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -54223,12 +47496,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -54237,8 +47509,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 2 pop local 2
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -54260,20 +47531,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -54285,7 +47554,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -54300,7 +47568,7 @@ D=-1
 (ENDLT455)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -54314,20 +47582,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 9 push constant 9
 @9
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -54339,7 +47605,6 @@ A=M
 D=M
 @14
 M=D
-//GT
 @13  // Y
 D=M
 @14 // X
@@ -54354,7 +47619,7 @@ D=-1
 (ENDGT456)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack
 D=M
 @SP
 A=M
@@ -54362,7 +47627,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: or arg2: None or
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -54374,12 +47639,11 @@ A=M
 D=M
 @14
 M=D
-//OR
 @13 // first pop value
 D=M
 @14 // second pop value
 M = M|D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -54387,16 +47651,15 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: not arg2: None not
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
 M=D
-//NOT
 @14 // first pop value
 M=!M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -54405,8 +47668,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 3 pop local 3
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -54428,12 +47690,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_IF arg1: IF_TRUE2 arg2: None if-goto IF_TRUE2
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -54447,63 +47708,60 @@ D;JNE
 @String.intValue$IF_FALSE2
 0;JMP
 //C_LABEL arg1: IF_TRUE2 arg2: None label IF_TRUE2
-(String.intValue$IF_TRUE2)
-//C_PUSH arg1: local arg2: 1 push local 1
+(String.intValue$IF_TRUE2)//C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 10 push constant 10
 @10
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Math.multiply arg2: 2 call Math.multiply 2
-@Math.multiply$ret.17
+@Math.multiply$ret.17 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -54511,11 +47769,11 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Math.multiply
+@Math.multiply // make jump
 0;JMP
 (Math.multiply$ret.17)
 //C_PUSH arg1: local arg2: 2 push local 2
@@ -54525,12 +47783,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -54542,12 +47799,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -54556,8 +47812,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 1 pop local 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -54579,20 +47834,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -54604,12 +47857,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -54618,8 +47870,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -54635,25 +47886,22 @@ D=M
 A=M
 M=D
 //C_LABEL arg1: IF_FALSE2 arg2: None label IF_FALSE2
-(String.intValue$IF_FALSE2)
-//C_GOTO arg1: WHILE_EXP0 arg2: None goto WHILE_EXP0
+(String.intValue$IF_FALSE2)//C_GOTO arg1: WHILE_EXP0 arg2: None goto WHILE_EXP0
 @String.intValue$WHILE_EXP0
 0;JMP
 //C_LABEL arg1: WHILE_END0 arg2: None label WHILE_END0
-(String.intValue$WHILE_END0)
-//C_PUSH arg1: local arg2: 4 push local 4
+(String.intValue$WHILE_END0)//C_PUSH arg1: local arg2: 4 push local 4
 @4
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_IF arg1: IF_TRUE3 arg2: None if-goto IF_TRUE3
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -54667,29 +47915,25 @@ D;JNE
 @String.intValue$IF_FALSE3
 0;JMP
 //C_LABEL arg1: IF_TRUE3 arg2: None label IF_TRUE3
-(String.intValue$IF_TRUE3)
-//C_PUSH arg1: local arg2: 1 push local 1
+(String.intValue$IF_TRUE3)//C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: neg arg2: None neg
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
-M=D
-//NEG
-@14 // X
+M=D@14 // X
 M=-M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -54698,8 +47942,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 1 pop local 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -54715,117 +47958,49 @@ D=M
 A=M
 M=D
 //C_LABEL arg1: IF_FALSE3 arg2: None label IF_FALSE3
-(String.intValue$IF_FALSE3)
-//C_PUSH arg1: local arg2: 1 push local 1
+(String.intValue$IF_FALSE3)//C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: String.setInt arg2: 4 function String.setInt 4
 (String.setInt)
+//@4
+//D=A
+//@SP
+//M=M+D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -54833,14 +48008,12 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: pointer arg2: 0 pop pointer 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @3
 M=D
@@ -54851,20 +48024,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -54876,7 +48047,6 @@ A=M
 D=M
 @14
 M=D
-//EQ
 @13 // y
 D=M
 @14 // x
@@ -54891,7 +48061,7 @@ D=-1
 (ENDEQ462)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -54899,7 +48069,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -54913,52 +48083,50 @@ D;JNE
 @String.setInt$IF_FALSE0
 0;JMP
 //C_LABEL arg1: IF_TRUE0 arg2: None label IF_TRUE0
-(String.setInt$IF_TRUE0)
-//C_PUSH arg1: constant arg2: 19 push constant 19
+(String.setInt$IF_TRUE0)//C_PUSH arg1: constant arg2: 19 push constant 19
 @19
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Sys.error arg2: 1 call Sys.error 1
-@Sys.error$ret.17
+@Sys.error$ret.17 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -54966,67 +48134,64 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Sys.error
+@Sys.error // make jump
 0;JMP
 (Sys.error$ret.17)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_LABEL arg1: IF_FALSE0 arg2: None label IF_FALSE0
-(String.setInt$IF_FALSE0)
-//C_PUSH arg1: constant arg2: 6 push constant 6
+(String.setInt$IF_FALSE0)//C_PUSH arg1: constant arg2: 6 push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Array.new arg2: 1 call Array.new 1
-@Array.new$ret.8
+@Array.new$ret.8 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -55034,17 +48199,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Array.new
+@Array.new // make jump
 0;JMP
 (Array.new$ret.8)
 //C_POP arg1: local arg2: 2 pop local 2
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -55066,20 +48230,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -55091,7 +48253,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -55106,7 +48267,7 @@ D=-1
 (ENDLT463)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -55114,7 +48275,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -55128,26 +48289,23 @@ D;JNE
 @String.setInt$IF_FALSE1
 0;JMP
 //C_LABEL arg1: IF_TRUE1 arg2: None label IF_TRUE1
-(String.setInt$IF_TRUE1)
-//C_PUSH arg1: constant arg2: 0 push constant 0
+(String.setInt$IF_TRUE1)//C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: not arg2: None not
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
 M=D
-//NOT
 @14 // first pop value
 M=!M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -55156,8 +48314,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 3 pop local 3
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -55179,21 +48336,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: neg arg2: None neg
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
-M=D
-//NEG
-@14 // X
+M=D@14 // X
 M=-M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -55202,8 +48356,7 @@ M=D
 M=M+1
 //C_POP arg1: argument arg2: 1 pop argument 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -55219,22 +48372,19 @@ D=M
 A=M
 M=D
 //C_LABEL arg1: IF_FALSE1 arg2: None label IF_FALSE1
-(String.setInt$IF_FALSE1)
-//C_PUSH arg1: argument arg2: 1 push argument 1
+(String.setInt$IF_FALSE1)//C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
 @ARG
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: local arg2: 1 pop local 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -55250,28 +48400,25 @@ D=M
 A=M
 M=D
 //C_LABEL arg1: WHILE_EXP0 arg2: None label WHILE_EXP0
-(String.setInt$WHILE_EXP0)
-//C_PUSH arg1: local arg2: 1 push local 1
+(String.setInt$WHILE_EXP0)//C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -55283,7 +48430,6 @@ A=M
 D=M
 @14
 M=D
-//GT
 @13  // Y
 D=M
 @14 // X
@@ -55298,7 +48444,7 @@ D=-1
 (ENDGT466)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack
 D=M
 @SP
 A=M
@@ -55306,16 +48452,15 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: not arg2: None not
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
 M=D
-//NOT
 @14 // first pop value
 M=!M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -55323,7 +48468,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -55340,55 +48485,53 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 10 push constant 10
 @10
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Math.divide arg2: 2 call Math.divide 2
-@Math.divide$ret.6
+@Math.divide$ret.6 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -55396,17 +48539,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Math.divide
+@Math.divide // make jump
 0;JMP
 (Math.divide$ret.6)
 //C_POP arg1: local arg2: 1 pop local 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -55428,10 +48570,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 2 push local 2
 @2
 D=A
@@ -55439,12 +48580,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -55456,12 +48596,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -55472,10 +48611,9 @@ M=M+1
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -55483,10 +48621,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
@@ -55494,55 +48631,53 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 10 push constant 10
 @10
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Math.multiply arg2: 2 call Math.multiply 2
-@Math.multiply$ret.18
+@Math.multiply$ret.18 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -55550,15 +48685,15 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Math.multiply
+@Math.multiply // make jump
 0;JMP
 (Math.multiply$ret.18)
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -55570,12 +48705,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -55583,7 +48717,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -55595,12 +48729,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -55609,15 +48742,13 @@ M=D
 M=M+1
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -55625,14 +48756,12 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: that arg2: 0 pop that 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -55654,20 +48783,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -55679,12 +48806,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -55693,8 +48819,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -55716,14 +48841,12 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: argument arg2: 1 pop argument 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -55742,20 +48865,18 @@ M=D
 @String.setInt$WHILE_EXP0
 0;JMP
 //C_LABEL arg1: WHILE_END0 arg2: None label WHILE_END0
-(String.setInt$WHILE_END0)
-//C_PUSH arg1: local arg2: 3 push local 3
+(String.setInt$WHILE_END0)//C_PUSH arg1: local arg2: 3 push local 3
 @3
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_IF arg1: IF_TRUE2 arg2: None if-goto IF_TRUE2
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -55769,18 +48890,16 @@ D;JNE
 @String.setInt$IF_FALSE2
 0;JMP
 //C_LABEL arg1: IF_TRUE2 arg2: None label IF_TRUE2
-(String.setInt$IF_TRUE2)
-//C_PUSH arg1: local arg2: 0 push local 0
+(String.setInt$IF_TRUE2)//C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 2 push local 2
 @2
 D=A
@@ -55788,12 +48907,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -55805,12 +48923,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -55821,21 +48938,18 @@ M=M+1
 @45
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -55843,14 +48957,12 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: that arg2: 0 pop that 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -55872,20 +48984,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -55897,12 +49007,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -55911,8 +49020,7 @@ M=D
 M=M+1
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -55928,18 +49036,16 @@ D=M
 A=M
 M=D
 //C_LABEL arg1: IF_FALSE2 arg2: None label IF_FALSE2
-(String.setInt$IF_FALSE2)
-//C_PUSH arg1: this arg2: 0 push this 0
+(String.setInt$IF_FALSE2)//C_PUSH arg1: this arg2: 0 push this 0
 @0
 D=A
 @THIS
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -55947,12 +49053,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -55964,7 +49069,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -55979,7 +49083,7 @@ D=-1
 (ENDLT474)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -55987,7 +49091,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE3 arg2: None if-goto IF_TRUE3
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -56001,52 +49105,50 @@ D;JNE
 @String.setInt$IF_FALSE3
 0;JMP
 //C_LABEL arg1: IF_TRUE3 arg2: None label IF_TRUE3
-(String.setInt$IF_TRUE3)
-//C_PUSH arg1: constant arg2: 19 push constant 19
+(String.setInt$IF_TRUE3)//C_PUSH arg1: constant arg2: 19 push constant 19
 @19
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Sys.error arg2: 1 call Sys.error 1
-@Sys.error$ret.18
+@Sys.error$ret.18 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -56054,43 +49156,39 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Sys.error
+@Sys.error // make jump
 0;JMP
 (Sys.error$ret.18)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_LABEL arg1: IF_FALSE3 arg2: None label IF_FALSE3
-(String.setInt$IF_FALSE3)
-//C_PUSH arg1: local arg2: 0 push local 0
+(String.setInt$IF_FALSE3)//C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -56102,7 +49200,6 @@ A=M
 D=M
 @14
 M=D
-//EQ
 @13 // y
 D=M
 @14 // x
@@ -56117,7 +49214,7 @@ D=-1
 (ENDEQ475)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -56125,7 +49222,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: IF_TRUE4 arg2: None if-goto IF_TRUE4
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -56139,15 +49236,13 @@ D;JNE
 @String.setInt$IF_FALSE4
 0;JMP
 //C_LABEL arg1: IF_TRUE4 arg2: None label IF_TRUE4
-(String.setInt$IF_TRUE4)
-//C_PUSH arg1: constant arg2: 0 push constant 0
+(String.setInt$IF_TRUE4)//C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: this arg2: 1 push this 1
 @1
 D=A
@@ -56155,12 +49250,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -56172,12 +49266,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -56188,21 +49281,18 @@ M=M+1
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -56210,14 +49300,12 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: that arg2: 0 pop that 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -56236,14 +49324,12 @@ M=D
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: this arg2: 2 pop this 2
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -56262,19 +49348,16 @@ M=D
 @String.setInt$IF_END4
 0;JMP
 //C_LABEL arg1: IF_FALSE4 arg2: None label IF_FALSE4
-(String.setInt$IF_FALSE4)
-//C_PUSH arg1: constant arg2: 0 push constant 0
+(String.setInt$IF_FALSE4)//C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: this arg2: 2 pop this 2
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -56290,18 +49373,16 @@ D=M
 A=M
 M=D
 //C_LABEL arg1: WHILE_EXP1 arg2: None label WHILE_EXP1
-(String.setInt$WHILE_EXP1)
-//C_PUSH arg1: this arg2: 2 push this 2
+(String.setInt$WHILE_EXP1)//C_PUSH arg1: this arg2: 2 push this 2
 @2
 D=A
 @THIS
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -56309,12 +49390,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -56326,7 +49406,6 @@ A=M
 D=M
 @14
 M=D
-//LT
 @13  // Y
 D=M
 @14 // X
@@ -56341,7 +49420,7 @@ D=-1
 (ENDLT477)
 @14
 M=D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -56349,16 +49428,15 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: not arg2: None not
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
 M=D
-//NOT
 @14 // first pop value
 M=!M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -56366,7 +49444,7 @@ M=D
 @SP
 M=M+1
 //C_IF arg1: WHILE_END1 arg2: None if-goto WHILE_END1
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
@@ -56383,10 +49461,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: this arg2: 1 push this 1
 @1
 D=A
@@ -56394,12 +49471,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -56411,12 +49487,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -56430,10 +49505,9 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: this arg2: 2 push this 2
 @2
 D=A
@@ -56441,20 +49515,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -56466,12 +49538,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -56479,7 +49550,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -56491,12 +49562,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -56510,12 +49580,11 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -56527,12 +49596,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -56541,8 +49609,7 @@ M=D
 M=M+1
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -56553,21 +49620,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @4
 M=D
@@ -56575,14 +49639,12 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_POP arg1: that arg2: 0 pop that 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -56604,20 +49666,18 @@ D=A
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -56629,12 +49689,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -56643,8 +49702,7 @@ M=D
 M=M+1
 //C_POP arg1: this arg2: 2 pop this 2
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13 // memory space needed by VM translator
 M=D // load value from the top of stack
@@ -56663,57 +49721,54 @@ M=D
 @String.setInt$WHILE_EXP1
 0;JMP
 //C_LABEL arg1: WHILE_END1 arg2: None label WHILE_END1
-(String.setInt$WHILE_END1)
-//C_LABEL arg1: IF_END4 arg2: None label IF_END4
-(String.setInt$IF_END4)
-//C_PUSH arg1: local arg2: 2 push local 2
+(String.setInt$WHILE_END1)//C_LABEL arg1: IF_END4 arg2: None label IF_END4
+(String.setInt$IF_END4)//C_PUSH arg1: local arg2: 2 push local 2
 @2
 D=A
 @LCL
 A=M+D
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_CALL arg1: Array.dispose arg2: 1 call Array.dispose 1
-@Array.dispose$ret.1
+@Array.dispose$ret.1 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -56721,17 +49776,16 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Array.dispose
+@Array.dispose // make jump
 0;JMP
 (Array.dispose$ret.1)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -56739,313 +49793,57 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: String.newLine arg2: 0 function String.newLine 0
 (String.newLine)
+//@0
+//D=A
+//@SP
+//M=M+D
 //C_PUSH arg1: constant arg2: 128 push constant 128
 @128
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: String.backSpace arg2: 0 function String.backSpace 0
 (String.backSpace)
+//@0
+//D=A
+//@SP
+//M=M+D
 //C_PUSH arg1: constant arg2: 129 push constant 129
 @129
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP
 //C_FUNCTION arg1: String.doubleQuote arg2: 0 function String.doubleQuote 0
 (String.doubleQuote)
+//@0
+//D=A
+//@SP
+//M=M+D
 //C_PUSH arg1: constant arg2: 34 push constant 34
 @34
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
-D=M
-@13 // frame
-M=D
-//retAddr = frame-5
-@5
-D=A
-@13
-D=M-D // RAM address that has the return address (ROM)
-A=D
-D=M //return address itself
-@14 // retAddr
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@15
-M=D
-@15
-D=M
-@ARG
-A=M
-M=D
-//SP = ARG+1
-@ARG
-D=M
-@SP
-M=D+1
-//THAT = *frame-1
-@13
-D=M-1
-A=D
-D=M
-@THAT
-M=D
-//THIS = *frame-2
-@13
-D=M
-@2
-D=D-A
-A=D
-D=M
-@THIS
-M=D
-//ARG = *frame-3
-@13
-D=M
-@3
-D=D-A
-A=D
-D=M
-@ARG
-M=D
-//LCL = *frame-4
-@13
-D=M
-@4
-D=D-A
-A=D
-D=M
-@LCL
-M=D
-//goto retAddr
-@14
-A=M
+@RETURN
 0;JMP

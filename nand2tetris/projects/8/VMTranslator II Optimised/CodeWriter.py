@@ -11,15 +11,15 @@ class CodeWriter:
         }
         self.arithmetic_asm_command_count = 0
         self.arithmetic_asm_commands = {
-            "add":ASMCommand.C_ARITHMETIC_ADD,
+            "add": ASMCommand.C_ARITHMETIC_ADD,
             "sub": ASMCommand.C_ARITHMETIC_SUB,
-            "neg":ASMCommand.C_ARITHMETIC_NEG,
+            "neg": ASMCommand.C_ARITHMETIC_NEG,
             "eq": ASMCommand.C_ARITHMETIC_EQ,
-            "gt":ASMCommand.C_ARITHMETIC_GT,
-            "lt":ASMCommand.C_ARITHMETIC_LT,
-            "and":ASMCommand.C_ARITHMETIC_AND,
-            "or":ASMCommand.C_ARITHMETIC_OR,
-            "not":ASMCommand.C_ARITHMETIC_NOT
+            "gt": ASMCommand.C_ARITHMETIC_GT,
+            "lt": ASMCommand.C_ARITHMETIC_LT,
+            "and": ASMCommand.C_ARITHMETIC_AND,
+            "or": ASMCommand.C_ARITHMETIC_OR,
+            "not": ASMCommand.C_ARITHMETIC_NOT
         }
         self.function_chain = {}
         self.current_function = None
@@ -27,7 +27,7 @@ class CodeWriter:
         dest_file_path = f"{argv[1]}\\{self.file_name}.asm"
         self.dest_file = open(dest_file_path,"w")
 
-        bootstrap_command = ["@256","D=A", "@SP", "M=D"]
+        bootstrap_command = ASMCommand.C_RETURN+["(BOOTSTRAP)","@256","D=A", "@SP", "M=D"]
         self.dest_file.writelines(cmd+"\n" for cmd in bootstrap_command)
         for cmd in bootstrap_command:
             print(cmd)
@@ -85,10 +85,10 @@ class CodeWriter:
         
 
     def writeReturn(self):
-        self.dest_file.writelines(cmd+"\n" for cmd in ASMCommand.C_RETURN)
-
-        for cmd in ASMCommand.C_RETURN:
-            print(cmd)
+        #self.dest_file.writelines(cmd+"\n" for cmd in ASMCommand.C_RETURN)
+        self.dest_file.writelines(cmd+"\n" for cmd in ["@RETURN","0;JMP"])
+        #for cmd in ASMCommand.C_RETURN:
+        #    print(cmd)
 
 
     def close(self):
@@ -120,10 +120,9 @@ class CodeWriter:
                             "D=M"]
 
         increment_stack_pointer = ["@SP", 
-                                   "A=M", 
-                                   "M=D", 
-                                   "@SP", 
-                                   "M=M+1"]
+                                   "M=M+1", 
+                                   "A=M-1",  
+                                   "M=D"]
         
         push_command = push_command + increment_stack_pointer
         self.dest_file.writelines(cmd+"\n" for cmd in push_command)
@@ -149,7 +148,7 @@ class CodeWriter:
         else:
             pop_command = [f"@{dest_addr}","M=D"]
 
-        decrement_stack_pointer = ["@SP", "M=M-1","A=M","D=M"]
+        decrement_stack_pointer = ["@SP", "AM=M-1","D=M"]
         pop_command = decrement_stack_pointer + pop_command
         self.dest_file.writelines(cmd+"\n" for cmd in pop_command)
         for cmd in pop_command:
