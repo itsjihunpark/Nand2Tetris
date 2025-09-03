@@ -1,0 +1,22 @@
+Command type count for JACK OS
+
+'C_PUSH': 2228, 
+
+'C_POP': 554, 
+
+'C_ARITHMETIC': 484, 
+
+'C_LABEL': 215, 
+
+'C_GOTO': 119, 
+
+'C_IF': 96, 
+
+'C_FUNCTION': 58, 
+- Extracted
+
+'C_CALL': 230, 
+- Extracted
+
+'C_RETURN': 59
+- Extracted
