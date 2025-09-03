@@ -1,7 +1,107 @@
-C_FUNCTION = [
-    "(functionName)",
-    f"@0 // repeat for nVars",
-    "D=A",
+
+
+C_ARITHMETIC_ADD = [
+    "@SP // pop from stack to memory address 13 and 14",
+    "M=M-1",
+    "A=M",
+    "D=M",
+    "@13",
+    "M=D",
+    "@SP",
+    "M=M-1",
+    "A=M",
+    "D=M",
+    "@14",
+    "M=D",
+    "@13 // Y",
+    "D=M", 
+    "@14 // X",
+    "M=M+D",
+    "@14 // push memory address 14 to stack ",
+    "D=M",
+    "@SP", 
+    "A=M", 
+    "M=D", 
+    "@SP", 
+    "M=M+1"
+
+]
+
+C_ARITHMETIC_SUB = [
+    "@SP // pop from stack to memory address 13 and 14",
+    "M=M-1",
+    "A=M",
+    "D=M",
+    "@13",
+    "M=D",
+    "@SP",
+    "M=M-1",
+    "A=M",
+    "D=M",
+    "@14",
+    "M=D",
+    "@13 // Y",
+    "D=M", 
+    "@14 // X",
+    "M=M-D",
+    "@14 // push memory address 14 to stack ",
+    "D=M",
+    "@SP", 
+    "A=M", 
+    "M=D", 
+    "@SP", 
+    "M=M+1"
+
+]
+
+C_ARITHMETIC_NEG = [
+    "@SP // pop from stack to memory address 13",
+    "M=M-1",
+    "A=M",
+    "D=M",
+    "@13",
+    "M=D"
+    "@14 // X", 
+    "M=-M",
+    "@14 // push memory address 14 to stack ",
+    "D=M",
+    "@SP", 
+    "A=M", 
+    "M=D", 
+    "@SP", 
+    "M=M+1"
+
+]
+
+C_ARITHMETIC_EQ = [
+    "@SP // pop from stack to memory address 13 and 14",
+    "M=M-1",
+    "A=M",
+    "D=M",
+    "@13",
+    "M=D",
+    "@SP",
+    "M=M-1",
+    "A=M",
+    "D=M",
+    "@14",
+    "M=D",
+    "@13 // y",
+    "D=M", 
+    "@14 // x",
+    "D=M-D", 
+    "@EQ{counter}",
+    "D;JEQ",
+    "D=0",
+    "@ENDEQ{counter}",
+    "0;JMP",
+    "(EQ{counter})",
+    "D=-1",
+    "(ENDEQ{counter})",
+    "@14",
+    "M=D",
+    "@14 // push memory address 14 to stack ",
+    "D=M",
     "@SP", 
     "A=M", 
     "M=D", 
@@ -9,14 +109,184 @@ C_FUNCTION = [
     "M=M+1"
 ]
 
-C_CALL = [
-    "@functionName$ret.call_count // push return label",
-    "D=A",
+C_ARITHMETIC_GT = [
+    "@SP // pop from stack to memory address 13 and 14",
+    "M=M-1",
+    "A=M",
+    "D=M",
+    "@13",
+    "M=D",
+    "@SP",
+    "M=M-1",
+    "A=M",
+    "D=M",
+    "@14",
+    "M=D",
+    "@13  // Y",
+    "D=M",
+    "@14 // X",
+    "D=M-D",
+    "@GT{counter}", 
+    "D;JGT",
+    "D=0",
+    "@ENDGT{counter}",
+    "0;JMP",
+    "(GT{counter})",
+    "D=-1",
+    "(ENDGT{counter})",
+    "@14",
+    "M=D",
+    "@14 // push memory address 14 to stack",
+    "D=M",
     "@SP", 
     "A=M", 
     "M=D", 
     "@SP", 
     "M=M+1"
+]
+
+C_ARITHMETIC_LT = [
+    "@SP // pop from stack to memory address 13 and 14",
+    "M=M-1",
+    "A=M",
+    "D=M",
+    "@13",
+    "M=D",
+    "@SP",
+    "M=M-1",
+    "A=M",
+    "D=M",
+    "@14",
+    "M=D",
+    "@13  // Y",
+    "D=M", 
+    "@14 // X",
+    "D=M-D",
+    "@LT{counter}", 
+    "D;JLT",
+    "D=0",
+    "@ENDLT{counter}",
+    "0;JMP",
+    "(LT{counter})",
+    "D=-1",
+    "(ENDLT{counter})",
+    "@14",
+    "M=D",
+    "@14 // push memory address 14 to stack ",
+    "D=M",
+    "@SP", 
+    "A=M", 
+    "M=D", 
+    "@SP", 
+    "M=M+1"
+]
+
+C_ARITHMETIC_AND = [
+    "@SP // pop from stack to memory address 13 and 14",
+    "M=M-1",
+    "A=M",
+    "D=M",
+    "@13",
+    "M=D",
+    "@SP",
+    "M=M-1",
+    "A=M",
+    "D=M",
+    "@14",
+    "M=D",
+    "@13 // first pop value",
+    "D=M", 
+    "@14 // second pop value",
+    "M = M&D",
+    "@14 // push memory address 14 to stack ",
+    "D=M"
+    "@SP", 
+    "A=M", 
+    "M=D", 
+    "@SP", 
+    "M=M+1"
+]
+C_ARITHMETIC_OR = [
+    "@SP // pop from stack to memory address 13 and 14",
+    "M=M-1",
+    "A=M",
+    "D=M",
+    "@13",
+    "M=D",
+    "@SP",
+    "M=M-1",
+    "A=M",
+    "D=M",
+    "@14",
+    "M=D",
+    "@13 // first pop value",
+    "D=M", 
+    "@14 // second pop value",
+    "M = M|D",
+    "@14 // push memory address 14 to stack ",
+    "D=M",
+    "@SP", 
+    "A=M", 
+    "M=D", 
+    "@SP", 
+    "M=M+1"
+]
+C_ARITHMETIC_NOT = [
+    "@SP // pop from stack to memory address 13",
+    "M=M-1",
+    "A=M",
+    "D=M",
+    "@13",
+    "M=D",
+    "@14 // first pop value",
+    "M=!M",
+    "@14 // push memory address 14 to stack ",
+    "D=M",
+    "@SP", 
+    "A=M", 
+    "M=D", 
+    "@SP", 
+    "M=M+1"
+]
+
+C_LABEL =[
+    "({label})"
+]
+
+C_GOTO =[
+    "@{label}", 
+    "0;JMP"
+]
+
+C_IF = [
+    "@SP // pop from stack to memory address 13", 
+    "M=M-1",
+    "A=M",
+    "D=M",
+    "@13",
+    "M=D",
+    "@13", 
+    "D=M", 
+    "@{label}",
+    "D;JNE"
+]
+
+C_FUNCTION = [
+    "({functionName})",
+    "//@{nVars}",
+    "//D=A",
+    "//@SP", 
+    "//M=M+D"
+]
+# NEED TO REPLACE PLACEHOLDER 
+C_CALL = [
+    "@{returnLabel} // push return label",
+    "D=A",
+    "@SP", 
+    "A=M", 
+    "M=D", 
+    "@SP", 
+    "M=M+1",
     "@LCL // push LCL pointer",
     "D=M",
     "@SP", 
@@ -49,7 +319,7 @@ C_CALL = [
     "D=M", 
     "@5", 
     "D=D-A", 
-    "@nArgs",
+    "@{nArgs}",
     "D=D-A", 
     "@ARG", 
     "M=D", 
@@ -57,9 +327,9 @@ C_CALL = [
     "D=M", 
     "@LCL",
     "M=D", 
-    "@functionName // make jump",
+    "@{functionName} // make jump",
     "0;JMP",
-    "(functionName$ret.call_count)"
+    "({returnLabel})"
 ]
 
 

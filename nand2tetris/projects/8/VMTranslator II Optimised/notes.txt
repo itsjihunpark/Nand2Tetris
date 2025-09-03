@@ -5,12 +5,16 @@ Command type count for JACK OS
 'C_POP': 554, 
 
 'C_ARITHMETIC': 484, 
+- Extracted
 
 'C_LABEL': 215, 
+- Extracted
 
 'C_GOTO': 119, 
+- Extracted
 
 'C_IF': 96, 
+- Extracted
 
 'C_FUNCTION': 58, 
 - Extracted

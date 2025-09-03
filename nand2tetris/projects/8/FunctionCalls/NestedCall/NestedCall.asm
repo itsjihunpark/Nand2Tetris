@@ -2,42 +2,42 @@
 D=A
 @SP
 M=D
-@Sys.init$ret.0
+@Sys.init$ret.0 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -45,15 +45,19 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Sys.init
+@Sys.init // make jump
 0;JMP
 (Sys.init$ret.0)
 //C_FUNCTION arg1: Sys.init arg2: 0 function Sys.init 0
 (Sys.init)
+//@0
+//D=A
+//@SP
+//M=M+D
 //C_PUSH arg1: constant arg2: 4000 push constant 4000
 @4000
 D=A
@@ -85,42 +89,42 @@ D=M
 @4
 M=D
 //C_CALL arg1: Sys.main arg2: 0 call Sys.main 0
-@Sys.main$ret.0
+@Sys.main$ret.0 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -128,11 +132,11 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Sys.main
+@Sys.main // make jump
 0;JMP
 (Sys.main$ret.0)
 //C_POP arg1: temp arg2: 1 pop temp 1
@@ -143,12 +147,15 @@ D=M
 @6
 M=D
 //C_LABEL arg1: LOOP arg2: None label LOOP
-(Sys.init$LOOP)
-//C_GOTO arg1: LOOP arg2: None goto LOOP
+(Sys.init$LOOP)//C_GOTO arg1: LOOP arg2: None goto LOOP
 @Sys.init$LOOP
 0;JMP
 //C_FUNCTION arg1: Sys.main arg2: 5 function Sys.main 5
 (Sys.main)
+//@5
+//D=A
+//@SP
+//M=M+D
 @0
 D=A
 @SP
@@ -301,42 +308,42 @@ M=D
 @SP
 M=M+1
 //C_CALL arg1: Sys.add12 arg2: 1 call Sys.add12 1
-@Sys.add12$ret.0
+@Sys.add12$ret.0 // push return label
 D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@LCL
+@LCL // push LCL pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@ARG
+@ARG // push ARG pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THIS
+@THIS // push THIS pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@THAT
+@THAT // push THAT pointer
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@SP
+@SP // reposition ARG pointer to be SP - 5 - nArgs
 D=M
 @5
 D=D-A
@@ -344,11 +351,11 @@ D=D-A
 D=D-A
 @ARG
 M=D
-@SP
+@SP // reposition LCL pointer to be that of SP
 D=M
 @LCL
 M=D
-@Sys.add12
+@Sys.add12 // make jump
 0;JMP
 (Sys.add12$ret.0)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -414,7 +421,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -426,12 +433,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -439,7 +445,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -451,12 +457,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -464,7 +469,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -476,12 +481,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -489,7 +493,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -501,12 +505,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -514,13 +517,11 @@ M=D
 @SP
 M=M+1
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
+@LCL //frame = LCL
 D=M
 @13 // frame
 M=D
-//retAddr = frame-5
-@5
+@5 //retAddr = frame-5
 D=A
 @13
 D=M-D // RAM address that has the return address (ROM)
@@ -528,31 +529,24 @@ A=D
 D=M //return address itself
 @14 // retAddr
 M=D
-@SP
+@SP // reposition return value to arg 0
 M=M-1
 A=M
 D=M
-@15
-M=D
-@15
-D=M
 @ARG
 A=M
 M=D
-//SP = ARG+1
-@ARG
+@ARG //SP = ARG+1
 D=M
 @SP
 M=D+1
-//THAT = *frame-1
-@13
+@13 //THAT = *frame-1
 D=M-1
 A=D
 D=M
 @THAT
 M=D
-//THIS = *frame-2
-@13
+@13 //THIS = *frame-2
 D=M
 @2
 D=D-A
@@ -560,8 +554,7 @@ A=D
 D=M
 @THIS
 M=D
-//ARG = *frame-3
-@13
+@13 //ARG = *frame-3
 D=M
 @3
 D=D-A
@@ -569,8 +562,7 @@ A=D
 D=M
 @ARG
 M=D
-//LCL = *frame-4
-@13
+@13 //LCL = *frame-4
 D=M
 @4
 D=D-A
@@ -578,12 +570,15 @@ A=D
 D=M
 @LCL
 M=D
-//goto retAddr
-@14
+@14 //goto retAddr
 A=M
 0;JMP
 //C_FUNCTION arg1: Sys.add12 arg2: 0 function Sys.add12 0
 (Sys.add12)
+//@0
+//D=A
+//@SP
+//M=M+D
 //C_PUSH arg1: constant arg2: 4002 push constant 4002
 @4002
 D=A
@@ -634,7 +629,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -646,12 +641,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -659,13 +653,11 @@ M=D
 @SP
 M=M+1
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
+@LCL //frame = LCL
 D=M
 @13 // frame
 M=D
-//retAddr = frame-5
-@5
+@5 //retAddr = frame-5
 D=A
 @13
 D=M-D // RAM address that has the return address (ROM)
@@ -673,31 +665,24 @@ A=D
 D=M //return address itself
 @14 // retAddr
 M=D
-@SP
+@SP // reposition return value to arg 0
 M=M-1
 A=M
 D=M
-@15
-M=D
-@15
-D=M
 @ARG
 A=M
 M=D
-//SP = ARG+1
-@ARG
+@ARG //SP = ARG+1
 D=M
 @SP
 M=D+1
-//THAT = *frame-1
-@13
+@13 //THAT = *frame-1
 D=M-1
 A=D
 D=M
 @THAT
 M=D
-//THIS = *frame-2
-@13
+@13 //THIS = *frame-2
 D=M
 @2
 D=D-A
@@ -705,8 +690,7 @@ A=D
 D=M
 @THIS
 M=D
-//ARG = *frame-3
-@13
+@13 //ARG = *frame-3
 D=M
 @3
 D=D-A
@@ -714,8 +698,7 @@ A=D
 D=M
 @ARG
 M=D
-//LCL = *frame-4
-@13
+@13 //LCL = *frame-4
 D=M
 @4
 D=D-A
@@ -723,7 +706,6 @@ A=D
 D=M
 @LCL
 M=D
-//goto retAddr
-@14
+@14 //goto retAddr
 A=M
 0;JMP

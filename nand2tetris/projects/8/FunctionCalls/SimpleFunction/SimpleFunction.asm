@@ -1,5 +1,9 @@
 //C_FUNCTION arg1: SimpleFunction.test arg2: 2 function SimpleFunction.test 2
 (SimpleFunction.test)
+//@2
+//D=A
+//@SP
+//M=M+D
 @0
 D=A
 @SP
@@ -37,7 +41,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -49,12 +53,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -62,16 +65,15 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: not arg2: None not
-@SP
+@SP // pop from stack to memory address 13
 M=M-1
 A=M
 D=M
 @13
 M=D
-//NOT
 @14 // first pop value
 M=!M
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -90,7 +92,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: add arg2: None add
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -102,12 +104,11 @@ A=M
 D=M
 @14
 M=D
-//ADD
 @13 // Y
 D=M
 @14 // X
 M=M+D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -126,7 +127,7 @@ M=D
 @SP
 M=M+1
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP
+@SP // pop from stack to memory address 13 and 14
 M=M-1
 A=M
 D=M
@@ -138,12 +139,11 @@ A=M
 D=M
 @14
 M=D
-//SUB
 @13 // Y
 D=M
 @14 // X
 M=M-D
-@14
+@14 // push memory address 14 to stack 
 D=M
 @SP
 A=M
@@ -151,13 +151,11 @@ M=D
 @SP
 M=M+1
 //C_RETURN arg1: None arg2: None return
-//frame = LCL
-@LCL
+@LCL //frame = LCL
 D=M
 @13 // frame
 M=D
-//retAddr = frame-5
-@5
+@5 //retAddr = frame-5
 D=A
 @13
 D=M-D // RAM address that has the return address (ROM)
@@ -165,31 +163,24 @@ A=D
 D=M //return address itself
 @14 // retAddr
 M=D
-@SP
+@SP // reposition return value to arg 0
 M=M-1
 A=M
 D=M
-@15
-M=D
-@15
-D=M
 @ARG
 A=M
 M=D
-//SP = ARG+1
-@ARG
+@ARG //SP = ARG+1
 D=M
 @SP
 M=D+1
-//THAT = *frame-1
-@13
+@13 //THAT = *frame-1
 D=M-1
 A=D
 D=M
 @THAT
 M=D
-//THIS = *frame-2
-@13
+@13 //THIS = *frame-2
 D=M
 @2
 D=D-A
@@ -197,8 +188,7 @@ A=D
 D=M
 @THIS
 M=D
-//ARG = *frame-3
-@13
+@13 //ARG = *frame-3
 D=M
 @3
 D=D-A
@@ -206,8 +196,7 @@ A=D
 D=M
 @ARG
 M=D
-//LCL = *frame-4
-@13
+@13 //LCL = *frame-4
 D=M
 @4
 D=D-A
@@ -215,7 +204,6 @@ A=D
 D=M
 @LCL
 M=D
-//goto retAddr
-@14
+@14 //goto retAddr
 A=M
 0;JMP

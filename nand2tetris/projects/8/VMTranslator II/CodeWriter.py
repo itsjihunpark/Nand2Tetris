@@ -47,13 +47,13 @@ class CodeWriter:
         self.writeCall("Sys.init", 0)
 
     def writeArithmetic(self, command:str):
-        self.write_pop(0, 13)
+        self.write_pop(None, 13)
         if command not in ["not", "neg"]:
-            self.write_pop(0, 14)
+            self.write_pop(None, 14)
         self.dest_file.writelines(cmd.replace("$COUNTER", str(self.arithmetic_asm_command_count))+"\n" for cmd in self.arithmetic_asm_commands[command])
         for cmd in self.arithmetic_asm_commands[command]:
             print(cmd)
-        self.write_push(0, 14)
+        self.write_push(None, 14)
         self.arithmetic_asm_command_count+=1
 
     def writePushPop(self, command:str, segment:str, index:int):
@@ -78,7 +78,7 @@ class CodeWriter:
             print(cmd) 
 
     def writeIf(self, label:str):
-        self.write_pop(0, 13)
+        self.write_pop(None, 13)
         if_goto_command = ["@13", "D=M", f"@{self.build_label(label)}","D;JNE"]
         self.dest_file.writelines(cmd+"\n" for cmd in if_goto_command)
         for cmd in if_goto_command:
