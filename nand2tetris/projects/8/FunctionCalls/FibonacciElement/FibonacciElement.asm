@@ -98,7 +98,7 @@ M=D
 D=M
 @LCL
 M=D
-@15 // make jump
+@15 // make jump to function
 A=M
 0;JMP
 (ADD)
