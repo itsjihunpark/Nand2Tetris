@@ -57,7 +57,13 @@ M=D
 @14 //goto retAddr
 A=M
 0;JMP
-(SAVEFRAME)
+(CALL)
+@13 // push return label
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
 @LCL // push LCL pointer
 D=M
 @SP
@@ -86,10 +92,20 @@ M=D
 D=M
 @5
 D=D-A
-@15
+@14
+D=D-M
+@ARG
+M=D
+@SP // reposition LCL pointer to be that of SP
+D=M
+@LCL
+M=D
+@15 // make jump
 A=M
 0;JMP
 (ADD)
+@15
+M=D
 @SP // pop from stack to memory address 13 and 14
 AM=M-1
 D=M
@@ -114,6 +130,8 @@ M=D
 A=M
 0;JMP
 (SUB)
+@15
+M=D
 @SP // pop from stack to memory address 13 and 14
 AM=M-1
 D=M
@@ -138,6 +156,8 @@ M=D
 A=M
 0;JMP
 (NEG)
+@15
+M=D
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
@@ -155,6 +175,8 @@ M=D
 A=M
 0;JMP
 (GT)
+@15
+M=D
 @SP // pop from stack to memory address 13 and 14
 AM=M-1
 D=M
@@ -189,6 +211,8 @@ M=D
 A=M
 0;JMP
 (LT)
+@15
+M=D
 @SP // pop from stack to memory address 13 and 14
 AM=M-1
 D=M
@@ -223,6 +247,8 @@ M=D
 A=M
 0;JMP
 (AND)
+@15
+M=D
 @SP // pop from stack to memory address 13 and 14
 AM=M-1
 D=M
@@ -247,6 +273,8 @@ M=D
 A=M
 0;JMP
 (OR)
+@15
+M=D
 @SP // pop from stack to memory address 13 and 14
 AM=M-1
 D=M
@@ -271,6 +299,8 @@ M=D
 A=M
 0;JMP
 (NOT)
+@15
+M=D
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
@@ -292,28 +322,19 @@ A=M
 D=A
 @SP
 M=D
-@Sys.init$ret.0 // push return label
+@Sys.init$ret.0
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.0
+@0
+D=A
+@14
+M=D
+@Sys.init
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.0)
-@0
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Sys.init // make jump
+@CALL
 0;JMP
 (Sys.init$ret.0)
 //C_FUNCTION arg1: Sys.init arg2: 0 function Sys.init 0
@@ -330,28 +351,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Main.fibonacci arg2: 1 call Main.fibonacci 1
-@Main.fibonacci$ret.0 // push return label
+@Main.fibonacci$ret.0
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.1
+@1
+D=A
+@14
+M=D
+@Main.fibonacci
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.1)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Main.fibonacci // make jump
+@CALL
 0;JMP
 (Main.fibonacci$ret.0)
 //C_LABEL arg1: END arg2: None label END
@@ -384,8 +396,6 @@ M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
 @ARITHMETIC_LT.0
 D=A
-@15
-M=D
 @LT
 0;JMP
 (ARITHMETIC_LT.0)
@@ -437,34 +447,23 @@ M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
 @ARITHMETIC_SUB.0
 D=A
-@15
-M=D
 @SUB
 0;JMP
 (ARITHMETIC_SUB.0)
 //C_CALL arg1: Main.fibonacci arg2: 1 call Main.fibonacci 1
-@Main.fibonacci$ret.1 // push return label
+@Main.fibonacci$ret.1
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.2
+@1
+D=A
+@14
+M=D
+@Main.fibonacci
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.2)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Main.fibonacci // make jump
+@CALL
 0;JMP
 (Main.fibonacci$ret.1)
 //C_PUSH arg1: argument arg2: 0 push argument 0
@@ -487,41 +486,28 @@ M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
 @ARITHMETIC_SUB.1
 D=A
-@15
-M=D
 @SUB
 0;JMP
 (ARITHMETIC_SUB.1)
 //C_CALL arg1: Main.fibonacci arg2: 1 call Main.fibonacci 1
-@Main.fibonacci$ret.2 // push return label
+@Main.fibonacci$ret.2
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.3
+@1
+D=A
+@14
+M=D
+@Main.fibonacci
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.3)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Main.fibonacci // make jump
+@CALL
 0;JMP
 (Main.fibonacci$ret.2)
 //C_ARITHMETIC arg1: add arg2: None add
 @ARITHMETIC_ADD.0
 D=A
-@15
-M=D
 @ADD
 0;JMP
 (ARITHMETIC_ADD.0)
