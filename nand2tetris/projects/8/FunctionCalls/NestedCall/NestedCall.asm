@@ -57,17 +57,7 @@ M=D
 @14 //goto retAddr
 A=M
 0;JMP
-(BOOTSTRAP)
-@256
-D=A
-@SP
-M=D
-@Sys.init$ret.0 // push return label
-D=A
-@SP
-M=M+1
-A=M-1
-M=D
+(SAVEFRAME)
 @LCL // push LCL pointer
 D=M
 @SP
@@ -96,6 +86,27 @@ M=D
 D=M
 @5
 D=D-A
+@13
+A=M
+0;JMP
+(BOOTSTRAP)
+@256
+D=A
+@SP
+M=D
+@Sys.init$ret.0 // push return label
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+@RETURNFROMSAVEFRAME.0
+D=A
+@13
+M=D
+@SAVEFRAME
+0;JMP
+(RETURNFROMSAVEFRAME.0)
 @0
 D=D-A
 @ARG
@@ -146,34 +157,13 @@ D=A
 M=M+1
 A=M-1
 M=D
-@LCL // push LCL pointer
-D=M
-@SP
-M=M+1
-A=M-1
+@RETURNFROMSAVEFRAME.1
+D=A
+@13
 M=D
-@ARG // push ARG pointer
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
-@THIS // push THIS pointer
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
-@THAT // push THAT pointer
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
-@SP // reposition ARG pointer to be SP - 5 - nArgs
-D=M
-@5
-D=D-A
+@SAVEFRAME
+0;JMP
+(RETURNFROMSAVEFRAME.1)
 @0
 D=D-A
 @ARG
@@ -343,34 +333,13 @@ D=A
 M=M+1
 A=M-1
 M=D
-@LCL // push LCL pointer
-D=M
-@SP
-M=M+1
-A=M-1
+@RETURNFROMSAVEFRAME.2
+D=A
+@13
 M=D
-@ARG // push ARG pointer
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
-@THIS // push THIS pointer
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
-@THAT // push THAT pointer
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
-@SP // reposition ARG pointer to be SP - 5 - nArgs
-D=M
-@5
-D=D-A
+@SAVEFRAME
+0;JMP
+(RETURNFROMSAVEFRAME.2)
 @1
 D=D-A
 @ARG

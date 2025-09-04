@@ -253,13 +253,8 @@ C_FUNCTION = [
     "//M=M+D"
 ]
  
-C_CALL = [
-    "@{returnLabel} // push return label",
-    "D=A",
-    "@SP", 
-    "M=M+1", 
-    "A=M-1",  
-    "M=D",
+C_CALL_BOOTSTRAP = [
+    "(SAVEFRAME)",
     "@LCL // push LCL pointer",
     "D=M",
     "@SP", 
@@ -288,6 +283,25 @@ C_CALL = [
     "D=M", 
     "@5", 
     "D=D-A", 
+    "@15",
+    "A=M",
+    "0;JMP",
+    ]
+
+C_CALL = [
+    "@{returnLabel} // push return label",
+    "D=A",
+    "@SP", 
+    "M=M+1", 
+    "A=M-1",  
+    "M=D",
+    "@RETURNFROMSAVEFRAME.{callCount}",
+    "D=A",
+    "@15",
+    "M=D",
+    "@SAVEFRAME",
+    "0;JMP",
+    "(RETURNFROMSAVEFRAME.{callCount})",
     "@{nArgs}",
     "D=D-A", 
     "@ARG", 
@@ -302,7 +316,7 @@ C_CALL = [
 ]
 
 
-C_RETURN = [
+C_RETURN_BOOTSTRAP = [
     "@BOOTSTRAP",
     "0;JMP",
     "(RETURN)",
@@ -364,3 +378,7 @@ C_RETURN = [
     "0;JMP"
 ]
 
+C_RETURN = [
+    "@RETURN",
+    "0;JMP"
+]

@@ -11,34 +11,36 @@ class CodeWriter:
         }
         self.arithmetic_asm_command_count = 0
         self.arithmetic_asm_commands = {
-            "add": ASMCommand.C_ARITHMETIC_ADD,
-            "sub": ASMCommand.C_ARITHMETIC_SUB,
-            "neg": ASMCommand.C_ARITHMETIC_NEG,
-            "eq": ASMCommand.C_ARITHMETIC_EQ,
-            "gt": ASMCommand.C_ARITHMETIC_GT,
-            "lt": ASMCommand.C_ARITHMETIC_LT,
-            "and": ASMCommand.C_ARITHMETIC_AND,
-            "or": ASMCommand.C_ARITHMETIC_OR,
-            "not": ASMCommand.C_ARITHMETIC_NOT
+            "add": {"command": ASMCommand.C_ARITHMETIC_ADD, "count":0},
+            "sub": {"command": ASMCommand.C_ARITHMETIC_SUB, "count":0},
+            "neg": {"command": ASMCommand.C_ARITHMETIC_NEG, "count":0},
+            "eq": {"command": ASMCommand.C_ARITHMETIC_EQ, "count":0},
+            "gt": {"command": ASMCommand.C_ARITHMETIC_GT, "count":0},
+            "lt": {"command": ASMCommand.C_ARITHMETIC_LT, "count":0},
+            "and": {"command": ASMCommand.C_ARITHMETIC_AND, "count":0},
+            "or": {"command": ASMCommand.C_ARITHMETIC_OR, "count":0},
+            "not": {"command": ASMCommand.C_ARITHMETIC_NOT, "count":0}
         }
+        self.total_function_calls = 0
         self.function_chain = {}
         self.current_function = None
         self.file_name = argv[1].split("\\")[-1]
         dest_file_path = f"{argv[1]}\\{self.file_name}.asm"
         self.dest_file = open(dest_file_path,"w")
 
-        bootstrap_command = ASMCommand.C_RETURN+["(BOOTSTRAP)","@256","D=A", "@SP", "M=D"]
+        bootstrap_command = ASMCommand.C_RETURN_BOOTSTRAP + ASMCommand.C_CALL_BOOTSTRAP + ["(BOOTSTRAP)","@256","D=A", "@SP", "M=D"]
         self.dest_file.writelines(cmd+"\n" for cmd in bootstrap_command)
         for cmd in bootstrap_command:
             print(cmd)
         self.writeCall("Sys.init", 0)
 
     def writeArithmetic(self, command:str):
-        self.dest_file.writelines(cmd.format(counter=str(self.arithmetic_asm_command_count))+"\n" for cmd in self.arithmetic_asm_commands[command])
-        for cmd in self.arithmetic_asm_commands[command]:
+        self.dest_file.writelines(cmd.format(counter=str(self.arithmetic_asm_command_count))+"\n" for cmd in self.arithmetic_asm_commands[command]["command"])
+        for cmd in self.arithmetic_asm_commands[command]["command"]:
             print(cmd.format(counter=str(self.arithmetic_asm_command_count)))
         self.arithmetic_asm_command_count+=1
-
+        
+        self.arithmetic_asm_commands[command]["command"]+=1
     def writePushPop(self, command:str, segment:str, index:int):
         if command == "C_PUSH":
             source_segment, source_addr = self.get_selected_segment_and_index(segment, index)
@@ -79,16 +81,15 @@ class CodeWriter:
         returnLabel = f"{functionName}$ret.{call_count}"   
         self.function_chain[functionName]+=1
 
-        self.dest_file.writelines(cmd.format(returnLabel=returnLabel, functionName=functionName,nArgs=str(nArgs))+"\n" for cmd in ASMCommand.C_CALL)
+        self.dest_file.writelines(cmd.format(returnLabel=returnLabel, functionName=functionName,nArgs=str(nArgs),callCount=str(self.total_function_calls))+"\n" for cmd in ASMCommand.C_CALL)
         for cmd in ASMCommand.C_CALL:
-            print(cmd.format(returnLabel=returnLabel, functionName=functionName,nArgs=str(nArgs)))
+            print(cmd.format(returnLabel=returnLabel, functionName=functionName,nArgs=str(nArgs),callCount=str(self.total_function_calls)))
         
+        self.total_function_calls+=1
 
     def writeReturn(self):
-        #self.dest_file.writelines(cmd+"\n" for cmd in ASMCommand.C_RETURN)
-        self.dest_file.writelines(cmd+"\n" for cmd in ["@RETURN","0;JMP"])
-        #for cmd in ASMCommand.C_RETURN:
-        #    print(cmd)
+        self.dest_file.writelines(cmd+"\n" for cmd in ASMCommand.C_RETURN)
+
 
 
     def close(self):
