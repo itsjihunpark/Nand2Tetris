@@ -377,9 +377,7 @@ C_FUNCTION = [
 
 C_CALL_BOOTSTRAP = [
     "(CALL)",
-    "@13 // push return label",
-    "D=M",
-    "@SP", 
+    "@SP // push return label", 
     "M=M+1", 
     "A=M-1",  
     "M=D",
@@ -419,16 +417,12 @@ C_CALL_BOOTSTRAP = [
     "D=M", 
     "@LCL",
     "M=D", 
-    "@15 // make jump",
+    "@15 // make jump to function",
     "A=M",
     "0;JMP",
 ]
 
 C_CALL = [
-    "@{returnLabel}",
-    "D=A",
-    "@13",
-    "M=D",
     "@{nArgs}",
     "D=A",
     "@14",
@@ -437,6 +431,8 @@ C_CALL = [
     "D=A",
     "@15",
     "M=D",
+    "@{returnLabel}",
+    "D=A",
     "@CALL",
     "0;JMP",
     "({returnLabel})"

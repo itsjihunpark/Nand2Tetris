@@ -57,7 +57,11 @@ M=D
 @14 //goto retAddr
 A=M
 0;JMP
-(SAVEFRAME)
+(CALL)
+@SP // push return label
+M=M+1
+A=M-1
+M=D
 @LCL // push LCL pointer
 D=M
 @SP
@@ -86,10 +90,20 @@ M=D
 D=M
 @5
 D=D-A
-@15
+@14
+D=D-M
+@ARG
+M=D
+@SP // reposition LCL pointer to be that of SP
+D=M
+@LCL
+M=D
+@15 // make jump to function
 A=M
 0;JMP
 (ADD)
+@15
+M=D
 @SP // pop from stack to memory address 13 and 14
 AM=M-1
 D=M
@@ -114,6 +128,8 @@ M=D
 A=M
 0;JMP
 (SUB)
+@15
+M=D
 @SP // pop from stack to memory address 13 and 14
 AM=M-1
 D=M
@@ -138,6 +154,8 @@ M=D
 A=M
 0;JMP
 (NEG)
+@15
+M=D
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
@@ -155,6 +173,8 @@ M=D
 A=M
 0;JMP
 (GT)
+@15
+M=D
 @SP // pop from stack to memory address 13 and 14
 AM=M-1
 D=M
@@ -189,6 +209,8 @@ M=D
 A=M
 0;JMP
 (LT)
+@15
+M=D
 @SP // pop from stack to memory address 13 and 14
 AM=M-1
 D=M
@@ -223,6 +245,8 @@ M=D
 A=M
 0;JMP
 (AND)
+@15
+M=D
 @SP // pop from stack to memory address 13 and 14
 AM=M-1
 D=M
@@ -247,6 +271,8 @@ M=D
 A=M
 0;JMP
 (OR)
+@15
+M=D
 @SP // pop from stack to memory address 13 and 14
 AM=M-1
 D=M
@@ -271,6 +297,8 @@ M=D
 A=M
 0;JMP
 (NOT)
+@15
+M=D
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
@@ -292,28 +320,17 @@ A=M
 D=A
 @SP
 M=D
-@Sys.init$ret.0 // push return label
+@0
 D=A
-@SP
-M=M+1
-A=M-1
+@14
 M=D
-@RETURNFROMSAVEFRAME.0
+@Sys.init
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.0)
-@0
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Sys.init // make jump
+@Sys.init$ret.0
+D=A
+@CALL
 0;JMP
 (Sys.init$ret.0)
 //C_FUNCTION arg1: Sys.init arg2: 0 function Sys.init 0
@@ -349,28 +366,17 @@ D=M
 @4
 M=D
 //C_CALL arg1: Sys.main arg2: 0 call Sys.main 0
-@Sys.main$ret.0 // push return label
+@0
 D=A
-@SP
-M=M+1
-A=M-1
+@14
 M=D
-@RETURNFROMSAVEFRAME.1
+@Sys.main
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.1)
-@0
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Sys.main // make jump
+@Sys.main$ret.0
+D=A
+@CALL
 0;JMP
 (Sys.main$ret.0)
 //C_POP arg1: temp arg2: 1 pop temp 1
@@ -525,28 +531,17 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Sys.add12 arg2: 1 call Sys.add12 1
-@Sys.add12$ret.0 // push return label
+@1
 D=A
-@SP
-M=M+1
-A=M-1
+@14
 M=D
-@RETURNFROMSAVEFRAME.2
+@Sys.add12
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.2)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Sys.add12 // make jump
+@Sys.add12$ret.0
+D=A
+@CALL
 0;JMP
 (Sys.add12$ret.0)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -608,32 +603,24 @@ M=D
 //C_ARITHMETIC arg1: add arg2: None add
 @ARITHMETIC_ADD.0
 D=A
-@15
-M=D
 @ADD
 0;JMP
 (ARITHMETIC_ADD.0)
 //C_ARITHMETIC arg1: add arg2: None add
 @ARITHMETIC_ADD.1
 D=A
-@15
-M=D
 @ADD
 0;JMP
 (ARITHMETIC_ADD.1)
 //C_ARITHMETIC arg1: add arg2: None add
 @ARITHMETIC_ADD.2
 D=A
-@15
-M=D
 @ADD
 0;JMP
 (ARITHMETIC_ADD.2)
 //C_ARITHMETIC arg1: add arg2: None add
 @ARITHMETIC_ADD.3
 D=A
-@15
-M=D
 @ADD
 0;JMP
 (ARITHMETIC_ADD.3)
@@ -692,8 +679,6 @@ M=D
 //C_ARITHMETIC arg1: add arg2: None add
 @ARITHMETIC_ADD.4
 D=A
-@15
-M=D
 @ADD
 0;JMP
 (ARITHMETIC_ADD.4)

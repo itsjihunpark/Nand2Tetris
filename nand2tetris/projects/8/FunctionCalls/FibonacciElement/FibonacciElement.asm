@@ -58,9 +58,7 @@ M=D
 A=M
 0;JMP
 (CALL)
-@13 // push return label
-D=M
-@SP
+@SP // push return label
 M=M+1
 A=M-1
 M=D
@@ -322,10 +320,6 @@ A=M
 D=A
 @SP
 M=D
-@Sys.init$ret.0
-D=A
-@13
-M=D
 @0
 D=A
 @14
@@ -334,6 +328,8 @@ M=D
 D=A
 @15
 M=D
+@Sys.init$ret.0
+D=A
 @CALL
 0;JMP
 (Sys.init$ret.0)
@@ -351,10 +347,6 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Main.fibonacci arg2: 1 call Main.fibonacci 1
-@Main.fibonacci$ret.0
-D=A
-@13
-M=D
 @1
 D=A
 @14
@@ -363,6 +355,8 @@ M=D
 D=A
 @15
 M=D
+@Main.fibonacci$ret.0
+D=A
 @CALL
 0;JMP
 (Main.fibonacci$ret.0)
@@ -451,10 +445,6 @@ D=A
 0;JMP
 (ARITHMETIC_SUB.0)
 //C_CALL arg1: Main.fibonacci arg2: 1 call Main.fibonacci 1
-@Main.fibonacci$ret.1
-D=A
-@13
-M=D
 @1
 D=A
 @14
@@ -463,6 +453,8 @@ M=D
 D=A
 @15
 M=D
+@Main.fibonacci$ret.1
+D=A
 @CALL
 0;JMP
 (Main.fibonacci$ret.1)
@@ -490,10 +482,6 @@ D=A
 0;JMP
 (ARITHMETIC_SUB.1)
 //C_CALL arg1: Main.fibonacci arg2: 1 call Main.fibonacci 1
-@Main.fibonacci$ret.2
-D=A
-@13
-M=D
 @1
 D=A
 @14
@@ -502,6 +490,8 @@ M=D
 D=A
 @15
 M=D
+@Main.fibonacci$ret.2
+D=A
 @CALL
 0;JMP
 (Main.fibonacci$ret.2)
