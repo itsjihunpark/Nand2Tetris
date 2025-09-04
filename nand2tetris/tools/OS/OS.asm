@@ -57,7 +57,13 @@ M=D
 @14 //goto retAddr
 A=M
 0;JMP
-(SAVEFRAME)
+(CALL)
+@13 // push return label
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
 @LCL // push LCL pointer
 D=M
 @SP
@@ -86,7 +92,15 @@ M=D
 D=M
 @5
 D=D-A
-@15
+@14
+D=D-M
+@ARG
+M=D
+@SP // reposition LCL pointer to be that of SP
+D=M
+@LCL
+M=D
+@15 // make jump
 A=M
 0;JMP
 (ADD)
@@ -308,28 +322,19 @@ A=M
 D=A
 @SP
 M=D
-@Sys.init$ret.0 // push return label
+@Sys.init$ret.0
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.0
+@0
+D=A
+@14
+M=D
+@Sys.init
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.0)
-@0
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Sys.init // make jump
+@CALL
 0;JMP
 (Sys.init$ret.0)
 //C_FUNCTION arg1: Sys.init arg2: 0 function Sys.init 0
@@ -339,28 +344,19 @@ M=D
 //@SP
 //M=M+D
 //C_CALL arg1: Memory.init arg2: 0 call Memory.init 0
-@Memory.init$ret.0 // push return label
+@Memory.init$ret.0
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.1
+@0
+D=A
+@14
+M=D
+@Memory.init
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.1)
-@0
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Memory.init // make jump
+@CALL
 0;JMP
 (Memory.init$ret.0)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -370,28 +366,19 @@ D=M
 @5
 M=D
 //C_CALL arg1: Math.init arg2: 0 call Math.init 0
-@Math.init$ret.0 // push return label
+@Math.init$ret.0
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.2
+@0
+D=A
+@14
+M=D
+@Math.init
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.2)
-@0
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Math.init // make jump
+@CALL
 0;JMP
 (Math.init$ret.0)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -401,28 +388,19 @@ D=M
 @5
 M=D
 //C_CALL arg1: Screen.init arg2: 0 call Screen.init 0
-@Screen.init$ret.0 // push return label
+@Screen.init$ret.0
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.3
+@0
+D=A
+@14
+M=D
+@Screen.init
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.3)
-@0
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Screen.init // make jump
+@CALL
 0;JMP
 (Screen.init$ret.0)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -432,28 +410,19 @@ D=M
 @5
 M=D
 //C_CALL arg1: Output.init arg2: 0 call Output.init 0
-@Output.init$ret.0 // push return label
+@Output.init$ret.0
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.4
+@0
+D=A
+@14
+M=D
+@Output.init
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.4)
-@0
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.init // make jump
+@CALL
 0;JMP
 (Output.init$ret.0)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -463,28 +432,19 @@ D=M
 @5
 M=D
 //C_CALL arg1: Keyboard.init arg2: 0 call Keyboard.init 0
-@Keyboard.init$ret.0 // push return label
+@Keyboard.init$ret.0
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.5
+@0
+D=A
+@14
+M=D
+@Keyboard.init
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.5)
-@0
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Keyboard.init // make jump
+@CALL
 0;JMP
 (Keyboard.init$ret.0)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -494,28 +454,19 @@ D=M
 @5
 M=D
 //C_CALL arg1: Main.main arg2: 0 call Main.main 0
-@Main.main$ret.0 // push return label
+@Main.main$ret.0
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.6
+@0
+D=A
+@14
+M=D
+@Main.main
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.6)
-@0
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Main.main // make jump
+@CALL
 0;JMP
 (Main.main$ret.0)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -525,28 +476,19 @@ D=M
 @5
 M=D
 //C_CALL arg1: Sys.halt arg2: 0 call Sys.halt 0
-@Sys.halt$ret.0 // push return label
+@Sys.halt$ret.0
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.7
+@0
+D=A
+@14
+M=D
+@Sys.halt
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.7)
-@0
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Sys.halt // make jump
+@CALL
 0;JMP
 (Sys.halt$ret.0)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -672,28 +614,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Sys.error arg2: 1 call Sys.error 1
-@Sys.error$ret.0 // push return label
+@Sys.error$ret.0
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.8
+@1
+D=A
+@14
+M=D
+@Sys.error
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.8)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Sys.error // make jump
+@CALL
 0;JMP
 (Sys.error$ret.0)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -919,28 +852,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.printChar arg2: 1 call Output.printChar 1
-@Output.printChar$ret.0 // push return label
+@Output.printChar$ret.0
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.9
+@1
+D=A
+@14
+M=D
+@Output.printChar
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.9)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.printChar // make jump
+@CALL
 0;JMP
 (Output.printChar$ret.0)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -957,28 +881,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.printChar arg2: 1 call Output.printChar 1
-@Output.printChar$ret.1 // push return label
+@Output.printChar$ret.1
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.10
+@1
+D=A
+@14
+M=D
+@Output.printChar
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.10)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.printChar // make jump
+@CALL
 0;JMP
 (Output.printChar$ret.1)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -995,28 +910,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.printChar arg2: 1 call Output.printChar 1
-@Output.printChar$ret.2 // push return label
+@Output.printChar$ret.2
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.11
+@1
+D=A
+@14
+M=D
+@Output.printChar
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.11)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.printChar // make jump
+@CALL
 0;JMP
 (Output.printChar$ret.2)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -1036,28 +942,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.printInt arg2: 1 call Output.printInt 1
-@Output.printInt$ret.0 // push return label
+@Output.printInt$ret.0
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.12
+@1
+D=A
+@14
+M=D
+@Output.printInt
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.12)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.printInt // make jump
+@CALL
 0;JMP
 (Output.printInt$ret.0)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -1067,28 +964,19 @@ D=M
 @5
 M=D
 //C_CALL arg1: Sys.halt arg2: 0 call Sys.halt 0
-@Sys.halt$ret.1 // push return label
+@Sys.halt$ret.1
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.13
+@0
+D=A
+@14
+M=D
+@Sys.halt
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.13)
-@0
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Sys.halt // make jump
+@CALL
 0;JMP
 (Sys.halt$ret.1)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -1164,28 +1052,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Sys.error arg2: 1 call Sys.error 1
-@Sys.error$ret.1 // push return label
+@Sys.error$ret.1
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.14
+@1
+D=A
+@14
+M=D
+@Sys.error
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.14)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Sys.error // make jump
+@CALL
 0;JMP
 (Sys.error$ret.1)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -1206,28 +1085,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Memory.alloc arg2: 1 call Memory.alloc 1
-@Memory.alloc$ret.0 // push return label
+@Memory.alloc$ret.0
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.15
+@1
+D=A
+@14
+M=D
+@Memory.alloc
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.15)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Memory.alloc // make jump
+@CALL
 0;JMP
 (Memory.alloc$ret.0)
 //C_RETURN arg1: None arg2: None return
@@ -1263,28 +1133,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Memory.deAlloc arg2: 1 call Memory.deAlloc 1
-@Memory.deAlloc$ret.0 // push return label
+@Memory.deAlloc$ret.0
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.16
+@1
+D=A
+@14
+M=D
+@Memory.deAlloc
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.16)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Memory.deAlloc // make jump
+@CALL
 0;JMP
 (Memory.deAlloc$ret.0)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -1333,28 +1194,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Memory.peek arg2: 1 call Memory.peek 1
-@Memory.peek$ret.0 // push return label
+@Memory.peek$ret.0
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.17
+@1
+D=A
+@14
+M=D
+@Memory.peek
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.17)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Memory.peek // make jump
+@CALL
 0;JMP
 (Memory.peek$ret.0)
 //C_RETURN arg1: None arg2: None return
@@ -1386,28 +1238,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.printChar arg2: 1 call Output.printChar 1
-@Output.printChar$ret.3 // push return label
+@Output.printChar$ret.3
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.18
+@1
+D=A
+@14
+M=D
+@Output.printChar
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.18)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.printChar // make jump
+@CALL
 0;JMP
 (Output.printChar$ret.3)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -1486,28 +1329,19 @@ D=M
 @Keyboard.readChar$WHILE_END0
 D;JNE
 //C_CALL arg1: Keyboard.keyPressed arg2: 0 call Keyboard.keyPressed 0
-@Keyboard.keyPressed$ret.0 // push return label
+@Keyboard.keyPressed$ret.0
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.19
+@0
+D=A
+@14
+M=D
+@Keyboard.keyPressed
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.19)
-@0
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Keyboard.keyPressed // make jump
+@CALL
 0;JMP
 (Keyboard.keyPressed$ret.0)
 //C_POP arg1: local arg2: 0 pop local 0
@@ -1597,53 +1431,35 @@ M=D
 0;JMP
 //C_LABEL arg1: WHILE_END0 arg2: None label WHILE_END0
 (Keyboard.readChar$WHILE_END0)//C_CALL arg1: String.backSpace arg2: 0 call String.backSpace 0
-@String.backSpace$ret.0 // push return label
+@String.backSpace$ret.0
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.20
+@0
+D=A
+@14
+M=D
+@String.backSpace
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.20)
-@0
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@String.backSpace // make jump
+@CALL
 0;JMP
 (String.backSpace$ret.0)
 //C_CALL arg1: Output.printChar arg2: 1 call Output.printChar 1
-@Output.printChar$ret.4 // push return label
+@Output.printChar$ret.4
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.21
+@1
+D=A
+@14
+M=D
+@Output.printChar
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.21)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.printChar // make jump
+@CALL
 0;JMP
 (Output.printChar$ret.4)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -1663,28 +1479,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.printChar arg2: 1 call Output.printChar 1
-@Output.printChar$ret.5 // push return label
+@Output.printChar$ret.5
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.22
+@1
+D=A
+@14
+M=D
+@Output.printChar
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.22)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.printChar // make jump
+@CALL
 0;JMP
 (Output.printChar$ret.5)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -1750,28 +1557,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: String.new arg2: 1 call String.new 1
-@String.new$ret.0 // push return label
+@String.new$ret.0
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.23
+@1
+D=A
+@14
+M=D
+@String.new
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.23)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@String.new // make jump
+@CALL
 0;JMP
 (String.new$ret.0)
 //C_POP arg1: local arg2: 3 pop local 3
@@ -1802,28 +1600,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.printString arg2: 1 call Output.printString 1
-@Output.printString$ret.0 // push return label
+@Output.printString$ret.0
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.24
+@1
+D=A
+@14
+M=D
+@Output.printString
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.24)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.printString // make jump
+@CALL
 0;JMP
 (Output.printString$ret.0)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -1833,28 +1622,19 @@ D=M
 @5
 M=D
 //C_CALL arg1: String.newLine arg2: 0 call String.newLine 0
-@String.newLine$ret.0 // push return label
+@String.newLine$ret.0
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.25
+@0
+D=A
+@14
+M=D
+@String.newLine
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.25)
-@0
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@String.newLine // make jump
+@CALL
 0;JMP
 (String.newLine$ret.0)
 //C_POP arg1: local arg2: 1 pop local 1
@@ -1875,28 +1655,19 @@ D=M
 A=M
 M=D
 //C_CALL arg1: String.backSpace arg2: 0 call String.backSpace 0
-@String.backSpace$ret.1 // push return label
+@String.backSpace$ret.1
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.26
+@0
+D=A
+@14
+M=D
+@String.backSpace
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.26)
-@0
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@String.backSpace // make jump
+@CALL
 0;JMP
 (String.backSpace$ret.1)
 //C_POP arg1: local arg2: 2 pop local 2
@@ -1950,28 +1721,19 @@ D=M
 @Keyboard.readLine$WHILE_END0
 D;JNE
 //C_CALL arg1: Keyboard.readChar arg2: 0 call Keyboard.readChar 0
-@Keyboard.readChar$ret.0 // push return label
+@Keyboard.readChar$ret.0
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.27
+@0
+D=A
+@14
+M=D
+@Keyboard.readChar
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.27)
-@0
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Keyboard.readChar // make jump
+@CALL
 0;JMP
 (Keyboard.readChar$ret.0)
 //C_POP arg1: local arg2: 0 pop local 0
@@ -2115,28 +1877,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: String.eraseLastChar arg2: 1 call String.eraseLastChar 1
-@String.eraseLastChar$ret.0 // push return label
+@String.eraseLastChar$ret.0
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.28
+@1
+D=A
+@14
+M=D
+@String.eraseLastChar
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.28)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@String.eraseLastChar // make jump
+@CALL
 0;JMP
 (String.eraseLastChar$ret.0)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -2170,28 +1923,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
-@String.appendChar$ret.0 // push return label
+@String.appendChar$ret.0
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.29
+@2
+D=A
+@14
+M=D
+@String.appendChar
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.29)
-@2
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@String.appendChar // make jump
+@CALL
 0;JMP
 (String.appendChar$ret.0)
 //C_POP arg1: local arg2: 3 pop local 3
@@ -2259,28 +2003,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Keyboard.readLine arg2: 1 call Keyboard.readLine 1
-@Keyboard.readLine$ret.0 // push return label
+@Keyboard.readLine$ret.0
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.30
+@1
+D=A
+@14
+M=D
+@Keyboard.readLine
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.30)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Keyboard.readLine // make jump
+@CALL
 0;JMP
 (Keyboard.readLine$ret.0)
 //C_POP arg1: local arg2: 0 pop local 0
@@ -2311,28 +2046,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: String.intValue arg2: 1 call String.intValue 1
-@String.intValue$ret.0 // push return label
+@String.intValue$ret.0
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.31
+@1
+D=A
+@14
+M=D
+@String.intValue
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.31)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@String.intValue // make jump
+@CALL
 0;JMP
 (String.intValue$ret.0)
 //C_POP arg1: local arg2: 1 pop local 1
@@ -2363,28 +2089,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: String.dispose arg2: 1 call String.dispose 1
-@String.dispose$ret.0 // push return label
+@String.dispose$ret.0
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.32
+@1
+D=A
+@14
+M=D
+@String.dispose
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.32)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@String.dispose // make jump
+@CALL
 0;JMP
 (String.dispose$ret.0)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -2426,28 +2143,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Array.new arg2: 1 call Array.new 1
-@Array.new$ret.0 // push return label
+@Array.new$ret.0
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.33
+@1
+D=A
+@14
+M=D
+@Array.new
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.33)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Array.new // make jump
+@CALL
 0;JMP
 (Array.new$ret.0)
 //C_POP arg1: static arg2: 1 pop static 1
@@ -2464,28 +2172,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Array.new arg2: 1 call Array.new 1
-@Array.new$ret.1 // push return label
+@Array.new$ret.1
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.34
+@1
+D=A
+@14
+M=D
+@Array.new
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.34)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Array.new // make jump
+@CALL
 0;JMP
 (Array.new$ret.1)
 //C_POP arg1: static arg2: 0 pop static 0
@@ -3084,28 +2783,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Math.abs arg2: 1 call Math.abs 1
-@Math.abs$ret.0 // push return label
+@Math.abs$ret.0
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.35
+@1
+D=A
+@14
+M=D
+@Math.abs
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.35)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Math.abs // make jump
+@CALL
 0;JMP
 (Math.abs$ret.0)
 //C_POP arg1: argument arg2: 0 pop argument 0
@@ -3136,28 +2826,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Math.abs arg2: 1 call Math.abs 1
-@Math.abs$ret.1 // push return label
+@Math.abs$ret.1
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.36
+@1
+D=A
+@14
+M=D
+@Math.abs
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.36)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Math.abs // make jump
+@CALL
 0;JMP
 (Math.abs$ret.1)
 //C_POP arg1: argument arg2: 1 pop argument 1
@@ -3805,28 +3486,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Sys.error arg2: 1 call Sys.error 1
-@Sys.error$ret.2 // push return label
+@Sys.error$ret.2
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.37
+@1
+D=A
+@14
+M=D
+@Sys.error
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.37)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Sys.error // make jump
+@CALL
 0;JMP
 (Sys.error$ret.2)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -3994,28 +3666,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Math.abs arg2: 1 call Math.abs 1
-@Math.abs$ret.2 // push return label
+@Math.abs$ret.2
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.38
+@1
+D=A
+@14
+M=D
+@Math.abs
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.38)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Math.abs // make jump
+@CALL
 0;JMP
 (Math.abs$ret.2)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -4065,28 +3728,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Math.abs arg2: 1 call Math.abs 1
-@Math.abs$ret.3 // push return label
+@Math.abs$ret.3
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.39
+@1
+D=A
+@14
+M=D
+@Math.abs
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.39)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Math.abs // make jump
+@CALL
 0;JMP
 (Math.abs$ret.3)
 //C_POP arg1: argument arg2: 0 pop argument 0
@@ -5163,28 +4817,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Sys.error arg2: 1 call Sys.error 1
-@Sys.error$ret.3 // push return label
+@Sys.error$ret.3
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.40
+@1
+D=A
+@14
+M=D
+@Sys.error
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.40)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Sys.error // make jump
+@CALL
 0;JMP
 (Sys.error$ret.3)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -5357,28 +5002,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Math.multiply arg2: 2 call Math.multiply 2
-@Math.multiply$ret.0 // push return label
+@Math.multiply$ret.0
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.41
+@2
+D=A
+@14
+M=D
+@Math.multiply
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.41)
-@2
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Math.multiply // make jump
+@CALL
 0;JMP
 (Math.multiply$ret.0)
 //C_POP arg1: local arg2: 2 pop local 2
@@ -6089,28 +5725,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Sys.error arg2: 1 call Sys.error 1
-@Sys.error$ret.4 // push return label
+@Sys.error$ret.4
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.42
+@1
+D=A
+@14
+M=D
+@Sys.error
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.42)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Sys.error // make jump
+@CALL
 0;JMP
 (Sys.error$ret.4)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -7039,28 +6666,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Sys.error arg2: 1 call Sys.error 1
-@Sys.error$ret.5 // push return label
+@Sys.error$ret.5
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.43
+@1
+D=A
+@14
+M=D
+@Sys.error
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.43)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Sys.error // make jump
+@CALL
 0;JMP
 (Sys.error$ret.5)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -8621,28 +8239,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: String.new arg2: 1 call String.new 1
-@String.new$ret.1 // push return label
+@String.new$ret.1
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.44
+@1
+D=A
+@14
+M=D
+@String.new
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.44)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@String.new // make jump
+@CALL
 0;JMP
 (String.new$ret.1)
 //C_POP arg1: static arg2: 3 pop static 3
@@ -8652,28 +8261,19 @@ D=M
 @Output.3
 M=D
 //C_CALL arg1: Output.initMap arg2: 0 call Output.initMap 0
-@Output.initMap$ret.0 // push return label
+@Output.initMap$ret.0
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.45
+@0
+D=A
+@14
+M=D
+@Output.initMap
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.45)
-@0
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.initMap // make jump
+@CALL
 0;JMP
 (Output.initMap$ret.0)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -8683,28 +8283,19 @@ D=M
 @5
 M=D
 //C_CALL arg1: Output.createShiftedMap arg2: 0 call Output.createShiftedMap 0
-@Output.createShiftedMap$ret.0 // push return label
+@Output.createShiftedMap$ret.0
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.46
+@0
+D=A
+@14
+M=D
+@Output.createShiftedMap
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.46)
-@0
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.createShiftedMap // make jump
+@CALL
 0;JMP
 (Output.createShiftedMap$ret.0)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -8737,28 +8328,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Array.new arg2: 1 call Array.new 1
-@Array.new$ret.2 // push return label
+@Array.new$ret.2
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.47
+@1
+D=A
+@14
+M=D
+@Array.new
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.47)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Array.new // make jump
+@CALL
 0;JMP
 (Array.new$ret.2)
 //C_POP arg1: static arg2: 5 pop static 5
@@ -8852,28 +8434,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.0 // push return label
+@Output.create$ret.0
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.48
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.48)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.0)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -8967,28 +8540,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.1 // push return label
+@Output.create$ret.1
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.49
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.49)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.1)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -9082,28 +8646,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.2 // push return label
+@Output.create$ret.2
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.50
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.50)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.2)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -9197,28 +8752,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.3 // push return label
+@Output.create$ret.3
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.51
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.51)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.3)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -9312,28 +8858,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.4 // push return label
+@Output.create$ret.4
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.52
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.52)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.4)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -9427,28 +8964,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.5 // push return label
+@Output.create$ret.5
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.53
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.53)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.5)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -9542,28 +9070,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.6 // push return label
+@Output.create$ret.6
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.54
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.54)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.6)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -9657,28 +9176,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.7 // push return label
+@Output.create$ret.7
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.55
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.55)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.7)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -9772,28 +9282,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.8 // push return label
+@Output.create$ret.8
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.56
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.56)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.8)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -9887,28 +9388,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.9 // push return label
+@Output.create$ret.9
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.57
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.57)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.9)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -10002,28 +9494,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.10 // push return label
+@Output.create$ret.10
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.58
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.58)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.10)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -10117,28 +9600,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.11 // push return label
+@Output.create$ret.11
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.59
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.59)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.11)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -10232,28 +9706,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.12 // push return label
+@Output.create$ret.12
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.60
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.60)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.12)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -10347,28 +9812,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.13 // push return label
+@Output.create$ret.13
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.61
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.61)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.13)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -10462,28 +9918,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.14 // push return label
+@Output.create$ret.14
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.62
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.62)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.14)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -10577,28 +10024,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.15 // push return label
+@Output.create$ret.15
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.63
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.63)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.15)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -10692,28 +10130,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.16 // push return label
+@Output.create$ret.16
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.64
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.64)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.16)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -10807,28 +10236,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.17 // push return label
+@Output.create$ret.17
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.65
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.65)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.17)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -10922,28 +10342,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.18 // push return label
+@Output.create$ret.18
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.66
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.66)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.18)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -11037,28 +10448,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.19 // push return label
+@Output.create$ret.19
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.67
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.67)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.19)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -11152,28 +10554,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.20 // push return label
+@Output.create$ret.20
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.68
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.68)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.20)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -11267,28 +10660,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.21 // push return label
+@Output.create$ret.21
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.69
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.69)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.21)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -11382,28 +10766,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.22 // push return label
+@Output.create$ret.22
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.70
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.70)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.22)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -11497,28 +10872,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.23 // push return label
+@Output.create$ret.23
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.71
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.71)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.23)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -11612,28 +10978,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.24 // push return label
+@Output.create$ret.24
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.72
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.72)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.24)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -11727,28 +11084,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.25 // push return label
+@Output.create$ret.25
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.73
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.73)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.25)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -11842,28 +11190,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.26 // push return label
+@Output.create$ret.26
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.74
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.74)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.26)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -11957,28 +11296,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.27 // push return label
+@Output.create$ret.27
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.75
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.75)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.27)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -12072,28 +11402,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.28 // push return label
+@Output.create$ret.28
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.76
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.76)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.28)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -12187,28 +11508,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.29 // push return label
+@Output.create$ret.29
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.77
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.77)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.29)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -12302,28 +11614,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.30 // push return label
+@Output.create$ret.30
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.78
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.78)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.30)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -12417,28 +11720,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.31 // push return label
+@Output.create$ret.31
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.79
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.79)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.31)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -12532,28 +11826,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.32 // push return label
+@Output.create$ret.32
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.80
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.80)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.32)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -12647,28 +11932,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.33 // push return label
+@Output.create$ret.33
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.81
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.81)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.33)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -12762,28 +12038,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.34 // push return label
+@Output.create$ret.34
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.82
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.82)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.34)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -12877,28 +12144,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.35 // push return label
+@Output.create$ret.35
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.83
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.83)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.35)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -12992,28 +12250,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.36 // push return label
+@Output.create$ret.36
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.84
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.84)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.36)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -13107,28 +12356,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.37 // push return label
+@Output.create$ret.37
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.85
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.85)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.37)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -13222,28 +12462,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.38 // push return label
+@Output.create$ret.38
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.86
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.86)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.38)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -13337,28 +12568,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.39 // push return label
+@Output.create$ret.39
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.87
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.87)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.39)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -13452,28 +12674,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.40 // push return label
+@Output.create$ret.40
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.88
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.88)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.40)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -13567,28 +12780,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.41 // push return label
+@Output.create$ret.41
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.89
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.89)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.41)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -13682,28 +12886,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.42 // push return label
+@Output.create$ret.42
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.90
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.90)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.42)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -13797,28 +12992,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.43 // push return label
+@Output.create$ret.43
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.91
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.91)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.43)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -13912,28 +13098,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.44 // push return label
+@Output.create$ret.44
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.92
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.92)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.44)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -14027,28 +13204,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.45 // push return label
+@Output.create$ret.45
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.93
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.93)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.45)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -14142,28 +13310,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.46 // push return label
+@Output.create$ret.46
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.94
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.94)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.46)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -14257,28 +13416,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.47 // push return label
+@Output.create$ret.47
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.95
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.95)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.47)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -14372,28 +13522,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.48 // push return label
+@Output.create$ret.48
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.96
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.96)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.48)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -14487,28 +13628,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.49 // push return label
+@Output.create$ret.49
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.97
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.97)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.49)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -14602,28 +13734,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.50 // push return label
+@Output.create$ret.50
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.98
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.98)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.50)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -14717,28 +13840,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.51 // push return label
+@Output.create$ret.51
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.99
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.99)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.51)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -14832,28 +13946,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.52 // push return label
+@Output.create$ret.52
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.100
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.100)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.52)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -14947,28 +14052,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.53 // push return label
+@Output.create$ret.53
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.101
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.101)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.53)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -15062,28 +14158,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.54 // push return label
+@Output.create$ret.54
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.102
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.102)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.54)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -15177,28 +14264,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.55 // push return label
+@Output.create$ret.55
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.103
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.103)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.55)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -15292,28 +14370,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.56 // push return label
+@Output.create$ret.56
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.104
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.104)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.56)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -15407,28 +14476,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.57 // push return label
+@Output.create$ret.57
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.105
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.105)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.57)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -15522,28 +14582,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.58 // push return label
+@Output.create$ret.58
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.106
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.106)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.58)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -15637,28 +14688,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.59 // push return label
+@Output.create$ret.59
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.107
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.107)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.59)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -15752,28 +14794,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.60 // push return label
+@Output.create$ret.60
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.108
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.108)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.60)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -15867,28 +14900,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.61 // push return label
+@Output.create$ret.61
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.109
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.109)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.61)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -15982,28 +15006,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.62 // push return label
+@Output.create$ret.62
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.110
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.110)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.62)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -16097,28 +15112,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.63 // push return label
+@Output.create$ret.63
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.111
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.111)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.63)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -16212,28 +15218,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.64 // push return label
+@Output.create$ret.64
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.112
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.112)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.64)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -16327,28 +15324,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.65 // push return label
+@Output.create$ret.65
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.113
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.113)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.65)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -16442,28 +15430,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.66 // push return label
+@Output.create$ret.66
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.114
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.114)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.66)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -16557,28 +15536,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.67 // push return label
+@Output.create$ret.67
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.115
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.115)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.67)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -16672,28 +15642,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.68 // push return label
+@Output.create$ret.68
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.116
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.116)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.68)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -16787,28 +15748,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.69 // push return label
+@Output.create$ret.69
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.117
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.117)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.69)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -16902,28 +15854,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.70 // push return label
+@Output.create$ret.70
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.118
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.118)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.70)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -17017,28 +15960,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.71 // push return label
+@Output.create$ret.71
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.119
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.119)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.71)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -17132,28 +16066,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.72 // push return label
+@Output.create$ret.72
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.120
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.120)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.72)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -17247,28 +16172,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.73 // push return label
+@Output.create$ret.73
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.121
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.121)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.73)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -17362,28 +16278,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.74 // push return label
+@Output.create$ret.74
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.122
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.122)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.74)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -17477,28 +16384,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.75 // push return label
+@Output.create$ret.75
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.123
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.123)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.75)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -17592,28 +16490,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.76 // push return label
+@Output.create$ret.76
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.124
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.124)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.76)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -17707,28 +16596,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.77 // push return label
+@Output.create$ret.77
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.125
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.125)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.77)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -17822,28 +16702,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.78 // push return label
+@Output.create$ret.78
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.126
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.126)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.78)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -17937,28 +16808,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.79 // push return label
+@Output.create$ret.79
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.127
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.127)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.79)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -18052,28 +16914,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.80 // push return label
+@Output.create$ret.80
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.128
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.128)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.80)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -18167,28 +17020,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.81 // push return label
+@Output.create$ret.81
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.129
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.129)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.81)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -18282,28 +17126,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.82 // push return label
+@Output.create$ret.82
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.130
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.130)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.82)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -18397,28 +17232,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.83 // push return label
+@Output.create$ret.83
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.131
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.131)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.83)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -18512,28 +17338,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.84 // push return label
+@Output.create$ret.84
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.132
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.132)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.84)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -18627,28 +17444,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.85 // push return label
+@Output.create$ret.85
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.133
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.133)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.85)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -18742,28 +17550,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.86 // push return label
+@Output.create$ret.86
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.134
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.134)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.86)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -18857,28 +17656,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.87 // push return label
+@Output.create$ret.87
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.135
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.135)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.87)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -18972,28 +17762,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.88 // push return label
+@Output.create$ret.88
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.136
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.136)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.88)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -19087,28 +17868,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.89 // push return label
+@Output.create$ret.89
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.137
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.137)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.89)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -19202,28 +17974,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.90 // push return label
+@Output.create$ret.90
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.138
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.138)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.90)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -19317,28 +18080,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.91 // push return label
+@Output.create$ret.91
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.139
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.139)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.91)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -19432,28 +18186,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.92 // push return label
+@Output.create$ret.92
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.140
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.140)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.92)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -19547,28 +18292,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.93 // push return label
+@Output.create$ret.93
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.141
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.141)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.93)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -19662,28 +18398,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.94 // push return label
+@Output.create$ret.94
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.142
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.142)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.94)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -19777,28 +18504,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.create arg2: 12 call Output.create 12
-@Output.create$ret.95 // push return label
+@Output.create$ret.95
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.143
+@12
+D=A
+@14
+M=D
+@Output.create
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.143)
-@12
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.create // make jump
+@CALL
 0;JMP
 (Output.create$ret.95)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -19837,28 +18555,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Array.new arg2: 1 call Array.new 1
-@Array.new$ret.3 // push return label
+@Array.new$ret.3
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.144
+@1
+D=A
+@14
+M=D
+@Array.new
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.144)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Array.new // make jump
+@CALL
 0;JMP
 (Array.new$ret.3)
 //C_POP arg1: local arg2: 0 pop local 0
@@ -20754,28 +19463,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Array.new arg2: 1 call Array.new 1
-@Array.new$ret.4 // push return label
+@Array.new$ret.4
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.145
+@1
+D=A
+@14
+M=D
+@Array.new
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.145)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Array.new // make jump
+@CALL
 0;JMP
 (Array.new$ret.4)
 //C_POP arg1: static arg2: 6 pop static 6
@@ -20912,28 +19612,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Array.new arg2: 1 call Array.new 1
-@Array.new$ret.5 // push return label
+@Array.new$ret.5
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.146
+@1
+D=A
+@14
+M=D
+@Array.new
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.146)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Array.new // make jump
+@CALL
 0;JMP
 (Array.new$ret.5)
 //C_POP arg1: local arg2: 1 pop local 1
@@ -21162,28 +19853,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Math.multiply arg2: 2 call Math.multiply 2
-@Math.multiply$ret.1 // push return label
+@Math.multiply$ret.1
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.147
+@2
+D=A
+@14
+M=D
+@Math.multiply
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.147)
-@2
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Math.multiply // make jump
+@CALL
 0;JMP
 (Math.multiply$ret.1)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -21681,28 +20363,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.getMap arg2: 1 call Output.getMap 1
-@Output.getMap$ret.0 // push return label
+@Output.getMap$ret.0
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.148
+@1
+D=A
+@14
+M=D
+@Output.getMap
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.148)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.getMap // make jump
+@CALL
 0;JMP
 (Output.getMap$ret.0)
 //C_POP arg1: local arg2: 2 pop local 2
@@ -22305,28 +20978,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Sys.error arg2: 1 call Sys.error 1
-@Sys.error$ret.6 // push return label
+@Sys.error$ret.6
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.149
+@1
+D=A
+@14
+M=D
+@Sys.error
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.149)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Sys.error // make jump
+@CALL
 0;JMP
 (Sys.error$ret.6)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -22354,28 +21018,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Math.divide arg2: 2 call Math.divide 2
-@Math.divide$ret.0 // push return label
+@Math.divide$ret.0
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.150
+@2
+D=A
+@14
+M=D
+@Math.divide
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.150)
-@2
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Math.divide // make jump
+@CALL
 0;JMP
 (Math.divide$ret.0)
 //C_POP arg1: static arg2: 0 pop static 0
@@ -22409,28 +21064,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Math.multiply arg2: 2 call Math.multiply 2
-@Math.multiply$ret.2 // push return label
+@Math.multiply$ret.2
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.151
+@2
+D=A
+@14
+M=D
+@Math.multiply
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.151)
-@2
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Math.multiply // make jump
+@CALL
 0;JMP
 (Math.multiply$ret.2)
 //C_ARITHMETIC arg1: add arg2: None add
@@ -22483,28 +21129,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Math.multiply arg2: 2 call Math.multiply 2
-@Math.multiply$ret.3 // push return label
+@Math.multiply$ret.3
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.152
+@2
+D=A
+@14
+M=D
+@Math.multiply
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.152)
-@2
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Math.multiply // make jump
+@CALL
 0;JMP
 (Math.multiply$ret.3)
 //C_ARITHMETIC arg1: eq arg2: None eq
@@ -22527,28 +21164,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.drawChar arg2: 1 call Output.drawChar 1
-@Output.drawChar$ret.0 // push return label
+@Output.drawChar$ret.0
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.153
+@1
+D=A
+@14
+M=D
+@Output.drawChar
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.153)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.drawChar // make jump
+@CALL
 0;JMP
 (Output.drawChar$ret.0)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -22584,28 +21212,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: String.newLine arg2: 0 call String.newLine 0
-@String.newLine$ret.1 // push return label
+@String.newLine$ret.1
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.154
+@0
+D=A
+@14
+M=D
+@String.newLine
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.154)
-@0
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@String.newLine // make jump
+@CALL
 0;JMP
 (String.newLine$ret.1)
 //C_ARITHMETIC arg1: eq arg2: None eq
@@ -22629,28 +21248,19 @@ D;JNE
 0;JMP
 //C_LABEL arg1: IF_TRUE0 arg2: None label IF_TRUE0
 (Output.printChar$IF_TRUE0)//C_CALL arg1: Output.println arg2: 0 call Output.println 0
-@Output.println$ret.0 // push return label
+@Output.println$ret.0
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.155
+@0
+D=A
+@14
+M=D
+@Output.println
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.155)
-@0
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.println // make jump
+@CALL
 0;JMP
 (Output.println$ret.0)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -22674,28 +21284,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: String.backSpace arg2: 0 call String.backSpace 0
-@String.backSpace$ret.2 // push return label
+@String.backSpace$ret.2
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.156
+@0
+D=A
+@14
+M=D
+@String.backSpace
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.156)
-@0
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@String.backSpace // make jump
+@CALL
 0;JMP
 (String.backSpace$ret.2)
 //C_ARITHMETIC arg1: eq arg2: None eq
@@ -22719,28 +21320,19 @@ D;JNE
 0;JMP
 //C_LABEL arg1: IF_TRUE1 arg2: None label IF_TRUE1
 (Output.printChar$IF_TRUE1)//C_CALL arg1: Output.backSpace arg2: 0 call Output.backSpace 0
-@Output.backSpace$ret.0 // push return label
+@Output.backSpace$ret.0
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.157
+@0
+D=A
+@14
+M=D
+@Output.backSpace
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.157)
-@0
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.backSpace // make jump
+@CALL
 0;JMP
 (Output.backSpace$ret.0)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -22764,28 +21356,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.drawChar arg2: 1 call Output.drawChar 1
-@Output.drawChar$ret.1 // push return label
+@Output.drawChar$ret.1
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.158
+@1
+D=A
+@14
+M=D
+@Output.drawChar
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.158)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.drawChar // make jump
+@CALL
 0;JMP
 (Output.drawChar$ret.1)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -22909,28 +21492,19 @@ D;JNE
 0;JMP
 //C_LABEL arg1: IF_TRUE3 arg2: None label IF_TRUE3
 (Output.printChar$IF_TRUE3)//C_CALL arg1: Output.println arg2: 0 call Output.println 0
-@Output.println$ret.1 // push return label
+@Output.println$ret.1
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.159
+@0
+D=A
+@14
+M=D
+@Output.println
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.159)
-@0
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.println // make jump
+@CALL
 0;JMP
 (Output.println$ret.1)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -23004,28 +21578,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: String.length arg2: 1 call String.length 1
-@String.length$ret.0 // push return label
+@String.length$ret.0
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.160
+@1
+D=A
+@14
+M=D
+@String.length
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.160)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@String.length // make jump
+@CALL
 0;JMP
 (String.length$ret.0)
 //C_POP arg1: local arg2: 1 pop local 1
@@ -23109,53 +21674,35 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: String.charAt arg2: 2 call String.charAt 2
-@String.charAt$ret.0 // push return label
+@String.charAt$ret.0
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.161
+@2
+D=A
+@14
+M=D
+@String.charAt
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.161)
-@2
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@String.charAt // make jump
+@CALL
 0;JMP
 (String.charAt$ret.0)
 //C_CALL arg1: Output.printChar arg2: 1 call Output.printChar 1
-@Output.printChar$ret.6 // push return label
+@Output.printChar$ret.6
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.162
+@1
+D=A
+@14
+M=D
+@Output.printChar
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.162)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.printChar // make jump
+@CALL
 0;JMP
 (Output.printChar$ret.6)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -23242,28 +21789,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: String.setInt arg2: 2 call String.setInt 2
-@String.setInt$ret.0 // push return label
+@String.setInt$ret.0
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.163
+@2
+D=A
+@14
+M=D
+@String.setInt
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.163)
-@2
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@String.setInt // make jump
+@CALL
 0;JMP
 (String.setInt$ret.0)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -23280,28 +21818,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.printString arg2: 1 call Output.printString 1
-@Output.printString$ret.1 // push return label
+@Output.printString$ret.1
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.164
+@1
+D=A
+@14
+M=D
+@Output.printString
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.164)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.printString // make jump
+@CALL
 0;JMP
 (Output.printString$ret.1)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -23705,28 +22234,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Output.drawChar arg2: 1 call Output.drawChar 1
-@Output.drawChar$ret.2 // push return label
+@Output.drawChar$ret.2
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.165
+@1
+D=A
+@14
+M=D
+@Output.drawChar
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.165)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Output.drawChar // make jump
+@CALL
 0;JMP
 (Output.drawChar$ret.2)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -23797,28 +22317,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Array.new arg2: 1 call Array.new 1
-@Array.new$ret.6 // push return label
+@Array.new$ret.6
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.166
+@1
+D=A
+@14
+M=D
+@Array.new
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.166)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Array.new // make jump
+@CALL
 0;JMP
 (Array.new$ret.6)
 //C_POP arg1: static arg2: 0 pop static 0
@@ -24789,28 +23300,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Sys.error arg2: 1 call Sys.error 1
-@Sys.error$ret.7 // push return label
+@Sys.error$ret.7
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.167
+@1
+D=A
+@14
+M=D
+@Sys.error
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.167)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Sys.error // make jump
+@CALL
 0;JMP
 (Sys.error$ret.7)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -24838,28 +23340,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Math.divide arg2: 2 call Math.divide 2
-@Math.divide$ret.1 // push return label
+@Math.divide$ret.1
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.168
+@2
+D=A
+@14
+M=D
+@Math.divide
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.168)
-@2
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Math.divide // make jump
+@CALL
 0;JMP
 (Math.divide$ret.1)
 //C_POP arg1: local arg2: 0 pop local 0
@@ -24907,28 +23400,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Math.multiply arg2: 2 call Math.multiply 2
-@Math.multiply$ret.4 // push return label
+@Math.multiply$ret.4
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.169
+@2
+D=A
+@14
+M=D
+@Math.multiply
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.169)
-@2
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Math.multiply // make jump
+@CALL
 0;JMP
 (Math.multiply$ret.4)
 //C_ARITHMETIC arg1: sub arg2: None sub
@@ -24972,28 +23456,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Math.multiply arg2: 2 call Math.multiply 2
-@Math.multiply$ret.5 // push return label
+@Math.multiply$ret.5
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.170
+@2
+D=A
+@14
+M=D
+@Math.multiply
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.170)
-@2
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Math.multiply // make jump
+@CALL
 0;JMP
 (Math.multiply$ret.5)
 //C_PUSH arg1: local arg2: 0 push local 0
@@ -25079,28 +23554,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Screen.updateLocation arg2: 2 call Screen.updateLocation 2
-@Screen.updateLocation$ret.0 // push return label
+@Screen.updateLocation$ret.0
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.171
+@2
+D=A
+@14
+M=D
+@Screen.updateLocation
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.171)
-@2
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Screen.updateLocation // make jump
+@CALL
 0;JMP
 (Screen.updateLocation$ret.0)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -25170,28 +23636,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Screen.drawPixel arg2: 2 call Screen.drawPixel 2
-@Screen.drawPixel$ret.0 // push return label
+@Screen.drawPixel$ret.0
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.172
+@2
+D=A
+@14
+M=D
+@Screen.drawPixel
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.172)
-@2
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Screen.drawPixel // make jump
+@CALL
 0;JMP
 (Screen.drawPixel$ret.0)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -25225,28 +23682,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Screen.drawPixel arg2: 2 call Screen.drawPixel 2
-@Screen.drawPixel$ret.1 // push return label
+@Screen.drawPixel$ret.1
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.173
+@2
+D=A
+@14
+M=D
+@Screen.drawPixel
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.173)
-@2
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Screen.drawPixel // make jump
+@CALL
 0;JMP
 (Screen.drawPixel$ret.1)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -25470,28 +23918,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Sys.error arg2: 1 call Sys.error 1
-@Sys.error$ret.8 // push return label
+@Sys.error$ret.8
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.174
+@1
+D=A
+@14
+M=D
+@Sys.error
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.174)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Sys.error // make jump
+@CALL
 0;JMP
 (Sys.error$ret.8)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -25528,28 +23967,19 @@ D=A
 0;JMP
 (ARITHMETIC_SUB.30)
 //C_CALL arg1: Math.abs arg2: 1 call Math.abs 1
-@Math.abs$ret.4 // push return label
+@Math.abs$ret.4
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.175
+@1
+D=A
+@14
+M=D
+@Math.abs
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.175)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Math.abs // make jump
+@CALL
 0;JMP
 (Math.abs$ret.4)
 //C_POP arg1: local arg2: 3 pop local 3
@@ -25596,28 +24026,19 @@ D=A
 0;JMP
 (ARITHMETIC_SUB.31)
 //C_CALL arg1: Math.abs arg2: 1 call Math.abs 1
-@Math.abs$ret.5 // push return label
+@Math.abs$ret.5
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.176
+@1
+D=A
+@14
+M=D
+@Math.abs
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.176)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Math.abs // make jump
+@CALL
 0;JMP
 (Math.abs$ret.5)
 //C_POP arg1: local arg2: 2 pop local 2
@@ -26329,28 +24750,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Math.multiply arg2: 2 call Math.multiply 2
-@Math.multiply$ret.6 // push return label
+@Math.multiply$ret.6
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.177
+@2
+D=A
+@14
+M=D
+@Math.multiply
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.177)
-@2
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Math.multiply // make jump
+@CALL
 0;JMP
 (Math.multiply$ret.6)
 //C_PUSH arg1: local arg2: 3 push local 3
@@ -26404,28 +24816,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Math.multiply arg2: 2 call Math.multiply 2
-@Math.multiply$ret.7 // push return label
+@Math.multiply$ret.7
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.178
+@2
+D=A
+@14
+M=D
+@Math.multiply
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.178)
-@2
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Math.multiply // make jump
+@CALL
 0;JMP
 (Math.multiply$ret.7)
 //C_POP arg1: local arg2: 9 pop local 9
@@ -26479,28 +24882,19 @@ D=A
 0;JMP
 (ARITHMETIC_SUB.33)
 //C_CALL arg1: Math.multiply arg2: 2 call Math.multiply 2
-@Math.multiply$ret.8 // push return label
+@Math.multiply$ret.8
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.179
+@2
+D=A
+@14
+M=D
+@Math.multiply
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.179)
-@2
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Math.multiply // make jump
+@CALL
 0;JMP
 (Math.multiply$ret.8)
 //C_POP arg1: local arg2: 10 pop local 10
@@ -26551,28 +24945,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Screen.drawConditional arg2: 3 call Screen.drawConditional 3
-@Screen.drawConditional$ret.0 // push return label
+@Screen.drawConditional$ret.0
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.180
+@3
+D=A
+@14
+M=D
+@Screen.drawConditional
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.180)
-@3
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Screen.drawConditional // make jump
+@CALL
 0;JMP
 (Screen.drawConditional$ret.0)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -26932,28 +25317,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Screen.drawConditional arg2: 3 call Screen.drawConditional 3
-@Screen.drawConditional$ret.1 // push return label
+@Screen.drawConditional$ret.1
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.181
+@3
+D=A
+@14
+M=D
+@Screen.drawConditional
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.181)
-@3
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Screen.drawConditional // make jump
+@CALL
 0;JMP
 (Screen.drawConditional$ret.1)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -27232,28 +25608,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Sys.error arg2: 1 call Sys.error 1
-@Sys.error$ret.9 // push return label
+@Sys.error$ret.9
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.182
+@1
+D=A
+@14
+M=D
+@Sys.error
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.182)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Sys.error // make jump
+@CALL
 0;JMP
 (Sys.error$ret.9)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -27281,28 +25648,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Math.divide arg2: 2 call Math.divide 2
-@Math.divide$ret.2 // push return label
+@Math.divide$ret.2
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.183
+@2
+D=A
+@14
+M=D
+@Math.divide
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.183)
-@2
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Math.divide // make jump
+@CALL
 0;JMP
 (Math.divide$ret.2)
 //C_POP arg1: local arg2: 3 pop local 3
@@ -27350,28 +25708,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Math.multiply arg2: 2 call Math.multiply 2
-@Math.multiply$ret.9 // push return label
+@Math.multiply$ret.9
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.184
+@2
+D=A
+@14
+M=D
+@Math.multiply
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.184)
-@2
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Math.multiply // make jump
+@CALL
 0;JMP
 (Math.multiply$ret.9)
 //C_ARITHMETIC arg1: sub arg2: None sub
@@ -27415,28 +25764,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Math.divide arg2: 2 call Math.divide 2
-@Math.divide$ret.3 // push return label
+@Math.divide$ret.3
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.185
+@2
+D=A
+@14
+M=D
+@Math.divide
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.185)
-@2
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Math.divide // make jump
+@CALL
 0;JMP
 (Math.divide$ret.3)
 //C_POP arg1: local arg2: 4 pop local 4
@@ -27484,28 +25824,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Math.multiply arg2: 2 call Math.multiply 2
-@Math.multiply$ret.10 // push return label
+@Math.multiply$ret.10
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.186
+@2
+D=A
+@14
+M=D
+@Math.multiply
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.186)
-@2
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Math.multiply // make jump
+@CALL
 0;JMP
 (Math.multiply$ret.10)
 //C_ARITHMETIC arg1: sub arg2: None sub
@@ -27706,28 +26037,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Math.multiply arg2: 2 call Math.multiply 2
-@Math.multiply$ret.11 // push return label
+@Math.multiply$ret.11
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.187
+@2
+D=A
+@14
+M=D
+@Math.multiply
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.187)
-@2
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Math.multiply // make jump
+@CALL
 0;JMP
 (Math.multiply$ret.11)
 //C_PUSH arg1: local arg2: 3 push local 3
@@ -27972,28 +26294,19 @@ D=A
 0;JMP
 (ARITHMETIC_AND.13)
 //C_CALL arg1: Screen.updateLocation arg2: 2 call Screen.updateLocation 2
-@Screen.updateLocation$ret.1 // push return label
+@Screen.updateLocation$ret.1
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.188
+@2
+D=A
+@14
+M=D
+@Screen.updateLocation
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.188)
-@2
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Screen.updateLocation // make jump
+@CALL
 0;JMP
 (Screen.updateLocation$ret.1)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -28027,28 +26340,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Screen.updateLocation arg2: 2 call Screen.updateLocation 2
-@Screen.updateLocation$ret.2 // push return label
+@Screen.updateLocation$ret.2
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.189
+@2
+D=A
+@14
+M=D
+@Screen.updateLocation
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.189)
-@2
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Screen.updateLocation // make jump
+@CALL
 0;JMP
 (Screen.updateLocation$ret.2)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -28164,28 +26468,19 @@ D=A
 0;JMP
 (ARITHMETIC_NEG.6)
 //C_CALL arg1: Screen.updateLocation arg2: 2 call Screen.updateLocation 2
-@Screen.updateLocation$ret.3 // push return label
+@Screen.updateLocation$ret.3
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.190
+@2
+D=A
+@14
+M=D
+@Screen.updateLocation
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.190)
-@2
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Screen.updateLocation // make jump
+@CALL
 0;JMP
 (Screen.updateLocation$ret.3)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -28259,28 +26554,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Screen.updateLocation arg2: 2 call Screen.updateLocation 2
-@Screen.updateLocation$ret.4 // push return label
+@Screen.updateLocation$ret.4
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.191
+@2
+D=A
+@14
+M=D
+@Screen.updateLocation
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.191)
-@2
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Screen.updateLocation // make jump
+@CALL
 0;JMP
 (Screen.updateLocation$ret.4)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -28493,28 +26779,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Math.min arg2: 2 call Math.min 2
-@Math.min$ret.0 // push return label
+@Math.min$ret.0
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.192
+@2
+D=A
+@14
+M=D
+@Math.min
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.192)
-@2
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Math.min // make jump
+@CALL
 0;JMP
 (Math.min$ret.0)
 //C_POP arg1: local arg2: 7 pop local 7
@@ -28555,28 +26832,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Math.max arg2: 2 call Math.max 2
-@Math.max$ret.0 // push return label
+@Math.max$ret.0
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.193
+@2
+D=A
+@14
+M=D
+@Math.max
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.193)
-@2
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Math.max // make jump
+@CALL
 0;JMP
 (Math.max$ret.0)
 //C_POP arg1: local arg2: 8 pop local 8
@@ -28750,28 +27018,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Math.max arg2: 2 call Math.max 2
-@Math.max$ret.1 // push return label
+@Math.max$ret.1
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.194
+@2
+D=A
+@14
+M=D
+@Math.max
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.194)
-@2
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Math.max // make jump
+@CALL
 0;JMP
 (Math.max$ret.1)
 //C_POP arg1: local arg2: 7 pop local 7
@@ -28809,28 +27068,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Math.min arg2: 2 call Math.min 2
-@Math.min$ret.1 // push return label
+@Math.min$ret.1
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.195
+@2
+D=A
+@14
+M=D
+@Math.min
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.195)
-@2
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Math.min // make jump
+@CALL
 0;JMP
 (Math.min$ret.1)
 //C_POP arg1: local arg2: 8 pop local 8
@@ -28868,28 +27118,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Math.divide arg2: 2 call Math.divide 2
-@Math.divide$ret.4 // push return label
+@Math.divide$ret.4
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.196
+@2
+D=A
+@14
+M=D
+@Math.divide
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.196)
-@2
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Math.divide // make jump
+@CALL
 0;JMP
 (Math.divide$ret.4)
 //C_POP arg1: local arg2: 1 pop local 1
@@ -28937,28 +27178,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Math.multiply arg2: 2 call Math.multiply 2
-@Math.multiply$ret.12 // push return label
+@Math.multiply$ret.12
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.197
+@2
+D=A
+@14
+M=D
+@Math.multiply
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.197)
-@2
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Math.multiply // make jump
+@CALL
 0;JMP
 (Math.multiply$ret.12)
 //C_ARITHMETIC arg1: sub arg2: None sub
@@ -29002,28 +27234,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Math.divide arg2: 2 call Math.divide 2
-@Math.divide$ret.5 // push return label
+@Math.divide$ret.5
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.198
+@2
+D=A
+@14
+M=D
+@Math.divide
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.198)
-@2
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Math.divide // make jump
+@CALL
 0;JMP
 (Math.divide$ret.5)
 //C_POP arg1: local arg2: 2 pop local 2
@@ -29071,28 +27294,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Math.multiply arg2: 2 call Math.multiply 2
-@Math.multiply$ret.13 // push return label
+@Math.multiply$ret.13
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.199
+@2
+D=A
+@14
+M=D
+@Math.multiply
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.199)
-@2
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Math.multiply // make jump
+@CALL
 0;JMP
 (Math.multiply$ret.13)
 //C_ARITHMETIC arg1: sub arg2: None sub
@@ -29293,28 +27507,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Math.multiply arg2: 2 call Math.multiply 2
-@Math.multiply$ret.14 // push return label
+@Math.multiply$ret.14
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.200
+@2
+D=A
+@14
+M=D
+@Math.multiply
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.200)
-@2
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Math.multiply // make jump
+@CALL
 0;JMP
 (Math.multiply$ret.14)
 //C_PUSH arg1: local arg2: 1 push local 1
@@ -29510,28 +27715,19 @@ D=A
 0;JMP
 (ARITHMETIC_AND.17)
 //C_CALL arg1: Screen.updateLocation arg2: 2 call Screen.updateLocation 2
-@Screen.updateLocation$ret.5 // push return label
+@Screen.updateLocation$ret.5
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.201
+@2
+D=A
+@14
+M=D
+@Screen.updateLocation
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.201)
-@2
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Screen.updateLocation // make jump
+@CALL
 0;JMP
 (Screen.updateLocation$ret.5)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -29565,28 +27761,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Screen.updateLocation arg2: 2 call Screen.updateLocation 2
-@Screen.updateLocation$ret.6 // push return label
+@Screen.updateLocation$ret.6
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.202
+@2
+D=A
+@14
+M=D
+@Screen.updateLocation
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.202)
-@2
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Screen.updateLocation // make jump
+@CALL
 0;JMP
 (Screen.updateLocation$ret.6)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -29702,28 +27889,19 @@ D=A
 0;JMP
 (ARITHMETIC_NEG.9)
 //C_CALL arg1: Screen.updateLocation arg2: 2 call Screen.updateLocation 2
-@Screen.updateLocation$ret.7 // push return label
+@Screen.updateLocation$ret.7
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.203
+@2
+D=A
+@14
+M=D
+@Screen.updateLocation
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.203)
-@2
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Screen.updateLocation // make jump
+@CALL
 0;JMP
 (Screen.updateLocation$ret.7)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -29797,28 +27975,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Screen.updateLocation arg2: 2 call Screen.updateLocation 2
-@Screen.updateLocation$ret.8 // push return label
+@Screen.updateLocation$ret.8
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.204
+@2
+D=A
+@14
+M=D
+@Screen.updateLocation
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.204)
-@2
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Screen.updateLocation // make jump
+@CALL
 0;JMP
 (Screen.updateLocation$ret.8)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -29924,28 +28093,19 @@ D=A
 0;JMP
 (ARITHMETIC_SUB.47)
 //C_CALL arg1: Screen.drawHorizontal arg2: 3 call Screen.drawHorizontal 3
-@Screen.drawHorizontal$ret.0 // push return label
+@Screen.drawHorizontal$ret.0
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.205
+@3
+D=A
+@14
+M=D
+@Screen.drawHorizontal
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.205)
-@3
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Screen.drawHorizontal // make jump
+@CALL
 0;JMP
 (Screen.drawHorizontal$ret.0)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -30033,28 +28193,19 @@ D=A
 0;JMP
 (ARITHMETIC_SUB.48)
 //C_CALL arg1: Screen.drawHorizontal arg2: 3 call Screen.drawHorizontal 3
-@Screen.drawHorizontal$ret.1 // push return label
+@Screen.drawHorizontal$ret.1
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.206
+@3
+D=A
+@14
+M=D
+@Screen.drawHorizontal
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.206)
-@3
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Screen.drawHorizontal // make jump
+@CALL
 0;JMP
 (Screen.drawHorizontal$ret.1)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -30142,28 +28293,19 @@ D=A
 0;JMP
 (ARITHMETIC_ADD.150)
 //C_CALL arg1: Screen.drawHorizontal arg2: 3 call Screen.drawHorizontal 3
-@Screen.drawHorizontal$ret.2 // push return label
+@Screen.drawHorizontal$ret.2
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.207
+@3
+D=A
+@14
+M=D
+@Screen.drawHorizontal
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.207)
-@3
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Screen.drawHorizontal // make jump
+@CALL
 0;JMP
 (Screen.drawHorizontal$ret.2)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -30251,28 +28393,19 @@ D=A
 0;JMP
 (ARITHMETIC_ADD.152)
 //C_CALL arg1: Screen.drawHorizontal arg2: 3 call Screen.drawHorizontal 3
-@Screen.drawHorizontal$ret.3 // push return label
+@Screen.drawHorizontal$ret.3
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.208
+@3
+D=A
+@14
+M=D
+@Screen.drawHorizontal
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.208)
-@3
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Screen.drawHorizontal // make jump
+@CALL
 0;JMP
 (Screen.drawHorizontal$ret.3)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -30447,28 +28580,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Sys.error arg2: 1 call Sys.error 1
-@Sys.error$ret.10 // push return label
+@Sys.error$ret.10
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.209
+@1
+D=A
+@14
+M=D
+@Sys.error
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.209)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Sys.error // make jump
+@CALL
 0;JMP
 (Sys.error$ret.10)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -30674,28 +28798,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Sys.error arg2: 1 call Sys.error 1
-@Sys.error$ret.11 // push return label
+@Sys.error$ret.11
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.210
+@1
+D=A
+@14
+M=D
+@Sys.error
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.210)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Sys.error // make jump
+@CALL
 0;JMP
 (Sys.error$ret.11)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -30813,28 +28928,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Screen.drawSymetric arg2: 4 call Screen.drawSymetric 4
-@Screen.drawSymetric$ret.0 // push return label
+@Screen.drawSymetric$ret.0
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.211
+@4
+D=A
+@14
+M=D
+@Screen.drawSymetric
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.211)
-@4
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Screen.drawSymetric // make jump
+@CALL
 0;JMP
 (Screen.drawSymetric$ret.0)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -30951,28 +29057,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Math.multiply arg2: 2 call Math.multiply 2
-@Math.multiply$ret.15 // push return label
+@Math.multiply$ret.15
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.212
+@2
+D=A
+@14
+M=D
+@Math.multiply
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.212)
-@2
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Math.multiply // make jump
+@CALL
 0;JMP
 (Math.multiply$ret.15)
 //C_ARITHMETIC arg1: add arg2: None add
@@ -31059,28 +29156,19 @@ D=A
 0;JMP
 (ARITHMETIC_SUB.55)
 //C_CALL arg1: Math.multiply arg2: 2 call Math.multiply 2
-@Math.multiply$ret.16 // push return label
+@Math.multiply$ret.16
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.213
+@2
+D=A
+@14
+M=D
+@Math.multiply
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.213)
-@2
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Math.multiply // make jump
+@CALL
 0;JMP
 (Math.multiply$ret.16)
 //C_ARITHMETIC arg1: add arg2: None add
@@ -31241,28 +29329,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Screen.drawSymetric arg2: 4 call Screen.drawSymetric 4
-@Screen.drawSymetric$ret.1 // push return label
+@Screen.drawSymetric$ret.1
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.214
+@4
+D=A
+@14
+M=D
+@Screen.drawSymetric
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.214)
-@4
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Screen.drawSymetric // make jump
+@CALL
 0;JMP
 (Screen.drawSymetric$ret.1)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -31299,28 +29378,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Memory.alloc arg2: 1 call Memory.alloc 1
-@Memory.alloc$ret.1 // push return label
+@Memory.alloc$ret.1
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.215
+@1
+D=A
+@14
+M=D
+@Memory.alloc
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.215)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Memory.alloc // make jump
+@CALL
 0;JMP
 (Memory.alloc$ret.1)
 //C_POP arg1: pointer arg2: 0 pop pointer 0
@@ -31374,28 +29444,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Sys.error arg2: 1 call Sys.error 1
-@Sys.error$ret.12 // push return label
+@Sys.error$ret.12
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.216
+@1
+D=A
+@14
+M=D
+@Sys.error
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.216)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Sys.error // make jump
+@CALL
 0;JMP
 (Sys.error$ret.12)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -31453,28 +29514,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Array.new arg2: 1 call Array.new 1
-@Array.new$ret.7 // push return label
+@Array.new$ret.7
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.217
+@1
+D=A
+@14
+M=D
+@Array.new
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.217)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Array.new // make jump
+@CALL
 0;JMP
 (Array.new$ret.7)
 //C_POP arg1: this arg2: 1 pop this 1
@@ -31626,28 +29678,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Array.dispose arg2: 1 call Array.dispose 1
-@Array.dispose$ret.0 // push return label
+@Array.dispose$ret.0
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.218
+@1
+D=A
+@14
+M=D
+@Array.dispose
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.218)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Array.dispose // make jump
+@CALL
 0;JMP
 (Array.dispose$ret.0)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -31665,28 +29708,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Memory.deAlloc arg2: 1 call Memory.deAlloc 1
-@Memory.deAlloc$ret.1 // push return label
+@Memory.deAlloc$ret.1
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.219
+@1
+D=A
+@14
+M=D
+@Memory.deAlloc
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.219)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Memory.deAlloc // make jump
+@CALL
 0;JMP
 (Memory.deAlloc$ret.1)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -31871,28 +29905,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Sys.error arg2: 1 call Sys.error 1
-@Sys.error$ret.13 // push return label
+@Sys.error$ret.13
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.220
+@1
+D=A
+@14
+M=D
+@Sys.error
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.220)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Sys.error // make jump
+@CALL
 0;JMP
 (Sys.error$ret.13)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -32078,28 +30103,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Sys.error arg2: 1 call Sys.error 1
-@Sys.error$ret.14 // push return label
+@Sys.error$ret.14
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.221
+@1
+D=A
+@14
+M=D
+@Sys.error
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.221)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Sys.error // make jump
+@CALL
 0;JMP
 (Sys.error$ret.14)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -32261,28 +30277,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Sys.error arg2: 1 call Sys.error 1
-@Sys.error$ret.15 // push return label
+@Sys.error$ret.15
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.222
+@1
+D=A
+@14
+M=D
+@Sys.error
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.222)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Sys.error // make jump
+@CALL
 0;JMP
 (Sys.error$ret.15)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -32481,28 +30488,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Sys.error arg2: 1 call Sys.error 1
-@Sys.error$ret.16 // push return label
+@Sys.error$ret.16
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.223
+@1
+D=A
+@14
+M=D
+@Sys.error
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.223)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Sys.error // make jump
+@CALL
 0;JMP
 (Sys.error$ret.16)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -33061,28 +31059,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Math.multiply arg2: 2 call Math.multiply 2
-@Math.multiply$ret.17 // push return label
+@Math.multiply$ret.17
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.224
+@2
+D=A
+@14
+M=D
+@Math.multiply
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.224)
-@2
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Math.multiply // make jump
+@CALL
 0;JMP
 (Math.multiply$ret.17)
 //C_PUSH arg1: local arg2: 2 push local 2
@@ -33325,28 +31314,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Sys.error arg2: 1 call Sys.error 1
-@Sys.error$ret.17 // push return label
+@Sys.error$ret.17
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.225
+@1
+D=A
+@14
+M=D
+@Sys.error
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.225)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Sys.error // make jump
+@CALL
 0;JMP
 (Sys.error$ret.17)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -33364,28 +31344,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Array.new arg2: 1 call Array.new 1
-@Array.new$ret.8 // push return label
+@Array.new$ret.8
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.226
+@1
+D=A
+@14
+M=D
+@Array.new
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.226)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Array.new // make jump
+@CALL
 0;JMP
 (Array.new$ret.8)
 //C_POP arg1: local arg2: 2 pop local 2
@@ -33591,28 +31562,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Math.divide arg2: 2 call Math.divide 2
-@Math.divide$ret.6 // push return label
+@Math.divide$ret.6
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.227
+@2
+D=A
+@14
+M=D
+@Math.divide
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.227)
-@2
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Math.divide // make jump
+@CALL
 0;JMP
 (Math.divide$ret.6)
 //C_POP arg1: local arg2: 1 pop local 1
@@ -33693,28 +31655,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Math.multiply arg2: 2 call Math.multiply 2
-@Math.multiply$ret.18 // push return label
+@Math.multiply$ret.18
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.228
+@2
+D=A
+@14
+M=D
+@Math.multiply
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.228)
-@2
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Math.multiply // make jump
+@CALL
 0;JMP
 (Math.multiply$ret.18)
 //C_ARITHMETIC arg1: sub arg2: None sub
@@ -34018,28 +31971,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Sys.error arg2: 1 call Sys.error 1
-@Sys.error$ret.18 // push return label
+@Sys.error$ret.18
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.229
+@1
+D=A
+@14
+M=D
+@Sys.error
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.229)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Sys.error // make jump
+@CALL
 0;JMP
 (Sys.error$ret.18)
 //C_POP arg1: temp arg2: 0 pop temp 0
@@ -34436,28 +32380,19 @@ M=M+1
 A=M-1
 M=D
 //C_CALL arg1: Array.dispose arg2: 1 call Array.dispose 1
-@Array.dispose$ret.1 // push return label
+@Array.dispose$ret.1
 D=A
-@SP
-M=M+1
-A=M-1
+@13
 M=D
-@RETURNFROMSAVEFRAME.230
+@1
+D=A
+@14
+M=D
+@Array.dispose
 D=A
 @15
 M=D
-@SAVEFRAME
-0;JMP
-(RETURNFROMSAVEFRAME.230)
-@1
-D=D-A
-@ARG
-M=D
-@SP // reposition LCL pointer to be that of SP
-D=M
-@LCL
-M=D
-@Array.dispose // make jump
+@CALL
 0;JMP
 (Array.dispose$ret.1)
 //C_POP arg1: temp arg2: 0 pop temp 0
