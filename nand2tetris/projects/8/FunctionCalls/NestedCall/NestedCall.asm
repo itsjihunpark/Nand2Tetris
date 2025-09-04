@@ -86,7 +86,205 @@ M=D
 D=M
 @5
 D=D-A
+@15
+A=M
+0;JMP
+(ADD)
+@SP // pop from stack to memory address 13 and 14
+AM=M-1
+D=M
 @13
+M=D
+@SP
+AM=M-1
+D=M
+@14
+M=D
+@13 // Y
+D=M
+@14 // X
+M=M+D
+@14 // push memory address 14 to stack 
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+@15
+A=M
+0;JMP
+(SUB)
+@SP // pop from stack to memory address 13 and 14
+AM=M-1
+D=M
+@13
+M=D
+@SP
+AM=M-1
+D=M
+@14
+M=D
+@13 // Y
+D=M
+@14 // X
+M=M-D
+@14 // push memory address 14 to stack 
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+@15
+A=M
+0;JMP
+(NEG)
+@SP // pop from stack to memory address 13
+AM=M-1
+D=M
+@13
+M=D
+@14 // X
+M=-M
+@14 // push memory address 14 to stack 
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+@15
+A=M
+0;JMP
+(GT)
+@SP // pop from stack to memory address 13 and 14
+AM=M-1
+D=M
+@13
+M=D
+@SP
+AM=M-1
+D=M
+@14
+M=D
+@13  // Y
+D=M
+@14 // X
+D=M-D
+@ISGT
+D;JGT
+D=0
+@ENDGT
+0;JMP
+(ISGT)
+D=-1
+(ENDGT)
+@14
+M=D
+@14 // push memory address 14 to stack
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+@15
+A=M
+0;JMP
+(LT)
+@SP // pop from stack to memory address 13 and 14
+AM=M-1
+D=M
+@13
+M=D
+@SP
+AM=M-1
+D=M
+@14
+M=D
+@13  // Y
+D=M
+@14 // X
+D=M-D
+@ISLT
+D;JLT
+D=0
+@ENDLT
+0;JMP
+(ISLT)
+D=-1
+(ENDLT)
+@14
+M=D
+@14 // push memory address 14 to stack 
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+@15
+A=M
+0;JMP
+(AND)
+@SP // pop from stack to memory address 13 and 14
+AM=M-1
+D=M
+@13
+M=D
+@SP
+AM=M-1
+D=M
+@14
+M=D
+@13 // first pop value
+D=M
+@14 // second pop value
+M = M&D
+@14 // push memory address 14 to stack 
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+@15
+A=M
+0;JMP
+(OR)
+@SP // pop from stack to memory address 13 and 14
+AM=M-1
+D=M
+@13
+M=D
+@SP
+AM=M-1
+D=M
+@14
+M=D
+@13 // first pop value
+D=M
+@14 // second pop value
+M = M|D
+@14 // push memory address 14 to stack 
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+@15
+A=M
+0;JMP
+(NOT)
+@SP // pop from stack to memory address 13
+AM=M-1
+D=M
+@13
+M=D
+@14 // first pop value
+M=!M
+@14 // push memory address 14 to stack 
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+@15
 A=M
 0;JMP
 (BOOTSTRAP)
@@ -102,7 +300,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.0
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -159,7 +357,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.1
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -335,7 +533,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.2
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -408,89 +606,37 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.0
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.0)
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.1
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.1)
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.2
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.2)
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.3
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.3)
 //C_RETURN arg1: None arg2: None return
 @RETURN
 0;JMP
@@ -544,26 +690,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.4
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.4)
 //C_RETURN arg1: None arg2: None return
 @RETURN
 0;JMP

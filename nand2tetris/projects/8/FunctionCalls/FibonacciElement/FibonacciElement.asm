@@ -89,6 +89,204 @@ D=D-A
 @15
 A=M
 0;JMP
+(ADD)
+@SP // pop from stack to memory address 13 and 14
+AM=M-1
+D=M
+@13
+M=D
+@SP
+AM=M-1
+D=M
+@14
+M=D
+@13 // Y
+D=M
+@14 // X
+M=M+D
+@14 // push memory address 14 to stack 
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+@15
+A=M
+0;JMP
+(SUB)
+@SP // pop from stack to memory address 13 and 14
+AM=M-1
+D=M
+@13
+M=D
+@SP
+AM=M-1
+D=M
+@14
+M=D
+@13 // Y
+D=M
+@14 // X
+M=M-D
+@14 // push memory address 14 to stack 
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+@15
+A=M
+0;JMP
+(NEG)
+@SP // pop from stack to memory address 13
+AM=M-1
+D=M
+@13
+M=D
+@14 // X
+M=-M
+@14 // push memory address 14 to stack 
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+@15
+A=M
+0;JMP
+(GT)
+@SP // pop from stack to memory address 13 and 14
+AM=M-1
+D=M
+@13
+M=D
+@SP
+AM=M-1
+D=M
+@14
+M=D
+@13  // Y
+D=M
+@14 // X
+D=M-D
+@ISGT
+D;JGT
+D=0
+@ENDGT
+0;JMP
+(ISGT)
+D=-1
+(ENDGT)
+@14
+M=D
+@14 // push memory address 14 to stack
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+@15
+A=M
+0;JMP
+(LT)
+@SP // pop from stack to memory address 13 and 14
+AM=M-1
+D=M
+@13
+M=D
+@SP
+AM=M-1
+D=M
+@14
+M=D
+@13  // Y
+D=M
+@14 // X
+D=M-D
+@ISLT
+D;JLT
+D=0
+@ENDLT
+0;JMP
+(ISLT)
+D=-1
+(ENDLT)
+@14
+M=D
+@14 // push memory address 14 to stack 
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+@15
+A=M
+0;JMP
+(AND)
+@SP // pop from stack to memory address 13 and 14
+AM=M-1
+D=M
+@13
+M=D
+@SP
+AM=M-1
+D=M
+@14
+M=D
+@13 // first pop value
+D=M
+@14 // second pop value
+M = M&D
+@14 // push memory address 14 to stack 
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+@15
+A=M
+0;JMP
+(OR)
+@SP // pop from stack to memory address 13 and 14
+AM=M-1
+D=M
+@13
+M=D
+@SP
+AM=M-1
+D=M
+@14
+M=D
+@13 // first pop value
+D=M
+@14 // second pop value
+M = M|D
+@14 // push memory address 14 to stack 
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+@15
+A=M
+0;JMP
+(NOT)
+@SP // pop from stack to memory address 13
+AM=M-1
+D=M
+@13
+M=D
+@14 // first pop value
+M=!M
+@14 // push memory address 14 to stack 
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+@15
+A=M
+0;JMP
 (BOOTSTRAP)
 @256
 D=A
@@ -184,36 +382,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.0
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT0
-D;JLT
-D=0
-@ENDLT0
+@LT
 0;JMP
-(LT0)
-D=-1
-(ENDLT0)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.0)
 //C_IF arg1: N_LT_2 arg2: None if-goto N_LT_2
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -260,26 +435,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.0
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.0)
 //C_CALL arg1: Main.fibonacci arg2: 1 call Main.fibonacci 1
 @Main.fibonacci$ret.1 // push return label
 D=A
@@ -323,26 +485,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.1
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.1)
 //C_CALL arg1: Main.fibonacci arg2: 1 call Main.fibonacci 1
 @Main.fibonacci$ret.2 // push return label
 D=A
@@ -369,26 +518,13 @@ M=D
 0;JMP
 (Main.fibonacci$ret.2)
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.0
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.0)
 //C_RETURN arg1: None arg2: None return
 @RETURN
 0;JMP

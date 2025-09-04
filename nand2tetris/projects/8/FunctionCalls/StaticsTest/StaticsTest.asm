@@ -357,3 +357,98 @@ D=M
 M=M+1
 A=M-1
 M=D
+//C_RETURN arg1: None arg2: None return
+@RETURN
+0;JMP
+//C_FUNCTION arg1: Class2.set arg2: 0 function Class2.set 0
+(Class2.set)
+//@0
+//D=A
+//@SP
+//M=M+D
+//C_PUSH arg1: argument arg2: 0 push argument 0
+@0
+D=A
+@ARG
+A=M+D
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+//C_POP arg1: static arg2: 0 pop static 0
+@SP
+AM=M-1
+D=M
+@Class2.0
+M=D
+//C_PUSH arg1: argument arg2: 1 push argument 1
+@1
+D=A
+@ARG
+A=M+D
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+//C_POP arg1: static arg2: 1 pop static 1
+@SP
+AM=M-1
+D=M
+@Class2.1
+M=D
+//C_PUSH arg1: constant arg2: 0 push constant 0
+@0
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_RETURN arg1: None arg2: None return
+@RETURN
+0;JMP
+//C_FUNCTION arg1: Class2.get arg2: 0 function Class2.get 0
+(Class2.get)
+//@0
+//D=A
+//@SP
+//M=M+D
+//C_PUSH arg1: static arg2: 0 push static 0
+@Class2.0
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+//C_PUSH arg1: static arg2: 1 push static 1
+@Class2.1
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+//C_ARITHMETIC arg1: sub arg2: None sub
+@SP // pop from stack to memory address 13 and 14
+AM=M-1
+D=M
+@13
+M=D
+@SP
+AM=M-1
+D=M
+@14
+M=D
+@13 // Y
+D=M
+@14 // X
+M=M-D
+@14 // push memory address 14 to stack 
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+//C_RETURN arg1: None arg2: None return
+@RETURN
+0;JMP

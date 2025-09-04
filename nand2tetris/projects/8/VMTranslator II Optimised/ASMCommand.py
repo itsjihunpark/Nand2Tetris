@@ -1,6 +1,5 @@
-
-
-C_ARITHMETIC_ADD = [
+C_ARITHMETIC_ADD_BOOTSTRAP = [
+    "(ADD)",
     "@SP // pop from stack to memory address 13 and 14",
     "AM=M-1",
     "D=M",
@@ -20,11 +19,24 @@ C_ARITHMETIC_ADD = [
     "@SP", 
     "M=M+1", 
     "A=M-1",  
-    "M=D"
-
+    "M=D",
+    "@15",
+    "A=M",
+    "0;JMP"
 ]
 
-C_ARITHMETIC_SUB = [
+C_ARITHMETIC_ADD = [
+    "@ARITHMETIC_ADD.{count}",
+    "D=A",
+    "@15",
+    "M=D",
+    "@ADD",
+    "0;JMP",
+    "(ARITHMETIC_ADD.{count})"
+]
+
+C_ARITHMETIC_SUB_BOOTSTRAP = [
+    "(SUB)",
     "@SP // pop from stack to memory address 13 and 14",
     "AM=M-1",
     "D=M",
@@ -44,16 +56,29 @@ C_ARITHMETIC_SUB = [
     "@SP", 
     "M=M+1", 
     "A=M-1",  
-    "M=D"
-
+    "M=D",
+    "@15",
+    "A=M",
+    "0;JMP"
 ]
 
-C_ARITHMETIC_NEG = [
+C_ARITHMETIC_SUB =[
+    "@ARITHMETIC_SUB.{count}",
+    "D=A",
+    "@15",
+    "M=D",
+    "@SUB",
+    "0;JMP",
+    "(ARITHMETIC_SUB.{count})"
+]
+
+C_ARITHMETIC_NEG_BOOTSTRAP = [
+    "(NEG)",
     "@SP // pop from stack to memory address 13",
     "AM=M-1",
     "D=M",
     "@13",
-    "M=D"
+    "M=D",
     "@14 // X", 
     "M=-M",
     "@14 // push memory address 14 to stack ",
@@ -61,11 +86,24 @@ C_ARITHMETIC_NEG = [
     "@SP", 
     "M=M+1", 
     "A=M-1",  
-    "M=D"
-
+    "M=D",
+    "@15",
+    "A=M",
+    "0;JMP"
 ]
 
-C_ARITHMETIC_EQ = [
+C_ARITHMETIC_NEG = [
+    "@ARITHMETIC_NEG.{count}",
+    "D=A",
+    "@15",
+    "M=D",
+    "@NEG",
+    "0;JMP",
+    "(ARITHMETIC_NEG.{count})"
+]
+
+C_ARITHMETIC_EQ_BOOTSTRAP = [
+    "(EQ)",
     "@SP // pop from stack to memory address 13 and 14",
     "AM=M-1",
     "D=M",
@@ -80,14 +118,14 @@ C_ARITHMETIC_EQ = [
     "D=M", 
     "@14 // x",
     "D=M-D", 
-    "@EQ{counter}",
+    "@ISEQ",
     "D;JEQ",
     "D=0",
-    "@ENDEQ{counter}",
+    "@ENDEQ",
     "0;JMP",
-    "(EQ{counter})",
+    "(ISE)",
     "D=-1",
-    "(ENDEQ{counter})",
+    "(ENDEQ)",
     "@14",
     "M=D",
     "@14 // push memory address 14 to stack ",
@@ -95,10 +133,24 @@ C_ARITHMETIC_EQ = [
     "@SP", 
     "M=M+1", 
     "A=M-1",  
-    "M=D"
+    "M=D",
+    "@15",
+    "A=M",
+    "0;JMP"
 ]
 
-C_ARITHMETIC_GT = [
+C_ARITHMETIC_EQ = [
+    "@ARITHMETIC_EQ.{count}",
+    "D=A",
+    "@15",
+    "M=D",
+    "@EQ",
+    "0;JMP",
+    "(ARITHMETIC_EQ.{count})"
+]
+
+C_ARITHMETIC_GT_BOOTSTRAP = [
+    "(GT)",
     "@SP // pop from stack to memory address 13 and 14",
     "AM=M-1",
     "D=M",
@@ -113,14 +165,14 @@ C_ARITHMETIC_GT = [
     "D=M",
     "@14 // X",
     "D=M-D",
-    "@GT{counter}", 
+    "@ISGT", 
     "D;JGT",
     "D=0",
-    "@ENDGT{counter}",
+    "@ENDGT",
     "0;JMP",
-    "(GT{counter})",
+    "(ISGT)",
     "D=-1",
-    "(ENDGT{counter})",
+    "(ENDGT)",
     "@14",
     "M=D",
     "@14 // push memory address 14 to stack",
@@ -128,10 +180,23 @@ C_ARITHMETIC_GT = [
     "@SP", 
     "M=M+1", 
     "A=M-1",  
-    "M=D"
+    "M=D",
+    "@15",
+    "A=M",
+    "0;JMP"
+]
+C_ARITHMETIC_GT = [
+    "@ARITHMETIC_GT.{count}",
+    "D=A",
+    "@15",
+    "M=D",
+    "@GT",
+    "0;JMP",
+    "(ARITHMETIC_GT.{count})"
 ]
 
-C_ARITHMETIC_LT = [
+C_ARITHMETIC_LT_BOOTSTRAP = [
+    "(LT)",
     "@SP // pop from stack to memory address 13 and 14",
     "AM=M-1",
     "D=M",
@@ -146,14 +211,14 @@ C_ARITHMETIC_LT = [
     "D=M", 
     "@14 // X",
     "D=M-D",
-    "@LT{counter}", 
+    "@ISLT", 
     "D;JLT",
     "D=0",
-    "@ENDLT{counter}",
+    "@ENDLT",
     "0;JMP",
-    "(LT{counter})",
+    "(ISLT)",
     "D=-1",
-    "(ENDLT{counter})",
+    "(ENDLT)",
     "@14",
     "M=D",
     "@14 // push memory address 14 to stack ",
@@ -161,10 +226,24 @@ C_ARITHMETIC_LT = [
     "@SP", 
     "M=M+1", 
     "A=M-1",  
-    "M=D"
+    "M=D",
+    "@15",
+    "A=M",
+    "0;JMP"
 ]
 
-C_ARITHMETIC_AND = [
+C_ARITHMETIC_LT = [
+    "@ARITHMETIC_LT.{count}",
+    "D=A",
+    "@15",
+    "M=D",
+    "@LT",
+    "0;JMP",
+    "(ARITHMETIC_LT.{count})"
+]
+
+C_ARITHMETIC_AND_BOOTSTRAP = [
+    "(AND)",
     "@SP // pop from stack to memory address 13 and 14",
     "AM=M-1",
     "D=M",
@@ -180,13 +259,28 @@ C_ARITHMETIC_AND = [
     "@14 // second pop value",
     "M = M&D",
     "@14 // push memory address 14 to stack ",
-    "D=M"
+    "D=M",
     "@SP", 
     "M=M+1", 
     "A=M-1",  
-    "M=D"
+    "M=D",
+    "@15",
+    "A=M",
+    "0;JMP"
 ]
-C_ARITHMETIC_OR = [
+
+C_ARITHMETIC_AND = [
+    "@ARITHMETIC_AND.{count}",
+    "D=A",
+    "@15",
+    "M=D",
+    "@AND",
+    "0;JMP",
+    "(ARITHMETIC_AND.{count})"
+]
+
+C_ARITHMETIC_OR_BOOTSTRAP = [
+    "(OR)",
     "@SP // pop from stack to memory address 13 and 14",
     "AM=M-1",
     "D=M",
@@ -206,9 +300,24 @@ C_ARITHMETIC_OR = [
     "@SP", 
     "M=M+1", 
     "A=M-1",  
-    "M=D"
+    "M=D",
+    "@15",
+    "A=M",
+    "0;JMP"
 ]
-C_ARITHMETIC_NOT = [
+
+C_ARITHMETIC_OR = [  
+    "@ARITHMETIC_OR.{count}",
+    "D=A",
+    "@15",
+    "M=D",
+    "@OR",
+    "0;JMP",
+    "(ARITHMETIC_OR.{count})"
+]
+
+C_ARITHMETIC_NOT_BOOTSTRAP = [
+    "(NOT)",
     "@SP // pop from stack to memory address 13",
     "AM=M-1",
     "D=M",
@@ -221,7 +330,20 @@ C_ARITHMETIC_NOT = [
     "@SP", 
     "M=M+1", 
     "A=M-1",  
-    "M=D"
+    "M=D",
+    "@15",
+    "A=M",
+    "0;JMP"
+]
+
+C_ARITHMETIC_NOT = [
+    "@ARITHMETIC_NOT.{count}",
+    "D=A",
+    "@15",
+    "M=D",
+    "@NOT",
+    "0;JMP",
+    "(ARITHMETIC_NOT.{count})"
 ]
 
 C_LABEL =[
@@ -382,3 +504,5 @@ C_RETURN = [
     "@RETURN",
     "0;JMP"
 ]
+
+BOOTSTRAP_CODE = C_RETURN_BOOTSTRAP + C_CALL_BOOTSTRAP + C_ARITHMETIC_ADD_BOOTSTRAP+C_ARITHMETIC_SUB_BOOTSTRAP + C_ARITHMETIC_NEG_BOOTSTRAP + C_ARITHMETIC_GT_BOOTSTRAP + C_ARITHMETIC_LT_BOOTSTRAP + C_ARITHMETIC_AND_BOOTSTRAP + C_ARITHMETIC_OR_BOOTSTRAP + C_ARITHMETIC_NOT_BOOTSTRAP

@@ -86,7 +86,205 @@ M=D
 D=M
 @5
 D=D-A
+@15
+A=M
+0;JMP
+(ADD)
+@SP // pop from stack to memory address 13 and 14
+AM=M-1
+D=M
 @13
+M=D
+@SP
+AM=M-1
+D=M
+@14
+M=D
+@13 // Y
+D=M
+@14 // X
+M=M+D
+@14 // push memory address 14 to stack 
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+@15
+A=M
+0;JMP
+(SUB)
+@SP // pop from stack to memory address 13 and 14
+AM=M-1
+D=M
+@13
+M=D
+@SP
+AM=M-1
+D=M
+@14
+M=D
+@13 // Y
+D=M
+@14 // X
+M=M-D
+@14 // push memory address 14 to stack 
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+@15
+A=M
+0;JMP
+(NEG)
+@SP // pop from stack to memory address 13
+AM=M-1
+D=M
+@13
+M=D
+@14 // X
+M=-M
+@14 // push memory address 14 to stack 
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+@15
+A=M
+0;JMP
+(GT)
+@SP // pop from stack to memory address 13 and 14
+AM=M-1
+D=M
+@13
+M=D
+@SP
+AM=M-1
+D=M
+@14
+M=D
+@13  // Y
+D=M
+@14 // X
+D=M-D
+@ISGT
+D;JGT
+D=0
+@ENDGT
+0;JMP
+(ISGT)
+D=-1
+(ENDGT)
+@14
+M=D
+@14 // push memory address 14 to stack
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+@15
+A=M
+0;JMP
+(LT)
+@SP // pop from stack to memory address 13 and 14
+AM=M-1
+D=M
+@13
+M=D
+@SP
+AM=M-1
+D=M
+@14
+M=D
+@13  // Y
+D=M
+@14 // X
+D=M-D
+@ISLT
+D;JLT
+D=0
+@ENDLT
+0;JMP
+(ISLT)
+D=-1
+(ENDLT)
+@14
+M=D
+@14 // push memory address 14 to stack 
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+@15
+A=M
+0;JMP
+(AND)
+@SP // pop from stack to memory address 13 and 14
+AM=M-1
+D=M
+@13
+M=D
+@SP
+AM=M-1
+D=M
+@14
+M=D
+@13 // first pop value
+D=M
+@14 // second pop value
+M = M&D
+@14 // push memory address 14 to stack 
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+@15
+A=M
+0;JMP
+(OR)
+@SP // pop from stack to memory address 13 and 14
+AM=M-1
+D=M
+@13
+M=D
+@SP
+AM=M-1
+D=M
+@14
+M=D
+@13 // first pop value
+D=M
+@14 // second pop value
+M = M|D
+@14 // push memory address 14 to stack 
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+@15
+A=M
+0;JMP
+(NOT)
+@SP // pop from stack to memory address 13
+AM=M-1
+D=M
+@13
+M=D
+@14 // first pop value
+M=!M
+@14 // push memory address 14 to stack 
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+@15
 A=M
 0;JMP
 (BOOTSTRAP)
@@ -102,7 +300,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.0
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -133,7 +331,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.1
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -164,7 +362,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.2
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -195,7 +393,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.3
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -226,7 +424,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.4
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -257,7 +455,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.5
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -288,7 +486,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.6
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -319,7 +517,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.7
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -366,33 +564,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: not arg2: None not
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
+@ARITHMETIC_NOT.0
+D=A
+@15
 M=D
-@14 // first pop value
-M=!M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@NOT
+0;JMP
+(ARITHMETIC_NOT.0)
 //C_ARITHMETIC arg1: not arg2: None not
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
+@ARITHMETIC_NOT.1
+D=A
+@15
 M=D
-@14 // first pop value
-M=!M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@NOT
+0;JMP
+(ARITHMETIC_NOT.1)
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -447,36 +633,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.0
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT2
-D;JLT
-D=0
-@ENDLT2
+@LT
 0;JMP
-(LT2)
-D=-1
-(ENDLT2)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.0)
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -507,7 +670,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.8
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -549,50 +712,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_GT.0
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@GT3
-D;JGT
-D=0
-@ENDGT3
+@GT
 0;JMP
-(GT3)
-D=-1
-(ENDGT3)
-@14
-M=D
-@14 // push memory address 14 to stack
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_GT.0)
 //C_ARITHMETIC arg1: not arg2: None not
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
+@ARITHMETIC_NOT.2
+D=A
+@15
 M=D
-@14 // first pop value
-M=!M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@NOT
+0;JMP
+(ARITHMETIC_NOT.2)
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -646,50 +780,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_GT.1
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@GT5
-D;JGT
-D=0
-@ENDGT5
+@GT
 0;JMP
-(GT5)
-D=-1
-(ENDGT5)
-@14
-M=D
-@14 // push memory address 14 to stack
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_GT.1)
 //C_ARITHMETIC arg1: not arg2: None not
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
+@ARITHMETIC_NOT.3
+D=A
+@15
 M=D
-@14 // first pop value
-M=!M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@NOT
+0;JMP
+(ARITHMETIC_NOT.3)
 //C_IF arg1: WHILE_END1 arg2: None if-goto WHILE_END1
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -718,26 +823,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.0
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.0)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
 AM=M-1
@@ -777,26 +869,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.1
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.1)
 //C_POP arg1: argument arg2: 0 pop argument 0
 @SP
 AM=M-1
@@ -850,7 +929,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.9
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -888,7 +967,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.10
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -926,7 +1005,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.11
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -967,7 +1046,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.12
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -998,7 +1077,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.13
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -1054,50 +1133,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_GT.2
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@GT9
-D;JGT
-D=0
-@ENDGT9
+@GT
 0;JMP
-(GT9)
-D=-1
-(ENDGT9)
-@14
-M=D
-@14 // push memory address 14 to stack
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_GT.2)
 //C_ARITHMETIC arg1: not arg2: None not
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
+@ARITHMETIC_NOT.4
+D=A
+@15
 M=D
-@14 // first pop value
-M=!M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@NOT
+0;JMP
+(ARITHMETIC_NOT.4)
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -1128,7 +1178,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.14
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -1170,7 +1220,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.15
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -1227,7 +1277,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.16
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -1297,7 +1347,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.17
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -1350,7 +1400,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.18
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -1391,36 +1441,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_EQ.0
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // y
-D=M
-@14 // x
-D=M-D
-@EQ11
-D;JEQ
-D=0
-@ENDEQ11
+@EQ
 0;JMP
-(EQ11)
-D=-1
-(ENDEQ11)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_EQ.0)
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -1439,71 +1466,29 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_GT.3
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@GT12
-D;JGT
-D=0
-@ENDGT12
+@GT
 0;JMP
-(GT12)
-D=-1
-(ENDGT12)
-@14
-M=D
-@14 // push memory address 14 to stack
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_GT.3)
 //C_ARITHMETIC arg1: or arg2: None or
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_OR.0
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M|D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@OR
+0;JMP
+(ARITHMETIC_OR.0)
 //C_ARITHMETIC arg1: not arg2: None not
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
+@ARITHMETIC_NOT.5
+D=A
+@15
 M=D
-@14 // first pop value
-M=!M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@NOT
+0;JMP
+(ARITHMETIC_NOT.5)
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -1523,7 +1508,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.19
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -1574,36 +1559,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_GT.4
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@GT15
-D;JGT
-D=0
-@ENDGT15
+@GT
 0;JMP
-(GT15)
-D=-1
-(ENDGT15)
-@14
-M=D
-@14 // push memory address 14 to stack
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_GT.4)
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -1659,7 +1621,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.20
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -1684,7 +1646,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.21
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -1725,7 +1687,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.22
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -1812,7 +1774,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.23
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -1864,7 +1826,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.24
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -1895,7 +1857,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.25
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -1937,7 +1899,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.26
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -1982,33 +1944,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: not arg2: None not
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
+@ARITHMETIC_NOT.6
+D=A
+@15
 M=D
-@14 // first pop value
-M=!M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@NOT
+0;JMP
+(ARITHMETIC_NOT.6)
 //C_ARITHMETIC arg1: not arg2: None not
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
+@ARITHMETIC_NOT.7
+D=A
+@15
 M=D
-@14 // first pop value
-M=!M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@NOT
+0;JMP
+(ARITHMETIC_NOT.7)
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -2028,7 +1978,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.27
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -2082,36 +2032,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_EQ.1
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // y
-D=M
-@14 // x
-D=M-D
-@EQ18
-D;JEQ
-D=0
-@ENDEQ18
+@EQ
 0;JMP
-(EQ18)
-D=-1
-(ENDEQ18)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_EQ.1)
 //C_POP arg1: local arg2: 4 pop local 4
 @SP
 AM=M-1
@@ -2140,19 +2067,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: not arg2: None not
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
+@ARITHMETIC_NOT.8
+D=A
+@15
 M=D
-@14 // first pop value
-M=!M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@NOT
+0;JMP
+(ARITHMETIC_NOT.8)
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -2188,36 +2109,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_EQ.2
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // y
-D=M
-@14 // x
-D=M-D
-@EQ20
-D;JEQ
-D=0
-@ENDEQ20
+@EQ
 0;JMP
-(EQ20)
-D=-1
-(ENDEQ20)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_EQ.2)
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -2251,7 +2149,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.28
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -2306,7 +2204,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.29
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -2395,7 +2293,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.30
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -2447,7 +2345,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.31
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -2499,7 +2397,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.32
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -2562,7 +2460,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.33
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -2600,7 +2498,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.34
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -2637,26 +2535,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.0
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.0)
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
@@ -2719,50 +2604,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.1
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT22
-D;JLT
-D=0
-@ENDLT22
+@LT
 0;JMP
-(LT22)
-D=-1
-(ENDLT22)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.1)
 //C_ARITHMETIC arg1: not arg2: None not
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
+@ARITHMETIC_NOT.9
+D=A
+@15
 M=D
-@14 // first pop value
-M=!M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@NOT
+0;JMP
+(ARITHMETIC_NOT.9)
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -2791,26 +2647,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.1
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.1)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
 AM=M-1
@@ -2846,26 +2689,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.2
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.2)
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -2884,26 +2714,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.2
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.2)
 //C_PUSH arg1: static arg2: 0 push static 0
 @Math.0
 D=M
@@ -2912,26 +2729,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.3
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.3)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -2966,26 +2770,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.3
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.3)
 //C_PUSH arg1: static arg2: 0 push static 0
 @Math.0
 D=M
@@ -2994,26 +2785,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.4
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.4)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -3031,26 +2809,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.5
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.5)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
 AM=M-1
@@ -3125,36 +2890,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.2
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT31
-D;JLT
-D=0
-@ENDLT31
+@LT
 0;JMP
-(LT31)
-D=-1
-(ENDLT31)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.2)
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -3180,18 +2922,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: neg arg2: None neg
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
-M=D@14 // X
-M=-M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
+@ARITHMETIC_NEG.0
+D=A
+@15
 M=D
+@NEG
+0;JMP
+(ARITHMETIC_NEG.0)
 //C_POP arg1: argument arg2: 0 pop argument 0
 @SP
 AM=M-1
@@ -3277,36 +3014,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.3
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT33
-D;JLT
-D=0
-@ENDLT33
+@LT
 0;JMP
-(LT33)
-D=-1
-(ENDLT33)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.3)
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -3325,56 +3039,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_GT.5
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@GT34
-D;JGT
-D=0
-@ENDGT34
+@GT
 0;JMP
-(GT34)
-D=-1
-(ENDGT34)
-@14
-M=D
-@14 // push memory address 14 to stack
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_GT.5)
 //C_ARITHMETIC arg1: and arg2: None and
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_AND.0
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M&D
-@14 // push memory address 14 to stack 
-D=M@SP
-M=M+1
-A=M-1
-M=D
+@AND
+0;JMP
+(ARITHMETIC_AND.0)
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -3393,36 +3072,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_GT.6
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@GT36
-D;JGT
-D=0
-@ENDGT36
+@GT
 0;JMP
-(GT36)
-D=-1
-(ENDGT36)
-@14
-M=D
-@14 // push memory address 14 to stack
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_GT.6)
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -3441,77 +3097,29 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.4
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT37
-D;JLT
-D=0
-@ENDLT37
+@LT
 0;JMP
-(LT37)
-D=-1
-(ENDLT37)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.4)
 //C_ARITHMETIC arg1: and arg2: None and
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_AND.1
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M&D
-@14 // push memory address 14 to stack 
-D=M@SP
-M=M+1
-A=M-1
-M=D
+@AND
+0;JMP
+(ARITHMETIC_AND.1)
 //C_ARITHMETIC arg1: or arg2: None or
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_OR.1
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M|D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@OR
+0;JMP
+(ARITHMETIC_OR.1)
 //C_POP arg1: local arg2: 4 pop local 4
 @SP
 AM=M-1
@@ -3548,7 +3156,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.35
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -3600,7 +3208,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.36
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -3654,36 +3262,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.5
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT40
-D;JLT
-D=0
-@ENDLT40
+@LT
 0;JMP
-(LT40)
-D=-1
-(ENDLT40)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.5)
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -3799,26 +3384,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.4
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.4)
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -3837,71 +3409,29 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.5
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
-//C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
-M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT43
-D;JLT
-D=0
-@ENDLT43
+@SUB
 0;JMP
-(LT43)
-D=-1
-(ENDLT43)
-@14
+(ARITHMETIC_SUB.5)
+//C_ARITHMETIC arg1: lt arg2: None lt
+@ARITHMETIC_LT.6
+D=A
+@15
 M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@LT
+0;JMP
+(ARITHMETIC_LT.6)
 //C_ARITHMETIC arg1: not arg2: None not
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
+@ARITHMETIC_NOT.10
+D=A
+@15
 M=D
-@14 // first pop value
-M=!M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@NOT
+0;JMP
+(ARITHMETIC_NOT.10)
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -3930,26 +3460,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.6
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.6)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -3977,25 +3494,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: and arg2: None and
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_AND.2
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M&D
-@14 // push memory address 14 to stack 
-D=M@SP
-M=M+1
-A=M-1
-M=D
+@AND
+0;JMP
+(ARITHMETIC_AND.2)
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
@@ -4004,50 +3509,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_EQ.3
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // y
-D=M
-@14 // x
-D=M-D
-@EQ47
-D;JEQ
-D=0
-@ENDEQ47
+@EQ
 0;JMP
-(EQ47)
-D=-1
-(ENDEQ47)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_EQ.3)
 //C_ARITHMETIC arg1: not arg2: None not
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
+@ARITHMETIC_NOT.11
+D=A
+@15
 M=D
-@14 // first pop value
-M=!M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@NOT
+0;JMP
+(ARITHMETIC_NOT.11)
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -4083,26 +3559,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.7
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.7)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
 AM=M-1
@@ -4148,26 +3611,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.8
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.8)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -4185,26 +3635,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.9
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.9)
 //C_POP arg1: local arg2: 2 pop local 2
 @SP
 AM=M-1
@@ -4244,26 +3681,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.10
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.10)
 //C_POP arg1: argument arg2: 0 pop argument 0
 @SP
 AM=M-1
@@ -4299,26 +3723,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.11
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.11)
 //C_POP arg1: local arg2: 3 pop local 3
 @SP
 AM=M-1
@@ -4375,18 +3786,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: neg arg2: None neg
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
-M=D@14 // X
-M=-M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
+@ARITHMETIC_NEG.1
+D=A
+@15
 M=D
+@NEG
+0;JMP
+(ARITHMETIC_NEG.1)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
 AM=M-1
@@ -4466,36 +3872,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_EQ.4
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // y
-D=M
-@14 // x
-D=M-D
-@EQ55
-D;JEQ
-D=0
-@ENDEQ55
+@EQ
 0;JMP
-(EQ55)
-D=-1
-(ENDEQ55)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_EQ.4)
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -4526,7 +3909,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.37
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -4567,36 +3950,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.7
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT56
-D;JLT
-D=0
-@ENDLT56
+@LT
 0;JMP
-(LT56)
-D=-1
-(ENDLT56)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.7)
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -4615,56 +3975,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_GT.7
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@GT57
-D;JGT
-D=0
-@ENDGT57
+@GT
 0;JMP
-(GT57)
-D=-1
-(ENDGT57)
-@14
-M=D
-@14 // push memory address 14 to stack
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_GT.7)
 //C_ARITHMETIC arg1: and arg2: None and
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_AND.3
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M&D
-@14 // push memory address 14 to stack 
-D=M@SP
-M=M+1
-A=M-1
-M=D
+@AND
+0;JMP
+(ARITHMETIC_AND.3)
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -4683,36 +4008,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_GT.8
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@GT59
-D;JGT
-D=0
-@ENDGT59
+@GT
 0;JMP
-(GT59)
-D=-1
-(ENDGT59)
-@14
-M=D
-@14 // push memory address 14 to stack
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_GT.8)
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -4731,77 +4033,29 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.8
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT60
-D;JLT
-D=0
-@ENDLT60
+@LT
 0;JMP
-(LT60)
-D=-1
-(ENDLT60)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.8)
 //C_ARITHMETIC arg1: and arg2: None and
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_AND.4
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M&D
-@14 // push memory address 14 to stack 
-D=M@SP
-M=M+1
-A=M-1
-M=D
+@AND
+0;JMP
+(ARITHMETIC_AND.4)
 //C_ARITHMETIC arg1: or arg2: None or
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_OR.2
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M|D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@OR
+0;JMP
+(ARITHMETIC_OR.2)
 //C_POP arg1: local arg2: 2 pop local 2
 @SP
 AM=M-1
@@ -4834,26 +4088,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.12
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.12)
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -4873,7 +4114,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.38
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -4944,7 +4185,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.39
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -4996,36 +4237,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.9
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT64
-D;JLT
-D=0
-@ENDLT64
+@LT
 0;JMP
-(LT64)
-D=-1
-(ENDLT64)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.9)
 //C_PUSH arg1: local arg2: 3 push local 3
 @3
 D=A
@@ -5037,53 +4255,29 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: not arg2: None not
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
+@ARITHMETIC_NOT.12
+D=A
+@15
 M=D
-@14 // first pop value
-M=!M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@NOT
+0;JMP
+(ARITHMETIC_NOT.12)
 //C_ARITHMETIC arg1: and arg2: None and
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_AND.5
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M&D
-@14 // push memory address 14 to stack 
-D=M@SP
-M=M+1
-A=M-1
-M=D
+@AND
+0;JMP
+(ARITHMETIC_AND.5)
 //C_ARITHMETIC arg1: not arg2: None not
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
+@ARITHMETIC_NOT.13
+D=A
+@15
 M=D
-@14 // first pop value
-M=!M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@NOT
+0;JMP
+(ARITHMETIC_NOT.13)
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -5119,26 +4313,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.13
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.13)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -5163,47 +4344,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.6
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.6)
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.7
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.7)
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -5222,26 +4377,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.14
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.14)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -5266,57 +4408,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.8
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
-//C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
-M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT73
-D;JLT
-D=0
-@ENDLT73
+@SUB
 0;JMP
-(LT73)
-D=-1
-(ENDLT73)
-@14
+(ARITHMETIC_SUB.8)
+//C_ARITHMETIC arg1: lt arg2: None lt
+@ARITHMETIC_LT.10
+D=A
+@15
 M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@LT
+0;JMP
+(ARITHMETIC_LT.10)
 //C_POP arg1: local arg2: 3 pop local 3
 @SP
 AM=M-1
@@ -5345,19 +4451,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: not arg2: None not
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
+@ARITHMETIC_NOT.14
+D=A
+@15
 M=D
-@14 // first pop value
-M=!M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@NOT
+0;JMP
+(ARITHMETIC_NOT.14)
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -5390,26 +4490,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.15
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.15)
 //C_PUSH arg1: static arg2: 1 push static 1
 @Math.1
 D=M
@@ -5418,26 +4505,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.16
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.16)
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -5456,26 +4530,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.17
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.17)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -5510,26 +4571,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.18
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.18)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -5547,26 +4595,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.19
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.19)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
 AM=M-1
@@ -5621,26 +4656,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.20
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.20)
 //C_PUSH arg1: static arg2: 1 push static 1
 @Math.1
 D=M
@@ -5649,26 +4671,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.21
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.21)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -5693,26 +4702,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.9
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.9)
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -5731,57 +4727,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.10
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
-//C_ARITHMETIC arg1: gt arg2: None gt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
-M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@GT84
-D;JGT
-D=0
-@ENDGT84
+@SUB
 0;JMP
-(GT84)
-D=-1
-(ENDGT84)
-@14
+(ARITHMETIC_SUB.10)
+//C_ARITHMETIC arg1: gt arg2: None gt
+@ARITHMETIC_GT.9
+D=A
+@15
 M=D
-@14 // push memory address 14 to stack
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@GT
+0;JMP
+(ARITHMETIC_GT.9)
 //C_POP arg1: local arg2: 3 pop local 3
 @SP
 AM=M-1
@@ -5810,19 +4770,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: not arg2: None not
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
+@ARITHMETIC_NOT.15
+D=A
+@15
 M=D
-@14 // first pop value
-M=!M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@NOT
+0;JMP
+(ARITHMETIC_NOT.15)
 //C_IF arg1: IF_TRUE2 arg2: None if-goto IF_TRUE2
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -5855,26 +4809,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.22
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.22)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
 AM=M-1
@@ -5917,63 +4858,29 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: neg arg2: None neg
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
-M=D@14 // X
-M=-M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
+@ARITHMETIC_NEG.2
+D=A
+@15
 M=D
-//C_ARITHMETIC arg1: gt arg2: None gt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
-M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@GT88
-D;JGT
-D=0
-@ENDGT88
+@NEG
 0;JMP
-(GT88)
-D=-1
-(ENDGT88)
-@14
+(ARITHMETIC_NEG.2)
+//C_ARITHMETIC arg1: gt arg2: None gt
+@ARITHMETIC_GT.10
+D=A
+@15
 M=D
-@14 // push memory address 14 to stack
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@GT
+0;JMP
+(ARITHMETIC_GT.10)
 //C_ARITHMETIC arg1: not arg2: None not
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
+@ARITHMETIC_NOT.16
+D=A
+@15
 M=D
-@14 // first pop value
-M=!M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@NOT
+0;JMP
+(ARITHMETIC_NOT.16)
 //C_IF arg1: WHILE_END1 arg2: None if-goto WHILE_END1
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -6002,26 +4909,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.23
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.23)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -6046,26 +4940,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.11
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.11)
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -6084,71 +4965,29 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.12
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
-//C_ARITHMETIC arg1: gt arg2: None gt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
-M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@GT93
-D;JGT
-D=0
-@ENDGT93
+@SUB
 0;JMP
-(GT93)
-D=-1
-(ENDGT93)
-@14
+(ARITHMETIC_SUB.12)
+//C_ARITHMETIC arg1: gt arg2: None gt
+@ARITHMETIC_GT.11
+D=A
+@15
 M=D
-@14 // push memory address 14 to stack
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@GT
+0;JMP
+(ARITHMETIC_GT.11)
 //C_ARITHMETIC arg1: not arg2: None not
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
+@ARITHMETIC_NOT.17
+D=A
+@15
 M=D
-@14 // first pop value
-M=!M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@NOT
+0;JMP
+(ARITHMETIC_NOT.17)
 //C_IF arg1: IF_TRUE3 arg2: None if-goto IF_TRUE3
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -6191,26 +5030,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.24
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.24)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -6228,26 +5054,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.25
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.25)
 //C_POP arg1: local arg2: 1 pop local 1
 @SP
 AM=M-1
@@ -6293,26 +5106,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.26
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.26)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -6330,26 +5130,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.13
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.13)
 //C_POP arg1: argument arg2: 0 pop argument 0
 @SP
 AM=M-1
@@ -6386,26 +5173,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.14
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.14)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
 AM=M-1
@@ -6462,18 +5236,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: neg arg2: None neg
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
-M=D@14 // X
-M=-M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
+@ARITHMETIC_NEG.3
+D=A
+@15
 M=D
+@NEG
+0;JMP
+(ARITHMETIC_NEG.3)
 //C_POP arg1: local arg2: 1 pop local 1
 @SP
 AM=M-1
@@ -6553,36 +5322,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.11
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT101
-D;JLT
-D=0
-@ENDLT101
+@LT
 0;JMP
-(LT101)
-D=-1
-(ENDLT101)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.11)
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -6613,7 +5359,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.40
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -6679,63 +5425,29 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: neg arg2: None neg
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
-M=D@14 // X
-M=-M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
+@ARITHMETIC_NEG.4
+D=A
+@15
 M=D
-//C_ARITHMETIC arg1: gt arg2: None gt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
-M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@GT103
-D;JGT
-D=0
-@ENDGT103
+@NEG
 0;JMP
-(GT103)
-D=-1
-(ENDGT103)
-@14
+(ARITHMETIC_NEG.4)
+//C_ARITHMETIC arg1: gt arg2: None gt
+@ARITHMETIC_GT.12
+D=A
+@15
 M=D
-@14 // push memory address 14 to stack
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@GT
+0;JMP
+(ARITHMETIC_GT.12)
 //C_ARITHMETIC arg1: not arg2: None not
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
+@ARITHMETIC_NOT.18
+D=A
+@15
 M=D
-@14 // first pop value
-M=!M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@NOT
+0;JMP
+(ARITHMETIC_NOT.18)
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -6774,26 +5486,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.27
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.27)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -6811,26 +5510,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.28
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.28)
 //C_POP arg1: local arg2: 1 pop local 1
 @SP
 AM=M-1
@@ -6877,7 +5563,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.41
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -6931,50 +5617,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_GT.13
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@GT107
-D;JGT
-D=0
-@ENDGT107
+@GT
 0;JMP
-(GT107)
-D=-1
-(ENDGT107)
-@14
-M=D
-@14 // push memory address 14 to stack
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_GT.13)
 //C_ARITHMETIC arg1: not arg2: None not
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
+@ARITHMETIC_NOT.19
+D=A
+@15
 M=D
-@14 // first pop value
-M=!M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@NOT
+0;JMP
+(ARITHMETIC_NOT.19)
 //C_PUSH arg1: local arg2: 2 push local 2
 @2
 D=A
@@ -6993,70 +5650,29 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.12
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT109
-D;JLT
-D=0
-@ENDLT109
+@LT
 0;JMP
-(LT109)
-D=-1
-(ENDLT109)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.12)
 //C_ARITHMETIC arg1: not arg2: None not
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
+@ARITHMETIC_NOT.20
+D=A
+@15
 M=D
-@14 // first pop value
-M=!M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@NOT
+0;JMP
+(ARITHMETIC_NOT.20)
 //C_ARITHMETIC arg1: and arg2: None and
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_AND.6
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M&D
-@14 // push memory address 14 to stack 
-D=M@SP
-M=M+1
-A=M-1
-M=D
+@AND
+0;JMP
+(ARITHMETIC_AND.6)
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -7117,26 +5733,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.15
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.15)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
 AM=M-1
@@ -7198,36 +5801,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_GT.14
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@GT113
-D;JGT
-D=0
-@ENDGT113
+@GT
 0;JMP
-(GT113)
-D=-1
-(ENDGT113)
-@14
-M=D
-@14 // push memory address 14 to stack
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_GT.14)
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -7310,36 +5890,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.13
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT114
-D;JLT
-D=0
-@ENDLT114
+@LT
 0;JMP
-(LT114)
-D=-1
-(ENDLT114)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.13)
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -7429,26 +5986,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.29
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.29)
 //C_PUSH arg1: constant arg2: 14334 push constant 14334
 @14334
 D=A
@@ -7507,26 +6051,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.30
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.30)
 //C_PUSH arg1: constant arg2: 2050 push constant 2050
 @2050
 D=A
@@ -7604,26 +6135,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.31
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.31)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -7667,26 +6185,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.32
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.32)
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -7779,36 +6284,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.14
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT119
-D;JLT
-D=0
-@ENDLT119
+@LT
 0;JMP
-(LT119)
-D=-1
-(ENDLT119)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.14)
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -7839,7 +6321,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.42
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -7880,36 +6362,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_EQ.5
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // y
-D=M
-@14 // x
-D=M-D
-@EQ120
-D;JEQ
-D=0
-@ENDEQ120
+@EQ
 0;JMP
-(EQ120)
-D=-1
-(ENDEQ120)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_EQ.5)
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -7992,36 +6451,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.15
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT121
-D;JLT
-D=0
-@ENDLT121
+@LT
 0;JMP
-(LT121)
-D=-1
-(ENDLT121)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.15)
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
@@ -8040,26 +6476,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.33
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.33)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -8087,70 +6510,29 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.16
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT123
-D;JLT
-D=0
-@ENDLT123
+@LT
 0;JMP
-(LT123)
-D=-1
-(ENDLT123)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.16)
 //C_ARITHMETIC arg1: and arg2: None and
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_AND.7
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M&D
-@14 // push memory address 14 to stack 
-D=M@SP
-M=M+1
-A=M-1
-M=D
+@AND
+0;JMP
+(ARITHMETIC_AND.7)
 //C_ARITHMETIC arg1: not arg2: None not
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
+@ARITHMETIC_NOT.21
+D=A
+@15
 M=D
-@14 // first pop value
-M=!M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@NOT
+0;JMP
+(ARITHMETIC_NOT.21)
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -8179,26 +6561,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.34
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.34)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -8250,26 +6619,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.35
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.35)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -8294,36 +6650,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_EQ.6
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // y
-D=M
-@14 // x
-D=M-D
-@EQ128
-D;JEQ
-D=0
-@ENDEQ128
+@EQ
 0;JMP
-(EQ128)
-D=-1
-(ENDEQ128)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_EQ.6)
 //C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
@@ -8342,57 +6675,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_GT.15
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@GT129
-D;JGT
-D=0
-@ENDGT129
+@GT
 0;JMP
-(GT129)
-D=-1
-(ENDGT129)
-@14
-M=D
-@14 // push memory address 14 to stack
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_GT.15)
 //C_ARITHMETIC arg1: or arg2: None or
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_OR.3
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M|D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@OR
+0;JMP
+(ARITHMETIC_OR.3)
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
@@ -8411,26 +6708,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.36
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.36)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -8455,57 +6739,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_EQ.7
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // y
-D=M
-@14 // x
-D=M-D
-@EQ132
-D;JEQ
-D=0
-@ENDEQ132
+@EQ
 0;JMP
-(EQ132)
-D=-1
-(ENDEQ132)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_EQ.7)
 //C_ARITHMETIC arg1: or arg2: None or
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_OR.4
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M|D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@OR
+0;JMP
+(ARITHMETIC_OR.4)
 //C_IF arg1: IF_TRUE2 arg2: None if-goto IF_TRUE2
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -8569,26 +6817,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.37
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.37)
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
@@ -8607,26 +6842,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.38
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.38)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -8654,26 +6876,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.16
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.16)
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
@@ -8692,26 +6901,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.39
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.39)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -8729,26 +6925,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.40
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.40)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
 AM=M-1
@@ -8803,26 +6986,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.41
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.41)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -8857,57 +7027,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.42
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
-//C_ARITHMETIC arg1: eq arg2: None eq
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
-M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // y
-D=M
-@14 // x
-D=M-D
-@EQ141
-D;JEQ
-D=0
-@ENDEQ141
+@ADD
 0;JMP
-(EQ141)
-D=-1
-(ENDEQ141)
-@14
+(ARITHMETIC_ADD.42)
+//C_ARITHMETIC arg1: eq arg2: None eq
+@ARITHMETIC_EQ.8
+D=A
+@15
 M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@EQ
+0;JMP
+(ARITHMETIC_EQ.8)
 //C_IF arg1: IF_TRUE3 arg2: None if-goto IF_TRUE3
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -8940,26 +7074,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.43
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.43)
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -8978,26 +7099,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.44
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.44)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
 AM=M-1
@@ -9056,26 +7164,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.45
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.45)
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
@@ -9094,26 +7189,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.46
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.46)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -9193,26 +7275,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.47
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.47)
 //C_PUSH arg1: constant arg2: 16379 push constant 16379
 @16379
 D=A
@@ -9221,36 +7290,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_GT.16
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@GT147
-D;JGT
-D=0
-@ENDGT147
+@GT
 0;JMP
-(GT147)
-D=-1
-(ENDGT147)
-@14
-M=D
-@14 // push memory address 14 to stack
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_GT.16)
 //C_IF arg1: IF_TRUE4 arg2: None if-goto IF_TRUE4
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -9281,7 +7327,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.43
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -9322,26 +7368,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.48
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.48)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -9376,57 +7409,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.49
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
-//C_ARITHMETIC arg1: gt arg2: None gt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
-M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@GT150
-D;JGT
-D=0
-@ENDGT150
+@ADD
 0;JMP
-(GT150)
-D=-1
-(ENDGT150)
-@14
+(ARITHMETIC_ADD.49)
+//C_ARITHMETIC arg1: gt arg2: None gt
+@ARITHMETIC_GT.17
+D=A
+@15
 M=D
-@14 // push memory address 14 to stack
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@GT
+0;JMP
+(ARITHMETIC_GT.17)
 //C_IF arg1: IF_TRUE5 arg2: None if-goto IF_TRUE5
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -9459,26 +7456,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.50
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.50)
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -9490,26 +7474,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.51
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.51)
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
@@ -9528,26 +7499,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.52
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.52)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -9575,26 +7533,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.17
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.17)
 //C_PUSH arg1: constant arg2: 2 push constant 2
 @2
 D=A
@@ -9603,26 +7548,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.18
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.18)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
 AM=M-1
@@ -9677,26 +7609,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.53
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.53)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -9731,57 +7650,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.54
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
-//C_ARITHMETIC arg1: eq arg2: None eq
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
-M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // y
-D=M
-@14 // x
-D=M-D
-@EQ158
-D;JEQ
-D=0
-@ENDEQ158
+@ADD
 0;JMP
-(EQ158)
-D=-1
-(ENDEQ158)
-@14
+(ARITHMETIC_ADD.54)
+//C_ARITHMETIC arg1: eq arg2: None eq
+@ARITHMETIC_EQ.9
+D=A
+@15
 M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@EQ
+0;JMP
+(ARITHMETIC_EQ.9)
 //C_IF arg1: IF_TRUE6 arg2: None if-goto IF_TRUE6
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -9814,26 +7697,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.55
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.55)
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -9845,26 +7715,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.56
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.56)
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -9886,26 +7743,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.57
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.57)
 //C_PUSH arg1: constant arg2: 4 push constant 4
 @4
 D=A
@@ -9914,26 +7758,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.58
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.58)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
 AM=M-1
@@ -9992,26 +7823,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.59
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.59)
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -10023,26 +7841,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.60
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.60)
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
@@ -10061,26 +7866,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.61
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.61)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -10152,26 +7944,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.62
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.62)
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -10193,26 +7972,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.63
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.63)
 //C_PUSH arg1: constant arg2: 2 push constant 2
 @2
 D=A
@@ -10221,26 +7987,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.64
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.64)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
 AM=M-1
@@ -10296,26 +8049,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.65
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.65)
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
@@ -10377,26 +8117,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.66
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.66)
 //C_RETURN arg1: None arg2: None return
 @RETURN
 0;JMP
@@ -10436,26 +8163,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.19
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.19)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
 AM=M-1
@@ -10491,26 +8205,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.67
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.67)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -10562,26 +8263,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.68
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.68)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -10606,36 +8294,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_EQ.10
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // y
-D=M
-@14 // x
-D=M-D
-@EQ174
-D;JEQ
-D=0
-@ENDEQ174
+@EQ
 0;JMP
-(EQ174)
-D=-1
-(ENDEQ174)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_EQ.10)
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -10668,26 +8333,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.69
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.69)
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
@@ -10706,26 +8358,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.70
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.70)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -10753,26 +8392,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.20
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.20)
 //C_PUSH arg1: constant arg2: 2 push constant 2
 @2
 D=A
@@ -10781,26 +8407,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.21
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.21)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
 AM=M-1
@@ -10859,26 +8472,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.71
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.71)
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
@@ -10897,26 +8497,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.72
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.72)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -10944,26 +8531,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.22
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.22)
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
@@ -10982,26 +8556,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.73
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.73)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -11019,26 +8580,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.74
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.74)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
 AM=M-1
@@ -11093,26 +8641,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.75
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.75)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -11147,57 +8682,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.76
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
-//C_ARITHMETIC arg1: eq arg2: None eq
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
-M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // y
-D=M
-@14 // x
-D=M-D
-@EQ186
-D;JEQ
-D=0
-@ENDEQ186
+@ADD
 0;JMP
-(EQ186)
-D=-1
-(ENDEQ186)
-@14
+(ARITHMETIC_ADD.76)
+//C_ARITHMETIC arg1: eq arg2: None eq
+@ARITHMETIC_EQ.11
+D=A
+@15
 M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@EQ
+0;JMP
+(ARITHMETIC_EQ.11)
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -11230,26 +8729,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.77
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.77)
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -11268,26 +8754,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.78
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.78)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
 AM=M-1
@@ -11346,26 +8819,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.79
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.79)
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
@@ -11384,26 +8844,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.80
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.80)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -11495,19 +8942,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: not arg2: None not
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
+@ARITHMETIC_NOT.22
+D=A
+@15
 M=D
-@14 // first pop value
-M=!M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@NOT
+0;JMP
+(ARITHMETIC_NOT.22)
 //C_POP arg1: static arg2: 2 pop static 2
 @SP
 AM=M-1
@@ -11556,7 +8997,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.44
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -11587,7 +9028,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.45
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -11618,7 +9059,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.46
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -11672,7 +9113,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.47
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -11787,7 +9228,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.48
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -11902,7 +9343,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.49
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -12017,7 +9458,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.50
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -12132,7 +9573,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.51
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -12247,7 +9688,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.52
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -12362,7 +9803,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.53
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -12477,7 +9918,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.54
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -12592,7 +10033,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.55
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -12707,7 +10148,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.56
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -12822,7 +10263,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.57
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -12937,7 +10378,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.58
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -13052,7 +10493,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.59
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -13167,7 +10608,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.60
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -13282,7 +10723,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.61
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -13397,7 +10838,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.62
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -13512,7 +10953,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.63
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -13627,7 +11068,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.64
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -13742,7 +11183,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.65
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -13857,7 +11298,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.66
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -13972,7 +11413,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.67
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -14087,7 +11528,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.68
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -14202,7 +11643,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.69
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -14317,7 +11758,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.70
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -14432,7 +11873,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.71
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -14547,7 +11988,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.72
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -14662,7 +12103,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.73
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -14777,7 +12218,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.74
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -14892,7 +12333,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.75
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -15007,7 +12448,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.76
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -15122,7 +12563,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.77
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -15237,7 +12678,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.78
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -15352,7 +12793,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.79
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -15467,7 +12908,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.80
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -15582,7 +13023,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.81
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -15697,7 +13138,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.82
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -15812,7 +13253,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.83
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -15927,7 +13368,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.84
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -16042,7 +13483,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.85
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -16157,7 +13598,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.86
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -16272,7 +13713,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.87
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -16387,7 +13828,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.88
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -16502,7 +13943,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.89
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -16617,7 +14058,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.90
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -16732,7 +14173,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.91
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -16847,7 +14288,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.92
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -16962,7 +14403,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.93
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -17077,7 +14518,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.94
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -17192,7 +14633,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.95
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -17307,7 +14748,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.96
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -17422,7 +14863,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.97
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -17537,7 +14978,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.98
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -17652,7 +15093,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.99
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -17767,7 +15208,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.100
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -17882,7 +15323,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.101
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -17997,7 +15438,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.102
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -18112,7 +15553,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.103
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -18227,7 +15668,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.104
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -18342,7 +15783,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.105
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -18457,7 +15898,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.106
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -18572,7 +16013,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.107
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -18687,7 +16128,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.108
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -18802,7 +16243,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.109
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -18917,7 +16358,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.110
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -19032,7 +16473,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.111
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -19147,7 +16588,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.112
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -19262,7 +16703,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.113
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -19377,7 +16818,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.114
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -19492,7 +16933,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.115
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -19607,7 +17048,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.116
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -19722,7 +17163,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.117
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -19837,7 +17278,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.118
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -19952,7 +17393,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.119
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -20067,7 +17508,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.120
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -20182,7 +17623,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.121
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -20297,7 +17738,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.122
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -20412,7 +17853,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.123
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -20527,7 +17968,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.124
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -20642,7 +18083,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.125
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -20757,7 +18198,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.126
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -20872,7 +18313,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.127
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -20987,7 +18428,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.128
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -21102,7 +18543,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.129
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -21217,7 +18658,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.130
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -21332,7 +18773,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.131
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -21447,7 +18888,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.132
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -21562,7 +19003,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.133
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -21677,7 +19118,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.134
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -21792,7 +19233,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.135
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -21907,7 +19348,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.136
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -22022,7 +19463,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.137
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -22137,7 +19578,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.138
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -22252,7 +19693,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.139
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -22367,7 +19808,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.140
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -22482,7 +19923,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.141
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -22597,7 +20038,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.142
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -22712,7 +20153,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.143
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -22772,7 +20213,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.144
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -22823,26 +20264,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.81
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.81)
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -22907,26 +20335,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.82
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.82)
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -22991,26 +20406,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.83
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.83)
 //C_PUSH arg1: argument arg2: 2 push argument 2
 @2
 D=A
@@ -23075,26 +20477,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.84
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.84)
 //C_PUSH arg1: argument arg2: 3 push argument 3
 @3
 D=A
@@ -23159,26 +20548,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.85
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.85)
 //C_PUSH arg1: argument arg2: 4 push argument 4
 @4
 D=A
@@ -23243,26 +20619,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.86
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.86)
 //C_PUSH arg1: argument arg2: 5 push argument 5
 @5
 D=A
@@ -23327,26 +20690,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.87
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.87)
 //C_PUSH arg1: argument arg2: 6 push argument 6
 @6
 D=A
@@ -23411,26 +20761,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.88
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.88)
 //C_PUSH arg1: argument arg2: 7 push argument 7
 @7
 D=A
@@ -23495,26 +20832,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.89
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.89)
 //C_PUSH arg1: argument arg2: 8 push argument 8
 @8
 D=A
@@ -23579,26 +20903,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.90
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.90)
 //C_PUSH arg1: argument arg2: 9 push argument 9
 @9
 D=A
@@ -23663,26 +20974,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.91
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.91)
 //C_PUSH arg1: argument arg2: 10 push argument 10
 @10
 D=A
@@ -23747,26 +21045,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.92
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.92)
 //C_PUSH arg1: argument arg2: 11 push argument 11
 @11
 D=A
@@ -23869,7 +21154,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.145
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -23934,50 +21219,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.17
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT204
-D;JLT
-D=0
-@ENDLT204
+@LT
 0;JMP
-(LT204)
-D=-1
-(ENDLT204)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.17)
 //C_ARITHMETIC arg1: not arg2: None not
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
+@ARITHMETIC_NOT.23
+D=A
+@15
 M=D
-@14 // first pop value
-M=!M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@NOT
+0;JMP
+(ARITHMETIC_NOT.23)
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -24006,26 +21262,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.93
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.93)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -24075,7 +21318,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.146
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -24126,26 +21369,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.94
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.94)
 //C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
@@ -24235,50 +21465,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.18
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT208
-D;JLT
-D=0
-@ENDLT208
+@LT
 0;JMP
-(LT208)
-D=-1
-(ENDLT208)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.18)
 //C_ARITHMETIC arg1: not arg2: None not
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
+@ARITHMETIC_NOT.24
+D=A
+@15
 M=D
-@14 // first pop value
-M=!M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@NOT
+0;JMP
+(ARITHMETIC_NOT.24)
 //C_IF arg1: WHILE_END1 arg2: None if-goto WHILE_END1
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -24310,26 +21511,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.95
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.95)
 //C_PUSH arg1: local arg2: 3 push local 3
 @3
 D=A
@@ -24351,26 +21539,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.96
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.96)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -24403,7 +21578,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.147
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -24473,26 +21648,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.97
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.97)
 //C_POP arg1: local arg2: 3 pop local 3
 @SP
 AM=M-1
@@ -24532,36 +21694,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_EQ.12
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // y
-D=M
-@14 // x
-D=M-D
-@EQ213
-D;JEQ
-D=0
-@ENDEQ213
+@EQ
 0;JMP
-(EQ213)
-D=-1
-(ENDEQ213)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_EQ.12)
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -24622,26 +21761,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.98
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.98)
 //C_POP arg1: local arg2: 2 pop local 2
 @SP
 AM=M-1
@@ -24704,36 +21830,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.19
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT215
-D;JLT
-D=0
-@ENDLT215
+@LT
 0;JMP
-(LT215)
-D=-1
-(ENDLT215)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.19)
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -24752,57 +21855,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_GT.18
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@GT216
-D;JGT
-D=0
-@ENDGT216
+@GT
 0;JMP
-(GT216)
-D=-1
-(ENDGT216)
-@14
-M=D
-@14 // push memory address 14 to stack
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_GT.18)
 //C_ARITHMETIC arg1: or arg2: None or
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_OR.5
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M|D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@OR
+0;JMP
+(ARITHMETIC_OR.5)
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -24881,26 +21948,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.99
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.99)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -24956,26 +22010,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.100
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.100)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -25072,7 +22113,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.148
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -25148,50 +22189,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.20
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT220
-D;JLT
-D=0
-@ENDLT220
+@LT
 0;JMP
-(LT220)
-D=-1
-(ENDLT220)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.20)
 //C_ARITHMETIC arg1: not arg2: None not
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
+@ARITHMETIC_NOT.25
+D=A
+@15
 M=D
-@14 // first pop value
-M=!M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@NOT
+0;JMP
+(ARITHMETIC_NOT.25)
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -25241,26 +22253,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.101
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.101)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -25285,38 +22284,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: neg arg2: None neg
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
-M=D@14 // X
-M=-M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
+@ARITHMETIC_NEG.5
+D=A
+@15
 M=D
+@NEG
+0;JMP
+(ARITHMETIC_NEG.5)
 //C_ARITHMETIC arg1: and arg2: None and
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_AND.8
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M&D
-@14 // push memory address 14 to stack 
-D=M@SP
-M=M+1
-A=M-1
-M=D
+@AND
+0;JMP
+(ARITHMETIC_AND.8)
 //C_POP arg1: local arg2: 3 pop local 3
 @SP
 AM=M-1
@@ -25356,26 +22338,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.102
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.102)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -25400,25 +22369,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: and arg2: None and
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_AND.9
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M&D
-@14 // push memory address 14 to stack 
-D=M@SP
-M=M+1
-A=M-1
-M=D
+@AND
+0;JMP
+(ARITHMETIC_AND.9)
 //C_POP arg1: local arg2: 3 pop local 3
 @SP
 AM=M-1
@@ -25455,26 +22412,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.103
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.103)
 //C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
@@ -25496,26 +22440,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.104
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.104)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -25543,26 +22474,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: or arg2: None or
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_OR.6
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M|D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@OR
+0;JMP
+(ARITHMETIC_OR.6)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
 AM=M-1
@@ -25617,26 +22535,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.105
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.105)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
 AM=M-1
@@ -25672,26 +22577,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.106
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.106)
 //C_POP arg1: local arg2: 1 pop local 1
 @SP
 AM=M-1
@@ -25747,36 +22639,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.21
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT232
-D;JLT
-D=0
-@ENDLT232
+@LT
 0;JMP
-(LT232)
-D=-1
-(ENDLT232)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.21)
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -25795,57 +22664,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_GT.19
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@GT233
-D;JGT
-D=0
-@ENDGT233
+@GT
 0;JMP
-(GT233)
-D=-1
-(ENDGT233)
-@14
-M=D
-@14 // push memory address 14 to stack
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_GT.19)
 //C_ARITHMETIC arg1: or arg2: None or
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_OR.7
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M|D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@OR
+0;JMP
+(ARITHMETIC_OR.7)
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -25864,57 +22697,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.22
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT235
-D;JLT
-D=0
-@ENDLT235
+@LT
 0;JMP
-(LT235)
-D=-1
-(ENDLT235)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.22)
 //C_ARITHMETIC arg1: or arg2: None or
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_OR.8
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M|D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@OR
+0;JMP
+(ARITHMETIC_OR.8)
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -25933,57 +22730,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_GT.20
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@GT237
-D;JGT
-D=0
-@ENDGT237
+@GT
 0;JMP
-(GT237)
-D=-1
-(ENDGT237)
-@14
-M=D
-@14 // push memory address 14 to stack
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_GT.20)
 //C_ARITHMETIC arg1: or arg2: None or
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_OR.9
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M|D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@OR
+0;JMP
+(ARITHMETIC_OR.9)
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -26014,7 +22775,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.149
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -26063,7 +22824,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.150
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -26118,7 +22879,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.151
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -26135,26 +22896,13 @@ M=D
 0;JMP
 (Math.multiply$ret.2)
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.107
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.107)
 //C_PUSH arg1: static arg2: 0 push static 0
 @Output.0
 D=M
@@ -26163,26 +22911,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.108
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.108)
 //C_POP arg1: static arg2: 1 pop static 1
 @SP
 AM=M-1
@@ -26222,7 +22957,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.152
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -26239,36 +22974,13 @@ M=D
 0;JMP
 (Math.multiply$ret.3)
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_EQ.13
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // y
-D=M
-@14 // x
-D=M-D
-@EQ241
-D;JEQ
-D=0
-@ENDEQ241
+@EQ
 0;JMP
-(EQ241)
-D=-1
-(ENDEQ241)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_EQ.13)
 //C_POP arg1: static arg2: 2 pop static 2
 @SP
 AM=M-1
@@ -26291,7 +23003,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.153
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -26348,7 +23060,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.154
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -26365,36 +23077,13 @@ M=D
 0;JMP
 (String.newLine$ret.1)
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_EQ.14
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // y
-D=M
-@14 // x
-D=M-D
-@EQ242
-D;JEQ
-D=0
-@ENDEQ242
+@EQ
 0;JMP
-(EQ242)
-D=-1
-(ENDEQ242)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_EQ.14)
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -26418,7 +23107,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.155
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -26463,7 +23152,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.156
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -26480,36 +23169,13 @@ M=D
 0;JMP
 (String.backSpace$ret.2)
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_EQ.15
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // y
-D=M
-@14 // x
-D=M-D
-@EQ243
-D;JEQ
-D=0
-@ENDEQ243
+@EQ
 0;JMP
-(EQ243)
-D=-1
-(ENDEQ243)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_EQ.15)
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -26533,7 +23199,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.157
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -26578,7 +23244,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.158
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -26608,19 +23274,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: not arg2: None not
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
+@ARITHMETIC_NOT.26
+D=A
+@15
 M=D
-@14 // first pop value
-M=!M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@NOT
+0;JMP
+(ARITHMETIC_NOT.26)
 //C_IF arg1: IF_TRUE2 arg2: None if-goto IF_TRUE2
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -26650,26 +23310,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.109
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.109)
 //C_POP arg1: static arg2: 0 pop static 0
 @SP
 AM=M-1
@@ -26691,26 +23338,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.110
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.110)
 //C_POP arg1: static arg2: 1 pop static 1
 @SP
 AM=M-1
@@ -26733,36 +23367,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_EQ.16
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // y
-D=M
-@14 // x
-D=M-D
-@EQ247
-D;JEQ
-D=0
-@ENDEQ247
+@EQ
 0;JMP
-(EQ247)
-D=-1
-(ENDEQ247)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_EQ.16)
 //C_IF arg1: IF_TRUE3 arg2: None if-goto IF_TRUE3
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -26786,7 +23397,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.159
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -26820,19 +23431,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: not arg2: None not
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
+@ARITHMETIC_NOT.27
+D=A
+@15
 M=D
-@14 // first pop value
-M=!M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@NOT
+0;JMP
+(ARITHMETIC_NOT.27)
 //C_POP arg1: static arg2: 2 pop static 2
 @SP
 AM=M-1
@@ -26889,7 +23494,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.160
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -26944,50 +23549,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.23
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT249
-D;JLT
-D=0
-@ENDLT249
+@LT
 0;JMP
-(LT249)
-D=-1
-(ENDLT249)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.23)
 //C_ARITHMETIC arg1: not arg2: None not
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
+@ARITHMETIC_NOT.28
+D=A
+@15
 M=D
-@14 // first pop value
-M=!M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@NOT
+0;JMP
+(ARITHMETIC_NOT.28)
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -27027,7 +23603,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.161
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -27052,7 +23628,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.162
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -27092,26 +23668,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.111
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.111)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
 AM=M-1
@@ -27175,7 +23738,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.163
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -27213,7 +23776,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.164
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -27266,26 +23829,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.112
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.112)
 //C_PUSH arg1: static arg2: 0 push static 0
 @Output.0
 D=M
@@ -27294,26 +23844,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.23
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.23)
 //C_POP arg1: static arg2: 1 pop static 1
 @SP
 AM=M-1
@@ -27341,19 +23878,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: not arg2: None not
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
+@ARITHMETIC_NOT.29
+D=A
+@15
 M=D
-@14 // first pop value
-M=!M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@NOT
+0;JMP
+(ARITHMETIC_NOT.29)
 //C_POP arg1: static arg2: 2 pop static 2
 @SP
 AM=M-1
@@ -27375,36 +23906,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_EQ.17
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // y
-D=M
-@14 // x
-D=M-D
-@EQ255
-D;JEQ
-D=0
-@ENDEQ255
+@EQ
 0;JMP
-(EQ255)
-D=-1
-(ENDEQ255)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_EQ.17)
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -27485,36 +23993,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_GT.21
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@GT256
-D;JGT
-D=0
-@ENDGT256
+@GT
 0;JMP
-(GT256)
-D=-1
-(ENDGT256)
-@14
-M=D
-@14 // push memory address 14 to stack
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_GT.21)
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -27544,26 +24029,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.24
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.24)
 //C_POP arg1: static arg2: 0 pop static 0
 @SP
 AM=M-1
@@ -27585,26 +24057,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.25
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.25)
 //C_POP arg1: static arg2: 1 pop static 1
 @SP
 AM=M-1
@@ -27643,36 +24102,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_EQ.18
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // y
-D=M
-@14 // x
-D=M-D
-@EQ259
-D;JEQ
-D=0
-@ENDEQ259
+@EQ
 0;JMP
-(EQ259)
-D=-1
-(ENDEQ259)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_EQ.18)
 //C_IF arg1: IF_TRUE2 arg2: None if-goto IF_TRUE2
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -27716,26 +24152,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.26
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.26)
 //C_POP arg1: static arg2: 1 pop static 1
 @SP
 AM=M-1
@@ -27768,19 +24191,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: not arg2: None not
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
+@ARITHMETIC_NOT.30
+D=A
+@15
 M=D
-@14 // first pop value
-M=!M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@NOT
+0;JMP
+(ARITHMETIC_NOT.30)
 //C_POP arg1: static arg2: 2 pop static 2
 @SP
 AM=M-1
@@ -27804,7 +24221,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.165
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -27869,19 +24286,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: not arg2: None not
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
+@ARITHMETIC_NOT.31
+D=A
+@15
 M=D
-@14 // first pop value
-M=!M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@NOT
+0;JMP
+(ARITHMETIC_NOT.31)
 //C_POP arg1: static arg2: 2 pop static 2
 @SP
 AM=M-1
@@ -27904,7 +24315,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.166
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -27941,26 +24352,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.113
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.113)
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
@@ -28023,50 +24421,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.24
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT264
-D;JLT
-D=0
-@ENDLT264
+@LT
 0;JMP
-(LT264)
-D=-1
-(ENDLT264)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.24)
 //C_ARITHMETIC arg1: not arg2: None not
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
+@ARITHMETIC_NOT.32
+D=A
+@15
 M=D
-@14 // first pop value
-M=!M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@NOT
+0;JMP
+(ARITHMETIC_NOT.32)
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -28095,26 +24464,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.114
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.114)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
 AM=M-1
@@ -28150,26 +24506,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.115
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.115)
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -28188,26 +24531,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.27
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.27)
 //C_PUSH arg1: static arg2: 0 push static 0
 @Screen.0
 D=M
@@ -28216,26 +24546,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.116
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.116)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -28270,26 +24587,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.28
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.28)
 //C_PUSH arg1: static arg2: 0 push static 0
 @Screen.0
 D=M
@@ -28298,26 +24602,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.117
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.117)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -28335,26 +24626,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.118
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.118)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
 AM=M-1
@@ -28436,50 +24714,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.25
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT273
-D;JLT
-D=0
-@ENDLT273
+@LT
 0;JMP
-(LT273)
-D=-1
-(ENDLT273)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.25)
 //C_ARITHMETIC arg1: not arg2: None not
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
+@ARITHMETIC_NOT.33
+D=A
+@15
 M=D
-@14 // first pop value
-M=!M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@NOT
+0;JMP
+(ARITHMETIC_NOT.33)
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -28508,26 +24757,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.119
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.119)
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
@@ -28589,26 +24825,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.120
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.120)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
 AM=M-1
@@ -28685,26 +24908,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.121
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.121)
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -28723,26 +24933,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.122
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.122)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -28770,26 +24967,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: or arg2: None or
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_OR.10
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M|D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@OR
+0;JMP
+(ARITHMETIC_OR.10)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
 AM=M-1
@@ -28848,26 +25032,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.123
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.123)
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -28886,26 +25057,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.124
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.124)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -28933,39 +25091,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: not arg2: None not
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
+@ARITHMETIC_NOT.34
+D=A
+@15
 M=D
-@14 // first pop value
-M=!M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@NOT
+0;JMP
+(ARITHMETIC_NOT.34)
 //C_ARITHMETIC arg1: and arg2: None and
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_AND.10
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M&D
-@14 // push memory address 14 to stack 
-D=M@SP
-M=M+1
-A=M-1
-M=D
+@AND
+0;JMP
+(ARITHMETIC_AND.10)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
 AM=M-1
@@ -29087,36 +25227,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.26
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT284
-D;JLT
-D=0
-@ENDLT284
+@LT
 0;JMP
-(LT284)
-D=-1
-(ENDLT284)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.26)
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -29135,57 +25252,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_GT.22
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@GT285
-D;JGT
-D=0
-@ENDGT285
+@GT
 0;JMP
-(GT285)
-D=-1
-(ENDGT285)
-@14
-M=D
-@14 // push memory address 14 to stack
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_GT.22)
 //C_ARITHMETIC arg1: or arg2: None or
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_OR.11
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M|D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@OR
+0;JMP
+(ARITHMETIC_OR.11)
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -29204,57 +25285,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.27
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT287
-D;JLT
-D=0
-@ENDLT287
+@LT
 0;JMP
-(LT287)
-D=-1
-(ENDLT287)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.27)
 //C_ARITHMETIC arg1: or arg2: None or
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_OR.12
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M|D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@OR
+0;JMP
+(ARITHMETIC_OR.12)
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -29273,57 +25318,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_GT.23
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@GT289
-D;JGT
-D=0
-@ENDGT289
+@GT
 0;JMP
-(GT289)
-D=-1
-(ENDGT289)
-@14
-M=D
-@14 // push memory address 14 to stack
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_GT.23)
 //C_ARITHMETIC arg1: or arg2: None or
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_OR.13
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M|D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@OR
+0;JMP
+(ARITHMETIC_OR.13)
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -29354,7 +25363,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.167
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -29403,7 +25412,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.168
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -29472,7 +25481,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.169
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -29489,26 +25498,13 @@ M=D
 0;JMP
 (Math.multiply$ret.4)
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.29
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.29)
 //C_POP arg1: local arg2: 1 pop local 1
 @SP
 AM=M-1
@@ -29552,7 +25548,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.170
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -29579,26 +25575,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.125
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.125)
 //C_POP arg1: local arg2: 2 pop local 2
 @SP
 AM=M-1
@@ -29644,26 +25627,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.126
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.126)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -29689,7 +25659,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.171
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -29780,7 +25750,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.172
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -29835,7 +25805,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.173
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -29958,36 +25928,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.28
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT294
-D;JLT
-D=0
-@ENDLT294
+@LT
 0;JMP
-(LT294)
-D=-1
-(ENDLT294)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.28)
 //C_PUSH arg1: argument arg2: 2 push argument 2
 @2
 D=A
@@ -30006,57 +25953,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_GT.24
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@GT295
-D;JGT
-D=0
-@ENDGT295
+@GT
 0;JMP
-(GT295)
-D=-1
-(ENDGT295)
-@14
-M=D
-@14 // push memory address 14 to stack
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_GT.24)
 //C_ARITHMETIC arg1: or arg2: None or
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_OR.14
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M|D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@OR
+0;JMP
+(ARITHMETIC_OR.14)
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -30075,57 +25986,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.29
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT297
-D;JLT
-D=0
-@ENDLT297
+@LT
 0;JMP
-(LT297)
-D=-1
-(ENDLT297)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.29)
 //C_ARITHMETIC arg1: or arg2: None or
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_OR.15
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M|D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@OR
+0;JMP
+(ARITHMETIC_OR.15)
 //C_PUSH arg1: argument arg2: 3 push argument 3
 @3
 D=A
@@ -30144,57 +26019,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_GT.25
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@GT299
-D;JGT
-D=0
-@ENDGT299
+@GT
 0;JMP
-(GT299)
-D=-1
-(ENDGT299)
-@14
-M=D
-@14 // push memory address 14 to stack
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_GT.25)
 //C_ARITHMETIC arg1: or arg2: None or
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_OR.16
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M|D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@OR
+0;JMP
+(ARITHMETIC_OR.16)
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -30225,7 +26064,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.174
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -30269,26 +26108,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.30
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.30)
 //C_CALL arg1: Math.abs arg2: 1 call Math.abs 1
 @Math.abs$ret.4 // push return label
 D=A
@@ -30298,7 +26124,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.175
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -30352,26 +26178,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.31
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.31)
 //C_CALL arg1: Math.abs arg2: 1 call Math.abs 1
 @Math.abs$ret.5 // push return label
 D=A
@@ -30381,7 +26194,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.176
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -30435,36 +26248,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.30
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT303
-D;JLT
-D=0
-@ENDLT303
+@LT
 0;JMP
-(LT303)
-D=-1
-(ENDLT303)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.30)
 //C_POP arg1: local arg2: 6 pop local 6
 @SP
 AM=M-1
@@ -30513,56 +26303,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.31
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT304
-D;JLT
-D=0
-@ENDLT304
+@LT
 0;JMP
-(LT304)
-D=-1
-(ENDLT304)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.31)
 //C_ARITHMETIC arg1: and arg2: None and
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_AND.11
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M&D
-@14 // push memory address 14 to stack 
-D=M@SP
-M=M+1
-A=M-1
-M=D
+@AND
+0;JMP
+(ARITHMETIC_AND.11)
 //C_PUSH arg1: local arg2: 6 push local 6
 @6
 D=A
@@ -30574,19 +26329,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: not arg2: None not
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
+@ARITHMETIC_NOT.35
+D=A
+@15
 M=D
-@14 // first pop value
-M=!M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@NOT
+0;JMP
+(ARITHMETIC_NOT.35)
 //C_PUSH arg1: argument arg2: 2 push argument 2
 @2
 D=A
@@ -30608,77 +26357,29 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.32
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT307
-D;JLT
-D=0
-@ENDLT307
+@LT
 0;JMP
-(LT307)
-D=-1
-(ENDLT307)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.32)
 //C_ARITHMETIC arg1: and arg2: None and
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_AND.12
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M&D
-@14 // push memory address 14 to stack 
-D=M@SP
-M=M+1
-A=M-1
-M=D
+@AND
+0;JMP
+(ARITHMETIC_AND.12)
 //C_ARITHMETIC arg1: or arg2: None or
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_OR.17
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M|D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@OR
+0;JMP
+(ARITHMETIC_OR.17)
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -31063,36 +26764,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_GT.26
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@GT310
-D;JGT
-D=0
-@ENDGT310
+@GT
 0;JMP
-(GT310)
-D=-1
-(ENDGT310)
-@14
-M=D
-@14 // push memory address 14 to stack
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_GT.26)
 //C_POP arg1: local arg2: 7 pop local 7
 @SP
 AM=M-1
@@ -31216,36 +26894,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_GT.27
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@GT311
-D;JGT
-D=0
-@ENDGT311
+@GT
 0;JMP
-(GT311)
-D=-1
-(ENDGT311)
-@14
-M=D
-@14 // push memory address 14 to stack
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_GT.27)
 //C_POP arg1: local arg2: 7 pop local 7
 @SP
 AM=M-1
@@ -31290,7 +26945,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.177
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -31317,26 +26972,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.32
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.32)
 //C_POP arg1: local arg2: 5 pop local 5
 @SP
 AM=M-1
@@ -31380,7 +27022,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.178
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -31441,26 +27083,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.33
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.33)
 //C_CALL arg1: Math.multiply arg2: 2 call Math.multiply 2
 @Math.multiply$ret.8 // push return label
 D=A
@@ -31470,7 +27099,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.179
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -31542,7 +27171,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.180
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -31586,50 +27215,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.33
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT314
-D;JLT
-D=0
-@ENDLT314
+@LT
 0;JMP
-(LT314)
-D=-1
-(ENDLT314)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.33)
 //C_ARITHMETIC arg1: not arg2: None not
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
+@ARITHMETIC_NOT.36
+D=A
+@15
 M=D
-@14 // first pop value
-M=!M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@NOT
+0;JMP
+(ARITHMETIC_NOT.36)
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -31658,36 +27258,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.34
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT316
-D;JLT
-D=0
-@ENDLT316
+@LT
 0;JMP
-(LT316)
-D=-1
-(ENDLT316)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.34)
 //C_IF arg1: IF_TRUE3 arg2: None if-goto IF_TRUE3
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -31723,26 +27300,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.127
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.127)
 //C_POP arg1: local arg2: 5 pop local 5
 @SP
 AM=M-1
@@ -31785,26 +27349,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.128
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.128)
 //C_POP arg1: local arg2: 5 pop local 5
 @SP
 AM=M-1
@@ -31864,26 +27415,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.34
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.34)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
 AM=M-1
@@ -31923,26 +27461,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.129
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.129)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
 AM=M-1
@@ -31980,26 +27505,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.130
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.130)
 //C_POP arg1: local arg2: 1 pop local 1
 @SP
 AM=M-1
@@ -32056,7 +27568,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.181
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -32173,36 +27685,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_GT.28
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@GT322
-D;JGT
-D=0
-@ENDGT322
+@GT
 0;JMP
-(GT322)
-D=-1
-(ENDGT322)
-@14
-M=D
-@14 // push memory address 14 to stack
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_GT.28)
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -32224,57 +27713,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_GT.29
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@GT323
-D;JGT
-D=0
-@ENDGT323
+@GT
 0;JMP
-(GT323)
-D=-1
-(ENDGT323)
-@14
-M=D
-@14 // push memory address 14 to stack
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_GT.29)
 //C_ARITHMETIC arg1: or arg2: None or
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_OR.18
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M|D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@OR
+0;JMP
+(ARITHMETIC_OR.18)
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -32293,57 +27746,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.35
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT325
-D;JLT
-D=0
-@ENDLT325
+@LT
 0;JMP
-(LT325)
-D=-1
-(ENDLT325)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.35)
 //C_ARITHMETIC arg1: or arg2: None or
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_OR.19
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M|D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@OR
+0;JMP
+(ARITHMETIC_OR.19)
 //C_PUSH arg1: argument arg2: 2 push argument 2
 @2
 D=A
@@ -32362,57 +27779,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_GT.30
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@GT327
-D;JGT
-D=0
-@ENDGT327
+@GT
 0;JMP
-(GT327)
-D=-1
-(ENDGT327)
-@14
-M=D
-@14 // push memory address 14 to stack
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_GT.30)
 //C_ARITHMETIC arg1: or arg2: None or
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_OR.20
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M|D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@OR
+0;JMP
+(ARITHMETIC_OR.20)
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -32431,57 +27812,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.36
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT329
-D;JLT
-D=0
-@ENDLT329
+@LT
 0;JMP
-(LT329)
-D=-1
-(ENDLT329)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.36)
 //C_ARITHMETIC arg1: or arg2: None or
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_OR.21
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M|D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@OR
+0;JMP
+(ARITHMETIC_OR.21)
 //C_PUSH arg1: argument arg2: 3 push argument 3
 @3
 D=A
@@ -32500,57 +27845,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_GT.31
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@GT331
-D;JGT
-D=0
-@ENDGT331
+@GT
 0;JMP
-(GT331)
-D=-1
-(ENDGT331)
-@14
-M=D
-@14 // push memory address 14 to stack
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_GT.31)
 //C_ARITHMETIC arg1: or arg2: None or
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_OR.22
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M|D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@OR
+0;JMP
+(ARITHMETIC_OR.22)
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -32581,7 +27890,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.182
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -32630,7 +27939,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.183
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -32699,7 +28008,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.184
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -32716,26 +28025,13 @@ M=D
 0;JMP
 (Math.multiply$ret.9)
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.35
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.35)
 //C_POP arg1: local arg2: 7 pop local 7
 @SP
 AM=M-1
@@ -32779,7 +28075,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.185
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -32848,7 +28144,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.186
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -32865,26 +28161,13 @@ M=D
 0;JMP
 (Math.multiply$ret.10)
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.36
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.36)
 //C_POP arg1: local arg2: 8 pop local 8
 @SP
 AM=M-1
@@ -32920,26 +28203,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.131
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.131)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -32964,40 +28234,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.37
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.37)
 //C_ARITHMETIC arg1: not arg2: None not
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
+@ARITHMETIC_NOT.37
+D=A
+@15
 M=D
-@14 // first pop value
-M=!M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@NOT
+0;JMP
+(ARITHMETIC_NOT.37)
 //C_POP arg1: local arg2: 6 pop local 6
 @SP
 AM=M-1
@@ -33033,26 +28284,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.132
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.132)
 //C_PUSH arg1: static arg2: 0 push static 0
 @Screen.0
 D=M
@@ -33061,26 +28299,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.133
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.133)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -33105,26 +28330,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.38
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.38)
 //C_POP arg1: local arg2: 5 pop local 5
 @SP
 AM=M-1
@@ -33168,7 +28380,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.187
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -33195,26 +28407,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.134
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.134)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
 AM=M-1
@@ -33253,26 +28452,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.39
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.39)
 //C_POP arg1: local arg2: 2 pop local 2
 @SP
 AM=M-1
@@ -33312,64 +28498,29 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_GT.32
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@GT343
-D;JGT
-D=0
-@ENDGT343
+@GT
 0;JMP
-(GT343)
-D=-1
-(ENDGT343)
-@14
-M=D
-@14 // push memory address 14 to stack
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_GT.32)
 //C_ARITHMETIC arg1: not arg2: None not
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
+@ARITHMETIC_NOT.38
+D=A
+@15
 M=D
-@14 // first pop value
-M=!M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@NOT
+0;JMP
+(ARITHMETIC_NOT.38)
 //C_ARITHMETIC arg1: not arg2: None not
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
+@ARITHMETIC_NOT.39
+D=A
+@15
 M=D
-@14 // first pop value
-M=!M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@NOT
+0;JMP
+(ARITHMETIC_NOT.39)
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -33401,26 +28552,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.135
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.135)
 //C_POP arg1: local arg2: 1 pop local 1
 @SP
 AM=M-1
@@ -33456,36 +28594,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_EQ.19
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // y
-D=M
-@14 // x
-D=M-D
-@EQ347
-D;JEQ
-D=0
-@ENDEQ347
+@EQ
 0;JMP
-(EQ347)
-D=-1
-(ENDEQ347)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_EQ.19)
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -33531,25 +28646,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: and arg2: None and
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_AND.13
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M&D
-@14 // push memory address 14 to stack 
-D=M@SP
-M=M+1
-A=M-1
-M=D
+@AND
+0;JMP
+(ARITHMETIC_AND.13)
 //C_CALL arg1: Screen.updateLocation arg2: 2 call Screen.updateLocation 2
 @Screen.updateLocation$ret.1 // push return label
 D=A
@@ -33559,7 +28662,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.188
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -33614,7 +28717,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.189
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -33654,26 +28757,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.136
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.136)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
 AM=M-1
@@ -33713,50 +28803,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.37
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT350
-D;JLT
-D=0
-@ENDLT350
+@LT
 0;JMP
-(LT350)
-D=-1
-(ENDLT350)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.37)
 //C_ARITHMETIC arg1: not arg2: None not
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
+@ARITHMETIC_NOT.40
+D=A
+@15
 M=D
-@14 // first pop value
-M=!M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@NOT
+0;JMP
+(ARITHMETIC_NOT.40)
 //C_IF arg1: WHILE_END1 arg2: None if-goto WHILE_END1
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -33785,18 +28846,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: neg arg2: None neg
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
-M=D@14 // X
-M=-M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
+@ARITHMETIC_NEG.6
+D=A
+@15
 M=D
+@NEG
+0;JMP
+(ARITHMETIC_NEG.6)
 //C_CALL arg1: Screen.updateLocation arg2: 2 call Screen.updateLocation 2
 @Screen.updateLocation$ret.3 // push return label
 D=A
@@ -33806,7 +28862,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.190
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -33846,26 +28902,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.137
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.137)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
 AM=M-1
@@ -33916,7 +28959,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.191
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -33957,26 +29000,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.138
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.138)
 //C_POP arg1: argument arg2: 1 pop argument 1
 @SP
 AM=M-1
@@ -34012,26 +29042,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.139
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.139)
 //C_PUSH arg1: local arg2: 2 push local 2
 @2
 D=A
@@ -34043,26 +29060,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.40
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.40)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
 AM=M-1
@@ -34195,7 +29199,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.192
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -34257,7 +29261,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.193
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -34308,49 +29312,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: neg arg2: None neg
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
-M=D@14 // X
-M=-M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
+@ARITHMETIC_NEG.7
+D=A
+@15
 M=D
-//C_ARITHMETIC arg1: gt arg2: None gt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
-M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@GT358
-D;JGT
-D=0
-@ENDGT358
+@NEG
 0;JMP
-(GT358)
-D=-1
-(ENDGT358)
-@14
+(ARITHMETIC_NEG.7)
+//C_ARITHMETIC arg1: gt arg2: None gt
+@ARITHMETIC_GT.33
+D=A
+@15
 M=D
-@14 // push memory address 14 to stack
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@GT
+0;JMP
+(ARITHMETIC_GT.33)
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -34369,56 +29345,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.38
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT359
-D;JLT
-D=0
-@ENDLT359
+@LT
 0;JMP
-(LT359)
-D=-1
-(ENDLT359)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.38)
 //C_ARITHMETIC arg1: and arg2: None and
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_AND.14
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M&D
-@14 // push memory address 14 to stack 
-D=M@SP
-M=M+1
-A=M-1
-M=D
+@AND
+0;JMP
+(ARITHMETIC_AND.14)
 //C_PUSH arg1: local arg2: 7 push local 7
 @7
 D=A
@@ -34437,56 +29378,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.39
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT361
-D;JLT
-D=0
-@ENDLT361
+@LT
 0;JMP
-(LT361)
-D=-1
-(ENDLT361)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.39)
 //C_ARITHMETIC arg1: and arg2: None and
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_AND.15
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M&D
-@14 // push memory address 14 to stack 
-D=M@SP
-M=M+1
-A=M-1
-M=D
+@AND
+0;JMP
+(ARITHMETIC_AND.15)
 //C_PUSH arg1: local arg2: 8 push local 8
 @8
 D=A
@@ -34505,69 +29411,29 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: neg arg2: None neg
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
-M=D@14 // X
-M=-M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
+@ARITHMETIC_NEG.8
+D=A
+@15
 M=D
-//C_ARITHMETIC arg1: gt arg2: None gt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
-M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@GT364
-D;JGT
-D=0
-@ENDGT364
+@NEG
 0;JMP
-(GT364)
-D=-1
-(ENDGT364)
-@14
+(ARITHMETIC_NEG.8)
+//C_ARITHMETIC arg1: gt arg2: None gt
+@ARITHMETIC_GT.34
+D=A
+@15
 M=D
-@14 // push memory address 14 to stack
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@GT
+0;JMP
+(ARITHMETIC_GT.34)
 //C_ARITHMETIC arg1: and arg2: None and
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_AND.16
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M&D
-@14 // push memory address 14 to stack 
-D=M@SP
-M=M+1
-A=M-1
-M=D
+@AND
+0;JMP
+(ARITHMETIC_AND.16)
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -34608,7 +29474,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.194
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -34667,7 +29533,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.195
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -34726,7 +29592,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.196
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -34795,7 +29661,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.197
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -34812,26 +29678,13 @@ M=D
 0;JMP
 (Math.multiply$ret.12)
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.41
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.41)
 //C_POP arg1: local arg2: 9 pop local 9
 @SP
 AM=M-1
@@ -34875,7 +29728,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.198
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -34944,7 +29797,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.199
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -34961,26 +29814,13 @@ M=D
 0;JMP
 (Math.multiply$ret.13)
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.42
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.42)
 //C_POP arg1: local arg2: 10 pop local 10
 @SP
 AM=M-1
@@ -35016,26 +29856,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.140
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.140)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -35060,40 +29887,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.43
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.43)
 //C_ARITHMETIC arg1: not arg2: None not
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
+@ARITHMETIC_NOT.41
+D=A
+@15
 M=D
-@14 // first pop value
-M=!M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@NOT
+0;JMP
+(ARITHMETIC_NOT.41)
 //C_POP arg1: local arg2: 5 pop local 5
 @SP
 AM=M-1
@@ -35129,26 +29937,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.141
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.141)
 //C_PUSH arg1: static arg2: 0 push static 0
 @Screen.0
 D=M
@@ -35157,26 +29952,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.142
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.142)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -35201,26 +29983,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.44
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.44)
 //C_POP arg1: local arg2: 4 pop local 4
 @SP
 AM=M-1
@@ -35264,7 +30033,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.200
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -35291,26 +30060,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.143
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.143)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
 AM=M-1
@@ -35349,26 +30105,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.45
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.45)
 //C_POP arg1: local arg2: 6 pop local 6
 @SP
 AM=M-1
@@ -35407,26 +30150,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.144
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.144)
 //C_POP arg1: local arg2: 3 pop local 3
 @SP
 AM=M-1
@@ -35462,36 +30192,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_EQ.20
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // y
-D=M
-@14 // x
-D=M-D
-@EQ377
-D;JEQ
-D=0
-@ENDEQ377
+@EQ
 0;JMP
-(EQ377)
-D=-1
-(ENDEQ377)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_EQ.20)
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -35537,25 +30244,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: and arg2: None and
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_AND.17
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M&D
-@14 // push memory address 14 to stack 
-D=M@SP
-M=M+1
-A=M-1
-M=D
+@AND
+0;JMP
+(ARITHMETIC_AND.17)
 //C_CALL arg1: Screen.updateLocation arg2: 2 call Screen.updateLocation 2
 @Screen.updateLocation$ret.5 // push return label
 D=A
@@ -35565,7 +30260,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.201
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -35620,7 +30315,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.202
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -35660,26 +30355,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.145
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.145)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
 AM=M-1
@@ -35719,50 +30401,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.40
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT380
-D;JLT
-D=0
-@ENDLT380
+@LT
 0;JMP
-(LT380)
-D=-1
-(ENDLT380)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.40)
 //C_ARITHMETIC arg1: not arg2: None not
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
+@ARITHMETIC_NOT.42
+D=A
+@15
 M=D
-@14 // first pop value
-M=!M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@NOT
+0;JMP
+(ARITHMETIC_NOT.42)
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -35791,18 +30444,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: neg arg2: None neg
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
-M=D@14 // X
-M=-M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
+@ARITHMETIC_NEG.9
+D=A
+@15
 M=D
+@NEG
+0;JMP
+(ARITHMETIC_NEG.9)
 //C_CALL arg1: Screen.updateLocation arg2: 2 call Screen.updateLocation 2
 @Screen.updateLocation$ret.7 // push return label
 D=A
@@ -35812,7 +30460,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.203
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -35852,26 +30500,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.146
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.146)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
 AM=M-1
@@ -35922,7 +30557,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.204
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -35983,26 +30618,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.46
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.46)
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -36024,26 +30646,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.147
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.147)
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -36065,26 +30674,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.47
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.47)
 //C_CALL arg1: Screen.drawHorizontal arg2: 3 call Screen.drawHorizontal 3
 @Screen.drawHorizontal$ret.0 // push return label
 D=A
@@ -36094,7 +30690,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.205
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -36137,26 +30733,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.148
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.148)
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -36178,26 +30761,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.149
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.149)
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -36219,26 +30789,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.48
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.48)
 //C_CALL arg1: Screen.drawHorizontal arg2: 3 call Screen.drawHorizontal 3
 @Screen.drawHorizontal$ret.1 // push return label
 D=A
@@ -36248,7 +30805,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.206
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -36291,26 +30848,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.49
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.49)
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -36332,26 +30876,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.50
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.50)
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -36373,26 +30904,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.150
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.150)
 //C_CALL arg1: Screen.drawHorizontal arg2: 3 call Screen.drawHorizontal 3
 @Screen.drawHorizontal$ret.2 // push return label
 D=A
@@ -36402,7 +30920,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.207
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -36445,26 +30963,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.151
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.151)
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -36486,26 +30991,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.51
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.51)
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -36527,26 +31019,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.152
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.152)
 //C_CALL arg1: Screen.drawHorizontal arg2: 3 call Screen.drawHorizontal 3
 @Screen.drawHorizontal$ret.3 // push return label
 D=A
@@ -36556,7 +31035,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.208
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -36630,36 +31109,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.41
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT396
-D;JLT
-D=0
-@ENDLT396
+@LT
 0;JMP
-(LT396)
-D=-1
-(ENDLT396)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.41)
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -36678,57 +31134,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_GT.35
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@GT397
-D;JGT
-D=0
-@ENDGT397
+@GT
 0;JMP
-(GT397)
-D=-1
-(ENDGT397)
-@14
-M=D
-@14 // push memory address 14 to stack
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_GT.35)
 //C_ARITHMETIC arg1: or arg2: None or
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_OR.23
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M|D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@OR
+0;JMP
+(ARITHMETIC_OR.23)
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -36747,57 +31167,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.42
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT399
-D;JLT
-D=0
-@ENDLT399
+@LT
 0;JMP
-(LT399)
-D=-1
-(ENDLT399)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.42)
 //C_ARITHMETIC arg1: or arg2: None or
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_OR.24
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M|D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@OR
+0;JMP
+(ARITHMETIC_OR.24)
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -36816,57 +31200,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_GT.36
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@GT401
-D;JGT
-D=0
-@ENDGT401
+@GT
 0;JMP
-(GT401)
-D=-1
-(ENDGT401)
-@14
-M=D
-@14 // push memory address 14 to stack
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_GT.36)
 //C_ARITHMETIC arg1: or arg2: None or
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_OR.25
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M|D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@OR
+0;JMP
+(ARITHMETIC_OR.25)
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -36897,7 +31245,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.209
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -36941,26 +31289,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.52
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.52)
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
@@ -36969,36 +31304,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.43
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT404
-D;JLT
-D=0
-@ENDLT404
+@LT
 0;JMP
-(LT404)
-D=-1
-(ENDLT404)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.43)
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -37020,26 +31332,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.153
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.153)
 //C_PUSH arg1: constant arg2: 511 push constant 511
 @511
 D=A
@@ -37048,57 +31347,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_GT.37
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@GT406
-D;JGT
-D=0
-@ENDGT406
+@GT
 0;JMP
-(GT406)
-D=-1
-(ENDGT406)
-@14
-M=D
-@14 // push memory address 14 to stack
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_GT.37)
 //C_ARITHMETIC arg1: or arg2: None or
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_OR.26
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M|D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@OR
+0;JMP
+(ARITHMETIC_OR.26)
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -37120,26 +31383,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.53
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.53)
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
@@ -37148,57 +31398,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.44
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT409
-D;JLT
-D=0
-@ENDLT409
+@LT
 0;JMP
-(LT409)
-D=-1
-(ENDLT409)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.44)
 //C_ARITHMETIC arg1: or arg2: None or
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_OR.27
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M|D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@OR
+0;JMP
+(ARITHMETIC_OR.27)
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -37220,26 +31434,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.154
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.154)
 //C_PUSH arg1: constant arg2: 255 push constant 255
 @255
 D=A
@@ -37248,57 +31449,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_GT.38
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@GT412
-D;JGT
-D=0
-@ENDGT412
+@GT
 0;JMP
-(GT412)
-D=-1
-(ENDGT412)
-@14
-M=D
-@14 // push memory address 14 to stack
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_GT.38)
 //C_ARITHMETIC arg1: or arg2: None or
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_OR.28
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M|D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@OR
+0;JMP
+(ARITHMETIC_OR.28)
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -37329,7 +31494,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.210
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -37397,26 +31562,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.54
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.54)
 //C_POP arg1: local arg2: 2 pop local 2
 @SP
 AM=M-1
@@ -37483,7 +31635,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.211
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -37527,50 +31679,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_GT.39
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@GT415
-D;JGT
-D=0
-@ENDGT415
+@GT
 0;JMP
-(GT415)
-D=-1
-(ENDGT415)
-@14
-M=D
-@14 // push memory address 14 to stack
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_GT.39)
 //C_ARITHMETIC arg1: not arg2: None not
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
+@ARITHMETIC_NOT.43
+D=A
+@15
 M=D
-@14 // first pop value
-M=!M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@NOT
+0;JMP
+(ARITHMETIC_NOT.43)
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -37599,36 +31722,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.45
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT417
-D;JLT
-D=0
-@ENDLT417
+@LT
 0;JMP
-(LT417)
-D=-1
-(ENDLT417)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.45)
 //C_IF arg1: IF_TRUE2 arg2: None if-goto IF_TRUE2
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -37679,7 +31779,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.212
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -37696,26 +31796,13 @@ M=D
 0;JMP
 (Math.multiply$ret.15)
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.155
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.155)
 //C_PUSH arg1: constant arg2: 3 push constant 3
 @3
 D=A
@@ -37724,26 +31811,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.156
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.156)
 //C_POP arg1: local arg2: 2 pop local 2
 @SP
 AM=M-1
@@ -37803,26 +31877,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.55
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.55)
 //C_CALL arg1: Math.multiply arg2: 2 call Math.multiply 2
 @Math.multiply$ret.16 // push return label
 D=A
@@ -37832,7 +31893,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.213
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -37849,26 +31910,13 @@ M=D
 0;JMP
 (Math.multiply$ret.16)
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.157
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.157)
 //C_PUSH arg1: constant arg2: 5 push constant 5
 @5
 D=A
@@ -37877,26 +31925,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.158
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.158)
 //C_POP arg1: local arg2: 2 pop local 2
 @SP
 AM=M-1
@@ -37932,26 +31967,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.56
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.56)
 //C_POP arg1: local arg2: 1 pop local 1
 @SP
 AM=M-1
@@ -37988,26 +32010,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.159
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.159)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
 AM=M-1
@@ -38074,7 +32083,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.214
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -38132,7 +32141,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.215
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -38172,36 +32181,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.46
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT425
-D;JLT
-D=0
-@ENDLT425
+@LT
 0;JMP
-(LT425)
-D=-1
-(ENDLT425)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.46)
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -38232,7 +32218,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.216
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -38273,36 +32259,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_GT.40
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@GT426
-D;JGT
-D=0
-@ENDGT426
+@GT
 0;JMP
-(GT426)
-D=-1
-(ENDGT426)
-@14
-M=D
-@14 // push memory address 14 to stack
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_GT.40)
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -38336,7 +32299,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.217
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -38471,36 +32434,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_GT.41
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@GT427
-D;JGT
-D=0
-@ENDGT427
+@GT
 0;JMP
-(GT427)
-D=-1
-(ENDGT427)
-@14
-M=D
-@14 // push memory address 14 to stack
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_GT.41)
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -38534,7 +32474,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.218
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -38573,7 +32513,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.219
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -38680,36 +32620,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.47
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT428
-D;JLT
-D=0
-@ENDLT428
+@LT
 0;JMP
-(LT428)
-D=-1
-(ENDLT428)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.47)
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -38731,57 +32648,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_GT.42
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@GT429
-D;JGT
-D=0
-@ENDGT429
+@GT
 0;JMP
-(GT429)
-D=-1
-(ENDGT429)
-@14
-M=D
-@14 // push memory address 14 to stack
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_GT.42)
 //C_ARITHMETIC arg1: or arg2: None or
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_OR.29
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M|D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@OR
+0;JMP
+(ARITHMETIC_OR.29)
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -38803,57 +32684,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_EQ.21
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // y
-D=M
-@14 // x
-D=M-D
-@EQ431
-D;JEQ
-D=0
-@ENDEQ431
+@EQ
 0;JMP
-(EQ431)
-D=-1
-(ENDEQ431)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_EQ.21)
 //C_ARITHMETIC arg1: or arg2: None or
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_OR.30
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M|D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@OR
+0;JMP
+(ARITHMETIC_OR.30)
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -38884,7 +32729,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.220
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -38928,26 +32773,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.160
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.160)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -39007,36 +32839,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.48
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT434
-D;JLT
-D=0
-@ENDLT434
+@LT
 0;JMP
-(LT434)
-D=-1
-(ENDLT434)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.48)
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -39058,57 +32867,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_GT.43
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@GT435
-D;JGT
-D=0
-@ENDGT435
+@GT
 0;JMP
-(GT435)
-D=-1
-(ENDGT435)
-@14
-M=D
-@14 // push memory address 14 to stack
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_GT.43)
 //C_ARITHMETIC arg1: or arg2: None or
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_OR.31
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M|D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@OR
+0;JMP
+(ARITHMETIC_OR.31)
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -39130,57 +32903,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_EQ.22
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // y
-D=M
-@14 // x
-D=M-D
-@EQ437
-D;JEQ
-D=0
-@ENDEQ437
+@EQ
 0;JMP
-(EQ437)
-D=-1
-(ENDEQ437)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_EQ.22)
 //C_ARITHMETIC arg1: or arg2: None or
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_OR.32
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M|D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@OR
+0;JMP
+(ARITHMETIC_OR.32)
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -39211,7 +32948,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.221
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -39255,26 +32992,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.161
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.161)
 //C_PUSH arg1: argument arg2: 2 push argument 2
 @2
 D=A
@@ -39374,36 +33098,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_EQ.23
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // y
-D=M
-@14 // x
-D=M-D
-@EQ440
-D;JEQ
-D=0
-@ENDEQ440
+@EQ
 0;JMP
-(EQ440)
-D=-1
-(ENDEQ440)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_EQ.23)
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -39434,7 +33135,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.222
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -39478,26 +33179,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.162
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.162)
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -39562,26 +33250,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.163
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.163)
 //C_POP arg1: this arg2: 2 pop this 2
 @SP
 AM=M-1
@@ -39649,36 +33324,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_EQ.24
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // y
-D=M
-@14 // x
-D=M-D
-@EQ443
-D;JEQ
-D=0
-@ENDEQ443
+@EQ
 0;JMP
-(EQ443)
-D=-1
-(ENDEQ443)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_EQ.24)
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -39709,7 +33361,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.223
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -39750,26 +33402,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.57
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.57)
 //C_POP arg1: this arg2: 2 pop this 2
 @SP
 AM=M-1
@@ -39867,36 +33506,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_EQ.25
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // y
-D=M
-@14 // x
-D=M-D
-@EQ445
-D;JEQ
-D=0
-@ENDEQ445
+@EQ
 0;JMP
-(EQ445)
-D=-1
-(ENDEQ445)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_EQ.25)
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -39930,19 +33546,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: not arg2: None not
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
+@ARITHMETIC_NOT.44
+D=A
+@15
 M=D
-@14 // first pop value
-M=!M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@NOT
+0;JMP
+(ARITHMETIC_NOT.44)
 //C_POP arg1: local arg2: 3 pop local 3
 @SP
 AM=M-1
@@ -39978,26 +33588,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.164
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.164)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -40022,36 +33619,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_EQ.26
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // y
-D=M
-@14 // x
-D=M-D
-@EQ448
-D;JEQ
-D=0
-@ENDEQ448
+@EQ
 0;JMP
-(EQ448)
-D=-1
-(ENDEQ448)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_EQ.26)
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -40074,19 +33648,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: not arg2: None not
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
+@ARITHMETIC_NOT.45
+D=A
+@15
 M=D
-@14 // first pop value
-M=!M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@NOT
+0;JMP
+(ARITHMETIC_NOT.45)
 //C_POP arg1: local arg2: 4 pop local 4
 @SP
 AM=M-1
@@ -40151,36 +33719,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.49
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT450
-D;JLT
-D=0
-@ENDLT450
+@LT
 0;JMP
-(LT450)
-D=-1
-(ENDLT450)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.49)
 //C_PUSH arg1: local arg2: 3 push local 3
 @3
 D=A
@@ -40192,39 +33737,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: and arg2: None and
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_AND.18
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M&D
-@14 // push memory address 14 to stack 
-D=M@SP
-M=M+1
-A=M-1
-M=D
+@AND
+0;JMP
+(ARITHMETIC_AND.18)
 //C_ARITHMETIC arg1: not arg2: None not
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
+@ARITHMETIC_NOT.46
+D=A
+@15
 M=D
-@14 // first pop value
-M=!M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@NOT
+0;JMP
+(ARITHMETIC_NOT.46)
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -40256,26 +33783,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.165
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.165)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -40300,26 +33814,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.58
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.58)
 //C_POP arg1: local arg2: 2 pop local 2
 @SP
 AM=M-1
@@ -40355,36 +33856,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.50
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT455
-D;JLT
-D=0
-@ENDLT455
+@LT
 0;JMP
-(LT455)
-D=-1
-(ENDLT455)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.50)
 //C_PUSH arg1: local arg2: 2 push local 2
 @2
 D=A
@@ -40403,71 +33881,29 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_GT.44
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@GT456
-D;JGT
-D=0
-@ENDGT456
+@GT
 0;JMP
-(GT456)
-D=-1
-(ENDGT456)
-@14
-M=D
-@14 // push memory address 14 to stack
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_GT.44)
 //C_ARITHMETIC arg1: or arg2: None or
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_OR.33
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M|D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@OR
+0;JMP
+(ARITHMETIC_OR.33)
 //C_ARITHMETIC arg1: not arg2: None not
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
+@ARITHMETIC_NOT.47
+D=A
+@15
 M=D
-@14 // first pop value
-M=!M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@NOT
+0;JMP
+(ARITHMETIC_NOT.47)
 //C_POP arg1: local arg2: 3 pop local 3
 @SP
 AM=M-1
@@ -40535,7 +33971,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.224
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -40562,26 +33998,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.166
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.166)
 //C_POP arg1: local arg2: 1 pop local 1
 @SP
 AM=M-1
@@ -40617,26 +34040,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.167
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.167)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
 AM=M-1
@@ -40694,18 +34104,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: neg arg2: None neg
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
-M=D@14 // X
-M=-M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
+@ARITHMETIC_NEG.10
+D=A
+@15
 M=D
+@NEG
+0;JMP
+(ARITHMETIC_NEG.10)
 //C_POP arg1: local arg2: 1 pop local 1
 @SP
 AM=M-1
@@ -40801,36 +34206,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_EQ.27
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // y
-D=M
-@14 // x
-D=M-D
-@EQ462
-D;JEQ
-D=0
-@ENDEQ462
+@EQ
 0;JMP
-(EQ462)
-D=-1
-(ENDEQ462)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_EQ.27)
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -40861,7 +34243,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.225
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -40900,7 +34282,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.226
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -40951,36 +34333,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.51
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT463
-D;JLT
-D=0
-@ENDLT463
+@LT
 0;JMP
-(LT463)
-D=-1
-(ENDLT463)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.51)
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -41003,19 +34362,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: not arg2: None not
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
+@ARITHMETIC_NOT.48
+D=A
+@15
 M=D
-@14 // first pop value
-M=!M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@NOT
+0;JMP
+(ARITHMETIC_NOT.48)
 //C_POP arg1: local arg2: 3 pop local 3
 @SP
 AM=M-1
@@ -41044,18 +34397,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: neg arg2: None neg
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
-M=D@14 // X
-M=-M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
+@ARITHMETIC_NEG.11
+D=A
+@15
 M=D
+@NEG
+0;JMP
+(ARITHMETIC_NEG.11)
 //C_POP arg1: argument arg2: 1 pop argument 1
 @SP
 AM=M-1
@@ -41120,50 +34468,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_GT.45
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@GT466
-D;JGT
-D=0
-@ENDGT466
+@GT
 0;JMP
-(GT466)
-D=-1
-(ENDGT466)
-@14
-M=D
-@14 // push memory address 14 to stack
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_GT.45)
 //C_ARITHMETIC arg1: not arg2: None not
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
+@ARITHMETIC_NOT.49
+D=A
+@15
 M=D
-@14 // first pop value
-M=!M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@NOT
+0;JMP
+(ARITHMETIC_NOT.49)
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -41200,7 +34519,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.227
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -41254,26 +34573,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.168
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.168)
 //C_PUSH arg1: constant arg2: 48 push constant 48
 @48
 D=A
@@ -41317,7 +34623,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.228
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -41334,47 +34640,21 @@ M=D
 0;JMP
 (Math.multiply$ret.18)
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.59
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.59)
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.169
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.169)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
 AM=M-1
@@ -41429,26 +34709,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.170
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.170)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
 AM=M-1
@@ -41542,26 +34809,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.171
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.171)
 //C_PUSH arg1: constant arg2: 45 push constant 45
 @45
 D=A
@@ -41623,26 +34877,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.172
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.172)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
 AM=M-1
@@ -41682,36 +34923,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.52
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT474
-D;JLT
-D=0
-@ENDLT474
+@LT
 0;JMP
-(LT474)
-D=-1
-(ENDLT474)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.52)
 //C_IF arg1: IF_TRUE3 arg2: None if-goto IF_TRUE3
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -41742,7 +34960,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.229
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP
@@ -41783,36 +35001,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_EQ.28
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // y
-D=M
-@14 // x
-D=M-D
-@EQ475
-D;JEQ
-D=0
-@ENDEQ475
+@EQ
 0;JMP
-(EQ475)
-D=-1
-(ENDEQ475)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_EQ.28)
 //C_IF arg1: IF_TRUE4 arg2: None if-goto IF_TRUE4
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -41845,26 +35040,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.173
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.173)
 //C_PUSH arg1: constant arg2: 48 push constant 48
 @48
 D=A
@@ -41982,50 +35164,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: lt arg2: None lt
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_LT.53
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
-@LT477
-D;JLT
-D=0
-@ENDLT477
+@LT
 0;JMP
-(LT477)
-D=-1
-(ENDLT477)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+(ARITHMETIC_LT.53)
 //C_ARITHMETIC arg1: not arg2: None not
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@13
+@ARITHMETIC_NOT.50
+D=A
+@15
 M=D
-@14 // first pop value
-M=!M
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@NOT
+0;JMP
+(ARITHMETIC_NOT.50)
 //C_IF arg1: WHILE_END1 arg2: None if-goto WHILE_END1
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -42057,26 +35210,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.174
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.174)
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -42105,47 +35245,21 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.175
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.175)
 //C_ARITHMETIC arg1: sub arg2: None sub
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_SUB.60
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@SUB
+0;JMP
+(ARITHMETIC_SUB.60)
 //C_PUSH arg1: local arg2: 2 push local 2
 @2
 D=A
@@ -42157,26 +35271,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.176
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.176)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -42247,26 +35348,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@SP // pop from stack to memory address 13 and 14
-AM=M-1
-D=M
-@13
+@ARITHMETIC_ADD.177
+D=A
+@15
 M=D
-@SP
-AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
+@ADD
+0;JMP
+(ARITHMETIC_ADD.177)
 //C_POP arg1: this arg2: 2 pop this 2
 @SP
 AM=M-1
@@ -42308,7 +35396,7 @@ A=M-1
 M=D
 @RETURNFROMSAVEFRAME.230
 D=A
-@13
+@15
 M=D
 @SAVEFRAME
 0;JMP

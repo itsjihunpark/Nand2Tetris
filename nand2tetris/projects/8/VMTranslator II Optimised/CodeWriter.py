@@ -28,17 +28,17 @@ class CodeWriter:
         dest_file_path = f"{argv[1]}\\{self.file_name}.asm"
         self.dest_file = open(dest_file_path,"w")
 
-        bootstrap_command = ASMCommand.C_RETURN_BOOTSTRAP + ASMCommand.C_CALL_BOOTSTRAP + ["(BOOTSTRAP)","@256","D=A", "@SP", "M=D"]
+        bootstrap_command = ASMCommand.BOOTSTRAP_CODE + ["(BOOTSTRAP)","@256","D=A", "@SP", "M=D"]
         self.dest_file.writelines(cmd+"\n" for cmd in bootstrap_command)
         for cmd in bootstrap_command:
             print(cmd)
         self.writeCall("Sys.init", 0)
 
     def writeArithmetic(self, command:str):
-        self.dest_file.writelines(cmd.format(counter=str(self.arithmetic_asm_command_count))+"\n" for cmd in self.arithmetic_asm_commands[command]["command"])
+        self.dest_file.writelines(cmd.format(count=str(self.arithmetic_asm_commands[command]["count"]))+"\n" for cmd in self.arithmetic_asm_commands[command]["command"])
         for cmd in self.arithmetic_asm_commands[command]["command"]:
-            print(cmd.format(counter=str(self.arithmetic_asm_command_count)))
-        self.arithmetic_asm_command_count+=1
+            print(cmd.format(count=str(self.arithmetic_asm_commands[command]["count"])))
+        
 
         self.arithmetic_asm_commands[command]["count"]+=1
     def writePushPop(self, command:str, segment:str, index:int):
