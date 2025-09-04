@@ -39,8 +39,8 @@ class CodeWriter:
         for cmd in self.arithmetic_asm_commands[command]["command"]:
             print(cmd.format(counter=str(self.arithmetic_asm_command_count)))
         self.arithmetic_asm_command_count+=1
-        
-        self.arithmetic_asm_commands[command]["command"]+=1
+
+        self.arithmetic_asm_commands[command]["count"]+=1
     def writePushPop(self, command:str, segment:str, index:int):
         if command == "C_PUSH":
             source_segment, source_addr = self.get_selected_segment_and_index(segment, index)
