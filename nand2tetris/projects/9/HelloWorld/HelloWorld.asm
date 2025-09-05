@@ -315,6 +315,42 @@ M=D
 @15
 A=M
 0;JMP
+(EQ)
+@15
+M=D
+@SP // pop from stack to memory address 13 and 14
+AM=M-1
+D=M
+@13
+M=D
+@SP
+AM=M-1
+D=M
+@14
+M=D
+@13 // y
+D=M
+@14 // x
+D=M-D
+@ISEQ
+D;JEQ
+D=0
+@ENDEQ
+0;JMP
+(ISEQ)
+D=-1
+(ENDEQ)
+@14
+M=D
+@14 // push memory address 14 to stack 
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+@15
+A=M
+0;JMP
 (BOOTSTRAP)
 @256
 D=A
