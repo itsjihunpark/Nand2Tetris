@@ -57,6 +57,9 @@ def main():
             codeWriter.writeReturn()
 
     codeWriter.close()
+    for f in parser.vm_files:
+        print(f)
+        
     print()
     print(command_counter)
     

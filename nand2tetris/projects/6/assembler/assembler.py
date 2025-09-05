@@ -63,7 +63,9 @@ def main():
     with open(parser.inpname.replace(".asm", ".hack"), "w") as f:
         f.writelines(output)
     f.close()
-    
+    for k in symbol_table.symbol_table.keys():
+        print(k, symbol_table.symbol_table[k])
+          
             
 
 def bin2dec(address):

@@ -47,19 +47,19 @@ class Parser:
         self.current_command_type = None
         self.inpname = argv[1]
 
-        vm_files = glob.glob(os.path.join(self.inpname, "*.vm"))
+        self.vm_files = glob.glob(os.path.join(self.inpname, "*.vm"))
         bootstrap_file = None
         
-        for i, file in enumerate(vm_files):
+        for i, file in enumerate(self.vm_files):
             if file.__contains__("Sys.vm"):
-                bootstrap_file = vm_files.pop(i)
+                bootstrap_file = self.vm_files.pop(i)
             else:
                 continue
         if bootstrap_file:
-            vm_files.insert(0,bootstrap_file)
+            self.vm_files.insert(0,bootstrap_file)
         
         self.source=[]
-        for file in vm_files:
+        for file in self.vm_files:
             with open(file , "r") as f:
                 self.source += f.readlines()
         for line in self.source:

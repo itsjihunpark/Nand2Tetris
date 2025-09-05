@@ -74,7 +74,7 @@ class Parser:
             else:
                 return None
                 
-        self.current_instruction = line
+        self.current_instruction = line.strip()
         type = self.instructionType()
         if type!="L_INSTRUCTION":
             self.line_number+=1
