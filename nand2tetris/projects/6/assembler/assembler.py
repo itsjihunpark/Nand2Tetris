@@ -69,6 +69,7 @@ def main():
             
 
 def bin2dec(address):
+    # binary to decimal conversion needs improvement
     total = 0
     for n in range(0,15):
         base = 2**n
