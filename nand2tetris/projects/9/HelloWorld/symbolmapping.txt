@@ -1,3 +1,7 @@
+26,770 ASM instructions compared 
+to benchmark: 30,705 instruction
+when translated by https://github.com/kurtjd/hack-computer/blob/main/vm_translator/hackvm.c
+
 R0 0
 R1 1
 R2 2
