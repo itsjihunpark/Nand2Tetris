@@ -345,10 +345,6 @@ D=A
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
-@13
-M=D
-@13
-D=M
 @Main.fibonacci$N_LT_2
 D;JNE
 //C_GOTO arg1: N_GE_2 arg2: None goto N_GE_2

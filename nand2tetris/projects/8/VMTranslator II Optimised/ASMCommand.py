@@ -270,10 +270,6 @@ C_GOTO =[
 C_IF = [
     "@SP // pop from stack to memory address 13", 
     "AM=M-1",
-    "D=M",
-    "@13",
-    "M=D",
-    "@13", 
     "D=M", 
     "@{label}",
     "D;JNE"

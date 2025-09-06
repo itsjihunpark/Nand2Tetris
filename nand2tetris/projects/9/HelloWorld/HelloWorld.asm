@@ -467,10 +467,6 @@ D=A
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
-@13
-M=D
-@13
-D=M
 @Sys.halt$WHILE_END0
 D;JNE
 //C_GOTO arg1: WHILE_EXP0 arg2: None goto WHILE_EXP0
@@ -525,10 +521,6 @@ D=A
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
-D=M
-@13
-M=D
-@13
 D=M
 @Sys.wait$IF_TRUE0
 D;JNE
@@ -598,10 +590,6 @@ D=A
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
-@13
-M=D
-@13
-D=M
 @Sys.wait$WHILE_END0
 D;JNE
 //C_PUSH arg1: constant arg2: 50 push constant 50
@@ -661,10 +649,6 @@ D=A
 //C_IF arg1: WHILE_END1 arg2: None if-goto WHILE_END1
 @SP // pop from stack to memory address 13
 AM=M-1
-D=M
-@13
-M=D
-@13
 D=M
 @Sys.wait$WHILE_END1
 D;JNE
@@ -952,10 +936,6 @@ D=A
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
-@13
-M=D
-@13
-D=M
 @Array.new$IF_TRUE0
 D;JNE
 //C_GOTO arg1: IF_FALSE0 arg2: None goto IF_FALSE0
@@ -1230,10 +1210,6 @@ D=A
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
-@13
-M=D
-@13
-D=M
 @Keyboard.readChar$WHILE_END0
 D;JNE
 //C_CALL arg1: Keyboard.keyPressed arg2: 0 call Keyboard.keyPressed 0
@@ -1293,10 +1269,6 @@ D=A
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
-D=M
-@13
-M=D
-@13
 D=M
 @Keyboard.readChar$IF_TRUE0
 D;JNE
@@ -1606,10 +1578,6 @@ D=A
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
-@13
-M=D
-@13
-D=M
 @Keyboard.readLine$WHILE_END0
 D;JNE
 //C_CALL arg1: Keyboard.readChar arg2: 0 call Keyboard.readChar 0
@@ -1706,10 +1674,6 @@ D=A
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
-@13
-M=D
-@13
-D=M
 @Keyboard.readLine$IF_TRUE0
 D;JNE
 //C_GOTO arg1: IF_FALSE0 arg2: None goto IF_FALSE0
@@ -1745,10 +1709,6 @@ D=A
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
 @SP // pop from stack to memory address 13
 AM=M-1
-D=M
-@13
-M=D
-@13
 D=M
 @Keyboard.readLine$IF_TRUE1
 D;JNE
@@ -2495,10 +2455,6 @@ D=A
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
-@13
-M=D
-@13
-D=M
 @Math.init$WHILE_END0
 D;JNE
 //C_PUSH arg1: local arg2: 0 push local 0
@@ -2756,10 +2712,6 @@ D=A
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
-D=M
-@13
-M=D
-@13
 D=M
 @Math.abs$IF_TRUE0
 D;JNE
@@ -3089,10 +3041,6 @@ D=A
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
-@13
-M=D
-@13
-D=M
 @Math.multiply$IF_TRUE0
 D;JNE
 //C_GOTO arg1: IF_FALSE0 arg2: None goto IF_FALSE0
@@ -3244,10 +3192,6 @@ D=A
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
-@13
-M=D
-@13
-D=M
 @Math.multiply$WHILE_END0
 D;JNE
 //C_PUSH arg1: local arg2: 3 push local 3
@@ -3327,10 +3271,6 @@ D=A
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
 @SP // pop from stack to memory address 13
 AM=M-1
-D=M
-@13
-M=D
-@13
 D=M
 @Math.multiply$IF_TRUE1
 D;JNE
@@ -3555,10 +3495,6 @@ M=D
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
-@13
-M=D
-@13
-D=M
 @Math.multiply$IF_TRUE2
 D;JNE
 //C_GOTO arg1: IF_FALSE2 arg2: None goto IF_FALSE2
@@ -3668,10 +3604,6 @@ D=A
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
-D=M
-@13
-M=D
-@13
 D=M
 @Math.divide$IF_TRUE0
 D;JNE
@@ -4011,10 +3943,6 @@ D=A
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
-@13
-M=D
-@13
-D=M
 @Math.divide$WHILE_END0
 D;JNE
 //C_PUSH arg1: constant arg2: 32767 push constant 32767
@@ -4176,10 +4104,6 @@ D=A
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
 @SP // pop from stack to memory address 13
 AM=M-1
-D=M
-@13
-M=D
-@13
 D=M
 @Math.divide$IF_TRUE1
 D;JNE
@@ -4474,10 +4398,6 @@ D=A
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
-@13
-M=D
-@13
-D=M
 @Math.divide$IF_TRUE2
 D;JNE
 //C_GOTO arg1: IF_FALSE2 arg2: None goto IF_FALSE2
@@ -4569,10 +4489,6 @@ D=A
 //C_IF arg1: WHILE_END1 arg2: None if-goto WHILE_END1
 @SP // pop from stack to memory address 13
 AM=M-1
-D=M
-@13
-M=D
-@13
 D=M
 @Math.divide$WHILE_END1
 D;JNE
@@ -4666,10 +4582,6 @@ D=A
 //C_IF arg1: IF_TRUE3 arg2: None if-goto IF_TRUE3
 @SP // pop from stack to memory address 13
 AM=M-1
-D=M
-@13
-M=D
-@13
 D=M
 @Math.divide$IF_TRUE3
 D;JNE
@@ -4880,10 +4792,6 @@ M=D
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
-@13
-M=D
-@13
-D=M
 @Math.divide$IF_TRUE4
 D;JNE
 //C_GOTO arg1: IF_FALSE4 arg2: None goto IF_FALSE4
@@ -4994,10 +4902,6 @@ D=A
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
-@13
-M=D
-@13
-D=M
 @Math.sqrt$IF_TRUE0
 D;JNE
 //C_GOTO arg1: IF_FALSE0 arg2: None goto IF_FALSE0
@@ -5095,10 +4999,6 @@ D=A
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
 @SP // pop from stack to memory address 13
 AM=M-1
-D=M
-@13
-M=D
-@13
 D=M
 @Math.sqrt$WHILE_END0
 D;JNE
@@ -5296,10 +5196,6 @@ D=A
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
-@13
-M=D
-@13
-D=M
 @Math.sqrt$IF_TRUE1
 D;JNE
 //C_GOTO arg1: IF_FALSE1 arg2: None goto IF_FALSE1
@@ -5427,10 +5323,6 @@ D=A
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
-@13
-M=D
-@13
-D=M
 @Math.max$IF_TRUE0
 D;JNE
 //C_GOTO arg1: IF_FALSE0 arg2: None goto IF_FALSE0
@@ -5513,10 +5405,6 @@ D=A
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
-D=M
-@13
-M=D
-@13
 D=M
 @Math.min$IF_TRUE0
 D;JNE
@@ -5898,10 +5786,6 @@ D=A
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
-@13
-M=D
-@13
-D=M
 @Memory.alloc$IF_TRUE0
 D;JNE
 //C_GOTO arg1: IF_FALSE0 arg2: None goto IF_FALSE0
@@ -5962,10 +5846,6 @@ D=A
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
 @SP // pop from stack to memory address 13
 AM=M-1
-D=M
-@13
-M=D
-@13
 D=M
 @Memory.alloc$IF_TRUE1
 D;JNE
@@ -6116,10 +5996,6 @@ D=A
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
 @SP // pop from stack to memory address 13
 AM=M-1
-D=M
-@13
-M=D
-@13
 D=M
 @Memory.alloc$WHILE_END0
 D;JNE
@@ -6321,10 +6197,6 @@ D=A
 //C_IF arg1: IF_TRUE2 arg2: None if-goto IF_TRUE2
 @SP // pop from stack to memory address 13
 AM=M-1
-D=M
-@13
-M=D
-@13
 D=M
 @Memory.alloc$IF_TRUE2
 D;JNE
@@ -6594,10 +6466,6 @@ D=A
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
-@13
-M=D
-@13
-D=M
 @Memory.alloc$IF_TRUE3
 D;JNE
 //C_GOTO arg1: IF_FALSE3 arg2: None goto IF_FALSE3
@@ -6837,10 +6705,6 @@ D=A
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
-@13
-M=D
-@13
-D=M
 @Memory.alloc$IF_TRUE4
 D;JNE
 //C_GOTO arg1: IF_FALSE4 arg2: None goto IF_FALSE4
@@ -6946,10 +6810,6 @@ D=A
 //C_IF arg1: IF_TRUE5 arg2: None if-goto IF_TRUE5
 @SP // pop from stack to memory address 13
 AM=M-1
-D=M
-@13
-M=D
-@13
 D=M
 @Memory.alloc$IF_TRUE5
 D;JNE
@@ -7171,10 +7031,6 @@ D=A
 //C_IF arg1: IF_TRUE6 arg2: None if-goto IF_TRUE6
 @SP // pop from stack to memory address 13
 AM=M-1
-D=M
-@13
-M=D
-@13
 D=M
 @Memory.alloc$IF_TRUE6
 D;JNE
@@ -7776,10 +7632,6 @@ D=A
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
-@13
-M=D
-@13
-D=M
 @Memory.deAlloc$IF_TRUE0
 D;JNE
 //C_GOTO arg1: IF_FALSE0 arg2: None goto IF_FALSE0
@@ -8147,10 +7999,6 @@ D=A
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
 @SP // pop from stack to memory address 13
 AM=M-1
-D=M
-@13
-M=D
-@13
 D=M
 @Memory.deAlloc$IF_TRUE1
 D;JNE
@@ -19525,10 +19373,6 @@ D=A
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
-@13
-M=D
-@13
-D=M
 @Output.createShiftedMap$WHILE_END0
 D;JNE
 //C_PUSH arg1: local arg2: 2 push local 2
@@ -19752,10 +19596,6 @@ D=A
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
-@13
-M=D
-@13
-D=M
 @Output.createShiftedMap$WHILE_END1
 D;JNE
 //C_PUSH arg1: local arg2: 3 push local 3
@@ -19954,10 +19794,6 @@ D=A
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
-@13
-M=D
-@13
-D=M
 @Output.createShiftedMap$IF_TRUE0
 D;JNE
 //C_GOTO arg1: IF_FALSE0 arg2: None goto IF_FALSE0
@@ -20115,10 +19951,6 @@ D=A
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
-@13
-M=D
-@13
-D=M
 @Output.getMap$IF_TRUE0
 D;JNE
 //C_GOTO arg1: IF_FALSE0 arg2: None goto IF_FALSE0
@@ -20160,10 +19992,6 @@ M=D
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
 @SP // pop from stack to memory address 13
 AM=M-1
-D=M
-@13
-M=D
-@13
 D=M
 @Output.getMap$IF_TRUE1
 D;JNE
@@ -20430,10 +20258,6 @@ D=A
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
-@13
-M=D
-@13
-D=M
 @Output.drawChar$WHILE_END0
 D;JNE
 //C_PUSH arg1: static arg2: 2 push static 2
@@ -20446,10 +20270,6 @@ M=D
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
-D=M
-@13
-M=D
-@13
 D=M
 @Output.drawChar$IF_TRUE0
 D;JNE
@@ -20937,10 +20757,6 @@ D=A
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
-@13
-M=D
-@13
-D=M
 @Output.moveCursor$IF_TRUE0
 D;JNE
 //C_GOTO arg1: IF_FALSE0 arg2: None goto IF_FALSE0
@@ -21202,10 +21018,6 @@ D=A
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
-@13
-M=D
-@13
-D=M
 @Output.printChar$IF_TRUE0
 D;JNE
 //C_GOTO arg1: IF_FALSE0 arg2: None goto IF_FALSE0
@@ -21269,10 +21081,6 @@ D=A
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
 @SP // pop from stack to memory address 13
 AM=M-1
-D=M
-@13
-M=D
-@13
 D=M
 @Output.printChar$IF_TRUE1
 D;JNE
@@ -21350,10 +21158,6 @@ D=A
 //C_IF arg1: IF_TRUE2 arg2: None if-goto IF_TRUE2
 @SP // pop from stack to memory address 13
 AM=M-1
-D=M
-@13
-M=D
-@13
 D=M
 @Output.printChar$IF_TRUE2
 D;JNE
@@ -21437,10 +21241,6 @@ D=A
 //C_IF arg1: IF_TRUE3 arg2: None if-goto IF_TRUE3
 @SP // pop from stack to memory address 13
 AM=M-1
-D=M
-@13
-M=D
-@13
 D=M
 @Output.printChar$IF_TRUE3
 D;JNE
@@ -21599,10 +21399,6 @@ D=A
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
 @SP // pop from stack to memory address 13
 AM=M-1
-D=M
-@13
-M=D
-@13
 D=M
 @Output.printString$WHILE_END0
 D;JNE
@@ -21895,10 +21691,6 @@ D=A
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
-@13
-M=D
-@13
-D=M
 @Output.println$IF_TRUE0
 D;JNE
 //C_GOTO arg1: IF_FALSE0 arg2: None goto IF_FALSE0
@@ -21946,10 +21738,6 @@ M=D
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
-@13
-M=D
-@13
-D=M
 @Output.backSpace$IF_TRUE0
 D;JNE
 //C_GOTO arg1: IF_FALSE0 arg2: None goto IF_FALSE0
@@ -21979,10 +21767,6 @@ D=A
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
 @SP // pop from stack to memory address 13
 AM=M-1
-D=M
-@13
-M=D
-@13
 D=M
 @Output.backSpace$IF_TRUE1
 D;JNE
@@ -22082,10 +21866,6 @@ D=A
 //C_IF arg1: IF_TRUE2 arg2: None if-goto IF_TRUE2
 @SP // pop from stack to memory address 13
 AM=M-1
-D=M
-@13
-M=D
-@13
 D=M
 @Output.backSpace$IF_TRUE2
 D;JNE
@@ -22376,10 +22156,6 @@ D=A
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
-@13
-M=D
-@13
-D=M
 @Screen.init$WHILE_END0
 D;JNE
 //C_PUSH arg1: local arg2: 0 push local 0
@@ -22651,10 +22427,6 @@ D=A
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
-@13
-M=D
-@13
-D=M
 @Screen.clearScreen$WHILE_END0
 D;JNE
 //C_PUSH arg1: local arg2: 0 push local 0
@@ -22793,10 +22565,6 @@ M=D
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
-D=M
-@13
-M=D
-@13
 D=M
 @Screen.updateLocation$IF_TRUE0
 D;JNE
@@ -23223,10 +22991,6 @@ D=A
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
-@13
-M=D
-@13
-D=M
 @Screen.drawPixel$IF_TRUE0
 D;JNE
 //C_GOTO arg1: IF_FALSE0 arg2: None goto IF_FALSE0
@@ -23536,10 +23300,6 @@ M=D
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
-@13
-M=D
-@13
-D=M
 @Screen.drawConditional$IF_TRUE0
 D;JNE
 //C_GOTO arg1: IF_FALSE0 arg2: None goto IF_FALSE0
@@ -23826,10 +23586,6 @@ D=A
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
-D=M
-@13
-M=D
-@13
 D=M
 @Screen.drawLine$IF_TRUE0
 D;JNE
@@ -24122,10 +23878,6 @@ D=A
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
-@13
-M=D
-@13
-D=M
 @Screen.drawLine$IF_TRUE1
 D;JNE
 //C_GOTO arg1: IF_FALSE1 arg2: None goto IF_FALSE1
@@ -24308,10 +24060,6 @@ M=D
 //C_IF arg1: IF_TRUE2 arg2: None if-goto IF_TRUE2
 @SP // pop from stack to memory address 13
 AM=M-1
-D=M
-@13
-M=D
-@13
 D=M
 @Screen.drawLine$IF_TRUE2
 D;JNE
@@ -24916,10 +24664,6 @@ D=A
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
-@13
-M=D
-@13
-D=M
 @Screen.drawLine$WHILE_END0
 D;JNE
 //C_PUSH arg1: local arg2: 5 push local 5
@@ -24948,10 +24692,6 @@ D=A
 //C_IF arg1: IF_TRUE3 arg2: None if-goto IF_TRUE3
 @SP // pop from stack to memory address 13
 AM=M-1
-D=M
-@13
-M=D
-@13
 D=M
 @Screen.drawLine$IF_TRUE3
 D;JNE
@@ -25062,10 +24802,6 @@ M=D
 //C_IF arg1: IF_TRUE4 arg2: None if-goto IF_TRUE4
 @SP // pop from stack to memory address 13
 AM=M-1
-D=M
-@13
-M=D
-@13
 D=M
 @Screen.drawLine$IF_TRUE4
 D;JNE
@@ -25500,10 +25236,6 @@ D=A
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
-D=M
-@13
-M=D
-@13
 D=M
 @Screen.drawRectangle$IF_TRUE0
 D;JNE
@@ -26070,10 +25802,6 @@ D=A
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
-@13
-M=D
-@13
-D=M
 @Screen.drawRectangle$WHILE_END0
 D;JNE
 //C_PUSH arg1: local arg2: 0 push local 0
@@ -26145,10 +25873,6 @@ D=A
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
 @SP // pop from stack to memory address 13
 AM=M-1
-D=M
-@13
-M=D
-@13
 D=M
 @Screen.drawRectangle$IF_TRUE1
 D;JNE
@@ -26332,10 +26056,6 @@ D=A
 //C_IF arg1: WHILE_END1 arg2: None if-goto WHILE_END1
 @SP // pop from stack to memory address 13
 AM=M-1
-D=M
-@13
-M=D
-@13
 D=M
 @Screen.drawRectangle$WHILE_END1
 D;JNE
@@ -26876,10 +26596,6 @@ D=A
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
-D=M
-@13
-M=D
-@13
 D=M
 @Screen.drawHorizontal$IF_TRUE0
 D;JNE
@@ -27541,10 +27257,6 @@ D=A
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
-@13
-M=D
-@13
-D=M
 @Screen.drawHorizontal$IF_TRUE1
 D;JNE
 //C_GOTO arg1: IF_FALSE1 arg2: None goto IF_FALSE1
@@ -27727,10 +27439,6 @@ D=A
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
 @SP // pop from stack to memory address 13
 AM=M-1
-D=M
-@13
-M=D
-@13
 D=M
 @Screen.drawHorizontal$WHILE_END0
 D;JNE
@@ -28419,10 +28127,6 @@ D=A
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
-@13
-M=D
-@13
-D=M
 @Screen.drawCircle$IF_TRUE0
 D;JNE
 //C_GOTO arg1: IF_FALSE0 arg2: None goto IF_FALSE0
@@ -28635,10 +28339,6 @@ D=A
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
-@13
-M=D
-@13
-D=M
 @Screen.drawCircle$IF_TRUE1
 D;JNE
 //C_GOTO arg1: IF_FALSE1 arg2: None goto IF_FALSE1
@@ -28837,10 +28537,6 @@ D=A
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
-@13
-M=D
-@13
-D=M
 @Screen.drawCircle$WHILE_END0
 D;JNE
 //C_PUSH arg1: local arg2: 2 push local 2
@@ -28869,10 +28565,6 @@ D=A
 //C_IF arg1: IF_TRUE2 arg2: None if-goto IF_TRUE2
 @SP // pop from stack to memory address 13
 AM=M-1
-D=M
-@13
-M=D
-@13
 D=M
 @Screen.drawCircle$IF_TRUE2
 D;JNE
@@ -29269,10 +28961,6 @@ D=A
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
-@13
-M=D
-@13
-D=M
 @String.new$IF_TRUE0
 D;JNE
 //C_GOTO arg1: IF_FALSE0 arg2: None goto IF_FALSE0
@@ -29333,10 +29021,6 @@ D=A
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
 @SP // pop from stack to memory address 13
 AM=M-1
-D=M
-@13
-M=D
-@13
 D=M
 @String.new$IF_TRUE1
 D;JNE
@@ -29495,10 +29179,6 @@ D=A
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
-D=M
-@13
-M=D
-@13
 D=M
 @String.dispose$IF_TRUE0
 D;JNE
@@ -29722,10 +29402,6 @@ D=A
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
-@13
-M=D
-@13
-D=M
 @String.charAt$IF_TRUE0
 D;JNE
 //C_GOTO arg1: IF_FALSE0 arg2: None goto IF_FALSE0
@@ -29918,10 +29594,6 @@ D=A
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
-@13
-M=D
-@13
-D=M
 @String.setCharAt$IF_TRUE0
 D;JNE
 //C_GOTO arg1: IF_FALSE0 arg2: None goto IF_FALSE0
@@ -30089,10 +29761,6 @@ D=A
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
-D=M
-@13
-M=D
-@13
 D=M
 @String.appendChar$IF_TRUE0
 D;JNE
@@ -30299,10 +29967,6 @@ D=A
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
-@13
-M=D
-@13
-D=M
 @String.eraseLastChar$IF_TRUE0
 D;JNE
 //C_GOTO arg1: IF_FALSE0 arg2: None goto IF_FALSE0
@@ -30466,10 +30130,6 @@ D=A
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
-@13
-M=D
-@13
-D=M
 @String.intValue$IF_TRUE0
 D;JNE
 //C_GOTO arg1: IF_FALSE0 arg2: None goto IF_FALSE0
@@ -30572,10 +30232,6 @@ D=A
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
 @SP // pop from stack to memory address 13
 AM=M-1
-D=M
-@13
-M=D
-@13
 D=M
 @String.intValue$IF_TRUE1
 D;JNE
@@ -30690,10 +30346,6 @@ D=A
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
 @SP // pop from stack to memory address 13
 AM=M-1
-D=M
-@13
-M=D
-@13
 D=M
 @String.intValue$WHILE_END0
 D;JNE
@@ -30858,10 +30510,6 @@ M=D
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
-@13
-M=D
-@13
-D=M
 @String.intValue$IF_TRUE2
 D;JNE
 //C_GOTO arg1: IF_FALSE2 arg2: None goto IF_FALSE2
@@ -30991,10 +30639,6 @@ M=D
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
-@13
-M=D
-@13
-D=M
 @String.intValue$IF_TRUE3
 D;JNE
 //C_GOTO arg1: IF_FALSE3 arg2: None goto IF_FALSE3
@@ -31121,10 +30765,6 @@ D=A
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
-@13
-M=D
-@13
-D=M
 @String.setInt$IF_TRUE0
 D;JNE
 //C_GOTO arg1: IF_FALSE0 arg2: None goto IF_FALSE0
@@ -31223,10 +30863,6 @@ D=A
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
 @SP // pop from stack to memory address 13
 AM=M-1
-D=M
-@13
-M=D
-@13
 D=M
 @String.setInt$IF_TRUE1
 D;JNE
@@ -31358,10 +30994,6 @@ D=A
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
 @SP // pop from stack to memory address 13
 AM=M-1
-D=M
-@13
-M=D
-@13
 D=M
 @String.setInt$WHILE_END0
 D;JNE
@@ -31620,10 +31252,6 @@ M=D
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
-@13
-M=D
-@13
-D=M
 @String.setInt$IF_TRUE2
 D;JNE
 //C_GOTO arg1: IF_FALSE2 arg2: None goto IF_FALSE2
@@ -31770,10 +31398,6 @@ D=A
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
-@13
-M=D
-@13
-D=M
 @String.setInt$IF_TRUE3
 D;JNE
 //C_GOTO arg1: IF_FALSE3 arg2: None goto IF_FALSE3
@@ -31834,10 +31458,6 @@ D=A
 //C_IF arg1: IF_TRUE4 arg2: None if-goto IF_TRUE4
 @SP // pop from stack to memory address 13
 AM=M-1
-D=M
-@13
-M=D
-@13
 D=M
 @String.setInt$IF_TRUE4
 D;JNE
@@ -31999,10 +31619,6 @@ D=A
 //C_IF arg1: WHILE_END1 arg2: None if-goto WHILE_END1
 @SP // pop from stack to memory address 13
 AM=M-1
-D=M
-@13
-M=D
-@13
 D=M
 @String.setInt$WHILE_END1
 D;JNE
