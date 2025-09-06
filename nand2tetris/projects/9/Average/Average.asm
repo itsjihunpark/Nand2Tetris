@@ -104,22 +104,12 @@ A=M
 (ADD)
 @15
 M=D
-@SP // pop from stack to memory address 13 and 14
+@SP // pop from stack
 AM=M-1
-D=M
-@13
-M=D
+D=M // Y
 @SP
 AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M+D
-@14 // push memory address 14 to stack 
-D=M
+D=M+D // D = X+Y
 @SP
 M=M+1
 A=M-1
@@ -130,22 +120,12 @@ A=M
 (SUB)
 @15
 M=D
-@SP // pop from stack to memory address 13 and 14
+@SP // pop from stack
 AM=M-1
-D=M
-@13
-M=D
+D=M // Y
 @SP
 AM=M-1
-D=M
-@14
-M=D
-@13 // Y
-D=M
-@14 // X
-M=M-D
-@14 // push memory address 14 to stack 
-D=M
+D=M-D //D = X-Y
 @SP
 M=M+1
 A=M-1
@@ -156,15 +136,9 @@ A=M
 (NEG)
 @15
 M=D
-@SP // pop from stack to memory address 13
+@SP // pop from stack
 AM=M-1
-D=M
-@13
-M=D
-@14 // X
-M=-M
-@14 // push memory address 14 to stack 
-D=M
+D=-M
 @SP
 M=M+1
 A=M-1
@@ -175,20 +149,12 @@ A=M
 (GT)
 @15
 M=D
-@SP // pop from stack to memory address 13 and 14
+@SP // pop from stack
 AM=M-1
-D=M
-@13
-M=D
+D=M // Y
 @SP
 AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
+D=M-D // D = X - Y
 @ISGT
 D;JGT
 D=0
@@ -197,10 +163,6 @@ D=0
 (ISGT)
 D=-1
 (ENDGT)
-@14
-M=D
-@14 // push memory address 14 to stack
-D=M
 @SP
 M=M+1
 A=M-1
@@ -211,20 +173,12 @@ A=M
 (LT)
 @15
 M=D
-@SP // pop from stack to memory address 13 and 14
+@SP // pop from stack
 AM=M-1
-D=M
-@13
-M=D
+D=M // Y
 @SP
 AM=M-1
-D=M
-@14
-M=D
-@13  // Y
-D=M
-@14 // X
-D=M-D
+D=M-D // D = X - Y
 @ISLT
 D;JLT
 D=0
@@ -233,10 +187,6 @@ D=0
 (ISLT)
 D=-1
 (ENDLT)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
 @SP
 M=M+1
 A=M-1
@@ -247,22 +197,12 @@ A=M
 (AND)
 @15
 M=D
-@SP // pop from stack to memory address 13 and 14
+@SP // pop from stack
 AM=M-1
 D=M
-@13
-M=D
 @SP
 AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M&D
-@14 // push memory address 14 to stack 
-D=M
+D=M&D
 @SP
 M=M+1
 A=M-1
@@ -273,22 +213,12 @@ A=M
 (OR)
 @15
 M=D
-@SP // pop from stack to memory address 13 and 14
+@SP // pop from stack
 AM=M-1
 D=M
-@13
-M=D
 @SP
 AM=M-1
-D=M
-@14
-M=D
-@13 // first pop value
-D=M
-@14 // second pop value
-M = M|D
-@14 // push memory address 14 to stack 
-D=M
+D = M|D
 @SP
 M=M+1
 A=M-1
@@ -299,15 +229,9 @@ A=M
 (NOT)
 @15
 M=D
-@SP // pop from stack to memory address 13
+@SP // pop from stack
 AM=M-1
-D=M
-@13
-M=D
-@14 // first pop value
-M=!M
-@14 // push memory address 14 to stack 
-D=M
+D=!M
 @SP
 M=M+1
 A=M-1
@@ -318,19 +242,11 @@ A=M
 (EQ)
 @15
 M=D
-@SP // pop from stack to memory address 13 and 14
+@SP // pop from stack
 AM=M-1
 D=M
-@13
-M=D
 @SP
 AM=M-1
-D=M
-@14
-M=D
-@13 // y
-D=M
-@14 // x
 D=M-D
 @ISEQ
 D;JEQ
@@ -340,10 +256,6 @@ D=0
 (ISEQ)
 D=-1
 (ENDEQ)
-@14
-M=D
-@14 // push memory address 14 to stack 
-D=M
 @SP
 M=M+1
 A=M-1
