@@ -31,6 +31,7 @@ class Code:
         }
 
         if mnemonics:
+            mnemonics = mnemonics.strip()
             for char in mnemonics:
                 dest_binary[char]=1
         return  str(list(dest_binary.values())).replace(",","").replace(" ","").replace("[","").replace("]","")
