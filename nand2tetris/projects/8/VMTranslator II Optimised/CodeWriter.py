@@ -146,6 +146,15 @@ class CodeWriter:
                            "@14",
                            "A=M", 
                            "M=D"]
+            pop_command = [f"@{dest_segment}",
+                           "D=D+M // D = pop value + base memory address of mem segment",
+                           f"@{dest_addr}",
+                           "D=D+A // D = pop value + address to pop to",
+                           "@SP",
+                           "A=M",
+                           "A=M",
+                           "A=D-A",
+                           "M=D-A"]
         else:
             pop_command = [f"@{dest_addr}","M=D"]
 

@@ -70,14 +70,13 @@ M=D
 // works by storing two pieces of information in one variable
 
 @SP
-M=M-1
-A=M 
+AM=M-1
 D=M // D = pop value
+
 @[Segment]
 D=D+M // D = pop value + base memory address of mem segment
 @Index
 D=D+A // D = pop value + address to pop to
-
 @SP
 A=M 
 A=M // A = pop value
