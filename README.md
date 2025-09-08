@@ -8,7 +8,7 @@ This project is made up of two parts: Hardware and Software.
 
 For the Hardware project, a "no particular type (neither RISC nor CISC)" instruction set, 16bit, Von Neumann variant hardware platform was defined with Hardware Definition Language (HDL) from elemental logic gate Nand. In addition, an assembler was developed to translate symbolic machine code (assembly) to binary machine code which can be executed on this hardware platform. 
 
-For the Software project, a stack-based, two-tier compiler (similar to Java and C#) was developed in two parts: the backend - VM code to Machine specific Assembly translator (a.k.a., VM implementation) and the front end - high level language to VM code. 
+For the Software project, a stack-based, two-tier compiler (similar to Java and C#, not so much a professional compiler but enough to get an understanding of how compilers work under the hood) was developed in two parts: the backend - VM code to Machine specific Assembly translator (a.k.a., VM implementation) and the front end - high level language to VM code. 
 
 Finally, to end this project, an Operating system....TBC
 
