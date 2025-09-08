@@ -603,19 +603,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: WHILE_EXP1 arg2: None label WHILE_EXP1
 (Sys.wait$WHILE_EXP1)//C_PUSH arg1: local arg2: 0 push local 0
 @0
@@ -679,19 +675,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_GOTO arg1: WHILE_EXP1 arg2: None goto WHILE_EXP1
 @Sys.wait$WHILE_EXP1
 0;JMP
@@ -723,19 +715,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @ARG
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_GOTO arg1: WHILE_EXP0 arg2: None goto WHILE_EXP0
 @Sys.wait$WHILE_EXP0
 0;JMP
@@ -1103,19 +1091,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -1130,19 +1114,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@1
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@1
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: argument arg2: 2 push argument 2
 @2
 D=A
@@ -1157,19 +1137,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@10
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@10
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: argument arg2: 3 push argument 3
 @3
 D=A
@@ -1197,19 +1173,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@11
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@11
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: argument arg2: 4 push argument 4
 @4
 D=A
@@ -1224,19 +1196,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@12
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@12
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: argument arg2: 5 push argument 5
 @5
 D=A
@@ -1264,19 +1232,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@13
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
+D=D+M // D = pop value + base memory address of mem segment
 @13
-D=M
-@14
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
@@ -1288,19 +1252,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@14
-D=A
 @THIS
-D=D+M
+D=D+M // D = pop value + base memory address of mem segment
 @14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: pointer arg2: 0 push pointer 0
 @3
 D=M
@@ -1846,19 +1806,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@2
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@2
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: argument arg2: 2 push argument 2
 @2
 D=A
@@ -1889,19 +1845,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@3
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@3
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: this arg2: 2 push this 2
 @2
 D=A
@@ -1930,19 +1882,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: this arg2: 3 push this 3
 @3
 D=A
@@ -1971,19 +1919,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@1
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@1
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -2014,19 +1958,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@7
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@7
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: this arg2: 7 push this 7
 @7
 D=A
@@ -2061,19 +2001,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@2
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@2
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
@@ -2088,19 +2024,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 2 push local 2
 @2
 D=A
@@ -2115,19 +2047,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@1
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@1
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: this arg2: 1 push this 1
 @1
 D=A
@@ -2158,19 +2086,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@8
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@8
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: this arg2: 0 push this 0
 @0
 D=A
@@ -2201,19 +2125,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@9
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@9
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_GOTO arg1: IF_END0 arg2: None goto IF_END0
 @Ball.setDestination$IF_END0
 0;JMP
@@ -2248,19 +2168,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@8
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@8
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: this arg2: 1 push this 1
 @1
 D=A
@@ -2291,19 +2207,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@9
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@9
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: IF_END0 arg2: None label IF_END0
 (Ball.setDestination$IF_END0)//C_PUSH arg1: constant arg2: 2 push constant 2
 @2
@@ -2356,19 +2268,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@4
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@4
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: constant arg2: 2 push constant 2
 @2
 D=A
@@ -2404,19 +2312,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@5
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@5
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: constant arg2: 2 push constant 2
 @2
 D=A
@@ -2468,19 +2372,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@6
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@6
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
@@ -2603,19 +2503,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@4
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@4
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_GOTO arg1: IF_END0 arg2: None goto IF_END0
 @Ball.move$IF_END0
 0;JMP
@@ -2650,19 +2546,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@4
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@4
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: this arg2: 9 push this 9
 @9
 D=A
@@ -2730,19 +2622,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_GOTO arg1: IF_END2 arg2: None goto IF_END2
 @Ball.move$IF_END2
 0;JMP
@@ -2774,19 +2662,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@1
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@1
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: IF_END2 arg2: None label IF_END2
 (Ball.move$IF_END2)//C_GOTO arg1: IF_END1 arg2: None goto IF_END1
 @Ball.move$IF_END1
@@ -2839,19 +2723,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_GOTO arg1: IF_END3 arg2: None goto IF_END3
 @Ball.move$IF_END3
 0;JMP
@@ -2883,19 +2763,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@1
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@1
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: IF_END3 arg2: None label IF_END3
 (Ball.move$IF_END3)//C_LABEL arg1: IF_END1 arg2: None label IF_END1
 (Ball.move$IF_END1)//C_LABEL arg1: IF_END0 arg2: None label IF_END0
@@ -2966,19 +2842,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@1
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@1
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_GOTO arg1: IF_END5 arg2: None goto IF_END5
 @Ball.move$IF_END5
 0;JMP
@@ -3010,19 +2882,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: IF_END5 arg2: None label IF_END5
 (Ball.move$IF_END5)//C_GOTO arg1: IF_END4 arg2: None goto IF_END4
 @Ball.move$IF_END4
@@ -3075,19 +2943,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@1
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@1
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_GOTO arg1: IF_END6 arg2: None goto IF_END6
 @Ball.move$IF_END6
 0;JMP
@@ -3119,19 +2983,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: IF_END6 arg2: None label IF_END6
 (Ball.move$IF_END6)//C_LABEL arg1: IF_END4 arg2: None label IF_END4
 (Ball.move$IF_END4)//C_PUSH arg1: this arg2: 0 push this 0
@@ -3187,19 +3047,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@14
-D=A
 @THIS
-D=D+M
+D=D+M // D = pop value + base memory address of mem segment
 @14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: this arg2: 10 push this 10
 @10
 D=A
@@ -3214,19 +3070,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: IF_FALSE7 arg2: None label IF_FALSE7
 (Ball.move$IF_FALSE7)//C_PUSH arg1: this arg2: 0 push this 0
 @0
@@ -3281,19 +3133,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@14
-D=A
 @THIS
-D=D+M
+D=D+M // D = pop value + base memory address of mem segment
 @14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: this arg2: 11 push this 11
 @11
 D=A
@@ -3308,19 +3156,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: IF_FALSE8 arg2: None label IF_FALSE8
 (Ball.move$IF_FALSE8)//C_PUSH arg1: this arg2: 1 push this 1
 @1
@@ -3375,19 +3219,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@14
-D=A
 @THIS
-D=D+M
+D=D+M // D = pop value + base memory address of mem segment
 @14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: this arg2: 12 push this 12
 @12
 D=A
@@ -3402,19 +3242,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@1
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@1
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: IF_FALSE9 arg2: None label IF_FALSE9
 (Ball.move$IF_FALSE9)//C_PUSH arg1: this arg2: 1 push this 1
 @1
@@ -3469,19 +3305,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@14
-D=A
 @THIS
-D=D+M
+D=D+M // D = pop value + base memory address of mem segment
 @14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: this arg2: 13 push this 13
 @13
 D=A
@@ -3496,19 +3328,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@1
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@1
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: IF_FALSE10 arg2: None label IF_FALSE10
 (Ball.move$IF_FALSE10)//C_PUSH arg1: pointer arg2: 0 push pointer 0
 @3
@@ -3637,19 +3465,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@2
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@2
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: this arg2: 3 push this 3
 @3
 D=A
@@ -3685,19 +3509,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@3
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@3
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -3742,19 +3562,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@4
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@4
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_GOTO arg1: IF_END0 arg2: None goto IF_END0
 @Ball.bounce$IF_END0
 0;JMP
@@ -3902,19 +3718,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@4
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@4
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_GOTO arg1: IF_END1 arg2: None goto IF_END1
 @Ball.bounce$IF_END1
 0;JMP
@@ -3930,19 +3742,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@4
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@4
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: IF_END1 arg2: None label IF_END1
 (Ball.bounce$IF_END1)//C_LABEL arg1: IF_END0 arg2: None label IF_END0
 (Ball.bounce$IF_END0)//C_PUSH arg1: this arg2: 14 push this 14
@@ -3989,19 +3797,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 3 push local 3
 @3
 D=A
@@ -4067,19 +3871,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@1
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@1
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: this arg2: 1 push this 1
 @1
 D=A
@@ -4134,19 +3934,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@1
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@1
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_GOTO arg1: IF_END2 arg2: None goto IF_END2
 @Ball.bounce$IF_END2
 0;JMP
@@ -4195,19 +3991,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 3 push local 3
 @3
 D=A
@@ -4267,19 +4059,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@1
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@1
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: this arg2: 1 push this 1
 @1
 D=A
@@ -4334,19 +4122,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@1
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@1
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_GOTO arg1: IF_END3 arg2: None goto IF_END3
 @Ball.bounce$IF_END3
 0;JMP
@@ -4395,19 +4179,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@1
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@1
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 2 push local 2
 @2
 D=A
@@ -4473,19 +4253,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: this arg2: 0 push this 0
 @0
 D=A
@@ -4540,19 +4316,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_GOTO arg1: IF_END4 arg2: None goto IF_END4
 @Ball.bounce$IF_END4
 0;JMP
@@ -4568,19 +4340,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@1
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@1
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 2 push local 2
 @2
 D=A
@@ -4640,19 +4408,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: this arg2: 0 push this 0
 @0
 D=A
@@ -4707,19 +4471,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: IF_END4 arg2: None label IF_END4
 (Ball.bounce$IF_END4)//C_LABEL arg1: IF_END3 arg2: None label IF_END3
 (Ball.bounce$IF_END3)//C_LABEL arg1: IF_END2 arg2: None label IF_END2
@@ -4827,19 +4587,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -4854,19 +4610,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@1
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@1
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: argument arg2: 2 push argument 2
 @2
 D=A
@@ -4881,19 +4633,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@2
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@2
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: argument arg2: 3 push argument 3
 @3
 D=A
@@ -4908,19 +4656,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@3
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@3
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: constant arg2: 2 push constant 2
 @2
 D=A
@@ -4932,19 +4676,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@4
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@4
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: pointer arg2: 0 push pointer 0
 @3
 D=M
@@ -5379,19 +5119,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@4
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@4
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
@@ -5551,19 +5287,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@2
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@2
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: pointer arg2: 0 push pointer 0
 @3
 D=M
@@ -5683,19 +5415,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: this arg2: 0 push this 0
 @0
 D=A
@@ -5740,19 +5468,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: IF_FALSE1 arg2: None label IF_FALSE1
 (Bat.move$IF_FALSE1)//C_PUSH arg1: constant arg2: 0 push constant 0
 @0
@@ -6068,19 +5792,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: this arg2: 0 push this 0
 @0
 D=A
@@ -6157,19 +5877,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: IF_FALSE2 arg2: None label IF_FALSE2
 (Bat.move$IF_FALSE2)//C_PUSH arg1: constant arg2: 0 push constant 0
 @0
@@ -6639,19 +6355,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -6699,19 +6411,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@1
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@1
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: IF_FALSE0 arg2: None label IF_FALSE0
 (Keyboard.readChar$IF_FALSE0)//C_GOTO arg1: WHILE_EXP0 arg2: None goto WHILE_EXP0
 @Keyboard.readChar$WHILE_EXP0
@@ -6855,19 +6563,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@3
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@3
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -6916,19 +6620,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@1
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@1
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_CALL arg1: String.backSpace arg2: 0 call String.backSpace 0
 @0
 D=A
@@ -6947,19 +6647,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@2
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@2
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: WHILE_EXP0 arg2: None label WHILE_EXP0
 (Keyboard.readLine$WHILE_EXP0)//C_PUSH arg1: local arg2: 4 push local 4
 @4
@@ -7007,19 +6703,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -7050,19 +6742,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@4
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@4
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 4 push local 4
 @4
 D=A
@@ -7197,19 +6885,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@3
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@3
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: IF_END1 arg2: None label IF_END1
 (Keyboard.readLine$IF_END1)//C_LABEL arg1: IF_FALSE0 arg2: None label IF_FALSE0
 (Keyboard.readLine$IF_FALSE0)//C_GOTO arg1: WHILE_EXP0 arg2: None goto WHILE_EXP0
@@ -7275,19 +6959,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -7316,19 +6996,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@1
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@1
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -7422,19 +7098,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -7621,19 +7293,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THAT
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: WHILE_EXP0 arg2: None label WHILE_EXP0
 (Math.init$WHILE_EXP0)//C_PUSH arg1: local arg2: 0 push local 0
 @0
@@ -7697,19 +7365,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -7866,19 +7530,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THAT
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_GOTO arg1: WHILE_EXP0 arg2: None goto WHILE_EXP0
 @Math.init$WHILE_EXP0
 0;JMP
@@ -7952,19 +7612,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @ARG
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: IF_FALSE0 arg2: None label IF_FALSE0
 (Math.abs$IF_FALSE0)//C_PUSH arg1: argument arg2: 0 push argument 0
 @0
@@ -8129,19 +7785,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@4
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@4
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -8170,19 +7822,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @ARG
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -8211,19 +7859,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@1
-D=A
 @ARG
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@1
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -8274,19 +7918,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@1
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@1
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -8301,19 +7941,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @ARG
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
@@ -8328,19 +7964,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@1
-D=A
 @ARG
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@1
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: IF_FALSE0 arg2: None label IF_FALSE0
 (Math.multiply$IF_FALSE0)//C_LABEL arg1: WHILE_EXP0 arg2: None label WHILE_EXP0
 (Math.multiply$WHILE_EXP0)//C_PUSH arg1: local arg2: 2 push local 2
@@ -8521,19 +8153,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 2 push local 2
 @2
 D=A
@@ -8593,19 +8221,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@2
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@2
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: IF_FALSE1 arg2: None label IF_FALSE1
 (Math.multiply$IF_FALSE1)//C_PUSH arg1: argument arg2: 0 push argument 0
 @0
@@ -8637,19 +8261,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @ARG
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 3 push local 3
 @3
 D=A
@@ -8677,19 +8297,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@3
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@3
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_GOTO arg1: WHILE_EXP0 arg2: None goto WHILE_EXP0
 @Math.multiply$WHILE_EXP0
 0;JMP
@@ -8734,19 +8350,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: IF_FALSE2 arg2: None label IF_FALSE2
 (Math.multiply$IF_FALSE2)//C_PUSH arg1: local arg2: 0 push local 0
 @0
@@ -8966,19 +8578,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@2
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@2
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
@@ -9046,19 +8654,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THAT
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -9087,19 +8691,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @ARG
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: WHILE_EXP0 arg2: None label WHILE_EXP0
 (Math.divide$WHILE_EXP0)//C_PUSH arg1: local arg2: 0 push local 0
 @0
@@ -9285,19 +8885,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@3
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@3
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 3 push local 3
 @3
 D=A
@@ -9467,19 +9063,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THAT
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -9578,19 +9170,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@3
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@3
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 3 push local 3
 @3
 D=A
@@ -9644,19 +9232,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: IF_FALSE2 arg2: None label IF_FALSE2
 (Math.divide$IF_FALSE2)//C_LABEL arg1: IF_FALSE1 arg2: None label IF_FALSE1
 (Math.divide$IF_FALSE1)//C_GOTO arg1: WHILE_EXP0 arg2: None goto WHILE_EXP0
@@ -9861,19 +9445,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@1
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@1
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -9933,19 +9513,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @ARG
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: IF_FALSE3 arg2: None label IF_FALSE3
 (Math.divide$IF_FALSE3)//C_PUSH arg1: local arg2: 0 push local 0
 @0
@@ -9974,19 +9550,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_GOTO arg1: WHILE_EXP1 arg2: None goto WHILE_EXP1
 @Math.divide$WHILE_EXP1
 0;JMP
@@ -10031,19 +9603,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@1
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@1
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: IF_FALSE4 arg2: None label IF_FALSE4
 (Math.divide$IF_FALSE4)//C_PUSH arg1: local arg2: 1 push local 1
 @1
@@ -10160,19 +9728,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: WHILE_EXP0 arg2: None label WHILE_EXP0
 (Math.sqrt$WHILE_EXP0)//C_PUSH arg1: local arg2: 0 push local 0
 @0
@@ -10274,19 +9838,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@1
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@1
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
@@ -10325,19 +9885,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@2
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@2
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 2 push local 2
 @2
 D=A
@@ -10429,19 +9985,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@3
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@3
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: IF_FALSE1 arg2: None label IF_FALSE1
 (Math.sqrt$IF_FALSE1)//C_PUSH arg1: local arg2: 0 push local 0
 @0
@@ -10470,19 +10022,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_GOTO arg1: WHILE_EXP0 arg2: None goto WHILE_EXP0
 @Math.sqrt$WHILE_EXP0
 0;JMP
@@ -10556,19 +10104,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@1
-D=A
 @ARG
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@1
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: IF_FALSE0 arg2: None label IF_FALSE0
 (Math.max$IF_FALSE0)//C_PUSH arg1: argument arg2: 1 push argument 1
 @1
@@ -10639,19 +10183,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@1
-D=A
 @ARG
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@1
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: IF_FALSE0 arg2: None label IF_FALSE0
 (Math.min$IF_FALSE0)//C_PUSH arg1: argument arg2: 1 push argument 1
 @1
@@ -10735,19 +10275,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THAT
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: constant arg2: 2049 push constant 2049
 @2049
 D=A
@@ -10798,19 +10334,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THAT
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
@@ -10931,19 +10463,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THAT
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
@@ -11077,19 +10605,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @ARG
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: IF_FALSE1 arg2: None label IF_FALSE1
 (Memory.alloc$IF_FALSE1)//C_PUSH arg1: constant arg2: 2048 push constant 2048
 @2048
@@ -11102,19 +10626,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: WHILE_EXP0 arg2: None label WHILE_EXP0
 (Memory.alloc$WHILE_EXP0)//C_PUSH arg1: local arg2: 0 push local 0
 @0
@@ -11255,19 +10775,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@1
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@1
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
@@ -11431,19 +10947,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_GOTO arg1: IF_END2 arg2: None goto IF_END2
 @Memory.alloc$IF_END2
 0;JMP
@@ -11594,19 +11106,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THAT
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
@@ -11754,19 +11262,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THAT
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_GOTO arg1: IF_END3 arg2: None goto IF_END3
 @Memory.alloc$IF_END3
 0;JMP
@@ -11856,19 +11360,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THAT
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: IF_END3 arg2: None label IF_END3
 (Memory.alloc$IF_END3)//C_LABEL arg1: IF_END2 arg2: None label IF_END2
 (Memory.alloc$IF_END2)//C_GOTO arg1: WHILE_EXP0 arg2: None goto WHILE_EXP0
@@ -12160,19 +11660,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THAT
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
@@ -12352,19 +11848,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THAT
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_GOTO arg1: IF_END6 arg2: None goto IF_END6
 @Memory.alloc$IF_END6
 0;JMP
@@ -12470,19 +11962,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THAT
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: IF_END6 arg2: None label IF_END6
 (Memory.alloc$IF_END6)//C_PUSH arg1: constant arg2: 1 push constant 1
 @1
@@ -12569,19 +12057,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THAT
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: IF_FALSE5 arg2: None label IF_FALSE5
 (Memory.alloc$IF_FALSE5)//C_PUSH arg1: constant arg2: 0 push constant 0
 @0
@@ -12636,19 +12120,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THAT
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -12720,19 +12200,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
@@ -12776,19 +12252,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@1
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@1
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
@@ -12965,19 +12437,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THAT
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_GOTO arg1: IF_END0 arg2: None goto IF_END0
 @Memory.deAlloc$IF_END0
 0;JMP
@@ -13128,19 +12596,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THAT
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
@@ -13288,19 +12752,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THAT
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_GOTO arg1: IF_END1 arg2: None goto IF_END1
 @Memory.deAlloc$IF_END1
 0;JMP
@@ -13390,19 +12850,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THAT
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: IF_END1 arg2: None label IF_END1
 (Memory.deAlloc$IF_END1)//C_LABEL arg1: IF_END0 arg2: None label IF_END0
 (Memory.deAlloc$IF_END0)//C_PUSH arg1: constant arg2: 0 push constant 0
@@ -23620,19 +23076,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -23689,19 +23141,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THAT
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
@@ -23758,19 +23206,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THAT
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
@@ -23827,19 +23271,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THAT
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: constant arg2: 2 push constant 2
 @2
 D=A
@@ -23896,19 +23336,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THAT
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: constant arg2: 3 push constant 3
 @3
 D=A
@@ -23965,19 +23401,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THAT
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: constant arg2: 4 push constant 4
 @4
 D=A
@@ -24034,19 +23466,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THAT
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: constant arg2: 5 push constant 5
 @5
 D=A
@@ -24103,19 +23531,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THAT
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: constant arg2: 6 push constant 6
 @6
 D=A
@@ -24172,19 +23596,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THAT
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: constant arg2: 7 push constant 7
 @7
 D=A
@@ -24241,19 +23661,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THAT
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: constant arg2: 8 push constant 8
 @8
 D=A
@@ -24310,19 +23726,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THAT
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: constant arg2: 9 push constant 9
 @9
 D=A
@@ -24379,19 +23791,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THAT
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: constant arg2: 10 push constant 10
 @10
 D=A
@@ -24448,19 +23856,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THAT
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
@@ -24539,19 +23943,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@2
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@2
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: WHILE_EXP0 arg2: None label WHILE_EXP0
 (Output.createShiftedMap$WHILE_EXP0)//C_PUSH arg1: local arg2: 2 push local 2
 @2
@@ -24631,19 +24031,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: constant arg2: 11 push constant 11
 @11
 D=A
@@ -24669,19 +24065,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@1
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@1
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 2 push local 2
 @2
 D=A
@@ -24738,19 +24130,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THAT
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
@@ -24762,19 +24150,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@3
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@3
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: WHILE_EXP1 arg2: None label WHILE_EXP1
 (Output.createShiftedMap$WHILE_EXP1)//C_PUSH arg1: local arg2: 3 push local 3
 @3
@@ -24923,19 +24307,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THAT
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 3 push local 3
 @3
 D=A
@@ -24963,19 +24343,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@3
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@3
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_GOTO arg1: WHILE_EXP1 arg2: None goto WHILE_EXP1
 @Output.createShiftedMap$WHILE_EXP1
 0;JMP
@@ -25024,19 +24400,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@2
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@2
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_GOTO arg1: IF_END0 arg2: None goto IF_END0
 @Output.createShiftedMap$IF_END0
 0;JMP
@@ -25068,19 +24440,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@2
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@2
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: IF_END0 arg2: None label IF_END0
 (Output.createShiftedMap$IF_END0)//C_GOTO arg1: WHILE_EXP0 arg2: None goto WHILE_EXP0
 @Output.createShiftedMap$WHILE_EXP0
@@ -25181,19 +24549,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @ARG
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: IF_FALSE0 arg2: None label IF_FALSE0
 (Output.getMap$IF_FALSE0)//C_PUSH arg1: static arg2: 2 push static 2
 @Output.2
@@ -25255,19 +24619,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_GOTO arg1: IF_END1 arg2: None goto IF_END1
 @Output.getMap$IF_END1
 0;JMP
@@ -25315,19 +24675,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: IF_END1 arg2: None label IF_END1
 (Output.getMap$IF_END1)//C_PUSH arg1: local arg2: 0 push local 0
 @0
@@ -25400,19 +24756,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@2
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@2
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: static arg2: 1 push static 1
 @Output.1
 D=M
@@ -25424,19 +24776,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: WHILE_EXP0 arg2: None label WHILE_EXP0
 (Output.drawChar$WHILE_EXP0)//C_PUSH arg1: local arg2: 1 push local 1
 @1
@@ -25552,19 +24900,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@3
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@3
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_GOTO arg1: IF_END0 arg2: None goto IF_END0
 @Output.drawChar$IF_END0
 0;JMP
@@ -25625,19 +24969,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@3
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@3
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: IF_END0 arg2: None label IF_END0
 (Output.drawChar$IF_END0)//C_PUSH arg1: local arg2: 0 push local 0
 @0
@@ -25743,19 +25083,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THAT
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -25783,19 +25119,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
@@ -25823,19 +25155,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@1
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@1
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_GOTO arg1: WHILE_EXP0 arg2: None goto WHILE_EXP0
 @Output.drawChar$WHILE_EXP0
 0;JMP
@@ -26563,19 +25891,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@1
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@1
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: WHILE_EXP0 arg2: None label WHILE_EXP0
 (Output.printString$WHILE_EXP0)//C_PUSH arg1: local arg2: 0 push local 0
 @0
@@ -26696,19 +26020,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_GOTO arg1: WHILE_EXP0 arg2: None goto WHILE_EXP0
 @Output.printString$WHILE_EXP0
 0;JMP
@@ -27265,19 +26585,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@6
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@6
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: constant arg2: 230 push constant 230
 @230
 D=A
@@ -27327,19 +26643,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: constant arg2: 253 push constant 253
 @253
 D=A
@@ -27400,19 +26712,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@1
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@1
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: this arg2: 1 push this 1
 @1
 D=A
@@ -27759,19 +27067,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@3
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@3
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
@@ -27783,19 +27087,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@4
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@4
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
@@ -27807,19 +27107,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@2
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@2
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
@@ -27831,19 +27127,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@5
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@5
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: pointer arg2: 0 push pointer 0
 @3
 D=M
@@ -28158,19 +27450,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: this arg2: 0 push this 0
 @0
 D=A
@@ -28457,19 +27745,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@3
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@3
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: IF_FALSE2 arg2: None label IF_FALSE2
 (PongGame.run$IF_FALSE2)//C_LABEL arg1: IF_END1 arg2: None label IF_END1
 (PongGame.run$IF_END1)//C_LABEL arg1: IF_END0 arg2: None label IF_END0
@@ -28555,19 +27839,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: this arg2: 0 push this 0
 @0
 D=A
@@ -29035,19 +28315,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@2
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@2
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: this arg2: 2 push this 2
 @2
 D=A
@@ -29133,19 +28409,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@5
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@5
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
@@ -29157,19 +28429,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: this arg2: 0 push this 0
 @0
 D=A
@@ -29198,19 +28466,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@1
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@1
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: this arg2: 0 push this 0
 @0
 D=A
@@ -29239,19 +28503,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@2
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@2
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: this arg2: 1 push this 1
 @1
 D=A
@@ -29280,19 +28540,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@3
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@3
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: this arg2: 1 push this 1
 @1
 D=A
@@ -29321,19 +28577,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@4
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@4
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: this arg2: 2 push this 2
 @2
 D=A
@@ -29429,19 +28681,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@3
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@3
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: this arg2: 3 push this 3
 @3
 D=A
@@ -29534,19 +28782,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_GOTO arg1: IF_END3 arg2: None goto IF_END3
 @PongGame.moveBall$IF_END3
 0;JMP
@@ -29611,19 +28855,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: IF_FALSE4 arg2: None label IF_FALSE4
 (PongGame.moveBall$IF_FALSE4)//C_LABEL arg1: IF_END3 arg2: None label IF_END3
 (PongGame.moveBall$IF_END3)//C_PUSH arg1: this arg2: 6 push this 6
@@ -29653,19 +28893,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@6
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@6
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: this arg2: 0 push this 0
 @0
 D=A
@@ -29733,19 +28969,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@4
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@4
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: constant arg2: 22 push constant 22
 @22
 D=A
@@ -29984,19 +29216,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THAT
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: WHILE_EXP0 arg2: None label WHILE_EXP0
 (Screen.init$WHILE_EXP0)//C_PUSH arg1: local arg2: 0 push local 0
 @0
@@ -30060,19 +29288,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -30229,19 +29453,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THAT
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_GOTO arg1: WHILE_EXP0 arg2: None goto WHILE_EXP0
 @Screen.init$WHILE_EXP0
 0;JMP
@@ -30357,19 +29577,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THAT
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -30397,19 +29613,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_GOTO arg1: WHILE_EXP0 arg2: None goto WHILE_EXP0
 @Screen.clearScreen$WHILE_EXP0
 0;JMP
@@ -30548,19 +29760,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THAT
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_GOTO arg1: IF_END0 arg2: None goto IF_END0
 @Screen.updateLocation$IF_END0
 0;JMP
@@ -30672,19 +29880,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THAT
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: IF_END0 arg2: None label IF_END0
 (Screen.updateLocation$IF_END0)//C_PUSH arg1: constant arg2: 0 push constant 0
 @0
@@ -30935,19 +30139,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -30999,19 +30199,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@1
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@1
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -31063,19 +30259,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@2
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@2
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 2 push local 2
 @2
 D=A
@@ -31540,19 +30732,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@3
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@3
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: argument arg2: 3 push argument 3
 @3
 D=A
@@ -31597,19 +30785,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@2
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@2
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 3 push local 3
 @3
 D=A
@@ -31640,19 +30824,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@6
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@6
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 6 push local 6
 @6
 D=A
@@ -31773,19 +30953,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@4
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@4
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: argument arg2: 2 push argument 2
 @2
 D=A
@@ -31800,19 +30976,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @ARG
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 4 push local 4
 @4
 D=A
@@ -31827,19 +30999,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@2
-D=A
 @ARG
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@2
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -31854,19 +31022,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@4
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@4
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: argument arg2: 3 push argument 3
 @3
 D=A
@@ -31881,19 +31045,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@1
-D=A
 @ARG
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@1
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 4 push local 4
 @4
 D=A
@@ -31908,19 +31068,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@3
-D=A
 @ARG
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@3
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: IF_FALSE1 arg2: None label IF_FALSE1
 (Screen.drawLine$IF_FALSE1)//C_PUSH arg1: local arg2: 6 push local 6
 @6
@@ -31956,19 +31112,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@4
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@4
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 2 push local 2
 @2
 D=A
@@ -31983,19 +31135,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@3
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@3
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 4 push local 4
 @4
 D=A
@@ -32010,19 +31158,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@2
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@2
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -32037,19 +31181,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@1
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@1
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -32064,19 +31204,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: argument arg2: 3 push argument 3
 @3
 D=A
@@ -32091,19 +31227,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@8
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@8
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -32134,19 +31266,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@7
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@7
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_GOTO arg1: IF_END2 arg2: None goto IF_END2
 @Screen.drawLine$IF_END2
 0;JMP
@@ -32165,19 +31293,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@1
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@1
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -32192,19 +31316,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: argument arg2: 2 push argument 2
 @2
 D=A
@@ -32219,19 +31339,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@8
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@8
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -32262,19 +31378,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@7
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@7
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: IF_END2 arg2: None label IF_END2
 (Screen.drawLine$IF_END2)//C_PUSH arg1: constant arg2: 2 push constant 2
 @2
@@ -32327,19 +31439,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@5
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@5
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: constant arg2: 2 push constant 2
 @2
 D=A
@@ -32375,19 +31483,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@9
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@9
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: constant arg2: 2 push constant 2
 @2
 D=A
@@ -32439,19 +31543,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@10
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@10
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
@@ -32604,19 +31704,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@5
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@5
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_GOTO arg1: IF_END3 arg2: None goto IF_END3
 @Screen.drawLine$IF_END3
 0;JMP
@@ -32651,19 +31747,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@5
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@5
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 7 push local 7
 @7
 D=A
@@ -32711,19 +31803,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_GOTO arg1: IF_END4 arg2: None goto IF_END4
 @Screen.drawLine$IF_END4
 0;JMP
@@ -32755,19 +31843,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: IF_END4 arg2: None label IF_END4
 (Screen.drawLine$IF_END4)//C_LABEL arg1: IF_END3 arg2: None label IF_END3
 (Screen.drawLine$IF_END3)//C_PUSH arg1: local arg2: 1 push local 1
@@ -32797,19 +31881,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@1
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@1
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
@@ -33181,19 +32261,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@3
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@3
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -33245,19 +32321,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@7
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@7
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: argument arg2: 2 push argument 2
 @2
 D=A
@@ -33293,19 +32365,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@4
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@4
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: argument arg2: 2 push argument 2
 @2
 D=A
@@ -33357,19 +32425,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@8
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@8
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 7 push local 7
 @7
 D=A
@@ -33432,19 +32496,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@6
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@6
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 8 push local 8
 @8
 D=A
@@ -33514,19 +32574,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@5
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@5
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -33578,19 +32634,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 4 push local 4
 @4
 D=A
@@ -33621,19 +32673,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@2
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@2
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: WHILE_EXP0 arg2: None label WHILE_EXP0
 (Screen.drawRectangle$WHILE_EXP0)//C_PUSH arg1: argument arg2: 1 push argument 1
 @1
@@ -33709,19 +32757,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@1
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@1
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 2 push local 2
 @2
 D=A
@@ -33882,19 +32926,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: WHILE_EXP1 arg2: None label WHILE_EXP1
 (Screen.drawRectangle$WHILE_EXP1)//C_PUSH arg1: local arg2: 0 push local 0
 @0
@@ -34004,19 +33044,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_GOTO arg1: WHILE_EXP1 arg2: None goto WHILE_EXP1
 @Screen.drawRectangle$WHILE_EXP1
 0;JMP
@@ -34089,19 +33125,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@1
-D=A
 @ARG
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@1
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
@@ -34145,19 +33177,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_GOTO arg1: WHILE_EXP0 arg2: None goto WHILE_EXP0
 @Screen.drawRectangle$WHILE_EXP0
 0;JMP
@@ -34282,19 +33310,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@7
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@7
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -34333,19 +33357,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@8
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@8
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -34513,19 +33533,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@7
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@7
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 8 push local 8
 @8
 D=A
@@ -34561,19 +33577,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@8
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@8
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 7 push local 7
 @7
 D=A
@@ -34609,19 +33621,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@1
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@1
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 7 push local 7
 @7
 D=A
@@ -34673,19 +33681,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@9
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@9
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 8 push local 8
 @8
 D=A
@@ -34721,19 +33725,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@2
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@2
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 8 push local 8
 @8
 D=A
@@ -34785,19 +33785,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@10
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@10
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 9 push local 9
 @9
 D=A
@@ -34860,19 +33856,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@5
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@5
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 10 push local 10
 @10
 D=A
@@ -34942,19 +33934,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@4
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@4
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -35006,19 +33994,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 2 push local 2
 @2
 D=A
@@ -35049,19 +34033,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@6
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@6
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -35092,19 +34072,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@3
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@3
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 6 push local 6
 @6
 D=A
@@ -35265,19 +34241,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: WHILE_EXP0 arg2: None label WHILE_EXP0
 (Screen.drawHorizontal$WHILE_EXP0)//C_PUSH arg1: local arg2: 0 push local 0
 @0
@@ -35387,19 +34359,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_GOTO arg1: WHILE_EXP0 arg2: None goto WHILE_EXP0
 @Screen.drawHorizontal$WHILE_EXP0
 0;JMP
@@ -36262,19 +35230,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@1
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@1
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
@@ -36302,19 +35266,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@2
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@2
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -36511,19 +35471,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@2
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@2
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_GOTO arg1: IF_END2 arg2: None goto IF_END2
 @Screen.drawCircle$IF_END2
 0;JMP
@@ -36608,19 +35564,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@2
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@2
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
@@ -36648,19 +35600,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@1
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@1
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: IF_END2 arg2: None label IF_END2
 (Screen.drawCircle$IF_END2)//C_PUSH arg1: local arg2: 0 push local 0
 @0
@@ -36689,19 +35637,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -36931,19 +35875,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@1
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@1
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: IF_FALSE1 arg2: None label IF_FALSE1
 (String.new$IF_FALSE1)//C_PUSH arg1: argument arg2: 0 push argument 0
 @0
@@ -36959,19 +35899,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
@@ -36983,19 +35919,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@2
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@2
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: pointer arg2: 0 push pointer 0
 @3
 D=M
@@ -37562,19 +36494,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THAT
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
@@ -37730,19 +36658,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THAT
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: this arg2: 2 push this 2
 @2
 D=A
@@ -37770,19 +36694,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@2
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@2
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: pointer arg2: 0 push pointer 0
 @3
 D=M
@@ -37903,19 +36823,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@2
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@2
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
@@ -38039,19 +36955,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@3
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@3
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
@@ -38131,19 +37043,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@4
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@4
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
@@ -38155,19 +37063,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: IF_FALSE1 arg2: None label IF_FALSE1
 (String.intValue$IF_FALSE1)//C_LABEL arg1: WHILE_EXP0 arg2: None label WHILE_EXP0
 (String.intValue$WHILE_EXP0)//C_PUSH arg1: local arg2: 0 push local 0
@@ -38283,19 +37187,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@2
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@2
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 2 push local 2
 @2
 D=A
@@ -38358,19 +37258,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@3
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@3
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 3 push local 3
 @3
 D=A
@@ -38442,19 +37338,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@1
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@1
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -38482,19 +37374,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: IF_FALSE2 arg2: None label IF_FALSE2
 (String.intValue$IF_FALSE2)//C_GOTO arg1: WHILE_EXP0 arg2: None goto WHILE_EXP0
 @String.intValue$WHILE_EXP0
@@ -38540,19 +37428,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@1
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@1
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: IF_FALSE3 arg2: None label IF_FALSE3
 (String.intValue$IF_FALSE3)//C_PUSH arg1: local arg2: 1 push local 1
 @1
@@ -38699,19 +37583,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@2
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@2
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -38762,19 +37642,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@3
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@3
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -38795,19 +37671,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@1
-D=A
 @ARG
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@1
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: IF_FALSE1 arg2: None label IF_FALSE1
 (String.setInt$IF_FALSE1)//C_PUSH arg1: argument arg2: 1 push argument 1
 @1
@@ -38823,19 +37695,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@1
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@1
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: WHILE_EXP0 arg2: None label WHILE_EXP0
 (String.setInt$WHILE_EXP0)//C_PUSH arg1: local arg2: 1 push local 1
 @1
@@ -38907,19 +37775,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@1
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@1
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -39029,19 +37893,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THAT
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -39069,19 +37929,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
@@ -39096,19 +37952,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@1
-D=A
 @ARG
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@1
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_GOTO arg1: WHILE_EXP0 arg2: None goto WHILE_EXP0
 @String.setInt$WHILE_EXP0
 0;JMP
@@ -39189,19 +38041,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THAT
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -39229,19 +38077,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @LCL
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: IF_FALSE2 arg2: None label IF_FALSE2
 (String.setInt$IF_FALSE2)//C_PUSH arg1: this arg2: 0 push this 0
 @0
@@ -39393,19 +38237,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THAT
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
@@ -39417,19 +38257,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@2
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@2
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_GOTO arg1: IF_END4 arg2: None goto IF_END4
 @String.setInt$IF_END4
 0;JMP
@@ -39445,19 +38281,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@2
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@2
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_LABEL arg1: WHILE_EXP1 arg2: None label WHILE_EXP1
 (String.setInt$WHILE_EXP1)//C_PUSH arg1: this arg2: 2 push this 2
 @2
@@ -39617,19 +38449,15 @@ M=D
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@0
-D=A
 @THAT
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_PUSH arg1: this arg2: 2 push this 2
 @2
 D=A
@@ -39657,19 +38485,15 @@ D=A
 @SP
 AM=M-1
 D=M
-@13 // memory space needed by VM translator
-M=D // load value from the top of stack
-@2
-D=A
 @THIS
-D=D+M
-@14
-M=D // load target memory segment address
-@13
-D=M
-@14
+D=D+M // D = pop value + base memory address of mem segment
+@2
+D=D+A // D = pop value + address to pop to
+@SP
 A=M
-M=D
+A=M
+A=D-A
+M=D-A
 //C_GOTO arg1: WHILE_EXP1 arg2: None goto WHILE_EXP1
 @String.setInt$WHILE_EXP1
 0;JMP

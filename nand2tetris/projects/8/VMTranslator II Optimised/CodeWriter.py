@@ -133,19 +133,6 @@ class CodeWriter:
     
     def write_pop(self, dest_segment, dest_addr):
         if dest_segment:
-            pop_command = ["@13 // memory space needed by VM translator",
-                           "M=D // load value from the top of stack",
-                           f"@{dest_addr}", 
-                           "D=A", 
-                           f"@{dest_segment}",
-                           "D=D+M",
-                           "@14", 
-                           "M=D // load target memory segment address",
-                           "@13",
-                           "D=M",
-                           "@14",
-                           "A=M", 
-                           "M=D"]
             pop_command = [f"@{dest_segment}",
                            "D=D+M // D = pop value + base memory address of mem segment",
                            f"@{dest_addr}",
@@ -155,6 +142,7 @@ class CodeWriter:
                            "A=M",
                            "A=D-A",
                            "M=D-A"]
+            # above pop command that avoids using temporary variable is from: https://evoniuk.github.io/posts/nand.html 
         else:
             pop_command = [f"@{dest_addr}","M=D"]
 
