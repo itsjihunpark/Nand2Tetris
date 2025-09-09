@@ -13,12 +13,15 @@
  * the square's size. The 'q' key is used to quit the game.
  */
 class SquareGame {
+   field PrizeLocker prizeLocker;
    field Square square; // the square of this game
    field int direction; // the square's current direction: 
                         // 0=none, 1=up, 2=down, 3=left, 4=right
 
    /** Constructs a new square game. */
    constructor SquareGame new() {
+      // At the moment the prize locker is located in the middle of the screen manually
+      let prizeLocker = PrizeLocker.new(128,128,50);
       // The initial square is located in (0,0), has size 30, and is not moving.
       let square = Square.new(0, 0, 30);
       let direction = 0;
@@ -27,6 +30,7 @@ class SquareGame {
 
    /** Disposes this game. */
    method void dispose() {
+      do prizeLocker.dispose();
       do square.dispose();
       do Memory.deAlloc(this);
       return;

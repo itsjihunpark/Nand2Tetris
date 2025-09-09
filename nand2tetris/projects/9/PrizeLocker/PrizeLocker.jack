@@ -14,7 +14,10 @@ class PrizeLocker{
     method void draw() {
         // Draws the PrizeLocker using the color black
         do Screen.setColor(true);
-        do Screen.drawRectangle(x, y, x + size, y + size);
+        do Screen.drawLine(x, y , x+size, y);
+        do Screen.drawLine(x, y, x, y+size);
+        do Screen.drawLine(x, y+size, x+size, y+size);
+        do Screen.drawLine(x+size, y+size, x+size, y);
         return;
     }
     /** Disposes this PrizeLocker. */
