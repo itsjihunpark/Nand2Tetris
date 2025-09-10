@@ -42,6 +42,7 @@ class SquareGame {
       if (direction = 2) { do square.moveDown(); }
       if (direction = 3) { do square.moveLeft(); }
       if (direction = 4) { do square.moveRight(); }
+      do prizeLocker.draw(((128*32)+(256/16)));
       do Sys.wait(5);  // delays the next movement
       return;
    }
