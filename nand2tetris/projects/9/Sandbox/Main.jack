@@ -1,0 +1,24 @@
+/** Initializes a new Square game and starts running it. */
+class Main {
+    function void main() {
+        var int charScreenRow;
+        var int cursorPosition;
+
+        let charScreenRow = 23;
+        let cursorPosition = 0;
+
+        while (cursorPosition<charScreenRow){
+            do Output.moveCursor(cursorPosition,0);
+            let cursorPosition = cursorPosition + 1;
+            do Output.printString("AHHHH");
+            do Sys.wait(5);
+        }
+        let cursorPosition = cursorPosition - 1;
+        while (cursorPosition>-1){
+            do Output.moveCursor(cursorPosition,0);
+            let cursorPosition = cursorPosition - 1;
+            do Output.printString("E");
+        }
+        return;
+    }
+}
