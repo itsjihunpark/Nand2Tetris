@@ -2227,6 +2227,87 @@ AM=M-1
 D=M
 @5
 M=D
+//C_PUSH arg1: constant arg2: 0 push constant 0
+@0
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_ARITHMETIC arg1: not arg2: None not
+@ARITHMETIC_NOT.10
+D=A
+@NOT
+0;JMP
+(ARITHMETIC_NOT.10)
+//C_CALL arg1: Screen.setColor arg2: 1 call Screen.setColor 1
+@1
+D=A
+@14
+M=D
+@Screen.setColor
+D=A
+@15
+M=D
+@Screen.setColor$ret.0
+D=A
+@CALL
+0;JMP
+(Screen.setColor$ret.0)
+//C_POP arg1: temp arg2: 0 pop temp 0
+@SP
+AM=M-1
+D=M
+@5
+M=D
+//C_PUSH arg1: constant arg2: 400 push constant 400
+@400
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_PUSH arg1: constant arg2: 128 push constant 128
+@128
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_PUSH arg1: constant arg2: 422 push constant 422
+@422
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_PUSH arg1: constant arg2: 140 push constant 140
+@140
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: Screen.drawRectangle arg2: 4 call Screen.drawRectangle 4
+@4
+D=A
+@14
+M=D
+@Screen.drawRectangle
+D=A
+@15
+M=D
+@Screen.drawRectangle$ret.0
+D=A
+@CALL
+0;JMP
+(Screen.drawRectangle$ret.0)
+//C_POP arg1: temp arg2: 0 pop temp 0
+@SP
+AM=M-1
+D=M
+@5
+M=D
 //C_PUSH arg1: constant arg2: 5 push constant 5
 @5
 D=A
@@ -2248,6 +2329,81 @@ D=A
 @CALL
 0;JMP
 (Sys.wait$ret.0)
+//C_POP arg1: temp arg2: 0 pop temp 0
+@SP
+AM=M-1
+D=M
+@5
+M=D
+//C_PUSH arg1: constant arg2: 0 push constant 0
+@0
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: Screen.setColor arg2: 1 call Screen.setColor 1
+@1
+D=A
+@14
+M=D
+@Screen.setColor
+D=A
+@15
+M=D
+@Screen.setColor$ret.1
+D=A
+@CALL
+0;JMP
+(Screen.setColor$ret.1)
+//C_POP arg1: temp arg2: 0 pop temp 0
+@SP
+AM=M-1
+D=M
+@5
+M=D
+//C_PUSH arg1: constant arg2: 400 push constant 400
+@400
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_PUSH arg1: constant arg2: 128 push constant 128
+@128
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_PUSH arg1: constant arg2: 422 push constant 422
+@422
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_PUSH arg1: constant arg2: 140 push constant 140
+@140
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: Screen.drawRectangle arg2: 4 call Screen.drawRectangle 4
+@4
+D=A
+@14
+M=D
+@Screen.drawRectangle
+D=A
+@15
+M=D
+@Screen.drawRectangle$ret.1
+D=A
+@CALL
+0;JMP
+(Screen.drawRectangle$ret.1)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
 AM=M-1
@@ -2325,11 +2481,11 @@ D=A
 0;JMP
 (ARITHMETIC_GT.5)
 //C_ARITHMETIC arg1: not arg2: None not
-@ARITHMETIC_NOT.10
+@ARITHMETIC_NOT.11
 D=A
 @NOT
 0;JMP
-(ARITHMETIC_NOT.10)
+(ARITHMETIC_NOT.11)
 //C_IF arg1: WHILE_END1 arg2: None if-goto WHILE_END1
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -2635,11 +2791,11 @@ D=A
 0;JMP
 (ARITHMETIC_LT.2)
 //C_ARITHMETIC arg1: not arg2: None not
-@ARITHMETIC_NOT.11
+@ARITHMETIC_NOT.12
 D=A
 @NOT
 0;JMP
-(ARITHMETIC_NOT.11)
+(ARITHMETIC_NOT.12)
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -3336,11 +3492,11 @@ D=A
 0;JMP
 (ARITHMETIC_LT.7)
 //C_ARITHMETIC arg1: not arg2: None not
-@ARITHMETIC_NOT.12
+@ARITHMETIC_NOT.13
 D=A
 @NOT
 0;JMP
-(ARITHMETIC_NOT.12)
+(ARITHMETIC_NOT.13)
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -3416,11 +3572,11 @@ D=A
 0;JMP
 (ARITHMETIC_EQ.3)
 //C_ARITHMETIC arg1: not arg2: None not
-@ARITHMETIC_NOT.13
+@ARITHMETIC_NOT.14
 D=A
 @NOT
 0;JMP
-(ARITHMETIC_NOT.13)
+(ARITHMETIC_NOT.14)
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -4043,11 +4199,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: not arg2: None not
-@ARITHMETIC_NOT.14
+@ARITHMETIC_NOT.15
 D=A
 @NOT
 0;JMP
-(ARITHMETIC_NOT.14)
+(ARITHMETIC_NOT.15)
 //C_ARITHMETIC arg1: and arg2: None and
 @ARITHMETIC_AND.5
 D=A
@@ -4055,11 +4211,11 @@ D=A
 0;JMP
 (ARITHMETIC_AND.5)
 //C_ARITHMETIC arg1: not arg2: None not
-@ARITHMETIC_NOT.15
+@ARITHMETIC_NOT.16
 D=A
 @NOT
 0;JMP
-(ARITHMETIC_NOT.15)
+(ARITHMETIC_NOT.16)
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -4213,11 +4369,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: not arg2: None not
-@ARITHMETIC_NOT.16
+@ARITHMETIC_NOT.17
 D=A
 @NOT
 0;JMP
-(ARITHMETIC_NOT.16)
+(ARITHMETIC_NOT.17)
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -4498,11 +4654,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: not arg2: None not
-@ARITHMETIC_NOT.17
+@ARITHMETIC_NOT.18
 D=A
 @NOT
 0;JMP
-(ARITHMETIC_NOT.17)
+(ARITHMETIC_NOT.18)
 //C_IF arg1: IF_TRUE2 arg2: None if-goto IF_TRUE2
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -4586,11 +4742,11 @@ D=A
 0;JMP
 (ARITHMETIC_GT.11)
 //C_ARITHMETIC arg1: not arg2: None not
-@ARITHMETIC_NOT.18
+@ARITHMETIC_NOT.19
 D=A
 @NOT
 0;JMP
-(ARITHMETIC_NOT.18)
+(ARITHMETIC_NOT.19)
 //C_IF arg1: WHILE_END1 arg2: None if-goto WHILE_END1
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -4679,11 +4835,11 @@ D=A
 0;JMP
 (ARITHMETIC_GT.12)
 //C_ARITHMETIC arg1: not arg2: None not
-@ARITHMETIC_NOT.19
+@ARITHMETIC_NOT.20
 D=A
 @NOT
 0;JMP
-(ARITHMETIC_NOT.19)
+(ARITHMETIC_NOT.20)
 //C_IF arg1: IF_TRUE3 arg2: None if-goto IF_TRUE3
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -5076,11 +5232,11 @@ D=A
 0;JMP
 (ARITHMETIC_GT.13)
 //C_ARITHMETIC arg1: not arg2: None not
-@ARITHMETIC_NOT.20
+@ARITHMETIC_NOT.21
 D=A
 @NOT
 0;JMP
-(ARITHMETIC_NOT.20)
+(ARITHMETIC_NOT.21)
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -5229,11 +5385,11 @@ D=A
 0;JMP
 (ARITHMETIC_GT.14)
 //C_ARITHMETIC arg1: not arg2: None not
-@ARITHMETIC_NOT.21
+@ARITHMETIC_NOT.22
 D=A
 @NOT
 0;JMP
-(ARITHMETIC_NOT.21)
+(ARITHMETIC_NOT.22)
 //C_PUSH arg1: local arg2: 2 push local 2
 @2
 D=A
@@ -5258,11 +5414,11 @@ D=A
 0;JMP
 (ARITHMETIC_LT.13)
 //C_ARITHMETIC arg1: not arg2: None not
-@ARITHMETIC_NOT.22
+@ARITHMETIC_NOT.23
 D=A
 @NOT
 0;JMP
-(ARITHMETIC_NOT.22)
+(ARITHMETIC_NOT.23)
 //C_ARITHMETIC arg1: and arg2: None and
 @ARITHMETIC_AND.6
 D=A
@@ -6029,11 +6185,11 @@ D=A
 0;JMP
 (ARITHMETIC_AND.7)
 //C_ARITHMETIC arg1: not arg2: None not
-@ARITHMETIC_NOT.23
+@ARITHMETIC_NOT.24
 D=A
 @NOT
 0;JMP
-(ARITHMETIC_NOT.23)
+(ARITHMETIC_NOT.24)
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -8206,11 +8362,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: not arg2: None not
-@ARITHMETIC_NOT.24
+@ARITHMETIC_NOT.25
 D=A
 @NOT
 0;JMP
-(ARITHMETIC_NOT.24)
+(ARITHMETIC_NOT.25)
 //C_POP arg1: static arg2: 2 pop static 2
 @SP
 AM=M-1
@@ -19285,11 +19441,11 @@ D=A
 0;JMP
 (ARITHMETIC_LT.18)
 //C_ARITHMETIC arg1: not arg2: None not
-@ARITHMETIC_NOT.25
+@ARITHMETIC_NOT.26
 D=A
 @NOT
 0;JMP
-(ARITHMETIC_NOT.25)
+(ARITHMETIC_NOT.26)
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -19492,11 +19648,11 @@ D=A
 0;JMP
 (ARITHMETIC_LT.19)
 //C_ARITHMETIC arg1: not arg2: None not
-@ARITHMETIC_NOT.26
+@ARITHMETIC_NOT.27
 D=A
 @NOT
 0;JMP
-(ARITHMETIC_NOT.26)
+(ARITHMETIC_NOT.27)
 //C_IF arg1: WHILE_END1 arg2: None if-goto WHILE_END1
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -20118,11 +20274,11 @@ D=A
 0;JMP
 (ARITHMETIC_LT.21)
 //C_ARITHMETIC arg1: not arg2: None not
-@ARITHMETIC_NOT.27
+@ARITHMETIC_NOT.28
 D=A
 @NOT
 0;JMP
-(ARITHMETIC_NOT.27)
+(ARITHMETIC_NOT.28)
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -20999,11 +21155,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: not arg2: None not
-@ARITHMETIC_NOT.28
+@ARITHMETIC_NOT.29
 D=A
 @NOT
 0;JMP
-(ARITHMETIC_NOT.28)
+(ARITHMETIC_NOT.29)
 //C_IF arg1: IF_TRUE2 arg2: None if-goto IF_TRUE2
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -21129,11 +21285,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: not arg2: None not
-@ARITHMETIC_NOT.29
+@ARITHMETIC_NOT.30
 D=A
 @NOT
 0;JMP
-(ARITHMETIC_NOT.29)
+(ARITHMETIC_NOT.30)
 //C_POP arg1: static arg2: 2 pop static 2
 @SP
 AM=M-1
@@ -21236,11 +21392,11 @@ D=A
 0;JMP
 (ARITHMETIC_LT.24)
 //C_ARITHMETIC arg1: not arg2: None not
-@ARITHMETIC_NOT.30
+@ARITHMETIC_NOT.31
 D=A
 @NOT
 0;JMP
-(ARITHMETIC_NOT.30)
+(ARITHMETIC_NOT.31)
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -21497,11 +21653,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: not arg2: None not
-@ARITHMETIC_NOT.31
+@ARITHMETIC_NOT.32
 D=A
 @NOT
 0;JMP
-(ARITHMETIC_NOT.31)
+(ARITHMETIC_NOT.32)
 //C_POP arg1: static arg2: 2 pop static 2
 @SP
 AM=M-1
@@ -21780,11 +21936,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: not arg2: None not
-@ARITHMETIC_NOT.32
+@ARITHMETIC_NOT.33
 D=A
 @NOT
 0;JMP
-(ARITHMETIC_NOT.32)
+(ARITHMETIC_NOT.33)
 //C_POP arg1: static arg2: 2 pop static 2
 @SP
 AM=M-1
@@ -21862,11 +22018,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: not arg2: None not
-@ARITHMETIC_NOT.33
+@ARITHMETIC_NOT.34
 D=A
 @NOT
 0;JMP
-(ARITHMETIC_NOT.33)
+(ARITHMETIC_NOT.34)
 //C_POP arg1: static arg2: 2 pop static 2
 @SP
 AM=M-1
@@ -21984,11 +22140,11 @@ D=A
 0;JMP
 (ARITHMETIC_LT.25)
 //C_ARITHMETIC arg1: not arg2: None not
-@ARITHMETIC_NOT.34
+@ARITHMETIC_NOT.35
 D=A
 @NOT
 0;JMP
-(ARITHMETIC_NOT.34)
+(ARITHMETIC_NOT.35)
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -22247,11 +22403,11 @@ D=A
 0;JMP
 (ARITHMETIC_LT.26)
 //C_ARITHMETIC arg1: not arg2: None not
-@ARITHMETIC_NOT.35
+@ARITHMETIC_NOT.36
 D=A
 @NOT
 0;JMP
-(ARITHMETIC_NOT.35)
+(ARITHMETIC_NOT.36)
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -22580,11 +22736,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: not arg2: None not
-@ARITHMETIC_NOT.36
+@ARITHMETIC_NOT.37
 D=A
 @NOT
 0;JMP
-(ARITHMETIC_NOT.36)
+(ARITHMETIC_NOT.37)
 //C_ARITHMETIC arg1: and arg2: None and
 @ARITHMETIC_AND.10
 D=A
@@ -23620,11 +23776,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: not arg2: None not
-@ARITHMETIC_NOT.37
+@ARITHMETIC_NOT.38
 D=A
 @NOT
 0;JMP
-(ARITHMETIC_NOT.37)
+(ARITHMETIC_NOT.38)
 //C_PUSH arg1: argument arg2: 2 push argument 2
 @2
 D=A
@@ -24364,11 +24520,11 @@ D=A
 0;JMP
 (ARITHMETIC_LT.34)
 //C_ARITHMETIC arg1: not arg2: None not
-@ARITHMETIC_NOT.38
+@ARITHMETIC_NOT.39
 D=A
 @NOT
 0;JMP
-(ARITHMETIC_NOT.38)
+(ARITHMETIC_NOT.39)
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -25221,11 +25377,11 @@ D=A
 0;JMP
 (ARITHMETIC_SUB.39)
 //C_ARITHMETIC arg1: not arg2: None not
-@ARITHMETIC_NOT.39
+@ARITHMETIC_NOT.40
 D=A
 @NOT
 0;JMP
-(ARITHMETIC_NOT.39)
+(ARITHMETIC_NOT.40)
 //C_POP arg1: local arg2: 6 pop local 6
 @SP
 AM=M-1
@@ -25444,17 +25600,17 @@ D=A
 0;JMP
 (ARITHMETIC_GT.33)
 //C_ARITHMETIC arg1: not arg2: None not
-@ARITHMETIC_NOT.40
-D=A
-@NOT
-0;JMP
-(ARITHMETIC_NOT.40)
-//C_ARITHMETIC arg1: not arg2: None not
 @ARITHMETIC_NOT.41
 D=A
 @NOT
 0;JMP
 (ARITHMETIC_NOT.41)
+//C_ARITHMETIC arg1: not arg2: None not
+@ARITHMETIC_NOT.42
+D=A
+@NOT
+0;JMP
+(ARITHMETIC_NOT.42)
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -25697,11 +25853,11 @@ D=A
 0;JMP
 (ARITHMETIC_LT.38)
 //C_ARITHMETIC arg1: not arg2: None not
-@ARITHMETIC_NOT.42
+@ARITHMETIC_NOT.43
 D=A
 @NOT
 0;JMP
-(ARITHMETIC_NOT.42)
+(ARITHMETIC_NOT.43)
 //C_IF arg1: WHILE_END1 arg2: None if-goto WHILE_END1
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -26581,11 +26737,11 @@ D=A
 0;JMP
 (ARITHMETIC_SUB.45)
 //C_ARITHMETIC arg1: not arg2: None not
-@ARITHMETIC_NOT.43
+@ARITHMETIC_NOT.44
 D=A
 @NOT
 0;JMP
-(ARITHMETIC_NOT.43)
+(ARITHMETIC_NOT.44)
 //C_POP arg1: local arg2: 5 pop local 5
 @SP
 AM=M-1
@@ -27012,11 +27168,11 @@ D=A
 0;JMP
 (ARITHMETIC_LT.41)
 //C_ARITHMETIC arg1: not arg2: None not
-@ARITHMETIC_NOT.44
+@ARITHMETIC_NOT.45
 D=A
 @NOT
 0;JMP
-(ARITHMETIC_NOT.44)
+(ARITHMETIC_NOT.45)
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -28097,11 +28253,11 @@ D=A
 0;JMP
 (ARITHMETIC_GT.40)
 //C_ARITHMETIC arg1: not arg2: None not
-@ARITHMETIC_NOT.45
+@ARITHMETIC_NOT.46
 D=A
 @NOT
 0;JMP
-(ARITHMETIC_NOT.45)
+(ARITHMETIC_NOT.46)
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -29680,11 +29836,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: not arg2: None not
-@ARITHMETIC_NOT.46
+@ARITHMETIC_NOT.47
 D=A
 @NOT
 0;JMP
-(ARITHMETIC_NOT.46)
+(ARITHMETIC_NOT.47)
 //C_POP arg1: local arg2: 3 pop local 3
 @SP
 AM=M-1
@@ -29768,11 +29924,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: not arg2: None not
-@ARITHMETIC_NOT.47
+@ARITHMETIC_NOT.48
 D=A
 @NOT
 0;JMP
-(ARITHMETIC_NOT.47)
+(ARITHMETIC_NOT.48)
 //C_POP arg1: local arg2: 4 pop local 4
 @SP
 AM=M-1
@@ -29851,11 +30007,11 @@ D=A
 0;JMP
 (ARITHMETIC_AND.18)
 //C_ARITHMETIC arg1: not arg2: None not
-@ARITHMETIC_NOT.48
+@ARITHMETIC_NOT.49
 D=A
 @NOT
 0;JMP
-(ARITHMETIC_NOT.48)
+(ARITHMETIC_NOT.49)
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -29983,11 +30139,11 @@ D=A
 0;JMP
 (ARITHMETIC_OR.33)
 //C_ARITHMETIC arg1: not arg2: None not
-@ARITHMETIC_NOT.49
+@ARITHMETIC_NOT.50
 D=A
 @NOT
 0;JMP
-(ARITHMETIC_NOT.49)
+(ARITHMETIC_NOT.50)
 //C_POP arg1: local arg2: 3 pop local 3
 @SP
 AM=M-1
@@ -30367,11 +30523,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: not arg2: None not
-@ARITHMETIC_NOT.50
+@ARITHMETIC_NOT.51
 D=A
 @NOT
 0;JMP
-(ARITHMETIC_NOT.50)
+(ARITHMETIC_NOT.51)
 //C_POP arg1: local arg2: 3 pop local 3
 @SP
 AM=M-1
@@ -30463,11 +30619,11 @@ D=A
 0;JMP
 (ARITHMETIC_GT.46)
 //C_ARITHMETIC arg1: not arg2: None not
-@ARITHMETIC_NOT.51
+@ARITHMETIC_NOT.52
 D=A
 @NOT
 0;JMP
-(ARITHMETIC_NOT.51)
+(ARITHMETIC_NOT.52)
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -31052,11 +31208,11 @@ D=A
 0;JMP
 (ARITHMETIC_LT.54)
 //C_ARITHMETIC arg1: not arg2: None not
-@ARITHMETIC_NOT.52
+@ARITHMETIC_NOT.53
 D=A
 @NOT
 0;JMP
-(ARITHMETIC_NOT.52)
+(ARITHMETIC_NOT.53)
 //C_IF arg1: WHILE_END1 arg2: None if-goto WHILE_END1
 @SP // pop from stack to memory address 13
 AM=M-1

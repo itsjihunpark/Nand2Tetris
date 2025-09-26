@@ -11,7 +11,11 @@ class Main {
             do Output.moveCursor(cursorPosition,0);
             let cursorPosition = cursorPosition + 1;
             do Output.printString("AHHHH");
+            do Screen.setColor(true);
+            do Screen.drawRectangle(400, 128, 422,140);
             do Sys.wait(5);
+            do Screen.setColor(false);
+            do Screen.drawRectangle(400, 128, 422,140);
         }
         let cursorPosition = cursorPosition - 1;
         while (cursorPosition>-1){
