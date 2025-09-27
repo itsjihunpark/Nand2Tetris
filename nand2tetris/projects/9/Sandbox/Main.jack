@@ -2,17 +2,21 @@
 class Main {
     static int passwordCount;
     static Array savedPasswords;
+    static Array savedAccounts;
     static int maxPasswords;
+    static String account;
+    static String password;
 
     function void main() {
         var String name;
         var boolean exit;
         var char key;
         var String option;
-
+        var int count;
         let maxPasswords = 10;
         let exit = false;
         let savedPasswords = Array.new(maxPasswords);
+        let savedAccounts = Array.new(maxPasswords);
         let passwordCount = 0;
 
         do Output.printString("Hello welcome to your password manager. ");
@@ -27,12 +31,9 @@ class Main {
                 do Main.savePassword();
             }
             else{
-                do Output.printString("You have ");
-                do Output.printInt(passwordCount);
-                do Output.printString(" passwords saved at the moment");
-                do Output.println();
+                do Output.moveCursor(19,0); 
 
-                do Output.printString("A: Show saved password");
+                do Output.printString("A: Show saved passwords");
                 do Output.println();
                 do Output.printString("B: Save new password");
                 do Output.println();
@@ -40,41 +41,39 @@ class Main {
                 do Output.printString("Which option do you choose?: ");
                 let key = Keyboard.readChar();
                 if (key = 66){
-                    do Main.resetScreen();    
+                    do Screen.clearScreen();
+                    do Output.moveCursor(19,0);    
                     do Main.savePassword();
                 }
                 if (key = 65){
-                    do Main.resetScreen();  
-                    do Main.showSavedPasswords();
-                    
+                    do Screen.clearScreen();
+                    do Output.moveCursor(0,0);  
+                    let count = 0;
+                    while (count<passwordCount) {
+                        do Output.printInt(count);
+                        do Output.printString(". ");
+                        do Output.printString(savedAccounts[count]);
+                        do Output.println();
+                        let count = count+1;
+                    }
+                    let account = Keyboard.readInt("Enter account number: ");
+                    do Screen.clearScreen();
+                    do Output.moveCursor(0,0); 
+                    do Output.printString("Your password is: ");
+                    do Output.printString(savedPasswords[account]);
+                
                 }
             }
         }
         return;
     }
     function void savePassword(){
-        var String password;
+        let account = Keyboard.readLine("Enter which account the password being saved is for: ");
+        let savedAccounts[passwordCount] = account;
         let password = Keyboard.readLine("Enter the password you want to save: ");
         let savedPasswords[passwordCount] = password;
         let passwordCount = passwordCount + 1;
-        return;
-    }
-    function void showSavedPasswords(){
-        var int count;
-        let count = 0;
-        while (count<passwordCount) {
-            do Output.printInt(count);
-            do Output.printString(". ");
-            do Output.printString(savedPasswords[count]);
-            do Output.println();
-            let count = count+1;
-        }
-        return;
-    }
-
-    function void resetScreen(){
         do Screen.clearScreen();
-        do Output.moveCursor(0,0);
         return;
     }
 }
