@@ -1911,9 +1911,9 @@ M=D
 //C_RETURN arg1: None arg2: None return
 @RETURN
 0;JMP
-//C_FUNCTION arg1: Main.main arg2: 2 function Main.main 2
+//C_FUNCTION arg1: Main.main arg2: 4 function Main.main 4
 (Main.main)
-//@2
+//@4
 //D=A
 //@SP
 //M=M+D
@@ -1929,26 +1929,31 @@ D=A
 M=M+1
 A=M-1
 M=D
-//C_PUSH arg1: constant arg2: 23 push constant 23
-@23
+@0
 D=A
 @SP
 M=M+1
 A=M-1
 M=D
-//C_POP arg1: local arg2: 0 pop local 0
+@0
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_PUSH arg1: constant arg2: 10 push constant 10
+@10
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_POP arg1: static arg2: 2 pop static 2
 @SP
 AM=M-1
 D=M
-@LCL
-D=D+M // D = pop value + base memory address of mem segment
-@0
-D=D+A // D = pop value + address to pop to
-@SP
-A=M
-A=M
-A=D-A
-M=D-A
+@Main.2
+M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
@@ -1969,6 +1974,947 @@ A=M
 A=M
 A=D-A
 M=D-A
+//C_PUSH arg1: static arg2: 2 push static 2
+@Main.2
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: Array.new arg2: 1 call Array.new 1
+@1
+D=A
+@14
+M=D
+@Array.new
+D=A
+@15
+M=D
+@Array.new$ret.0
+D=A
+@CALL
+0;JMP
+(Array.new$ret.0)
+//C_POP arg1: static arg2: 1 pop static 1
+@SP
+AM=M-1
+D=M
+@Main.1
+M=D
+//C_PUSH arg1: constant arg2: 0 push constant 0
+@0
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_POP arg1: static arg2: 0 pop static 0
+@SP
+AM=M-1
+D=M
+@Main.0
+M=D
+//C_PUSH arg1: constant arg2: 40 push constant 40
+@40
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.new arg2: 1 call String.new 1
+@1
+D=A
+@14
+M=D
+@String.new
+D=A
+@15
+M=D
+@String.new$ret.1
+D=A
+@CALL
+0;JMP
+(String.new$ret.1)
+//C_PUSH arg1: constant arg2: 72 push constant 72
+@72
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.1
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.1)
+//C_PUSH arg1: constant arg2: 101 push constant 101
+@101
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.2
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.2)
+//C_PUSH arg1: constant arg2: 108 push constant 108
+@108
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.3
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.3)
+//C_PUSH arg1: constant arg2: 108 push constant 108
+@108
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.4
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.4)
+//C_PUSH arg1: constant arg2: 111 push constant 111
+@111
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.5
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.5)
+//C_PUSH arg1: constant arg2: 32 push constant 32
+@32
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.6
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.6)
+//C_PUSH arg1: constant arg2: 119 push constant 119
+@119
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.7
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.7)
+//C_PUSH arg1: constant arg2: 101 push constant 101
+@101
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.8
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.8)
+//C_PUSH arg1: constant arg2: 108 push constant 108
+@108
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.9
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.9)
+//C_PUSH arg1: constant arg2: 99 push constant 99
+@99
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.10
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.10)
+//C_PUSH arg1: constant arg2: 111 push constant 111
+@111
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.11
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.11)
+//C_PUSH arg1: constant arg2: 109 push constant 109
+@109
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.12
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.12)
+//C_PUSH arg1: constant arg2: 101 push constant 101
+@101
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.13
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.13)
+//C_PUSH arg1: constant arg2: 32 push constant 32
+@32
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.14
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.14)
+//C_PUSH arg1: constant arg2: 116 push constant 116
+@116
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.15
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.15)
+//C_PUSH arg1: constant arg2: 111 push constant 111
+@111
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.16
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.16)
+//C_PUSH arg1: constant arg2: 32 push constant 32
+@32
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.17
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.17)
+//C_PUSH arg1: constant arg2: 121 push constant 121
+@121
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.18
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.18)
+//C_PUSH arg1: constant arg2: 111 push constant 111
+@111
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.19
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.19)
+//C_PUSH arg1: constant arg2: 117 push constant 117
+@117
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.20
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.20)
+//C_PUSH arg1: constant arg2: 114 push constant 114
+@114
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.21
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.21)
+//C_PUSH arg1: constant arg2: 32 push constant 32
+@32
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.22
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.22)
+//C_PUSH arg1: constant arg2: 112 push constant 112
+@112
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.23
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.23)
+//C_PUSH arg1: constant arg2: 97 push constant 97
+@97
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.24
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.24)
+//C_PUSH arg1: constant arg2: 115 push constant 115
+@115
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.25
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.25)
+//C_PUSH arg1: constant arg2: 115 push constant 115
+@115
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.26
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.26)
+//C_PUSH arg1: constant arg2: 119 push constant 119
+@119
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.27
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.27)
+//C_PUSH arg1: constant arg2: 111 push constant 111
+@111
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.28
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.28)
+//C_PUSH arg1: constant arg2: 114 push constant 114
+@114
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.29
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.29)
+//C_PUSH arg1: constant arg2: 100 push constant 100
+@100
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.30
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.30)
+//C_PUSH arg1: constant arg2: 32 push constant 32
+@32
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.31
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.31)
+//C_PUSH arg1: constant arg2: 109 push constant 109
+@109
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.32
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.32)
+//C_PUSH arg1: constant arg2: 97 push constant 97
+@97
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.33
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.33)
+//C_PUSH arg1: constant arg2: 110 push constant 110
+@110
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.34
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.34)
+//C_PUSH arg1: constant arg2: 97 push constant 97
+@97
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.35
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.35)
+//C_PUSH arg1: constant arg2: 103 push constant 103
+@103
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.36
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.36)
+//C_PUSH arg1: constant arg2: 101 push constant 101
+@101
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.37
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.37)
+//C_PUSH arg1: constant arg2: 114 push constant 114
+@114
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.38
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.38)
+//C_PUSH arg1: constant arg2: 46 push constant 46
+@46
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.39
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.39)
+//C_PUSH arg1: constant arg2: 32 push constant 32
+@32
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.40
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.40)
+//C_CALL arg1: Output.printString arg2: 1 call Output.printString 1
+@1
+D=A
+@14
+M=D
+@Output.printString
+D=A
+@15
+M=D
+@Output.printString$ret.1
+D=A
+@CALL
+0;JMP
+(Output.printString$ret.1)
+//C_POP arg1: temp arg2: 0 pop temp 0
+@SP
+AM=M-1
+D=M
+@5
+M=D
+//C_CALL arg1: Output.println arg2: 0 call Output.println 0
+@0
+D=A
+@14
+M=D
+@Output.println
+D=A
+@15
+M=D
+@Output.println$ret.0
+D=A
+@CALL
+0;JMP
+(Output.println$ret.0)
+//C_POP arg1: temp arg2: 0 pop temp 0
+@SP
+AM=M-1
+D=M
+@5
+M=D
 //C_LABEL arg1: WHILE_EXP0 arg2: None label WHILE_EXP0
 (Main.main$WHILE_EXP0)//C_PUSH arg1: local arg2: 1 push local 1
 @1
@@ -1980,11 +2926,4772 @@ D=M
 M=M+1
 A=M-1
 M=D
+//C_ARITHMETIC arg1: not arg2: None not
+@ARITHMETIC_NOT.9
+D=A
+@NOT
+0;JMP
+(ARITHMETIC_NOT.9)
+//C_ARITHMETIC arg1: not arg2: None not
+@ARITHMETIC_NOT.10
+D=A
+@NOT
+0;JMP
+(ARITHMETIC_NOT.10)
+//C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
+@SP // pop from stack to memory address 13
+AM=M-1
+D=M
+@Main.main$WHILE_END0
+D;JNE
+//C_PUSH arg1: static arg2: 0 push static 0
+@Main.0
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+//C_PUSH arg1: constant arg2: 0 push constant 0
+@0
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_ARITHMETIC arg1: eq arg2: None eq
+@ARITHMETIC_EQ.3
+D=A
+@EQ
+0;JMP
+(ARITHMETIC_EQ.3)
+//C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
+@SP // pop from stack to memory address 13
+AM=M-1
+D=M
+@Main.main$IF_TRUE0
+D;JNE
+//C_GOTO arg1: IF_FALSE0 arg2: None goto IF_FALSE0
+@Main.main$IF_FALSE0
+0;JMP
+//C_LABEL arg1: IF_TRUE0 arg2: None label IF_TRUE0
+(Main.main$IF_TRUE0)//C_PUSH arg1: constant arg2: 41 push constant 41
+@41
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.new arg2: 1 call String.new 1
+@1
+D=A
+@14
+M=D
+@String.new
+D=A
+@15
+M=D
+@String.new$ret.2
+D=A
+@CALL
+0;JMP
+(String.new$ret.2)
+//C_PUSH arg1: constant arg2: 89 push constant 89
+@89
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.41
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.41)
+//C_PUSH arg1: constant arg2: 111 push constant 111
+@111
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.42
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.42)
+//C_PUSH arg1: constant arg2: 117 push constant 117
+@117
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.43
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.43)
+//C_PUSH arg1: constant arg2: 32 push constant 32
+@32
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.44
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.44)
+//C_PUSH arg1: constant arg2: 104 push constant 104
+@104
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.45
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.45)
+//C_PUSH arg1: constant arg2: 97 push constant 97
+@97
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.46
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.46)
+//C_PUSH arg1: constant arg2: 118 push constant 118
+@118
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.47
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.47)
+//C_PUSH arg1: constant arg2: 101 push constant 101
+@101
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.48
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.48)
+//C_PUSH arg1: constant arg2: 32 push constant 32
+@32
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.49
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.49)
+//C_PUSH arg1: constant arg2: 110 push constant 110
+@110
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.50
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.50)
+//C_PUSH arg1: constant arg2: 111 push constant 111
+@111
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.51
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.51)
+//C_PUSH arg1: constant arg2: 32 push constant 32
+@32
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.52
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.52)
+//C_PUSH arg1: constant arg2: 112 push constant 112
+@112
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.53
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.53)
+//C_PUSH arg1: constant arg2: 97 push constant 97
+@97
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.54
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.54)
+//C_PUSH arg1: constant arg2: 115 push constant 115
+@115
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.55
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.55)
+//C_PUSH arg1: constant arg2: 115 push constant 115
+@115
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.56
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.56)
+//C_PUSH arg1: constant arg2: 119 push constant 119
+@119
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.57
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.57)
+//C_PUSH arg1: constant arg2: 111 push constant 111
+@111
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.58
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.58)
+//C_PUSH arg1: constant arg2: 114 push constant 114
+@114
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.59
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.59)
+//C_PUSH arg1: constant arg2: 100 push constant 100
+@100
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.60
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.60)
+//C_PUSH arg1: constant arg2: 115 push constant 115
+@115
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.61
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.61)
+//C_PUSH arg1: constant arg2: 32 push constant 32
+@32
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.62
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.62)
+//C_PUSH arg1: constant arg2: 115 push constant 115
+@115
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.63
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.63)
+//C_PUSH arg1: constant arg2: 97 push constant 97
+@97
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.64
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.64)
+//C_PUSH arg1: constant arg2: 118 push constant 118
+@118
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.65
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.65)
+//C_PUSH arg1: constant arg2: 101 push constant 101
+@101
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.66
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.66)
+//C_PUSH arg1: constant arg2: 100 push constant 100
+@100
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.67
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.67)
+//C_PUSH arg1: constant arg2: 32 push constant 32
+@32
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.68
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.68)
+//C_PUSH arg1: constant arg2: 97 push constant 97
+@97
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.69
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.69)
+//C_PUSH arg1: constant arg2: 116 push constant 116
+@116
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.70
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.70)
+//C_PUSH arg1: constant arg2: 32 push constant 32
+@32
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.71
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.71)
+//C_PUSH arg1: constant arg2: 116 push constant 116
+@116
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.72
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.72)
+//C_PUSH arg1: constant arg2: 104 push constant 104
+@104
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.73
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.73)
+//C_PUSH arg1: constant arg2: 101 push constant 101
+@101
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.74
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.74)
+//C_PUSH arg1: constant arg2: 32 push constant 32
+@32
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.75
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.75)
+//C_PUSH arg1: constant arg2: 109 push constant 109
+@109
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.76
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.76)
+//C_PUSH arg1: constant arg2: 111 push constant 111
+@111
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.77
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.77)
+//C_PUSH arg1: constant arg2: 109 push constant 109
+@109
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.78
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.78)
+//C_PUSH arg1: constant arg2: 101 push constant 101
+@101
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.79
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.79)
+//C_PUSH arg1: constant arg2: 110 push constant 110
+@110
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.80
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.80)
+//C_PUSH arg1: constant arg2: 116 push constant 116
+@116
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.81
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.81)
+//C_CALL arg1: Output.printString arg2: 1 call Output.printString 1
+@1
+D=A
+@14
+M=D
+@Output.printString
+D=A
+@15
+M=D
+@Output.printString$ret.2
+D=A
+@CALL
+0;JMP
+(Output.printString$ret.2)
+//C_POP arg1: temp arg2: 0 pop temp 0
+@SP
+AM=M-1
+D=M
+@5
+M=D
+//C_CALL arg1: Output.println arg2: 0 call Output.println 0
+@0
+D=A
+@14
+M=D
+@Output.println
+D=A
+@15
+M=D
+@Output.println$ret.1
+D=A
+@CALL
+0;JMP
+(Output.println$ret.1)
+//C_POP arg1: temp arg2: 0 pop temp 0
+@SP
+AM=M-1
+D=M
+@5
+M=D
+//C_CALL arg1: Main.savePassword arg2: 0 call Main.savePassword 0
+@0
+D=A
+@14
+M=D
+@Main.savePassword
+D=A
+@15
+M=D
+@Main.savePassword$ret.0
+D=A
+@CALL
+0;JMP
+(Main.savePassword$ret.0)
+//C_POP arg1: temp arg2: 0 pop temp 0
+@SP
+AM=M-1
+D=M
+@5
+M=D
+//C_GOTO arg1: IF_END0 arg2: None goto IF_END0
+@Main.main$IF_END0
+0;JMP
+//C_LABEL arg1: IF_FALSE0 arg2: None label IF_FALSE0
+(Main.main$IF_FALSE0)//C_PUSH arg1: constant arg2: 9 push constant 9
+@9
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.new arg2: 1 call String.new 1
+@1
+D=A
+@14
+M=D
+@String.new
+D=A
+@15
+M=D
+@String.new$ret.3
+D=A
+@CALL
+0;JMP
+(String.new$ret.3)
+//C_PUSH arg1: constant arg2: 89 push constant 89
+@89
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.82
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.82)
+//C_PUSH arg1: constant arg2: 111 push constant 111
+@111
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.83
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.83)
+//C_PUSH arg1: constant arg2: 117 push constant 117
+@117
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.84
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.84)
+//C_PUSH arg1: constant arg2: 32 push constant 32
+@32
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.85
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.85)
+//C_PUSH arg1: constant arg2: 104 push constant 104
+@104
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.86
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.86)
+//C_PUSH arg1: constant arg2: 97 push constant 97
+@97
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.87
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.87)
+//C_PUSH arg1: constant arg2: 118 push constant 118
+@118
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.88
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.88)
+//C_PUSH arg1: constant arg2: 101 push constant 101
+@101
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.89
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.89)
+//C_PUSH arg1: constant arg2: 32 push constant 32
+@32
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.90
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.90)
+//C_CALL arg1: Output.printString arg2: 1 call Output.printString 1
+@1
+D=A
+@14
+M=D
+@Output.printString
+D=A
+@15
+M=D
+@Output.printString$ret.3
+D=A
+@CALL
+0;JMP
+(Output.printString$ret.3)
+//C_POP arg1: temp arg2: 0 pop temp 0
+@SP
+AM=M-1
+D=M
+@5
+M=D
+//C_PUSH arg1: static arg2: 0 push static 0
+@Main.0
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: Output.printInt arg2: 1 call Output.printInt 1
+@1
+D=A
+@14
+M=D
+@Output.printInt
+D=A
+@15
+M=D
+@Output.printInt$ret.1
+D=A
+@CALL
+0;JMP
+(Output.printInt$ret.1)
+//C_POP arg1: temp arg2: 0 pop temp 0
+@SP
+AM=M-1
+D=M
+@5
+M=D
+//C_PUSH arg1: constant arg2: 30 push constant 30
+@30
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.new arg2: 1 call String.new 1
+@1
+D=A
+@14
+M=D
+@String.new
+D=A
+@15
+M=D
+@String.new$ret.4
+D=A
+@CALL
+0;JMP
+(String.new$ret.4)
+//C_PUSH arg1: constant arg2: 32 push constant 32
+@32
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.91
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.91)
+//C_PUSH arg1: constant arg2: 112 push constant 112
+@112
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.92
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.92)
+//C_PUSH arg1: constant arg2: 97 push constant 97
+@97
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.93
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.93)
+//C_PUSH arg1: constant arg2: 115 push constant 115
+@115
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.94
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.94)
+//C_PUSH arg1: constant arg2: 115 push constant 115
+@115
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.95
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.95)
+//C_PUSH arg1: constant arg2: 119 push constant 119
+@119
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.96
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.96)
+//C_PUSH arg1: constant arg2: 111 push constant 111
+@111
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.97
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.97)
+//C_PUSH arg1: constant arg2: 114 push constant 114
+@114
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.98
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.98)
+//C_PUSH arg1: constant arg2: 100 push constant 100
+@100
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.99
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.99)
+//C_PUSH arg1: constant arg2: 115 push constant 115
+@115
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.100
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.100)
+//C_PUSH arg1: constant arg2: 32 push constant 32
+@32
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.101
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.101)
+//C_PUSH arg1: constant arg2: 115 push constant 115
+@115
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.102
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.102)
+//C_PUSH arg1: constant arg2: 97 push constant 97
+@97
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.103
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.103)
+//C_PUSH arg1: constant arg2: 118 push constant 118
+@118
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.104
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.104)
+//C_PUSH arg1: constant arg2: 101 push constant 101
+@101
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.105
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.105)
+//C_PUSH arg1: constant arg2: 100 push constant 100
+@100
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.106
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.106)
+//C_PUSH arg1: constant arg2: 32 push constant 32
+@32
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.107
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.107)
+//C_PUSH arg1: constant arg2: 97 push constant 97
+@97
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.108
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.108)
+//C_PUSH arg1: constant arg2: 116 push constant 116
+@116
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.109
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.109)
+//C_PUSH arg1: constant arg2: 32 push constant 32
+@32
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.110
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.110)
+//C_PUSH arg1: constant arg2: 116 push constant 116
+@116
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.111
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.111)
+//C_PUSH arg1: constant arg2: 104 push constant 104
+@104
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.112
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.112)
+//C_PUSH arg1: constant arg2: 101 push constant 101
+@101
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.113
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.113)
+//C_PUSH arg1: constant arg2: 32 push constant 32
+@32
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.114
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.114)
+//C_PUSH arg1: constant arg2: 109 push constant 109
+@109
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.115
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.115)
+//C_PUSH arg1: constant arg2: 111 push constant 111
+@111
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.116
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.116)
+//C_PUSH arg1: constant arg2: 109 push constant 109
+@109
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.117
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.117)
+//C_PUSH arg1: constant arg2: 101 push constant 101
+@101
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.118
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.118)
+//C_PUSH arg1: constant arg2: 110 push constant 110
+@110
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.119
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.119)
+//C_PUSH arg1: constant arg2: 116 push constant 116
+@116
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.120
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.120)
+//C_CALL arg1: Output.printString arg2: 1 call Output.printString 1
+@1
+D=A
+@14
+M=D
+@Output.printString
+D=A
+@15
+M=D
+@Output.printString$ret.4
+D=A
+@CALL
+0;JMP
+(Output.printString$ret.4)
+//C_POP arg1: temp arg2: 0 pop temp 0
+@SP
+AM=M-1
+D=M
+@5
+M=D
+//C_CALL arg1: Output.println arg2: 0 call Output.println 0
+@0
+D=A
+@14
+M=D
+@Output.println
+D=A
+@15
+M=D
+@Output.println$ret.2
+D=A
+@CALL
+0;JMP
+(Output.println$ret.2)
+//C_POP arg1: temp arg2: 0 pop temp 0
+@SP
+AM=M-1
+D=M
+@5
+M=D
+//C_PUSH arg1: constant arg2: 22 push constant 22
+@22
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.new arg2: 1 call String.new 1
+@1
+D=A
+@14
+M=D
+@String.new
+D=A
+@15
+M=D
+@String.new$ret.5
+D=A
+@CALL
+0;JMP
+(String.new$ret.5)
+//C_PUSH arg1: constant arg2: 65 push constant 65
+@65
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.121
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.121)
+//C_PUSH arg1: constant arg2: 58 push constant 58
+@58
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.122
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.122)
+//C_PUSH arg1: constant arg2: 32 push constant 32
+@32
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.123
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.123)
+//C_PUSH arg1: constant arg2: 83 push constant 83
+@83
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.124
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.124)
+//C_PUSH arg1: constant arg2: 104 push constant 104
+@104
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.125
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.125)
+//C_PUSH arg1: constant arg2: 111 push constant 111
+@111
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.126
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.126)
+//C_PUSH arg1: constant arg2: 119 push constant 119
+@119
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.127
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.127)
+//C_PUSH arg1: constant arg2: 32 push constant 32
+@32
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.128
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.128)
+//C_PUSH arg1: constant arg2: 115 push constant 115
+@115
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.129
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.129)
+//C_PUSH arg1: constant arg2: 97 push constant 97
+@97
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.130
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.130)
+//C_PUSH arg1: constant arg2: 118 push constant 118
+@118
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.131
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.131)
+//C_PUSH arg1: constant arg2: 101 push constant 101
+@101
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.132
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.132)
+//C_PUSH arg1: constant arg2: 100 push constant 100
+@100
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.133
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.133)
+//C_PUSH arg1: constant arg2: 32 push constant 32
+@32
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.134
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.134)
+//C_PUSH arg1: constant arg2: 112 push constant 112
+@112
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.135
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.135)
+//C_PUSH arg1: constant arg2: 97 push constant 97
+@97
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.136
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.136)
+//C_PUSH arg1: constant arg2: 115 push constant 115
+@115
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.137
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.137)
+//C_PUSH arg1: constant arg2: 115 push constant 115
+@115
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.138
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.138)
+//C_PUSH arg1: constant arg2: 119 push constant 119
+@119
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.139
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.139)
+//C_PUSH arg1: constant arg2: 111 push constant 111
+@111
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.140
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.140)
+//C_PUSH arg1: constant arg2: 114 push constant 114
+@114
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.141
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.141)
+//C_PUSH arg1: constant arg2: 100 push constant 100
+@100
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.142
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.142)
+//C_CALL arg1: Output.printString arg2: 1 call Output.printString 1
+@1
+D=A
+@14
+M=D
+@Output.printString
+D=A
+@15
+M=D
+@Output.printString$ret.5
+D=A
+@CALL
+0;JMP
+(Output.printString$ret.5)
+//C_POP arg1: temp arg2: 0 pop temp 0
+@SP
+AM=M-1
+D=M
+@5
+M=D
+//C_CALL arg1: Output.println arg2: 0 call Output.println 0
+@0
+D=A
+@14
+M=D
+@Output.println
+D=A
+@15
+M=D
+@Output.println$ret.3
+D=A
+@CALL
+0;JMP
+(Output.println$ret.3)
+//C_POP arg1: temp arg2: 0 pop temp 0
+@SP
+AM=M-1
+D=M
+@5
+M=D
+//C_PUSH arg1: constant arg2: 20 push constant 20
+@20
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.new arg2: 1 call String.new 1
+@1
+D=A
+@14
+M=D
+@String.new
+D=A
+@15
+M=D
+@String.new$ret.6
+D=A
+@CALL
+0;JMP
+(String.new$ret.6)
+//C_PUSH arg1: constant arg2: 66 push constant 66
+@66
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.143
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.143)
+//C_PUSH arg1: constant arg2: 58 push constant 58
+@58
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.144
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.144)
+//C_PUSH arg1: constant arg2: 32 push constant 32
+@32
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.145
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.145)
+//C_PUSH arg1: constant arg2: 83 push constant 83
+@83
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.146
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.146)
+//C_PUSH arg1: constant arg2: 97 push constant 97
+@97
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.147
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.147)
+//C_PUSH arg1: constant arg2: 118 push constant 118
+@118
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.148
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.148)
+//C_PUSH arg1: constant arg2: 101 push constant 101
+@101
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.149
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.149)
+//C_PUSH arg1: constant arg2: 32 push constant 32
+@32
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.150
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.150)
+//C_PUSH arg1: constant arg2: 110 push constant 110
+@110
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.151
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.151)
+//C_PUSH arg1: constant arg2: 101 push constant 101
+@101
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.152
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.152)
+//C_PUSH arg1: constant arg2: 119 push constant 119
+@119
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.153
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.153)
+//C_PUSH arg1: constant arg2: 32 push constant 32
+@32
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.154
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.154)
+//C_PUSH arg1: constant arg2: 112 push constant 112
+@112
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.155
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.155)
+//C_PUSH arg1: constant arg2: 97 push constant 97
+@97
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.156
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.156)
+//C_PUSH arg1: constant arg2: 115 push constant 115
+@115
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.157
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.157)
+//C_PUSH arg1: constant arg2: 115 push constant 115
+@115
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.158
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.158)
+//C_PUSH arg1: constant arg2: 119 push constant 119
+@119
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.159
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.159)
+//C_PUSH arg1: constant arg2: 111 push constant 111
+@111
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.160
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.160)
+//C_PUSH arg1: constant arg2: 114 push constant 114
+@114
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.161
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.161)
+//C_PUSH arg1: constant arg2: 100 push constant 100
+@100
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.162
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.162)
+//C_CALL arg1: Output.printString arg2: 1 call Output.printString 1
+@1
+D=A
+@14
+M=D
+@Output.printString
+D=A
+@15
+M=D
+@Output.printString$ret.6
+D=A
+@CALL
+0;JMP
+(Output.printString$ret.6)
+//C_POP arg1: temp arg2: 0 pop temp 0
+@SP
+AM=M-1
+D=M
+@5
+M=D
+//C_CALL arg1: Output.println arg2: 0 call Output.println 0
+@0
+D=A
+@14
+M=D
+@Output.println
+D=A
+@15
+M=D
+@Output.println$ret.4
+D=A
+@CALL
+0;JMP
+(Output.println$ret.4)
+//C_POP arg1: temp arg2: 0 pop temp 0
+@SP
+AM=M-1
+D=M
+@5
+M=D
+//C_PUSH arg1: constant arg2: 29 push constant 29
+@29
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.new arg2: 1 call String.new 1
+@1
+D=A
+@14
+M=D
+@String.new
+D=A
+@15
+M=D
+@String.new$ret.7
+D=A
+@CALL
+0;JMP
+(String.new$ret.7)
+//C_PUSH arg1: constant arg2: 87 push constant 87
+@87
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.163
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.163)
+//C_PUSH arg1: constant arg2: 104 push constant 104
+@104
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.164
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.164)
+//C_PUSH arg1: constant arg2: 105 push constant 105
+@105
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.165
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.165)
+//C_PUSH arg1: constant arg2: 99 push constant 99
+@99
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.166
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.166)
+//C_PUSH arg1: constant arg2: 104 push constant 104
+@104
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.167
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.167)
+//C_PUSH arg1: constant arg2: 32 push constant 32
+@32
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.168
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.168)
+//C_PUSH arg1: constant arg2: 111 push constant 111
+@111
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.169
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.169)
+//C_PUSH arg1: constant arg2: 112 push constant 112
+@112
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.170
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.170)
+//C_PUSH arg1: constant arg2: 116 push constant 116
+@116
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.171
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.171)
+//C_PUSH arg1: constant arg2: 105 push constant 105
+@105
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.172
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.172)
+//C_PUSH arg1: constant arg2: 111 push constant 111
+@111
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.173
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.173)
+//C_PUSH arg1: constant arg2: 110 push constant 110
+@110
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.174
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.174)
+//C_PUSH arg1: constant arg2: 32 push constant 32
+@32
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.175
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.175)
+//C_PUSH arg1: constant arg2: 100 push constant 100
+@100
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.176
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.176)
+//C_PUSH arg1: constant arg2: 111 push constant 111
+@111
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.177
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.177)
+//C_PUSH arg1: constant arg2: 32 push constant 32
+@32
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.178
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.178)
+//C_PUSH arg1: constant arg2: 121 push constant 121
+@121
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.179
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.179)
+//C_PUSH arg1: constant arg2: 111 push constant 111
+@111
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.180
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.180)
+//C_PUSH arg1: constant arg2: 117 push constant 117
+@117
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.181
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.181)
+//C_PUSH arg1: constant arg2: 32 push constant 32
+@32
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.182
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.182)
+//C_PUSH arg1: constant arg2: 99 push constant 99
+@99
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.183
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.183)
+//C_PUSH arg1: constant arg2: 104 push constant 104
+@104
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.184
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.184)
+//C_PUSH arg1: constant arg2: 111 push constant 111
+@111
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.185
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.185)
+//C_PUSH arg1: constant arg2: 111 push constant 111
+@111
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.186
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.186)
+//C_PUSH arg1: constant arg2: 115 push constant 115
+@115
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.187
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.187)
+//C_PUSH arg1: constant arg2: 101 push constant 101
+@101
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.188
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.188)
+//C_PUSH arg1: constant arg2: 63 push constant 63
+@63
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.189
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.189)
+//C_PUSH arg1: constant arg2: 58 push constant 58
+@58
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.190
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.190)
+//C_PUSH arg1: constant arg2: 32 push constant 32
+@32
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.191
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.191)
+//C_CALL arg1: Output.printString arg2: 1 call Output.printString 1
+@1
+D=A
+@14
+M=D
+@Output.printString
+D=A
+@15
+M=D
+@Output.printString$ret.7
+D=A
+@CALL
+0;JMP
+(Output.printString$ret.7)
+//C_POP arg1: temp arg2: 0 pop temp 0
+@SP
+AM=M-1
+D=M
+@5
+M=D
+//C_CALL arg1: Keyboard.readChar arg2: 0 call Keyboard.readChar 0
+@0
+D=A
+@14
+M=D
+@Keyboard.readChar
+D=A
+@15
+M=D
+@Keyboard.readChar$ret.1
+D=A
+@CALL
+0;JMP
+(Keyboard.readChar$ret.1)
+//C_POP arg1: local arg2: 2 pop local 2
+@SP
+AM=M-1
+D=M
+@LCL
+D=D+M // D = pop value + base memory address of mem segment
+@2
+D=D+A // D = pop value + address to pop to
+@SP
+A=M
+A=M
+A=D-A
+M=D-A
+//C_PUSH arg1: local arg2: 2 push local 2
+@2
+D=A
+@LCL
+A=M+D
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+//C_PUSH arg1: constant arg2: 66 push constant 66
+@66
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_ARITHMETIC arg1: eq arg2: None eq
+@ARITHMETIC_EQ.4
+D=A
+@EQ
+0;JMP
+(ARITHMETIC_EQ.4)
+//C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
+@SP // pop from stack to memory address 13
+AM=M-1
+D=M
+@Main.main$IF_TRUE1
+D;JNE
+//C_GOTO arg1: IF_FALSE1 arg2: None goto IF_FALSE1
+@Main.main$IF_FALSE1
+0;JMP
+//C_LABEL arg1: IF_TRUE1 arg2: None label IF_TRUE1
+(Main.main$IF_TRUE1)//C_CALL arg1: Main.resetScreen arg2: 0 call Main.resetScreen 0
+@0
+D=A
+@14
+M=D
+@Main.resetScreen
+D=A
+@15
+M=D
+@Main.resetScreen$ret.0
+D=A
+@CALL
+0;JMP
+(Main.resetScreen$ret.0)
+//C_POP arg1: temp arg2: 0 pop temp 0
+@SP
+AM=M-1
+D=M
+@5
+M=D
+//C_CALL arg1: Main.savePassword arg2: 0 call Main.savePassword 0
+@0
+D=A
+@14
+M=D
+@Main.savePassword
+D=A
+@15
+M=D
+@Main.savePassword$ret.1
+D=A
+@CALL
+0;JMP
+(Main.savePassword$ret.1)
+//C_POP arg1: temp arg2: 0 pop temp 0
+@SP
+AM=M-1
+D=M
+@5
+M=D
+//C_LABEL arg1: IF_FALSE1 arg2: None label IF_FALSE1
+(Main.main$IF_FALSE1)//C_PUSH arg1: local arg2: 2 push local 2
+@2
+D=A
+@LCL
+A=M+D
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+//C_PUSH arg1: constant arg2: 65 push constant 65
+@65
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_ARITHMETIC arg1: eq arg2: None eq
+@ARITHMETIC_EQ.5
+D=A
+@EQ
+0;JMP
+(ARITHMETIC_EQ.5)
+//C_IF arg1: IF_TRUE2 arg2: None if-goto IF_TRUE2
+@SP // pop from stack to memory address 13
+AM=M-1
+D=M
+@Main.main$IF_TRUE2
+D;JNE
+//C_GOTO arg1: IF_FALSE2 arg2: None goto IF_FALSE2
+@Main.main$IF_FALSE2
+0;JMP
+//C_LABEL arg1: IF_TRUE2 arg2: None label IF_TRUE2
+(Main.main$IF_TRUE2)//C_CALL arg1: Main.resetScreen arg2: 0 call Main.resetScreen 0
+@0
+D=A
+@14
+M=D
+@Main.resetScreen
+D=A
+@15
+M=D
+@Main.resetScreen$ret.1
+D=A
+@CALL
+0;JMP
+(Main.resetScreen$ret.1)
+//C_POP arg1: temp arg2: 0 pop temp 0
+@SP
+AM=M-1
+D=M
+@5
+M=D
+//C_CALL arg1: Main.showSavedPasswords arg2: 0 call Main.showSavedPasswords 0
+@0
+D=A
+@14
+M=D
+@Main.showSavedPasswords
+D=A
+@15
+M=D
+@Main.showSavedPasswords$ret.0
+D=A
+@CALL
+0;JMP
+(Main.showSavedPasswords$ret.0)
+//C_POP arg1: temp arg2: 0 pop temp 0
+@SP
+AM=M-1
+D=M
+@5
+M=D
+//C_LABEL arg1: IF_FALSE2 arg2: None label IF_FALSE2
+(Main.main$IF_FALSE2)//C_LABEL arg1: IF_END0 arg2: None label IF_END0
+(Main.main$IF_END0)//C_GOTO arg1: WHILE_EXP0 arg2: None goto WHILE_EXP0
+@Main.main$WHILE_EXP0
+0;JMP
+//C_LABEL arg1: WHILE_END0 arg2: None label WHILE_END0
+(Main.main$WHILE_END0)//C_PUSH arg1: constant arg2: 0 push constant 0
+@0
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_RETURN arg1: None arg2: None return
+@RETURN
+0;JMP
+//C_FUNCTION arg1: Main.savePassword arg2: 1 function Main.savePassword 1
+(Main.savePassword)
+//@1
+//D=A
+//@SP
+//M=M+D
+@0
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_PUSH arg1: constant arg2: 37 push constant 37
+@37
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.new arg2: 1 call String.new 1
+@1
+D=A
+@14
+M=D
+@String.new
+D=A
+@15
+M=D
+@String.new$ret.8
+D=A
+@CALL
+0;JMP
+(String.new$ret.8)
+//C_PUSH arg1: constant arg2: 69 push constant 69
+@69
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.192
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.192)
+//C_PUSH arg1: constant arg2: 110 push constant 110
+@110
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.193
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.193)
+//C_PUSH arg1: constant arg2: 116 push constant 116
+@116
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.194
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.194)
+//C_PUSH arg1: constant arg2: 101 push constant 101
+@101
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.195
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.195)
+//C_PUSH arg1: constant arg2: 114 push constant 114
+@114
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.196
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.196)
+//C_PUSH arg1: constant arg2: 32 push constant 32
+@32
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.197
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.197)
+//C_PUSH arg1: constant arg2: 116 push constant 116
+@116
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.198
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.198)
+//C_PUSH arg1: constant arg2: 104 push constant 104
+@104
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.199
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.199)
+//C_PUSH arg1: constant arg2: 101 push constant 101
+@101
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.200
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.200)
+//C_PUSH arg1: constant arg2: 32 push constant 32
+@32
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.201
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.201)
+//C_PUSH arg1: constant arg2: 112 push constant 112
+@112
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.202
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.202)
+//C_PUSH arg1: constant arg2: 97 push constant 97
+@97
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.203
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.203)
+//C_PUSH arg1: constant arg2: 115 push constant 115
+@115
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.204
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.204)
+//C_PUSH arg1: constant arg2: 115 push constant 115
+@115
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.205
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.205)
+//C_PUSH arg1: constant arg2: 119 push constant 119
+@119
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.206
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.206)
+//C_PUSH arg1: constant arg2: 111 push constant 111
+@111
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.207
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.207)
+//C_PUSH arg1: constant arg2: 114 push constant 114
+@114
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.208
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.208)
+//C_PUSH arg1: constant arg2: 100 push constant 100
+@100
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.209
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.209)
+//C_PUSH arg1: constant arg2: 32 push constant 32
+@32
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.210
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.210)
+//C_PUSH arg1: constant arg2: 121 push constant 121
+@121
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.211
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.211)
+//C_PUSH arg1: constant arg2: 111 push constant 111
+@111
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.212
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.212)
+//C_PUSH arg1: constant arg2: 117 push constant 117
+@117
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.213
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.213)
+//C_PUSH arg1: constant arg2: 32 push constant 32
+@32
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.214
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.214)
+//C_PUSH arg1: constant arg2: 119 push constant 119
+@119
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.215
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.215)
+//C_PUSH arg1: constant arg2: 97 push constant 97
+@97
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.216
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.216)
+//C_PUSH arg1: constant arg2: 110 push constant 110
+@110
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.217
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.217)
+//C_PUSH arg1: constant arg2: 116 push constant 116
+@116
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.218
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.218)
+//C_PUSH arg1: constant arg2: 32 push constant 32
+@32
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.219
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.219)
+//C_PUSH arg1: constant arg2: 116 push constant 116
+@116
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.220
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.220)
+//C_PUSH arg1: constant arg2: 111 push constant 111
+@111
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.221
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.221)
+//C_PUSH arg1: constant arg2: 32 push constant 32
+@32
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.222
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.222)
+//C_PUSH arg1: constant arg2: 115 push constant 115
+@115
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.223
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.223)
+//C_PUSH arg1: constant arg2: 97 push constant 97
+@97
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.224
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.224)
+//C_PUSH arg1: constant arg2: 118 push constant 118
+@118
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.225
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.225)
+//C_PUSH arg1: constant arg2: 101 push constant 101
+@101
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.226
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.226)
+//C_PUSH arg1: constant arg2: 58 push constant 58
+@58
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.227
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.227)
+//C_PUSH arg1: constant arg2: 32 push constant 32
+@32
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.228
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.228)
+//C_CALL arg1: Keyboard.readLine arg2: 1 call Keyboard.readLine 1
+@1
+D=A
+@14
+M=D
+@Keyboard.readLine
+D=A
+@15
+M=D
+@Keyboard.readLine$ret.1
+D=A
+@CALL
+0;JMP
+(Keyboard.readLine$ret.1)
+//C_POP arg1: local arg2: 0 pop local 0
+@SP
+AM=M-1
+D=M
+@LCL
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
+A=M
+A=M
+A=D-A
+M=D-A
+//C_PUSH arg1: static arg2: 0 push static 0
+@Main.0
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+//C_PUSH arg1: static arg2: 1 push static 1
+@Main.1
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+//C_ARITHMETIC arg1: add arg2: None add
+@ARITHMETIC_ADD.0
+D=A
+@ADD
+0;JMP
+(ARITHMETIC_ADD.0)
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
 @LCL
 A=M+D
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+//C_POP arg1: temp arg2: 0 pop temp 0
+@SP
+AM=M-1
+D=M
+@5
+M=D
+//C_POP arg1: pointer arg2: 1 pop pointer 1
+@SP
+AM=M-1
+D=M
+@4
+M=D
+//C_PUSH arg1: temp arg2: 0 push temp 0
+@5
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+//C_POP arg1: that arg2: 0 pop that 0
+@SP
+AM=M-1
+D=M
+@THAT
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
+A=M
+A=M
+A=D-A
+M=D-A
+//C_PUSH arg1: static arg2: 0 push static 0
+@Main.0
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+//C_PUSH arg1: constant arg2: 1 push constant 1
+@1
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_ARITHMETIC arg1: add arg2: None add
+@ARITHMETIC_ADD.1
+D=A
+@ADD
+0;JMP
+(ARITHMETIC_ADD.1)
+//C_POP arg1: static arg2: 0 pop static 0
+@SP
+AM=M-1
+D=M
+@Main.0
+M=D
+//C_PUSH arg1: constant arg2: 0 push constant 0
+@0
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_RETURN arg1: None arg2: None return
+@RETURN
+0;JMP
+//C_FUNCTION arg1: Main.showSavedPasswords arg2: 1 function Main.showSavedPasswords 1
+(Main.showSavedPasswords)
+//@1
+//D=A
+//@SP
+//M=M+D
+@0
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_PUSH arg1: constant arg2: 0 push constant 0
+@0
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_POP arg1: local arg2: 0 pop local 0
+@SP
+AM=M-1
+D=M
+@LCL
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
+A=M
+A=M
+A=D-A
+M=D-A
+//C_LABEL arg1: WHILE_EXP0 arg2: None label WHILE_EXP0
+(Main.showSavedPasswords$WHILE_EXP0)//C_PUSH arg1: local arg2: 0 push local 0
+@0
+D=A
+@LCL
+A=M+D
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+//C_PUSH arg1: static arg2: 0 push static 0
+@Main.0
 D=M
 @SP
 M=M+1
@@ -1997,23 +7704,288 @@ D=A
 0;JMP
 (ARITHMETIC_LT.1)
 //C_ARITHMETIC arg1: not arg2: None not
-@ARITHMETIC_NOT.9
+@ARITHMETIC_NOT.11
 D=A
 @NOT
 0;JMP
-(ARITHMETIC_NOT.9)
+(ARITHMETIC_NOT.11)
 //C_IF arg1: WHILE_END0 arg2: None if-goto WHILE_END0
 @SP // pop from stack to memory address 13
 AM=M-1
 D=M
-@Main.main$WHILE_END0
+@Main.showSavedPasswords$WHILE_END0
 D;JNE
-//C_PUSH arg1: local arg2: 1 push local 1
-@1
+//C_PUSH arg1: local arg2: 0 push local 0
+@0
 D=A
 @LCL
 A=M+D
 D=M
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: Output.printInt arg2: 1 call Output.printInt 1
+@1
+D=A
+@14
+M=D
+@Output.printInt
+D=A
+@15
+M=D
+@Output.printInt$ret.2
+D=A
+@CALL
+0;JMP
+(Output.printInt$ret.2)
+//C_POP arg1: temp arg2: 0 pop temp 0
+@SP
+AM=M-1
+D=M
+@5
+M=D
+//C_PUSH arg1: constant arg2: 2 push constant 2
+@2
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.new arg2: 1 call String.new 1
+@1
+D=A
+@14
+M=D
+@String.new
+D=A
+@15
+M=D
+@String.new$ret.9
+D=A
+@CALL
+0;JMP
+(String.new$ret.9)
+//C_PUSH arg1: constant arg2: 46 push constant 46
+@46
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.229
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.229)
+//C_PUSH arg1: constant arg2: 32 push constant 32
+@32
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
+@2
+D=A
+@14
+M=D
+@String.appendChar
+D=A
+@15
+M=D
+@String.appendChar$ret.230
+D=A
+@CALL
+0;JMP
+(String.appendChar$ret.230)
+//C_CALL arg1: Output.printString arg2: 1 call Output.printString 1
+@1
+D=A
+@14
+M=D
+@Output.printString
+D=A
+@15
+M=D
+@Output.printString$ret.8
+D=A
+@CALL
+0;JMP
+(Output.printString$ret.8)
+//C_POP arg1: temp arg2: 0 pop temp 0
+@SP
+AM=M-1
+D=M
+@5
+M=D
+//C_PUSH arg1: local arg2: 0 push local 0
+@0
+D=A
+@LCL
+A=M+D
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+//C_PUSH arg1: static arg2: 1 push static 1
+@Main.1
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+//C_ARITHMETIC arg1: add arg2: None add
+@ARITHMETIC_ADD.2
+D=A
+@ADD
+0;JMP
+(ARITHMETIC_ADD.2)
+//C_POP arg1: pointer arg2: 1 pop pointer 1
+@SP
+AM=M-1
+D=M
+@4
+M=D
+//C_PUSH arg1: that arg2: 0 push that 0
+@0
+D=A
+@THAT
+A=M+D
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+//C_CALL arg1: Output.printString arg2: 1 call Output.printString 1
+@1
+D=A
+@14
+M=D
+@Output.printString
+D=A
+@15
+M=D
+@Output.printString$ret.9
+D=A
+@CALL
+0;JMP
+(Output.printString$ret.9)
+//C_POP arg1: temp arg2: 0 pop temp 0
+@SP
+AM=M-1
+D=M
+@5
+M=D
+//C_CALL arg1: Output.println arg2: 0 call Output.println 0
+@0
+D=A
+@14
+M=D
+@Output.println
+D=A
+@15
+M=D
+@Output.println$ret.5
+D=A
+@CALL
+0;JMP
+(Output.println$ret.5)
+//C_POP arg1: temp arg2: 0 pop temp 0
+@SP
+AM=M-1
+D=M
+@5
+M=D
+//C_PUSH arg1: local arg2: 0 push local 0
+@0
+D=A
+@LCL
+A=M+D
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+//C_PUSH arg1: constant arg2: 1 push constant 1
+@1
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_ARITHMETIC arg1: add arg2: None add
+@ARITHMETIC_ADD.3
+D=A
+@ADD
+0;JMP
+(ARITHMETIC_ADD.3)
+//C_POP arg1: local arg2: 0 pop local 0
+@SP
+AM=M-1
+D=M
+@LCL
+D=D+M // D = pop value + base memory address of mem segment
+@0
+D=D+A // D = pop value + address to pop to
+@SP
+A=M
+A=M
+A=D-A
+M=D-A
+//C_GOTO arg1: WHILE_EXP0 arg2: None goto WHILE_EXP0
+@Main.showSavedPasswords$WHILE_EXP0
+0;JMP
+//C_LABEL arg1: WHILE_END0 arg2: None label WHILE_END0
+(Main.showSavedPasswords$WHILE_END0)//C_PUSH arg1: constant arg2: 0 push constant 0
+@0
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_RETURN arg1: None arg2: None return
+@RETURN
+0;JMP
+//C_FUNCTION arg1: Main.resetScreen arg2: 0 function Main.resetScreen 0
+(Main.resetScreen)
+//@0
+//D=A
+//@SP
+//M=M+D
+//C_CALL arg1: Screen.clearScreen arg2: 0 call Screen.clearScreen 0
+@0
+D=A
+@14
+M=D
+@Screen.clearScreen
+D=A
+@15
+M=D
+@Screen.clearScreen$ret.0
+D=A
+@CALL
+0;JMP
+(Screen.clearScreen$ret.0)
+//C_POP arg1: temp arg2: 0 pop temp 0
+@SP
+AM=M-1
+D=M
+@5
+M=D
+//C_PUSH arg1: constant arg2: 0 push constant 0
+@0
+D=A
 @SP
 M=M+1
 A=M-1
@@ -2045,593 +8017,7 @@ AM=M-1
 D=M
 @5
 M=D
-//C_PUSH arg1: local arg2: 1 push local 1
-@1
-D=A
-@LCL
-A=M+D
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
-//C_PUSH arg1: constant arg2: 1 push constant 1
-@1
-D=A
-@SP
-M=M+1
-A=M-1
-M=D
-//C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.0
-D=A
-@ADD
-0;JMP
-(ARITHMETIC_ADD.0)
-//C_POP arg1: local arg2: 1 pop local 1
-@SP
-AM=M-1
-D=M
-@LCL
-D=D+M // D = pop value + base memory address of mem segment
-@1
-D=D+A // D = pop value + address to pop to
-@SP
-A=M
-A=M
-A=D-A
-M=D-A
-//C_PUSH arg1: constant arg2: 5 push constant 5
-@5
-D=A
-@SP
-M=M+1
-A=M-1
-M=D
-//C_CALL arg1: String.new arg2: 1 call String.new 1
-@1
-D=A
-@14
-M=D
-@String.new
-D=A
-@15
-M=D
-@String.new$ret.1
-D=A
-@CALL
-0;JMP
-(String.new$ret.1)
-//C_PUSH arg1: constant arg2: 65 push constant 65
-@65
-D=A
-@SP
-M=M+1
-A=M-1
-M=D
-//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
-@2
-D=A
-@14
-M=D
-@String.appendChar
-D=A
-@15
-M=D
-@String.appendChar$ret.1
-D=A
-@CALL
-0;JMP
-(String.appendChar$ret.1)
-//C_PUSH arg1: constant arg2: 72 push constant 72
-@72
-D=A
-@SP
-M=M+1
-A=M-1
-M=D
-//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
-@2
-D=A
-@14
-M=D
-@String.appendChar
-D=A
-@15
-M=D
-@String.appendChar$ret.2
-D=A
-@CALL
-0;JMP
-(String.appendChar$ret.2)
-//C_PUSH arg1: constant arg2: 72 push constant 72
-@72
-D=A
-@SP
-M=M+1
-A=M-1
-M=D
-//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
-@2
-D=A
-@14
-M=D
-@String.appendChar
-D=A
-@15
-M=D
-@String.appendChar$ret.3
-D=A
-@CALL
-0;JMP
-(String.appendChar$ret.3)
-//C_PUSH arg1: constant arg2: 72 push constant 72
-@72
-D=A
-@SP
-M=M+1
-A=M-1
-M=D
-//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
-@2
-D=A
-@14
-M=D
-@String.appendChar
-D=A
-@15
-M=D
-@String.appendChar$ret.4
-D=A
-@CALL
-0;JMP
-(String.appendChar$ret.4)
-//C_PUSH arg1: constant arg2: 72 push constant 72
-@72
-D=A
-@SP
-M=M+1
-A=M-1
-M=D
-//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
-@2
-D=A
-@14
-M=D
-@String.appendChar
-D=A
-@15
-M=D
-@String.appendChar$ret.5
-D=A
-@CALL
-0;JMP
-(String.appendChar$ret.5)
-//C_CALL arg1: Output.printString arg2: 1 call Output.printString 1
-@1
-D=A
-@14
-M=D
-@Output.printString
-D=A
-@15
-M=D
-@Output.printString$ret.1
-D=A
-@CALL
-0;JMP
-(Output.printString$ret.1)
-//C_POP arg1: temp arg2: 0 pop temp 0
-@SP
-AM=M-1
-D=M
-@5
-M=D
 //C_PUSH arg1: constant arg2: 0 push constant 0
-@0
-D=A
-@SP
-M=M+1
-A=M-1
-M=D
-//C_ARITHMETIC arg1: not arg2: None not
-@ARITHMETIC_NOT.10
-D=A
-@NOT
-0;JMP
-(ARITHMETIC_NOT.10)
-//C_CALL arg1: Screen.setColor arg2: 1 call Screen.setColor 1
-@1
-D=A
-@14
-M=D
-@Screen.setColor
-D=A
-@15
-M=D
-@Screen.setColor$ret.0
-D=A
-@CALL
-0;JMP
-(Screen.setColor$ret.0)
-//C_POP arg1: temp arg2: 0 pop temp 0
-@SP
-AM=M-1
-D=M
-@5
-M=D
-//C_PUSH arg1: constant arg2: 400 push constant 400
-@400
-D=A
-@SP
-M=M+1
-A=M-1
-M=D
-//C_PUSH arg1: constant arg2: 128 push constant 128
-@128
-D=A
-@SP
-M=M+1
-A=M-1
-M=D
-//C_PUSH arg1: constant arg2: 422 push constant 422
-@422
-D=A
-@SP
-M=M+1
-A=M-1
-M=D
-//C_PUSH arg1: constant arg2: 140 push constant 140
-@140
-D=A
-@SP
-M=M+1
-A=M-1
-M=D
-//C_CALL arg1: Screen.drawRectangle arg2: 4 call Screen.drawRectangle 4
-@4
-D=A
-@14
-M=D
-@Screen.drawRectangle
-D=A
-@15
-M=D
-@Screen.drawRectangle$ret.0
-D=A
-@CALL
-0;JMP
-(Screen.drawRectangle$ret.0)
-//C_POP arg1: temp arg2: 0 pop temp 0
-@SP
-AM=M-1
-D=M
-@5
-M=D
-//C_PUSH arg1: constant arg2: 5 push constant 5
-@5
-D=A
-@SP
-M=M+1
-A=M-1
-M=D
-//C_CALL arg1: Sys.wait arg2: 1 call Sys.wait 1
-@1
-D=A
-@14
-M=D
-@Sys.wait
-D=A
-@15
-M=D
-@Sys.wait$ret.0
-D=A
-@CALL
-0;JMP
-(Sys.wait$ret.0)
-//C_POP arg1: temp arg2: 0 pop temp 0
-@SP
-AM=M-1
-D=M
-@5
-M=D
-//C_PUSH arg1: constant arg2: 0 push constant 0
-@0
-D=A
-@SP
-M=M+1
-A=M-1
-M=D
-//C_CALL arg1: Screen.setColor arg2: 1 call Screen.setColor 1
-@1
-D=A
-@14
-M=D
-@Screen.setColor
-D=A
-@15
-M=D
-@Screen.setColor$ret.1
-D=A
-@CALL
-0;JMP
-(Screen.setColor$ret.1)
-//C_POP arg1: temp arg2: 0 pop temp 0
-@SP
-AM=M-1
-D=M
-@5
-M=D
-//C_PUSH arg1: constant arg2: 400 push constant 400
-@400
-D=A
-@SP
-M=M+1
-A=M-1
-M=D
-//C_PUSH arg1: constant arg2: 128 push constant 128
-@128
-D=A
-@SP
-M=M+1
-A=M-1
-M=D
-//C_PUSH arg1: constant arg2: 422 push constant 422
-@422
-D=A
-@SP
-M=M+1
-A=M-1
-M=D
-//C_PUSH arg1: constant arg2: 140 push constant 140
-@140
-D=A
-@SP
-M=M+1
-A=M-1
-M=D
-//C_CALL arg1: Screen.drawRectangle arg2: 4 call Screen.drawRectangle 4
-@4
-D=A
-@14
-M=D
-@Screen.drawRectangle
-D=A
-@15
-M=D
-@Screen.drawRectangle$ret.1
-D=A
-@CALL
-0;JMP
-(Screen.drawRectangle$ret.1)
-//C_POP arg1: temp arg2: 0 pop temp 0
-@SP
-AM=M-1
-D=M
-@5
-M=D
-//C_GOTO arg1: WHILE_EXP0 arg2: None goto WHILE_EXP0
-@Main.main$WHILE_EXP0
-0;JMP
-//C_LABEL arg1: WHILE_END0 arg2: None label WHILE_END0
-(Main.main$WHILE_END0)//C_PUSH arg1: local arg2: 1 push local 1
-@1
-D=A
-@LCL
-A=M+D
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
-//C_PUSH arg1: constant arg2: 1 push constant 1
-@1
-D=A
-@SP
-M=M+1
-A=M-1
-M=D
-//C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.2
-D=A
-@SUB
-0;JMP
-(ARITHMETIC_SUB.2)
-//C_POP arg1: local arg2: 1 pop local 1
-@SP
-AM=M-1
-D=M
-@LCL
-D=D+M // D = pop value + base memory address of mem segment
-@1
-D=D+A // D = pop value + address to pop to
-@SP
-A=M
-A=M
-A=D-A
-M=D-A
-//C_LABEL arg1: WHILE_EXP1 arg2: None label WHILE_EXP1
-(Main.main$WHILE_EXP1)//C_PUSH arg1: local arg2: 1 push local 1
-@1
-D=A
-@LCL
-A=M+D
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
-//C_PUSH arg1: constant arg2: 1 push constant 1
-@1
-D=A
-@SP
-M=M+1
-A=M-1
-M=D
-//C_ARITHMETIC arg1: neg arg2: None neg
-@ARITHMETIC_NEG.0
-D=A
-@NEG
-0;JMP
-(ARITHMETIC_NEG.0)
-//C_ARITHMETIC arg1: gt arg2: None gt
-@ARITHMETIC_GT.5
-D=A
-@GT
-0;JMP
-(ARITHMETIC_GT.5)
-//C_ARITHMETIC arg1: not arg2: None not
-@ARITHMETIC_NOT.11
-D=A
-@NOT
-0;JMP
-(ARITHMETIC_NOT.11)
-//C_IF arg1: WHILE_END1 arg2: None if-goto WHILE_END1
-@SP // pop from stack to memory address 13
-AM=M-1
-D=M
-@Main.main$WHILE_END1
-D;JNE
-//C_PUSH arg1: local arg2: 1 push local 1
-@1
-D=A
-@LCL
-A=M+D
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
-//C_PUSH arg1: constant arg2: 0 push constant 0
-@0
-D=A
-@SP
-M=M+1
-A=M-1
-M=D
-//C_CALL arg1: Output.moveCursor arg2: 2 call Output.moveCursor 2
-@2
-D=A
-@14
-M=D
-@Output.moveCursor
-D=A
-@15
-M=D
-@Output.moveCursor$ret.1
-D=A
-@CALL
-0;JMP
-(Output.moveCursor$ret.1)
-//C_POP arg1: temp arg2: 0 pop temp 0
-@SP
-AM=M-1
-D=M
-@5
-M=D
-//C_PUSH arg1: local arg2: 1 push local 1
-@1
-D=A
-@LCL
-A=M+D
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
-//C_PUSH arg1: constant arg2: 1 push constant 1
-@1
-D=A
-@SP
-M=M+1
-A=M-1
-M=D
-//C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.3
-D=A
-@SUB
-0;JMP
-(ARITHMETIC_SUB.3)
-//C_POP arg1: local arg2: 1 pop local 1
-@SP
-AM=M-1
-D=M
-@LCL
-D=D+M // D = pop value + base memory address of mem segment
-@1
-D=D+A // D = pop value + address to pop to
-@SP
-A=M
-A=M
-A=D-A
-M=D-A
-//C_PUSH arg1: constant arg2: 1 push constant 1
-@1
-D=A
-@SP
-M=M+1
-A=M-1
-M=D
-//C_CALL arg1: String.new arg2: 1 call String.new 1
-@1
-D=A
-@14
-M=D
-@String.new
-D=A
-@15
-M=D
-@String.new$ret.2
-D=A
-@CALL
-0;JMP
-(String.new$ret.2)
-//C_PUSH arg1: constant arg2: 69 push constant 69
-@69
-D=A
-@SP
-M=M+1
-A=M-1
-M=D
-//C_CALL arg1: String.appendChar arg2: 2 call String.appendChar 2
-@2
-D=A
-@14
-M=D
-@String.appendChar
-D=A
-@15
-M=D
-@String.appendChar$ret.6
-D=A
-@CALL
-0;JMP
-(String.appendChar$ret.6)
-//C_CALL arg1: Output.printString arg2: 1 call Output.printString 1
-@1
-D=A
-@14
-M=D
-@Output.printString
-D=A
-@15
-M=D
-@Output.printString$ret.2
-D=A
-@CALL
-0;JMP
-(Output.printString$ret.2)
-//C_POP arg1: temp arg2: 0 pop temp 0
-@SP
-AM=M-1
-D=M
-@5
-M=D
-//C_GOTO arg1: WHILE_EXP1 arg2: None goto WHILE_EXP1
-@Main.main$WHILE_EXP1
-0;JMP
-//C_LABEL arg1: WHILE_END1 arg2: None label WHILE_END1
-(Main.main$WHILE_END1)//C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
 @SP
@@ -2669,11 +8055,11 @@ M=D
 D=A
 @15
 M=D
-@Array.new$ret.0
+@Array.new$ret.1
 D=A
 @CALL
 0;JMP
-(Array.new$ret.0)
+(Array.new$ret.1)
 //C_POP arg1: static arg2: 1 pop static 1
 @SP
 AM=M-1
@@ -2696,11 +8082,11 @@ M=D
 D=A
 @15
 M=D
-@Array.new$ret.1
+@Array.new$ret.2
 D=A
 @CALL
 0;JMP
-(Array.new$ret.1)
+(Array.new$ret.2)
 //C_POP arg1: static arg2: 0 pop static 0
 @SP
 AM=M-1
@@ -2722,11 +8108,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.1
+@ARITHMETIC_ADD.4
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.1)
+(ARITHMETIC_ADD.4)
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
@@ -2820,11 +8206,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.2
+@ARITHMETIC_ADD.5
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.2)
+(ARITHMETIC_ADD.5)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
 AM=M-1
@@ -2856,121 +8242,121 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.3
-D=A
-@ADD
-0;JMP
-(ARITHMETIC_ADD.3)
-//C_PUSH arg1: local arg2: 0 push local 0
-@0
-D=A
-@LCL
-A=M+D
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
-//C_PUSH arg1: constant arg2: 1 push constant 1
-@1
-D=A
-@SP
-M=M+1
-A=M-1
-M=D
-//C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.4
-D=A
-@SUB
-0;JMP
-(ARITHMETIC_SUB.4)
-//C_PUSH arg1: static arg2: 0 push static 0
-@Math.0
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
-//C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.4
-D=A
-@ADD
-0;JMP
-(ARITHMETIC_ADD.4)
-//C_POP arg1: pointer arg2: 1 pop pointer 1
-@SP
-AM=M-1
-D=M
-@4
-M=D
-//C_PUSH arg1: that arg2: 0 push that 0
-@0
-D=A
-@THAT
-A=M+D
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
-//C_PUSH arg1: local arg2: 0 push local 0
-@0
-D=A
-@LCL
-A=M+D
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
-//C_PUSH arg1: constant arg2: 1 push constant 1
-@1
-D=A
-@SP
-M=M+1
-A=M-1
-M=D
-//C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.5
-D=A
-@SUB
-0;JMP
-(ARITHMETIC_SUB.5)
-//C_PUSH arg1: static arg2: 0 push static 0
-@Math.0
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
-//C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.5
-D=A
-@ADD
-0;JMP
-(ARITHMETIC_ADD.5)
-//C_POP arg1: pointer arg2: 1 pop pointer 1
-@SP
-AM=M-1
-D=M
-@4
-M=D
-//C_PUSH arg1: that arg2: 0 push that 0
-@0
-D=A
-@THAT
-A=M+D
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
-//C_ARITHMETIC arg1: add arg2: None add
 @ARITHMETIC_ADD.6
 D=A
 @ADD
 0;JMP
 (ARITHMETIC_ADD.6)
+//C_PUSH arg1: local arg2: 0 push local 0
+@0
+D=A
+@LCL
+A=M+D
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+//C_PUSH arg1: constant arg2: 1 push constant 1
+@1
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_ARITHMETIC arg1: sub arg2: None sub
+@ARITHMETIC_SUB.2
+D=A
+@SUB
+0;JMP
+(ARITHMETIC_SUB.2)
+//C_PUSH arg1: static arg2: 0 push static 0
+@Math.0
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+//C_ARITHMETIC arg1: add arg2: None add
+@ARITHMETIC_ADD.7
+D=A
+@ADD
+0;JMP
+(ARITHMETIC_ADD.7)
+//C_POP arg1: pointer arg2: 1 pop pointer 1
+@SP
+AM=M-1
+D=M
+@4
+M=D
+//C_PUSH arg1: that arg2: 0 push that 0
+@0
+D=A
+@THAT
+A=M+D
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+//C_PUSH arg1: local arg2: 0 push local 0
+@0
+D=A
+@LCL
+A=M+D
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+//C_PUSH arg1: constant arg2: 1 push constant 1
+@1
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_ARITHMETIC arg1: sub arg2: None sub
+@ARITHMETIC_SUB.3
+D=A
+@SUB
+0;JMP
+(ARITHMETIC_SUB.3)
+//C_PUSH arg1: static arg2: 0 push static 0
+@Math.0
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+//C_ARITHMETIC arg1: add arg2: None add
+@ARITHMETIC_ADD.8
+D=A
+@ADD
+0;JMP
+(ARITHMETIC_ADD.8)
+//C_POP arg1: pointer arg2: 1 pop pointer 1
+@SP
+AM=M-1
+D=M
+@4
+M=D
+//C_PUSH arg1: that arg2: 0 push that 0
+@0
+D=A
+@THAT
+A=M+D
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+//C_ARITHMETIC arg1: add arg2: None add
+@ARITHMETIC_ADD.9
+D=A
+@ADD
+0;JMP
+(ARITHMETIC_ADD.9)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
 AM=M-1
@@ -3067,11 +8453,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: neg arg2: None neg
-@ARITHMETIC_NEG.1
+@ARITHMETIC_NEG.0
 D=A
 @NEG
 0;JMP
-(ARITHMETIC_NEG.1)
+(ARITHMETIC_NEG.0)
 //C_POP arg1: argument arg2: 0 pop argument 0
 @SP
 AM=M-1
@@ -3176,11 +8562,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@ARITHMETIC_GT.6
+@ARITHMETIC_GT.5
 D=A
 @GT
 0;JMP
-(ARITHMETIC_GT.6)
+(ARITHMETIC_GT.5)
 //C_ARITHMETIC arg1: and arg2: None and
 @ARITHMETIC_AND.0
 D=A
@@ -3205,11 +8591,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@ARITHMETIC_GT.7
+@ARITHMETIC_GT.6
 D=A
 @GT
 0;JMP
-(ARITHMETIC_GT.7)
+(ARITHMETIC_GT.6)
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -3457,11 +8843,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.6
+@ARITHMETIC_SUB.4
 D=A
 @SUB
 0;JMP
-(ARITHMETIC_SUB.6)
+(ARITHMETIC_SUB.4)
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -3480,11 +8866,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.7
+@ARITHMETIC_SUB.5
 D=A
 @SUB
 0;JMP
-(ARITHMETIC_SUB.7)
+(ARITHMETIC_SUB.5)
 //C_ARITHMETIC arg1: lt arg2: None lt
 @ARITHMETIC_LT.7
 D=A
@@ -3521,11 +8907,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.7
+@ARITHMETIC_ADD.10
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.7)
+(ARITHMETIC_ADD.10)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -3566,11 +8952,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@ARITHMETIC_EQ.3
+@ARITHMETIC_EQ.6
 D=A
 @EQ
 0;JMP
-(ARITHMETIC_EQ.3)
+(ARITHMETIC_EQ.6)
 //C_ARITHMETIC arg1: not arg2: None not
 @ARITHMETIC_NOT.14
 D=A
@@ -3608,11 +8994,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.8
+@ARITHMETIC_ADD.11
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.8)
+(ARITHMETIC_ADD.11)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
 AM=M-1
@@ -3654,11 +9040,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.9
+@ARITHMETIC_ADD.12
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.9)
+(ARITHMETIC_ADD.12)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -3676,11 +9062,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.10
+@ARITHMETIC_ADD.13
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.10)
+(ARITHMETIC_ADD.13)
 //C_POP arg1: local arg2: 2 pop local 2
 @SP
 AM=M-1
@@ -3716,11 +9102,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.11
+@ARITHMETIC_ADD.14
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.11)
+(ARITHMETIC_ADD.14)
 //C_POP arg1: argument arg2: 0 pop argument 0
 @SP
 AM=M-1
@@ -3752,11 +9138,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.12
+@ARITHMETIC_ADD.15
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.12)
+(ARITHMETIC_ADD.15)
 //C_POP arg1: local arg2: 3 pop local 3
 @SP
 AM=M-1
@@ -3805,11 +9191,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: neg arg2: None neg
-@ARITHMETIC_NEG.2
+@ARITHMETIC_NEG.1
 D=A
 @NEG
 0;JMP
-(ARITHMETIC_NEG.2)
+(ARITHMETIC_NEG.1)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
 AM=M-1
@@ -3885,11 +9271,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@ARITHMETIC_EQ.4
+@ARITHMETIC_EQ.7
 D=A
 @EQ
 0;JMP
-(ARITHMETIC_EQ.4)
+(ARITHMETIC_EQ.7)
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -3969,11 +9355,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@ARITHMETIC_GT.8
+@ARITHMETIC_GT.7
 D=A
 @GT
 0;JMP
-(ARITHMETIC_GT.8)
+(ARITHMETIC_GT.7)
 //C_ARITHMETIC arg1: and arg2: None and
 @ARITHMETIC_AND.3
 D=A
@@ -3998,11 +9384,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@ARITHMETIC_GT.9
+@ARITHMETIC_GT.8
 D=A
 @GT
 0;JMP
-(ARITHMETIC_GT.9)
+(ARITHMETIC_GT.8)
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -4066,11 +9452,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.13
+@ARITHMETIC_ADD.16
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.13)
+(ARITHMETIC_ADD.16)
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -4247,11 +9633,69 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.14
+@ARITHMETIC_ADD.17
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.14)
+(ARITHMETIC_ADD.17)
+//C_POP arg1: pointer arg2: 1 pop pointer 1
+@SP
+AM=M-1
+D=M
+@4
+M=D
+//C_PUSH arg1: that arg2: 0 push that 0
+@0
+D=A
+@THAT
+A=M+D
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+//C_PUSH arg1: constant arg2: 1 push constant 1
+@1
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_ARITHMETIC arg1: sub arg2: None sub
+@ARITHMETIC_SUB.6
+D=A
+@SUB
+0;JMP
+(ARITHMETIC_SUB.6)
+//C_ARITHMETIC arg1: sub arg2: None sub
+@ARITHMETIC_SUB.7
+D=A
+@SUB
+0;JMP
+(ARITHMETIC_SUB.7)
+//C_PUSH arg1: local arg2: 0 push local 0
+@0
+D=A
+@LCL
+A=M+D
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+//C_PUSH arg1: static arg2: 1 push static 1
+@Math.1
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+//C_ARITHMETIC arg1: add arg2: None add
+@ARITHMETIC_ADD.18
+D=A
+@ADD
+0;JMP
+(ARITHMETIC_ADD.18)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -4281,64 +9725,6 @@ D=A
 @SUB
 0;JMP
 (ARITHMETIC_SUB.8)
-//C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.9
-D=A
-@SUB
-0;JMP
-(ARITHMETIC_SUB.9)
-//C_PUSH arg1: local arg2: 0 push local 0
-@0
-D=A
-@LCL
-A=M+D
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
-//C_PUSH arg1: static arg2: 1 push static 1
-@Math.1
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
-//C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.15
-D=A
-@ADD
-0;JMP
-(ARITHMETIC_ADD.15)
-//C_POP arg1: pointer arg2: 1 pop pointer 1
-@SP
-AM=M-1
-D=M
-@4
-M=D
-//C_PUSH arg1: that arg2: 0 push that 0
-@0
-D=A
-@THAT
-A=M+D
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
-//C_PUSH arg1: constant arg2: 1 push constant 1
-@1
-D=A
-@SP
-M=M+1
-A=M-1
-M=D
-//C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.10
-D=A
-@SUB
-0;JMP
-(ARITHMETIC_SUB.10)
 //C_ARITHMETIC arg1: lt arg2: None lt
 @ARITHMETIC_LT.11
 D=A
@@ -4402,97 +9788,13 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.16
-D=A
-@ADD
-0;JMP
-(ARITHMETIC_ADD.16)
-//C_PUSH arg1: static arg2: 1 push static 1
-@Math.1
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
-//C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.17
-D=A
-@ADD
-0;JMP
-(ARITHMETIC_ADD.17)
-//C_PUSH arg1: local arg2: 0 push local 0
-@0
-D=A
-@LCL
-A=M+D
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
-//C_PUSH arg1: static arg2: 1 push static 1
-@Math.1
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
-//C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.18
-D=A
-@ADD
-0;JMP
-(ARITHMETIC_ADD.18)
-//C_POP arg1: pointer arg2: 1 pop pointer 1
-@SP
-AM=M-1
-D=M
-@4
-M=D
-//C_PUSH arg1: that arg2: 0 push that 0
-@0
-D=A
-@THAT
-A=M+D
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
-//C_PUSH arg1: local arg2: 0 push local 0
-@0
-D=A
-@LCL
-A=M+D
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
-//C_PUSH arg1: static arg2: 1 push static 1
-@Math.1
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
-//C_ARITHMETIC arg1: add arg2: None add
 @ARITHMETIC_ADD.19
 D=A
 @ADD
 0;JMP
 (ARITHMETIC_ADD.19)
-//C_POP arg1: pointer arg2: 1 pop pointer 1
-@SP
-AM=M-1
-D=M
-@4
-M=D
-//C_PUSH arg1: that arg2: 0 push that 0
-@0
-D=A
-@THAT
-A=M+D
+//C_PUSH arg1: static arg2: 1 push static 1
+@Math.1
 D=M
 @SP
 M=M+1
@@ -4504,6 +9806,90 @@ D=A
 @ADD
 0;JMP
 (ARITHMETIC_ADD.20)
+//C_PUSH arg1: local arg2: 0 push local 0
+@0
+D=A
+@LCL
+A=M+D
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+//C_PUSH arg1: static arg2: 1 push static 1
+@Math.1
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+//C_ARITHMETIC arg1: add arg2: None add
+@ARITHMETIC_ADD.21
+D=A
+@ADD
+0;JMP
+(ARITHMETIC_ADD.21)
+//C_POP arg1: pointer arg2: 1 pop pointer 1
+@SP
+AM=M-1
+D=M
+@4
+M=D
+//C_PUSH arg1: that arg2: 0 push that 0
+@0
+D=A
+@THAT
+A=M+D
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+//C_PUSH arg1: local arg2: 0 push local 0
+@0
+D=A
+@LCL
+A=M+D
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+//C_PUSH arg1: static arg2: 1 push static 1
+@Math.1
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+//C_ARITHMETIC arg1: add arg2: None add
+@ARITHMETIC_ADD.22
+D=A
+@ADD
+0;JMP
+(ARITHMETIC_ADD.22)
+//C_POP arg1: pointer arg2: 1 pop pointer 1
+@SP
+AM=M-1
+D=M
+@4
+M=D
+//C_PUSH arg1: that arg2: 0 push that 0
+@0
+D=A
+@THAT
+A=M+D
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+//C_ARITHMETIC arg1: add arg2: None add
+@ARITHMETIC_ADD.23
+D=A
+@ADD
+0;JMP
+(ARITHMETIC_ADD.23)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
 AM=M-1
@@ -4554,11 +9940,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.21
+@ARITHMETIC_ADD.24
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.21)
+(ARITHMETIC_ADD.24)
 //C_PUSH arg1: static arg2: 1 push static 1
 @Math.1
 D=M
@@ -4567,11 +9953,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.22
+@ARITHMETIC_ADD.25
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.22)
+(ARITHMETIC_ADD.25)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -4596,11 +9982,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.11
+@ARITHMETIC_SUB.9
 D=A
 @SUB
 0;JMP
-(ARITHMETIC_SUB.11)
+(ARITHMETIC_SUB.9)
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -4619,17 +10005,17 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.12
+@ARITHMETIC_SUB.10
 D=A
 @SUB
 0;JMP
-(ARITHMETIC_SUB.12)
+(ARITHMETIC_SUB.10)
 //C_ARITHMETIC arg1: gt arg2: None gt
-@ARITHMETIC_GT.10
+@ARITHMETIC_GT.9
 D=A
 @GT
 0;JMP
-(ARITHMETIC_GT.10)
+(ARITHMETIC_GT.9)
 //C_POP arg1: local arg2: 3 pop local 3
 @SP
 AM=M-1
@@ -4687,11 +10073,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.23
+@ARITHMETIC_ADD.26
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.23)
+(ARITHMETIC_ADD.26)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
 AM=M-1
@@ -4730,17 +10116,17 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: neg arg2: None neg
-@ARITHMETIC_NEG.3
+@ARITHMETIC_NEG.2
 D=A
 @NEG
 0;JMP
-(ARITHMETIC_NEG.3)
+(ARITHMETIC_NEG.2)
 //C_ARITHMETIC arg1: gt arg2: None gt
-@ARITHMETIC_GT.11
+@ARITHMETIC_GT.10
 D=A
 @GT
 0;JMP
-(ARITHMETIC_GT.11)
+(ARITHMETIC_GT.10)
 //C_ARITHMETIC arg1: not arg2: None not
 @ARITHMETIC_NOT.19
 D=A
@@ -4771,11 +10157,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.24
+@ARITHMETIC_ADD.27
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.24)
+(ARITHMETIC_ADD.27)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -4800,11 +10186,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.13
+@ARITHMETIC_SUB.11
 D=A
 @SUB
 0;JMP
-(ARITHMETIC_SUB.13)
+(ARITHMETIC_SUB.11)
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -4823,17 +10209,17 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.14
+@ARITHMETIC_SUB.12
 D=A
 @SUB
 0;JMP
-(ARITHMETIC_SUB.14)
+(ARITHMETIC_SUB.12)
 //C_ARITHMETIC arg1: gt arg2: None gt
-@ARITHMETIC_GT.12
+@ARITHMETIC_GT.11
 D=A
 @GT
 0;JMP
-(ARITHMETIC_GT.12)
+(ARITHMETIC_GT.11)
 //C_ARITHMETIC arg1: not arg2: None not
 @ARITHMETIC_NOT.20
 D=A
@@ -4878,11 +10264,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.25
+@ARITHMETIC_ADD.28
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.25)
+(ARITHMETIC_ADD.28)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -4900,11 +10286,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.26
+@ARITHMETIC_ADD.29
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.26)
+(ARITHMETIC_ADD.29)
 //C_POP arg1: local arg2: 1 pop local 1
 @SP
 AM=M-1
@@ -4946,11 +10332,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.27
+@ARITHMETIC_ADD.30
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.27)
+(ARITHMETIC_ADD.30)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -4968,11 +10354,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.15
+@ARITHMETIC_SUB.13
 D=A
 @SUB
 0;JMP
-(ARITHMETIC_SUB.15)
+(ARITHMETIC_SUB.13)
 //C_POP arg1: argument arg2: 0 pop argument 0
 @SP
 AM=M-1
@@ -5005,11 +10391,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.16
+@ARITHMETIC_SUB.14
 D=A
 @SUB
 0;JMP
-(ARITHMETIC_SUB.16)
+(ARITHMETIC_SUB.14)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
 AM=M-1
@@ -5058,11 +10444,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: neg arg2: None neg
-@ARITHMETIC_NEG.4
+@ARITHMETIC_NEG.3
 D=A
 @NEG
 0;JMP
-(ARITHMETIC_NEG.4)
+(ARITHMETIC_NEG.3)
 //C_POP arg1: local arg2: 1 pop local 1
 @SP
 AM=M-1
@@ -5220,17 +10606,17 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: neg arg2: None neg
-@ARITHMETIC_NEG.5
+@ARITHMETIC_NEG.4
 D=A
 @NEG
 0;JMP
-(ARITHMETIC_NEG.5)
+(ARITHMETIC_NEG.4)
 //C_ARITHMETIC arg1: gt arg2: None gt
-@ARITHMETIC_GT.13
+@ARITHMETIC_GT.12
 D=A
 @GT
 0;JMP
-(ARITHMETIC_GT.13)
+(ARITHMETIC_GT.12)
 //C_ARITHMETIC arg1: not arg2: None not
 @ARITHMETIC_NOT.21
 D=A
@@ -5271,11 +10657,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.28
+@ARITHMETIC_ADD.31
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.28)
+(ARITHMETIC_ADD.31)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -5293,11 +10679,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.29
+@ARITHMETIC_ADD.32
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.29)
+(ARITHMETIC_ADD.32)
 //C_POP arg1: local arg2: 1 pop local 1
 @SP
 AM=M-1
@@ -5379,11 +10765,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@ARITHMETIC_GT.14
+@ARITHMETIC_GT.13
 D=A
 @GT
 0;JMP
-(ARITHMETIC_GT.14)
+(ARITHMETIC_GT.13)
 //C_ARITHMETIC arg1: not arg2: None not
 @ARITHMETIC_NOT.22
 D=A
@@ -5477,11 +10863,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.17
+@ARITHMETIC_SUB.15
 D=A
 @SUB
 0;JMP
-(ARITHMETIC_SUB.17)
+(ARITHMETIC_SUB.15)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
 AM=M-1
@@ -5539,11 +10925,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@ARITHMETIC_GT.15
+@ARITHMETIC_GT.14
 D=A
 @GT
 0;JMP
-(ARITHMETIC_GT.15)
+(ARITHMETIC_GT.14)
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -5704,11 +11090,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.30
+@ARITHMETIC_ADD.33
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.30)
+(ARITHMETIC_ADD.33)
 //C_PUSH arg1: constant arg2: 14334 push constant 14334
 @14334
 D=A
@@ -5763,11 +11149,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.31
+@ARITHMETIC_ADD.34
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.31)
+(ARITHMETIC_ADD.34)
 //C_PUSH arg1: constant arg2: 2050 push constant 2050
 @2050
 D=A
@@ -5841,11 +11227,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.32
+@ARITHMETIC_ADD.35
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.32)
+(ARITHMETIC_ADD.35)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -5889,11 +11275,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.33
+@ARITHMETIC_ADD.36
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.33)
+(ARITHMETIC_ADD.36)
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -6043,11 +11429,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@ARITHMETIC_EQ.5
+@ARITHMETIC_EQ.8
 D=A
 @EQ
 0;JMP
-(ARITHMETIC_EQ.5)
+(ARITHMETIC_EQ.8)
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -6141,11 +11527,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.34
+@ARITHMETIC_ADD.37
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.34)
+(ARITHMETIC_ADD.37)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -6214,11 +11600,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.35
+@ARITHMETIC_ADD.38
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.35)
+(ARITHMETIC_ADD.38)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -6266,11 +11652,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.36
+@ARITHMETIC_ADD.39
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.36)
+(ARITHMETIC_ADD.39)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -6295,11 +11681,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@ARITHMETIC_EQ.6
+@ARITHMETIC_EQ.9
 D=A
 @EQ
 0;JMP
-(ARITHMETIC_EQ.6)
+(ARITHMETIC_EQ.9)
 //C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
@@ -6318,11 +11704,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@ARITHMETIC_GT.16
+@ARITHMETIC_GT.15
 D=A
 @GT
 0;JMP
-(ARITHMETIC_GT.16)
+(ARITHMETIC_GT.15)
 //C_ARITHMETIC arg1: or arg2: None or
 @ARITHMETIC_OR.3
 D=A
@@ -6347,11 +11733,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.37
+@ARITHMETIC_ADD.40
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.37)
+(ARITHMETIC_ADD.40)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -6376,11 +11762,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@ARITHMETIC_EQ.7
+@ARITHMETIC_EQ.10
 D=A
 @EQ
 0;JMP
-(ARITHMETIC_EQ.7)
+(ARITHMETIC_EQ.10)
 //C_ARITHMETIC arg1: or arg2: None or
 @ARITHMETIC_OR.4
 D=A
@@ -6442,11 +11828,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.38
+@ARITHMETIC_ADD.41
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.38)
+(ARITHMETIC_ADD.41)
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
@@ -6465,11 +11851,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.39
+@ARITHMETIC_ADD.42
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.39)
+(ARITHMETIC_ADD.42)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -6497,11 +11883,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.18
+@ARITHMETIC_SUB.16
 D=A
 @SUB
 0;JMP
-(ARITHMETIC_SUB.18)
+(ARITHMETIC_SUB.16)
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
@@ -6520,11 +11906,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.40
+@ARITHMETIC_ADD.43
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.40)
+(ARITHMETIC_ADD.43)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -6542,11 +11928,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.41
+@ARITHMETIC_ADD.44
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.41)
+(ARITHMETIC_ADD.44)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
 AM=M-1
@@ -6597,11 +11983,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.42
+@ARITHMETIC_ADD.45
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.42)
+(ARITHMETIC_ADD.45)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -6636,17 +12022,17 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.43
+@ARITHMETIC_ADD.46
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.43)
+(ARITHMETIC_ADD.46)
 //C_ARITHMETIC arg1: eq arg2: None eq
-@ARITHMETIC_EQ.8
+@ARITHMETIC_EQ.11
 D=A
 @EQ
 0;JMP
-(ARITHMETIC_EQ.8)
+(ARITHMETIC_EQ.11)
 //C_IF arg1: IF_TRUE3 arg2: None if-goto IF_TRUE3
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -6675,11 +12061,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.44
+@ARITHMETIC_ADD.47
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.44)
+(ARITHMETIC_ADD.47)
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -6698,11 +12084,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.45
+@ARITHMETIC_ADD.48
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.45)
+(ARITHMETIC_ADD.48)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
 AM=M-1
@@ -6757,11 +12143,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.46
+@ARITHMETIC_ADD.49
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.46)
+(ARITHMETIC_ADD.49)
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
@@ -6780,11 +12166,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.47
+@ARITHMETIC_ADD.50
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.47)
+(ARITHMETIC_ADD.50)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -6860,11 +12246,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.48
+@ARITHMETIC_ADD.51
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.48)
+(ARITHMETIC_ADD.51)
 //C_PUSH arg1: constant arg2: 16379 push constant 16379
 @16379
 D=A
@@ -6873,11 +12259,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@ARITHMETIC_GT.17
+@ARITHMETIC_GT.16
 D=A
 @GT
 0;JMP
-(ARITHMETIC_GT.17)
+(ARITHMETIC_GT.16)
 //C_IF arg1: IF_TRUE4 arg2: None if-goto IF_TRUE4
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -6934,11 +12320,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.49
+@ARITHMETIC_ADD.52
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.49)
+(ARITHMETIC_ADD.52)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -6973,17 +12359,17 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.50
+@ARITHMETIC_ADD.53
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.50)
+(ARITHMETIC_ADD.53)
 //C_ARITHMETIC arg1: gt arg2: None gt
-@ARITHMETIC_GT.18
+@ARITHMETIC_GT.17
 D=A
 @GT
 0;JMP
-(ARITHMETIC_GT.18)
+(ARITHMETIC_GT.17)
 //C_IF arg1: IF_TRUE5 arg2: None if-goto IF_TRUE5
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -7012,11 +12398,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.51
+@ARITHMETIC_ADD.54
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.51)
+(ARITHMETIC_ADD.54)
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -7028,11 +12414,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.52
+@ARITHMETIC_ADD.55
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.52)
+(ARITHMETIC_ADD.55)
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
@@ -7051,11 +12437,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.53
+@ARITHMETIC_ADD.56
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.53)
+(ARITHMETIC_ADD.56)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -7083,11 +12469,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.19
+@ARITHMETIC_SUB.17
 D=A
 @SUB
 0;JMP
-(ARITHMETIC_SUB.19)
+(ARITHMETIC_SUB.17)
 //C_PUSH arg1: constant arg2: 2 push constant 2
 @2
 D=A
@@ -7096,11 +12482,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.20
+@ARITHMETIC_SUB.18
 D=A
 @SUB
 0;JMP
-(ARITHMETIC_SUB.20)
+(ARITHMETIC_SUB.18)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
 AM=M-1
@@ -7151,11 +12537,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.54
+@ARITHMETIC_ADD.57
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.54)
+(ARITHMETIC_ADD.57)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -7190,17 +12576,17 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.55
+@ARITHMETIC_ADD.58
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.55)
+(ARITHMETIC_ADD.58)
 //C_ARITHMETIC arg1: eq arg2: None eq
-@ARITHMETIC_EQ.9
+@ARITHMETIC_EQ.12
 D=A
 @EQ
 0;JMP
-(ARITHMETIC_EQ.9)
+(ARITHMETIC_EQ.12)
 //C_IF arg1: IF_TRUE6 arg2: None if-goto IF_TRUE6
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -7229,11 +12615,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.56
+@ARITHMETIC_ADD.59
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.56)
+(ARITHMETIC_ADD.59)
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -7245,11 +12631,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.57
+@ARITHMETIC_ADD.60
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.57)
+(ARITHMETIC_ADD.60)
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -7271,11 +12657,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.58
+@ARITHMETIC_ADD.61
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.58)
+(ARITHMETIC_ADD.61)
 //C_PUSH arg1: constant arg2: 4 push constant 4
 @4
 D=A
@@ -7284,11 +12670,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.59
+@ARITHMETIC_ADD.62
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.59)
+(ARITHMETIC_ADD.62)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
 AM=M-1
@@ -7343,11 +12729,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.60
+@ARITHMETIC_ADD.63
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.60)
+(ARITHMETIC_ADD.63)
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -7359,11 +12745,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.61
+@ARITHMETIC_ADD.64
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.61)
+(ARITHMETIC_ADD.64)
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
@@ -7382,11 +12768,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.62
+@ARITHMETIC_ADD.65
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.62)
+(ARITHMETIC_ADD.65)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -7454,11 +12840,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.63
+@ARITHMETIC_ADD.66
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.63)
+(ARITHMETIC_ADD.66)
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -7480,11 +12866,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.64
+@ARITHMETIC_ADD.67
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.64)
+(ARITHMETIC_ADD.67)
 //C_PUSH arg1: constant arg2: 2 push constant 2
 @2
 D=A
@@ -7493,11 +12879,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.65
+@ARITHMETIC_ADD.68
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.65)
+(ARITHMETIC_ADD.68)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
 AM=M-1
@@ -7549,11 +12935,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.66
+@ARITHMETIC_ADD.69
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.66)
+(ARITHMETIC_ADD.69)
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
@@ -7611,11 +12997,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.67
+@ARITHMETIC_ADD.70
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.67)
+(ARITHMETIC_ADD.70)
 //C_RETURN arg1: None arg2: None return
 @RETURN
 0;JMP
@@ -7655,11 +13041,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.21
+@ARITHMETIC_SUB.19
 D=A
 @SUB
 0;JMP
-(ARITHMETIC_SUB.21)
+(ARITHMETIC_SUB.19)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
 AM=M-1
@@ -7691,11 +13077,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.68
+@ARITHMETIC_ADD.71
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.68)
+(ARITHMETIC_ADD.71)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -7743,11 +13129,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.69
+@ARITHMETIC_ADD.72
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.69)
+(ARITHMETIC_ADD.72)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -7772,11 +13158,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@ARITHMETIC_EQ.10
+@ARITHMETIC_EQ.13
 D=A
 @EQ
 0;JMP
-(ARITHMETIC_EQ.10)
+(ARITHMETIC_EQ.13)
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -7805,11 +13191,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.70
+@ARITHMETIC_ADD.73
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.70)
+(ARITHMETIC_ADD.73)
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
@@ -7828,11 +13214,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.71
+@ARITHMETIC_ADD.74
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.71)
+(ARITHMETIC_ADD.74)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -7860,11 +13246,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.22
+@ARITHMETIC_SUB.20
 D=A
 @SUB
 0;JMP
-(ARITHMETIC_SUB.22)
+(ARITHMETIC_SUB.20)
 //C_PUSH arg1: constant arg2: 2 push constant 2
 @2
 D=A
@@ -7873,11 +13259,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.23
+@ARITHMETIC_SUB.21
 D=A
 @SUB
 0;JMP
-(ARITHMETIC_SUB.23)
+(ARITHMETIC_SUB.21)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
 AM=M-1
@@ -7932,11 +13318,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.72
+@ARITHMETIC_ADD.75
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.72)
+(ARITHMETIC_ADD.75)
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
@@ -7955,11 +13341,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.73
+@ARITHMETIC_ADD.76
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.73)
+(ARITHMETIC_ADD.76)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -7987,11 +13373,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.24
+@ARITHMETIC_SUB.22
 D=A
 @SUB
 0;JMP
-(ARITHMETIC_SUB.24)
+(ARITHMETIC_SUB.22)
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
@@ -8010,11 +13396,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.74
+@ARITHMETIC_ADD.77
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.74)
+(ARITHMETIC_ADD.77)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -8032,11 +13418,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.75
+@ARITHMETIC_ADD.78
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.75)
+(ARITHMETIC_ADD.78)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
 AM=M-1
@@ -8087,11 +13473,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.76
+@ARITHMETIC_ADD.79
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.76)
+(ARITHMETIC_ADD.79)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -8126,17 +13512,17 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.77
+@ARITHMETIC_ADD.80
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.77)
+(ARITHMETIC_ADD.80)
 //C_ARITHMETIC arg1: eq arg2: None eq
-@ARITHMETIC_EQ.11
+@ARITHMETIC_EQ.14
 D=A
 @EQ
 0;JMP
-(ARITHMETIC_EQ.11)
+(ARITHMETIC_EQ.14)
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -8165,11 +13551,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.78
+@ARITHMETIC_ADD.81
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.78)
+(ARITHMETIC_ADD.81)
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -8188,11 +13574,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.79
+@ARITHMETIC_ADD.82
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.79)
+(ARITHMETIC_ADD.82)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
 AM=M-1
@@ -8247,11 +13633,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.80
+@ARITHMETIC_ADD.83
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.80)
+(ARITHMETIC_ADD.83)
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
@@ -8270,11 +13656,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.81
+@ARITHMETIC_ADD.84
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.81)
+(ARITHMETIC_ADD.84)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -8415,11 +13801,11 @@ M=D
 D=A
 @15
 M=D
-@String.new$ret.3
+@String.new$ret.10
 D=A
 @CALL
 0;JMP
-(String.new$ret.3)
+(String.new$ret.10)
 //C_POP arg1: static arg2: 3 pop static 3
 @SP
 AM=M-1
@@ -8498,11 +13884,11 @@ M=D
 D=A
 @15
 M=D
-@Array.new$ret.2
+@Array.new$ret.3
 D=A
 @CALL
 0;JMP
-(Array.new$ret.2)
+(Array.new$ret.3)
 //C_POP arg1: static arg2: 5 pop static 5
 @SP
 AM=M-1
@@ -18531,11 +23917,11 @@ M=D
 D=A
 @15
 M=D
-@Array.new$ret.3
+@Array.new$ret.4
 D=A
 @CALL
 0;JMP
-(Array.new$ret.3)
+(Array.new$ret.4)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
 AM=M-1
@@ -18567,11 +23953,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.82
+@ARITHMETIC_ADD.85
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.82)
+(ARITHMETIC_ADD.85)
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -18632,11 +24018,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.83
+@ARITHMETIC_ADD.86
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.83)
+(ARITHMETIC_ADD.86)
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -18697,11 +24083,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.84
+@ARITHMETIC_ADD.87
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.84)
+(ARITHMETIC_ADD.87)
 //C_PUSH arg1: argument arg2: 2 push argument 2
 @2
 D=A
@@ -18762,11 +24148,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.85
+@ARITHMETIC_ADD.88
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.85)
+(ARITHMETIC_ADD.88)
 //C_PUSH arg1: argument arg2: 3 push argument 3
 @3
 D=A
@@ -18827,11 +24213,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.86
+@ARITHMETIC_ADD.89
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.86)
+(ARITHMETIC_ADD.89)
 //C_PUSH arg1: argument arg2: 4 push argument 4
 @4
 D=A
@@ -18892,11 +24278,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.87
+@ARITHMETIC_ADD.90
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.87)
+(ARITHMETIC_ADD.90)
 //C_PUSH arg1: argument arg2: 5 push argument 5
 @5
 D=A
@@ -18957,11 +24343,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.88
+@ARITHMETIC_ADD.91
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.88)
+(ARITHMETIC_ADD.91)
 //C_PUSH arg1: argument arg2: 6 push argument 6
 @6
 D=A
@@ -19022,11 +24408,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.89
+@ARITHMETIC_ADD.92
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.89)
+(ARITHMETIC_ADD.92)
 //C_PUSH arg1: argument arg2: 7 push argument 7
 @7
 D=A
@@ -19087,11 +24473,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.90
+@ARITHMETIC_ADD.93
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.90)
+(ARITHMETIC_ADD.93)
 //C_PUSH arg1: argument arg2: 8 push argument 8
 @8
 D=A
@@ -19152,11 +24538,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.91
+@ARITHMETIC_ADD.94
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.91)
+(ARITHMETIC_ADD.94)
 //C_PUSH arg1: argument arg2: 9 push argument 9
 @9
 D=A
@@ -19217,11 +24603,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.92
+@ARITHMETIC_ADD.95
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.92)
+(ARITHMETIC_ADD.95)
 //C_PUSH arg1: argument arg2: 10 push argument 10
 @10
 D=A
@@ -19282,11 +24668,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.93
+@ARITHMETIC_ADD.96
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.93)
+(ARITHMETIC_ADD.96)
 //C_PUSH arg1: argument arg2: 11 push argument 11
 @11
 D=A
@@ -19385,11 +24771,11 @@ M=D
 D=A
 @15
 M=D
-@Array.new$ret.4
+@Array.new$ret.5
 D=A
 @CALL
 0;JMP
-(Array.new$ret.4)
+(Array.new$ret.5)
 //C_POP arg1: static arg2: 6 pop static 6
 @SP
 AM=M-1
@@ -19470,11 +24856,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.94
+@ARITHMETIC_ADD.97
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.94)
+(ARITHMETIC_ADD.97)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -19520,11 +24906,11 @@ M=D
 D=A
 @15
 M=D
-@Array.new$ret.5
+@Array.new$ret.6
 D=A
 @CALL
 0;JMP
-(Array.new$ret.5)
+(Array.new$ret.6)
 //C_POP arg1: local arg2: 1 pop local 1
 @SP
 AM=M-1
@@ -19556,11 +24942,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.95
+@ARITHMETIC_ADD.98
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.95)
+(ARITHMETIC_ADD.98)
 //C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
@@ -19680,11 +25066,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.96
+@ARITHMETIC_ADD.99
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.96)
+(ARITHMETIC_ADD.99)
 //C_PUSH arg1: local arg2: 3 push local 3
 @3
 D=A
@@ -19706,11 +25092,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.97
+@ARITHMETIC_ADD.100
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.97)
+(ARITHMETIC_ADD.100)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -19798,11 +25184,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.98
+@ARITHMETIC_ADD.101
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.98)
+(ARITHMETIC_ADD.101)
 //C_POP arg1: local arg2: 3 pop local 3
 @SP
 AM=M-1
@@ -19838,11 +25224,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@ARITHMETIC_EQ.12
+@ARITHMETIC_EQ.15
 D=A
 @EQ
 0;JMP
-(ARITHMETIC_EQ.12)
+(ARITHMETIC_EQ.15)
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -19895,11 +25281,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.99
+@ARITHMETIC_ADD.102
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.99)
+(ARITHMETIC_ADD.102)
 //C_POP arg1: local arg2: 2 pop local 2
 @SP
 AM=M-1
@@ -19981,11 +25367,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@ARITHMETIC_GT.19
+@ARITHMETIC_GT.18
 D=A
 @GT
 0;JMP
-(ARITHMETIC_GT.19)
+(ARITHMETIC_GT.18)
 //C_ARITHMETIC arg1: or arg2: None or
 @ARITHMETIC_OR.5
 D=A
@@ -20058,11 +25444,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.100
+@ARITHMETIC_ADD.103
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.100)
+(ARITHMETIC_ADD.103)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -20114,11 +25500,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.101
+@ARITHMETIC_ADD.104
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.101)
+(ARITHMETIC_ADD.104)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -20320,11 +25706,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.102
+@ARITHMETIC_ADD.105
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.102)
+(ARITHMETIC_ADD.105)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -20349,11 +25735,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: neg arg2: None neg
-@ARITHMETIC_NEG.6
+@ARITHMETIC_NEG.5
 D=A
 @NEG
 0;JMP
-(ARITHMETIC_NEG.6)
+(ARITHMETIC_NEG.5)
 //C_ARITHMETIC arg1: and arg2: None and
 @ARITHMETIC_AND.8
 D=A
@@ -20395,11 +25781,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.103
+@ARITHMETIC_ADD.106
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.103)
+(ARITHMETIC_ADD.106)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -20461,11 +25847,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.104
+@ARITHMETIC_ADD.107
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.104)
+(ARITHMETIC_ADD.107)
 //C_PUSH arg1: local arg2: 1 push local 1
 @1
 D=A
@@ -20487,11 +25873,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.105
+@ARITHMETIC_ADD.108
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.105)
+(ARITHMETIC_ADD.108)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -20574,11 +25960,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.106
+@ARITHMETIC_ADD.109
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.106)
+(ARITHMETIC_ADD.109)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
 AM=M-1
@@ -20610,11 +25996,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.107
+@ARITHMETIC_ADD.110
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.107)
+(ARITHMETIC_ADD.110)
 //C_POP arg1: local arg2: 1 pop local 1
 @SP
 AM=M-1
@@ -20689,11 +26075,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@ARITHMETIC_GT.20
+@ARITHMETIC_GT.19
 D=A
 @GT
 0;JMP
-(ARITHMETIC_GT.20)
+(ARITHMETIC_GT.19)
 //C_ARITHMETIC arg1: or arg2: None or
 @ARITHMETIC_OR.7
 D=A
@@ -20747,11 +26133,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@ARITHMETIC_GT.21
+@ARITHMETIC_GT.20
 D=A
 @GT
 0;JMP
-(ARITHMETIC_GT.21)
+(ARITHMETIC_GT.20)
 //C_ARITHMETIC arg1: or arg2: None or
 @ARITHMETIC_OR.9
 D=A
@@ -20872,11 +26258,11 @@ D=A
 0;JMP
 (Math.multiply$ret.2)
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.108
+@ARITHMETIC_ADD.111
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.108)
+(ARITHMETIC_ADD.111)
 //C_PUSH arg1: static arg2: 0 push static 0
 @Output.0
 D=M
@@ -20885,11 +26271,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.109
+@ARITHMETIC_ADD.112
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.109)
+(ARITHMETIC_ADD.112)
 //C_POP arg1: static arg2: 1 pop static 1
 @SP
 AM=M-1
@@ -20935,11 +26321,11 @@ D=A
 0;JMP
 (Math.multiply$ret.3)
 //C_ARITHMETIC arg1: eq arg2: None eq
-@ARITHMETIC_EQ.13
+@ARITHMETIC_EQ.16
 D=A
 @EQ
 0;JMP
-(ARITHMETIC_EQ.13)
+(ARITHMETIC_EQ.16)
 //C_POP arg1: static arg2: 2 pop static 2
 @SP
 AM=M-1
@@ -21014,11 +26400,11 @@ D=A
 0;JMP
 (String.newLine$ret.1)
 //C_ARITHMETIC arg1: eq arg2: None eq
-@ARITHMETIC_EQ.14
+@ARITHMETIC_EQ.17
 D=A
 @EQ
 0;JMP
-(ARITHMETIC_EQ.14)
+(ARITHMETIC_EQ.17)
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -21038,11 +26424,11 @@ M=D
 D=A
 @15
 M=D
-@Output.println$ret.0
+@Output.println$ret.6
 D=A
 @CALL
 0;JMP
-(Output.println$ret.0)
+(Output.println$ret.6)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
 AM=M-1
@@ -21078,11 +26464,11 @@ D=A
 0;JMP
 (String.backSpace$ret.2)
 //C_ARITHMETIC arg1: eq arg2: None eq
-@ARITHMETIC_EQ.15
+@ARITHMETIC_EQ.18
 D=A
 @EQ
 0;JMP
-(ARITHMETIC_EQ.15)
+(ARITHMETIC_EQ.18)
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -21185,11 +26571,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.110
+@ARITHMETIC_ADD.113
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.110)
+(ARITHMETIC_ADD.113)
 //C_POP arg1: static arg2: 0 pop static 0
 @SP
 AM=M-1
@@ -21211,11 +26597,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.111
+@ARITHMETIC_ADD.114
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.111)
+(ARITHMETIC_ADD.114)
 //C_POP arg1: static arg2: 1 pop static 1
 @SP
 AM=M-1
@@ -21238,11 +26624,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@ARITHMETIC_EQ.16
+@ARITHMETIC_EQ.19
 D=A
 @EQ
 0;JMP
-(ARITHMETIC_EQ.16)
+(ARITHMETIC_EQ.19)
 //C_IF arg1: IF_TRUE3 arg2: None if-goto IF_TRUE3
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -21262,11 +26648,11 @@ M=D
 D=A
 @15
 M=D
-@Output.println$ret.1
+@Output.println$ret.7
 D=A
 @CALL
 0;JMP
-(Output.println$ret.1)
+(Output.println$ret.7)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
 AM=M-1
@@ -21475,11 +26861,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.112
+@ARITHMETIC_ADD.115
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.112)
+(ARITHMETIC_ADD.115)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
 AM=M-1
@@ -21566,11 +26952,11 @@ M=D
 D=A
 @15
 M=D
-@Output.printString$ret.3
+@Output.printString$ret.10
 D=A
 @CALL
 0;JMP
-(Output.printString$ret.3)
+(Output.printString$ret.10)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
 AM=M-1
@@ -21608,11 +26994,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.113
+@ARITHMETIC_ADD.116
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.113)
+(ARITHMETIC_ADD.116)
 //C_PUSH arg1: static arg2: 0 push static 0
 @Output.0
 D=M
@@ -21621,11 +27007,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.25
+@ARITHMETIC_SUB.23
 D=A
 @SUB
 0;JMP
-(ARITHMETIC_SUB.25)
+(ARITHMETIC_SUB.23)
 //C_POP arg1: static arg2: 1 pop static 1
 @SP
 AM=M-1
@@ -21679,11 +27065,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@ARITHMETIC_EQ.17
+@ARITHMETIC_EQ.20
 D=A
 @EQ
 0;JMP
-(ARITHMETIC_EQ.17)
+(ARITHMETIC_EQ.20)
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -21756,11 +27142,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@ARITHMETIC_GT.22
+@ARITHMETIC_GT.21
 D=A
 @GT
 0;JMP
-(ARITHMETIC_GT.22)
+(ARITHMETIC_GT.21)
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -21786,11 +27172,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.26
+@ARITHMETIC_SUB.24
 D=A
 @SUB
 0;JMP
-(ARITHMETIC_SUB.26)
+(ARITHMETIC_SUB.24)
 //C_POP arg1: static arg2: 0 pop static 0
 @SP
 AM=M-1
@@ -21812,11 +27198,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.27
+@ARITHMETIC_SUB.25
 D=A
 @SUB
 0;JMP
-(ARITHMETIC_SUB.27)
+(ARITHMETIC_SUB.25)
 //C_POP arg1: static arg2: 1 pop static 1
 @SP
 AM=M-1
@@ -21855,11 +27241,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@ARITHMETIC_EQ.18
+@ARITHMETIC_EQ.21
 D=A
 @EQ
 0;JMP
-(ARITHMETIC_EQ.18)
+(ARITHMETIC_EQ.21)
 //C_IF arg1: IF_TRUE2 arg2: None if-goto IF_TRUE2
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -21899,11 +27285,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.28
+@ARITHMETIC_SUB.26
 D=A
 @SUB
 0;JMP
-(ARITHMETIC_SUB.28)
+(ARITHMETIC_SUB.26)
 //C_POP arg1: static arg2: 1 pop static 1
 @SP
 AM=M-1
@@ -22045,11 +27431,11 @@ M=D
 D=A
 @15
 M=D
-@Array.new$ret.6
+@Array.new$ret.7
 D=A
 @CALL
 0;JMP
-(Array.new$ret.6)
+(Array.new$ret.7)
 //C_POP arg1: static arg2: 0 pop static 0
 @SP
 AM=M-1
@@ -22071,11 +27457,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.114
+@ARITHMETIC_ADD.117
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.114)
+(ARITHMETIC_ADD.117)
 //C_PUSH arg1: constant arg2: 1 push constant 1
 @1
 D=A
@@ -22169,11 +27555,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.115
+@ARITHMETIC_ADD.118
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.115)
+(ARITHMETIC_ADD.118)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
 AM=M-1
@@ -22205,121 +27591,121 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.116
-D=A
-@ADD
-0;JMP
-(ARITHMETIC_ADD.116)
-//C_PUSH arg1: local arg2: 0 push local 0
-@0
-D=A
-@LCL
-A=M+D
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
-//C_PUSH arg1: constant arg2: 1 push constant 1
-@1
-D=A
-@SP
-M=M+1
-A=M-1
-M=D
-//C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.29
-D=A
-@SUB
-0;JMP
-(ARITHMETIC_SUB.29)
-//C_PUSH arg1: static arg2: 0 push static 0
-@Screen.0
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
-//C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.117
-D=A
-@ADD
-0;JMP
-(ARITHMETIC_ADD.117)
-//C_POP arg1: pointer arg2: 1 pop pointer 1
-@SP
-AM=M-1
-D=M
-@4
-M=D
-//C_PUSH arg1: that arg2: 0 push that 0
-@0
-D=A
-@THAT
-A=M+D
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
-//C_PUSH arg1: local arg2: 0 push local 0
-@0
-D=A
-@LCL
-A=M+D
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
-//C_PUSH arg1: constant arg2: 1 push constant 1
-@1
-D=A
-@SP
-M=M+1
-A=M-1
-M=D
-//C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.30
-D=A
-@SUB
-0;JMP
-(ARITHMETIC_SUB.30)
-//C_PUSH arg1: static arg2: 0 push static 0
-@Screen.0
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
-//C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.118
-D=A
-@ADD
-0;JMP
-(ARITHMETIC_ADD.118)
-//C_POP arg1: pointer arg2: 1 pop pointer 1
-@SP
-AM=M-1
-D=M
-@4
-M=D
-//C_PUSH arg1: that arg2: 0 push that 0
-@0
-D=A
-@THAT
-A=M+D
-D=M
-@SP
-M=M+1
-A=M-1
-M=D
-//C_ARITHMETIC arg1: add arg2: None add
 @ARITHMETIC_ADD.119
 D=A
 @ADD
 0;JMP
 (ARITHMETIC_ADD.119)
+//C_PUSH arg1: local arg2: 0 push local 0
+@0
+D=A
+@LCL
+A=M+D
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+//C_PUSH arg1: constant arg2: 1 push constant 1
+@1
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_ARITHMETIC arg1: sub arg2: None sub
+@ARITHMETIC_SUB.27
+D=A
+@SUB
+0;JMP
+(ARITHMETIC_SUB.27)
+//C_PUSH arg1: static arg2: 0 push static 0
+@Screen.0
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+//C_ARITHMETIC arg1: add arg2: None add
+@ARITHMETIC_ADD.120
+D=A
+@ADD
+0;JMP
+(ARITHMETIC_ADD.120)
+//C_POP arg1: pointer arg2: 1 pop pointer 1
+@SP
+AM=M-1
+D=M
+@4
+M=D
+//C_PUSH arg1: that arg2: 0 push that 0
+@0
+D=A
+@THAT
+A=M+D
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+//C_PUSH arg1: local arg2: 0 push local 0
+@0
+D=A
+@LCL
+A=M+D
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+//C_PUSH arg1: constant arg2: 1 push constant 1
+@1
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//C_ARITHMETIC arg1: sub arg2: None sub
+@ARITHMETIC_SUB.28
+D=A
+@SUB
+0;JMP
+(ARITHMETIC_SUB.28)
+//C_PUSH arg1: static arg2: 0 push static 0
+@Screen.0
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+//C_ARITHMETIC arg1: add arg2: None add
+@ARITHMETIC_ADD.121
+D=A
+@ADD
+0;JMP
+(ARITHMETIC_ADD.121)
+//C_POP arg1: pointer arg2: 1 pop pointer 1
+@SP
+AM=M-1
+D=M
+@4
+M=D
+//C_PUSH arg1: that arg2: 0 push that 0
+@0
+D=A
+@THAT
+A=M+D
+D=M
+@SP
+M=M+1
+A=M-1
+M=D
+//C_ARITHMETIC arg1: add arg2: None add
+@ARITHMETIC_ADD.122
+D=A
+@ADD
+0;JMP
+(ARITHMETIC_ADD.122)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
 AM=M-1
@@ -22432,11 +27818,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.120
+@ARITHMETIC_ADD.123
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.120)
+(ARITHMETIC_ADD.123)
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
@@ -22494,11 +27880,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.121
+@ARITHMETIC_ADD.124
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.121)
+(ARITHMETIC_ADD.124)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
 AM=M-1
@@ -22567,11 +27953,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.122
+@ARITHMETIC_ADD.125
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.122)
+(ARITHMETIC_ADD.125)
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -22590,11 +27976,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.123
+@ARITHMETIC_ADD.126
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.123)
+(ARITHMETIC_ADD.126)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -22681,11 +28067,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.124
+@ARITHMETIC_ADD.127
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.124)
+(ARITHMETIC_ADD.127)
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -22704,11 +28090,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.125
+@ARITHMETIC_ADD.128
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.125)
+(ARITHMETIC_ADD.128)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -22887,11 +28273,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@ARITHMETIC_GT.23
+@ARITHMETIC_GT.22
 D=A
 @GT
 0;JMP
-(ARITHMETIC_GT.23)
+(ARITHMETIC_GT.22)
 //C_ARITHMETIC arg1: or arg2: None or
 @ARITHMETIC_OR.11
 D=A
@@ -22945,11 +28331,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@ARITHMETIC_GT.24
+@ARITHMETIC_GT.23
 D=A
 @GT
 0;JMP
-(ARITHMETIC_GT.24)
+(ARITHMETIC_GT.23)
 //C_ARITHMETIC arg1: or arg2: None or
 @ARITHMETIC_OR.13
 D=A
@@ -23080,11 +28466,11 @@ D=A
 0;JMP
 (Math.multiply$ret.4)
 //C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.31
+@ARITHMETIC_SUB.29
 D=A
 @SUB
 0;JMP
-(ARITHMETIC_SUB.31)
+(ARITHMETIC_SUB.29)
 //C_POP arg1: local arg2: 1 pop local 1
 @SP
 AM=M-1
@@ -23140,11 +28526,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.126
+@ARITHMETIC_ADD.129
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.126)
+(ARITHMETIC_ADD.129)
 //C_POP arg1: local arg2: 2 pop local 2
 @SP
 AM=M-1
@@ -23186,11 +28572,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.127
+@ARITHMETIC_ADD.130
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.127)
+(ARITHMETIC_ADD.130)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -23471,11 +28857,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@ARITHMETIC_GT.25
+@ARITHMETIC_GT.24
 D=A
 @GT
 0;JMP
-(ARITHMETIC_GT.25)
+(ARITHMETIC_GT.24)
 //C_ARITHMETIC arg1: or arg2: None or
 @ARITHMETIC_OR.14
 D=A
@@ -23529,11 +28915,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@ARITHMETIC_GT.26
+@ARITHMETIC_GT.25
 D=A
 @GT
 0;JMP
-(ARITHMETIC_GT.26)
+(ARITHMETIC_GT.25)
 //C_ARITHMETIC arg1: or arg2: None or
 @ARITHMETIC_OR.16
 D=A
@@ -23599,11 +28985,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.32
+@ARITHMETIC_SUB.30
 D=A
 @SUB
 0;JMP
-(ARITHMETIC_SUB.32)
+(ARITHMETIC_SUB.30)
 //C_CALL arg1: Math.abs arg2: 1 call Math.abs 1
 @1
 D=A
@@ -23652,11 +29038,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.33
+@ARITHMETIC_SUB.31
 D=A
 @SUB
 0;JMP
-(ARITHMETIC_SUB.33)
+(ARITHMETIC_SUB.31)
 //C_CALL arg1: Math.abs arg2: 1 call Math.abs 1
 @1
 D=A
@@ -24147,11 +29533,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@ARITHMETIC_GT.27
+@ARITHMETIC_GT.26
 D=A
 @GT
 0;JMP
-(ARITHMETIC_GT.27)
+(ARITHMETIC_GT.26)
 //C_POP arg1: local arg2: 7 pop local 7
 @SP
 AM=M-1
@@ -24259,11 +29645,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@ARITHMETIC_GT.28
+@ARITHMETIC_GT.27
 D=A
 @GT
 0;JMP
-(ARITHMETIC_GT.28)
+(ARITHMETIC_GT.27)
 //C_POP arg1: local arg2: 7 pop local 7
 @SP
 AM=M-1
@@ -24320,11 +29706,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.34
+@ARITHMETIC_SUB.32
 D=A
 @SUB
 0;JMP
-(ARITHMETIC_SUB.34)
+(ARITHMETIC_SUB.32)
 //C_POP arg1: local arg2: 5 pop local 5
 @SP
 AM=M-1
@@ -24410,11 +29796,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.35
+@ARITHMETIC_SUB.33
 D=A
 @SUB
 0;JMP
-(ARITHMETIC_SUB.35)
+(ARITHMETIC_SUB.33)
 //C_CALL arg1: Math.multiply arg2: 2 call Math.multiply 2
 @2
 D=A
@@ -24585,11 +29971,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.128
+@ARITHMETIC_ADD.131
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.128)
+(ARITHMETIC_ADD.131)
 //C_POP arg1: local arg2: 5 pop local 5
 @SP
 AM=M-1
@@ -24628,11 +30014,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.129
+@ARITHMETIC_ADD.132
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.129)
+(ARITHMETIC_ADD.132)
 //C_POP arg1: local arg2: 5 pop local 5
 @SP
 AM=M-1
@@ -24684,11 +30070,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.36
+@ARITHMETIC_SUB.34
 D=A
 @SUB
 0;JMP
-(ARITHMETIC_SUB.36)
+(ARITHMETIC_SUB.34)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
 AM=M-1
@@ -24724,11 +30110,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.130
+@ARITHMETIC_ADD.133
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.130)
+(ARITHMETIC_ADD.133)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
 AM=M-1
@@ -24762,11 +30148,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.131
+@ARITHMETIC_ADD.134
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.131)
+(ARITHMETIC_ADD.134)
 //C_POP arg1: local arg2: 1 pop local 1
 @SP
 AM=M-1
@@ -24925,11 +30311,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@ARITHMETIC_GT.29
+@ARITHMETIC_GT.28
 D=A
 @GT
 0;JMP
-(ARITHMETIC_GT.29)
+(ARITHMETIC_GT.28)
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -24951,11 +30337,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@ARITHMETIC_GT.30
+@ARITHMETIC_GT.29
 D=A
 @GT
 0;JMP
-(ARITHMETIC_GT.30)
+(ARITHMETIC_GT.29)
 //C_ARITHMETIC arg1: or arg2: None or
 @ARITHMETIC_OR.18
 D=A
@@ -25009,11 +30395,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@ARITHMETIC_GT.31
+@ARITHMETIC_GT.30
 D=A
 @GT
 0;JMP
-(ARITHMETIC_GT.31)
+(ARITHMETIC_GT.30)
 //C_ARITHMETIC arg1: or arg2: None or
 @ARITHMETIC_OR.20
 D=A
@@ -25067,11 +30453,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@ARITHMETIC_GT.32
+@ARITHMETIC_GT.31
 D=A
 @GT
 0;JMP
-(ARITHMETIC_GT.32)
+(ARITHMETIC_GT.31)
 //C_ARITHMETIC arg1: or arg2: None or
 @ARITHMETIC_OR.22
 D=A
@@ -25202,11 +30588,11 @@ D=A
 0;JMP
 (Math.multiply$ret.9)
 //C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.37
+@ARITHMETIC_SUB.35
 D=A
 @SUB
 0;JMP
-(ARITHMETIC_SUB.37)
+(ARITHMETIC_SUB.35)
 //C_POP arg1: local arg2: 7 pop local 7
 @SP
 AM=M-1
@@ -25306,11 +30692,11 @@ D=A
 0;JMP
 (Math.multiply$ret.10)
 //C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.38
+@ARITHMETIC_SUB.36
 D=A
 @SUB
 0;JMP
-(ARITHMETIC_SUB.38)
+(ARITHMETIC_SUB.36)
 //C_POP arg1: local arg2: 8 pop local 8
 @SP
 AM=M-1
@@ -25342,11 +30728,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.132
+@ARITHMETIC_ADD.135
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.132)
+(ARITHMETIC_ADD.135)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -25371,11 +30757,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.39
+@ARITHMETIC_SUB.37
 D=A
 @SUB
 0;JMP
-(ARITHMETIC_SUB.39)
+(ARITHMETIC_SUB.37)
 //C_ARITHMETIC arg1: not arg2: None not
 @ARITHMETIC_NOT.40
 D=A
@@ -25413,11 +30799,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.133
+@ARITHMETIC_ADD.136
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.133)
+(ARITHMETIC_ADD.136)
 //C_PUSH arg1: static arg2: 0 push static 0
 @Screen.0
 D=M
@@ -25426,11 +30812,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.134
+@ARITHMETIC_ADD.137
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.134)
+(ARITHMETIC_ADD.137)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -25455,11 +30841,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.40
+@ARITHMETIC_SUB.38
 D=A
 @SUB
 0;JMP
-(ARITHMETIC_SUB.40)
+(ARITHMETIC_SUB.38)
 //C_POP arg1: local arg2: 5 pop local 5
 @SP
 AM=M-1
@@ -25515,11 +30901,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.135
+@ARITHMETIC_ADD.138
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.135)
+(ARITHMETIC_ADD.138)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
 AM=M-1
@@ -25554,11 +30940,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.41
+@ARITHMETIC_SUB.39
 D=A
 @SUB
 0;JMP
-(ARITHMETIC_SUB.41)
+(ARITHMETIC_SUB.39)
 //C_POP arg1: local arg2: 2 pop local 2
 @SP
 AM=M-1
@@ -25594,11 +30980,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@ARITHMETIC_GT.33
+@ARITHMETIC_GT.32
 D=A
 @GT
 0;JMP
-(ARITHMETIC_GT.33)
+(ARITHMETIC_GT.32)
 //C_ARITHMETIC arg1: not arg2: None not
 @ARITHMETIC_NOT.41
 D=A
@@ -25638,11 +31024,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.136
+@ARITHMETIC_ADD.139
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.136)
+(ARITHMETIC_ADD.139)
 //C_POP arg1: local arg2: 1 pop local 1
 @SP
 AM=M-1
@@ -25674,11 +31060,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@ARITHMETIC_EQ.19
+@ARITHMETIC_EQ.22
 D=A
 @EQ
 0;JMP
-(ARITHMETIC_EQ.19)
+(ARITHMETIC_EQ.22)
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -25807,11 +31193,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.137
+@ARITHMETIC_ADD.140
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.137)
+(ARITHMETIC_ADD.140)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
 AM=M-1
@@ -25882,11 +31268,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: neg arg2: None neg
-@ARITHMETIC_NEG.7
+@ARITHMETIC_NEG.6
 D=A
 @NEG
 0;JMP
-(ARITHMETIC_NEG.7)
+(ARITHMETIC_NEG.6)
 //C_CALL arg1: Screen.updateLocation arg2: 2 call Screen.updateLocation 2
 @2
 D=A
@@ -25925,11 +31311,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.138
+@ARITHMETIC_ADD.141
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.138)
+(ARITHMETIC_ADD.141)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
 AM=M-1
@@ -26006,11 +31392,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.139
+@ARITHMETIC_ADD.142
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.139)
+(ARITHMETIC_ADD.142)
 //C_POP arg1: argument arg2: 1 pop argument 1
 @SP
 AM=M-1
@@ -26042,11 +31428,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.140
+@ARITHMETIC_ADD.143
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.140)
+(ARITHMETIC_ADD.143)
 //C_PUSH arg1: local arg2: 2 push local 2
 @2
 D=A
@@ -26058,11 +31444,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.42
+@ARITHMETIC_SUB.40
 D=A
 @SUB
 0;JMP
-(ARITHMETIC_SUB.42)
+(ARITHMETIC_SUB.40)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
 AM=M-1
@@ -26274,17 +31660,17 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: neg arg2: None neg
-@ARITHMETIC_NEG.8
+@ARITHMETIC_NEG.7
 D=A
 @NEG
 0;JMP
-(ARITHMETIC_NEG.8)
+(ARITHMETIC_NEG.7)
 //C_ARITHMETIC arg1: gt arg2: None gt
-@ARITHMETIC_GT.34
+@ARITHMETIC_GT.33
 D=A
 @GT
 0;JMP
-(ARITHMETIC_GT.34)
+(ARITHMETIC_GT.33)
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -26361,17 +31747,17 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: neg arg2: None neg
-@ARITHMETIC_NEG.9
+@ARITHMETIC_NEG.8
 D=A
 @NEG
 0;JMP
-(ARITHMETIC_NEG.9)
+(ARITHMETIC_NEG.8)
 //C_ARITHMETIC arg1: gt arg2: None gt
-@ARITHMETIC_GT.35
+@ARITHMETIC_GT.34
 D=A
 @GT
 0;JMP
-(ARITHMETIC_GT.35)
+(ARITHMETIC_GT.34)
 //C_ARITHMETIC arg1: and arg2: None and
 @ARITHMETIC_AND.16
 D=A
@@ -26562,11 +31948,11 @@ D=A
 0;JMP
 (Math.multiply$ret.12)
 //C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.43
+@ARITHMETIC_SUB.41
 D=A
 @SUB
 0;JMP
-(ARITHMETIC_SUB.43)
+(ARITHMETIC_SUB.41)
 //C_POP arg1: local arg2: 9 pop local 9
 @SP
 AM=M-1
@@ -26666,11 +32052,11 @@ D=A
 0;JMP
 (Math.multiply$ret.13)
 //C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.44
+@ARITHMETIC_SUB.42
 D=A
 @SUB
 0;JMP
-(ARITHMETIC_SUB.44)
+(ARITHMETIC_SUB.42)
 //C_POP arg1: local arg2: 10 pop local 10
 @SP
 AM=M-1
@@ -26702,11 +32088,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.141
+@ARITHMETIC_ADD.144
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.141)
+(ARITHMETIC_ADD.144)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -26731,11 +32117,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.45
+@ARITHMETIC_SUB.43
 D=A
 @SUB
 0;JMP
-(ARITHMETIC_SUB.45)
+(ARITHMETIC_SUB.43)
 //C_ARITHMETIC arg1: not arg2: None not
 @ARITHMETIC_NOT.44
 D=A
@@ -26773,11 +32159,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.142
+@ARITHMETIC_ADD.145
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.142)
+(ARITHMETIC_ADD.145)
 //C_PUSH arg1: static arg2: 0 push static 0
 @Screen.0
 D=M
@@ -26786,11 +32172,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.143
+@ARITHMETIC_ADD.146
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.143)
+(ARITHMETIC_ADD.146)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -26815,11 +32201,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.46
+@ARITHMETIC_SUB.44
 D=A
 @SUB
 0;JMP
-(ARITHMETIC_SUB.46)
+(ARITHMETIC_SUB.44)
 //C_POP arg1: local arg2: 4 pop local 4
 @SP
 AM=M-1
@@ -26875,11 +32261,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.144
+@ARITHMETIC_ADD.147
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.144)
+(ARITHMETIC_ADD.147)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
 AM=M-1
@@ -26914,11 +32300,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.47
+@ARITHMETIC_SUB.45
 D=A
 @SUB
 0;JMP
-(ARITHMETIC_SUB.47)
+(ARITHMETIC_SUB.45)
 //C_POP arg1: local arg2: 6 pop local 6
 @SP
 AM=M-1
@@ -26953,11 +32339,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.145
+@ARITHMETIC_ADD.148
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.145)
+(ARITHMETIC_ADD.148)
 //C_POP arg1: local arg2: 3 pop local 3
 @SP
 AM=M-1
@@ -26989,11 +32375,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@ARITHMETIC_EQ.20
+@ARITHMETIC_EQ.23
 D=A
 @EQ
 0;JMP
-(ARITHMETIC_EQ.20)
+(ARITHMETIC_EQ.23)
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -27122,11 +32508,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.146
+@ARITHMETIC_ADD.149
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.146)
+(ARITHMETIC_ADD.149)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
 AM=M-1
@@ -27197,11 +32583,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: neg arg2: None neg
-@ARITHMETIC_NEG.10
+@ARITHMETIC_NEG.9
 D=A
 @NEG
 0;JMP
-(ARITHMETIC_NEG.10)
+(ARITHMETIC_NEG.9)
 //C_CALL arg1: Screen.updateLocation arg2: 2 call Screen.updateLocation 2
 @2
 D=A
@@ -27240,11 +32626,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.147
+@ARITHMETIC_ADD.150
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.147)
+(ARITHMETIC_ADD.150)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
 AM=M-1
@@ -27341,11 +32727,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.48
+@ARITHMETIC_SUB.46
 D=A
 @SUB
 0;JMP
-(ARITHMETIC_SUB.48)
+(ARITHMETIC_SUB.46)
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -27367,11 +32753,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.148
+@ARITHMETIC_ADD.151
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.148)
+(ARITHMETIC_ADD.151)
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -27393,11 +32779,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.49
+@ARITHMETIC_SUB.47
 D=A
 @SUB
 0;JMP
-(ARITHMETIC_SUB.49)
+(ARITHMETIC_SUB.47)
 //C_CALL arg1: Screen.drawHorizontal arg2: 3 call Screen.drawHorizontal 3
 @3
 D=A
@@ -27439,11 +32825,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.149
+@ARITHMETIC_ADD.152
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.149)
+(ARITHMETIC_ADD.152)
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -27465,11 +32851,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.150
+@ARITHMETIC_ADD.153
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.150)
+(ARITHMETIC_ADD.153)
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -27491,11 +32877,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.50
+@ARITHMETIC_SUB.48
 D=A
 @SUB
 0;JMP
-(ARITHMETIC_SUB.50)
+(ARITHMETIC_SUB.48)
 //C_CALL arg1: Screen.drawHorizontal arg2: 3 call Screen.drawHorizontal 3
 @3
 D=A
@@ -27537,11 +32923,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.51
+@ARITHMETIC_SUB.49
 D=A
 @SUB
 0;JMP
-(ARITHMETIC_SUB.51)
+(ARITHMETIC_SUB.49)
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -27563,11 +32949,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.52
+@ARITHMETIC_SUB.50
 D=A
 @SUB
 0;JMP
-(ARITHMETIC_SUB.52)
+(ARITHMETIC_SUB.50)
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -27589,11 +32975,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.151
+@ARITHMETIC_ADD.154
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.151)
+(ARITHMETIC_ADD.154)
 //C_CALL arg1: Screen.drawHorizontal arg2: 3 call Screen.drawHorizontal 3
 @3
 D=A
@@ -27635,11 +33021,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.152
+@ARITHMETIC_ADD.155
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.152)
+(ARITHMETIC_ADD.155)
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -27661,11 +33047,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.53
+@ARITHMETIC_SUB.51
 D=A
 @SUB
 0;JMP
-(ARITHMETIC_SUB.53)
+(ARITHMETIC_SUB.51)
 //C_PUSH arg1: argument arg2: 0 push argument 0
 @0
 D=A
@@ -27687,11 +33073,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.153
+@ARITHMETIC_ADD.156
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.153)
+(ARITHMETIC_ADD.156)
 //C_CALL arg1: Screen.drawHorizontal arg2: 3 call Screen.drawHorizontal 3
 @3
 D=A
@@ -27787,11 +33173,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@ARITHMETIC_GT.36
+@ARITHMETIC_GT.35
 D=A
 @GT
 0;JMP
-(ARITHMETIC_GT.36)
+(ARITHMETIC_GT.35)
 //C_ARITHMETIC arg1: or arg2: None or
 @ARITHMETIC_OR.23
 D=A
@@ -27845,11 +33231,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@ARITHMETIC_GT.37
+@ARITHMETIC_GT.36
 D=A
 @GT
 0;JMP
-(ARITHMETIC_GT.37)
+(ARITHMETIC_GT.36)
 //C_ARITHMETIC arg1: or arg2: None or
 @ARITHMETIC_OR.25
 D=A
@@ -27915,11 +33301,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.54
+@ARITHMETIC_SUB.52
 D=A
 @SUB
 0;JMP
-(ARITHMETIC_SUB.54)
+(ARITHMETIC_SUB.52)
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
@@ -27954,11 +33340,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.154
+@ARITHMETIC_ADD.157
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.154)
+(ARITHMETIC_ADD.157)
 //C_PUSH arg1: constant arg2: 511 push constant 511
 @511
 D=A
@@ -27967,11 +33353,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@ARITHMETIC_GT.38
+@ARITHMETIC_GT.37
 D=A
 @GT
 0;JMP
-(ARITHMETIC_GT.38)
+(ARITHMETIC_GT.37)
 //C_ARITHMETIC arg1: or arg2: None or
 @ARITHMETIC_OR.26
 D=A
@@ -27999,11 +33385,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.55
+@ARITHMETIC_SUB.53
 D=A
 @SUB
 0;JMP
-(ARITHMETIC_SUB.55)
+(ARITHMETIC_SUB.53)
 //C_PUSH arg1: constant arg2: 0 push constant 0
 @0
 D=A
@@ -28044,11 +33430,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.155
+@ARITHMETIC_ADD.158
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.155)
+(ARITHMETIC_ADD.158)
 //C_PUSH arg1: constant arg2: 255 push constant 255
 @255
 D=A
@@ -28057,11 +33443,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@ARITHMETIC_GT.39
+@ARITHMETIC_GT.38
 D=A
 @GT
 0;JMP
-(ARITHMETIC_GT.39)
+(ARITHMETIC_GT.38)
 //C_ARITHMETIC arg1: or arg2: None or
 @ARITHMETIC_OR.28
 D=A
@@ -28147,11 +33533,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.56
+@ARITHMETIC_SUB.54
 D=A
 @SUB
 0;JMP
-(ARITHMETIC_SUB.56)
+(ARITHMETIC_SUB.54)
 //C_POP arg1: local arg2: 2 pop local 2
 @SP
 AM=M-1
@@ -28247,11 +33633,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@ARITHMETIC_GT.40
+@ARITHMETIC_GT.39
 D=A
 @GT
 0;JMP
-(ARITHMETIC_GT.40)
+(ARITHMETIC_GT.39)
 //C_ARITHMETIC arg1: not arg2: None not
 @ARITHMETIC_NOT.46
 D=A
@@ -28339,11 +33725,11 @@ D=A
 0;JMP
 (Math.multiply$ret.15)
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.156
+@ARITHMETIC_ADD.159
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.156)
+(ARITHMETIC_ADD.159)
 //C_PUSH arg1: constant arg2: 3 push constant 3
 @3
 D=A
@@ -28352,11 +33738,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.157
+@ARITHMETIC_ADD.160
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.157)
+(ARITHMETIC_ADD.160)
 //C_POP arg1: local arg2: 2 pop local 2
 @SP
 AM=M-1
@@ -28412,11 +33798,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.57
+@ARITHMETIC_SUB.55
 D=A
 @SUB
 0;JMP
-(ARITHMETIC_SUB.57)
+(ARITHMETIC_SUB.55)
 //C_CALL arg1: Math.multiply arg2: 2 call Math.multiply 2
 @2
 D=A
@@ -28432,11 +33818,11 @@ D=A
 0;JMP
 (Math.multiply$ret.16)
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.158
+@ARITHMETIC_ADD.161
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.158)
+(ARITHMETIC_ADD.161)
 //C_PUSH arg1: constant arg2: 5 push constant 5
 @5
 D=A
@@ -28445,11 +33831,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.159
+@ARITHMETIC_ADD.162
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.159)
+(ARITHMETIC_ADD.162)
 //C_POP arg1: local arg2: 2 pop local 2
 @SP
 AM=M-1
@@ -28481,11 +33867,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.58
+@ARITHMETIC_SUB.56
 D=A
 @SUB
 0;JMP
-(ARITHMETIC_SUB.58)
+(ARITHMETIC_SUB.56)
 //C_POP arg1: local arg2: 1 pop local 1
 @SP
 AM=M-1
@@ -28518,11 +33904,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.160
+@ARITHMETIC_ADD.163
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.160)
+(ARITHMETIC_ADD.163)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
 AM=M-1
@@ -28722,11 +34108,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@ARITHMETIC_GT.41
+@ARITHMETIC_GT.40
 D=A
 @GT
 0;JMP
-(ARITHMETIC_GT.41)
+(ARITHMETIC_GT.40)
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -28756,11 +34142,11 @@ M=D
 D=A
 @15
 M=D
-@Array.new$ret.7
+@Array.new$ret.8
 D=A
 @CALL
 0;JMP
-(Array.new$ret.7)
+(Array.new$ret.8)
 //C_POP arg1: this arg2: 1 pop this 1
 @SP
 AM=M-1
@@ -28868,11 +34254,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@ARITHMETIC_GT.42
+@ARITHMETIC_GT.41
 D=A
 @GT
 0;JMP
-(ARITHMETIC_GT.42)
+(ARITHMETIC_GT.41)
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -29052,11 +34438,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@ARITHMETIC_GT.43
+@ARITHMETIC_GT.42
 D=A
 @GT
 0;JMP
-(ARITHMETIC_GT.43)
+(ARITHMETIC_GT.42)
 //C_ARITHMETIC arg1: or arg2: None or
 @ARITHMETIC_OR.29
 D=A
@@ -29084,11 +34470,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@ARITHMETIC_EQ.21
+@ARITHMETIC_EQ.24
 D=A
 @EQ
 0;JMP
-(ARITHMETIC_EQ.21)
+(ARITHMETIC_EQ.24)
 //C_ARITHMETIC arg1: or arg2: None or
 @ARITHMETIC_OR.30
 D=A
@@ -29154,11 +34540,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.161
+@ARITHMETIC_ADD.164
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.161)
+(ARITHMETIC_ADD.164)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -29244,11 +34630,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@ARITHMETIC_GT.44
+@ARITHMETIC_GT.43
 D=A
 @GT
 0;JMP
-(ARITHMETIC_GT.44)
+(ARITHMETIC_GT.43)
 //C_ARITHMETIC arg1: or arg2: None or
 @ARITHMETIC_OR.31
 D=A
@@ -29276,11 +34662,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@ARITHMETIC_EQ.22
+@ARITHMETIC_EQ.25
 D=A
 @EQ
 0;JMP
-(ARITHMETIC_EQ.22)
+(ARITHMETIC_EQ.25)
 //C_ARITHMETIC arg1: or arg2: None or
 @ARITHMETIC_OR.32
 D=A
@@ -29346,11 +34732,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.162
+@ARITHMETIC_ADD.165
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.162)
+(ARITHMETIC_ADD.165)
 //C_PUSH arg1: argument arg2: 2 push argument 2
 @2
 D=A
@@ -29446,11 +34832,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@ARITHMETIC_EQ.23
+@ARITHMETIC_EQ.26
 D=A
 @EQ
 0;JMP
-(ARITHMETIC_EQ.23)
+(ARITHMETIC_EQ.26)
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -29510,11 +34896,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.163
+@ARITHMETIC_ADD.166
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.163)
+(ARITHMETIC_ADD.166)
 //C_PUSH arg1: argument arg2: 1 push argument 1
 @1
 D=A
@@ -29575,11 +34961,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.164
+@ARITHMETIC_ADD.167
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.164)
+(ARITHMETIC_ADD.167)
 //C_POP arg1: this arg2: 2 pop this 2
 @SP
 AM=M-1
@@ -29643,11 +35029,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@ARITHMETIC_EQ.24
+@ARITHMETIC_EQ.27
 D=A
 @EQ
 0;JMP
-(ARITHMETIC_EQ.24)
+(ARITHMETIC_EQ.27)
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -29704,11 +35090,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.59
+@ARITHMETIC_SUB.57
 D=A
 @SUB
 0;JMP
-(ARITHMETIC_SUB.59)
+(ARITHMETIC_SUB.57)
 //C_POP arg1: this arg2: 2 pop this 2
 @SP
 AM=M-1
@@ -29802,11 +35188,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@ARITHMETIC_EQ.25
+@ARITHMETIC_EQ.28
 D=A
 @EQ
 0;JMP
-(ARITHMETIC_EQ.25)
+(ARITHMETIC_EQ.28)
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -29872,11 +35258,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.165
+@ARITHMETIC_ADD.168
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.165)
+(ARITHMETIC_ADD.168)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -29901,11 +35287,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@ARITHMETIC_EQ.26
+@ARITHMETIC_EQ.29
 D=A
 @EQ
 0;JMP
-(ARITHMETIC_EQ.26)
+(ARITHMETIC_EQ.29)
 //C_IF arg1: IF_TRUE1 arg2: None if-goto IF_TRUE1
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -30039,11 +35425,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.166
+@ARITHMETIC_ADD.169
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.166)
+(ARITHMETIC_ADD.169)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -30068,11 +35454,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.60
+@ARITHMETIC_SUB.58
 D=A
 @SUB
 0;JMP
-(ARITHMETIC_SUB.60)
+(ARITHMETIC_SUB.58)
 //C_POP arg1: local arg2: 2 pop local 2
 @SP
 AM=M-1
@@ -30127,11 +35513,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@ARITHMETIC_GT.45
+@ARITHMETIC_GT.44
 D=A
 @GT
 0;JMP
-(ARITHMETIC_GT.45)
+(ARITHMETIC_GT.44)
 //C_ARITHMETIC arg1: or arg2: None or
 @ARITHMETIC_OR.33
 D=A
@@ -30219,11 +35605,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.167
+@ARITHMETIC_ADD.170
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.167)
+(ARITHMETIC_ADD.170)
 //C_POP arg1: local arg2: 1 pop local 1
 @SP
 AM=M-1
@@ -30255,11 +35641,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.168
+@ARITHMETIC_ADD.171
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.168)
+(ARITHMETIC_ADD.171)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
 AM=M-1
@@ -30309,11 +35695,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: neg arg2: None neg
-@ARITHMETIC_NEG.11
+@ARITHMETIC_NEG.10
 D=A
 @NEG
 0;JMP
-(ARITHMETIC_NEG.11)
+(ARITHMETIC_NEG.10)
 //C_POP arg1: local arg2: 1 pop local 1
 @SP
 AM=M-1
@@ -30405,11 +35791,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@ARITHMETIC_EQ.27
+@ARITHMETIC_EQ.30
 D=A
 @EQ
 0;JMP
-(ARITHMETIC_EQ.27)
+(ARITHMETIC_EQ.30)
 //C_IF arg1: IF_TRUE0 arg2: None if-goto IF_TRUE0
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -30464,11 +35850,11 @@ M=D
 D=A
 @15
 M=D
-@Array.new$ret.8
+@Array.new$ret.9
 D=A
 @CALL
 0;JMP
-(Array.new$ret.8)
+(Array.new$ret.9)
 //C_POP arg1: local arg2: 2 pop local 2
 @SP
 AM=M-1
@@ -30552,11 +35938,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: neg arg2: None neg
-@ARITHMETIC_NEG.12
+@ARITHMETIC_NEG.11
 D=A
 @NEG
 0;JMP
-(ARITHMETIC_NEG.12)
+(ARITHMETIC_NEG.11)
 //C_POP arg1: argument arg2: 1 pop argument 1
 @SP
 AM=M-1
@@ -30613,11 +35999,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: gt arg2: None gt
-@ARITHMETIC_GT.46
+@ARITHMETIC_GT.45
 D=A
 @GT
 0;JMP
-(ARITHMETIC_GT.46)
+(ARITHMETIC_GT.45)
 //C_ARITHMETIC arg1: not arg2: None not
 @ARITHMETIC_NOT.52
 D=A
@@ -30695,11 +36081,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.169
+@ARITHMETIC_ADD.172
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.169)
+(ARITHMETIC_ADD.172)
 //C_PUSH arg1: constant arg2: 48 push constant 48
 @48
 D=A
@@ -30749,17 +36135,17 @@ D=A
 0;JMP
 (Math.multiply$ret.18)
 //C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.61
+@ARITHMETIC_SUB.59
 D=A
 @SUB
 0;JMP
-(ARITHMETIC_SUB.61)
+(ARITHMETIC_SUB.59)
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.170
+@ARITHMETIC_ADD.173
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.170)
+(ARITHMETIC_ADD.173)
 //C_POP arg1: temp arg2: 0 pop temp 0
 @SP
 AM=M-1
@@ -30810,11 +36196,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.171
+@ARITHMETIC_ADD.174
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.171)
+(ARITHMETIC_ADD.174)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
 AM=M-1
@@ -30896,11 +36282,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.172
+@ARITHMETIC_ADD.175
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.172)
+(ARITHMETIC_ADD.175)
 //C_PUSH arg1: constant arg2: 45 push constant 45
 @45
 D=A
@@ -30958,11 +36344,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.173
+@ARITHMETIC_ADD.176
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.173)
+(ARITHMETIC_ADD.176)
 //C_POP arg1: local arg2: 0 pop local 0
 @SP
 AM=M-1
@@ -31059,11 +36445,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: eq arg2: None eq
-@ARITHMETIC_EQ.28
+@ARITHMETIC_EQ.31
 D=A
 @EQ
 0;JMP
-(ARITHMETIC_EQ.28)
+(ARITHMETIC_EQ.31)
 //C_IF arg1: IF_TRUE4 arg2: None if-goto IF_TRUE4
 @SP // pop from stack to memory address 13
 AM=M-1
@@ -31092,11 +36478,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.174
+@ARITHMETIC_ADD.177
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.174)
+(ARITHMETIC_ADD.177)
 //C_PUSH arg1: constant arg2: 48 push constant 48
 @48
 D=A
@@ -31240,11 +36626,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.175
+@ARITHMETIC_ADD.178
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.175)
+(ARITHMETIC_ADD.178)
 //C_PUSH arg1: local arg2: 0 push local 0
 @0
 D=A
@@ -31273,17 +36659,17 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.176
+@ARITHMETIC_ADD.179
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.176)
+(ARITHMETIC_ADD.179)
 //C_ARITHMETIC arg1: sub arg2: None sub
-@ARITHMETIC_SUB.62
+@ARITHMETIC_SUB.60
 D=A
 @SUB
 0;JMP
-(ARITHMETIC_SUB.62)
+(ARITHMETIC_SUB.60)
 //C_PUSH arg1: local arg2: 2 push local 2
 @2
 D=A
@@ -31295,11 +36681,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.177
+@ARITHMETIC_ADD.180
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.177)
+(ARITHMETIC_ADD.180)
 //C_POP arg1: pointer arg2: 1 pop pointer 1
 @SP
 AM=M-1
@@ -31366,11 +36752,11 @@ M=M+1
 A=M-1
 M=D
 //C_ARITHMETIC arg1: add arg2: None add
-@ARITHMETIC_ADD.178
+@ARITHMETIC_ADD.181
 D=A
 @ADD
 0;JMP
-(ARITHMETIC_ADD.178)
+(ARITHMETIC_ADD.181)
 //C_POP arg1: this arg2: 2 pop this 2
 @SP
 AM=M-1

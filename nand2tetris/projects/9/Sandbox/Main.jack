@@ -1,28 +1,80 @@
 /** Initializes a new Square game and starts running it. */
 class Main {
+    static int passwordCount;
+    static Array savedPasswords;
+    static int maxPasswords;
+
     function void main() {
-        var int charScreenRow;
-        var int cursorPosition;
+        var String name;
+        var boolean exit;
+        var char key;
+        var String option;
 
-        let charScreenRow = 23;
-        let cursorPosition = 0;
+        let maxPasswords = 10;
+        let exit = false;
+        let savedPasswords = Array.new(maxPasswords);
+        let passwordCount = 0;
 
-        while (cursorPosition<charScreenRow){
-            do Output.moveCursor(cursorPosition,0);
-            let cursorPosition = cursorPosition + 1;
-            do Output.printString("AHHHH");
-            do Screen.setColor(true);
-            do Screen.drawRectangle(400, 128, 422,140);
-            do Sys.wait(5);
-            do Screen.setColor(false);
-            do Screen.drawRectangle(400, 128, 422,140);
+        do Output.printString("Hello welcome to your password manager. ");
+        do Output.println();
+        
+        
+
+        while(~exit){
+            if (passwordCount = 0) {
+                do Output.printString("You have no passwords saved at the moment");
+                do Output.println();
+                do Main.savePassword();
+            }
+            else{
+                do Output.printString("You have ");
+                do Output.printInt(passwordCount);
+                do Output.printString(" passwords saved at the moment");
+                do Output.println();
+
+                do Output.printString("A: Show saved password");
+                do Output.println();
+                do Output.printString("B: Save new password");
+                do Output.println();
+                
+                do Output.printString("Which option do you choose?: ");
+                let key = Keyboard.readChar();
+                if (key = 66){
+                    do Main.resetScreen();    
+                    do Main.savePassword();
+                }
+                if (key = 65){
+                    do Main.resetScreen();  
+                    do Main.showSavedPasswords();
+                    
+                }
+            }
         }
-        let cursorPosition = cursorPosition - 1;
-        while (cursorPosition>-1){
-            do Output.moveCursor(cursorPosition,0);
-            let cursorPosition = cursorPosition - 1;
-            do Output.printString("E");
+        return;
+    }
+    function void savePassword(){
+        var String password;
+        let password = Keyboard.readLine("Enter the password you want to save: ");
+        let savedPasswords[passwordCount] = password;
+        let passwordCount = passwordCount + 1;
+        return;
+    }
+    function void showSavedPasswords(){
+        var int count;
+        let count = 0;
+        while (count<passwordCount) {
+            do Output.printInt(count);
+            do Output.printString(". ");
+            do Output.printString(savedPasswords[count]);
+            do Output.println();
+            let count = count+1;
         }
+        return;
+    }
+
+    function void resetScreen(){
+        do Screen.clearScreen();
+        do Output.moveCursor(0,0);
         return;
     }
 }
