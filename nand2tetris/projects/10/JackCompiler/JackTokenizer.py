@@ -75,8 +75,11 @@ class JackTokenizer:
                     line = line.replace(comment,r"")
                 
                 blank_line = re.findall(r"^\s*$", line)
-                
-                if not blank_line:
+
+                if blank_line:
+                    self.current_token = None
+                    self.current_token_type = None
+                else:
                     break
             else:
                 return None
@@ -97,8 +100,8 @@ if __name__ == "__main__":
     tknzr = JackTokenizer(sys.argv)
 
     while tknzr.hasMoreLines():
-        print(tknzr.source)
         tknzr.advance()
-        print(tknzr.current_token)
-        #print(tknzr.current_token_type)
+        if tknzr.current_token:
+            print(tknzr.current_token)
+            print(tknzr.current_token_type)
         
