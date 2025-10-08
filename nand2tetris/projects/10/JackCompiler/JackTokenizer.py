@@ -8,7 +8,6 @@ class JackTokenizer:
 
     
     def __next__(self):
-
         if self.hasMoreLines():
             next_token = self.source.pop(0)
             return next_token
@@ -43,17 +42,34 @@ class JackTokenizer:
         """
         return True if len(self.source)>0 else False
 
-
+    
     def advance(self) -> None:
         """
         Skips over whitespaces and comments, if necessary
         """
+        multiline_comment = False
 
         while True:
             line = next(self)
             if line:
                 line = line.strip()
-                
+                comment_opened = re.findall(r"\/\*.*", line)
+
+                comment_closed = re.findall(r".*\*\/", line)
+
+                if multiline_comment:
+                    line = ""
+
+                if len(comment_opened) > 0:
+                    multiline_comment = True
+                    for comment in comment_opened:
+                        line = line.replace(comment, r"")
+
+                if len(comment_closed) > 0:
+                    multiline_comment = False
+                    for comment in comment_closed:
+                        line = line.replace(comment, r"")
+
                 comments = re.findall(r"(\/\/.*)", line)
                 for comment in comments:
                     line = line.replace(comment,r"")
@@ -72,7 +88,7 @@ class JackTokenizer:
     
     
     def tokenType(self):
-        return "NOT IMPLEMENTED YET"
+        return "some type"
     
 import sys
 
@@ -81,7 +97,8 @@ if __name__ == "__main__":
     tknzr = JackTokenizer(sys.argv)
 
     while tknzr.hasMoreLines():
+        print(tknzr.source)
         tknzr.advance()
         print(tknzr.current_token)
-        print(tknzr.current_token_type)
+        #print(tknzr.current_token_type)
         
