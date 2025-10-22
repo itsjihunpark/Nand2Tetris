@@ -1,11 +1,11 @@
-import re
+import regex
 import glob
 import os
-import jacktokens
+from jacktokens import *
 
 class JackTokenizer:
 
-    def __init__(self, argv):
+    def __init__(self, argv)->None:
         """
         Constructor/initialiser - open the input source file / stream and get ready to parse th input file/stream
 
@@ -20,14 +20,20 @@ class JackTokenizer:
             self.jack_files = glob.glob(os.path.join(self.inpname, "*.jack"))
         self.source = open(self.jack_files[0], "r").read() # .replace(" ", "") => shouldn't replace every whitespace (like whitespace within string)
         self.remove_comments()
+        self.tokenise()
+
 
     def remove_comments(self):
-        comment_pattern_in_regex = jacktokens.tokens['comments']
-        self.source = re.sub(comment_pattern_in_regex, "", self.source)
-
-
+        comment_pattern_in_regex = comments
+        self.source = regex.sub(comment_pattern_in_regex, r"", self.source)
+    
+    def tokenise(self):
+        for token_type in tokens.keys():
+            found = regex.findall(tokens[token_type],self.source)
+            print(found)
+            
 import sys
 
 if __name__ == "__main__":
     tknzr = JackTokenizer(sys.argv)
-    print(tknzr.source)
+    #print(tknzr.source)
