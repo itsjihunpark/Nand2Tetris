@@ -32,43 +32,62 @@ class JackTokenizer:
         return self.current_token
 
     def remove_comments(self):
+        """
+        """
         comment_pattern_in_regex = comments
         self.source = regex.sub(comment_pattern_in_regex, r"", self.source)
 
     def has_more_tokens(self):
+        """
+        """
         return True if len(self.tokens)>0 else False
     
     def advance(self):
+        """
+        """
         return next(self)
 
     def tokenise(self):
+        """
+        """
         regex_pattern = r""
-        for token_type in tokens.keys():
-            regex_pattern+=tokens[token_type]+r"|"
+        for pattern in tokens.items():
+            regex_pattern+=pattern[1]+r"|"
         regex_pattern = regex_pattern[:-1]
         found_tokens = regex.finditer(regex_pattern, self.source, overlapped=False)
         for token in found_tokens:
             self.tokens.append(token.group())
     
     def token_type(self):
-        for token_type in tokens.keys():
-            regex_pattern = tokens[token_type]
-            if regex.findall(regex_pattern, self.current_token):
-                return token_type    
+        """
+        """
+        for pattern in tokens.items():
+            if regex.findall(pattern[1], self.current_token):
+                return pattern[0]
 
     def keyword(self):
+        """
+        """
         pass
     
     def symbol(self):
+        """
+        """
         pass
     
     def identifier(self):
+        """
+        """
         pass
 
     def intval(self):
+        """
+        """
         pass
 
     def stringval(self):
+        """
+        """
         pass
 
 import sys
