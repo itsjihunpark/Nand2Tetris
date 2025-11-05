@@ -1,11 +1,9 @@
 import regex
-import glob
-import os
 from jacktokens import *
 
 class JackTokenizer:
 
-    def __init__(self, argv)->None:
+    def __init__(self, path)->None:
         """
         Constructor/initialiser - open the input source file / stream and get ready to parse th input file/stream
 
@@ -13,16 +11,17 @@ class JackTokenizer:
 
         """
 
-        self.inpname = argv[1]
-        if ".jack" in self.inpname:
-            self.jack_files = [self.inpname]
+        
+        if ".jack" in path:
+            self.jack_file = path
         else:
-            self.jack_files = glob.glob(os.path.join(self.inpname, "*.jack"))
-        self.source = open(self.jack_files[0], "r").read() # .replace(" ", "") => shouldn't replace every whitespace (like whitespace within string)
+            raise ValueError
+        self.source = open(self.jack_file, "r").read() # .replace(" ", "") => shouldn't replace every whitespace (like whitespace within string)
         self.remove_comments()
         self.tokens = []
         self.current_token = ""
         self.tokenise()
+        self.advance()
 
     def __ittr__(self):
         return self
@@ -68,45 +67,46 @@ class JackTokenizer:
     def keyword(self):
         """
         """
-        pass
+        return self.current_token
     
     def symbol(self):
         """
         """
-        pass
+        return self.current_token
     
     def identifier(self):
         """
         """
-        pass
+        return self.current_token
 
     def intval(self):
         """
         """
-        pass
+        return int(self.current_token)
 
     def stringval(self):
         """
         """
-        pass
+        return self.current_token.replace('"',"")
 
 import sys
 
 if __name__ == "__main__":
-    tknzr = JackTokenizer(sys.argv)
+    inpname = sys.argv[1]
+    tknzr = JackTokenizer(inpname)
 
     while tknzr.has_more_tokens():
-        tknzr.advance()
         print(tknzr.current_token, tknzr.token_type())
         if tknzr.token_type() == "KEYWORD":
-            tknzr.keyword()
+            print(tknzr.keyword())
         elif tknzr.token_type() == "SYMBOL":
-            tknzr.symbol()
+            print(tknzr.symbol())
         elif tknzr.token_type() == "IDENTIFIER":
-            tknzr.identifier()
+            print(tknzr.identifier())
         elif tknzr.token_type() == "INT_CONST":
-            tknzr.intval()
-        elif tknzr.token_type() == "STRING_COSNT":
-            tknzr.stringval()()
+            print(tknzr.intval())
+        elif tknzr.token_type() == "STRING_CONST":
+            print(tknzr.stringval())
+        tknzr.advance()
 
     print("End Of Program")
