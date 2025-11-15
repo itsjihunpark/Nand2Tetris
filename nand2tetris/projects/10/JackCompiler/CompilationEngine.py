@@ -8,7 +8,7 @@ class CompilationEngine:
         self.xml = open(self.filename, 'a', encoding='utf-8')
         
     def process(self, _str):
-        if (self.jack_tokenizer.current_token == _str):
+        if self.jack_tokenizer.current_token == _str:
             self.print_xml(_str)
         else:
             print("Syntax Error")
@@ -19,15 +19,41 @@ class CompilationEngine:
         
 
     def compile_class(self):
+        CLASS_VAR_TOKEN = {'static', 'field'}
+        SUBROUTINE_TOKEN = {'constructor', 'function', 'method'}
         print('<class>')
         self.process('class')
         self.print_xml(self.jack_tokenizer.current_token)
         self.jack_tokenizer.advance()
         self.process('{')
+    
+        while (token:=self.jack_tokenizer.current_token) in CLASS_VAR_TOKEN|SUBROUTINE_TOKEN:
+            if token in CLASS_VAR_TOKEN:
+                self.compile_class_var_dec()
+            elif SUBROUTINE_TOKEN:
+                self.compile_subroutine()
+        
+        self.process('}')
         print('</class>')
 
     def compile_class_var_dec(self):
-        pass
+        print('<classVarDec>')
+        # handles ('static'| 'field')
+        self.print_xml(self.jack_tokenizer.current_token)
+        self.jack_tokenizer.advance()
+        # handles type (i.e., 'int'|'char'|'boolean', 'type')
+        self.print_xml(self.jack_tokenizer.current_token)
+        self.jack_tokenizer.advance()
+        # handles varName
+        self.print_xml(self.jack_tokenizer.current_token)
+        self.jack_tokenizer.advance()
+        # handles multiple varName delimited by commas
+        while (token:=self.jack_tokenizer.current_token) == ',':
+            self.process(token)
+            self.print_xml(self.jack_tokenizer.current_token)
+            self.jack_tokenizer.advance()
+        self.process(";")
+        print('</classVarDec>')
 
     def compile_subroutine(self):
         pass

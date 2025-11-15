@@ -16,10 +16,17 @@ class JackTokenizer:
             self.jack_file = path
         else:
             raise ValueError
-        self.source = open(self.jack_file, "r").read() # .replace(" ", "") => shouldn't replace every whitespace (like whitespace within string)
+        self.source = open(self.jack_file, "r", encoding='utf-8').read() # .replace(" ", "") => shouldn't replace every whitespace (like whitespace within string)
+        self.dest = open(self.jack_file.replace(".jack", 'T.xml'), 'w', encoding='utf-8')
         self.remove_comments()
         self.tokens = []
         self.current_token = ""
+        self.escape_sequence_map = {
+            '<': '&lt',
+            '>': '&gt',
+            '"': '&qout',
+            '&': '&amp'
+        }
         self.tokenise()
         self.advance()
 
@@ -27,9 +34,14 @@ class JackTokenizer:
         return self
     
     def __next__(self):
-        self.current_token = self.tokens.pop(0)
-        return self.current_token
-
+        if self.has_more_tokens():
+            current_token = self.tokens.pop(0)
+            if current_token in self.escape_sequence_map.keys():
+                current_token  =  self.escape_sequence_map.get(current_token)
+            self.current_token = current_token 
+            return self.current_token
+        else: 
+            return None
     def remove_comments(self):
         """
         """
@@ -44,7 +56,11 @@ class JackTokenizer:
     def advance(self):
         """
         """
-        return next(self)
+        token = next(self)
+        if token:
+            xml = f"<{self.token_type()}>{self.current_token}</{self.token_type()}>"
+            self.dest.writelines(xml+'\n')
+        return token
 
     def tokenise(self):
         """
