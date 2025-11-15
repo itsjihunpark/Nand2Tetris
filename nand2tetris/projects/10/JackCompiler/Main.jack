@@ -11,7 +11,7 @@ class Main {
    static Fraction a, b, c;
 
    
-   function void main() {
+   function void main(int a) {
       var Fraction a, b, c;        
       let a = Fraction.new(2,3);  
       let b = Fraction.new(1,5);  

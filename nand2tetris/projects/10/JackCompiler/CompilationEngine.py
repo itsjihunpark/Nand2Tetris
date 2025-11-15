@@ -27,7 +27,7 @@ class CompilationEngine:
         
         self.process('{')
     
-        while (token:=self.jack_tokenizer.current_token) in CLASS_VAR_TOKEN|SUBROUTINE_TOKEN:
+        while (token := self.jack_tokenizer.current_token) in CLASS_VAR_TOKEN|SUBROUTINE_TOKEN:
             if token in CLASS_VAR_TOKEN:
                 self.compile_class_var_dec()
             elif SUBROUTINE_TOKEN:
@@ -45,7 +45,7 @@ class CompilationEngine:
         # handles varName
         self.print_xml(self.jack_tokenizer.current_token)
         # handles multiple varName delimited by commas
-        while (token:=self.jack_tokenizer.current_token) == ',':
+        while (token := self.jack_tokenizer.current_token) == ',':
             self.process(token)
             self.print_xml(self.jack_tokenizer.current_token)
             
@@ -68,19 +68,42 @@ class CompilationEngine:
         
     def compile_parameter_list(self):
         print('<parameterList>')
-        # to continue
+        # handles type (i.e., 'int'|'char'|'boolean', 'type')
+        if (token := self.jack_tokenizer.current_token) != ")":
+            self.print_xml(self.jack_tokenizer.current_token)
+            # handles varName
+            self.print_xml(self.jack_tokenizer.current_token)
+            # handles multiple , type varName delimited by commas
+            while (token := self.jack_tokenizer.current_token) == ',':
+                self.process(token)
+                self.print_xml(self.jack_tokenizer.current_token)
+                self.print_xml(self.jack_tokenizer.current_token)
         print('</parameterList>')
 
     def compile_subroutine_body(self):
         print('<subroutineBody>')
         self.process('{')
-        # to continue
+        self.compile_var_dec()
+        self.compile_statements()
         self.process('}')
         print('</subroutineBody>')
 
     def compile_var_dec(self):
         print('<varDec>')
-        # to continue
+        # handle var_dec
+        while (token := self.jack_tokenizer.current_token) == "var":
+            # handles var
+            self.process(token)
+            # handle type
+            self.print_xml(self.jack_tokenizer.current_token)
+            # handle varName
+            self.print_xml(self.jack_tokenizer.current_token)
+
+            while (token := self.jack_tokenizer.current_token) != ";":
+                # handle varName
+                self.print_xml(token)           
+            # handle ;
+            self.process(";")
         print('</varDec>')
     
     def compile_statements(self):
