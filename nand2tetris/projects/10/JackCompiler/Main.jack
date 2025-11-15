@@ -10,7 +10,7 @@ class Main {
    field Fraction a, b, c;
    static Fraction a, b, c;
 
-   /*
+   
    function void main() {
       var Fraction a, b, c;        
       let a = Fraction.new(2,3);  
@@ -19,7 +19,7 @@ class Main {
       do c.print("abd cbchb");       // Prints "13/15"
       return;
    }
-   */
+   
 }
 
 /*Some 

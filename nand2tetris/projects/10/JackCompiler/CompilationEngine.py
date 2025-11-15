@@ -9,22 +9,22 @@ class CompilationEngine:
         
     def process(self, _str):
         if self.jack_tokenizer.current_token == _str:
-            self.print_xml(_str)
+            print(f'<{self.jack_tokenizer.token_type().lower()}>{_str}</{self.jack_tokenizer.token_type().lower()}>')
         else:
             print("Syntax Error")
         self.jack_tokenizer.advance()
 
     def print_xml(self, _str):
         print(f'<{self.jack_tokenizer.token_type().lower()}>{_str}</{self.jack_tokenizer.token_type().lower()}>')
+        self.jack_tokenizer.advance()
         
-
     def compile_class(self):
         CLASS_VAR_TOKEN = {'static', 'field'}
         SUBROUTINE_TOKEN = {'constructor', 'function', 'method'}
         print('<class>')
         self.process('class')
         self.print_xml(self.jack_tokenizer.current_token)
-        self.jack_tokenizer.advance()
+        
         self.process('{')
     
         while (token:=self.jack_tokenizer.current_token) in CLASS_VAR_TOKEN|SUBROUTINE_TOKEN:
@@ -40,30 +40,49 @@ class CompilationEngine:
         print('<classVarDec>')
         # handles ('static'| 'field')
         self.print_xml(self.jack_tokenizer.current_token)
-        self.jack_tokenizer.advance()
         # handles type (i.e., 'int'|'char'|'boolean', 'type')
         self.print_xml(self.jack_tokenizer.current_token)
-        self.jack_tokenizer.advance()
         # handles varName
         self.print_xml(self.jack_tokenizer.current_token)
-        self.jack_tokenizer.advance()
         # handles multiple varName delimited by commas
         while (token:=self.jack_tokenizer.current_token) == ',':
             self.process(token)
             self.print_xml(self.jack_tokenizer.current_token)
-            self.jack_tokenizer.advance()
+            
         self.process(";")
         print('</classVarDec>')
 
     def compile_subroutine(self):
-        pass
+        print('<subroutineDec>')
+        # handles ('constructor', 'function', 'method')
+        self.print_xml(self.jack_tokenizer.current_token)
+        # handles ('void', type)
+        self.print_xml(self.jack_tokenizer.current_token)
+        # handles ('subroutineName')
+        self.print_xml(self.jack_tokenizer.current_token)
+        self.process('(')
+        self.compile_parameter_list()
+        self.process(')')
+        self.compile_subroutine_body()
+        print('</subroutineDec>')
+        
+    def compile_parameter_list(self):
+        print('<parameterList>')
+        # to continue
+        print('</parameterList>')
 
-    def parameter_list(self):
-        pass
+    def compile_subroutine_body(self):
+        print('<subroutineBody>')
+        self.process('{')
+        # to continue
+        self.process('}')
+        print('</subroutineBody>')
 
     def compile_var_dec(self):
-        pass
-
+        print('<varDec>')
+        # to continue
+        print('</varDec>')
+    
     def compile_statements(self):
         pass
     
