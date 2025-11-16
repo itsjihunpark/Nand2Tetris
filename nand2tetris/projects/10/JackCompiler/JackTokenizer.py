@@ -18,6 +18,7 @@ class JackTokenizer:
             raise ValueError
         self.source = open(self.jack_file, "r", encoding='utf-8').read() # .replace(" ", "") => shouldn't replace every whitespace (like whitespace within string)
         self.dest = open(self.jack_file.replace(".jack", 'T.xml'), 'w', encoding='utf-8')
+        self.dest.writelines("<tokens>\n")
         self.remove_comments()
         self.tokens = []
         self.current_token = ""
@@ -38,9 +39,10 @@ class JackTokenizer:
             current_token = self.tokens.pop(0)
             if current_token in self.escape_sequence_map.keys():
                 current_token  =  self.escape_sequence_map.get(current_token)
-            self.current_token = current_token 
+            self.current_token = current_token
             return self.current_token
         else: 
+            self.dest.writelines("</tokens>\n")
             return None
     def remove_comments(self):
         """
@@ -113,15 +115,15 @@ if __name__ == "__main__":
 
     while tknzr.has_more_tokens():
         print(tknzr.current_token, tknzr.token_type())
-        if tknzr.token_type() == "KEYWORD":
+        if tknzr.token_type() == "keyword":
             print(tknzr.keyword())
-        elif tknzr.token_type() == "SYMBOL":
+        elif tknzr.token_type() == "symbol":
             print(tknzr.symbol())
-        elif tknzr.token_type() == "IDENTIFIER":
+        elif tknzr.token_type() == "identifier":
             print(tknzr.identifier())
-        elif tknzr.token_type() == "INT_CONST":
+        elif tknzr.token_type() == "integerConstant":
             print(tknzr.intval())
-        elif tknzr.token_type() == "STRING_CONST":
+        elif tknzr.token_type() == "stringConstant":
             print(tknzr.stringval())
         tknzr.advance()
 

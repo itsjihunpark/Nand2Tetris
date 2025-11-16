@@ -9,21 +9,21 @@ class CompilationEngine:
         
     def process(self, _str):
         if self.jack_tokenizer.current_token == _str:
-            print(f'<{self.jack_tokenizer.token_type().lower()}>{_str}</{self.jack_tokenizer.token_type().lower()}>')
+            self.print_xml(_str)
         else:
             print("Syntax Error")
         self.jack_tokenizer.advance()
 
     def print_xml(self, _str):
-        print(f'<{self.jack_tokenizer.token_type().lower()}>{_str}</{self.jack_tokenizer.token_type().lower()}>')
-        self.jack_tokenizer.advance()
+        print(f'<{self.jack_tokenizer.token_type()}>{_str}</{self.jack_tokenizer.token_type()}>')
         
     def compile_class(self):
         CLASS_VAR_TOKEN = {'static', 'field'}
         SUBROUTINE_TOKEN = {'constructor', 'function', 'method'}
         print('<class>')
         self.process('class')
-        self.print_xml(self.jack_tokenizer.current_token)
+        # handle className
+        self.process(self.jack_tokenizer.current_token)
         
         self.process('{')
     
@@ -39,27 +39,26 @@ class CompilationEngine:
     def compile_class_var_dec(self):
         print('<classVarDec>')
         # handles ('static'| 'field')
-        self.print_xml(self.jack_tokenizer.current_token)
+        self.process(self.jack_tokenizer.current_token)
         # handles type (i.e., 'int'|'char'|'boolean', 'type')
-        self.print_xml(self.jack_tokenizer.current_token)
+        self.process(self.jack_tokenizer.current_token)
         # handles varName
-        self.print_xml(self.jack_tokenizer.current_token)
+        self.process(self.jack_tokenizer.current_token)
         # handles multiple varName delimited by commas
-        while (token := self.jack_tokenizer.current_token) == ',':
-            self.process(token)
-            self.print_xml(self.jack_tokenizer.current_token)
-            
+        while (comma_token := self.jack_tokenizer.current_token) == ',':
+            self.process(comma_token)
+            self.process(self.jack_tokenizer.current_token)
         self.process(";")
         print('</classVarDec>')
 
     def compile_subroutine(self):
         print('<subroutineDec>')
         # handles ('constructor', 'function', 'method')
-        self.print_xml(self.jack_tokenizer.current_token)
+        self.process(self.jack_tokenizer.current_token)
         # handles ('void', type)
-        self.print_xml(self.jack_tokenizer.current_token)
+        self.process(self.jack_tokenizer.current_token)
         # handles ('subroutineName')
-        self.print_xml(self.jack_tokenizer.current_token)
+        self.process(self.jack_tokenizer.current_token)
         self.process('(')
         self.compile_parameter_list()
         self.process(')')
@@ -69,15 +68,15 @@ class CompilationEngine:
     def compile_parameter_list(self):
         print('<parameterList>')
         # handles type (i.e., 'int'|'char'|'boolean', 'type')
-        if (token := self.jack_tokenizer.current_token) != ")":
-            self.print_xml(self.jack_tokenizer.current_token)
+        if (type_token := self.jack_tokenizer.current_token) != ")":
+            self.process(type_token)
             # handles varName
-            self.print_xml(self.jack_tokenizer.current_token)
+            self.process(self.jack_tokenizer.current_token)
             # handles multiple , type varName delimited by commas
-            while (token := self.jack_tokenizer.current_token) == ',':
-                self.process(token)
-                self.print_xml(self.jack_tokenizer.current_token)
-                self.print_xml(self.jack_tokenizer.current_token)
+            while (comma_token := self.jack_tokenizer.current_token) == ',':
+                self.process(comma_token)
+                self.process(self.jack_tokenizer.current_token)
+                self.process(self.jack_tokenizer.current_token)
         print('</parameterList>')
 
     def compile_subroutine_body(self):
@@ -91,44 +90,150 @@ class CompilationEngine:
     def compile_var_dec(self):
         print('<varDec>')
         # handle var_dec
-        while (token := self.jack_tokenizer.current_token) == "var":
+        while (var_token := self.jack_tokenizer.current_token) == "var":
             # handles var
-            self.process(token)
+            self.process(var_token)
             # handle type
-            self.print_xml(self.jack_tokenizer.current_token)
+            self.process(self.jack_tokenizer.current_token)
             # handle varName
-            self.print_xml(self.jack_tokenizer.current_token)
+            self.process(self.jack_tokenizer.current_token)
 
-            while (token := self.jack_tokenizer.current_token) != ";":
+            while (var_name_token := self.jack_tokenizer.current_token) != ";":
                 # handle varName
-                self.print_xml(token)           
+                self.process(var_name_token)     
             # handle ;
             self.process(";")
         print('</varDec>')
     
     def compile_statements(self):
-        pass
-    
+        print('<statements>')
+        STATEMENT_TOKEN_DISPATCH= {
+            'let': self.compile_let, 
+            'if': self.compile_if, 
+            'while': self.compile_while, 
+            'do': self.compile_do, 
+            'return': self.compile_return
+            }
+        while (statement_token := self.jack_tokenizer.current_token) in STATEMENT_TOKEN_DISPATCH.keys():
+            STATEMENT_TOKEN_DISPATCH[statement_token]()
+        print('</statements>')
+
     def compile_let(self):
-        pass
+        print('<letStatement>')
+        self.process('let')
+        # handle varName
+        self.process(self.jack_tokenizer.current_token)
+        if (token := self.jack_tokenizer.current_token) == "[":
+            self.process(token)
+            self.compile_expression()
+            self.process(']')
+        self.process(token)
+        self.compile_expression()
+        self.process(';')
+        print('</letStatement>')
 
     def compile_if(self):
-        pass
+        print('<ifStatement>')
+        self.process('if')
+        self.process('(')
+        self.compile_expression()
+        self.process(')')
+        self.process('{')
+        self.compile_statements()
+        self.process('}')
+        if (else_token := self.jack_tokenizer.current_token) == "else":
+            self.process(else_token)
+            self.process('{')
+            self.compile_statements()
+            self.process('}')
+        print('</ifStatement>')
 
     def compile_while(self):
-        pass
+        print('<whileStatement>')
+        self.process('while')
+        self.process('(')
+        self.compile_expression()
+        self.process(')')
+        self.process('{')
+        self.compile_statements()
+        self.process('}')
+        print('</whileStatement>')
 
     def compile_do(self):
-        pass
+        print('<doStatement>')
+        self.process('do')
+        self.compile_expression()
+        self.process(';')
+        print('</doStatement>')
 
     def compile_return(self):
-        pass
+        print('<returnStatement>')
+        self.process('return')
+        if (semi_colon_token := self.jack_tokenizer.current_token) == ";":
+            self.process(semi_colon_token)
+        else:
+            self.compile_expression()
+            self.process(';')
+        print('</returnStatement>')
 
     def compile_expression(self):
-        pass
+        OP_TOKENS = {'+','-','*','/','&','|','<','>','='}
+        print('<expression>')
+        self.compile_term()
+        # handle (op term)*
+        while (op_token := self.jack_tokenizer.current_token) in OP_TOKENS:
+            self.process(op_token)
+            self.compile_term()
+        print('</expression>')
 
     def compile_term(self):
-        pass
+        LL2_TOKENS = {'(', '[','.'}
+        UNARY_OP_TOKEN = {'-', '~'}
+        print('<term>')
+        # 1. handles (expression)
+        if (bracket_token := self.jack_tokenizer.current_token) == "(":
+            self.process(bracket_token)
+            self.compile_expression()
+            self.process(')')
+          
+        # 2. handle unaryOp token if exists
+        elif (unary_op_token := self.jack_tokenizer.current_token) in UNARY_OP_TOKEN:
+            self.process(unary_op_token)
+            self.compile_term()
+
+        else:
+            """
+            handles
+            3. intConst
+            4. strConst
+            5. kwordConst
+            6. varName
+            7. varName[expression
+            8. subroutineName(expressionList
+            9. className|varName.subroutineName(expressionList
+            """
+            self.process(self.jack_tokenizer.current_token)
+            if (ll2_token := self.jack_tokenizer.current_token) in LL2_TOKENS:
+                if ll2_token == '[':
+                    self.process('[')
+                    self.compile_expression()
+                    self.process(']')
+                elif ll2_token == '(':
+                    self.process('(')
+                    self.compile_expression_list()
+                    self.process(')')
+                elif ll2_token == ".":
+                    self.process('.')
+                    self.process(self.jack_tokenizer.current_token)
+                    self.process('(')
+                    self.compile_expression_list()
+                    self.process(')')
+        print('</term>')
 
     def compile_expression_list(self):
-        pass
+        print('<expressionList>')
+        self.compile_expression()
+        if (comma_token := self.jack_tokenizer.current_token) == ',':
+            self.process(comma_token)
+            self.compile_expression()
+        print('</expressionList>')
