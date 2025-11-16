@@ -89,9 +89,9 @@ class CompilationEngine:
         self.xml.writelines('</subroutineBody>\n')
 
     def compile_var_dec(self):
-        self.xml.writelines('<varDec>\n')
         # handle var_dec
         while (var_token := self.jack_tokenizer.current_token) == "var":
+            self.xml.writelines('<varDec>\n')
             # handles var
             self.process(var_token)
             # handle type
@@ -104,7 +104,7 @@ class CompilationEngine:
                 self.process(var_name_token)     
             # handle ;
             self.process(";")
-        self.xml.writelines('</varDec>\n')
+            self.xml.writelines('</varDec>\n')
     
     def compile_statements(self):
         self.xml.writelines('<statements>\n')
@@ -128,7 +128,7 @@ class CompilationEngine:
             self.process(token)
             self.compile_expression()
             self.process(']')
-        self.process(token)
+        self.process('=')
         self.compile_expression()
         self.process(';')
         self.xml.writelines('</letStatement>\n')
@@ -178,7 +178,7 @@ class CompilationEngine:
         self.xml.writelines('</returnStatement>\n')
 
     def compile_expression(self):
-        OP_TOKENS = {'+','-','*','/','&','|','<','>','='}
+        OP_TOKENS = {'+','-','*','/','&amp;','|','&lt;','&gt;','='}
         self.xml.writelines('<expression>\n')
         self.compile_term()
         # handle (op term)*
