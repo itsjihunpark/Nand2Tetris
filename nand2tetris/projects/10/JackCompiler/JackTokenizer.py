@@ -18,7 +18,7 @@ class JackTokenizer:
             raise ValueError
         self.source = open(self.jack_file, "r", encoding='utf-8').read() # .replace(" ", "") => shouldn't replace every whitespace (like whitespace within string)
         self.dest = open(self.jack_file.replace(".jack", 'T_.xml'), 'w', encoding='utf-8')
-        self.dest.writelines("<tokens>")
+        self.dest.writelines("<tokens>\n")
         self.remove_comments()
         self.tokens = []
         self.current_token = ""
@@ -46,7 +46,7 @@ class JackTokenizer:
             self.current_token = current_token
             return self.current_token
         else: 
-            self.dest.writelines("</tokens>")
+            self.dest.writelines("</tokens>\n")
             return None
     def remove_comments(self):
         """
@@ -72,7 +72,7 @@ class JackTokenizer:
             self.current_token = self.current_token.replace('"','')
             
             xml = f"<{self.token_type()}> {self.current_token} </{self.token_type()}>"
-            self.dest.writelines(xml+'')
+            self.dest.writelines(xml+'\n')
         return token
 
     def tokenise(self):
