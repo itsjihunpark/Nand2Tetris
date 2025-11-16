@@ -145,8 +145,6 @@
 </letStatement>
 <doStatement>
 <keyword> do </keyword>
-<expression>
-<term>
 <identifier> c </identifier>
 <symbol> . </symbol>
 <identifier> print </identifier>
@@ -159,8 +157,6 @@
 </expression>
 </expressionList>
 <symbol> ) </symbol>
-</term>
-</expression>
 <symbol> ; </symbol>
 </doStatement>
 <returnStatement>

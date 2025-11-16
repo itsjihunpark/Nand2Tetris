@@ -1,4 +1,5 @@
 import JackTokenizer
+import inspect
 
 class CompilationEngine:
     
@@ -178,19 +179,30 @@ class CompilationEngine:
         self.xml.writelines('</returnStatement>\n')
 
     def compile_expression(self):
+        stack = inspect.stack()
+        caller_function = stack[1].function
+
         OP_TOKENS = {'+','-','*','/','&amp;','|','&lt;','&gt;','='}
-        self.xml.writelines('<expression>\n')
+        if caller_function != "compile_do":
+            self.xml.writelines('<expression>\n')
         self.compile_term()
         # handle (op term)*
         while (op_token := self.jack_tokenizer.current_token) in OP_TOKENS:
             self.process(op_token)
             self.compile_term()
-        self.xml.writelines('</expression>\n')
+
+        if caller_function != "compile_do":
+            self.xml.writelines('</expression>\n')
 
     def compile_term(self):
+        stack = inspect.stack()
+        caller_function = stack[2].function
+
         LL2_TOKENS = {'(', '[','.'}
         UNARY_OP_TOKEN = {'-', '~'}
-        self.xml.writelines('<term>\n')
+
+        if caller_function != "compile_do":
+            self.xml.writelines('<term>\n')
         # 1. handles (expression)
         if (bracket_token := self.jack_tokenizer.current_token) == "(":
             self.process(bracket_token)
@@ -229,12 +241,15 @@ class CompilationEngine:
                     self.process('(')
                     self.compile_expression_list()
                     self.process(')')
-        self.xml.writelines('</term>\n')
+                    
+        if caller_function != "compile_do":
+            self.xml.writelines('</term>\n')
 
     def compile_expression_list(self):
         self.xml.writelines('<expressionList>\n')
-        self.compile_expression()
-        if (comma_token := self.jack_tokenizer.current_token) == ',':
-            self.process(comma_token)
+        if self.jack_tokenizer.current_token != ')':
             self.compile_expression()
+            while (comma_token := self.jack_tokenizer.current_token) == ',':
+                self.process(comma_token)
+                self.compile_expression()
         self.xml.writelines('</expressionList>\n')
