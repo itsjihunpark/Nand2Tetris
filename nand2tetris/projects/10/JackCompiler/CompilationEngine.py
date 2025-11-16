@@ -4,8 +4,8 @@ class CompilationEngine:
     
     def __init__(self, jack_tokenizer:JackTokenizer):
         self.jack_tokenizer = jack_tokenizer
-        self.filename = self.jack_tokenizer.jack_file.split('//')[-1]
-        self.xml = open(self.filename, 'a', encoding='utf-8')
+        self.filename = self.jack_tokenizer.jack_file.replace(".jack", "_.xml")
+        self.xml = open(self.filename, 'w', encoding='utf-8')
         
     def process(self, _str):
         if self.jack_tokenizer.current_token == _str:
@@ -15,12 +15,13 @@ class CompilationEngine:
         self.jack_tokenizer.advance()
 
     def print_xml(self, _str):
-        print(f'<{self.jack_tokenizer.token_type()}>{_str}</{self.jack_tokenizer.token_type()}>')
+        xml = f'<{self.jack_tokenizer.token_type()}> {_str} </{self.jack_tokenizer.token_type()}>'
+        self.xml.writelines(xml)
         
     def compile_class(self):
         CLASS_VAR_TOKEN = {'static', 'field'}
         SUBROUTINE_TOKEN = {'constructor', 'function', 'method'}
-        print('<class>')
+        self.xml.writelines('<class>')
         self.process('class')
         # handle className
         self.process(self.jack_tokenizer.current_token)
@@ -34,10 +35,10 @@ class CompilationEngine:
                 self.compile_subroutine()
         
         self.process('}')
-        print('</class>')
+        self.xml.writelines('</class>')
 
     def compile_class_var_dec(self):
-        print('<classVarDec>')
+        self.xml.writelines('<classVarDec>')
         # handles ('static'| 'field')
         self.process(self.jack_tokenizer.current_token)
         # handles type (i.e., 'int'|'char'|'boolean', 'type')
@@ -49,10 +50,10 @@ class CompilationEngine:
             self.process(comma_token)
             self.process(self.jack_tokenizer.current_token)
         self.process(";")
-        print('</classVarDec>')
+        self.xml.writelines('</classVarDec>')
 
     def compile_subroutine(self):
-        print('<subroutineDec>')
+        self.xml.writelines('<subroutineDec>')
         # handles ('constructor', 'function', 'method')
         self.process(self.jack_tokenizer.current_token)
         # handles ('void', type)
@@ -63,10 +64,10 @@ class CompilationEngine:
         self.compile_parameter_list()
         self.process(')')
         self.compile_subroutine_body()
-        print('</subroutineDec>')
+        self.xml.writelines('</subroutineDec>')
         
     def compile_parameter_list(self):
-        print('<parameterList>')
+        self.xml.writelines('<parameterList>')
         # handles type (i.e., 'int'|'char'|'boolean', 'type')
         if (type_token := self.jack_tokenizer.current_token) != ")":
             self.process(type_token)
@@ -77,18 +78,18 @@ class CompilationEngine:
                 self.process(comma_token)
                 self.process(self.jack_tokenizer.current_token)
                 self.process(self.jack_tokenizer.current_token)
-        print('</parameterList>')
+        self.xml.writelines('</parameterList>')
 
     def compile_subroutine_body(self):
-        print('<subroutineBody>')
+        self.xml.writelines('<subroutineBody>')
         self.process('{')
         self.compile_var_dec()
         self.compile_statements()
         self.process('}')
-        print('</subroutineBody>')
+        self.xml.writelines('</subroutineBody>')
 
     def compile_var_dec(self):
-        print('<varDec>')
+        self.xml.writelines('<varDec>')
         # handle var_dec
         while (var_token := self.jack_tokenizer.current_token) == "var":
             # handles var
@@ -103,10 +104,10 @@ class CompilationEngine:
                 self.process(var_name_token)     
             # handle ;
             self.process(";")
-        print('</varDec>')
+        self.xml.writelines('</varDec>')
     
     def compile_statements(self):
-        print('<statements>')
+        self.xml.writelines('<statements>')
         STATEMENT_TOKEN_DISPATCH= {
             'let': self.compile_let, 
             'if': self.compile_if, 
@@ -116,10 +117,10 @@ class CompilationEngine:
             }
         while (statement_token := self.jack_tokenizer.current_token) in STATEMENT_TOKEN_DISPATCH.keys():
             STATEMENT_TOKEN_DISPATCH[statement_token]()
-        print('</statements>')
+        self.xml.writelines('</statements>')
 
     def compile_let(self):
-        print('<letStatement>')
+        self.xml.writelines('<letStatement>')
         self.process('let')
         # handle varName
         self.process(self.jack_tokenizer.current_token)
@@ -130,10 +131,10 @@ class CompilationEngine:
         self.process(token)
         self.compile_expression()
         self.process(';')
-        print('</letStatement>')
+        self.xml.writelines('</letStatement>')
 
     def compile_if(self):
-        print('<ifStatement>')
+        self.xml.writelines('<ifStatement>')
         self.process('if')
         self.process('(')
         self.compile_expression()
@@ -146,10 +147,10 @@ class CompilationEngine:
             self.process('{')
             self.compile_statements()
             self.process('}')
-        print('</ifStatement>')
+        self.xml.writelines('</ifStatement>')
 
     def compile_while(self):
-        print('<whileStatement>')
+        self.xml.writelines('<whileStatement>')
         self.process('while')
         self.process('(')
         self.compile_expression()
@@ -157,39 +158,39 @@ class CompilationEngine:
         self.process('{')
         self.compile_statements()
         self.process('}')
-        print('</whileStatement>')
+        self.xml.writelines('</whileStatement>')
 
     def compile_do(self):
-        print('<doStatement>')
+        self.xml.writelines('<doStatement>')
         self.process('do')
         self.compile_expression()
         self.process(';')
-        print('</doStatement>')
+        self.xml.writelines('</doStatement>')
 
     def compile_return(self):
-        print('<returnStatement>')
+        self.xml.writelines('<returnStatement>')
         self.process('return')
         if (semi_colon_token := self.jack_tokenizer.current_token) == ";":
             self.process(semi_colon_token)
         else:
             self.compile_expression()
             self.process(';')
-        print('</returnStatement>')
+        self.xml.writelines('</returnStatement>')
 
     def compile_expression(self):
         OP_TOKENS = {'+','-','*','/','&','|','<','>','='}
-        print('<expression>')
+        self.xml.writelines('<expression>')
         self.compile_term()
         # handle (op term)*
         while (op_token := self.jack_tokenizer.current_token) in OP_TOKENS:
             self.process(op_token)
             self.compile_term()
-        print('</expression>')
+        self.xml.writelines('</expression>')
 
     def compile_term(self):
         LL2_TOKENS = {'(', '[','.'}
         UNARY_OP_TOKEN = {'-', '~'}
-        print('<term>')
+        self.xml.writelines('<term>')
         # 1. handles (expression)
         if (bracket_token := self.jack_tokenizer.current_token) == "(":
             self.process(bracket_token)
@@ -228,12 +229,12 @@ class CompilationEngine:
                     self.process('(')
                     self.compile_expression_list()
                     self.process(')')
-        print('</term>')
+        self.xml.writelines('</term>')
 
     def compile_expression_list(self):
-        print('<expressionList>')
+        self.xml.writelines('<expressionList>')
         self.compile_expression()
         if (comma_token := self.jack_tokenizer.current_token) == ',':
             self.process(comma_token)
             self.compile_expression()
-        print('</expressionList>')
+        self.xml.writelines('</expressionList>')

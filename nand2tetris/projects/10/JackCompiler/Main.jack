@@ -16,7 +16,7 @@ class Main {
       let a = Fraction.new(2,3);  
       let b = Fraction.new(1,5);  
       let c = a.plus(b);  // Computes c = a + b
-      do c.print("abd cbchb");       // Prints "13/15"
+      do c.print("abd cbchb   &<>");       // Prints "13/15"
       return;
    }
    

@@ -154,7 +154,7 @@
                             <expressionList>
                                 <expression>
                                     <term>
-                                        <stringConstant>"abd cbchb"</stringConstant>
+                                        <stringConstant>abd cbchb &amp;&lt;&gt;</stringConstant>
                                     </term>
                                 </expression>
                             </expressionList>

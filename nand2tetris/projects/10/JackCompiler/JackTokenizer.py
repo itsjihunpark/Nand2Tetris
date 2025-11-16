@@ -17,17 +17,18 @@ class JackTokenizer:
         else:
             raise ValueError
         self.source = open(self.jack_file, "r", encoding='utf-8').read() # .replace(" ", "") => shouldn't replace every whitespace (like whitespace within string)
-        self.dest = open(self.jack_file.replace(".jack", 'T.xml'), 'w', encoding='utf-8')
-        self.dest.writelines("<tokens>\n")
+        self.dest = open(self.jack_file.replace(".jack", 'T_.xml'), 'w', encoding='utf-8')
+        self.dest.writelines("<tokens>")
         self.remove_comments()
         self.tokens = []
         self.current_token = ""
+        self.current_token_type = None
         self.escape_sequence_map = {
-            '<': '&lt',
-            '>': '&gt',
-            '"': '&qout',
-            '&': '&amp'
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;'
         }
+        # '"': '&qout;',
         self.tokenise()
         self.advance()
 
@@ -37,12 +38,15 @@ class JackTokenizer:
     def __next__(self):
         if self.has_more_tokens():
             current_token = self.tokens.pop(0)
-            if current_token in self.escape_sequence_map.keys():
-                current_token  =  self.escape_sequence_map.get(current_token)
+            #if current_token in self.escape_sequence_map.keys():
+            #    current_token  =  self.escape_sequence_map.get(current_token)
+            for escape_seq, equivalent in self.escape_sequence_map.items():
+                current_token = current_token.replace(escape_seq, equivalent)
+            
             self.current_token = current_token
             return self.current_token
         else: 
-            self.dest.writelines("</tokens>\n")
+            self.dest.writelines("</tokens>")
             return None
     def remove_comments(self):
         """
@@ -60,8 +64,15 @@ class JackTokenizer:
         """
         token = next(self)
         if token:
-            xml = f"<{self.token_type()}>{self.current_token}</{self.token_type()}>"
-            self.dest.writelines(xml+'\n')
+            for pattern in tokens.items():
+                if regex.findall(pattern[1], self.current_token):
+                    self.current_token_type = pattern[0]
+                    break
+            
+            self.current_token = self.current_token.replace('"','')
+            
+            xml = f"<{self.token_type()}> {self.current_token} </{self.token_type()}>"
+            self.dest.writelines(xml+'')
         return token
 
     def tokenise(self):
@@ -78,9 +89,7 @@ class JackTokenizer:
     def token_type(self):
         """
         """
-        for pattern in tokens.items():
-            if regex.findall(pattern[1], self.current_token):
-                return pattern[0]
+        return self.current_token_type
 
     def keyword(self):
         """
@@ -105,7 +114,7 @@ class JackTokenizer:
     def stringval(self):
         """
         """
-        return self.current_token.replace('"',"")
+        return self.current_token
 
 import sys
 
