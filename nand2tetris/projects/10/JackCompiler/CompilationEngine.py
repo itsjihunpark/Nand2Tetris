@@ -100,9 +100,10 @@ class CompilationEngine:
             # handle varName
             self.process(self.jack_tokenizer.current_token)
 
-            while (var_name_token := self.jack_tokenizer.current_token) != ";":
-                # handle varName
-                self.process(var_name_token)     
+            while (comma_token := self.jack_tokenizer.current_token) == ",":
+                self.process(comma_token)
+                var_name = self.jack_tokenizer.current_token
+                self.process(var_name)
             # handle ;
             self.process(";")
             self.xml.writelines('</varDec>\n')
