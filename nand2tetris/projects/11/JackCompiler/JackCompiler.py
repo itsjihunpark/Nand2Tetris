@@ -4,8 +4,8 @@ import glob
 from JackTokenizer import JackTokenizer
 from CompilationEngine import CompilationEngine
 
-class JackAnalyser():
-    
+class JackCompiler:
+
     def __init__(self, argv):
         inpname = argv[1]
         if ".jack" in inpname:
@@ -18,4 +18,5 @@ class JackAnalyser():
             compilation_engine.compile_class()
 
 if __name__ == "__main__":
-    JackAnalyser(sys.argv) 
+    JackCompiler(sys.argv) 
+

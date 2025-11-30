@@ -1,10 +1,13 @@
-import JackTokenizer
+from JackTokenizer import JackTokenizer
+from SymbolTable import SymbolTable
 import inspect
 
 class CompilationEngine:
     
     def __init__(self, jack_tokenizer:JackTokenizer):
         self.jack_tokenizer = jack_tokenizer
+        self.class_level_symbol_table = SymbolTable()
+        self.subroutine_level_symbol_table = SymbolTable()
         self.filename = self.jack_tokenizer.jack_file.replace(".jack", "_.xml")
         self.xml = open(self.filename, 'w', encoding='utf-8')
         
