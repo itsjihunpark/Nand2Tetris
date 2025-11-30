@@ -70,7 +70,10 @@ class CompilationEngine:
         self.subroutine_level_symbol_table.reset()
         self.xml.writelines('<subroutineDec>\n')
         # handles ('constructor', 'function', 'method')
-        self.process(self.jack_tokenizer.current_token)
+        subroutine_type = self.jack_tokenizer.current_token
+        if subroutine_type == "method":
+            self.subroutine_level_symbol_table.define('this', self.filename, 'arg')
+        self.process(subroutine_type)
         # handles ('void', type)
         self.process(self.jack_tokenizer.current_token)
         # handles ('subroutineName')
