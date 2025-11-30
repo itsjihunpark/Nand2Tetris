@@ -16,7 +16,8 @@ class JackCompiler:
             jack_tokenizer = JackTokenizer(path)
             compilation_engine = CompilationEngine(jack_tokenizer)
             compilation_engine.compile_class()
-
+            print(compilation_engine.class_level_symbol_table.table)
+            print(compilation_engine.subroutine_level_symbol_table.table)
 if __name__ == "__main__":
     JackCompiler(sys.argv) 
 

@@ -6,12 +6,14 @@
 // Computes and prints the sum of 2/3 and 1/5.
 class Main {
    static Fraction a, b, c;
-   static Fraction a, b, c;
-   field Fraction a, b, c;
-   static Fraction a, b, c;
+   field int e, f, g;
+   //static Fraction a, b, c;
+   //field Fraction a, b, c;
+   //static Fraction a, b, c;
+   //field Fraction b;
 
    
-   function void main(int a) {
+   function void main(int a_, int b_) {
       var Fraction a, b, c;        
       let a = Fraction.new(2,3);  
       let b = Fraction.new(1,5);  

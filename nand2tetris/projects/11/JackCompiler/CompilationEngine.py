@@ -44,19 +44,30 @@ class CompilationEngine:
     def compile_class_var_dec(self):
         self.xml.writelines('<classVarDec>\n')
         # handles ('static'| 'field')
-        self.process(self.jack_tokenizer.current_token)
+        var_kind = self.jack_tokenizer.current_token
+        self.process(var_kind)
         # handles type (i.e., 'int'|'char'|'boolean', 'type')
-        self.process(self.jack_tokenizer.current_token)
+        var_type = self.jack_tokenizer.current_token
+        self.process(var_type)
         # handles varName
-        self.process(self.jack_tokenizer.current_token)
+        var_name = self.jack_tokenizer.current_token
+        self.process(var_name)
+        # adding to class level symbol table
+        self.class_level_symbol_table.define(var_name, var_type, var_kind)
+
         # handles multiple varName delimited by commas
         while (comma_token := self.jack_tokenizer.current_token) == ',':
             self.process(comma_token)
-            self.process(self.jack_tokenizer.current_token)
+            var_name = self.jack_tokenizer.current_token
+            self.process(var_name)
+            # adding to class level symbol table
+            self.class_level_symbol_table.define(var_name, var_type, var_kind)
+        
         self.process(";")
         self.xml.writelines('</classVarDec>\n')
 
     def compile_subroutine(self):
+        self.subroutine_level_symbol_table.reset()
         self.xml.writelines('<subroutineDec>\n')
         # handles ('constructor', 'function', 'method')
         self.process(self.jack_tokenizer.current_token)
@@ -76,12 +87,22 @@ class CompilationEngine:
         if (type_token := self.jack_tokenizer.current_token) != ")":
             self.process(type_token)
             # handles varName
-            self.process(self.jack_tokenizer.current_token)
+            var_name = self.jack_tokenizer.current_token
+            self.process(var_name)
+
+            # adding to subrountine level symbol table
+            self.subroutine_level_symbol_table.define(var_name, type_token, 'arg')
+        
             # handles multiple , type varName delimited by commas
             while (comma_token := self.jack_tokenizer.current_token) == ',':
                 self.process(comma_token)
-                self.process(self.jack_tokenizer.current_token)
-                self.process(self.jack_tokenizer.current_token)
+                var_type = self.jack_tokenizer.current_token
+                self.process(var_type)
+                var_name = self.jack_tokenizer.current_token
+                self.process(var_name)
+                # adding to subrountine level symbol table
+                self.subroutine_level_symbol_table.define(var_name, var_type, 'arg')
+
         self.xml.writelines('</parameterList>\n')
 
     def compile_subroutine_body(self):
@@ -99,13 +120,23 @@ class CompilationEngine:
             # handles var
             self.process(var_token)
             # handle type
-            self.process(self.jack_tokenizer.current_token)
+            var_type = self.jack_tokenizer.current_token
+            self.process(var_type)
             # handle varName
-            self.process(self.jack_tokenizer.current_token)
+            var_name = self.jack_tokenizer.current_token
+            self.process(var_name)
+            
+            # adding to subrountine level symbol table
+            self.subroutine_level_symbol_table.define(var_name, var_type, var_token)
 
             while (var_name_token := self.jack_tokenizer.current_token) != ";":
+                # if identifier, then adding to subrountine level symbol table
+                if self.jack_tokenizer.current_token_type == 'identifier':
+                    self.subroutine_level_symbol_table.define(var_name_token, var_type, var_token)
+                
                 # handle varName
-                self.process(var_name_token)     
+                self.process(var_name_token)
+                
             # handle ;
             self.process(";")
             self.xml.writelines('</varDec>\n')
