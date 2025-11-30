@@ -129,13 +129,12 @@ class CompilationEngine:
             # adding to subrountine level symbol table
             self.subroutine_level_symbol_table.define(var_name, var_type, var_token)
 
-            while (var_name_token := self.jack_tokenizer.current_token) != ";":
-                # if identifier, then adding to subrountine level symbol table
-                if self.jack_tokenizer.current_token_type == 'identifier':
-                    self.subroutine_level_symbol_table.define(var_name_token, var_type, var_token)
-                
-                # handle varName
-                self.process(var_name_token)
+            while (comma_token := self.jack_tokenizer.current_token) == ",":
+                self.process(comma_token)
+                var_name = self.jack_tokenizer.current_token
+                self.process(var_name)
+                # adding to subrountine level symbol table
+                self.subroutine_level_symbol_table.define(var_name, var_type, var_token)
                 
             # handle ;
             self.process(";")
