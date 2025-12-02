@@ -48,7 +48,7 @@ class Point{
           
           do Output.printString("(");
           do Output.printInt(x);
-          do Output.printInt(",");
+          do Output.printString(",");
           do Output.printInt(y);
           do Output.printString(")");
           return;

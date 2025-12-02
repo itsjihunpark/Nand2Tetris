@@ -205,7 +205,7 @@ class CompilationEngine:
         if caller_function != "compile_do":
             self.xml.writelines('<term>\n')
         # 1. handles (expression)
-        if (bracket_token := self.jack_tokenizer.current_token) == "(":
+        if (bracket_token := self.jack_tokenizer.current_token) == "(" and self.jack_tokenizer.current_token_type=="symbol":
             self.process(bracket_token)
             self.compile_expression()
             self.process(')')
@@ -248,9 +248,17 @@ class CompilationEngine:
 
     def compile_expression_list(self):
         self.xml.writelines('<expressionList>\n')
-        if self.jack_tokenizer.current_token != ')':
+        expression_list_end_detected = False
+        
+        if self.jack_tokenizer.current_token == ')' and self.jack_tokenizer.current_token_type == "symbol":
+            expression_list_end_detected = True
+        else:
+            expression_list_end_detected = False
+        
+        if not expression_list_end_detected:
             self.compile_expression()
             while (comma_token := self.jack_tokenizer.current_token) == ',':
                 self.process(comma_token)
                 self.compile_expression()
+
         self.xml.writelines('</expressionList>\n')
