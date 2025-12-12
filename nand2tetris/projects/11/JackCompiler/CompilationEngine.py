@@ -226,6 +226,7 @@ class CompilationEngine:
         self.compile_term()
         # handle (op term)*
         while (op_token := self.jack_tokenizer.current_token) in OP_TOKENS:
+            print(op_token)
             self.process(op_token)
             self.compile_term()
         print("#################Expression Ends#################\n")
@@ -249,6 +250,7 @@ class CompilationEngine:
           
         # 2. handle unaryOp token if exists
         elif (unary_op_token := self.jack_tokenizer.current_token) in UNARY_OP_TOKEN:
+            print(unary_op_token)
             self.process(unary_op_token)
             self.compile_term()
 
