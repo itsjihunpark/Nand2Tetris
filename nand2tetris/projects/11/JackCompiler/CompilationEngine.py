@@ -222,12 +222,13 @@ class CompilationEngine:
         OP_TOKENS = {'+','-','*','/','&amp;','|','&lt;','&gt;','='}
         if caller_function != "compile_do":
             self.xml.writelines('<expression>\n')
+        print("################Expression Starts################")
         self.compile_term()
         # handle (op term)*
         while (op_token := self.jack_tokenizer.current_token) in OP_TOKENS:
             self.process(op_token)
             self.compile_term()
-
+        print("#################Expression Ends#################\n")
         if caller_function != "compile_do":
             self.xml.writelines('</expression>\n')
 
@@ -262,7 +263,16 @@ class CompilationEngine:
             8. subroutineName(expressionList
             9. className|varName.subroutineName(expressionList
             """
-            self.process(self.jack_tokenizer.current_token)
+            
+            term_token = self.jack_tokenizer.current_token
+            term_token_type = self.jack_tokenizer.current_token_type
+            ##############Getting variable to memory segment mapping###############
+            from_class_symbol_table = self.retrieve_from_symbol_table(self.class_level_symbol_table, term_token)
+            from_subroutine_symbol_table = self.retrieve_from_symbol_table(self.subroutine_level_symbol_table, term_token)
+            print(term_token, term_token_type, from_class_symbol_table, from_subroutine_symbol_table)
+            ##############Getting variable to memory segment mapping end###########
+            
+            self.process(term_token)
             if (ll2_token := self.jack_tokenizer.current_token) in LL2_TOKENS:
                 if ll2_token == '[':
                     self.process('[')
@@ -298,3 +308,11 @@ class CompilationEngine:
                 self.compile_expression()
 
         self.xml.writelines('</expressionList>\n')
+
+    def retrieve_from_symbol_table(self, table, var_name):
+        kind_of = table.kind_of(var_name)
+        type_of = table.type_of(var_name)
+        index_of = table.index_of(var_name)
+        if not kind_of:
+            return None, None, None
+        return kind_of, type_of, index_of
