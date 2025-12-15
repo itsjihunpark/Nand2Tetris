@@ -222,14 +222,12 @@ class CompilationEngine:
         OP_TOKENS = {'+','-','*','/','&amp;','|','&lt;','&gt;','='}
         if caller_function != "compile_do":
             self.xml.writelines('<expression>\n')
-        print("################Expression Starts################")
         self.compile_term()
         # handle (op term)*
         while (op_token := self.jack_tokenizer.current_token) in OP_TOKENS:
-            print(op_token)
             self.process(op_token)
             self.compile_term()
-        print("#################Expression Ends#################\n")
+            print(op_token) # debug
         if caller_function != "compile_do":
             self.xml.writelines('</expression>\n')
 
@@ -250,9 +248,9 @@ class CompilationEngine:
           
         # 2. handle unaryOp token if exists
         elif (unary_op_token := self.jack_tokenizer.current_token) in UNARY_OP_TOKEN:
-            print(unary_op_token)
             self.process(unary_op_token)
             self.compile_term()
+            print(unary_op_token) # debug
 
         else:
             """
@@ -266,15 +264,34 @@ class CompilationEngine:
             9. className|varName.subroutineName(expressionList
             """
             
-            term_token = self.jack_tokenizer.current_token
-            term_token_type = self.jack_tokenizer.current_token_type
+            symbol_token = self.jack_tokenizer.current_token
+            symbol_token_type = self.jack_tokenizer.current_token_type
+            
             ##############Getting variable to memory segment mapping###############
-            from_class_symbol_table = self.retrieve_from_symbol_table(self.class_level_symbol_table, term_token)
-            from_subroutine_symbol_table = self.retrieve_from_symbol_table(self.subroutine_level_symbol_table, term_token)
-            print(term_token, term_token_type, from_class_symbol_table, from_subroutine_symbol_table)
+            # This has to distinguish classname/subroutinename (not to generate push command) vs
+            # varname/intConst/strConst/kwordConst (to generate push command)
+            # This also has to distinguish varname (to generate push [memory segment] [index]) 
+            # and constants
+            # the strconst needs to be distinguished since it must invoke the String OS API 
+            # whereas intconst just needs to push in the format push constant [intconst]
+            # kwordconst also needs to be converted to correct format prior to pushing
+            # e.g., 'null'/'false' maps to 0; 'true' maps to -1 (push constant 1; neg); 'this' maps to pointer 0 (push pointer 0)
+            # prior to generating push command.
+
+            
+            symbol_mapping = self.retrieve_from_symbol_table(self.subroutine_level_symbol_table, symbol_token)
+            if not symbol_mapping:
+                symbol_mapping = self.retrieve_from_symbol_table(self.class_level_symbol_table, symbol_token)
+            if symbol_token == "this":
+                symbol_mapping = ('pointer', '', 0)
+            
+            # if  symbol found on symbol table (i.e., symbol_token is neither a subroutine nor class)
+            if symbol_mapping: 
+                print(f"term: {symbol_token}\ntype: {symbol_token_type}\nmapping: {symbol_mapping}") # debug
+            
             ##############Getting variable to memory segment mapping end###########
             
-            self.process(term_token)
+            self.process(symbol_token)
             if (ll2_token := self.jack_tokenizer.current_token) in LL2_TOKENS:
                 if ll2_token == '[':
                     self.process('[')
@@ -282,39 +299,55 @@ class CompilationEngine:
                     self.process(']')
                 elif ll2_token == '(':
                     self.process('(')
-                    self.compile_expression_list()
+                    narg = self.compile_expression_list()
                     self.process(')')
-                elif ll2_token == ".":
+                    print(f"subroutine call: this.{symbol_token} {narg}") # debug
+                elif ll2_token == '.':
                     self.process('.')
-                    self.process(self.jack_tokenizer.current_token)
+                    subroutine_name = self.jack_tokenizer.current_token
+                    self.process(subroutine_name)
                     self.process('(')
-                    self.compile_expression_list()
+                    narg = self.compile_expression_list()
+                    subroutine_type = 'function'
+                    if symbol_mapping:
+                        subroutine_type = 'method'
+                        # if subroutine is a method add 1 to nargs 
+                        # (the object reference/memory address in heap to be added)
+                        # in addition to the number of arguments provided
+                        narg+=1 
                     self.process(')')
-                    
+                    print(f"subroutine call ({subroutine_type}): {symbol_token}.{subroutine_name} {narg}") # debug
+            else:
+                # push as normal
+                print(symbol_token) # debug
+
+            print("\n") # debug
         if caller_function != "compile_do":
             self.xml.writelines('</term>\n')
 
     def compile_expression_list(self):
         self.xml.writelines('<expressionList>\n')
         expression_list_end_detected = False
-        
+        narg = 0
         if self.jack_tokenizer.current_token == ')' and self.jack_tokenizer.current_token_type == "symbol":
             expression_list_end_detected = True
-        else:
-            expression_list_end_detected = False
         
         if not expression_list_end_detected:
             self.compile_expression()
+            narg+=1
             while (comma_token := self.jack_tokenizer.current_token) == ',':
                 self.process(comma_token)
                 self.compile_expression()
+                narg+=1
 
         self.xml.writelines('</expressionList>\n')
+
+        return narg
 
     def retrieve_from_symbol_table(self, table, var_name):
         kind_of = table.kind_of(var_name)
         type_of = table.type_of(var_name)
         index_of = table.index_of(var_name)
         if not kind_of:
-            return None, None, None
+            return None
         return kind_of, type_of, index_of
