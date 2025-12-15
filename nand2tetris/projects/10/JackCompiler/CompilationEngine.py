@@ -249,11 +249,8 @@ class CompilationEngine:
     def compile_expression_list(self):
         self.xml.writelines('<expressionList>\n')
         expression_list_end_detected = False
-        
         if self.jack_tokenizer.current_token == ')' and self.jack_tokenizer.current_token_type == "symbol":
             expression_list_end_detected = True
-        else:
-            expression_list_end_detected = False
         
         if not expression_list_end_detected:
             self.compile_expression()
