@@ -2,6 +2,36 @@ from JackTokenizer import JackTokenizer
 from SymbolTable import SymbolTable
 import inspect
 
+ARITHMETIC_OP_MAPPING = {
+    '+': 'add',
+    '-': 'sub',
+    '*': 'Math.multiply 2',
+    '/': 'Math.divide 2',
+    '&amp;': 'and',
+    '|': 'or',
+    '&lt;': 'lt',
+    '&gt;': 'gt',
+    '=': 'eq',
+}
+
+UNARY_OP_MAPPING = {
+    '-': 'neg',
+    '~': 'not'
+}
+
+KEYWORD_MAPPING = {
+    'null': ['push constant 0 // pushing null'],
+    'false': ['push constant 0 // pushing false'],
+    'true': ['push constant 1 // pushing true', 'neg // pushing true'],
+    'this': ['push pointer 0 // pushing this']
+}
+
+# referencing https://en.wikipedia.org/wiki/List_of_Unicode_characters
+HACK_CHARACTER_SET = {
+    '\u0020': 32, '\u0038': 56, '\u0050': 80, '\u0068': 104, '\u007F': 127,
+    '\u0021': 33, 'TBC':'TBC'
+}
+
 class CompilationEngine:
     
     def __init__(self, jack_tokenizer:JackTokenizer):
@@ -10,7 +40,9 @@ class CompilationEngine:
         self.subroutine_level_symbol_table = SymbolTable()
         self.filename = self.jack_tokenizer.jack_file.replace(".jack", "_.xml")
         self.xml = open(self.filename, 'w', encoding='utf-8')
-        
+        self.class_name = self.filename.replace("_.xml","").split("\\")[-1]
+        self.class_level_symbol_table.define("this", self.class_name, "pointer")
+
     def process(self, _str):
         if self.jack_tokenizer.current_token == _str:
             self.print_xml(_str)
@@ -72,8 +104,10 @@ class CompilationEngine:
         # handles ('constructor', 'function', 'method')
         subroutine_type = self.jack_tokenizer.current_token
         if subroutine_type == "method":
-            class_name = self.filename.replace("_.xml","").split("\\")[-1]
-            self.subroutine_level_symbol_table.define('this', class_name, 'arg')
+            self.subroutine_level_symbol_table.define('this', self.class_name, 'arg')
+        elif subroutine_type == "constructor":
+            print("Constructor here: call OS Memory.alloc") # debug
+
         self.process(subroutine_type)
         # handles ('void', type)
         self.process(self.jack_tokenizer.current_token)
@@ -227,7 +261,7 @@ class CompilationEngine:
         while (op_token := self.jack_tokenizer.current_token) in OP_TOKENS:
             self.process(op_token)
             self.compile_term()
-            print(op_token) # debug
+            print(ARITHMETIC_OP_MAPPING[op_token]) # debug
         if caller_function != "compile_do":
             self.xml.writelines('</expression>\n')
 
@@ -250,7 +284,7 @@ class CompilationEngine:
         elif (unary_op_token := self.jack_tokenizer.current_token) in UNARY_OP_TOKEN:
             self.process(unary_op_token)
             self.compile_term()
-            print(unary_op_token) # debug
+            print(UNARY_OP_MAPPING[unary_op_token]) # debug
 
         else:
             """
@@ -282,12 +316,10 @@ class CompilationEngine:
             symbol_mapping = self.retrieve_from_symbol_table(self.subroutine_level_symbol_table, symbol_token)
             if not symbol_mapping:
                 symbol_mapping = self.retrieve_from_symbol_table(self.class_level_symbol_table, symbol_token)
-            if symbol_token == "this":
-                symbol_mapping = ('pointer', '', 0)
             
             # if  symbol found on symbol table (i.e., symbol_token is neither a subroutine nor class)
-            if symbol_mapping: 
-                print(f"term: {symbol_token}\ntype: {symbol_token_type}\nmapping: {symbol_mapping}") # debug
+            #if symbol_mapping:
+            #    print(f"term: {symbol_token}\ntype: {symbol_token_type}\nmapping: {symbol_mapping}") # debug
             
             ##############Getting variable to memory segment mapping end###########
             
@@ -298,30 +330,69 @@ class CompilationEngine:
                     self.compile_expression()
                     self.process(']')
                 elif ll2_token == '(':
+                    # assuming it is a method as subroutine() is equivalent to this.subroutine()
+                    # push symbol mapping of "this"
+                    subroutine_type = 'method'
+                    
+                    subroutine_name = symbol_token
+                    symbol_token = "this"
+                    
+                    symbol_mapping = self.retrieve_from_symbol_table(self.class_level_symbol_table, symbol_token)
+                    segment = symbol_mapping[0]
+                    type_of = symbol_mapping[1]
+                    index = symbol_mapping[2]
+                    print(f"push {segment} {index} // {symbol_token}") # debug
+                    narg = 1
+
                     self.process('(')
-                    narg = self.compile_expression_list()
+                    narg += self.compile_expression_list()
                     self.process(')')
-                    print(f"subroutine call: this.{symbol_token} {narg}") # debug
+                    print(f"{self.class_name}.{subroutine_name} {narg} // subroutine call ({subroutine_type})") # debug
                 elif ll2_token == '.':
+                    narg = 0
+                    subroutine_type = 'function'
+                    type_of = symbol_token
+                    if symbol_mapping:
+                        # if subroutine is a method add 1 to nargs 
+                        # (the object reference/memory address in heap to be added)
+                        # in addition to the number of arguments provided
+                        narg += 1
+                        subroutine_type = 'method'
+                        
+                        segment = symbol_mapping[0]
+                        type_of = symbol_mapping[1]
+                        index = symbol_mapping[2]
+                        
+                        print(f"push {segment} {index} // symbol -> {symbol_token}") # debug
+
                     self.process('.')
                     subroutine_name = self.jack_tokenizer.current_token
                     self.process(subroutine_name)
                     self.process('(')
-                    narg = self.compile_expression_list()
-                    subroutine_type = 'function'
-                    if symbol_mapping:
-                        subroutine_type = 'method'
-                        # if subroutine is a method add 1 to nargs 
-                        # (the object reference/memory address in heap to be added)
-                        # in addition to the number of arguments provided
-                        narg+=1 
+                    narg += self.compile_expression_list()
                     self.process(')')
-                    print(f"subroutine call ({subroutine_type}): {symbol_token}.{subroutine_name} {narg}") # debug
+                    print(f"{type_of}.{subroutine_name} {narg} // subroutine call ({subroutine_type})") # debug
             else:
                 # push as normal
-                print(symbol_token) # debug
+                if symbol_mapping:
+                    segment = symbol_mapping[0]
+                    type_of = symbol_mapping[1]
+                    index = symbol_mapping[2]
 
-            print("\n") # debug
+                    print(f"push {segment} {index} // symbol -> {symbol_token}")  # debug
+                else:
+                    # different types of constants (integerConstant/stringConstant/keyword)
+                    # require mapping these constants according to standard mapping
+                    if symbol_token_type == "integerConstant":
+                        print(f"push constant {symbol_token}") # debug
+                    elif symbol_token_type == "stringConstant":
+                        # instantiate string object
+                        # call appendchar
+                        print(f"push {symbol_token}") # debug
+                    elif symbol_token_type == "keyword":
+                        for vmcode in KEYWORD_MAPPING[symbol_token]:
+                            print(vmcode) # debug
+
         if caller_function != "compile_do":
             self.xml.writelines('</term>\n')
 

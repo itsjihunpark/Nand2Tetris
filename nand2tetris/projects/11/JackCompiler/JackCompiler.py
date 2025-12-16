@@ -13,6 +13,7 @@ class JackCompiler:
         else:
             jack_files = glob.glob(os.path.join(inpname, "*.jack"))
         for path in jack_files: 
+            print(f"compiling {path}")
             jack_tokenizer = JackTokenizer(path)
             compilation_engine = CompilationEngine(jack_tokenizer)
             compilation_engine.compile_class()
