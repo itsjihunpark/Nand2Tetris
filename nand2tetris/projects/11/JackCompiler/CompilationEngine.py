@@ -27,10 +27,20 @@ KEYWORD_MAPPING = {
 }
 
 # referencing https://en.wikipedia.org/wiki/List_of_Unicode_characters
+# could have just done a hex to dec conversion but there were some differences 
+# in unicode to key mapping. e.g function keys
+
+# unicode hex to index
 HACK_CHARACTER_SET = {
-    '\u0020': 32, '\u0038': 56, '\u0050': 80, '\u0068': 104, '\u007F': 127,
-    '\u0021': 33, 'TBC':'TBC'
+    '\u000A': 128, '\u0008': 129, '\u00E0': 130
 }
+def get_character_mapping(char):
+    
+    if  31 < (char:=ord(char)) < 128:
+        return char
+    else:
+        
+    return 
 
 class CompilationEngine:
     
