@@ -26,22 +26,6 @@ KEYWORD_MAPPING = {
     'this': ['push pointer 0 // pushing this']
 }
 
-# referencing https://en.wikipedia.org/wiki/List_of_Unicode_characters
-# could have just done a hex to dec conversion but there were some differences 
-# in unicode to key mapping. e.g function keys
-
-# unicode hex to index
-HACK_CHARACTER_SET = {
-    '\u000A': 128, '\u0008': 129, '\u00E0': 130
-}
-def get_character_mapping(char):
-    
-    if  31 < (char:=ord(char)) < 128:
-        return char
-    else:
-        
-    return 
-
 class CompilationEngine:
     
     def __init__(self, jack_tokenizer:JackTokenizer):
@@ -205,13 +189,18 @@ class CompilationEngine:
         self.xml.writelines('<letStatement>\n')
         self.process('let')
         # handle varName
-        self.process(self.jack_tokenizer.current_token)
+        var_token = self.jack_tokenizer.current_token
+        self.process(var_token)
         if (token := self.jack_tokenizer.current_token) == "[":
             self.process(token)
             self.compile_expression()
             self.process(']')
         self.process('=')
         self.compile_expression()
+        symbol_mapping = self.retrieve_from_symbol_table(self.subroutine_level_symbol_table, var_token)
+        if not symbol_mapping:
+            symbol_mapping = self.retrieve_from_symbol_table(self.class_level_symbol_table, var_token)
+        print(f"pop {symbol_mapping[0]} {symbol_mapping[2]} // symbol -> {var_token}") # debug
         self.process(';')
         self.xml.writelines('</letStatement>\n')
 
@@ -396,8 +385,11 @@ class CompilationEngine:
                     if symbol_token_type == "integerConstant":
                         print(f"push constant {symbol_token}") # debug
                     elif symbol_token_type == "stringConstant":
-                        # instantiate string object
-                        # call appendchar
+                        #############################
+                        #          TODO             #
+                        # instantiate string object #
+                        # call appendchar           #
+                        #############################
                         print(f"push {symbol_token}") # debug
                     elif symbol_token_type == "keyword":
                         for vmcode in KEYWORD_MAPPING[symbol_token]:
