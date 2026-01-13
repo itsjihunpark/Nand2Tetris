@@ -26,6 +26,13 @@ KEYWORD_MAPPING = {
     'this': ['push pointer 0 // pushing this']
 }
 
+SYMBOLTABLE_MAPPNIG= {
+    "static":"static",
+    "field": "this",
+    "var": "local",
+    "arg":"arg"
+}
+
 class CompilationEngine:
     
     def __init__(self, jack_tokenizer:JackTokenizer):
@@ -35,8 +42,7 @@ class CompilationEngine:
         self.filename = self.jack_tokenizer.jack_file.replace(".jack", "_.xml")
         self.xml = open(self.filename, 'w', encoding='utf-8')
         self.class_name = self.filename.replace("_.xml","").split("\\")[-1]
-        self.class_level_symbol_table.define("this", self.class_name, "pointer")
-
+        
     def process(self, _str):
         if self.jack_tokenizer.current_token == _str:
             self.print_xml(_str)
@@ -93,24 +99,31 @@ class CompilationEngine:
         self.xml.writelines('</classVarDec>\n')
 
     def compile_subroutine(self):
+        print("// compiling subroutine") # debug
+        vm_commands =['function {}.{} {}']
         self.subroutine_level_symbol_table.reset()
         self.xml.writelines('<subroutineDec>\n')
         # handles ('constructor', 'function', 'method')
         subroutine_type = self.jack_tokenizer.current_token
         if subroutine_type == "method":
             self.subroutine_level_symbol_table.define('this', self.class_name, 'arg')
+            # Continue from here 20260113
         elif subroutine_type == "constructor":
-            print("Constructor here: call OS Memory.alloc") # debug
-
+            n_fields = self.class_level_symbol_table.var_count("field")
+            vm_commands.append(f"push constant {n_fields}") # debug
+            vm_commands.append("call Memory.alloc 1") # debug
+            vm_commands.append("pop pointer 0")
+            
         self.process(subroutine_type)
         # handles ('void', type)
         self.process(self.jack_tokenizer.current_token)
         # handles ('subroutineName')
-        self.process(self.jack_tokenizer.current_token)
+        subroutine_name = self.jack_tokenizer.current_token
+        self.process(subroutine_name)
         self.process('(')
         self.compile_parameter_list()
         self.process(')')
-        self.compile_subroutine_body()
+        self.compile_subroutine_body(subroutine_name, vm_commands)
         self.xml.writelines('</subroutineDec>\n')
         
     def compile_parameter_list(self):
@@ -137,10 +150,14 @@ class CompilationEngine:
 
         self.xml.writelines('</parameterList>\n')
 
-    def compile_subroutine_body(self):
+    def compile_subroutine_body(self, subroutine_name, vm_commands):
         self.xml.writelines('<subroutineBody>\n')
         self.process('{')
         self.compile_var_dec()
+        var_count = self.subroutine_level_symbol_table.var_count("var")
+        vm_commands[0] = vm_commands[0].format(self.class_name, subroutine_name, var_count)
+        for cmd in vm_commands:
+            print(cmd)  # debug
         self.compile_statements()
         self.process('}')
         self.xml.writelines('</subroutineBody>\n')
@@ -200,7 +217,7 @@ class CompilationEngine:
         symbol_mapping = self.retrieve_from_symbol_table(self.subroutine_level_symbol_table, var_token)
         if not symbol_mapping:
             symbol_mapping = self.retrieve_from_symbol_table(self.class_level_symbol_table, var_token)
-        print(f"pop {symbol_mapping[0]} {symbol_mapping[2]} // symbol -> {var_token}") # debug
+        print(f"pop {SYMBOLTABLE_MAPPNIG[symbol_mapping[0]]} {symbol_mapping[2]} // symbol -> {var_token}") # debug
         self.process(';')
         self.xml.writelines('</letStatement>\n')
 
@@ -242,6 +259,7 @@ class CompilationEngine:
         self.xml.writelines('<returnStatement>\n')
         self.process('return')
         if (semi_colon_token := self.jack_tokenizer.current_token) == ";":
+            print("push constant 0") # debug
             self.process(semi_colon_token)
         else:
             self.compile_expression()
@@ -331,22 +349,15 @@ class CompilationEngine:
                 elif ll2_token == '(':
                     # assuming it is a method as subroutine() is equivalent to this.subroutine()
                     # push symbol mapping of "this"
+                    self.process(ll2_token)
                     subroutine_type = 'method'
                     
                     subroutine_name = symbol_token
-                    symbol_token = "this"
-                    
-                    symbol_mapping = self.retrieve_from_symbol_table(self.class_level_symbol_table, symbol_token)
-                    segment = symbol_mapping[0]
-                    type_of = symbol_mapping[1]
-                    index = symbol_mapping[2]
-                    print(f"push {segment} {index} // {symbol_token}") # debug
+                    print(f"push pointer 0") # debug
                     narg = 1
-
-                    self.process('(')
                     narg += self.compile_expression_list()
                     self.process(')')
-                    print(f"{self.class_name}.{subroutine_name} {narg} // subroutine call ({subroutine_type})") # debug
+                    print(f"call {self.class_name}.{subroutine_name} {narg} // subroutine call ({subroutine_type})") # debug
                 elif ll2_token == '.':
                     narg = 0
                     subroutine_type = 'function'
@@ -362,7 +373,7 @@ class CompilationEngine:
                         type_of = symbol_mapping[1]
                         index = symbol_mapping[2]
                         
-                        print(f"push {segment} {index} // symbol -> {symbol_token}") # debug
+                        print(f"push {SYMBOLTABLE_MAPPNIG[segment]} {index} // symbol -> {symbol_token}") # debug
 
                     self.process('.')
                     subroutine_name = self.jack_tokenizer.current_token
@@ -370,7 +381,7 @@ class CompilationEngine:
                     self.process('(')
                     narg += self.compile_expression_list()
                     self.process(')')
-                    print(f"{type_of}.{subroutine_name} {narg} // subroutine call ({subroutine_type})") # debug
+                    print(f"call {type_of}.{subroutine_name} {narg} // subroutine call ({subroutine_type})") # debug
             else:
                 # push as normal
                 if symbol_mapping:
@@ -378,7 +389,7 @@ class CompilationEngine:
                     type_of = symbol_mapping[1]
                     index = symbol_mapping[2]
 
-                    print(f"push {segment} {index} // symbol -> {symbol_token}")  # debug
+                    print(f"push {SYMBOLTABLE_MAPPNIG[segment]} {index} // symbol -> {symbol_token}")  # debug
                 else:
                     # different types of constants (integerConstant/stringConstant/keyword)
                     # require mapping these constants according to standard mapping
@@ -386,11 +397,17 @@ class CompilationEngine:
                         print(f"push constant {symbol_token}") # debug
                     elif symbol_token_type == "stringConstant":
                         #############################
-                        #          TODO             #
                         # instantiate string object #
                         # call appendchar           #
                         #############################
-                        print(f"push {symbol_token}") # debug
+                        print(f"// Instantiating String: {symbol_token}") # debug
+                        print(f"push constant {len(symbol_token)}") # debug
+                        print(f"call String.new 1") # debug
+                        for c in symbol_token:
+                            print(f"push constant {ord(c)}") # debug
+                            print(f"call String.appendChar 2") # debug
+
+                        
                     elif symbol_token_type == "keyword":
                         for vmcode in KEYWORD_MAPPING[symbol_token]:
                             print(vmcode) # debug
