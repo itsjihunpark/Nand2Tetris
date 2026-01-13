@@ -42,7 +42,7 @@ class CompilationEngine:
         self.filename = self.jack_tokenizer.jack_file.replace(".jack", "_.xml")
         self.xml = open(self.filename, 'w', encoding='utf-8')
         self.class_name = self.filename.replace("_.xml","").split("\\")[-1]
-        
+
     def process(self, _str):
         if self.jack_tokenizer.current_token == _str:
             self.print_xml(_str)
@@ -265,6 +265,7 @@ class CompilationEngine:
             self.compile_expression()
             self.process(';')
         self.xml.writelines('</returnStatement>\n')
+        print("return") # debug
 
     def compile_expression(self):
         stack = inspect.stack()
