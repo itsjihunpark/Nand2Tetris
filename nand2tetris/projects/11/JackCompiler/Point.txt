@@ -1,51 +1,66 @@
+>python JackCompiler.py Point.jack
+compiling Point.jack
 // compiling subroutine
 function Point.new 0
 push constant 2
 call Memory.alloc 1
 pop pointer 0
-push arg 0 // symbol -> ax
+push argument 0 // symbol -> ax
 pop this 0 // symbol -> x
-push arg 1 // symbol -> ay
+push argument 1 // symbol -> ay
 pop this 1 // symbol -> y
 push static 0 // symbol -> pointCount
 push constant 1
 add
 pop static 0 // symbol -> pointCount
 push pointer 0 // pushing this
+return
 
 // compiling subroutine
 function Point.getx 0
+push argument 0
+pop pointer 0
 push this 0 // symbol -> x
+return
 
 // compiling subroutine
 function Point.gety 0
+push argument 0
+pop pointer 0
 push this 1 // symbol -> y
+return
 
 // compiling subroutine
 function Point.getPointCount 0
 push static 0 // symbol -> pointCount
+return
 
 // compiling subroutine
 function Point.plus 0
+push argument 0
+pop pointer 0
 push this 0 // symbol -> x
-push arg 1 // symbol -> other
+push argument 1 // symbol -> other
 call Point.getx 1 // subroutine call (method)
 add
 push this 1 // symbol -> y
-push arg 1 // symbol -> other
+push argument 1 // symbol -> other
 call Point.gety 1 // subroutine call (method)
 add
 call Point.new 2 // subroutine call (function)
+return
 
 // compiling subroutine
 function Point.distance 2
+push argument 0
+pop pointer 0
 push this 0 // symbol -> x
-push arg 1 // symbol -> other
+push argument 1 // symbol -> other
 call Point.getx 1 // subroutine call (method)
 sub
 pop local 0 // symbol -> dx
 push this 1 // symbol -> y
-push arg 1 // symbol -> other
+push argument 1 // symbol -> other
 call Point.gety 1 // subroutine call (method)
 sub
 pop local 1 // symbol -> dy
@@ -57,9 +72,12 @@ push local 1 // symbol -> dy
 Math.multiply 2
 add
 call Math.sqrt 1 // subroutine call (function)
+return
 
 // compiling subroutine
 function Point.print 0
+push argument 0
+pop pointer 0
 // Instantiating String: (
 push constant 1
 call String.new 1
@@ -83,3 +101,4 @@ push constant 41
 call String.appendChar 2
 call Output.printString 1 // subroutine call (function)
 push constant 0
+return

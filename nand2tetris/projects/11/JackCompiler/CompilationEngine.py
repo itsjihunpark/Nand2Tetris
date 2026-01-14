@@ -30,7 +30,7 @@ SYMBOLTABLE_MAPPNIG= {
     "static":"static",
     "field": "this",
     "var": "local",
-    "arg":"arg"
+    "arg":"argument"
 }
 
 class CompilationEngine:
@@ -107,12 +107,14 @@ class CompilationEngine:
         subroutine_type = self.jack_tokenizer.current_token
         if subroutine_type == "method":
             self.subroutine_level_symbol_table.define('this', self.class_name, 'arg')
-            # Continue from here 20260113
+            vm_commands.append("push argument 0") # debug
+            vm_commands.append("pop pointer 0") # debug
+
         elif subroutine_type == "constructor":
             n_fields = self.class_level_symbol_table.var_count("field")
             vm_commands.append(f"push constant {n_fields}") # debug
             vm_commands.append("call Memory.alloc 1") # debug
-            vm_commands.append("pop pointer 0")
+            vm_commands.append("pop pointer 0") # debug
             
         self.process(subroutine_type)
         # handles ('void', type)
@@ -254,6 +256,7 @@ class CompilationEngine:
         self.compile_expression()
         self.process(';')
         self.xml.writelines('</doStatement>\n')
+        print("pop temp 0") # debug
 
     def compile_return(self):
         self.xml.writelines('<returnStatement>\n')
