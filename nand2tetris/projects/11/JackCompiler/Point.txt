@@ -1,4 +1,3 @@
->python JackCompiler.py Point.jack
 compiling Point.jack
 // compiling subroutine
 function Point.new 0
@@ -15,26 +14,22 @@ add
 pop static 0 // symbol -> pointCount
 push pointer 0 // pushing this
 return
-
 // compiling subroutine
 function Point.getx 0
 push argument 0
 pop pointer 0
 push this 0 // symbol -> x
 return
-
 // compiling subroutine
 function Point.gety 0
 push argument 0
 pop pointer 0
 push this 1 // symbol -> y
 return
-
 // compiling subroutine
 function Point.getPointCount 0
 push static 0 // symbol -> pointCount
 return
-
 // compiling subroutine
 function Point.plus 0
 push argument 0
@@ -49,7 +44,6 @@ call Point.gety 1 // subroutine call (method)
 add
 call Point.new 2 // subroutine call (function)
 return
-
 // compiling subroutine
 function Point.distance 2
 push argument 0
@@ -73,7 +67,6 @@ Math.multiply 2
 add
 call Math.sqrt 1 // subroutine call (function)
 return
-
 // compiling subroutine
 function Point.print 0
 push argument 0
@@ -84,21 +77,26 @@ call String.new 1
 push constant 40
 call String.appendChar 2
 call Output.printString 1 // subroutine call (function)
+pop temp 0
 push this 0 // symbol -> x
 call Output.printInt 1 // subroutine call (function)
+pop temp 0
 // Instantiating String: ,
 push constant 1
 call String.new 1
 push constant 44
 call String.appendChar 2
 call Output.printString 1 // subroutine call (function)
+pop temp 0
 push this 1 // symbol -> y
 call Output.printInt 1 // subroutine call (function)
+pop temp 0
 // Instantiating String: )
 push constant 1
 call String.new 1
 push constant 41
 call String.appendChar 2
 call Output.printString 1 // subroutine call (function)
+pop temp 0
 push constant 0
 return

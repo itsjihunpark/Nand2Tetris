@@ -42,6 +42,7 @@ class CompilationEngine:
         self.filename = self.jack_tokenizer.jack_file.replace(".jack", "_.xml")
         self.xml = open(self.filename, 'w', encoding='utf-8')
         self.class_name = self.filename.replace("_.xml","").split("\\")[-1]
+        self.if_or_while_statement_counter = 0
 
     def process(self, _str):
         if self.jack_tokenizer.current_token == _str:
@@ -224,31 +225,45 @@ class CompilationEngine:
         self.xml.writelines('</letStatement>\n')
 
     def compile_if(self):
+        current_label_counter = self.if_or_while_statement_counter
         self.xml.writelines('<ifStatement>\n')
         self.process('if')
         self.process('(')
         self.compile_expression()
         self.process(')')
         self.process('{')
+        print("not") # debug
+        print(f"if-goto L1.{current_label_counter}") # debug
         self.compile_statements()
+        print(f"goto L2.{current_label_counter}") # debug
         self.process('}')
         if (else_token := self.jack_tokenizer.current_token) == "else":
             self.process(else_token)
             self.process('{')
+            print(f"label L1.{current_label_counter}") # debug
             self.compile_statements()
             self.process('}')
         self.xml.writelines('</ifStatement>\n')
+        print(f"label L2.{current_label_counter}") # debug
+        self.if_or_while_statement_counter += 1
 
     def compile_while(self):
+        current_label_counter = self.if_or_while_statement_counter
         self.xml.writelines('<whileStatement>\n')
         self.process('while')
         self.process('(')
+        print(f"label L1.{current_label_counter}") # debug
         self.compile_expression()
         self.process(')')
         self.process('{')
+        print("not") # debug
+        print(f"if-goto L2.{current_label_counter}") # debug
         self.compile_statements()
+        print(f"goto L1.{current_label_counter}") # debug
         self.process('}')
         self.xml.writelines('</whileStatement>\n')
+        print(f"label L2.{current_label_counter}") # debug
+        self.if_or_while_statement_counter += 1
 
     def compile_do(self):
         self.xml.writelines('<doStatement>\n')
