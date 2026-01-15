@@ -38,8 +38,11 @@ class Point{
           this and the other point. */
      method int distance(Point other){
           var int dx, dy;
+          var Array arr;
           let dx = x - other.getx();
           let dy = y - other.gety();
+          let arr = Array.new(5);
+          let arr[0] = arr[4]; 
           return Math.sqrt((dx*dx)+(dy*dy));
      }
 

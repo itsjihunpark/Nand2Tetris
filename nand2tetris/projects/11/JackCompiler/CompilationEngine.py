@@ -211,16 +211,26 @@ class CompilationEngine:
         # handle varName
         var_token = self.jack_tokenizer.current_token
         self.process(var_token)
-        if (token := self.jack_tokenizer.current_token) == "[":
-            self.process(token)
-            self.compile_expression()
-            self.process(']')
-        self.process('=')
-        self.compile_expression()
         symbol_mapping = self.retrieve_from_symbol_table(self.subroutine_level_symbol_table, var_token)
         if not symbol_mapping:
             symbol_mapping = self.retrieve_from_symbol_table(self.class_level_symbol_table, var_token)
-        print(f"pop {SYMBOLTABLE_MAPPNIG[symbol_mapping[0]]} {symbol_mapping[2]} // symbol -> {var_token}") # debug
+        is_array = False
+        if (token := self.jack_tokenizer.current_token) == "[":
+            is_array = True
+            self.process(token)
+            print(f"push {SYMBOLTABLE_MAPPNIG[symbol_mapping[0]]} {symbol_mapping[2]} // symbol -> {var_token} (array)") # debug
+            self.compile_expression()
+            print("add") # debug
+            self.process(']')
+        self.process('=')
+        self.compile_expression()
+        if is_array:
+            print("pop temp 0") # debug
+            print("pop pointer 1") # debug
+            print("push temp 0") # debug
+            print("pop that 0") # debug
+        else:
+            print(f"pop {SYMBOLTABLE_MAPPNIG[symbol_mapping[0]]} {symbol_mapping[2]} // symbol -> {var_token}") # debug
         self.process(';')
         self.xml.writelines('</letStatement>\n')
 
@@ -362,9 +372,14 @@ class CompilationEngine:
             self.process(symbol_token)
             if (ll2_token := self.jack_tokenizer.current_token) in LL2_TOKENS:
                 if ll2_token == '[':
+                    segment, type_of, index = symbol_mapping
+                    print(f"push {SYMBOLTABLE_MAPPNIG[segment]} {index} // symbol -> {symbol_token} (array)") # debug
                     self.process('[')
                     self.compile_expression()
                     self.process(']')
+                    print("add") # debug
+                    print("pop pointer 1") # debug
+                    print("push that 0") # debug
                 elif ll2_token == '(':
                     # assuming it is a method as subroutine() is equivalent to this.subroutine()
                     # push symbol mapping of "this"
@@ -388,9 +403,7 @@ class CompilationEngine:
                         narg += 1
                         subroutine_type = 'method'
                         
-                        segment = symbol_mapping[0]
-                        type_of = symbol_mapping[1]
-                        index = symbol_mapping[2]
+                        segment, type_of, index = symbol_mapping
                         
                         print(f"push {SYMBOLTABLE_MAPPNIG[segment]} {index} // symbol -> {symbol_token}") # debug
 
@@ -404,9 +417,7 @@ class CompilationEngine:
             else:
                 # push as normal
                 if symbol_mapping:
-                    segment = symbol_mapping[0]
-                    type_of = symbol_mapping[1]
-                    index = symbol_mapping[2]
+                    segment, type_of, index = symbol_mapping
 
                     print(f"push {SYMBOLTABLE_MAPPNIG[segment]} {index} // symbol -> {symbol_token}")  # debug
                 else:

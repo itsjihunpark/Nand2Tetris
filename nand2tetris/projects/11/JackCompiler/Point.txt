@@ -45,7 +45,7 @@ add
 call Point.new 2 // subroutine call (function)
 return
 // compiling subroutine
-function Point.distance 2
+function Point.distance 3
 push argument 0
 pop pointer 0
 push this 0 // symbol -> x
@@ -58,6 +58,21 @@ push argument 1 // symbol -> other
 call Point.gety 1 // subroutine call (method)
 sub
 pop local 1 // symbol -> dy
+push constant 5
+call Array.new 1 // subroutine call (function)
+pop local 2 // symbol -> arr
+push local 2 // symbol -> arr (array)
+push constant 0
+add
+push local 2 // symbol -> arr (array)
+push constant 4
+add
+pop pointer 1
+push that 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
 push local 0 // symbol -> dx
 push local 0 // symbol -> dx
 Math.multiply 2

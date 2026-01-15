@@ -237,6 +237,12 @@
 <identifier> dy </identifier>
 <symbol> ; </symbol>
 </varDec>
+<varDec>
+<keyword> var </keyword>
+<identifier> Array </identifier>
+<identifier> arr </identifier>
+<symbol> ; </symbol>
+</varDec>
 <statements>
 <letStatement>
 <keyword> let </keyword>
@@ -276,6 +282,53 @@
 <expressionList>
 </expressionList>
 <symbol> ) </symbol>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<identifier> arr </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<identifier> Array </identifier>
+<symbol> . </symbol>
+<identifier> new </identifier>
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+<term>
+<integerConstant> 5 </integerConstant>
+</term>
+</expression>
+</expressionList>
+<symbol> ) </symbol>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<identifier> arr </identifier>
+<symbol> [ </symbol>
+<expression>
+<term>
+<integerConstant> 0 </integerConstant>
+</term>
+</expression>
+<symbol> ] </symbol>
+<symbol> = </symbol>
+<expression>
+<term>
+<identifier> arr </identifier>
+<symbol> [ </symbol>
+<expression>
+<term>
+<integerConstant> 4 </integerConstant>
+</term>
+</expression>
+<symbol> ] </symbol>
 </term>
 </expression>
 <symbol> ; </symbol>
