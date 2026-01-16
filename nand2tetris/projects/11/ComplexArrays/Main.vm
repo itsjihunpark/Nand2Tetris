@@ -1,0 +1,711 @@
+// compiling subroutine
+function Main.main 3
+push constant 10
+call Array.new 1 // subroutine call (function)
+pop local 0 // symbol -> a
+push constant 5
+call Array.new 1 // subroutine call (function)
+pop local 1 // symbol -> b
+push constant 1
+call Array.new 1 // subroutine call (function)
+pop local 2 // symbol -> c
+push local 0 // symbol -> a (array)
+push constant 3
+add
+push constant 2
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 0 // symbol -> a (array)
+push constant 4
+add
+push constant 8
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 0 // symbol -> a (array)
+push constant 5
+add
+push constant 4
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 1 // symbol -> b (array)
+push local 0 // symbol -> a (array)
+push constant 3
+add
+pop pointer 1
+push that 0
+add
+push local 0 // symbol -> a (array)
+push constant 3
+add
+pop pointer 1
+push that 0
+push constant 3
+add
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 0 // symbol -> a (array)
+push local 1 // symbol -> b (array)
+push local 0 // symbol -> a (array)
+push constant 3
+add
+pop pointer 1
+push that 0
+add
+pop pointer 1
+push that 0
+add
+push local 0 // symbol -> a (array)
+push local 0 // symbol -> a (array)
+push constant 5
+add
+pop pointer 1
+push that 0
+add
+pop pointer 1
+push that 0
+push local 1 // symbol -> b (array)
+push constant 7
+push local 0 // symbol -> a (array)
+push constant 3
+add
+pop pointer 1
+push that 0
+sub
+push constant 2
+call Main.double 1 // subroutine call (function)
+sub
+push constant 1
+add
+add
+pop pointer 1
+push that 0
+call Math.multiply 2
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 2 // symbol -> c (array)
+push constant 0
+add
+push constant 0 // pushing null
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 2 // symbol -> c (array)
+push constant 0
+add
+pop pointer 1
+push that 0
+pop local 2 // symbol -> c
+// Instantiating String: Test 1: expected result: 5; actual result: 
+push constant 43
+call String.new 1
+push constant 84
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 115
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 49
+call String.appendChar 2
+push constant 58
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 120
+call String.appendChar 2
+push constant 112
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 99
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 100
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 115
+call String.appendChar 2
+push constant 117
+call String.appendChar 2
+push constant 108
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 58
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 53
+call String.appendChar 2
+push constant 59
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 97
+call String.appendChar 2
+push constant 99
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 117
+call String.appendChar 2
+push constant 97
+call String.appendChar 2
+push constant 108
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 115
+call String.appendChar 2
+push constant 117
+call String.appendChar 2
+push constant 108
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 58
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+call Output.printString 1 // subroutine call (function)
+pop temp 0
+push local 1 // symbol -> b (array)
+push constant 2
+add
+pop pointer 1
+push that 0
+call Output.printInt 1 // subroutine call (function)
+pop temp 0
+call Output.println 0 // subroutine call (function)
+pop temp 0
+// Instantiating String: Test 2: expected result: 40; actual result: 
+push constant 44
+call String.new 1
+push constant 84
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 115
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 50
+call String.appendChar 2
+push constant 58
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 120
+call String.appendChar 2
+push constant 112
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 99
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 100
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 115
+call String.appendChar 2
+push constant 117
+call String.appendChar 2
+push constant 108
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 58
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 52
+call String.appendChar 2
+push constant 48
+call String.appendChar 2
+push constant 59
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 97
+call String.appendChar 2
+push constant 99
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 117
+call String.appendChar 2
+push constant 97
+call String.appendChar 2
+push constant 108
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 115
+call String.appendChar 2
+push constant 117
+call String.appendChar 2
+push constant 108
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 58
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+call Output.printString 1 // subroutine call (function)
+pop temp 0
+push local 0 // symbol -> a (array)
+push constant 5
+add
+pop pointer 1
+push that 0
+call Output.printInt 1 // subroutine call (function)
+pop temp 0
+call Output.println 0 // subroutine call (function)
+pop temp 0
+// Instantiating String: Test 3: expected result: 0; actual result: 
+push constant 43
+call String.new 1
+push constant 84
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 115
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 51
+call String.appendChar 2
+push constant 58
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 120
+call String.appendChar 2
+push constant 112
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 99
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 100
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 115
+call String.appendChar 2
+push constant 117
+call String.appendChar 2
+push constant 108
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 58
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 48
+call String.appendChar 2
+push constant 59
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 97
+call String.appendChar 2
+push constant 99
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 117
+call String.appendChar 2
+push constant 97
+call String.appendChar 2
+push constant 108
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 115
+call String.appendChar 2
+push constant 117
+call String.appendChar 2
+push constant 108
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 58
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+call Output.printString 1 // subroutine call (function)
+pop temp 0
+push local 2 // symbol -> c
+call Output.printInt 1 // subroutine call (function)
+pop temp 0
+call Output.println 0 // subroutine call (function)
+pop temp 0
+push constant 0 // pushing null
+pop local 2 // symbol -> c
+push local 2 // symbol -> c
+push constant 0 // pushing null
+eq
+not
+if-goto L1.1
+push local 0 // symbol -> a
+push constant 10
+call Main.fill 2 // subroutine call (function)
+pop temp 0
+push local 0 // symbol -> a (array)
+push constant 3
+add
+pop pointer 1
+push that 0
+pop local 2 // symbol -> c
+push local 2 // symbol -> c (array)
+push constant 1
+add
+push constant 33
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 0 // symbol -> a (array)
+push constant 7
+add
+pop pointer 1
+push that 0
+pop local 2 // symbol -> c
+push local 2 // symbol -> c (array)
+push constant 1
+add
+push constant 77
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 0 // symbol -> a (array)
+push constant 3
+add
+pop pointer 1
+push that 0
+pop local 1 // symbol -> b
+push local 1 // symbol -> b (array)
+push constant 1
+add
+push local 1 // symbol -> b (array)
+push constant 1
+add
+pop pointer 1
+push that 0
+push local 2 // symbol -> c (array)
+push constant 1
+add
+pop pointer 1
+push that 0
+add
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+goto L2.1
+label L1.1
+label L2.1
+// Instantiating String: Test 4: expected result: 77; actual result: 
+push constant 44
+call String.new 1
+push constant 84
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 115
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 52
+call String.appendChar 2
+push constant 58
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 120
+call String.appendChar 2
+push constant 112
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 99
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 100
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 115
+call String.appendChar 2
+push constant 117
+call String.appendChar 2
+push constant 108
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 58
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 55
+call String.appendChar 2
+push constant 55
+call String.appendChar 2
+push constant 59
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 97
+call String.appendChar 2
+push constant 99
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 117
+call String.appendChar 2
+push constant 97
+call String.appendChar 2
+push constant 108
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 115
+call String.appendChar 2
+push constant 117
+call String.appendChar 2
+push constant 108
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 58
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+call Output.printString 1 // subroutine call (function)
+pop temp 0
+push local 2 // symbol -> c (array)
+push constant 1
+add
+pop pointer 1
+push that 0
+call Output.printInt 1 // subroutine call (function)
+pop temp 0
+call Output.println 0 // subroutine call (function)
+pop temp 0
+// Instantiating String: Test 5: expected result: 110; actual result: 
+push constant 45
+call String.new 1
+push constant 84
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 115
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 53
+call String.appendChar 2
+push constant 58
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 120
+call String.appendChar 2
+push constant 112
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 99
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 100
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 115
+call String.appendChar 2
+push constant 117
+call String.appendChar 2
+push constant 108
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 58
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 49
+call String.appendChar 2
+push constant 49
+call String.appendChar 2
+push constant 48
+call String.appendChar 2
+push constant 59
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 97
+call String.appendChar 2
+push constant 99
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 117
+call String.appendChar 2
+push constant 97
+call String.appendChar 2
+push constant 108
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 115
+call String.appendChar 2
+push constant 117
+call String.appendChar 2
+push constant 108
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 58
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+call Output.printString 1 // subroutine call (function)
+pop temp 0
+push local 1 // symbol -> b (array)
+push constant 1
+add
+pop pointer 1
+push that 0
+call Output.printInt 1 // subroutine call (function)
+pop temp 0
+call Output.println 0 // subroutine call (function)
+pop temp 0
+push constant 0
+return
+// compiling subroutine
+function Main.double 0
+push argument 0 // symbol -> a
+push constant 2
+call Math.multiply 2
+return
+// compiling subroutine
+function Main.fill 0
+label L1.2
+push argument 1 // symbol -> size
+push constant 0
+gt
+not
+if-goto L2.2
+push argument 1 // symbol -> size
+push constant 1
+sub
+pop argument 1 // symbol -> size
+push argument 0 // symbol -> a (array)
+push argument 1 // symbol -> size
+add
+push constant 3
+call Array.new 1 // subroutine call (function)
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+goto L1.2
+label L2.2
+push constant 0
+return
