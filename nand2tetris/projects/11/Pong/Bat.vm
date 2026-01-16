@@ -1,0 +1,218 @@
+// compiling subroutine
+function Bat.new 0
+push constant 5
+call Memory.alloc 1
+pop pointer 0
+push argument 0 // symbol -> Ax
+pop this 0 // symbol -> x
+push argument 1 // symbol -> Ay
+pop this 1 // symbol -> y
+push argument 2 // symbol -> Awidth
+pop this 2 // symbol -> width
+push argument 3 // symbol -> Aheight
+pop this 3 // symbol -> height
+push constant 2
+pop this 4 // symbol -> direction
+push pointer 0
+call Bat.show 1 // subroutine call (method)
+pop temp 0
+push pointer 0 // pushing this
+return
+// compiling subroutine
+function Bat.dispose 0
+push argument 0
+pop pointer 0
+push argument 0 // symbol -> this
+call Memory.deAlloc 1 // subroutine call (function)
+pop temp 0
+push constant 0
+return
+// compiling subroutine
+function Bat.show 0
+push argument 0
+pop pointer 0
+push constant 1 // pushing true
+neg // pushing true
+call Screen.setColor 1 // subroutine call (function)
+pop temp 0
+push pointer 0
+call Bat.draw 1 // subroutine call (method)
+pop temp 0
+push constant 0
+return
+// compiling subroutine
+function Bat.hide 0
+push argument 0
+pop pointer 0
+push constant 0 // pushing false
+call Screen.setColor 1 // subroutine call (function)
+pop temp 0
+push pointer 0
+call Bat.draw 1 // subroutine call (method)
+pop temp 0
+push constant 0
+return
+// compiling subroutine
+function Bat.draw 0
+push argument 0
+pop pointer 0
+push this 0 // symbol -> x
+push this 1 // symbol -> y
+push this 0 // symbol -> x
+push this 2 // symbol -> width
+add
+push this 1 // symbol -> y
+push this 3 // symbol -> height
+add
+call Screen.drawRectangle 4 // subroutine call (function)
+pop temp 0
+push constant 0
+return
+// compiling subroutine
+function Bat.setDirection 0
+push argument 0
+pop pointer 0
+push argument 1 // symbol -> Adirection
+pop this 4 // symbol -> direction
+push constant 0
+return
+// compiling subroutine
+function Bat.getLeft 0
+push argument 0
+pop pointer 0
+push this 0 // symbol -> x
+return
+// compiling subroutine
+function Bat.getRight 0
+push argument 0
+pop pointer 0
+push this 0 // symbol -> x
+push this 2 // symbol -> width
+add
+return
+// compiling subroutine
+function Bat.setWidth 0
+push argument 0
+pop pointer 0
+push pointer 0
+call Bat.hide 1 // subroutine call (method)
+pop temp 0
+push argument 1 // symbol -> Awidth
+pop this 2 // symbol -> width
+push pointer 0
+call Bat.show 1 // subroutine call (method)
+pop temp 0
+push constant 0
+return
+// compiling subroutine
+function Bat.move 0
+push argument 0
+pop pointer 0
+push this 4 // symbol -> direction
+push constant 1
+eq
+not
+if-goto L1.1
+push this 0 // symbol -> x
+push constant 4
+sub
+pop this 0 // symbol -> x
+push this 0 // symbol -> x
+push constant 0
+lt
+not
+if-goto L1.2
+push constant 0
+pop this 0 // symbol -> x
+goto L2.2
+label L1.2
+label L2.2
+push constant 0 // pushing false
+call Screen.setColor 1 // subroutine call (function)
+pop temp 0
+push this 0 // symbol -> x
+push this 2 // symbol -> width
+add
+push constant 1
+add
+push this 1 // symbol -> y
+push this 0 // symbol -> x
+push this 2 // symbol -> width
+add
+push constant 4
+add
+push this 1 // symbol -> y
+push this 3 // symbol -> height
+add
+call Screen.drawRectangle 4 // subroutine call (function)
+pop temp 0
+push constant 1 // pushing true
+neg // pushing true
+call Screen.setColor 1 // subroutine call (function)
+pop temp 0
+push this 0 // symbol -> x
+push this 1 // symbol -> y
+push this 0 // symbol -> x
+push constant 3
+add
+push this 1 // symbol -> y
+push this 3 // symbol -> height
+add
+call Screen.drawRectangle 4 // subroutine call (function)
+pop temp 0
+goto L2.1
+label L1.1
+push this 0 // symbol -> x
+push constant 4
+add
+pop this 0 // symbol -> x
+push this 0 // symbol -> x
+push this 2 // symbol -> width
+add
+push constant 511
+gt
+not
+if-goto L1.3
+push constant 511
+push this 2 // symbol -> width
+sub
+pop this 0 // symbol -> x
+goto L2.3
+label L1.3
+label L2.3
+push constant 0 // pushing false
+call Screen.setColor 1 // subroutine call (function)
+pop temp 0
+push this 0 // symbol -> x
+push constant 4
+sub
+push this 1 // symbol -> y
+push this 0 // symbol -> x
+push constant 1
+sub
+push this 1 // symbol -> y
+push this 3 // symbol -> height
+add
+call Screen.drawRectangle 4 // subroutine call (function)
+pop temp 0
+push constant 1 // pushing true
+neg // pushing true
+call Screen.setColor 1 // subroutine call (function)
+pop temp 0
+push this 0 // symbol -> x
+push this 2 // symbol -> width
+add
+push constant 3
+sub
+push this 1 // symbol -> y
+push this 0 // symbol -> x
+push this 2 // symbol -> width
+add
+push this 1 // symbol -> y
+push this 3 // symbol -> height
+add
+call Screen.drawRectangle 4 // subroutine call (function)
+pop temp 0
+label L2.1
+push constant 0
+return

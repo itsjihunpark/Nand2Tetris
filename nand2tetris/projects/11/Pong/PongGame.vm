@@ -1,0 +1,329 @@
+// compiling subroutine
+function PongGame.new 0
+push constant 7
+call Memory.alloc 1
+pop pointer 0
+call Screen.clearScreen 0 // subroutine call (function)
+pop temp 0
+push constant 50
+pop this 6 // symbol -> batWidth
+push constant 230
+push constant 229
+push this 6 // symbol -> batWidth
+push constant 7
+call Bat.new 4 // subroutine call (function)
+pop this 0 // symbol -> bat
+push constant 253
+push constant 222
+push constant 0
+push constant 511
+push constant 0
+push constant 229
+call Ball.new 6 // subroutine call (function)
+pop this 1 // symbol -> ball
+push this 1 // symbol -> ball
+push constant 400
+push constant 0
+call Ball.setDestination 3 // subroutine call (method)
+pop temp 0
+push constant 0
+push constant 238
+push constant 511
+push constant 240
+call Screen.drawRectangle 4 // subroutine call (function)
+pop temp 0
+push constant 22
+push constant 0
+call Output.moveCursor 2 // subroutine call (function)
+pop temp 0
+// Instantiating String: Score: 0
+push constant 8
+call String.new 1
+push constant 83
+call String.appendChar 2
+push constant 99
+call String.appendChar 2
+push constant 111
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 58
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 48
+call String.appendChar 2
+call Output.printString 1 // subroutine call (function)
+pop temp 0
+push constant 0 // pushing false
+pop this 3 // symbol -> exit
+push constant 0
+pop this 4 // symbol -> score
+push constant 0
+pop this 2 // symbol -> wall
+push constant 0
+pop this 5 // symbol -> lastWall
+push pointer 0 // pushing this
+return
+// compiling subroutine
+function PongGame.dispose 0
+push argument 0
+pop pointer 0
+push this 0 // symbol -> bat
+call Bat.dispose 1 // subroutine call (method)
+pop temp 0
+push this 1 // symbol -> ball
+call Ball.dispose 1 // subroutine call (method)
+pop temp 0
+push argument 0 // symbol -> this
+call Memory.deAlloc 1 // subroutine call (function)
+pop temp 0
+push constant 0
+return
+// compiling subroutine
+function PongGame.newInstance 0
+call PongGame.new 0 // subroutine call (function)
+pop static 0 // symbol -> instance
+push constant 0
+return
+// compiling subroutine
+function PongGame.getInstance 0
+push static 0 // symbol -> instance
+return
+// compiling subroutine
+function PongGame.run 1
+push argument 0
+pop pointer 0
+label L1.1
+push this 3 // symbol -> exit
+not
+not
+if-goto L2.1
+label L1.2
+push local 0 // symbol -> key
+push constant 0
+eq
+push this 3 // symbol -> exit
+not
+and
+not
+if-goto L2.2
+call Keyboard.keyPressed 0 // subroutine call (function)
+pop local 0 // symbol -> key
+push this 0 // symbol -> bat
+call Bat.move 1 // subroutine call (method)
+pop temp 0
+push pointer 0
+call PongGame.moveBall 1 // subroutine call (method)
+pop temp 0
+push constant 50
+call Sys.wait 1 // subroutine call (function)
+pop temp 0
+goto L1.2
+label L2.2
+push local 0 // symbol -> key
+push constant 130
+eq
+not
+if-goto L1.3
+push this 0 // symbol -> bat
+push constant 1
+call Bat.setDirection 2 // subroutine call (method)
+pop temp 0
+goto L2.3
+label L1.3
+push local 0 // symbol -> key
+push constant 132
+eq
+not
+if-goto L1.4
+push this 0 // symbol -> bat
+push constant 2
+call Bat.setDirection 2 // subroutine call (method)
+pop temp 0
+goto L2.4
+label L1.4
+push local 0 // symbol -> key
+push constant 140
+eq
+not
+if-goto L1.5
+push constant 1 // pushing true
+neg // pushing true
+pop this 3 // symbol -> exit
+goto L2.5
+label L1.5
+label L2.5
+label L2.4
+label L2.3
+label L1.6
+push local 0 // symbol -> key
+push constant 0
+eq
+not
+push this 3 // symbol -> exit
+not
+and
+not
+if-goto L2.6
+call Keyboard.keyPressed 0 // subroutine call (function)
+pop local 0 // symbol -> key
+push this 0 // symbol -> bat
+call Bat.move 1 // subroutine call (method)
+pop temp 0
+push pointer 0
+call PongGame.moveBall 1 // subroutine call (method)
+pop temp 0
+push constant 50
+call Sys.wait 1 // subroutine call (function)
+pop temp 0
+goto L1.6
+label L2.6
+goto L1.1
+label L2.1
+push this 3 // symbol -> exit
+not
+if-goto L1.7
+push constant 10
+push constant 27
+call Output.moveCursor 2 // subroutine call (function)
+pop temp 0
+// Instantiating String: Game Over
+push constant 9
+call String.new 1
+push constant 71
+call String.appendChar 2
+push constant 97
+call String.appendChar 2
+push constant 109
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 79
+call String.appendChar 2
+push constant 118
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+call Output.printString 1 // subroutine call (function)
+pop temp 0
+goto L2.7
+label L1.7
+label L2.7
+push constant 0
+return
+// compiling subroutine
+function PongGame.moveBall 5
+push argument 0
+pop pointer 0
+push this 1 // symbol -> ball
+call Ball.move 1 // subroutine call (method)
+pop this 2 // symbol -> wall
+push this 2 // symbol -> wall
+push constant 0
+gt
+push this 2 // symbol -> wall
+push this 5 // symbol -> lastWall
+eq
+not
+and
+not
+if-goto L1.8
+push this 2 // symbol -> wall
+pop this 5 // symbol -> lastWall
+push constant 0
+pop local 0 // symbol -> bouncingDirection
+push this 0 // symbol -> bat
+call Bat.getLeft 1 // subroutine call (method)
+pop local 1 // symbol -> batLeft
+push this 0 // symbol -> bat
+call Bat.getRight 1 // subroutine call (method)
+pop local 2 // symbol -> batRight
+push this 1 // symbol -> ball
+call Ball.getLeft 1 // subroutine call (method)
+pop local 3 // symbol -> ballLeft
+push this 1 // symbol -> ball
+call Ball.getRight 1 // subroutine call (method)
+pop local 4 // symbol -> ballRight
+push this 2 // symbol -> wall
+push constant 4
+eq
+not
+if-goto L1.9
+push local 1 // symbol -> batLeft
+push local 4 // symbol -> ballRight
+gt
+push local 2 // symbol -> batRight
+push local 3 // symbol -> ballLeft
+lt
+or
+pop this 3 // symbol -> exit
+push this 3 // symbol -> exit
+not
+not
+if-goto L1.10
+push local 4 // symbol -> ballRight
+push local 1 // symbol -> batLeft
+push constant 10
+add
+lt
+not
+if-goto L1.11
+push constant 1
+neg
+pop local 0 // symbol -> bouncingDirection
+goto L2.11
+label L1.11
+push local 3 // symbol -> ballLeft
+push local 2 // symbol -> batRight
+push constant 10
+sub
+gt
+not
+if-goto L1.12
+push constant 1
+pop local 0 // symbol -> bouncingDirection
+goto L2.12
+label L1.12
+label L2.12
+label L2.11
+push this 6 // symbol -> batWidth
+push constant 2
+sub
+pop this 6 // symbol -> batWidth
+push this 0 // symbol -> bat
+push this 6 // symbol -> batWidth
+call Bat.setWidth 2 // subroutine call (method)
+pop temp 0
+push this 4 // symbol -> score
+push constant 1
+add
+pop this 4 // symbol -> score
+push constant 22
+push constant 7
+call Output.moveCursor 2 // subroutine call (function)
+pop temp 0
+push this 4 // symbol -> score
+call Output.printInt 1 // subroutine call (function)
+pop temp 0
+goto L2.10
+label L1.10
+label L2.10
+goto L2.9
+label L1.9
+label L2.9
+push this 1 // symbol -> ball
+push local 0 // symbol -> bouncingDirection
+call Ball.bounce 2 // subroutine call (method)
+pop temp 0
+goto L2.8
+label L1.8
+label L2.8
+push constant 0
+return
