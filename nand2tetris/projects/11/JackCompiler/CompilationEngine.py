@@ -5,8 +5,8 @@ import inspect
 ARITHMETIC_OP_MAPPING = {
     '+': 'add',
     '-': 'sub',
-    '*': 'Math.multiply 2',
-    '/': 'Math.divide 2',
+    '*': 'call Math.multiply 2',
+    '/': 'call Math.divide 2',
     '&amp;': 'and',
     '|': 'or',
     '&lt;': 'lt',
@@ -43,6 +43,7 @@ class CompilationEngine:
         self.xml = open(self.filename, 'w', encoding='utf-8')
         self.class_name = self.filename.replace("_.xml","").split("\\")[-1]
         self.if_or_while_statement_counter = 0
+        self.vm_commands = []
 
     def process(self, _str):
         if self.jack_tokenizer.current_token == _str:
@@ -100,7 +101,7 @@ class CompilationEngine:
         self.xml.writelines('</classVarDec>\n')
 
     def compile_subroutine(self):
-        print("// compiling subroutine") # debug
+        self.vm_commands.append("// compiling subroutine")
         vm_commands =['function {}.{} {}']
         self.subroutine_level_symbol_table.reset()
         self.xml.writelines('<subroutineDec>\n')
@@ -160,7 +161,7 @@ class CompilationEngine:
         var_count = self.subroutine_level_symbol_table.var_count("var")
         vm_commands[0] = vm_commands[0].format(self.class_name, subroutine_name, var_count)
         for cmd in vm_commands:
-            print(cmd)  # debug
+            self.vm_commands.append(cmd)
         self.compile_statements()
         self.process('}')
         self.xml.writelines('</subroutineBody>\n')
@@ -218,23 +219,24 @@ class CompilationEngine:
         if (token := self.jack_tokenizer.current_token) == "[":
             is_array = True
             self.process(token)
-            print(f"push {SYMBOLTABLE_MAPPNIG[symbol_mapping[0]]} {symbol_mapping[2]} // symbol -> {var_token} (array)") # debug
+            self.vm_commands.append(f"push {SYMBOLTABLE_MAPPNIG[symbol_mapping[0]]} {symbol_mapping[2]} // symbol -> {var_token} (array)")
             self.compile_expression()
-            print("add") # debug
+            self.vm_commands.append("add") 
             self.process(']')
         self.process('=')
         self.compile_expression()
         if is_array:
-            print("pop temp 0") # debug
-            print("pop pointer 1") # debug
-            print("push temp 0") # debug
-            print("pop that 0") # debug
+            self.vm_commands.append("pop temp 0")
+            self.vm_commands.append("pop pointer 1")
+            self.vm_commands.append("push temp 0")
+            self.vm_commands.append("pop that 0")
         else:
-            print(f"pop {SYMBOLTABLE_MAPPNIG[symbol_mapping[0]]} {symbol_mapping[2]} // symbol -> {var_token}") # debug
+            self.vm_commands.append(f"pop {SYMBOLTABLE_MAPPNIG[symbol_mapping[0]]} {symbol_mapping[2]} // symbol -> {var_token}") # debug
         self.process(';')
         self.xml.writelines('</letStatement>\n')
 
     def compile_if(self):
+        self.if_or_while_statement_counter += 1
         current_label_counter = self.if_or_while_statement_counter
         self.xml.writelines('<ifStatement>\n')
         self.process('if')
@@ -242,38 +244,37 @@ class CompilationEngine:
         self.compile_expression()
         self.process(')')
         self.process('{')
-        print("not") # debug
-        print(f"if-goto L1.{current_label_counter}") # debug
+        self.vm_commands.append("not")
+        self.vm_commands.append(f"if-goto L1.{current_label_counter}")
         self.compile_statements()
-        print(f"goto L2.{current_label_counter}") # debug
+        self.vm_commands.append(f"goto L2.{current_label_counter}")
         self.process('}')
         if (else_token := self.jack_tokenizer.current_token) == "else":
             self.process(else_token)
             self.process('{')
-            print(f"label L1.{current_label_counter}") # debug
+            self.vm_commands.append(f"label L1.{current_label_counter}")
             self.compile_statements()
             self.process('}')
         self.xml.writelines('</ifStatement>\n')
-        print(f"label L2.{current_label_counter}") # debug
-        self.if_or_while_statement_counter += 1
+        self.vm_commands.append(f"label L2.{current_label_counter}")
 
     def compile_while(self):
+        self.if_or_while_statement_counter += 1
         current_label_counter = self.if_or_while_statement_counter
         self.xml.writelines('<whileStatement>\n')
         self.process('while')
         self.process('(')
-        print(f"label L1.{current_label_counter}") # debug
+        self.vm_commands.append(f"label L1.{current_label_counter}")
         self.compile_expression()
         self.process(')')
         self.process('{')
-        print("not") # debug
-        print(f"if-goto L2.{current_label_counter}") # debug
+        self.vm_commands.append("not")
+        self.vm_commands.append(f"if-goto L2.{current_label_counter}")
         self.compile_statements()
-        print(f"goto L1.{current_label_counter}") # debug
+        self.vm_commands.append(f"goto L1.{current_label_counter}")
         self.process('}')
         self.xml.writelines('</whileStatement>\n')
-        print(f"label L2.{current_label_counter}") # debug
-        self.if_or_while_statement_counter += 1
+        self.vm_commands.append(f"label L2.{current_label_counter}")
 
     def compile_do(self):
         self.xml.writelines('<doStatement>\n')
@@ -281,19 +282,19 @@ class CompilationEngine:
         self.compile_expression()
         self.process(';')
         self.xml.writelines('</doStatement>\n')
-        print("pop temp 0") # debug
+        self.vm_commands.append("pop temp 0")
 
     def compile_return(self):
         self.xml.writelines('<returnStatement>\n')
         self.process('return')
         if (semi_colon_token := self.jack_tokenizer.current_token) == ";":
-            print("push constant 0") # debug
+            self.vm_commands.append("push constant 0")
             self.process(semi_colon_token)
         else:
             self.compile_expression()
             self.process(';')
         self.xml.writelines('</returnStatement>\n')
-        print("return") # debug
+        self.vm_commands.append("return")
 
     def compile_expression(self):
         stack = inspect.stack()
@@ -307,7 +308,7 @@ class CompilationEngine:
         while (op_token := self.jack_tokenizer.current_token) in OP_TOKENS:
             self.process(op_token)
             self.compile_term()
-            print(ARITHMETIC_OP_MAPPING[op_token]) # debug
+            self.vm_commands.append(ARITHMETIC_OP_MAPPING[op_token])
         if caller_function != "compile_do":
             self.xml.writelines('</expression>\n')
 
@@ -330,7 +331,7 @@ class CompilationEngine:
         elif (unary_op_token := self.jack_tokenizer.current_token) in UNARY_OP_TOKEN:
             self.process(unary_op_token)
             self.compile_term()
-            print(UNARY_OP_MAPPING[unary_op_token]) # debug
+            self.vm_commands.append(UNARY_OP_MAPPING[unary_op_token])
 
         else:
             """
@@ -373,13 +374,13 @@ class CompilationEngine:
             if (ll2_token := self.jack_tokenizer.current_token) in LL2_TOKENS:
                 if ll2_token == '[':
                     segment, type_of, index = symbol_mapping
-                    print(f"push {SYMBOLTABLE_MAPPNIG[segment]} {index} // symbol -> {symbol_token} (array)") # debug
+                    self.vm_commands.append(f"push {SYMBOLTABLE_MAPPNIG[segment]} {index} // symbol -> {symbol_token} (array)")
                     self.process('[')
                     self.compile_expression()
                     self.process(']')
-                    print("add") # debug
-                    print("pop pointer 1") # debug
-                    print("push that 0") # debug
+                    self.vm_commands.append("add")
+                    self.vm_commands.append("pop pointer 1")
+                    self.vm_commands.append("push that 0")
                 elif ll2_token == '(':
                     # assuming it is a method as subroutine() is equivalent to this.subroutine()
                     # push symbol mapping of "this"
@@ -387,11 +388,11 @@ class CompilationEngine:
                     subroutine_type = 'method'
                     
                     subroutine_name = symbol_token
-                    print(f"push pointer 0") # debug
+                    self.vm_commands.append(f"push pointer 0")
                     narg = 1
                     narg += self.compile_expression_list()
                     self.process(')')
-                    print(f"call {self.class_name}.{subroutine_name} {narg} // subroutine call ({subroutine_type})") # debug
+                    self.vm_commands.append(f"call {self.class_name}.{subroutine_name} {narg} // subroutine call ({subroutine_type})")
                 elif ll2_token == '.':
                     narg = 0
                     subroutine_type = 'function'
@@ -405,7 +406,7 @@ class CompilationEngine:
                         
                         segment, type_of, index = symbol_mapping
                         
-                        print(f"push {SYMBOLTABLE_MAPPNIG[segment]} {index} // symbol -> {symbol_token}") # debug
+                        self.vm_commands.append(f"push {SYMBOLTABLE_MAPPNIG[segment]} {index} // symbol -> {symbol_token}")
 
                     self.process('.')
                     subroutine_name = self.jack_tokenizer.current_token
@@ -413,34 +414,34 @@ class CompilationEngine:
                     self.process('(')
                     narg += self.compile_expression_list()
                     self.process(')')
-                    print(f"call {type_of}.{subroutine_name} {narg} // subroutine call ({subroutine_type})") # debug
+                    self.vm_commands.append(f"call {type_of}.{subroutine_name} {narg} // subroutine call ({subroutine_type})")
             else:
                 # push as normal
                 if symbol_mapping:
                     segment, type_of, index = symbol_mapping
 
-                    print(f"push {SYMBOLTABLE_MAPPNIG[segment]} {index} // symbol -> {symbol_token}")  # debug
+                    self.vm_commands.append(f"push {SYMBOLTABLE_MAPPNIG[segment]} {index} // symbol -> {symbol_token}")
                 else:
                     # different types of constants (integerConstant/stringConstant/keyword)
                     # require mapping these constants according to standard mapping
                     if symbol_token_type == "integerConstant":
-                        print(f"push constant {symbol_token}") # debug
+                        self.vm_commands.append(f"push constant {symbol_token}")
                     elif symbol_token_type == "stringConstant":
                         #############################
                         # instantiate string object #
                         # call appendchar           #
                         #############################
-                        print(f"// Instantiating String: {symbol_token}") # debug
-                        print(f"push constant {len(symbol_token)}") # debug
-                        print(f"call String.new 1") # debug
+                        self.vm_commands.append(f"// Instantiating String: {symbol_token}")
+                        self.vm_commands.append(f"push constant {len(symbol_token)}")
+                        self.vm_commands.append(f"call String.new 1")
                         for c in symbol_token:
-                            print(f"push constant {ord(c)}") # debug
-                            print(f"call String.appendChar 2") # debug
+                            self.vm_commands.append(f"push constant {ord(c)}")
+                            self.vm_commands.append("call String.appendChar 2")
 
                         
                     elif symbol_token_type == "keyword":
                         for vmcode in KEYWORD_MAPPING[symbol_token]:
-                            print(vmcode) # debug
+                            self.vm_commands.append(vmcode)
 
         if caller_function != "compile_do":
             self.xml.writelines('</term>\n')
