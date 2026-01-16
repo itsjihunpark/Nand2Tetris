@@ -1,0 +1,12 @@
+// compiling subroutine
+function Main.main 1
+call SquareGame.new 0 // subroutine call (function)
+pop local 0 // symbol -> game
+push local 0 // symbol -> game
+call SquareGame.run 1 // subroutine call (method)
+pop temp 0
+push local 0 // symbol -> game
+call SquareGame.dispose 1 // subroutine call (method)
+pop temp 0
+push constant 0
+return

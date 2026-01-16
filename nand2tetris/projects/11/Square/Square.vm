@@ -1,0 +1,320 @@
+// compiling subroutine
+function Square.new 0
+push constant 3
+call Memory.alloc 1
+pop pointer 0
+push argument 0 // symbol -> ax
+pop this 0 // symbol -> x
+push argument 1 // symbol -> ay
+pop this 1 // symbol -> y
+push argument 2 // symbol -> asize
+pop this 2 // symbol -> size
+push pointer 0
+call Square.draw 1 // subroutine call (method)
+pop temp 0
+push pointer 0 // pushing this
+return
+// compiling subroutine
+function Square.dispose 0
+push argument 0
+pop pointer 0
+push argument 0 // symbol -> this
+call Memory.deAlloc 1 // subroutine call (function)
+pop temp 0
+push constant 0
+return
+// compiling subroutine
+function Square.draw 0
+push argument 0
+pop pointer 0
+push constant 1 // pushing true
+neg // pushing true
+call Screen.setColor 1 // subroutine call (function)
+pop temp 0
+push this 0 // symbol -> x
+push this 1 // symbol -> y
+push this 0 // symbol -> x
+push this 2 // symbol -> size
+add
+push this 1 // symbol -> y
+push this 2 // symbol -> size
+add
+call Screen.drawRectangle 4 // subroutine call (function)
+pop temp 0
+push constant 0
+return
+// compiling subroutine
+function Square.erase 0
+push argument 0
+pop pointer 0
+push constant 0 // pushing false
+call Screen.setColor 1 // subroutine call (function)
+pop temp 0
+push this 0 // symbol -> x
+push this 1 // symbol -> y
+push this 0 // symbol -> x
+push this 2 // symbol -> size
+add
+push this 1 // symbol -> y
+push this 2 // symbol -> size
+add
+call Screen.drawRectangle 4 // subroutine call (function)
+pop temp 0
+push constant 0
+return
+// compiling subroutine
+function Square.incSize 0
+push argument 0
+pop pointer 0
+push this 1 // symbol -> y
+push this 2 // symbol -> size
+add
+push constant 254
+lt
+push this 0 // symbol -> x
+push this 2 // symbol -> size
+add
+push constant 510
+lt
+and
+not
+if-goto L1.1
+push pointer 0
+call Square.erase 1 // subroutine call (method)
+pop temp 0
+push this 2 // symbol -> size
+push constant 2
+add
+pop this 2 // symbol -> size
+push pointer 0
+call Square.draw 1 // subroutine call (method)
+pop temp 0
+goto L2.1
+label L1.1
+label L2.1
+push constant 0
+return
+// compiling subroutine
+function Square.decSize 0
+push argument 0
+pop pointer 0
+push this 2 // symbol -> size
+push constant 2
+gt
+not
+if-goto L1.2
+push pointer 0
+call Square.erase 1 // subroutine call (method)
+pop temp 0
+push this 2 // symbol -> size
+push constant 2
+sub
+pop this 2 // symbol -> size
+push pointer 0
+call Square.draw 1 // subroutine call (method)
+pop temp 0
+goto L2.2
+label L1.2
+label L2.2
+push constant 0
+return
+// compiling subroutine
+function Square.moveUp 0
+push argument 0
+pop pointer 0
+push this 1 // symbol -> y
+push constant 1
+gt
+not
+if-goto L1.3
+push constant 0 // pushing false
+call Screen.setColor 1 // subroutine call (function)
+pop temp 0
+push this 0 // symbol -> x
+push this 1 // symbol -> y
+push this 2 // symbol -> size
+add
+push constant 1
+sub
+push this 0 // symbol -> x
+push this 2 // symbol -> size
+add
+push this 1 // symbol -> y
+push this 2 // symbol -> size
+add
+call Screen.drawRectangle 4 // subroutine call (function)
+pop temp 0
+push this 1 // symbol -> y
+push constant 2
+sub
+pop this 1 // symbol -> y
+push constant 1 // pushing true
+neg // pushing true
+call Screen.setColor 1 // subroutine call (function)
+pop temp 0
+push this 0 // symbol -> x
+push this 1 // symbol -> y
+push this 0 // symbol -> x
+push this 2 // symbol -> size
+add
+push this 1 // symbol -> y
+push constant 1
+add
+call Screen.drawRectangle 4 // subroutine call (function)
+pop temp 0
+goto L2.3
+label L1.3
+label L2.3
+push constant 0
+return
+// compiling subroutine
+function Square.moveDown 0
+push argument 0
+pop pointer 0
+push this 1 // symbol -> y
+push this 2 // symbol -> size
+add
+push constant 254
+lt
+not
+if-goto L1.4
+push constant 0 // pushing false
+call Screen.setColor 1 // subroutine call (function)
+pop temp 0
+push this 0 // symbol -> x
+push this 1 // symbol -> y
+push this 0 // symbol -> x
+push this 2 // symbol -> size
+add
+push this 1 // symbol -> y
+push constant 1
+add
+call Screen.drawRectangle 4 // subroutine call (function)
+pop temp 0
+push this 1 // symbol -> y
+push constant 2
+add
+pop this 1 // symbol -> y
+push constant 1 // pushing true
+neg // pushing true
+call Screen.setColor 1 // subroutine call (function)
+pop temp 0
+push this 0 // symbol -> x
+push this 1 // symbol -> y
+push this 2 // symbol -> size
+add
+push constant 1
+sub
+push this 0 // symbol -> x
+push this 2 // symbol -> size
+add
+push this 1 // symbol -> y
+push this 2 // symbol -> size
+add
+call Screen.drawRectangle 4 // subroutine call (function)
+pop temp 0
+goto L2.4
+label L1.4
+label L2.4
+push constant 0
+return
+// compiling subroutine
+function Square.moveLeft 0
+push argument 0
+pop pointer 0
+push this 0 // symbol -> x
+push constant 1
+gt
+not
+if-goto L1.5
+push constant 0 // pushing false
+call Screen.setColor 1 // subroutine call (function)
+pop temp 0
+push this 0 // symbol -> x
+push this 2 // symbol -> size
+add
+push constant 1
+sub
+push this 1 // symbol -> y
+push this 0 // symbol -> x
+push this 2 // symbol -> size
+add
+push this 1 // symbol -> y
+push this 2 // symbol -> size
+add
+call Screen.drawRectangle 4 // subroutine call (function)
+pop temp 0
+push this 0 // symbol -> x
+push constant 2
+sub
+pop this 0 // symbol -> x
+push constant 1 // pushing true
+neg // pushing true
+call Screen.setColor 1 // subroutine call (function)
+pop temp 0
+push this 0 // symbol -> x
+push this 1 // symbol -> y
+push this 0 // symbol -> x
+push constant 1
+add
+push this 1 // symbol -> y
+push this 2 // symbol -> size
+add
+call Screen.drawRectangle 4 // subroutine call (function)
+pop temp 0
+goto L2.5
+label L1.5
+label L2.5
+push constant 0
+return
+// compiling subroutine
+function Square.moveRight 0
+push argument 0
+pop pointer 0
+push this 0 // symbol -> x
+push this 2 // symbol -> size
+add
+push constant 510
+lt
+not
+if-goto L1.6
+push constant 0 // pushing false
+call Screen.setColor 1 // subroutine call (function)
+pop temp 0
+push this 0 // symbol -> x
+push this 1 // symbol -> y
+push this 0 // symbol -> x
+push constant 1
+add
+push this 1 // symbol -> y
+push this 2 // symbol -> size
+add
+call Screen.drawRectangle 4 // subroutine call (function)
+pop temp 0
+push this 0 // symbol -> x
+push constant 2
+add
+pop this 0 // symbol -> x
+push constant 1 // pushing true
+neg // pushing true
+call Screen.setColor 1 // subroutine call (function)
+pop temp 0
+push this 0 // symbol -> x
+push this 2 // symbol -> size
+add
+push constant 1
+sub
+push this 1 // symbol -> y
+push this 0 // symbol -> x
+push this 2 // symbol -> size
+add
+push this 1 // symbol -> y
+push this 2 // symbol -> size
+add
+call Screen.drawRectangle 4 // subroutine call (function)
+pop temp 0
+goto L2.6
+label L1.6
+label L2.6
+push constant 0
+return

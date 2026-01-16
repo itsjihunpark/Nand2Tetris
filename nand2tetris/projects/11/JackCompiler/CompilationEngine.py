@@ -249,10 +249,10 @@ class CompilationEngine:
         self.compile_statements()
         self.vm_commands.append(f"goto L2.{current_label_counter}")
         self.process('}')
+        self.vm_commands.append(f"label L1.{current_label_counter}")
         if (else_token := self.jack_tokenizer.current_token) == "else":
             self.process(else_token)
             self.process('{')
-            self.vm_commands.append(f"label L1.{current_label_counter}")
             self.compile_statements()
             self.process('}')
         self.xml.writelines('</ifStatement>\n')
