@@ -93,8 +93,8 @@ class Parser:
         """
 
         instruction_type = None
-        A_INSTRUCTION = re.findall("^\@([0-9]*|[A-Za-z_\.\:\$]+[0-9]*)$", self.current_instruction)
-        L_INSTRUCTION = re.findall(r"^\([A-Za-z_\.\:\$]+[0-9]*\)$" , self.current_instruction)
+        A_INSTRUCTION = re.findall("^\@.+$", self.current_instruction)
+        L_INSTRUCTION = re.findall(r"^\(.+\)$" , self.current_instruction)
         C_INSTRUCTION = re.findall("^[-|!|]?((?!.*(.).*\1)[ADM|1]{1,3}|0)[=]?([A|D|M|-]?[\-|\+|0|1|\|\&)]?[A|D|M|1|]?)|[;][J|M|P|E|Q|L|N|G|T|]{3}$" , self.current_instruction)
 
 
