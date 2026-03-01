@@ -109,14 +109,14 @@ class CompilationEngine:
         subroutine_type = self.jack_tokenizer.current_token
         if subroutine_type == "method":
             self.subroutine_level_symbol_table.define('this', self.class_name, 'arg')
-            vm_commands.append("push argument 0") # debug
-            vm_commands.append("pop pointer 0") # debug
+            vm_commands.append("push argument 0") 
+            vm_commands.append("pop pointer 0") 
 
         elif subroutine_type == "constructor":
             n_fields = self.class_level_symbol_table.var_count("field")
-            vm_commands.append(f"push constant {n_fields}") # debug
-            vm_commands.append("call Memory.alloc 1") # debug
-            vm_commands.append("pop pointer 0") # debug
+            vm_commands.append(f"push constant {n_fields}") 
+            vm_commands.append("call Memory.alloc 1") 
+            vm_commands.append("pop pointer 0") 
             
         self.process(subroutine_type)
         # handles ('void', type)
@@ -231,7 +231,7 @@ class CompilationEngine:
             self.vm_commands.append("push temp 0")
             self.vm_commands.append("pop that 0")
         else:
-            self.vm_commands.append(f"pop {SYMBOLTABLE_MAPPNIG[symbol_mapping[0]]} {symbol_mapping[2]} // symbol -> {var_token}") # debug
+            self.vm_commands.append(f"pop {SYMBOLTABLE_MAPPNIG[symbol_mapping[0]]} {symbol_mapping[2]} // symbol -> {var_token}")
         self.process(';')
         self.xml.writelines('</letStatement>\n')
 
