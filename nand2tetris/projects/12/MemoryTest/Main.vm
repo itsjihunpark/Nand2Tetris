@@ -1,0 +1,181 @@
+// compiling subroutine
+function Main.main 5
+push constant 8000
+push constant 333
+call Memory.poke 2 // subroutine call (function)
+pop temp 0
+push constant 8000
+call Memory.peek 1 // subroutine call (function)
+pop local 0 // symbol -> temp
+push constant 8001
+push local 0 // symbol -> temp
+push constant 1
+add
+call Memory.poke 2 // subroutine call (function)
+pop temp 0
+push constant 3
+call Array.new 1 // subroutine call (function)
+pop local 2 // symbol -> a
+push local 2 // symbol -> a (array)
+push constant 2
+add
+push constant 222
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 8002
+push local 2 // symbol -> a (array)
+push constant 2
+add
+pop pointer 1
+push that 0
+call Memory.poke 2 // subroutine call (function)
+pop temp 0
+push constant 0
+pop local 1 // symbol -> err
+push constant 3
+call Array.new 1 // subroutine call (function)
+pop local 3 // symbol -> b
+push local 3 // symbol -> b (array)
+push constant 1
+add
+push local 2 // symbol -> a (array)
+push constant 2
+add
+pop pointer 1
+push that 0
+push constant 100
+sub
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 3 // symbol -> b
+push local 2 // symbol -> a
+eq
+not
+if-goto L1.1
+push constant 1
+pop local 1 // symbol -> err
+goto L2.1
+label L1.1
+label L2.1
+push constant 8003
+push local 3 // symbol -> b (array)
+push constant 1
+add
+pop pointer 1
+push that 0
+push local 1 // symbol -> err
+add
+call Memory.poke 2 // subroutine call (function)
+pop temp 0
+push constant 0
+pop local 1 // symbol -> err
+push constant 500
+call Array.new 1 // subroutine call (function)
+pop local 4 // symbol -> c
+push local 4 // symbol -> c (array)
+push constant 499
+add
+push local 2 // symbol -> a (array)
+push constant 2
+add
+pop pointer 1
+push that 0
+push local 3 // symbol -> b (array)
+push constant 1
+add
+pop pointer 1
+push that 0
+sub
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 4 // symbol -> c
+push local 2 // symbol -> a
+eq
+not
+if-goto L1.2
+push constant 1
+pop local 1 // symbol -> err
+goto L2.2
+label L1.2
+label L2.2
+push local 4 // symbol -> c
+push local 3 // symbol -> b
+eq
+not
+if-goto L1.3
+push local 1 // symbol -> err
+push constant 10
+add
+pop local 1 // symbol -> err
+goto L2.3
+label L1.3
+label L2.3
+push constant 8004
+push local 4 // symbol -> c (array)
+push constant 499
+add
+pop pointer 1
+push that 0
+push local 1 // symbol -> err
+add
+call Memory.poke 2 // subroutine call (function)
+pop temp 0
+push local 2 // symbol -> a
+call Array.dispose 1 // subroutine call (method)
+pop temp 0
+push local 3 // symbol -> b
+call Array.dispose 1 // subroutine call (method)
+pop temp 0
+push constant 0
+pop local 1 // symbol -> err
+push constant 3
+call Array.new 1 // subroutine call (function)
+pop local 3 // symbol -> b
+push local 3 // symbol -> b (array)
+push constant 0
+add
+push local 4 // symbol -> c (array)
+push constant 499
+add
+pop pointer 1
+push that 0
+push constant 90
+sub
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 3 // symbol -> b
+push local 4 // symbol -> c
+eq
+not
+if-goto L1.4
+push constant 1
+pop local 1 // symbol -> err
+goto L2.4
+label L1.4
+label L2.4
+push constant 8005
+push local 3 // symbol -> b (array)
+push constant 0
+add
+pop pointer 1
+push that 0
+push local 1 // symbol -> err
+add
+call Memory.poke 2 // subroutine call (function)
+pop temp 0
+push local 4 // symbol -> c
+call Array.dispose 1 // subroutine call (method)
+pop temp 0
+push local 3 // symbol -> b
+call Array.dispose 1 // subroutine call (method)
+pop temp 0
+push constant 0
+return

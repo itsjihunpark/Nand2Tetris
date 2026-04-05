@@ -67,7 +67,7 @@ class Memory {
             }
             else{
                 let freeListCurrent = Memory.peek(freeListCurrent + 1);
-                return alloc(size);
+                return Memory.alloc(size);
             }
         }
     }

@@ -124,9 +124,8 @@ push constant 1
 add
 call Memory.peek 1 // subroutine call (function)
 pop static 2 // symbol -> freeListCurrent
-push pointer 0
 push argument 0 // symbol -> size
-call Memory.alloc 2 // subroutine call (method)
+call Memory.alloc 1 // subroutine call (function)
 return
 label L2.4
 label L2.1
