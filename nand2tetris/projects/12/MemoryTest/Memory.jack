@@ -19,7 +19,7 @@ class Memory {
     function void init() {
         let memory = 0;
         let freeList = 2048;
-        let memory[freeList] = 14336;
+        let memory[freeList] = 14335;
         let freeListCurrent = freeList;
         return;
     }

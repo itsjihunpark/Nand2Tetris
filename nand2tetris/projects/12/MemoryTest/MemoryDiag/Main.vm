@@ -1,0 +1,470 @@
+// compiling subroutine
+function Main.main 5
+push constant 17000
+pop local 4 // symbol -> out
+push local 4 // symbol -> out (array)
+push constant 0
+add
+push constant 10
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 4 // symbol -> out
+push constant 1
+add
+push constant 333
+call Memory.poke 2 // subroutine call (function)
+pop temp 0
+push local 4 // symbol -> out (array)
+push constant 0
+add
+push constant 11
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 4 // symbol -> out
+push constant 1
+add
+call Memory.peek 1 // subroutine call (function)
+pop local 0 // symbol -> temp
+push local 4 // symbol -> out (array)
+push constant 2
+add
+push local 0 // symbol -> temp
+push constant 1
+add
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 4 // symbol -> out (array)
+push constant 0
+add
+push constant 12
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 4 // symbol -> out (array)
+push constant 0
+add
+push constant 20
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 20
+call Memory.alloc 1 // subroutine call (function)
+pop local 1 // symbol -> a
+push local 4 // symbol -> out (array)
+push constant 3
+add
+push local 1 // symbol -> a
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 4 // symbol -> out (array)
+push constant 0
+add
+push constant 21
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 1 // symbol -> a
+push constant 20
+call Main.checkRange 2 // subroutine call (function)
+pop temp 0
+push local 4 // symbol -> out (array)
+push constant 0
+add
+push constant 22
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 4 // symbol -> out (array)
+push constant 0
+add
+push constant 30
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 3
+call Memory.alloc 1 // subroutine call (function)
+pop local 2 // symbol -> b
+push local 4 // symbol -> out (array)
+push constant 4
+add
+push local 2 // symbol -> b
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 4 // symbol -> out (array)
+push constant 0
+add
+push constant 31
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 2 // symbol -> b
+push constant 3
+call Main.checkRange 2 // subroutine call (function)
+pop temp 0
+push local 4 // symbol -> out (array)
+push constant 0
+add
+push constant 32
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 2 // symbol -> b
+push constant 3
+push local 1 // symbol -> a
+push constant 3
+call Main.checkOverlap 4 // subroutine call (function)
+pop temp 0
+push local 4 // symbol -> out (array)
+push constant 0
+add
+push constant 33
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 4 // symbol -> out (array)
+push constant 0
+add
+push constant 40
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 500
+call Memory.alloc 1 // subroutine call (function)
+pop local 3 // symbol -> c
+push local 4 // symbol -> out (array)
+push constant 5
+add
+push local 3 // symbol -> c
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 4 // symbol -> out (array)
+push constant 0
+add
+push constant 41
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 3 // symbol -> c
+push constant 500
+call Main.checkRange 2 // subroutine call (function)
+pop temp 0
+push local 4 // symbol -> out (array)
+push constant 0
+add
+push constant 42
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 3 // symbol -> c
+push constant 500
+push local 1 // symbol -> a
+push constant 3
+call Main.checkOverlap 4 // subroutine call (function)
+pop temp 0
+push local 4 // symbol -> out (array)
+push constant 0
+add
+push constant 43
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 3 // symbol -> c
+push constant 500
+push local 2 // symbol -> b
+push constant 3
+call Main.checkOverlap 4 // subroutine call (function)
+pop temp 0
+push local 4 // symbol -> out (array)
+push constant 0
+add
+push constant 44
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 4 // symbol -> out (array)
+push constant 0
+add
+push constant 50
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 1 // symbol -> a
+call Memory.deAlloc 1 // subroutine call (function)
+pop temp 0
+push local 4 // symbol -> out (array)
+push constant 0
+add
+push constant 51
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 2 // symbol -> b
+call Memory.deAlloc 1 // subroutine call (function)
+pop temp 0
+push local 4 // symbol -> out (array)
+push constant 0
+add
+push constant 52
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 4 // symbol -> out (array)
+push constant 0
+add
+push constant 60
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 3
+call Memory.alloc 1 // subroutine call (function)
+pop local 2 // symbol -> b
+push local 4 // symbol -> out (array)
+push constant 6
+add
+push local 2 // symbol -> b
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 4 // symbol -> out (array)
+push constant 0
+add
+push constant 61
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 2 // symbol -> b
+push constant 3
+call Main.checkRange 2 // subroutine call (function)
+pop temp 0
+push local 4 // symbol -> out (array)
+push constant 0
+add
+push constant 62
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 2 // symbol -> b
+push constant 3
+push local 3 // symbol -> c
+push constant 500
+call Main.checkOverlap 4 // subroutine call (function)
+pop temp 0
+push local 4 // symbol -> out (array)
+push constant 0
+add
+push constant 63
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 4 // symbol -> out (array)
+push constant 0
+add
+push constant 70
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 3 // symbol -> c
+call Memory.deAlloc 1 // subroutine call (function)
+pop temp 0
+push local 4 // symbol -> out (array)
+push constant 0
+add
+push constant 71
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 2 // symbol -> b
+call Memory.deAlloc 1 // subroutine call (function)
+pop temp 0
+push local 4 // symbol -> out (array)
+push constant 0
+add
+push constant 72
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 4 // symbol -> out (array)
+push constant 0
+add
+push constant 70
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 8000
+call Memory.alloc 1 // subroutine call (function)
+pop local 1 // symbol -> a
+push local 4 // symbol -> out (array)
+push constant 7
+add
+push local 1 // symbol -> a
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 4 // symbol -> out (array)
+push constant 0
+add
+push constant 71
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 1 // symbol -> a
+push constant 8000
+call Main.checkRange 2 // subroutine call (function)
+pop temp 0
+push local 4 // symbol -> out (array)
+push constant 0
+add
+push constant 72
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 1 // symbol -> a
+call Memory.deAlloc 1 // subroutine call (function)
+pop temp 0
+push local 4 // symbol -> out (array)
+push constant 0
+add
+push constant 73
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 7000
+call Memory.alloc 1 // subroutine call (function)
+pop local 1 // symbol -> a
+push local 4 // symbol -> out (array)
+push constant 0
+add
+push constant 74
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 1 // symbol -> a
+push constant 7000
+call Main.checkRange 2 // subroutine call (function)
+pop temp 0
+push local 4 // symbol -> out (array)
+push constant 0
+add
+push constant 75
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 1 // symbol -> a
+call Memory.deAlloc 1 // subroutine call (function)
+pop temp 0
+push local 4 // symbol -> out (array)
+push constant 8
+add
+push local 1 // symbol -> a
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 4 // symbol -> out (array)
+push constant 0
+add
+push constant 100
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 0
+return
+// compiling subroutine
+function Main.checkRange 1
+push argument 0 // symbol -> a
+push argument 1 // symbol -> a_len
+add
+push constant 1
+sub
+pop local 0 // symbol -> a_high
+push argument 0 // symbol -> a
+push constant 2048
+lt
+push local 0 // symbol -> a_high
+push constant 16383
+gt
+or
+not
+if-goto L1.1
+call Sys.halt 0 // subroutine call (function)
+pop temp 0
+goto L2.1
+label L1.1
+label L2.1
+push constant 0
+return
+// compiling subroutine
+function Main.checkOverlap 2
+push argument 0 // symbol -> a
+push argument 1 // symbol -> a_len
+add
+push constant 1
+sub
+pop local 0 // symbol -> a_high
+push argument 2 // symbol -> b
+push argument 3 // symbol -> b_len
+add
+push constant 1
+sub
+pop local 1 // symbol -> b_high
+push argument 0 // symbol -> a
+push local 1 // symbol -> b_high
+gt
+push local 0 // symbol -> a_high
+push argument 2 // symbol -> b
+lt
+or
+not
+not
+if-goto L1.2
+call Sys.halt 0 // subroutine call (function)
+pop temp 0
+goto L2.2
+label L1.2
+label L2.2
+push constant 0
+return
