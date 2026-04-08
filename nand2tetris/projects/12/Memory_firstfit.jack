@@ -19,7 +19,7 @@ class Memory {
     function void init() {
         let memory = 0;
         let freeList = 2048;
-        let memory[freeList] = 14335;
+        let memory[freeList] = 14336;
         let freeListCurrent = freeList;
         return;
     }
@@ -48,15 +48,10 @@ class Memory {
         // the below is an implementation of first fit memory alloc
         // best fit memory alloc to be implemented next
         
-        if (Memory.peek(freeListCurrent) > (size+1)){
+        if (Memory.peek(freeListCurrent) > (size+2)){
             let block = (freeListCurrent + Memory.peek(freeListCurrent) - (size + 1)) + 1;
             do Memory.poke(block - 1, size + 1);
             do Memory.poke(freeListCurrent, Memory.peek(freeListCurrent) - (size + 1));
-            if (block = freeList){
-                if (~(Memory.peek(freeList+1) = 0)) {
-                    let freeList = Memory.peek(freeList+1); // to be revised
-                }
-            }
             let freeListCurrent = freeList;
             return block;
         }

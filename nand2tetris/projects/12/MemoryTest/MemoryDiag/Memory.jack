@@ -14,13 +14,17 @@ class Memory {
     static Array memory;
     static int freeList;
     static int freeListCurrent;
+    static int bestBlock, bestBlockSize, bestBlockFrom;
     
 
     function void init() {
         let memory = 0;
         let freeList = 2048;
-        let memory[freeList] = 14335;
+        let memory[freeList] = 14336;
         let freeListCurrent = freeList;
+        let bestBlock = 0;
+        let bestBlockSize = 0;
+        let bestBlockFrom = 0;
         return;
     }
 
@@ -43,35 +47,39 @@ class Memory {
         // block = base address of the found segment
         // update freeList and fields of block to account for the allocation
         // return block
+        var int block, currentSize;
 
-        var int block;
-        // the below is an implementation of first fit memory alloc
-        // best fit memory alloc to be implemented next
-        
-        if (Memory.peek(freeListCurrent) > (size+1)){
-            let block = (freeListCurrent + Memory.peek(freeListCurrent) - (size + 1)) + 1;
-            do Memory.poke(block - 1, size + 1);
-            do Memory.poke(freeListCurrent, Memory.peek(freeListCurrent) - (size + 1));
-            if (block = freeList){
-                if (~(Memory.peek(freeList+1) = 0)) {
-                    let freeList = Memory.peek(freeList+1); // to be revised
-                }
+        // the below is an implementation of best-fit memory alloc
+
+        let currentSize = Memory.peek(freeListCurrent);
+
+        if (((bestBlockSize = 0) | currentSize < (bestBlockSize + 1)) & (currentSize > (size+2))){
+            let bestBlock = (freeListCurrent + Memory.peek(freeListCurrent) - (size + 1)) + 1;
+            let bestBlockSize = Memory.peek(freeListCurrent);
+            let bestBlockFrom = freeListCurrent;
+        }
+
+        if (Memory.peek(freeListCurrent+1) = 0){
+            let block = bestBlock;
+            if (bestBlock = 0){
+                let block = 0;
+            }
+            else{
+                do Memory.poke(block - 1, size + 1); 
+                do Memory.poke(bestBlockFrom, bestBlockSize - (size + 1));
             }
             let freeListCurrent = freeList;
+            let bestBlock = 0;
+            let bestBlockSize = 0;
             return block;
         }
         else{
-            if (Memory.peek(freeListCurrent + 1) = 0){ 
-                let freeListCurrent = freeList;
-                return 0;
-            }
-            else{
-                let freeListCurrent = Memory.peek(freeListCurrent + 1);
-                return Memory.alloc(size);
-            }
+            let freeListCurrent = Memory.peek(freeListCurrent + 1);
+            return Memory.alloc(size);
         }
+        
     }
-
+    
     /** De-allocates the given object (cast as an array) by making
      *  it available for future allocations. */
     function void deAlloc(Array o) {

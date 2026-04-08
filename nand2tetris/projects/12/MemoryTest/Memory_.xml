@@ -20,6 +20,16 @@
 <identifier> freeListCurrent </identifier>
 <symbol> ; </symbol>
 </classVarDec>
+<classVarDec>
+<keyword> static </keyword>
+<keyword> int </keyword>
+<identifier> bestBlock </identifier>
+<symbol> , </symbol>
+<identifier> bestBlockSize </identifier>
+<symbol> , </symbol>
+<identifier> bestBlockFrom </identifier>
+<symbol> ; </symbol>
+</classVarDec>
 <subroutineDec>
 <keyword> function </keyword>
 <keyword> void </keyword>
@@ -66,7 +76,7 @@
 <symbol> = </symbol>
 <expression>
 <term>
-<integerConstant> 14335 </integerConstant>
+<integerConstant> 14336 </integerConstant>
 </term>
 </expression>
 <symbol> ; </symbol>
@@ -78,6 +88,39 @@
 <expression>
 <term>
 <identifier> freeList </identifier>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<identifier> bestBlock </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<integerConstant> 0 </integerConstant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<identifier> bestBlockSize </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<integerConstant> 0 </integerConstant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<identifier> bestBlockFrom </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<integerConstant> 0 </integerConstant>
 </term>
 </expression>
 <symbol> ; </symbol>
@@ -181,12 +224,15 @@
 <keyword> var </keyword>
 <keyword> int </keyword>
 <identifier> block </identifier>
+<symbol> , </symbol>
+<identifier> currentSize </identifier>
 <symbol> ; </symbol>
 </varDec>
 <statements>
-<ifStatement>
-<keyword> if </keyword>
-<symbol> ( </symbol>
+<letStatement>
+<keyword> let </keyword>
+<identifier> currentSize </identifier>
+<symbol> = </symbol>
 <expression>
 <term>
 <identifier> Memory </identifier>
@@ -201,6 +247,57 @@
 </expression>
 </expressionList>
 <symbol> ) </symbol>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<ifStatement>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<expression>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<identifier> bestBlockSize </identifier>
+</term>
+<symbol> = </symbol>
+<term>
+<integerConstant> 0 </integerConstant>
+</term>
+</expression>
+<symbol> ) </symbol>
+</term>
+<symbol> | </symbol>
+<term>
+<identifier> currentSize </identifier>
+</term>
+<symbol> &lt; </symbol>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<identifier> bestBlockSize </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<integerConstant> 1 </integerConstant>
+</term>
+</expression>
+<symbol> ) </symbol>
+</term>
+</expression>
+<symbol> ) </symbol>
+</term>
+<symbol> &amp; </symbol>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<identifier> currentSize </identifier>
 </term>
 <symbol> &gt; </symbol>
 <term>
@@ -211,7 +308,10 @@
 </term>
 <symbol> + </symbol>
 <term>
-<integerConstant> 1 </integerConstant>
+<integerConstant> 2 </integerConstant>
+</term>
+</expression>
+<symbol> ) </symbol>
 </term>
 </expression>
 <symbol> ) </symbol>
@@ -222,7 +322,7 @@
 <statements>
 <letStatement>
 <keyword> let </keyword>
-<identifier> block </identifier>
+<identifier> bestBlock </identifier>
 <symbol> = </symbol>
 <expression>
 <term>
@@ -270,105 +370,44 @@
 </expression>
 <symbol> ; </symbol>
 </letStatement>
-<doStatement>
-<keyword> do </keyword>
-<identifier> Memory </identifier>
-<symbol> . </symbol>
-<identifier> poke </identifier>
-<symbol> ( </symbol>
-<expressionList>
-<expression>
-<term>
-<identifier> block </identifier>
-</term>
-<symbol> - </symbol>
-<term>
-<integerConstant> 1 </integerConstant>
-</term>
-</expression>
-<symbol> , </symbol>
-<expression>
-<term>
-<identifier> size </identifier>
-</term>
-<symbol> + </symbol>
-<term>
-<integerConstant> 1 </integerConstant>
-</term>
-</expression>
-</expressionList>
-<symbol> ) </symbol>
-<symbol> ; </symbol>
-</doStatement>
-<doStatement>
-<keyword> do </keyword>
-<identifier> Memory </identifier>
-<symbol> . </symbol>
-<identifier> poke </identifier>
-<symbol> ( </symbol>
-<expressionList>
-<expression>
-<term>
-<identifier> freeListCurrent </identifier>
-</term>
-</expression>
-<symbol> , </symbol>
-<expression>
-<term>
-<identifier> Memory </identifier>
-<symbol> . </symbol>
-<identifier> peek </identifier>
-<symbol> ( </symbol>
-<expressionList>
-<expression>
-<term>
-<identifier> freeListCurrent </identifier>
-</term>
-</expression>
-</expressionList>
-<symbol> ) </symbol>
-</term>
-<symbol> - </symbol>
-<term>
-<symbol> ( </symbol>
-<expression>
-<term>
-<identifier> size </identifier>
-</term>
-<symbol> + </symbol>
-<term>
-<integerConstant> 1 </integerConstant>
-</term>
-</expression>
-<symbol> ) </symbol>
-</term>
-</expression>
-</expressionList>
-<symbol> ) </symbol>
-<symbol> ; </symbol>
-</doStatement>
-<ifStatement>
-<keyword> if </keyword>
-<symbol> ( </symbol>
-<expression>
-<term>
-<identifier> block </identifier>
-</term>
+<letStatement>
+<keyword> let </keyword>
+<identifier> bestBlockSize </identifier>
 <symbol> = </symbol>
-<term>
-<identifier> freeList </identifier>
-</term>
-</expression>
-<symbol> ) </symbol>
-<symbol> { </symbol>
-<statements>
-<ifStatement>
-<keyword> if </keyword>
-<symbol> ( </symbol>
 <expression>
 <term>
-<symbol> ~ </symbol>
+<identifier> Memory </identifier>
+<symbol> . </symbol>
+<identifier> peek </identifier>
+<symbol> ( </symbol>
+<expressionList>
+<expression>
 <term>
+<identifier> freeListCurrent </identifier>
+</term>
+</expression>
+</expressionList>
+<symbol> ) </symbol>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<identifier> bestBlockFrom </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<identifier> freeListCurrent </identifier>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+</statements>
+<symbol> } </symbol>
+</ifStatement>
+<ifStatement>
+<keyword> if </keyword>
 <symbol> ( </symbol>
 <expression>
 <term>
@@ -379,7 +418,7 @@
 <expressionList>
 <expression>
 <term>
-<identifier> freeList </identifier>
+<identifier> freeListCurrent </identifier>
 </term>
 <symbol> + </symbol>
 <term>
@@ -395,7 +434,29 @@
 </term>
 </expression>
 <symbol> ) </symbol>
+<symbol> { </symbol>
+<statements>
+<letStatement>
+<keyword> let </keyword>
+<identifier> block </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<identifier> bestBlock </identifier>
 </term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<ifStatement>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<expression>
+<term>
+<identifier> bestBlock </identifier>
+</term>
+<symbol> = </symbol>
+<term>
+<integerConstant> 0 </integerConstant>
 </term>
 </expression>
 <symbol> ) </symbol>
@@ -403,74 +464,40 @@
 <statements>
 <letStatement>
 <keyword> let </keyword>
-<identifier> freeList </identifier>
-<symbol> = </symbol>
-<expression>
-<term>
-<identifier> Memory </identifier>
-<symbol> . </symbol>
-<identifier> peek </identifier>
-<symbol> ( </symbol>
-<expressionList>
-<expression>
-<term>
-<identifier> freeList </identifier>
-</term>
-<symbol> + </symbol>
-<term>
-<integerConstant> 1 </integerConstant>
-</term>
-</expression>
-</expressionList>
-<symbol> ) </symbol>
-</term>
-</expression>
-<symbol> ; </symbol>
-</letStatement>
-</statements>
-<symbol> } </symbol>
-</ifStatement>
-</statements>
-<symbol> } </symbol>
-</ifStatement>
-<letStatement>
-<keyword> let </keyword>
-<identifier> freeListCurrent </identifier>
-<symbol> = </symbol>
-<expression>
-<term>
-<identifier> freeList </identifier>
-</term>
-</expression>
-<symbol> ; </symbol>
-</letStatement>
-<returnStatement>
-<keyword> return </keyword>
-<expression>
-<term>
 <identifier> block </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<integerConstant> 0 </integerConstant>
 </term>
 </expression>
 <symbol> ; </symbol>
-</returnStatement>
+</letStatement>
 </statements>
 <symbol> } </symbol>
 <keyword> else </keyword>
 <symbol> { </symbol>
 <statements>
-<ifStatement>
-<keyword> if </keyword>
-<symbol> ( </symbol>
-<expression>
-<term>
+<doStatement>
+<keyword> do </keyword>
 <identifier> Memory </identifier>
 <symbol> . </symbol>
-<identifier> peek </identifier>
+<identifier> poke </identifier>
 <symbol> ( </symbol>
 <expressionList>
 <expression>
 <term>
-<identifier> freeListCurrent </identifier>
+<identifier> block </identifier>
+</term>
+<symbol> - </symbol>
+<term>
+<integerConstant> 1 </integerConstant>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<identifier> size </identifier>
 </term>
 <symbol> + </symbol>
 <term>
@@ -479,15 +506,47 @@
 </expression>
 </expressionList>
 <symbol> ) </symbol>
-</term>
-<symbol> = </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<doStatement>
+<keyword> do </keyword>
+<identifier> Memory </identifier>
+<symbol> . </symbol>
+<identifier> poke </identifier>
+<symbol> ( </symbol>
+<expressionList>
+<expression>
 <term>
-<integerConstant> 0 </integerConstant>
+<identifier> bestBlockFrom </identifier>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<identifier> bestBlockSize </identifier>
+</term>
+<symbol> - </symbol>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<identifier> size </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<integerConstant> 1 </integerConstant>
 </term>
 </expression>
 <symbol> ) </symbol>
-<symbol> { </symbol>
-<statements>
+</term>
+</expression>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+</statements>
+<symbol> } </symbol>
+</ifStatement>
 <letStatement>
 <keyword> let </keyword>
 <identifier> freeListCurrent </identifier>
@@ -499,11 +558,33 @@
 </expression>
 <symbol> ; </symbol>
 </letStatement>
+<letStatement>
+<keyword> let </keyword>
+<identifier> bestBlock </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<integerConstant> 0 </integerConstant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<identifier> bestBlockSize </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<integerConstant> 0 </integerConstant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
 <returnStatement>
 <keyword> return </keyword>
 <expression>
 <term>
-<integerConstant> 0 </integerConstant>
+<identifier> block </identifier>
 </term>
 </expression>
 <symbol> ; </symbol>
@@ -559,9 +640,6 @@
 </expression>
 <symbol> ; </symbol>
 </returnStatement>
-</statements>
-<symbol> } </symbol>
-</ifStatement>
 </statements>
 <symbol> } </symbol>
 </ifStatement>
