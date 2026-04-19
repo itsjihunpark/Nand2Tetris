@@ -12,16 +12,16 @@ class Memory {
     /** Initializes the class. */
 
     static Array memory;
-    static int freeList;
+    static int heapbase;
     static int freeListCurrent;
     static int bestBlock, bestBlockSize, bestBlockFrom;
     
 
     function void init() {
         let memory = 0;
-        let freeList = 2048;
-        let memory[freeList] = 14336;
-        let freeListCurrent = freeList;
+        let heapbase = 2048;
+        let memory[heapbase] = 14336;
+        let freeListCurrent = heapbase;
         let bestBlock = 0;
         let bestBlockSize = 0;
         let bestBlockFrom = 0;
@@ -68,7 +68,7 @@ class Memory {
                 do Memory.poke(block - 1, size + 1); 
                 do Memory.poke(bestBlockFrom, bestBlockSize - (size + 1));
             }
-            let freeListCurrent = freeList;
+            let freeListCurrent = heapbase;
             let bestBlock = 0;
             let bestBlockSize = 0;
             return block;
@@ -89,7 +89,7 @@ class Memory {
         if (next = 0){
             do Memory.poke(o, 0);
             do Memory.poke(freeListCurrent+1, o-1);
-            let freeListCurrent = freeList;
+            let freeListCurrent = heapbase;
             return;
         }
         else{
