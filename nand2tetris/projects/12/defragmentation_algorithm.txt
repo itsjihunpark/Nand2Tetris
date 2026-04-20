@@ -1,0 +1,68 @@
+static freeList, freeListCurrent, previousBlock 
+
+if (object - 1) == freeListCurrent + memory[freeListCurrent]:
+    // condition 1
+    // triggers when object base address -1 is continuous to freeListCurrent block
+    // can only trigger once if it does trigger
+    // de-allocation and de-fragmentation is possible
+    // the 'size' of freeListCurrent block needs to be updated
+
+if (object - 1) == freeListCurrent + memory[freeListCurrent]:
+    // condition 1.1
+    // triggers when object base address -1 is continuous to freeListCurrent block
+    // can only trigger once if it does trigger
+    // de-allocation and de-fragmentation is possible
+    // the 'size' of freeListCurrent block needs to be updated
+
+if ( ((object-1) + memory[(object-1)]) == freeListCurrent ):
+    // condition 1.2
+    // triggers when freeListCurrent block is continuous to object base address -1
+    // can only trigger once if it does trigger
+    // de-allocation and de-fragmentation is possible
+
+    // the 'size' of object block needs to be updated
+    // the 'next' of object block needs to be updated
+
+    // memory[object-1] = memory[object-1] + memory[freeListCurrent]
+    // memory[previousBlock+1] = object-1
+    
+if freeListCurrent == heapbase + memory[heapbase]:
+    // condition 2
+    // triggers when freeListCurrent is located at address after the end of freeList block
+    // it may trigger more than once during the freeList linked list traversal
+    // will NEVER trigger when freeListCurrent == heapbase
+    // does not perform de-allocation and only de-fragmentation
+    
+    // the 'next' of the previous block needs to be updated to point to the current next
+    // the 'size' of freeList block needs to be updated
+
+if next == 0 & ~(deallocated):
+    // condition 3
+    // triggers if condition 1 did not deallocate object until the entire freeList 
+    // linked list is traversed
+    
+if next == 0 & deallocated:
+    // condition 4:
+    // triggers when the end of freeList linked list has been reached and de-allocation 
+    // occurred via condition 1 or 3.
+
+    // the freeListCurrent needs to be reset to heapbase (2048)
+    // return;
+
+MemoryTest/Main.jack algorithm flow:
+
+heapbase = 2048;
+Memory[heapbase] = 14336;
+
+a = alloc(3) // @16380, end=16384; Memory[heapbase] = 14332 freeList[0] = 16380
+b = alloc(3) // @16376, end=16380; Memory[heapbase] = 14328 freeList[0] = 16376
+c = alloc(500) // @15875, end=16376; Memory[heapbase] = 13827 freeList[0] = 15875
+
+
+a.dispose(); // @16380; end= 16384; appends to heapbase block; freeList[0] = 15875
+b.dispose(); // @16376; end=16380; replaces 'a' block; freeList[0] = 15875
+
+b = alloc(3) // @15871, end=15875; Memory[heapbase] = 13823; freeList[0] = 15871
+
+c.dispose(); // @15875, end=16376 replaces 'b' block; freeList[0] = 15871
+b.dispose(); @15871, end=15875; replaces 'c' block; 
