@@ -169,6 +169,16 @@ call Memory.peek 1 // subroutine call (function)
 add
 call Memory.poke 2 // subroutine call (function)
 pop temp 0
+push argument 0 // symbol -> o
+push constant 1
+sub
+push constant 0
+call Memory.poke 2 // subroutine call (function)
+pop temp 0
+push argument 0 // symbol -> o
+push constant 0
+call Memory.poke 2 // subroutine call (function)
+pop temp 0
 push constant 1 // pushing true
 neg // pushing true
 pop static 7 // symbol -> deallocated
@@ -199,6 +209,10 @@ call Memory.peek 1 // subroutine call (function)
 add
 call Memory.poke 2 // subroutine call (function)
 pop temp 0
+push argument 0 // symbol -> o
+push local 0 // symbol -> next
+call Memory.poke 2 // subroutine call (function)
+pop temp 0
 push static 6 // symbol -> previousBlock
 push constant 1
 add
@@ -207,6 +221,10 @@ push constant 1
 sub
 call Memory.poke 2 // subroutine call (function)
 pop temp 0
+push argument 0 // symbol -> o
+push constant 1
+sub
+pop static 2 // symbol -> freeListCurrent
 push constant 1 // pushing true
 neg // pushing true
 pop static 7 // symbol -> deallocated

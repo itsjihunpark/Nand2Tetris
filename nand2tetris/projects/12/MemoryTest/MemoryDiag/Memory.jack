@@ -12,19 +12,24 @@ class Memory {
     /** Initializes the class. */
 
     static Array memory;
-    static int freeList;
+    static int heapbase;
     static int freeListCurrent;
     static int bestBlock, bestBlockSize, bestBlockFrom;
+    static int previousBlock;
+    static boolean deallocated;
     
 
     function void init() {
         let memory = 0;
-        let freeList = 2048;
-        let memory[freeList] = 14336;
-        let freeListCurrent = freeList;
+        let heapbase = 2048;
+        let memory[heapbase] = 14336;
+        let freeListCurrent = heapbase;
         let bestBlock = 0;
         let bestBlockSize = 0;
         let bestBlockFrom = 0;
+        let previousBlock = heapbase;
+        let deallocated = false;
+
         return;
     }
 
@@ -68,7 +73,7 @@ class Memory {
                 do Memory.poke(block - 1, size + 1); 
                 do Memory.poke(bestBlockFrom, bestBlockSize - (size + 1));
             }
-            let freeListCurrent = freeList;
+            let freeListCurrent = heapbase;
             let bestBlock = 0;
             let bestBlockSize = 0;
             return block;
@@ -86,17 +91,74 @@ class Memory {
         // append object to the end of freeList
         var int next;
         let next = Memory.peek(freeListCurrent+1);
-        if (next = 0){
+           
+        if ( (o-1) = (freeListCurrent + Memory.peek(freeListCurrent)) ){
+            // condition 1.1
+            // triggers when object base address -1 is continuous to freeListCurrent block
+            // can only trigger once if it does trigger
+            // de-allocation and de-fragmentation is possible
+            // the 'size' of freeListCurrent block needs to be updated
+
+            do Memory.poke(freeListCurrent, Memory.peek(freeListCurrent) + Memory.peek(o-1));
+            do Memory.poke(o-1,0);
+            do Memory.poke(o,0);
+            let deallocated = true;
+        }
+
+        if ( ((o-1) + Memory.peek(o-1)) = freeListCurrent ){
+            // condition 1.2
+            // triggers when freeListCurrent block is continuous to object base address -1
+            // can only trigger once if it does trigger
+            // de-allocation and de-fragmentation is possible
+            // the 'size' of object block needs to be updated
+
+            do Memory.poke(o-1, Memory.peek(o-1) + Memory.peek(freeListCurrent));
+            // the 'next' of object block needs to be updated
+            do Memory.poke(o, next);
+            // the 'next' of previous block needs to be updated
+            do Memory.poke(previousBlock+1, o-1);   
+
+            let freeListCurrent = o-1;
+            let deallocated = true;       
+        }
+        
+        if (freeListCurrent = (heapbase + Memory.peek(heapbase)) ){
+            // condition 2
+            // triggers when freeListCurrent is located at address after the end of freeList block
+            // it may trigger more than once during the freeList linked list traversal
+            // will NEVER trigger when freeListCurrent == freeList
+            // does not perform de-allocation and only de-fragmentation
+            // the 'next' of the previous block needs to be updated to point to the current next
+            // the 'size' of freeList block needs to be updated
+            
+            do Memory.poke(previousBlock + 1, next);
+            do Memory.poke(heapbase, Memory.peek(heapbase) + Memory.peek(freeListCurrent));
+        }
+
+        if (next = 0 & ~deallocated){
+            // condition 3
+            // triggers if condition 1 did not deallocate object until the entire freeList 
+            // linked list is traversed
+
             do Memory.poke(o, 0);
             do Memory.poke(freeListCurrent+1, o-1);
-            let freeListCurrent = freeList;
-            return;
+            let deallocated = true;
         }
-        else{
-            let freeListCurrent = next;
-            do Memory.deAlloc(o);
+
+        if ((next = 0) & deallocated){
+            // condition 4:
+            // triggers when the end of freeList linked list has been reached and de-allocation 
+            // occurred via condition 1 or 3.
+
+            let freeListCurrent = heapbase;
+            let previousBlock = heapbase;
+            let deallocated = false;
             return;
         }
 
+        let previousBlock = freeListCurrent;
+        let freeListCurrent = next;
+        do Memory.deAlloc(o);
+        return;
     }    
 }

@@ -92,29 +92,35 @@ class Memory {
         var int next;
         let next = Memory.peek(freeListCurrent+1);
            
-        if ((o-1) = (freeListCurrent + Memory.peek(freeListCurrent))){
+        if ( (o-1) = (freeListCurrent + Memory.peek(freeListCurrent)) ){
             // condition 1.1
             // triggers when object base address -1 is continuous to freeListCurrent block
             // can only trigger once if it does trigger
             // de-allocation and de-fragmentation is possible
             // the 'size' of freeListCurrent block needs to be updated
-            
+
             do Memory.poke(freeListCurrent, Memory.peek(freeListCurrent) + Memory.peek(o-1));
+            do Memory.poke(o-1,0);
+            do Memory.poke(o,0);
             let deallocated = true;
         }
+
         if ( ((o-1) + Memory.peek(o-1)) = freeListCurrent ){
             // condition 1.2
             // triggers when freeListCurrent block is continuous to object base address -1
             // can only trigger once if it does trigger
             // de-allocation and de-fragmentation is possible
-            
             // the 'size' of object block needs to be updated
+
             do Memory.poke(o-1, Memory.peek(o-1) + Memory.peek(freeListCurrent));
             // the 'next' of object block needs to be updated
+            do Memory.poke(o, next);
+            // the 'next' of previous block needs to be updated
             do Memory.poke(previousBlock+1, o-1);   
-            let deallocated = true;
-        }
 
+            let freeListCurrent = o-1;
+            let deallocated = true;       
+        }
         
         if (freeListCurrent = (heapbase + Memory.peek(heapbase)) ){
             // condition 2
@@ -124,6 +130,7 @@ class Memory {
             // does not perform de-allocation and only de-fragmentation
             // the 'next' of the previous block needs to be updated to point to the current next
             // the 'size' of freeList block needs to be updated
+            
             do Memory.poke(previousBlock + 1, next);
             do Memory.poke(heapbase, Memory.peek(heapbase) + Memory.peek(freeListCurrent));
         }
@@ -137,6 +144,7 @@ class Memory {
             do Memory.poke(freeListCurrent+1, o-1);
             let deallocated = true;
         }
+
         if ((next = 0) & deallocated){
             // condition 4:
             // triggers when the end of freeList linked list has been reached and de-allocation 
