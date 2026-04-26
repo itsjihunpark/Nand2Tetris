@@ -1,0 +1,14 @@
+// compiling subroutine
+function Array.new 0
+push argument 0 // symbol -> size
+call Memory.alloc 1 // subroutine call (function)
+return
+// compiling subroutine
+function Array.dispose 0
+push argument 0
+pop pointer 0
+push argument 0 // symbol -> this
+call Memory.deAlloc 1 // subroutine call (function)
+pop temp 0
+push constant 0
+return

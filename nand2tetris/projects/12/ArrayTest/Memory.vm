@@ -1,0 +1,311 @@
+// compiling subroutine
+function Memory.init 0
+push constant 0
+pop static 0 // symbol -> memory
+push constant 2048
+pop static 1 // symbol -> heapbase
+push static 0 // symbol -> memory (array)
+push static 1 // symbol -> heapbase
+add
+push constant 14336
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> heapbase
+pop static 2 // symbol -> freeListCurrent
+push constant 0
+pop static 3 // symbol -> bestBlock
+push constant 0
+pop static 4 // symbol -> bestBlockSize
+push constant 0
+pop static 5 // symbol -> bestBlockFrom
+push static 1 // symbol -> heapbase
+pop static 6 // symbol -> previousBlock
+push constant 0 // pushing false
+pop static 7 // symbol -> deallocated
+push constant 0
+return
+// compiling subroutine
+function Memory.peek 0
+push static 0 // symbol -> memory (array)
+push argument 0 // symbol -> address
+add
+pop pointer 1
+push that 0
+return
+// compiling subroutine
+function Memory.poke 0
+push static 0 // symbol -> memory (array)
+push argument 0 // symbol -> address
+add
+push argument 1 // symbol -> value
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 0
+return
+// compiling subroutine
+function Memory.alloc 2
+push static 2 // symbol -> freeListCurrent
+call Memory.peek 1 // subroutine call (function)
+pop local 1 // symbol -> currentSize
+push static 4 // symbol -> bestBlockSize
+push constant 0
+eq
+push local 1 // symbol -> currentSize
+or
+push static 4 // symbol -> bestBlockSize
+push constant 1
+add
+lt
+push local 1 // symbol -> currentSize
+push argument 0 // symbol -> size
+push constant 2
+add
+gt
+and
+not
+if-goto L1.1
+push static 2 // symbol -> freeListCurrent
+push static 2 // symbol -> freeListCurrent
+call Memory.peek 1 // subroutine call (function)
+add
+push argument 0 // symbol -> size
+push constant 1
+add
+sub
+push constant 1
+add
+pop static 3 // symbol -> bestBlock
+push static 2 // symbol -> freeListCurrent
+call Memory.peek 1 // subroutine call (function)
+pop static 4 // symbol -> bestBlockSize
+push static 2 // symbol -> freeListCurrent
+pop static 5 // symbol -> bestBlockFrom
+goto L2.1
+label L1.1
+label L2.1
+push static 2 // symbol -> freeListCurrent
+push constant 1
+add
+call Memory.peek 1 // subroutine call (function)
+push constant 0
+eq
+not
+if-goto L1.2
+push static 3 // symbol -> bestBlock
+pop local 0 // symbol -> block
+push static 3 // symbol -> bestBlock
+push constant 0
+eq
+not
+if-goto L1.3
+push constant 0
+pop local 0 // symbol -> block
+goto L2.3
+label L1.3
+push local 0 // symbol -> block
+push constant 1
+sub
+push argument 0 // symbol -> size
+push constant 1
+add
+call Memory.poke 2 // subroutine call (function)
+pop temp 0
+push static 5 // symbol -> bestBlockFrom
+push static 4 // symbol -> bestBlockSize
+push argument 0 // symbol -> size
+push constant 1
+add
+sub
+call Memory.poke 2 // subroutine call (function)
+pop temp 0
+label L2.3
+push static 1 // symbol -> heapbase
+pop static 2 // symbol -> freeListCurrent
+push constant 0
+pop static 3 // symbol -> bestBlock
+push constant 0
+pop static 4 // symbol -> bestBlockSize
+push local 0 // symbol -> block
+return
+goto L2.2
+label L1.2
+push static 2 // symbol -> freeListCurrent
+push constant 1
+add
+call Memory.peek 1 // subroutine call (function)
+pop static 2 // symbol -> freeListCurrent
+push argument 0 // symbol -> size
+call Memory.alloc 1 // subroutine call (function)
+return
+label L2.2
+// compiling subroutine
+function Memory.deAlloc 1
+push static 2 // symbol -> freeListCurrent
+push constant 1
+add
+call Memory.peek 1 // subroutine call (function)
+pop local 0 // symbol -> next
+push argument 0 // symbol -> o
+push constant 1
+sub
+push static 2 // symbol -> freeListCurrent
+push static 2 // symbol -> freeListCurrent
+call Memory.peek 1 // subroutine call (function)
+add
+eq
+not
+if-goto L1.4
+push static 2 // symbol -> freeListCurrent
+push static 2 // symbol -> freeListCurrent
+call Memory.peek 1 // subroutine call (function)
+push argument 0 // symbol -> o
+push constant 1
+sub
+call Memory.peek 1 // subroutine call (function)
+add
+call Memory.poke 2 // subroutine call (function)
+pop temp 0
+push argument 0 // symbol -> o
+push constant 1
+sub
+push constant 0
+call Memory.poke 2 // subroutine call (function)
+pop temp 0
+push argument 0 // symbol -> o
+push constant 0
+call Memory.poke 2 // subroutine call (function)
+pop temp 0
+push constant 1 // pushing true
+neg // pushing true
+pop static 7 // symbol -> deallocated
+goto L2.4
+label L1.4
+label L2.4
+push argument 0 // symbol -> o
+push constant 1
+sub
+push argument 0 // symbol -> o
+push constant 1
+sub
+call Memory.peek 1 // subroutine call (function)
+add
+push static 2 // symbol -> freeListCurrent
+eq
+not
+if-goto L1.5
+push argument 0 // symbol -> o
+push constant 1
+sub
+push argument 0 // symbol -> o
+push constant 1
+sub
+call Memory.peek 1 // subroutine call (function)
+push static 2 // symbol -> freeListCurrent
+call Memory.peek 1 // subroutine call (function)
+add
+call Memory.poke 2 // subroutine call (function)
+pop temp 0
+push argument 0 // symbol -> o
+push local 0 // symbol -> next
+call Memory.poke 2 // subroutine call (function)
+pop temp 0
+push static 6 // symbol -> previousBlock
+push constant 1
+add
+push argument 0 // symbol -> o
+push constant 1
+sub
+call Memory.poke 2 // subroutine call (function)
+pop temp 0
+push argument 0 // symbol -> o
+push constant 1
+sub
+pop static 2 // symbol -> freeListCurrent
+push constant 1 // pushing true
+neg // pushing true
+pop static 7 // symbol -> deallocated
+goto L2.5
+label L1.5
+label L2.5
+push static 2 // symbol -> freeListCurrent
+push static 1 // symbol -> heapbase
+push static 1 // symbol -> heapbase
+call Memory.peek 1 // subroutine call (function)
+add
+eq
+not
+if-goto L1.6
+push static 6 // symbol -> previousBlock
+push constant 1
+add
+push local 0 // symbol -> next
+call Memory.poke 2 // subroutine call (function)
+pop temp 0
+push static 1 // symbol -> heapbase
+push static 1 // symbol -> heapbase
+call Memory.peek 1 // subroutine call (function)
+push static 2 // symbol -> freeListCurrent
+call Memory.peek 1 // subroutine call (function)
+add
+call Memory.poke 2 // subroutine call (function)
+pop temp 0
+goto L2.6
+label L1.6
+label L2.6
+push local 0 // symbol -> next
+push constant 0
+eq
+push static 7 // symbol -> deallocated
+not
+and
+not
+if-goto L1.7
+push argument 0 // symbol -> o
+push constant 0
+call Memory.poke 2 // subroutine call (function)
+pop temp 0
+push static 2 // symbol -> freeListCurrent
+push constant 1
+add
+push argument 0 // symbol -> o
+push constant 1
+sub
+call Memory.poke 2 // subroutine call (function)
+pop temp 0
+push constant 1 // pushing true
+neg // pushing true
+pop static 7 // symbol -> deallocated
+goto L2.7
+label L1.7
+label L2.7
+push local 0 // symbol -> next
+push constant 0
+eq
+push static 7 // symbol -> deallocated
+and
+not
+if-goto L1.8
+push static 1 // symbol -> heapbase
+pop static 2 // symbol -> freeListCurrent
+push static 1 // symbol -> heapbase
+pop static 6 // symbol -> previousBlock
+push constant 0 // pushing false
+pop static 7 // symbol -> deallocated
+push constant 0
+return
+goto L2.8
+label L1.8
+label L2.8
+push static 2 // symbol -> freeListCurrent
+pop static 6 // symbol -> previousBlock
+push local 0 // symbol -> next
+pop static 2 // symbol -> freeListCurrent
+push argument 0 // symbol -> o
+call Memory.deAlloc 1 // subroutine call (function)
+pop temp 0
+push constant 0
+return

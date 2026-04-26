@@ -1,0 +1,132 @@
+// compiling subroutine
+function Main.main 4
+push constant 8000
+pop local 0 // symbol -> r
+push constant 3
+call Array.new 1 // subroutine call (function)
+pop local 1 // symbol -> a
+push local 1 // symbol -> a (array)
+push constant 2
+add
+push constant 222
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 0 // symbol -> r (array)
+push constant 0
+add
+push local 1 // symbol -> a (array)
+push constant 2
+add
+pop pointer 1
+push that 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 3
+call Array.new 1 // subroutine call (function)
+pop local 2 // symbol -> b
+push local 2 // symbol -> b (array)
+push constant 1
+add
+push local 1 // symbol -> a (array)
+push constant 2
+add
+pop pointer 1
+push that 0
+push constant 100
+sub
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 0 // symbol -> r (array)
+push constant 1
+add
+push local 2 // symbol -> b (array)
+push constant 1
+add
+pop pointer 1
+push that 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 500
+call Array.new 1 // subroutine call (function)
+pop local 3 // symbol -> c
+push local 3 // symbol -> c (array)
+push constant 499
+add
+push local 1 // symbol -> a (array)
+push constant 2
+add
+pop pointer 1
+push that 0
+push local 2 // symbol -> b (array)
+push constant 1
+add
+pop pointer 1
+push that 0
+sub
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 0 // symbol -> r (array)
+push constant 2
+add
+push local 3 // symbol -> c (array)
+push constant 499
+add
+pop pointer 1
+push that 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 1 // symbol -> a
+call Array.dispose 1 // subroutine call (method)
+pop temp 0
+push local 2 // symbol -> b
+call Array.dispose 1 // subroutine call (method)
+pop temp 0
+push constant 3
+call Array.new 1 // subroutine call (function)
+pop local 2 // symbol -> b
+push local 2 // symbol -> b (array)
+push constant 0
+add
+push local 3 // symbol -> c (array)
+push constant 499
+add
+pop pointer 1
+push that 0
+push constant 90
+sub
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 0 // symbol -> r (array)
+push constant 3
+add
+push local 2 // symbol -> b (array)
+push constant 0
+add
+pop pointer 1
+push that 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 3 // symbol -> c
+call Array.dispose 1 // subroutine call (method)
+pop temp 0
+push local 2 // symbol -> b
+call Array.dispose 1 // subroutine call (method)
+pop temp 0
+push constant 0
+return
