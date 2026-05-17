@@ -367,7 +367,7 @@ pop pointer 1
 push that 0
 return
 // compiling subroutine
-function Math.obtainTwosComplementBin 2
+function Math.obtainTwosComplementBin 1
 push constant 0 // pushing false
 pop local 0 // symbol -> negative
 push argument 0 // symbol -> x
@@ -409,36 +409,6 @@ pop that 0
 goto L2.10
 label L1.10
 label L2.10
-push constant 15
-pop local 1 // symbol -> tmp
-label L1.11
-push local 1 // symbol -> tmp
-push constant 1
-neg
-eq
-not
-not
-if-goto L2.11
-push static 2 // symbol -> tempBin (array)
-push local 1 // symbol -> tmp
-add
-pop pointer 1
-push that 0
-call Output.printInt 1 // subroutine call (function)
-pop temp 0
-// Instantiating String:  
-push constant 1
-call String.new 1
-push constant 32
-call String.appendChar 2
-call Output.printString 1 // subroutine call (function)
-pop temp 0
-push local 1 // symbol -> tmp
-push constant 1
-sub
-pop local 1 // symbol -> tmp
-goto L1.11
-label L2.11
 call Output.println 0 // subroutine call (function)
 pop temp 0
 push constant 0
@@ -451,13 +421,13 @@ push constant 0
 pop local 1 // symbol -> bitPos
 push constant 0
 pop local 0 // symbol -> foundBinPos
-label L1.12
+label L1.11
 push local 1 // symbol -> bitPos
 push constant 15
 eq
 not
 not
-if-goto L2.12
+if-goto L2.11
 push static 1 // symbol -> powersOfTwo (array)
 push local 1 // symbol -> bitPos
 add
@@ -474,18 +444,18 @@ push argument 0 // symbol -> x
 eq
 or
 not
-if-goto L1.13
+if-goto L1.12
 push local 1 // symbol -> bitPos
 pop local 0 // symbol -> foundBinPos
-goto L2.13
-label L1.13
-label L2.13
+goto L2.12
+label L1.12
+label L2.12
 push local 1 // symbol -> bitPos
 push constant 1
 add
 pop local 1 // symbol -> bitPos
-goto L1.12
-label L2.12
+goto L1.11
+label L2.11
 push argument 0 // symbol -> x
 push local 0 // symbol -> foundBinPos
 call Math.dec2Bin 2 // subroutine call (function)
