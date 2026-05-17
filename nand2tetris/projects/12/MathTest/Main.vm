@@ -1,0 +1,84 @@
+// compiling subroutine
+function Main.main 1
+push constant 8000
+pop local 0 // symbol -> r
+push local 0 // symbol -> r (array)
+push constant 0
+add
+push constant 2
+push constant 3
+call Math.multiply 2
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 0 // symbol -> r (array)
+push constant 1
+add
+push local 0 // symbol -> r (array)
+push constant 0
+add
+pop pointer 1
+push that 0
+push constant 30
+neg
+call Math.multiply 2
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 0 // symbol -> r (array)
+push constant 2
+add
+push local 0 // symbol -> r (array)
+push constant 1
+add
+pop pointer 1
+push that 0
+push constant 100
+call Math.multiply 2
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 0 // symbol -> r (array)
+push constant 3
+add
+push constant 1
+push local 0 // symbol -> r (array)
+push constant 2
+add
+pop pointer 1
+push that 0
+call Math.multiply 2
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 0 // symbol -> r (array)
+push constant 4
+add
+push local 0 // symbol -> r (array)
+push constant 3
+add
+pop pointer 1
+push that 0
+push constant 0
+call Math.multiply 2
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 0 // symbol -> r (array)
+push constant 5
+add
+push constant 32767
+push constant 1
+neg
+call Math.multiply 2
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 0
+return
