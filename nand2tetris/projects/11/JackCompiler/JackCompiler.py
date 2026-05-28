@@ -17,9 +17,13 @@ class JackCompiler:
             jack_tokenizer = JackTokenizer(path)
             compilation_engine = CompilationEngine(jack_tokenizer)
             compilation_engine.compile_class()
+            
+            jack_tokenizer.dest.close()
+            compilation_engine.xml.close() 
+
             with open(path.replace(".jack", ".vm"), "w", encoding="utf-8") as vm_file:
                 for command in compilation_engine.vm_commands:
                     vm_file.writelines(command + "\n")
-
+            vm_file.close()
 if __name__ == "__main__":
     JackCompiler(sys.argv)
