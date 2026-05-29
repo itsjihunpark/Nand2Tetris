@@ -66,6 +66,15 @@ class Math {
      *  an an expression, it handles it by invoking this method.
      *  Thus, x/y and Math.divide(x,y) return the same value. */
     function int divide(int x, int y) {
+	var int q;
+	if (y > x) {return 0;}
+	let q = Math.divide(x, (y+y));
+	if ( ( x - ( (q+q)*y ) ) < y ){
+	     return q+q;
+	}
+	else{
+	     return q+q+1;
+	}
     }
 
     /** Returns the integer part of the square root of x. */

@@ -97,6 +97,16 @@
 <integerConstant> 1 </integerConstant>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> r </identifier>
+<symbol> [ </symbol>
+<integerConstant> 5 </integerConstant>
+<symbol> ] </symbol>
+<symbol> = </symbol>
+<integerConstant> 9 </integerConstant>
+<symbol> / </symbol>
+<integerConstant> 3 </integerConstant>
+<symbol> ; </symbol>
 <keyword> return </keyword>
 <symbol> ; </symbol>
 <symbol> } </symbol>

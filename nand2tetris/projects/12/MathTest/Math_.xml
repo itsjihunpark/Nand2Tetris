@@ -585,7 +585,161 @@
 <symbol> ) </symbol>
 <subroutineBody>
 <symbol> { </symbol>
+<varDec>
+<keyword> var </keyword>
+<keyword> int </keyword>
+<identifier> q </identifier>
+<symbol> ; </symbol>
+</varDec>
 <statements>
+<ifStatement>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<expression>
+<term>
+<identifier> y </identifier>
+</term>
+<symbol> &gt; </symbol>
+<term>
+<identifier> x </identifier>
+</term>
+</expression>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<statements>
+<returnStatement>
+<keyword> return </keyword>
+<expression>
+<term>
+<integerConstant> 0 </integerConstant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+</ifStatement>
+<letStatement>
+<keyword> let </keyword>
+<identifier> q </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<identifier> Math </identifier>
+<symbol> . </symbol>
+<identifier> divide </identifier>
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+<term>
+<identifier> x </identifier>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<identifier> y </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<identifier> y </identifier>
+</term>
+</expression>
+<symbol> ) </symbol>
+</term>
+</expression>
+</expressionList>
+<symbol> ) </symbol>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<ifStatement>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<expression>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<identifier> x </identifier>
+</term>
+<symbol> - </symbol>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<identifier> q </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<identifier> q </identifier>
+</term>
+</expression>
+<symbol> ) </symbol>
+</term>
+<symbol> * </symbol>
+<term>
+<identifier> y </identifier>
+</term>
+</expression>
+<symbol> ) </symbol>
+</term>
+</expression>
+<symbol> ) </symbol>
+</term>
+<symbol> &lt; </symbol>
+<term>
+<identifier> y </identifier>
+</term>
+</expression>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<statements>
+<returnStatement>
+<keyword> return </keyword>
+<expression>
+<term>
+<identifier> q </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<identifier> q </identifier>
+</term>
+</expression>
+<symbol> ; </symbol>
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+<keyword> else </keyword>
+<symbol> { </symbol>
+<statements>
+<returnStatement>
+<keyword> return </keyword>
+<expression>
+<term>
+<identifier> q </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<identifier> q </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<integerConstant> 1 </integerConstant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+</ifStatement>
 </statements>
 <symbol> } </symbol>
 </subroutineBody>
