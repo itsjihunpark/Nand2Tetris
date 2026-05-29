@@ -49,7 +49,7 @@ class CompilationEngine:
         if self.jack_tokenizer.current_token == _str:
             self.print_xml(_str)
         else:
-            print("Syntax Error")
+            print(f"Syntax Error: {_str}")
         self.jack_tokenizer.advance()
 
     def print_xml(self, _str):
