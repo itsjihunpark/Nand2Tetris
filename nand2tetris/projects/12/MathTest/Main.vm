@@ -112,5 +112,24 @@ pop temp 0
 pop pointer 1
 push temp 0
 pop that 0
+push local 0 // symbol -> r (array)
+push constant 12
+add
+push constant 27
+call Math.abs 1 // subroutine call (function)
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 0 // symbol -> r (array)
+push constant 13
+add
+push constant 32767
+neg
+call Math.abs 1 // subroutine call (function)
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
 push constant 0
 return
