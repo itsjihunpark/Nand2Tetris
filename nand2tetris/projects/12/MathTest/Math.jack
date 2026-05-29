@@ -66,9 +66,24 @@ class Math {
      *  an an expression, it handles it by invoking this method.
      *  Thus, x/y and Math.divide(x,y) return the same value. */
     function int divide(int x, int y) {
-	var int q;
+	var int sign, res;
+	let sign = 1;
+	if (x < 0){
+	     let x = -x;
+	     let sign = -sign;
+	}
+	if (y < 0){
+	     let y = -y;
+	     let sign = -sign;
+	}
+	let res = Math.divideRecursively(x, y);
+	return res*sign;
+    }
+
+    function int divideRecursively(int x, int y) {
+    	var int q;
 	if (y > x) {return 0;}
-	let q = Math.divide(x, (y+y));
+	let q = Math.divideRecursively(x, (y+y));
 	if ( ( x - ( (q+q)*y ) ) < y ){
 	     return q+q;
 	}

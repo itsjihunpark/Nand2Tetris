@@ -177,22 +177,62 @@ label L2.1
 push local 1 // symbol -> sum
 return
 // compiling subroutine
-function Math.divide 1
+function Math.divide 2
+push constant 1
+pop local 0 // symbol -> sign
+push argument 0 // symbol -> x
+push constant 0
+lt
+not
+if-goto L1.3
+push argument 0 // symbol -> x
+neg
+pop argument 0 // symbol -> x
+push local 0 // symbol -> sign
+neg
+pop local 0 // symbol -> sign
+goto L2.3
+label L1.3
+label L2.3
+push argument 1 // symbol -> y
+push constant 0
+lt
+not
+if-goto L1.4
+push argument 1 // symbol -> y
+neg
+pop argument 1 // symbol -> y
+push local 0 // symbol -> sign
+neg
+pop local 0 // symbol -> sign
+goto L2.4
+label L1.4
+label L2.4
+push argument 0 // symbol -> x
+push argument 1 // symbol -> y
+call Math.divideRecursively 2 // subroutine call (function)
+pop local 1 // symbol -> res
+push local 1 // symbol -> res
+push local 0 // symbol -> sign
+call Math.multiply 2
+return
+// compiling subroutine
+function Math.divideRecursively 1
 push argument 1 // symbol -> y
 push argument 0 // symbol -> x
 gt
 not
-if-goto L1.3
+if-goto L1.5
 push constant 0
 return
-goto L2.3
-label L1.3
-label L2.3
+goto L2.5
+label L1.5
+label L2.5
 push argument 0 // symbol -> x
 push argument 1 // symbol -> y
 push argument 1 // symbol -> y
 add
-call Math.divide 2 // subroutine call (function)
+call Math.divideRecursively 2 // subroutine call (function)
 pop local 0 // symbol -> q
 push argument 0 // symbol -> x
 push local 0 // symbol -> q
@@ -204,20 +244,20 @@ sub
 push argument 1 // symbol -> y
 lt
 not
-if-goto L1.4
+if-goto L1.6
 push local 0 // symbol -> q
 push local 0 // symbol -> q
 add
 return
-goto L2.4
-label L1.4
+goto L2.6
+label L1.6
 push local 0 // symbol -> q
 push local 0 // symbol -> q
 add
 push constant 1
 add
 return
-label L2.4
+label L2.6
 // compiling subroutine
 function Math.sqrt 0
 // compiling subroutine
@@ -230,13 +270,13 @@ function Math.abs 0
 function Math.resetTempBinArray 1
 push constant 0
 pop local 0 // symbol -> i
-label L1.5
+label L1.7
 push local 0 // symbol -> i
 push constant 16
 eq
 not
 not
-if-goto L2.5
+if-goto L2.7
 push static 2 // symbol -> tempBin (array)
 push local 0 // symbol -> i
 add
@@ -249,21 +289,21 @@ push local 0 // symbol -> i
 push constant 1
 add
 pop local 0 // symbol -> i
-goto L1.5
-label L2.5
+goto L1.7
+label L2.7
 push constant 0
 return
 // compiling subroutine
 function Math.flipTempBinArray 1
 push constant 0
 pop local 0 // symbol -> i
-label L1.6
+label L1.8
 push local 0 // symbol -> i
 push constant 16
 eq
 not
 not
-if-goto L2.6
+if-goto L2.8
 push static 2 // symbol -> tempBin (array)
 push local 0 // symbol -> i
 add
@@ -281,8 +321,8 @@ push local 0 // symbol -> i
 push constant 1
 add
 pop local 0 // symbol -> i
-goto L1.6
-label L2.6
+goto L1.8
+label L2.8
 push constant 0
 return
 // compiling subroutine
@@ -291,13 +331,13 @@ push constant 0
 pop local 0 // symbol -> sum
 push constant 0
 pop local 1 // symbol -> i
-label L1.7
+label L1.9
 push local 1 // symbol -> i
 push constant 15
 eq
 not
 not
-if-goto L2.7
+if-goto L2.9
 push static 2 // symbol -> tempBin (array)
 push local 1 // symbol -> i
 add
@@ -307,7 +347,7 @@ push constant 1 // pushing true
 neg // pushing true
 eq
 not
-if-goto L1.8
+if-goto L1.10
 push local 0 // symbol -> sum
 push static 1 // symbol -> powersOfTwo (array)
 push local 1 // symbol -> i
@@ -316,15 +356,15 @@ pop pointer 1
 push that 0
 add
 pop local 0 // symbol -> sum
-goto L2.8
-label L1.8
-label L2.8
+goto L2.10
+label L1.10
+label L2.10
 push local 1 // symbol -> i
 push constant 1
 add
 pop local 1 // symbol -> i
-goto L1.7
-label L2.7
+goto L1.9
+label L2.9
 push local 0 // symbol -> sum
 return
 // compiling subroutine
@@ -337,12 +377,12 @@ push constant 0
 lt
 or
 not
-if-goto L1.9
+if-goto L1.11
 push constant 0
 return
-goto L2.9
-label L1.9
-label L2.9
+goto L2.11
+label L1.11
+label L2.11
 push argument 0 // symbol -> x
 push static 1 // symbol -> powersOfTwo (array)
 push argument 1 // symbol -> n
@@ -359,7 +399,7 @@ push that 0
 eq
 or
 not
-if-goto L1.10
+if-goto L1.12
 push static 2 // symbol -> tempBin (array)
 push argument 1 // symbol -> n
 add
@@ -381,8 +421,8 @@ push constant 1
 sub
 call Math.dec2Bin 2 // subroutine call (function)
 return
-goto L2.10
-label L1.10
+goto L2.12
+label L1.12
 push static 2 // symbol -> tempBin (array)
 push argument 1 // symbol -> n
 add
@@ -397,7 +437,7 @@ push constant 1
 sub
 call Math.dec2Bin 2 // subroutine call (function)
 return
-label L2.10
+label L2.12
 // compiling subroutine
 function Math.bit 0
 push static 2 // symbol -> tempBin (array)
@@ -414,22 +454,22 @@ push argument 0 // symbol -> x
 push constant 0
 lt
 not
-if-goto L1.11
+if-goto L1.13
 push constant 1 // pushing true
 neg // pushing true
 pop local 0 // symbol -> negative
 push argument 0 // symbol -> x
 neg
 pop argument 0 // symbol -> x
-goto L2.11
-label L1.11
-label L2.11
+goto L2.13
+label L1.13
+label L2.13
 push argument 0 // symbol -> x
 call Math.getBinFromDec 1 // subroutine call (function)
 pop temp 0
 push local 0 // symbol -> negative
 not
-if-goto L1.12
+if-goto L1.14
 call Math.flipTempBinArray 0 // subroutine call (function)
 pop temp 0
 call Math.bin2Dec 0 // subroutine call (function)
@@ -446,9 +486,9 @@ pop temp 0
 pop pointer 1
 push temp 0
 pop that 0
-goto L2.12
-label L1.12
-label L2.12
+goto L2.14
+label L1.14
+label L2.14
 call Output.println 0 // subroutine call (function)
 pop temp 0
 push constant 0
@@ -461,13 +501,13 @@ push constant 0
 pop local 1 // symbol -> bitPos
 push constant 0
 pop local 0 // symbol -> foundBinPos
-label L1.13
+label L1.15
 push local 1 // symbol -> bitPos
 push constant 15
 eq
 not
 not
-if-goto L2.13
+if-goto L2.15
 push static 1 // symbol -> powersOfTwo (array)
 push local 1 // symbol -> bitPos
 add
@@ -484,18 +524,18 @@ push argument 0 // symbol -> x
 eq
 or
 not
-if-goto L1.14
+if-goto L1.16
 push local 1 // symbol -> bitPos
 pop local 0 // symbol -> foundBinPos
-goto L2.14
-label L1.14
-label L2.14
+goto L2.16
+label L1.16
+label L2.16
 push local 1 // symbol -> bitPos
 push constant 1
 add
 pop local 1 // symbol -> bitPos
-goto L1.13
-label L2.13
+goto L1.15
+label L2.15
 push argument 0 // symbol -> x
 push local 0 // symbol -> foundBinPos
 call Math.dec2Bin 2 // subroutine call (function)
