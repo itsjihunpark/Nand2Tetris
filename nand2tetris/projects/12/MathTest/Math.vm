@@ -362,6 +362,20 @@ label L2.12
 push argument 0 // symbol -> x
 return
 // compiling subroutine
+function Math.mod 1
+push argument 0 // symbol -> x
+push argument 1 // symbol -> y
+call Math.divide 2
+pop local 0 // symbol -> res
+push argument 0 // symbol -> x
+push local 0 // symbol -> res
+push argument 1 // symbol -> y
+call Math.multiply 2
+sub
+pop local 0 // symbol -> res
+push local 0 // symbol -> res
+return
+// compiling subroutine
 function Math.resetTempBinArray 1
 push constant 0
 pop local 0 // symbol -> i

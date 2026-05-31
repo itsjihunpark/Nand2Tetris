@@ -135,6 +135,14 @@ class Math {
 	return x;
     }
 
+    /** Returns the remainder of a division */
+    function int mod(int x, int y){
+    	var int res;
+	let res = x/y;
+	let res = x - (res*y);
+	return res;
+    }
+
     function void resetTempBinArray(){
         var int i;
         let i = 0;
@@ -225,4 +233,5 @@ class Math {
         do Math.dec2Bin(x, foundBinPos);
         return;
     }
+
 }
