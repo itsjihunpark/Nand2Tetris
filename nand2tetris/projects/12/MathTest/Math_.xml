@@ -928,7 +928,192 @@
 <symbol> ) </symbol>
 <subroutineBody>
 <symbol> { </symbol>
+<varDec>
+<keyword> var </keyword>
+<keyword> int </keyword>
+<identifier> n </identifier>
+<symbol> , </symbol>
+<identifier> y </identifier>
+<symbol> , </symbol>
+<identifier> temp </identifier>
+<symbol> ; </symbol>
+</varDec>
 <statements>
+<letStatement>
+<keyword> let </keyword>
+<identifier> y </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<integerConstant> 0 </integerConstant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<identifier> n </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<integerConstant> 7 </integerConstant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<whileStatement>
+<keyword> while </keyword>
+<symbol> ( </symbol>
+<expression>
+<term>
+<identifier> n </identifier>
+</term>
+<symbol> &gt; </symbol>
+<term>
+<symbol> - </symbol>
+<term>
+<integerConstant> 1 </integerConstant>
+</term>
+</term>
+</expression>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<statements>
+<letStatement>
+<keyword> let </keyword>
+<identifier> temp </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<identifier> y </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<identifier> powersOfTwo </identifier>
+<symbol> [ </symbol>
+<expression>
+<term>
+<identifier> n </identifier>
+</term>
+</expression>
+<symbol> ] </symbol>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<identifier> temp </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<identifier> temp </identifier>
+</term>
+<symbol> * </symbol>
+<term>
+<identifier> temp </identifier>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<ifStatement>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<expression>
+<term>
+<identifier> temp </identifier>
+</term>
+<symbol> &gt; </symbol>
+<term>
+<symbol> - </symbol>
+<term>
+<integerConstant> 1 </integerConstant>
+</term>
+</term>
+</expression>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<statements>
+<ifStatement>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<expression>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<identifier> temp </identifier>
+</term>
+<symbol> - </symbol>
+<term>
+<integerConstant> 1 </integerConstant>
+</term>
+</expression>
+<symbol> ) </symbol>
+</term>
+<symbol> &lt; </symbol>
+<term>
+<identifier> x </identifier>
+</term>
+</expression>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<statements>
+<letStatement>
+<keyword> let </keyword>
+<identifier> y </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<identifier> y </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<identifier> powersOfTwo </identifier>
+<symbol> [ </symbol>
+<expression>
+<term>
+<identifier> n </identifier>
+</term>
+</expression>
+<symbol> ] </symbol>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+</statements>
+<symbol> } </symbol>
+</ifStatement>
+</statements>
+<symbol> } </symbol>
+</ifStatement>
+<letStatement>
+<keyword> let </keyword>
+<identifier> n </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<identifier> n </identifier>
+</term>
+<symbol> - </symbol>
+<term>
+<integerConstant> 1 </integerConstant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+</statements>
+<symbol> } </symbol>
+</whileStatement>
+<returnStatement>
+<keyword> return </keyword>
+<expression>
+<term>
+<identifier> y </identifier>
+</term>
+</expression>
+<symbol> ; </symbol>
+</returnStatement>
 </statements>
 <symbol> } </symbol>
 </subroutineBody>
@@ -949,6 +1134,42 @@
 <subroutineBody>
 <symbol> { </symbol>
 <statements>
+<ifStatement>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<expression>
+<term>
+<identifier> a </identifier>
+</term>
+<symbol> &gt; </symbol>
+<term>
+<identifier> b </identifier>
+</term>
+</expression>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<statements>
+<returnStatement>
+<keyword> return </keyword>
+<expression>
+<term>
+<identifier> a </identifier>
+</term>
+</expression>
+<symbol> ; </symbol>
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+</ifStatement>
+<returnStatement>
+<keyword> return </keyword>
+<expression>
+<term>
+<identifier> b </identifier>
+</term>
+</expression>
+<symbol> ; </symbol>
+</returnStatement>
 </statements>
 <symbol> } </symbol>
 </subroutineBody>
@@ -969,6 +1190,42 @@
 <subroutineBody>
 <symbol> { </symbol>
 <statements>
+<ifStatement>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<expression>
+<term>
+<identifier> a </identifier>
+</term>
+<symbol> &lt; </symbol>
+<term>
+<identifier> b </identifier>
+</term>
+</expression>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<statements>
+<returnStatement>
+<keyword> return </keyword>
+<expression>
+<term>
+<identifier> a </identifier>
+</term>
+</expression>
+<symbol> ; </symbol>
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+</ifStatement>
+<returnStatement>
+<keyword> return </keyword>
+<expression>
+<term>
+<identifier> b </identifier>
+</term>
+</expression>
+<symbol> ; </symbol>
+</returnStatement>
 </statements>
 <symbol> } </symbol>
 </subroutineBody>
@@ -1791,17 +2048,6 @@
 </statements>
 <symbol> } </symbol>
 </ifStatement>
-<doStatement>
-<keyword> do </keyword>
-<identifier> Output </identifier>
-<symbol> . </symbol>
-<identifier> println </identifier>
-<symbol> ( </symbol>
-<expressionList>
-</expressionList>
-<symbol> ) </symbol>
-<symbol> ; </symbol>
-</doStatement>
 <returnStatement>
 <keyword> return </keyword>
 <symbol> ; </symbol>

@@ -94,14 +94,37 @@ class Math {
 
     /** Returns the integer part of the square root of x. */
     function int sqrt(int x) {
+	var int n,y,temp;
+	let y = 0;
+	let n = 7;
+	while (n>-1){
+	    let temp = y + powersOfTwo[n]; 
+	    let temp = temp*temp;
+	    if (temp > -1){
+	    	if ((temp-1) < x){
+		     let y = y + powersOfTwo[n];
+	    	}
+	    }
+	    let n = n - 1;
+	}
+
+	return y;
     }
 
     /** Returns the greater value. */
     function int max(int a, int b) {
+    	if (a > b){
+	     return a;
+	}
+	return b;
     }
 
     /** Returns the smaller value. */
     function int min(int a, int b) {
+    	if (a < b){
+	     return a;
+	}
+	return b;
     }
 
     /** Returns the absolute value of x. */
@@ -119,7 +142,6 @@ class Math {
             let tempBin[i] = false;
             let i = i + 1;
         }
-
         return;
     }
 
@@ -183,7 +205,6 @@ class Math {
             do Math.getBinFromDec(Math.bin2Dec() + 1); // 47535 (-18001 in two's complement) 
             let tempBin[15] = true;
         }
-        do Output.println();
         return;
     }
 
