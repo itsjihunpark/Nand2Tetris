@@ -28,8 +28,8 @@ class Main {
         let r[11] = Math.max(123, -345);   // 123
         let r[12] = Math.abs(27);          // 27
         let r[13] = Math.abs(-32767);      // 32767
-	let r[14] = Math.mod(10,3);	   // 1
-        
+	    let r[14] = Math.mod(10,3);	       // 1
+        let r[15] = 32767/2;               // 16383
         return;
     }
 }
