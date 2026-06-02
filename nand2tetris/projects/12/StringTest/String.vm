@@ -47,6 +47,18 @@ pop pointer 0
 push this 1 // symbol -> _length
 return
 // compiling subroutine
+function String.maxLength 0
+push argument 0
+pop pointer 0
+push this 2 // symbol -> _maxLength
+return
+// compiling subroutine
+function String.charArray 0
+push argument 0
+pop pointer 0
+push this 0 // symbol -> _charArray
+return
+// compiling subroutine
 function String.charAt 0
 push argument 0
 pop pointer 0
@@ -71,13 +83,11 @@ pop that 0
 push constant 0
 return
 // compiling subroutine
-function String.appendChar 0
+function String.appendChar 2
 push argument 0
 pop pointer 0
 push this 1 // symbol -> _length
 push this 2 // symbol -> _maxLength
-push constant 1
-add
 lt
 not
 if-goto L1.3
@@ -95,6 +105,58 @@ add
 pop this 1 // symbol -> _length
 goto L2.3
 label L1.3
+push constant 0
+pop local 1 // symbol -> i
+push this 2 // symbol -> _maxLength
+push constant 1
+add
+call Array.new 1 // subroutine call (function)
+pop local 0 // symbol -> tempCharArray
+label L1.4
+push local 1 // symbol -> i
+push this 2 // symbol -> _maxLength
+lt
+not
+if-goto L2.4
+push local 0 // symbol -> tempCharArray (array)
+push local 1 // symbol -> i
+add
+push this 0 // symbol -> _charArray (array)
+push local 1 // symbol -> i
+add
+pop pointer 1
+push that 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 1 // symbol -> i
+push constant 1
+add
+pop local 1 // symbol -> i
+goto L1.4
+label L2.4
+push local 0 // symbol -> tempCharArray (array)
+push local 1 // symbol -> i
+add
+push argument 1 // symbol -> c
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push this 0 // symbol -> _charArray
+call Array.dispose 1 // subroutine call (method)
+pop temp 0
+push local 0 // symbol -> tempCharArray
+pop this 0 // symbol -> _charArray
+push this 1 // symbol -> _length
+push constant 1
+add
+pop this 1 // symbol -> _length
+push this 2 // symbol -> _maxLength
+push constant 1
+add
+pop this 2 // symbol -> _maxLength
 label L2.3
 push argument 0 // symbol -> this
 return
@@ -106,7 +168,7 @@ push this 1 // symbol -> _length
 push constant 0
 gt
 not
-if-goto L1.4
+if-goto L1.5
 push this 0 // symbol -> _charArray (array)
 push this 1 // symbol -> _length
 add
@@ -119,9 +181,9 @@ push this 1 // symbol -> _length
 push constant 1
 sub
 pop this 1 // symbol -> _length
-goto L2.4
-label L1.4
-label L2.4
+goto L2.5
+label L1.5
+label L2.5
 push constant 0
 return
 // compiling subroutine
@@ -146,16 +208,16 @@ push that 0
 push constant 45
 eq
 not
-if-goto L1.5
+if-goto L1.6
 push constant 1
 pop local 1 // symbol -> i
 push constant 1
 neg
 pop local 3 // symbol -> sign
-goto L2.5
-label L1.5
-label L2.5
+goto L2.6
 label L1.6
+label L2.6
+label L1.7
 push local 1 // symbol -> i
 push this 1 // symbol -> _length
 lt
@@ -165,7 +227,7 @@ neg // pushing true
 eq
 or
 not
-if-goto L2.6
+if-goto L2.7
 push this 0 // symbol -> _charArray (array)
 push local 1 // symbol -> i
 add
@@ -180,7 +242,7 @@ push constant 58
 lt
 and
 not
-if-goto L1.7
+if-goto L1.8
 push local 0 // symbol -> val
 push constant 10
 call Math.multiply 2
@@ -193,14 +255,14 @@ push local 1 // symbol -> i
 push constant 1
 add
 pop local 1 // symbol -> i
-goto L2.7
-label L1.7
+goto L2.8
+label L1.8
 push constant 1 // pushing true
 neg // pushing true
 pop local 4 // symbol -> terminate
+label L2.8
+goto L1.7
 label L2.7
-goto L1.6
-label L2.6
 push local 0 // symbol -> val
 push local 3 // symbol -> sign
 call Math.multiply 2
@@ -217,7 +279,7 @@ push argument 1 // symbol -> val
 push constant 0
 lt
 not
-if-goto L1.8
+if-goto L1.9
 push argument 1 // symbol -> val
 call Math.abs 1 // subroutine call (function)
 pop argument 1 // symbol -> val
@@ -225,9 +287,9 @@ push pointer 0
 push constant 45
 call String.appendChar 2 // subroutine call (method)
 pop temp 0
-goto L2.8
-label L1.8
-label L2.8
+goto L2.9
+label L1.9
+label L2.9
 push pointer 0
 push argument 1 // symbol -> val
 call String.int2string 2 // subroutine call (method)
@@ -250,13 +312,13 @@ push argument 1 // symbol -> val
 push constant 10
 lt
 not
-if-goto L1.9
+if-goto L1.10
 push pointer 0
 push local 2 // symbol -> c
 call String.appendChar 2 // subroutine call (method)
 return
-goto L2.9
-label L1.9
+goto L2.10
+label L1.10
 push pointer 0
 push argument 1 // symbol -> val
 push constant 10
@@ -267,7 +329,7 @@ push pointer 0
 push local 2 // symbol -> c
 call String.appendChar 2 // subroutine call (method)
 return
-label L2.9
+label L2.10
 // compiling subroutine
 function String.newLine 0
 push constant 128

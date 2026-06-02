@@ -39,6 +39,17 @@ class String {
     	return _length;
     }
 
+
+    /** Returns the current maxLength of this string. */
+    method int maxLength() {
+    	return _maxLength;
+    }
+
+    /** Returns the current maxLength of this string. */
+    method int charArray() {
+    	return _charArray;
+    }
+
     /** Returns the character at the j-th location of this string. */
     method char charAt(int j) {
     	return _charArray[j];
@@ -52,11 +63,24 @@ class String {
 
     /** Appends c to this string's end and returns this string. */
     method String appendChar(char c) {
-		if ( _length < (_maxLength + 1) ){
+		var Array tempCharArray;
+		var int i;
+
+		if ( _length < _maxLength ){
 		    let _charArray[_length] = c;
 			let _length = _length + 1;
 		}else{
-	 	    // todo: implementation for dynamically increasing maxSize
+			let i = 0;
+			let tempCharArray = Array.new(_maxLength+1);
+			while (i < _maxLength){
+				let tempCharArray[i] = _charArray[i]; // copying over to temp array
+				let i = i + 1;
+			}
+			let tempCharArray[i] = c;
+			do _charArray.dispose();
+			let _charArray = tempCharArray;
+			let _length = _length + 1;
+			let _maxLength = _maxLength + 1;
 		}
 		return this;
     }

@@ -10,6 +10,7 @@ class Main {
     function void main() {
         var String s;
         var String i;
+        var String x;
         
         let s = String.new(0); // a zero-capacity string should be supported
         do s.dispose();
@@ -74,9 +75,50 @@ class Main {
         do Output.printString("newLine: ");
         do Output.printInt(String.newLine());    // newLine: 128
         do Output.println();
+
+        let x = String.new(3);
+        let x = x.appendChar(97);
+        let x = x.appendChar(98);
+        let x = x.appendChar(99);
+
+        do Output.printString("new string _charArray address: ");
+        do Output.printInt(x.charArray());  // new string _charArray address: 
+        do Output.println();        
+
+        do Output.printString("new string with max length: ");
+        do Output.printInt(x.maxLength());       // 3
+        do Output.println();        
+
+        do Output.printString("new string with length: ");
+        do Output.printInt(x.length());       // 3 
+        do Output.println();        
         
+        do Output.printString("appendChar: ");
+        do Output.printString(x);                // appendChar: abc
+        do Output.println();        
+        
+        do Output.println();
+
+        let x = x.appendChar(100);
+        do Output.printString("appendChar (greater than allocated size): ");
+        do Output.printString(x);                // appendChar (greater than allocated size): abcd
+        do Output.println();        
+
+        do Output.printString("new string _charArray address: ");
+        do Output.printInt(x.charArray());  // new string _charArray address: 
+        do Output.println(); 
+
+        do Output.printString("string with new max length: ");
+        do Output.printInt(x.maxLength());       //  string with new max length: 4
+        do Output.println();        
+
+        do Output.printString("string with new length: "); 
+        do Output.printInt(x.length());          // string with new length: 4 
+        do Output.println();        
+
         do i.dispose();
         do s.dispose();
+        do x.dispose();
 
         return;
     }
