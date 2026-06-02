@@ -769,11 +769,31 @@
 <symbol> ( </symbol>
 <expression>
 <term>
+<symbol> ( </symbol>
+<expression>
+<term>
 <identifier> y </identifier>
 </term>
 <symbol> &gt; </symbol>
 <term>
 <identifier> x </identifier>
+</term>
+</expression>
+<symbol> ) </symbol>
+</term>
+<symbol> | </symbol>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<identifier> y </identifier>
+</term>
+<symbol> &lt; </symbol>
+<term>
+<integerConstant> 0 </integerConstant>
+</term>
+</expression>
+<symbol> ) </symbol>
 </term>
 </expression>
 <symbol> ) </symbol>

@@ -169,5 +169,15 @@ pop temp 0
 pop pointer 1
 push temp 0
 pop that 0
+push local 0 // symbol -> r (array)
+push constant 15
+add
+push constant 32767
+push constant 1
+call Math.divide 2
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
 push constant 0
 return

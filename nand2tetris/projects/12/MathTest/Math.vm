@@ -221,6 +221,10 @@ function Math.divideRecursively 1
 push argument 1 // symbol -> y
 push argument 0 // symbol -> x
 gt
+push argument 1 // symbol -> y
+push constant 0
+lt
+or
 not
 if-goto L1.5
 push constant 0
