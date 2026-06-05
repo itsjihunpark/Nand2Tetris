@@ -104,45 +104,45 @@ class Math {
 	        let temp = temp*temp;
 	        if (temp > -1){
 	    	    if ((temp-1) < x){
-		        let y = y + powersOfTwo[n];
-	    	}
+		            let y = y + powersOfTwo[n];
+	    	    }
+	        }
+	        let n = n - 1;
 	    }
-	    let n = n - 1;
-	}
 
-	return y;
+	    return y;
     }
 
     /** Returns the greater value. */
     function int max(int a, int b) {
     	if (a > b){
-	     return a;
-	}
-	return b;
+	        return a;
+	    }
+	    return b;
     }
 
     /** Returns the smaller value. */
     function int min(int a, int b) {
     	if (a < b){
-	     return a;
-	}
-	return b;
+	        return a;
+	    }
+	    return b;
     }
 
     /** Returns the absolute value of x. */
     function int abs(int x) {
     	if (x<0){
-	     return -x;
-	}
-	return x;
+	        return -x;
+	    }
+	    return x;
     }
 
     /** Returns the remainder of a division */
     function int mod(int x, int y){
     	var int res;
-	let res = x/y;
-	let res = x - (res*y);
-	return res;
+	    let res = x/y;
+	    let res = x - (res*y);
+	    return res;
     }
 
     function void resetTempBinArray(){
