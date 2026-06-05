@@ -96,15 +96,15 @@ class Math {
 
     /** Returns the integer part of the square root of x. */
     function int sqrt(int x) {
-	var int n,y,temp;
-	let y = 0;
-	let n = 7;
-	while (n>-1){
-	    let temp = y + powersOfTwo[n]; 
-	    let temp = temp*temp;
-	    if (temp > -1){
-	    	if ((temp-1) < x){
-		     let y = y + powersOfTwo[n];
+	    var int n,y,temp;
+	    let y = 0;
+	    let n = 7;
+	    while (n>-1){
+	        let temp = y + powersOfTwo[n]; 
+	        let temp = temp*temp;
+	        if (temp > -1){
+	    	    if ((temp-1) < x){
+		        let y = y + powersOfTwo[n];
 	    	}
 	    }
 	    let n = n - 1;
