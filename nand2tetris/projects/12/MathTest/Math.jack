@@ -236,4 +236,9 @@ class Math {
         return;
     }
 
+    function void setTempBin(int bitPos, boolean val){
+        let tempBin[bitPos] = val; 
+        return;
+    }
+
 }
