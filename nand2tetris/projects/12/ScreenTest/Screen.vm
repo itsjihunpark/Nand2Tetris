@@ -85,16 +85,6 @@ pop local 3 // symbol -> temp
 goto L2.3
 label L1.3
 label L2.3
-push local 3 // symbol -> temp
-call Output.printInt 1 // subroutine call (function)
-pop temp 0
-// Instantiating String:  
-push constant 1
-call String.new 1
-push constant 32
-call String.appendChar 2
-call Output.printString 1 // subroutine call (function)
-pop temp 0
 push local 0 // symbol -> addr
 push local 3 // symbol -> temp
 call Memory.poke 2 // subroutine call (function)

@@ -13,7 +13,7 @@
 <symbol> . </symbol>
 <identifier> drawPixel </identifier>
 <symbol> ( </symbol>
-<integerConstant> 0 </integerConstant>
+<integerConstant> 16 </integerConstant>
 <symbol> , </symbol>
 <integerConstant> 0 </integerConstant>
 <symbol> ) </symbol>

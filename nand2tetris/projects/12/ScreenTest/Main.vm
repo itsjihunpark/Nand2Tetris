@@ -1,6 +1,6 @@
 // compiling subroutine
 function Main.main 0
-push constant 0
+push constant 16
 push constant 0
 call Screen.drawPixel 2 // subroutine call (function)
 pop temp 0
