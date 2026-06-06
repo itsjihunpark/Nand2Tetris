@@ -14,7 +14,7 @@ function Screen.setColor 0
 push constant 0
 return
 // compiling subroutine
-function Screen.drawPixel 3
+function Screen.drawPixel 4
 push argument 1 // symbol -> y
 push constant 0
 lt
@@ -67,8 +67,36 @@ push local 2 // symbol -> bitPos
 push static 0 // symbol -> currentColor
 call Math.setTempBin 2 // subroutine call (function)
 pop temp 0
-push local 0 // symbol -> addr
 call Math.bin2Dec 0 // subroutine call (function)
+pop local 3 // symbol -> temp
+push constant 15
+call Math.bit 1 // subroutine call (function)
+push constant 1 // pushing true
+neg // pushing true
+eq
+not
+if-goto L1.3
+push local 3 // symbol -> temp
+push constant 16384
+push constant 2
+call Math.multiply 2
+add
+pop local 3 // symbol -> temp
+goto L2.3
+label L1.3
+label L2.3
+push local 3 // symbol -> temp
+call Output.printInt 1 // subroutine call (function)
+pop temp 0
+// Instantiating String:  
+push constant 1
+call String.new 1
+push constant 32
+call String.appendChar 2
+call Output.printString 1 // subroutine call (function)
+pop temp 0
+push local 0 // symbol -> addr
+push local 3 // symbol -> temp
 call Memory.poke 2 // subroutine call (function)
 pop temp 0
 push constant 0

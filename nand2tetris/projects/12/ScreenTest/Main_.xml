@@ -44,13 +44,13 @@
 <expressionList>
 <expression>
 <term>
-<integerConstant> 16 </integerConstant>
+<integerConstant> 1 </integerConstant>
 </term>
 </expression>
 <symbol> , </symbol>
 <expression>
 <term>
-<integerConstant> 16 </integerConstant>
+<integerConstant> 0 </integerConstant>
 </term>
 </expression>
 </expressionList>
@@ -66,13 +66,13 @@
 <expressionList>
 <expression>
 <term>
-<integerConstant> 32 </integerConstant>
+<integerConstant> 2 </integerConstant>
 </term>
 </expression>
 <symbol> , </symbol>
 <expression>
 <term>
-<integerConstant> 32 </integerConstant>
+<integerConstant> 0 </integerConstant>
 </term>
 </expression>
 </expressionList>
@@ -88,13 +88,13 @@
 <expressionList>
 <expression>
 <term>
-<integerConstant> 48 </integerConstant>
+<integerConstant> 11 </integerConstant>
 </term>
 </expression>
 <symbol> , </symbol>
 <expression>
 <term>
-<integerConstant> 48 </integerConstant>
+<integerConstant> 0 </integerConstant>
 </term>
 </expression>
 </expressionList>
@@ -110,13 +110,79 @@
 <expressionList>
 <expression>
 <term>
-<integerConstant> 64 </integerConstant>
+<integerConstant> 12 </integerConstant>
 </term>
 </expression>
 <symbol> , </symbol>
 <expression>
 <term>
-<integerConstant> 64 </integerConstant>
+<integerConstant> 0 </integerConstant>
+</term>
+</expression>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<doStatement>
+<keyword> do </keyword>
+<identifier> Screen </identifier>
+<symbol> . </symbol>
+<identifier> drawPixel </identifier>
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+<term>
+<integerConstant> 13 </integerConstant>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<integerConstant> 0 </integerConstant>
+</term>
+</expression>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<doStatement>
+<keyword> do </keyword>
+<identifier> Screen </identifier>
+<symbol> . </symbol>
+<identifier> drawPixel </identifier>
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+<term>
+<integerConstant> 14 </integerConstant>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<integerConstant> 0 </integerConstant>
+</term>
+</expression>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<doStatement>
+<keyword> do </keyword>
+<identifier> Screen </identifier>
+<symbol> . </symbol>
+<identifier> drawPixel </identifier>
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+<term>
+<integerConstant> 15 </integerConstant>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<integerConstant> 0 </integerConstant>
 </term>
 </expression>
 </expressionList>

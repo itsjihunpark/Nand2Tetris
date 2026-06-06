@@ -1,6 +1,4 @@
-// This file is part of www.nand2tetris.org
-// and the book "The Elements of Computing Systems"
-// by Nisan and Schocken, MIT Press.
+// This file is part of www.nand2tetris.org // and the book "The Elements of Computing Systems" // by Nisan and Schocken, MIT Press.
 // File name: projects/12/ScreenTest/Main.jack
 
 /** Test program for the OS Screen class. */
@@ -9,10 +7,14 @@ class Main {
     /** Draws a sample pictue on the screen using lines and circles. */
     function void main() {
         do Screen.drawPixel(0,0);
-        do Screen.drawPixel(16,16);
-        do Screen.drawPixel(32,32);
-        do Screen.drawPixel(48,48);
-        do Screen.drawPixel(64,64);
+        do Screen.drawPixel(1,0);
+        do Screen.drawPixel(2,0);
+
+        do Screen.drawPixel(11,0);
+        do Screen.drawPixel(12,0);
+        do Screen.drawPixel(13,0);
+        do Screen.drawPixel(14,0);
+        do Screen.drawPixel(15,0);
         return;
     }
 }

@@ -4,20 +4,32 @@ push constant 0
 push constant 0
 call Screen.drawPixel 2 // subroutine call (function)
 pop temp 0
-push constant 16
-push constant 16
+push constant 1
+push constant 0
 call Screen.drawPixel 2 // subroutine call (function)
 pop temp 0
-push constant 32
-push constant 32
+push constant 2
+push constant 0
 call Screen.drawPixel 2 // subroutine call (function)
 pop temp 0
-push constant 48
-push constant 48
+push constant 11
+push constant 0
 call Screen.drawPixel 2 // subroutine call (function)
 pop temp 0
-push constant 64
-push constant 64
+push constant 12
+push constant 0
+call Screen.drawPixel 2 // subroutine call (function)
+pop temp 0
+push constant 13
+push constant 0
+call Screen.drawPixel 2 // subroutine call (function)
+pop temp 0
+push constant 14
+push constant 0
+call Screen.drawPixel 2 // subroutine call (function)
+pop temp 0
+push constant 15
+push constant 0
 call Screen.drawPixel 2 // subroutine call (function)
 pop temp 0
 push constant 0

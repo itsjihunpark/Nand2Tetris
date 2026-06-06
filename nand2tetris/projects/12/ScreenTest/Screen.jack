@@ -31,7 +31,7 @@ class Screen {
 
     /** Draws the (x,y) pixel, using the current color. */
     function void drawPixel(int x, int y) {
-        var int addr, word, bitPos;
+        var int addr, word, bitPos, temp;
 
         if ( (y<0) | (y>255) ){
             return;
@@ -45,7 +45,13 @@ class Screen {
         let bitPos = Math.mod(x, 16);
         do Math.obtainTwosComplementBin(word);
         do Math.setTempBin(bitPos, currentColor);
-        do Memory.poke(addr, Math.bin2Dec());
+        let temp = Math.bin2Dec();
+        if ( Math.bit(15) = true ){
+            let temp = temp+(16384*2);
+        }
+        do Output.printInt(temp);
+        do Output.printString(" ");
+        do Memory.poke(addr, temp);
 
         return;
     }
