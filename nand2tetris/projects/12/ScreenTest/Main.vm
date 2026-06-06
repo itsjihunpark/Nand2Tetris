@@ -1,0 +1,24 @@
+// compiling subroutine
+function Main.main 0
+push constant 0
+push constant 0
+call Screen.drawPixel 2 // subroutine call (function)
+pop temp 0
+push constant 16
+push constant 16
+call Screen.drawPixel 2 // subroutine call (function)
+pop temp 0
+push constant 32
+push constant 32
+call Screen.drawPixel 2 // subroutine call (function)
+pop temp 0
+push constant 48
+push constant 48
+call Screen.drawPixel 2 // subroutine call (function)
+pop temp 0
+push constant 64
+push constant 64
+call Screen.drawPixel 2 // subroutine call (function)
+pop temp 0
+push constant 0
+return

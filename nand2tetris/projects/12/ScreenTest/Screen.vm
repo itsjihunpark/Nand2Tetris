@@ -1,0 +1,87 @@
+// compiling subroutine
+function Screen.init 0
+push constant 1 // pushing true
+neg // pushing true
+pop static 0 // symbol -> currentColor
+push constant 0
+return
+// compiling subroutine
+function Screen.clearScreen 0
+push constant 0
+return
+// compiling subroutine
+function Screen.setColor 0
+push constant 0
+return
+// compiling subroutine
+function Screen.drawPixel 3
+push argument 1 // symbol -> y
+push constant 0
+lt
+push argument 1 // symbol -> y
+push constant 255
+gt
+or
+not
+if-goto L1.1
+push constant 0
+return
+goto L2.1
+label L1.1
+label L2.1
+push argument 0 // symbol -> x
+push constant 0
+lt
+push argument 0 // symbol -> x
+push constant 511
+gt
+or
+not
+if-goto L1.2
+push constant 0
+return
+goto L2.2
+label L1.2
+label L2.2
+push constant 16384
+push argument 1 // symbol -> y
+push constant 32
+call Math.multiply 2
+add
+push argument 0 // symbol -> x
+push constant 16
+call Math.divide 2
+add
+pop local 0 // symbol -> addr
+push local 0 // symbol -> addr
+call Memory.peek 1 // subroutine call (function)
+pop local 1 // symbol -> word
+push argument 0 // symbol -> x
+push constant 16
+call Math.mod 2 // subroutine call (function)
+pop local 2 // symbol -> bitPos
+push local 1 // symbol -> word
+call Math.obtainTwosComplementBin 1 // subroutine call (function)
+pop temp 0
+push local 2 // symbol -> bitPos
+push static 0 // symbol -> currentColor
+call Math.setTempBin 2 // subroutine call (function)
+pop temp 0
+push local 0 // symbol -> addr
+call Math.bin2Dec 0 // subroutine call (function)
+call Memory.poke 2 // subroutine call (function)
+pop temp 0
+push constant 0
+return
+// compiling subroutine
+function Screen.drawLine 0
+push constant 0
+return
+// compiling subroutine
+function Screen.drawRectangle 0
+push constant 0
+return
+// compiling subroutine
+function Screen.drawCircle 0
+push constant 0
+return
