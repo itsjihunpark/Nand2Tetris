@@ -47,7 +47,7 @@ class Screen {
         do Math.setTempBin(bitPos, currentColor);
         let temp = Math.bin2Dec();
         if ( Math.bit(15) = true ){
-            let temp = temp+(16384*2);
+            let temp = temp+(16384+16384);
         }
         // do Output.printInt(temp);
         // do Output.printString(" ");
