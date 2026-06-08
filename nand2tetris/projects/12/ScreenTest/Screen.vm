@@ -78,8 +78,8 @@ not
 if-goto L1.3
 push local 3 // symbol -> temp
 push constant 16384
-push constant 2
-call Math.multiply 2
+push constant 16384
+add
 add
 pop local 3 // symbol -> temp
 goto L2.3

@@ -182,8 +182,8 @@
 <symbol> + </symbol>
 <symbol> ( </symbol>
 <integerConstant> 16384 </integerConstant>
-<symbol> * </symbol>
-<integerConstant> 2 </integerConstant>
+<symbol> + </symbol>
+<integerConstant> 16384 </integerConstant>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 <symbol> } </symbol>

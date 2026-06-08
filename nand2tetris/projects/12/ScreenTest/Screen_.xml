@@ -375,9 +375,9 @@
 <term>
 <integerConstant> 16384 </integerConstant>
 </term>
-<symbol> * </symbol>
+<symbol> + </symbol>
 <term>
-<integerConstant> 2 </integerConstant>
+<integerConstant> 16384 </integerConstant>
 </term>
 </expression>
 <symbol> ) </symbol>
