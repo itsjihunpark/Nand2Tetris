@@ -442,6 +442,8 @@ class CompilationEngine:
                     elif symbol_token_type == "keyword":
                         for vmcode in KEYWORD_MAPPING[symbol_token]:
                             self.vm_commands.append(vmcode)
+                    elif symbol_token_type == 'identifier':
+                        raise(Exception(f"Compilation Error! Undefined variable '{symbol_token}' referenced"))
 
         if caller_function != "compile_do":
             self.xml.writelines('</term>\n')
