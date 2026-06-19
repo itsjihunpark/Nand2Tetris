@@ -10,7 +10,9 @@ For the Hardware project, a "no particular type (neither RISC nor CISC)" instruc
 
 For the Software project, a stack-based, two-tier compiler (similar to Java and C#) was developed in two parts: the backend - VM code to Machine specific Assembly translator (a.k.a., VM implementation) and the front end - high level language to VM code. The developed compiler was not so much a professional compiler, but it was just enough to get an understanding of how compilers work under the hood.
 
-Finally, to end this project, an Operating system....TBC
+After the development of the compiler was completed, eight standard OS classes were written in Jack which was compiled using the compiler developed previously to make up the operating system of the hardware developed earlier. This formed the operating system which can support the development of various programs that can run on the hardware developed earlier. 
+
+
 
 "What I cannot create, I do not understand" - Richard Feynman
 
