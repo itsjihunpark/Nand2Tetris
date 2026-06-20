@@ -1106,5 +1106,15 @@
 <keyword> return </keyword>
 <symbol> ; </symbol>
 <symbol> } </symbol>
+<keyword> function </keyword>
+<identifier> Array </identifier>
+<identifier> getTempBin </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> return </keyword>
+<identifier> tempBin </identifier>
+<symbol> ; </symbol>
+<symbol> } </symbol>
 <symbol> } </symbol>
 </tokens>

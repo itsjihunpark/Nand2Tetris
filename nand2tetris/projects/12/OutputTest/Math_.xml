@@ -2382,5 +2382,29 @@
 <symbol> } </symbol>
 </subroutineBody>
 </subroutineDec>
+<subroutineDec>
+<keyword> function </keyword>
+<identifier> Array </identifier>
+<identifier> getTempBin </identifier>
+<symbol> ( </symbol>
+<parameterList>
+</parameterList>
+<symbol> ) </symbol>
+<subroutineBody>
+<symbol> { </symbol>
+<statements>
+<returnStatement>
+<keyword> return </keyword>
+<expression>
+<term>
+<identifier> tempBin </identifier>
+</term>
+</expression>
+<symbol> ; </symbol>
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+</subroutineBody>
+</subroutineDec>
 <symbol> } </symbol>
 </class>

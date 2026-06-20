@@ -8539,6 +8539,8 @@
 <keyword> var </keyword>
 <identifier> Array </identifier>
 <identifier> fontMap </identifier>
+<symbol> , </symbol>
+<identifier> tempBinArray </identifier>
 <symbol> ; </symbol>
 </varDec>
 <statements>
@@ -8687,6 +8689,46 @@
 </expression>
 <symbol> ; </symbol>
 </letStatement>
+<doStatement>
+<keyword> do </keyword>
+<identifier> Math </identifier>
+<symbol> . </symbol>
+<identifier> getBinFromDec </identifier>
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+<term>
+<identifier> fontMap </identifier>
+<symbol> [ </symbol>
+<expression>
+<term>
+<identifier> i </identifier>
+</term>
+</expression>
+<symbol> ] </symbol>
+</term>
+</expression>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<letStatement>
+<keyword> let </keyword>
+<identifier> tempBinArray </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<identifier> Math </identifier>
+<symbol> . </symbol>
+<identifier> getTempBin </identifier>
+<symbol> ( </symbol>
+<expressionList>
+</expressionList>
+<symbol> ) </symbol>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
 <letStatement>
 <keyword> let </keyword>
 <identifier> xBase </identifier>
@@ -8827,46 +8869,19 @@
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
-<doStatement>
-<keyword> do </keyword>
-<identifier> Math </identifier>
-<symbol> . </symbol>
-<identifier> getBinFromDec </identifier>
-<symbol> ( </symbol>
-<expressionList>
-<expression>
-<term>
-<identifier> fontMap </identifier>
-<symbol> [ </symbol>
-<expression>
-<term>
-<identifier> i </identifier>
-</term>
-</expression>
-<symbol> ] </symbol>
-</term>
-</expression>
-</expressionList>
-<symbol> ) </symbol>
-<symbol> ; </symbol>
-</doStatement>
 <ifStatement>
 <keyword> if </keyword>
 <symbol> ( </symbol>
 <expression>
 <term>
-<identifier> Math </identifier>
-<symbol> . </symbol>
-<identifier> bit </identifier>
-<symbol> ( </symbol>
-<expressionList>
+<identifier> tempBinArray </identifier>
+<symbol> [ </symbol>
 <expression>
 <term>
 <identifier> j </identifier>
 </term>
 </expression>
-</expressionList>
-<symbol> ) </symbol>
+<symbol> ] </symbol>
 </term>
 <symbol> = </symbol>
 <term>

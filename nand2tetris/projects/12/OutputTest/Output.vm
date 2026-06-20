@@ -1521,7 +1521,7 @@ pop static 2 // symbol -> cursorCol
 push constant 0
 return
 // compiling subroutine
-function Output.printChar 5
+function Output.printChar 6
 push static 1 // symbol -> cursorRow
 push constant 22
 gt
@@ -1561,6 +1561,15 @@ label L2.4
 push argument 0 // symbol -> c
 call Output.getMap 1 // subroutine call (function)
 pop local 4 // symbol -> fontMap
+push local 4 // symbol -> fontMap (array)
+push local 2 // symbol -> i
+add
+pop pointer 1
+push that 0
+call Math.getBinFromDec 1 // subroutine call (function)
+pop temp 0
+call Math.getTempBin 0 // subroutine call (function)
+pop local 5 // symbol -> tempBinArray
 push static 2 // symbol -> cursorCol
 push constant 8
 call Math.multiply 2
@@ -1596,15 +1605,11 @@ push local 2 // symbol -> i
 add
 call Screen.drawPixel 2 // subroutine call (function)
 pop temp 0
-push local 4 // symbol -> fontMap (array)
-push local 2 // symbol -> i
+push local 5 // symbol -> tempBinArray (array)
+push local 3 // symbol -> j
 add
 pop pointer 1
 push that 0
-call Math.getBinFromDec 1 // subroutine call (function)
-pop temp 0
-push local 3 // symbol -> j
-call Math.bit 1 // subroutine call (function)
 push constant 1 // pushing true
 neg // pushing true
 eq
