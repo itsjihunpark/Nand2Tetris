@@ -241,4 +241,8 @@ class Math {
         return;
     }
 
+    function Array getTempBin(int bitPos, boolean val){
+        return tempBin; 
+    }
+
 }
