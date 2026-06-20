@@ -220,12 +220,12 @@ class Output {
 
         let i = 0;
         while (i<11){
-            do Math.getBinFromDec(fontMap[i]);
-
             let j = 0;
             while (j<8){
                 do Screen.setColor(false);
                 do Screen.drawPixel((xBase+j), (yBase+i));
+                do Math.getBinFromDec(fontMap[i]);
+                
                 if (Math.bit(j)=true){
                     do Screen.setColor(true);
                     do Screen.drawPixel((xBase+j), (yBase+i));

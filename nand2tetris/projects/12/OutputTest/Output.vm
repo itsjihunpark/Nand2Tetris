@@ -1577,13 +1577,6 @@ push constant 11
 lt
 not
 if-goto L2.7
-push local 4 // symbol -> fontMap (array)
-push local 2 // symbol -> i
-add
-pop pointer 1
-push that 0
-call Math.getBinFromDec 1 // subroutine call (function)
-pop temp 0
 push constant 0
 pop local 3 // symbol -> j
 label L1.8
@@ -1602,6 +1595,13 @@ push local 1 // symbol -> yBase
 push local 2 // symbol -> i
 add
 call Screen.drawPixel 2 // subroutine call (function)
+pop temp 0
+push local 4 // symbol -> fontMap (array)
+push local 2 // symbol -> i
+add
+pop pointer 1
+push that 0
+call Math.getBinFromDec 1 // subroutine call (function)
 pop temp 0
 push local 3 // symbol -> j
 call Math.bit 1 // subroutine call (function)
