@@ -101,5 +101,7 @@ push constant 102
 push constant 20
 call Screen.drawLine 4 // subroutine call (function)
 pop temp 0
+call Screen.clearScreen 0 // subroutine call (function)
+pop temp 0
 push constant 0
 return

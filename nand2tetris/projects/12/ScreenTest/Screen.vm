@@ -6,7 +6,34 @@ pop static 0 // symbol -> currentColor
 push constant 0
 return
 // compiling subroutine
-function Screen.clearScreen 0
+function Screen.clearScreen 2
+push static 0 // symbol -> currentColor
+pop local 0 // symbol -> temp
+push constant 0 // pushing false
+call Screen.setColor 1 // subroutine call (function)
+pop temp 0
+push constant 0
+pop local 1 // symbol -> i
+label L1.1
+push local 1 // symbol -> i
+push constant 256
+lt
+not
+if-goto L2.1
+push constant 0
+push constant 511
+push local 1 // symbol -> i
+call Screen.drawHorizontalLine 3 // subroutine call (function)
+pop temp 0
+push local 1 // symbol -> i
+push constant 1
+add
+pop local 1 // symbol -> i
+goto L1.1
+label L2.1
+push local 0 // symbol -> temp
+call Screen.setColor 1 // subroutine call (function)
+pop temp 0
 push constant 0
 return
 // compiling subroutine
@@ -25,12 +52,12 @@ push constant 255
 gt
 or
 not
-if-goto L1.1
+if-goto L1.2
 push constant 0
 return
-goto L2.1
-label L1.1
-label L2.1
+goto L2.2
+label L1.2
+label L2.2
 push argument 0 // symbol -> x
 push constant 0
 lt
@@ -39,12 +66,12 @@ push constant 511
 gt
 or
 not
-if-goto L1.2
+if-goto L1.3
 push constant 0
 return
-goto L2.2
-label L1.2
-label L2.2
+goto L2.3
+label L1.3
+label L2.3
 push constant 16384
 push argument 1 // symbol -> y
 push constant 32
@@ -77,16 +104,16 @@ push constant 1 // pushing true
 neg // pushing true
 eq
 not
-if-goto L1.3
+if-goto L1.4
 push local 3 // symbol -> temp
 push constant 16384
 push constant 16384
 add
 add
 pop local 3 // symbol -> temp
-goto L2.3
-label L1.3
-label L2.3
+goto L2.4
+label L1.4
+label L2.4
 push local 0 // symbol -> addr
 push local 3 // symbol -> temp
 call Memory.poke 2 // subroutine call (function)
@@ -114,16 +141,16 @@ push constant 1 // pushing true
 neg // pushing true
 eq
 not
-if-goto L1.4
+if-goto L1.5
 push local 1 // symbol -> temp
 push constant 16384
 push constant 16384
 add
 add
 pop local 1 // symbol -> temp
-goto L2.4
-label L1.4
-label L2.4
+goto L2.5
+label L1.5
+label L2.5
 push local 1 // symbol -> temp
 return
 // compiling subroutine
@@ -154,73 +181,73 @@ push constant 0
 eq
 and
 not
-if-goto L1.5
+if-goto L1.6
 push argument 0 // symbol -> x1
 push argument 1 // symbol -> y1
 call Screen.drawPixel 2 // subroutine call (function)
 pop temp 0
 push constant 0
 return
-goto L2.5
-label L1.5
-label L2.5
-push local 4 // symbol -> dx
-push constant 0
-lt
-not
-if-goto L1.6
-push constant 1
-neg
-pop local 5 // symbol -> incX
-push local 4 // symbol -> dx
-call Math.abs 1 // subroutine call (function)
-pop local 4 // symbol -> dx
 goto L2.6
 label L1.6
 label L2.6
-push local 3 // symbol -> dy
+push local 4 // symbol -> dx
 push constant 0
 lt
 not
 if-goto L1.7
 push constant 1
 neg
-pop local 6 // symbol -> incY
-push local 3 // symbol -> dy
+pop local 5 // symbol -> incX
+push local 4 // symbol -> dx
 call Math.abs 1 // subroutine call (function)
-pop local 3 // symbol -> dy
+pop local 4 // symbol -> dx
 goto L2.7
 label L1.7
 label L2.7
 push local 3 // symbol -> dy
 push constant 0
-eq
+lt
 not
 if-goto L1.8
+push constant 1
+neg
+pop local 6 // symbol -> incY
+push local 3 // symbol -> dy
+call Math.abs 1 // subroutine call (function)
+pop local 3 // symbol -> dy
+goto L2.8
+label L1.8
+label L2.8
+push local 3 // symbol -> dy
+push constant 0
+eq
+not
+if-goto L1.9
 push local 5 // symbol -> incX
 push constant 0
 lt
 not
-if-goto L1.9
+if-goto L1.10
 push argument 2 // symbol -> x2
 push argument 0 // symbol -> x1
 push argument 1 // symbol -> y1
 call Screen.drawHorizontalLine 3 // subroutine call (function)
 pop temp 0
-goto L2.9
-label L1.9
+goto L2.10
+label L1.10
 push argument 0 // symbol -> x1
 push argument 2 // symbol -> x2
 push argument 1 // symbol -> y1
 call Screen.drawHorizontalLine 3 // subroutine call (function)
 pop temp 0
-label L2.9
+label L2.10
 push constant 0
 return
-goto L2.8
-label L1.8
-label L2.8
-label L1.10
+goto L2.9
+label L1.9
+label L2.9
+label L1.11
 push local 0 // symbol -> a
 push local 4 // symbol -> dx
 push constant 1
@@ -233,7 +260,7 @@ add
 lt
 and
 not
-if-goto L2.10
+if-goto L2.11
 push argument 0 // symbol -> x1
 push local 0 // symbol -> a
 add
@@ -254,17 +281,17 @@ push argument 3 // symbol -> y2
 eq
 and
 not
-if-goto L1.11
+if-goto L1.12
 push constant 0
 return
-goto L2.11
-label L1.11
-label L2.11
+goto L2.12
+label L1.12
+label L2.12
 push local 2 // symbol -> diff
 push constant 0
 lt
 not
-if-goto L1.12
+if-goto L1.13
 push local 0 // symbol -> a
 push local 5 // symbol -> incX
 add
@@ -273,8 +300,8 @@ push local 2 // symbol -> diff
 push local 3 // symbol -> dy
 add
 pop local 2 // symbol -> diff
-goto L2.12
-label L1.12
+goto L2.13
+label L1.13
 push local 1 // symbol -> b
 push local 6 // symbol -> incY
 add
@@ -283,9 +310,9 @@ push local 2 // symbol -> diff
 push local 4 // symbol -> dx
 sub
 pop local 2 // symbol -> diff
-label L2.12
-goto L1.10
-label L2.10
+label L2.13
+goto L1.11
+label L2.11
 push constant 0
 return
 // compiling subroutine
@@ -310,15 +337,15 @@ sub
 push constant 16
 lt
 not
-if-goto L1.13
-label L1.14
+if-goto L1.14
+label L1.15
 push argument 0 // symbol -> x1
 push argument 1 // symbol -> x2
 push constant 1
 add
 lt
 not
-if-goto L2.14
+if-goto L2.15
 push argument 0 // symbol -> x1
 push argument 2 // symbol -> y
 call Screen.drawPixel 2 // subroutine call (function)
@@ -327,75 +354,75 @@ push argument 0 // symbol -> x1
 push constant 1
 add
 pop argument 0 // symbol -> x1
-goto L1.14
-label L2.14
+goto L1.15
+label L2.15
 push constant 0
 return
-goto L2.13
-label L1.13
-label L2.13
-label L1.15
+goto L2.14
+label L1.14
+label L2.14
+label L1.16
 push local 2 // symbol -> edgeStart
 push constant 0
 lt
 not
-if-goto L2.15
+if-goto L2.16
 push local 1 // symbol -> i
 push constant 16
 call Math.mod 2 // subroutine call (function)
 push constant 0
 eq
 not
-if-goto L1.16
+if-goto L1.17
 push local 1 // symbol -> i
 pop local 2 // symbol -> edgeStart
-goto L2.16
-label L1.16
+goto L2.17
+label L1.17
 push local 1 // symbol -> i
 push argument 2 // symbol -> y
 call Screen.drawPixel 2 // subroutine call (function)
 pop temp 0
-label L2.16
+label L2.17
 push local 1 // symbol -> i
 push constant 1
 add
 pop local 1 // symbol -> i
-goto L1.15
-label L2.15
+goto L1.16
+label L2.16
 push argument 1 // symbol -> x2
 pop local 1 // symbol -> i
-label L1.17
+label L1.18
 push local 3 // symbol -> edgeEnd
 push constant 0
 lt
 not
-if-goto L2.17
+if-goto L2.18
 push local 1 // symbol -> i
 push constant 16
 call Math.mod 2 // subroutine call (function)
 push constant 0
 eq
 not
-if-goto L1.18
+if-goto L1.19
 push local 1 // symbol -> i
 push argument 2 // symbol -> y
 call Screen.drawPixel 2 // subroutine call (function)
 pop temp 0
 push local 1 // symbol -> i
 pop local 3 // symbol -> edgeEnd
-goto L2.18
-label L1.18
+goto L2.19
+label L1.19
 push local 1 // symbol -> i
 push argument 2 // symbol -> y
 call Screen.drawPixel 2 // subroutine call (function)
 pop temp 0
-label L2.18
+label L2.19
 push local 1 // symbol -> i
 push constant 1
 sub
 pop local 1 // symbol -> i
-goto L1.17
-label L2.17
+goto L1.18
+label L2.18
 push local 2 // symbol -> edgeStart
 push constant 16
 call Math.divide 2
@@ -404,12 +431,12 @@ push local 3 // symbol -> edgeEnd
 push constant 16
 call Math.divide 2
 pop local 3 // symbol -> edgeEnd
-label L1.19
+label L1.20
 push local 1 // symbol -> i
 push local 3 // symbol -> edgeEnd
 lt
 not
-if-goto L2.19
+if-goto L2.20
 push local 0 // symbol -> base
 push local 1 // symbol -> i
 add
@@ -420,8 +447,8 @@ push local 1 // symbol -> i
 push constant 1
 add
 pop local 1 // symbol -> i
-goto L1.19
-label L2.19
+goto L1.20
+label L2.20
 push constant 0
 return
 // compiling subroutine
@@ -442,46 +469,46 @@ push constant 255
 gt
 or
 not
-if-goto L1.20
-push constant 0
-return
-goto L2.20
-label L1.20
-label L2.20
-push argument 0 // symbol -> x1
-push constant 0
-lt
-push argument 0 // symbol -> x1
-push constant 511
-gt
-or
-push argument 2 // symbol -> x2
-push constant 0
-lt
-or
-push argument 2 // symbol -> x2
-push constant 511
-gt
-or
-not
 if-goto L1.21
 push constant 0
 return
 goto L2.21
 label L1.21
 label L2.21
+push argument 0 // symbol -> x1
+push constant 0
+lt
+push argument 0 // symbol -> x1
+push constant 511
+gt
+or
+push argument 2 // symbol -> x2
+push constant 0
+lt
+or
+push argument 2 // symbol -> x2
+push constant 511
+gt
+or
+not
+if-goto L1.22
+push constant 0
+return
+goto L2.22
+label L1.22
+label L2.22
 push constant 0
 pop local 1 // symbol -> i
 push argument 3 // symbol -> y2
 push argument 1 // symbol -> y1
 sub
 pop local 0 // symbol -> dy
-label L1.22
+label L1.23
 push local 1 // symbol -> i
 push local 0 // symbol -> dy
 lt
 not
-if-goto L2.22
+if-goto L2.23
 push argument 0 // symbol -> x1
 push argument 1 // symbol -> y1
 push local 1 // symbol -> i
@@ -496,8 +523,8 @@ push local 1 // symbol -> i
 push constant 1
 add
 pop local 1 // symbol -> i
-goto L1.22
-label L2.22
+goto L1.23
+label L2.23
 push constant 0
 return
 // compiling subroutine
@@ -505,14 +532,14 @@ function Screen.drawCircle 3
 push argument 2 // symbol -> r
 neg
 pop local 0 // symbol -> dy
-label L1.23
+label L1.24
 push local 0 // symbol -> dy
 push argument 2 // symbol -> r
 push constant 1
 add
 lt
 not
-if-goto L2.23
+if-goto L2.24
 push argument 0 // symbol -> x
 push argument 2 // symbol -> r
 push argument 2 // symbol -> r
@@ -549,7 +576,7 @@ push local 0 // symbol -> dy
 push constant 1
 add
 pop local 0 // symbol -> dy
-goto L1.23
-label L2.23
+goto L1.24
+label L2.24
 push constant 0
 return

@@ -244,6 +244,13 @@
 <integerConstant> 20 </integerConstant>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
+<keyword> do </keyword>
+<identifier> Screen </identifier>
+<symbol> . </symbol>
+<identifier> clearScreen </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
 <keyword> return </keyword>
 <symbol> ; </symbol>
 <symbol> } </symbol>

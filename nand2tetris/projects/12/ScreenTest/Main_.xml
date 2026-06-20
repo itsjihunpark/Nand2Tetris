@@ -577,6 +577,17 @@
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
+<doStatement>
+<keyword> do </keyword>
+<identifier> Screen </identifier>
+<symbol> . </symbol>
+<identifier> clearScreen </identifier>
+<symbol> ( </symbol>
+<expressionList>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
 <returnStatement>
 <keyword> return </keyword>
 <symbol> ; </symbol>

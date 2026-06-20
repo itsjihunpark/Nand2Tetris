@@ -20,6 +20,17 @@ class Screen {
 
     /** Erases the entire screen. */
     function void clearScreen() {
+        var boolean temp, i;
+        let temp = currentColor;
+        do Screen.setColor(false);
+        
+        let i = 0;
+        while (i<256){
+            do Screen.drawHorizontalLine(0, 511, i);
+            let i = i + 1;
+        }
+        do Screen.setColor(temp);
+
         return;
     }
 
@@ -148,6 +159,7 @@ class Screen {
             }
             let i = i + 1;
         }
+        
         let i = x2;
         while (edgeEnd < 0){
             if (Math.mod(i, 16) = 0){
