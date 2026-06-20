@@ -653,3 +653,19 @@ call Math.dec2Bin 2 // subroutine call (function)
 pop temp 0
 push constant 0
 return
+// compiling subroutine
+function Math.setTempBin 0
+push static 2 // symbol -> tempBin (array)
+push argument 0 // symbol -> bitPos
+add
+push argument 1 // symbol -> val
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 0
+return
+// compiling subroutine
+function Math.getTempBin 0
+push static 2 // symbol -> tempBin
+return
