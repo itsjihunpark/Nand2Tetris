@@ -197,7 +197,7 @@ class Output {
      *  and advances the cursor one column forward. */
     function void printChar(char c) {
         var int  xBase, yBase, i, j; 
-        var Array fontMap;
+        var Array fontMap, tempBinArray;
 
         if ( cursorRow > 22 ){ 
             let cursorRow = 0;
@@ -214,6 +214,10 @@ class Output {
         }
 
         let fontMap = Output.getMap(c);
+        
+        do Math.getBinFromDec(fontMap[i]);
+        let tempBinArray = Math.getTempBin(); 
+
 
         let xBase = cursorCol * 8;
         let yBase = cursorRow * 11;
@@ -224,9 +228,8 @@ class Output {
             while (j<8){
                 do Screen.setColor(false);
                 do Screen.drawPixel((xBase+j), (yBase+i));
-                do Math.getBinFromDec(fontMap[i]);
                 
-                if (Math.bit(j)=true){
+                if (tempBinArray[j]=true){
                     do Screen.setColor(true);
                     do Screen.drawPixel((xBase+j), (yBase+i));
                 }
