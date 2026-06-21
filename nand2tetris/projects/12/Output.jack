@@ -196,8 +196,8 @@ class Output {
     /** Displays the given character at the cursor location,
      *  and advances the cursor one column forward. */
     function void printChar(char c) {
-        var int  xBase, yBase, i, j; 
-        var Array fontMap;
+        var int  xBase, yBase, i, j, tempInt; 
+        var Array fontMap, rowBin, tempArr;
 
         if ( cursorRow > 22 ){ 
             let cursorRow = 0;
@@ -220,14 +220,26 @@ class Output {
 
         let i = 0;
         while (i<11){
-            do Math.getBinFromDec(fontMap[i]);
-
             let j = 0;
+
+            do Math.getBinFromDec(fontMap[i]);
+            let rowBin = Math.getTempBin(); 
+            let tempInt = 0;
+            let tempArr = Array.new(8);
+            // !!!IMPROVEMENTS TO BE CONTINUED HERE!!! it works for now
+            // need to copy array like this, otherwise rowBin object is modified
+            // by line 239 before it is accessed in line 242
+            while (tempInt < 8){
+                let tempArr[tempInt] = rowBin[tempInt]; 
+                let tempInt = tempInt + 1;
+            }
+            
             while (j<8){
                 do Screen.setColor(false);
                 do Screen.drawPixel((xBase+j), (yBase+i));
-                if (Math.bit(j)=true){
-                    do Screen.setColor(true);
+                do Screen.setColor(true);
+
+                if (tempArr[j]=true){
                     do Screen.drawPixel((xBase+j), (yBase+i));
                 }
                 let j = j + 1;
