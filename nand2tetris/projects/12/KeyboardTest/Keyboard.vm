@@ -1,0 +1,49 @@
+// compiling subroutine
+function Keyboard.init 0
+push constant 0
+return
+// compiling subroutine
+function Keyboard.keyPressed 0
+push constant 24576
+call Memory.peek 1 // subroutine call (function)
+return
+// compiling subroutine
+function Keyboard.readChar 2
+push constant 0
+pop local 0 // symbol -> key
+label L1.1
+push local 0 // symbol -> key
+push constant 0
+eq
+not
+if-goto L2.1
+call Keyboard.keyPressed 0 // subroutine call (function)
+pop local 0 // symbol -> key
+goto L1.1
+label L2.1
+push local 0 // symbol -> key
+pop local 1 // symbol -> c
+label L1.2
+push local 0 // symbol -> key
+push constant 0
+eq
+not
+not
+if-goto L2.2
+call Keyboard.keyPressed 0 // subroutine call (function)
+pop local 0 // symbol -> key
+goto L1.2
+label L2.2
+push local 1 // symbol -> c
+call Output.printChar 1 // subroutine call (function)
+pop temp 0
+push local 1 // symbol -> c
+return
+// compiling subroutine
+function Keyboard.readLine 0
+push constant 0
+return
+// compiling subroutine
+function Keyboard.readInt 0
+push constant 0
+return
