@@ -417,7 +417,7 @@ class CompilationEngine:
                     self.vm_commands.append(f"call {type_of}.{subroutine_name} {narg} // subroutine call ({subroutine_type})")
             else:
                 # push as normal
-                if symbol_mapping:
+                if symbol_mapping and (symbol_token_type == "identifier"):
                     segment, type_of, index = symbol_mapping
 
                     self.vm_commands.append(f"push {SYMBOLTABLE_MAPPNIG[segment]} {index} // symbol -> {symbol_token}")
