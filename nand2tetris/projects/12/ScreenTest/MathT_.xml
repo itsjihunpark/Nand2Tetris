@@ -1110,11 +1110,6 @@
 <identifier> Array </identifier>
 <identifier> getTempBin </identifier>
 <symbol> ( </symbol>
-<keyword> int </keyword>
-<identifier> bitPos </identifier>
-<symbol> , </symbol>
-<keyword> boolean </keyword>
-<identifier> val </identifier>
 <symbol> ) </symbol>
 <symbol> { </symbol>
 <keyword> return </keyword>

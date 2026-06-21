@@ -35,7 +35,7 @@ pop temp 0
 goto L2.2
 label L1.2
 label L2.2
-push argument 0 // symbol -> this
+push pointer 0 // pushing this
 call Memory.deAlloc 1 // subroutine call (function)
 pop temp 0
 push constant 0
@@ -158,7 +158,7 @@ push constant 1
 add
 pop this 2 // symbol -> _maxLength
 label L2.3
-push argument 0 // symbol -> this
+push pointer 0 // pushing this
 return
 // compiling subroutine
 function String.eraseLastChar 0

@@ -2388,11 +2388,6 @@
 <identifier> getTempBin </identifier>
 <symbol> ( </symbol>
 <parameterList>
-<keyword> int </keyword>
-<identifier> bitPos </identifier>
-<symbol> , </symbol>
-<keyword> boolean </keyword>
-<identifier> val </identifier>
 </parameterList>
 <symbol> ) </symbol>
 <subroutineBody>
