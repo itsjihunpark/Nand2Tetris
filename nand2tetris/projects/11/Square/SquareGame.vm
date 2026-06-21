@@ -19,7 +19,7 @@ pop pointer 0
 push this 0 // symbol -> square
 call Square.dispose 1 // subroutine call (method)
 pop temp 0
-push argument 0 // symbol -> this
+push pointer 0 // pushing this
 call Memory.deAlloc 1 // subroutine call (function)
 pop temp 0
 push constant 0
