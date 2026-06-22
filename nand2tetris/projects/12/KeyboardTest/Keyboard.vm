@@ -35,14 +35,67 @@ pop local 0 // symbol -> key
 goto L1.2
 label L2.2
 push local 1 // symbol -> c
+push constant 128
+eq
+not
+not
+if-goto L1.3
+push local 1 // symbol -> c
 call Output.printChar 1 // subroutine call (function)
 pop temp 0
+goto L2.3
+label L1.3
+label L2.3
 push local 1 // symbol -> c
 return
 // compiling subroutine
-function Keyboard.readLine 0
+function Keyboard.readLine 2
+push argument 0 // symbol -> message
+call Output.printString 1 // subroutine call (function)
+pop temp 0
+push constant 1
+call String.new 1 // subroutine call (function)
+pop local 1 // symbol -> s
 push constant 0
+pop local 0 // symbol -> c
+label L1.4
+push constant 1 // pushing true
+neg // pushing true
+not
+if-goto L2.4
+call Keyboard.readChar 0 // subroutine call (function)
+pop local 0 // symbol -> c
+push local 0 // symbol -> c
+push constant 128
+eq
+not
+if-goto L1.5
+call Output.println 0 // subroutine call (function)
+pop temp 0
+push local 1 // symbol -> s
 return
+goto L2.5
+label L1.5
+label L2.5
+push local 0 // symbol -> c
+push constant 129
+eq
+not
+if-goto L1.6
+push local 1 // symbol -> s
+call String.eraseLastChar 1 // subroutine call (method)
+pop temp 0
+call Output.backSpace 0 // subroutine call (function)
+pop temp 0
+goto L2.6
+label L1.6
+push local 1 // symbol -> s
+push local 0 // symbol -> c
+call String.appendChar 2 // subroutine call (method)
+pop temp 0
+label L2.6
+goto L1.4
+label L2.4
 // compiling subroutine
 function Keyboard.readInt 0
 push constant 0
