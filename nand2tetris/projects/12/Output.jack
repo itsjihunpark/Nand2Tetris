@@ -235,15 +235,17 @@ class Output {
             }
             
             while (j<8){
-                do Screen.setColor(false);
-                do Screen.drawPixel((xBase+j), (yBase+i));
-                do Screen.setColor(true);
 
                 if (tempArr[j]=true){
+                    do Screen.setColor(true);
+                    do Screen.drawPixel((xBase+j), (yBase+i));
+                }else{
+                    do Screen.setColor(false);
                     do Screen.drawPixel((xBase+j), (yBase+i));
                 }
                 let j = j + 1;
             }
+            do tempArr.dispose();
             let i = i + 1;
         }
         
