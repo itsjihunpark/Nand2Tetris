@@ -1623,6 +1623,30 @@ push constant 8
 lt
 not
 if-goto L2.9
+push local 7 // symbol -> tempArr (array)
+push local 3 // symbol -> j
+add
+pop pointer 1
+push that 0
+push constant 1 // pushing true
+neg // pushing true
+eq
+not
+if-goto L1.10
+push constant 1 // pushing true
+neg // pushing true
+call Screen.setColor 1 // subroutine call (function)
+pop temp 0
+push local 0 // symbol -> xBase
+push local 3 // symbol -> j
+add
+push local 1 // symbol -> yBase
+push local 2 // symbol -> i
+add
+call Screen.drawPixel 2 // subroutine call (function)
+pop temp 0
+goto L2.10
+label L1.10
 push constant 0 // pushing false
 call Screen.setColor 1 // subroutine call (function)
 pop temp 0
@@ -1634,30 +1658,6 @@ push local 2 // symbol -> i
 add
 call Screen.drawPixel 2 // subroutine call (function)
 pop temp 0
-push constant 1 // pushing true
-neg // pushing true
-call Screen.setColor 1 // subroutine call (function)
-pop temp 0
-push local 7 // symbol -> tempArr (array)
-push local 3 // symbol -> j
-add
-pop pointer 1
-push that 0
-push constant 1 // pushing true
-neg // pushing true
-eq
-not
-if-goto L1.10
-push local 0 // symbol -> xBase
-push local 3 // symbol -> j
-add
-push local 1 // symbol -> yBase
-push local 2 // symbol -> i
-add
-call Screen.drawPixel 2 // subroutine call (function)
-pop temp 0
-goto L2.10
-label L1.10
 label L2.10
 push local 3 // symbol -> j
 push constant 1
@@ -1665,6 +1665,9 @@ add
 pop local 3 // symbol -> j
 goto L1.9
 label L2.9
+push local 7 // symbol -> tempArr
+call Array.dispose 1 // subroutine call (method)
+pop temp 0
 push local 2 // symbol -> i
 push constant 1
 add
