@@ -1,0 +1,164 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/12/Math.jack
+/**
+ *  A library of commonly used mathematical functions.
+ *  All functions runs in O(n), where n is the number of bits used
+ *  for representing a two's complement integer value (16 in the Hack computer). 
+ *  Note: Jack compilers implement multiplication and division
+ *  using calls to OS functions in this class.
+ */
+class Math {
+    static Array powersOfTwo; // Stores 2^0, 2^1, 2^2,..., 2^(n-1)
+
+    // Initializes the Math library.
+    function void init() {
+        let powersOfTwo = Array.new(15); 
+        let powersOfTwo[0] = 1;
+        let powersOfTwo[1] = 2; 
+        let powersOfTwo[2] = 4;
+        let powersOfTwo[3] = 8;
+        let powersOfTwo[4] = 16;
+        let powersOfTwo[5] = 32; 
+        let powersOfTwo[6] = 64;
+        let powersOfTwo[7] = 128; 
+        let powersOfTwo[8] = 256;
+        let powersOfTwo[9] = 512; 
+        let powersOfTwo[10] = 1024;
+        let powersOfTwo[11] = 2048;
+        let powersOfTwo[12] = 4096;
+        let powersOfTwo[13] = 8192; 
+        let powersOfTwo[14] = 16384;
+        return;
+    }
+
+    /** Returns the product of x and y. 
+     *  When a Jack compiler detects the multiplication operator '*'
+     *  in an expression, it handles it by invoking this method. 
+     *  Thus, in Jack, x * y and Math.multiply(x,y) return the same value. */
+    function int multiply(int x, int y) {
+        var int i, sum, shiftedx;
+        let i = 0;
+        let sum = 0;
+        let shiftedx = x;
+
+        while ( ~(i=(16)) ){
+            if( Math.bit(y,i) = true ){
+                let sum = sum + shiftedx;
+            }
+            let shiftedx = shiftedx + shiftedx;
+            let i = i + 1;
+        }
+
+        return sum;
+    }
+
+    /** Returns the integer part of x / y.
+     *  When a Jack compiler detects the division operator '/'
+     *  an an expression, it handles it by invoking this method.
+     *  Thus, x/y and Math.divide(x,y) return the same value. */
+    function int divide(int x, int y) {
+	    var int sign, res;
+	    let sign = 1;
+	    if (x < 0){
+	        let x = -x;
+	        let sign = -sign;
+	    }
+	    if (y < 0){
+	        let y = -y;
+	        let sign = -sign;
+	    }
+
+	    let res = Math.divideRecursively(x, y);
+	    return res*sign;
+    }
+
+    function int divideRecursively(int x, int y) {
+    	var int q;
+	    if ((y > x) | (y<0)) {return 0;}
+        let q = Math.divideRecursively(x, (y+y));
+        
+	    if ( ( x - ( (q+q)*y ) ) < y ){
+	        return q+q;
+    	}
+	    else{
+	        return q+q+1;
+    	}
+    }
+
+    /** Returns the integer part of the square root of x. */
+    function int sqrt(int x) {
+	    var int n,y,temp;
+	    let y = 0;
+	    let n = 7;
+	    while (n>-1){
+	        let temp = y + powersOfTwo[n]; 
+	        let temp = temp*temp;
+	        if (temp > -1){
+	    	    if ((temp-1) < x){
+		            let y = y + powersOfTwo[n];
+	    	    }
+	        }
+	        let n = n - 1;
+	    }
+
+	    return y;
+    }
+
+    /** Returns the greater value. */
+    function int max(int a, int b) {
+    	if (a > b){
+	        return a;
+	    }
+	    return b;
+    }
+
+    /** Returns the smaller value. */
+    function int min(int a, int b) {
+    	if (a < b){
+	        return a;
+	    }
+	    return b;
+    }
+
+    /** Returns the absolute value of x. */
+    function int abs(int x) {
+    	if (x<0){
+	        return -x;
+	    }
+	    return x;
+    }
+
+    /** Returns the remainder of a division */
+    function int mod(int x, int y){
+    	var int res;
+	    let res = x/y;
+	    let res = x - (res*y);
+	    return res;
+    }
+
+
+    function boolean bit(int y, int i){
+        var int mask, masked;
+        if (i=15){
+            let mask = powersOfTwo[14] + powersOfTwo[14]; 
+        }else{
+            let mask = powersOfTwo[i];
+        }
+        let masked = y & mask;
+        if (masked = mask){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
+    function int getPowersOfTwo(int i){
+        if (i=15){
+            return (powersOfTwo[14] + powersOfTwo[14]); 
+        }else{
+           return powersOfTwo[i];
+        }
+    }
+}

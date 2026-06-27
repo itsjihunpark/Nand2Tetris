@@ -1,0 +1,14 @@
+// compiling subroutine
+function Main.main 1
+call PongGame.newInstance 0 // subroutine call (function)
+pop temp 0
+call PongGame.getInstance 0 // subroutine call (function)
+pop local 0 // symbol -> game
+push local 0 // symbol -> game
+call PongGame.run 1 // subroutine call (method)
+pop temp 0
+push local 0 // symbol -> game
+call PongGame.dispose 1 // subroutine call (method)
+pop temp 0
+push constant 0
+return
