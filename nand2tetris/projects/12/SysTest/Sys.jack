@@ -34,19 +34,8 @@ class Sys {
         let i = 0; 
         // todo next!! -> make sure this method takes 1 millisecond when invoked
         while (i<duration){
-            let j = 1+1;
-            let j = 1+1;
-            let j = 1+1;
-            let j = 1+1;
-            let j = 1+1;
-            let j = 1+1;
-            let j = 1+1;
-            let j = 1+1;
-            let j = 1+1;
-            let j = 1+1;
-            let j = 1+1;
-            let j = 1+1;
-            let i = i + 1;
+            let j = 1*1;
+            let i = i+1;
         }
         return;
         
