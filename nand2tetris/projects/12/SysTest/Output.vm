@@ -1,0 +1,1794 @@
+// compiling subroutine
+function Output.init 0
+push constant 0
+pop static 1 // symbol -> cursorRow
+push constant 0
+pop static 2 // symbol -> cursorCol
+call Output.initMap 0 // subroutine call (function)
+pop temp 0
+push constant 0
+return
+// compiling subroutine
+function Output.initMap 1
+push constant 127
+call Array.new 1 // subroutine call (function)
+pop static 0 // symbol -> charMaps
+push constant 0
+push constant 63
+push constant 63
+push constant 63
+push constant 63
+push constant 63
+push constant 63
+push constant 63
+push constant 63
+push constant 63
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 32
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 33
+push constant 12
+push constant 30
+push constant 30
+push constant 30
+push constant 12
+push constant 12
+push constant 0
+push constant 12
+push constant 12
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 34
+push constant 54
+push constant 54
+push constant 20
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 35
+push constant 0
+push constant 18
+push constant 18
+push constant 63
+push constant 18
+push constant 18
+push constant 63
+push constant 18
+push constant 18
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 36
+push constant 12
+push constant 30
+push constant 51
+push constant 3
+push constant 30
+push constant 48
+push constant 51
+push constant 30
+push constant 12
+push constant 12
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 37
+push constant 0
+push constant 0
+push constant 35
+push constant 51
+push constant 24
+push constant 12
+push constant 6
+push constant 51
+push constant 49
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 38
+push constant 12
+push constant 30
+push constant 30
+push constant 12
+push constant 54
+push constant 27
+push constant 27
+push constant 27
+push constant 54
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 39
+push constant 12
+push constant 12
+push constant 6
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 40
+push constant 24
+push constant 12
+push constant 6
+push constant 6
+push constant 6
+push constant 6
+push constant 6
+push constant 12
+push constant 24
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 41
+push constant 6
+push constant 12
+push constant 24
+push constant 24
+push constant 24
+push constant 24
+push constant 24
+push constant 12
+push constant 6
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 42
+push constant 0
+push constant 0
+push constant 0
+push constant 51
+push constant 30
+push constant 63
+push constant 30
+push constant 51
+push constant 0
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 43
+push constant 0
+push constant 0
+push constant 0
+push constant 12
+push constant 12
+push constant 63
+push constant 12
+push constant 12
+push constant 0
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 44
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 12
+push constant 12
+push constant 6
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 45
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 63
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 46
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 12
+push constant 12
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 47
+push constant 0
+push constant 0
+push constant 32
+push constant 48
+push constant 24
+push constant 12
+push constant 6
+push constant 3
+push constant 1
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 48
+push constant 12
+push constant 30
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 30
+push constant 12
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 49
+push constant 12
+push constant 14
+push constant 15
+push constant 12
+push constant 12
+push constant 12
+push constant 12
+push constant 12
+push constant 63
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 50
+push constant 30
+push constant 51
+push constant 48
+push constant 24
+push constant 12
+push constant 6
+push constant 3
+push constant 51
+push constant 63
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 51
+push constant 30
+push constant 51
+push constant 48
+push constant 48
+push constant 28
+push constant 48
+push constant 48
+push constant 51
+push constant 30
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 52
+push constant 16
+push constant 24
+push constant 28
+push constant 26
+push constant 25
+push constant 63
+push constant 24
+push constant 24
+push constant 60
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 53
+push constant 63
+push constant 3
+push constant 3
+push constant 31
+push constant 48
+push constant 48
+push constant 48
+push constant 51
+push constant 30
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 54
+push constant 28
+push constant 6
+push constant 3
+push constant 3
+push constant 31
+push constant 51
+push constant 51
+push constant 51
+push constant 30
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 55
+push constant 63
+push constant 49
+push constant 48
+push constant 48
+push constant 24
+push constant 12
+push constant 12
+push constant 12
+push constant 12
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 56
+push constant 30
+push constant 51
+push constant 51
+push constant 51
+push constant 30
+push constant 51
+push constant 51
+push constant 51
+push constant 30
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 57
+push constant 30
+push constant 51
+push constant 51
+push constant 51
+push constant 62
+push constant 48
+push constant 48
+push constant 24
+push constant 14
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 58
+push constant 0
+push constant 0
+push constant 12
+push constant 12
+push constant 0
+push constant 0
+push constant 12
+push constant 12
+push constant 0
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 59
+push constant 0
+push constant 0
+push constant 12
+push constant 12
+push constant 0
+push constant 0
+push constant 12
+push constant 12
+push constant 6
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 60
+push constant 0
+push constant 0
+push constant 24
+push constant 12
+push constant 6
+push constant 3
+push constant 6
+push constant 12
+push constant 24
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 61
+push constant 0
+push constant 0
+push constant 0
+push constant 63
+push constant 0
+push constant 0
+push constant 63
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 62
+push constant 0
+push constant 0
+push constant 3
+push constant 6
+push constant 12
+push constant 24
+push constant 12
+push constant 6
+push constant 3
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 64
+push constant 30
+push constant 51
+push constant 51
+push constant 59
+push constant 59
+push constant 59
+push constant 27
+push constant 3
+push constant 30
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 63
+push constant 30
+push constant 51
+push constant 51
+push constant 24
+push constant 12
+push constant 12
+push constant 0
+push constant 12
+push constant 12
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 65
+push constant 28
+push constant 62
+push constant 99
+push constant 99
+push constant 127
+push constant 127
+push constant 99
+push constant 99
+push constant 99
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 66
+push constant 31
+push constant 51
+push constant 51
+push constant 51
+push constant 31
+push constant 51
+push constant 51
+push constant 51
+push constant 31
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 67
+push constant 28
+push constant 54
+push constant 35
+push constant 3
+push constant 3
+push constant 3
+push constant 35
+push constant 54
+push constant 28
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 68
+push constant 15
+push constant 27
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 27
+push constant 15
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 69
+push constant 63
+push constant 51
+push constant 35
+push constant 11
+push constant 15
+push constant 11
+push constant 35
+push constant 51
+push constant 63
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 70
+push constant 63
+push constant 51
+push constant 35
+push constant 11
+push constant 15
+push constant 11
+push constant 3
+push constant 3
+push constant 3
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 71
+push constant 28
+push constant 54
+push constant 35
+push constant 3
+push constant 59
+push constant 51
+push constant 51
+push constant 54
+push constant 44
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 72
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 63
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 73
+push constant 30
+push constant 12
+push constant 12
+push constant 12
+push constant 12
+push constant 12
+push constant 12
+push constant 12
+push constant 30
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 74
+push constant 60
+push constant 24
+push constant 24
+push constant 24
+push constant 24
+push constant 24
+push constant 27
+push constant 27
+push constant 14
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 75
+push constant 51
+push constant 51
+push constant 51
+push constant 27
+push constant 15
+push constant 27
+push constant 51
+push constant 51
+push constant 51
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 76
+push constant 3
+push constant 3
+push constant 3
+push constant 3
+push constant 3
+push constant 3
+push constant 35
+push constant 51
+push constant 63
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 77
+push constant 33
+push constant 51
+push constant 63
+push constant 63
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 78
+push constant 51
+push constant 51
+push constant 55
+push constant 55
+push constant 63
+push constant 59
+push constant 59
+push constant 51
+push constant 51
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 79
+push constant 30
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 30
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 80
+push constant 31
+push constant 51
+push constant 51
+push constant 51
+push constant 31
+push constant 3
+push constant 3
+push constant 3
+push constant 3
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 81
+push constant 30
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 63
+push constant 59
+push constant 30
+push constant 48
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 82
+push constant 31
+push constant 51
+push constant 51
+push constant 51
+push constant 31
+push constant 27
+push constant 51
+push constant 51
+push constant 51
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 83
+push constant 30
+push constant 51
+push constant 51
+push constant 6
+push constant 28
+push constant 48
+push constant 51
+push constant 51
+push constant 30
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 84
+push constant 63
+push constant 63
+push constant 45
+push constant 12
+push constant 12
+push constant 12
+push constant 12
+push constant 12
+push constant 30
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 85
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 30
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 86
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 30
+push constant 30
+push constant 12
+push constant 12
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 87
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 63
+push constant 63
+push constant 63
+push constant 18
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 88
+push constant 51
+push constant 51
+push constant 30
+push constant 30
+push constant 12
+push constant 30
+push constant 30
+push constant 51
+push constant 51
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 89
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 30
+push constant 12
+push constant 12
+push constant 12
+push constant 30
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 90
+push constant 63
+push constant 51
+push constant 49
+push constant 24
+push constant 12
+push constant 6
+push constant 35
+push constant 51
+push constant 63
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 91
+push constant 30
+push constant 6
+push constant 6
+push constant 6
+push constant 6
+push constant 6
+push constant 6
+push constant 6
+push constant 30
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 92
+push constant 0
+push constant 0
+push constant 1
+push constant 3
+push constant 6
+push constant 12
+push constant 24
+push constant 48
+push constant 32
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 93
+push constant 30
+push constant 24
+push constant 24
+push constant 24
+push constant 24
+push constant 24
+push constant 24
+push constant 24
+push constant 30
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 94
+push constant 8
+push constant 28
+push constant 54
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 95
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 63
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 96
+push constant 6
+push constant 12
+push constant 24
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 97
+push constant 0
+push constant 0
+push constant 0
+push constant 14
+push constant 24
+push constant 30
+push constant 27
+push constant 27
+push constant 54
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 98
+push constant 3
+push constant 3
+push constant 3
+push constant 15
+push constant 27
+push constant 51
+push constant 51
+push constant 51
+push constant 30
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 99
+push constant 0
+push constant 0
+push constant 0
+push constant 30
+push constant 51
+push constant 3
+push constant 3
+push constant 51
+push constant 30
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 100
+push constant 48
+push constant 48
+push constant 48
+push constant 60
+push constant 54
+push constant 51
+push constant 51
+push constant 51
+push constant 30
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 101
+push constant 0
+push constant 0
+push constant 0
+push constant 30
+push constant 51
+push constant 63
+push constant 3
+push constant 51
+push constant 30
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 102
+push constant 28
+push constant 54
+push constant 38
+push constant 6
+push constant 15
+push constant 6
+push constant 6
+push constant 6
+push constant 15
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 103
+push constant 0
+push constant 0
+push constant 30
+push constant 51
+push constant 51
+push constant 51
+push constant 62
+push constant 48
+push constant 51
+push constant 30
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 104
+push constant 3
+push constant 3
+push constant 3
+push constant 27
+push constant 55
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 105
+push constant 12
+push constant 12
+push constant 0
+push constant 14
+push constant 12
+push constant 12
+push constant 12
+push constant 12
+push constant 30
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 106
+push constant 48
+push constant 48
+push constant 0
+push constant 56
+push constant 48
+push constant 48
+push constant 48
+push constant 48
+push constant 51
+push constant 30
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 107
+push constant 3
+push constant 3
+push constant 3
+push constant 51
+push constant 27
+push constant 15
+push constant 15
+push constant 27
+push constant 51
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 108
+push constant 14
+push constant 12
+push constant 12
+push constant 12
+push constant 12
+push constant 12
+push constant 12
+push constant 12
+push constant 30
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 109
+push constant 0
+push constant 0
+push constant 0
+push constant 29
+push constant 63
+push constant 43
+push constant 43
+push constant 43
+push constant 43
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 110
+push constant 0
+push constant 0
+push constant 0
+push constant 29
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 111
+push constant 0
+push constant 0
+push constant 0
+push constant 30
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 30
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 112
+push constant 0
+push constant 0
+push constant 0
+push constant 30
+push constant 51
+push constant 51
+push constant 51
+push constant 31
+push constant 3
+push constant 3
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 113
+push constant 0
+push constant 0
+push constant 0
+push constant 30
+push constant 51
+push constant 51
+push constant 51
+push constant 62
+push constant 48
+push constant 48
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 114
+push constant 0
+push constant 0
+push constant 0
+push constant 29
+push constant 55
+push constant 51
+push constant 3
+push constant 3
+push constant 7
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 115
+push constant 0
+push constant 0
+push constant 0
+push constant 30
+push constant 51
+push constant 6
+push constant 24
+push constant 51
+push constant 30
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 116
+push constant 4
+push constant 6
+push constant 6
+push constant 15
+push constant 6
+push constant 6
+push constant 6
+push constant 54
+push constant 28
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 117
+push constant 0
+push constant 0
+push constant 0
+push constant 27
+push constant 27
+push constant 27
+push constant 27
+push constant 27
+push constant 54
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 118
+push constant 0
+push constant 0
+push constant 0
+push constant 51
+push constant 51
+push constant 51
+push constant 51
+push constant 30
+push constant 12
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 119
+push constant 0
+push constant 0
+push constant 0
+push constant 51
+push constant 51
+push constant 51
+push constant 63
+push constant 63
+push constant 18
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 120
+push constant 0
+push constant 0
+push constant 0
+push constant 51
+push constant 30
+push constant 12
+push constant 12
+push constant 30
+push constant 51
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 121
+push constant 0
+push constant 0
+push constant 0
+push constant 51
+push constant 51
+push constant 51
+push constant 62
+push constant 48
+push constant 24
+push constant 15
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 122
+push constant 0
+push constant 0
+push constant 0
+push constant 63
+push constant 27
+push constant 12
+push constant 6
+push constant 51
+push constant 63
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 123
+push constant 56
+push constant 12
+push constant 12
+push constant 12
+push constant 7
+push constant 12
+push constant 12
+push constant 12
+push constant 56
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 124
+push constant 12
+push constant 12
+push constant 12
+push constant 12
+push constant 12
+push constant 12
+push constant 12
+push constant 12
+push constant 12
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 125
+push constant 7
+push constant 12
+push constant 12
+push constant 12
+push constant 56
+push constant 12
+push constant 12
+push constant 12
+push constant 7
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 126
+push constant 38
+push constant 45
+push constant 25
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+call Output.create 12 // subroutine call (function)
+pop temp 0
+push constant 0
+return
+// compiling subroutine
+function Output.create 1
+push constant 11
+call Array.new 1 // subroutine call (function)
+pop local 0 // symbol -> map
+push static 0 // symbol -> charMaps (array)
+push argument 0 // symbol -> index
+add
+push local 0 // symbol -> map
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 0 // symbol -> map (array)
+push constant 0
+add
+push argument 1 // symbol -> a
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 0 // symbol -> map (array)
+push constant 1
+add
+push argument 2 // symbol -> b
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 0 // symbol -> map (array)
+push constant 2
+add
+push argument 3 // symbol -> c
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 0 // symbol -> map (array)
+push constant 3
+add
+push argument 4 // symbol -> d
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 0 // symbol -> map (array)
+push constant 4
+add
+push argument 5 // symbol -> e
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 0 // symbol -> map (array)
+push constant 5
+add
+push argument 6 // symbol -> f
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 0 // symbol -> map (array)
+push constant 6
+add
+push argument 7 // symbol -> g
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 0 // symbol -> map (array)
+push constant 7
+add
+push argument 8 // symbol -> h
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 0 // symbol -> map (array)
+push constant 8
+add
+push argument 9 // symbol -> i
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 0 // symbol -> map (array)
+push constant 9
+add
+push argument 10 // symbol -> j
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 0 // symbol -> map (array)
+push constant 10
+add
+push argument 11 // symbol -> k
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 0
+return
+// compiling subroutine
+function Output.getMap 0
+push argument 0 // symbol -> c
+push constant 32
+lt
+push argument 0 // symbol -> c
+push constant 126
+gt
+or
+not
+if-goto L1.1
+push constant 0
+pop argument 0 // symbol -> c
+goto L2.1
+label L1.1
+label L2.1
+push static 0 // symbol -> charMaps (array)
+push argument 0 // symbol -> c
+add
+pop pointer 1
+push that 0
+return
+// compiling subroutine
+function Output.moveCursor 0
+push argument 0 // symbol -> i
+push constant 0
+lt
+push argument 0 // symbol -> i
+push constant 22
+gt
+or
+not
+if-goto L1.2
+push constant 0
+pop static 1 // symbol -> cursorRow
+goto L2.2
+label L1.2
+label L2.2
+push argument 1 // symbol -> j
+push constant 0
+lt
+push argument 1 // symbol -> j
+push constant 63
+gt
+or
+not
+if-goto L1.3
+push constant 0
+pop static 2 // symbol -> cursorCol
+goto L2.3
+label L1.3
+label L2.3
+push argument 0 // symbol -> i
+pop static 1 // symbol -> cursorRow
+push argument 1 // symbol -> j
+pop static 2 // symbol -> cursorCol
+push constant 0
+return
+// compiling subroutine
+function Output.printChar 8
+push static 1 // symbol -> cursorRow
+push constant 22
+gt
+not
+if-goto L1.4
+push constant 0
+pop static 1 // symbol -> cursorRow
+push constant 0
+pop static 2 // symbol -> cursorCol
+goto L2.4
+label L1.4
+push static 2 // symbol -> cursorCol
+push constant 64
+gt
+not
+if-goto L1.5
+push constant 0
+pop static 2 // symbol -> cursorCol
+push static 1 // symbol -> cursorRow
+push constant 22
+eq
+not
+if-goto L1.6
+push constant 0
+pop static 1 // symbol -> cursorRow
+goto L2.6
+label L1.6
+push static 1 // symbol -> cursorRow
+push constant 1
+add
+pop static 1 // symbol -> cursorRow
+label L2.6
+goto L2.5
+label L1.5
+label L2.5
+label L2.4
+push argument 0 // symbol -> c
+call Output.getMap 1 // subroutine call (function)
+pop local 5 // symbol -> fontMap
+push static 2 // symbol -> cursorCol
+push constant 8
+call Math.multiply 2
+pop local 0 // symbol -> xBase
+push static 1 // symbol -> cursorRow
+push constant 11
+call Math.multiply 2
+pop local 1 // symbol -> yBase
+push constant 0
+pop local 2 // symbol -> i
+label L1.7
+push local 2 // symbol -> i
+push constant 11
+lt
+not
+if-goto L2.7
+push constant 0
+pop local 3 // symbol -> j
+push local 5 // symbol -> fontMap (array)
+push local 2 // symbol -> i
+add
+pop pointer 1
+push that 0
+call Math.getBinFromDec 1 // subroutine call (function)
+pop temp 0
+call Math.getTempBin 0 // subroutine call (function)
+pop local 6 // symbol -> rowBin
+push constant 0
+pop local 4 // symbol -> tempInt
+push constant 8
+call Array.new 1 // subroutine call (function)
+pop local 7 // symbol -> tempArr
+label L1.8
+push local 4 // symbol -> tempInt
+push constant 8
+lt
+not
+if-goto L2.8
+push local 7 // symbol -> tempArr (array)
+push local 4 // symbol -> tempInt
+add
+push local 6 // symbol -> rowBin (array)
+push local 4 // symbol -> tempInt
+add
+pop pointer 1
+push that 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 4 // symbol -> tempInt
+push constant 1
+add
+pop local 4 // symbol -> tempInt
+goto L1.8
+label L2.8
+label L1.9
+push local 3 // symbol -> j
+push constant 8
+lt
+not
+if-goto L2.9
+push local 7 // symbol -> tempArr (array)
+push local 3 // symbol -> j
+add
+pop pointer 1
+push that 0
+push constant 1 // pushing true
+neg // pushing true
+eq
+not
+if-goto L1.10
+push constant 1 // pushing true
+neg // pushing true
+call Screen.setColor 1 // subroutine call (function)
+pop temp 0
+push local 0 // symbol -> xBase
+push local 3 // symbol -> j
+add
+push local 1 // symbol -> yBase
+push local 2 // symbol -> i
+add
+call Screen.drawPixel 2 // subroutine call (function)
+pop temp 0
+goto L2.10
+label L1.10
+push constant 0 // pushing false
+call Screen.setColor 1 // subroutine call (function)
+pop temp 0
+push local 0 // symbol -> xBase
+push local 3 // symbol -> j
+add
+push local 1 // symbol -> yBase
+push local 2 // symbol -> i
+add
+call Screen.drawPixel 2 // subroutine call (function)
+pop temp 0
+label L2.10
+push local 3 // symbol -> j
+push constant 1
+add
+pop local 3 // symbol -> j
+goto L1.9
+label L2.9
+push local 7 // symbol -> tempArr
+call Array.dispose 1 // subroutine call (method)
+pop temp 0
+push local 2 // symbol -> i
+push constant 1
+add
+pop local 2 // symbol -> i
+goto L1.7
+label L2.7
+push static 2 // symbol -> cursorCol
+push constant 1
+add
+pop static 2 // symbol -> cursorCol
+push static 2 // symbol -> cursorCol
+push constant 63
+gt
+not
+if-goto L1.11
+push constant 0
+pop static 2 // symbol -> cursorCol
+push static 1 // symbol -> cursorRow
+push constant 1
+add
+pop static 1 // symbol -> cursorRow
+goto L2.11
+label L1.11
+label L2.11
+push constant 0
+return
+// compiling subroutine
+function Output.printString 1
+push constant 0
+pop local 0 // symbol -> i
+label L1.12
+push local 0 // symbol -> i
+push argument 0 // symbol -> s
+call String.length 1 // subroutine call (method)
+lt
+not
+if-goto L2.12
+push argument 0 // symbol -> s
+push local 0 // symbol -> i
+call String.charAt 2 // subroutine call (method)
+call Output.printChar 1 // subroutine call (function)
+pop temp 0
+push local 0 // symbol -> i
+push constant 1
+add
+pop local 0 // symbol -> i
+goto L1.12
+label L2.12
+push constant 0
+return
+// compiling subroutine
+function Output.printInt 1
+push constant 1
+call String.new 1 // subroutine call (function)
+pop local 0 // symbol -> tempString
+push local 0 // symbol -> tempString
+push argument 0 // symbol -> i
+call String.setInt 2 // subroutine call (method)
+pop temp 0
+push local 0 // symbol -> tempString
+call Output.printString 1 // subroutine call (function)
+pop temp 0
+push local 0 // symbol -> tempString
+call String.dispose 1 // subroutine call (method)
+pop temp 0
+push constant 0
+return
+// compiling subroutine
+function Output.println 0
+push static 1 // symbol -> cursorRow
+push constant 1
+add
+push constant 22
+gt
+not
+if-goto L1.13
+push constant 0
+pop static 1 // symbol -> cursorRow
+goto L2.13
+label L1.13
+push static 1 // symbol -> cursorRow
+push constant 1
+add
+pop static 1 // symbol -> cursorRow
+label L2.13
+push constant 0
+pop static 2 // symbol -> cursorCol
+push constant 0
+return
+// compiling subroutine
+function Output.backSpace 0
+push static 2 // symbol -> cursorCol
+push constant 1
+sub
+push constant 0
+lt
+not
+if-goto L1.14
+push static 1 // symbol -> cursorRow
+push constant 1
+sub
+push constant 1
+neg
+gt
+not
+if-goto L1.15
+push static 1 // symbol -> cursorRow
+push constant 1
+sub
+pop static 1 // symbol -> cursorRow
+goto L2.15
+label L1.15
+label L2.15
+push constant 0
+pop static 2 // symbol -> cursorCol
+goto L2.14
+label L1.14
+push static 2 // symbol -> cursorCol
+push constant 1
+sub
+pop static 2 // symbol -> cursorCol
+label L2.14
+push constant 0
+return

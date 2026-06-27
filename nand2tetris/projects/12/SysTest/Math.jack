@@ -1,0 +1,248 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/12/Math.jack
+/**
+ *  A library of commonly used mathematical functions.
+ *  All functions runs in O(n), where n is the number of bits used
+ *  for representing a two's complement integer value (16 in the Hack computer). 
+ *  Note: Jack compilers implement multiplication and division
+ *  using calls to OS functions in this class.
+ */
+class Math {
+    static int n;             // Number of bits used for representing a two's complement integer
+    static Array powersOfTwo; // Stores 2^0, 2^1, 2^2,..., 2^(n-1)
+    static Array tempBin;
+
+    // Initializes the Math library.
+    function void init() {
+        let n = 1;
+        let tempBin = Array.new(16);
+        do Math.resetTempBinArray();
+        let powersOfTwo = Array.new(15); 
+        let powersOfTwo[0] = 1;
+        let powersOfTwo[1] = 2; 
+        let powersOfTwo[2] = 4;
+        let powersOfTwo[3] = 8;
+        let powersOfTwo[4] = 16;
+        let powersOfTwo[5] = 32; 
+        let powersOfTwo[6] = 64;
+        let powersOfTwo[7] = 128; 
+        let powersOfTwo[8] = 256;
+        let powersOfTwo[9] = 512; 
+        let powersOfTwo[10] = 1024;
+        let powersOfTwo[11] = 2048;
+        let powersOfTwo[12] = 4096;
+        let powersOfTwo[13] = 8192; 
+        let powersOfTwo[14] = 16384;
+        return;
+    }
+
+    /** Returns the product of x and y. 
+     *  When a Jack compiler detects the multiplication operator '*'
+     *  in an expression, it handles it by invoking this method. 
+     *  Thus, in Jack, x * y and Math.multiply(x,y) return the same value. */
+    function int multiply(int x, int y) {
+        var int i, sum, shiftedx;
+        let i = 0;
+        let sum = 0;
+        let shiftedx = x;
+        
+        do Math.obtainTwosComplementBin(y);
+
+        while ( ~(i=(16)) ){
+            if( Math.bit(i) = true ){
+                let sum = sum + shiftedx;
+            }
+            let shiftedx = shiftedx + shiftedx;
+            let i = i + 1;
+        }
+
+        return sum;
+    }
+
+    /** Returns the integer part of x / y.
+     *  When a Jack compiler detects the division operator '/'
+     *  an an expression, it handles it by invoking this method.
+     *  Thus, x/y and Math.divide(x,y) return the same value. */
+    function int divide(int x, int y) {
+	    var int sign, res;
+	    let sign = 1;
+	    if (x < 0){
+	        let x = -x;
+	        let sign = -sign;
+	    }
+	    if (y < 0){
+	        let y = -y;
+	        let sign = -sign;
+	    }
+
+	    let res = Math.divideRecursively(x, y);
+	    return res*sign;
+    }
+
+    function int divideRecursively(int x, int y) {
+    	var int q;
+	    if ((y > x) | (y<0)) {return 0;}
+        let q = Math.divideRecursively(x, (y+y));
+        
+	    if ( ( x - ( (q+q)*y ) ) < y ){
+	        return q+q;
+    	}
+	    else{
+	        return q+q+1;
+    	}
+    }
+
+    /** Returns the integer part of the square root of x. */
+    function int sqrt(int x) {
+	    var int n,y,temp;
+	    let y = 0;
+	    let n = 7;
+	    while (n>-1){
+	        let temp = y + powersOfTwo[n]; 
+	        let temp = temp*temp;
+	        if (temp > -1){
+	    	    if ((temp-1) < x){
+		            let y = y + powersOfTwo[n];
+	    	    }
+	        }
+	        let n = n - 1;
+	    }
+
+	    return y;
+    }
+
+    /** Returns the greater value. */
+    function int max(int a, int b) {
+    	if (a > b){
+	        return a;
+	    }
+	    return b;
+    }
+
+    /** Returns the smaller value. */
+    function int min(int a, int b) {
+    	if (a < b){
+	        return a;
+	    }
+	    return b;
+    }
+
+    /** Returns the absolute value of x. */
+    function int abs(int x) {
+    	if (x<0){
+	        return -x;
+	    }
+	    return x;
+    }
+
+    /** Returns the remainder of a division */
+    function int mod(int x, int y){
+    	var int res;
+	    let res = x/y;
+	    let res = x - (res*y);
+	    return res;
+    }
+
+    function void resetTempBinArray(){
+        var int i;
+        let i = 0;
+        while( ~(i=16) ){
+            let tempBin[i] = false;
+            let i = i + 1;
+        }
+        return;
+    }
+
+    function void flipTempBinArray(){
+        var int i;
+        let i = 0;
+        while( ~(i=16) ){
+            let tempBin[i] = ~tempBin[i];
+            let i = i + 1;
+        }
+        return;
+    }
+
+    function int bin2Dec(){
+        var int sum, i;
+        let sum = 0;
+        let i = 0;
+
+        while ( ~(i=15) ){
+            if ( tempBin[i] = true){
+                let sum = sum + powersOfTwo[i];
+            }
+            let i = i + 1;
+        }
+        
+        return sum;
+    }
+
+    function void dec2Bin(int x, int n){
+        
+        if ( (x = 0) | (n < 0) ){
+            return;
+        }
+        if ( (x > powersOfTwo[n]) | (x = powersOfTwo[n]) ){
+            let tempBin[n] = true;
+            return Math.dec2Bin(x - powersOfTwo[n], n-1);
+        }
+        else{
+            let tempBin[n] = false;
+            return Math.dec2Bin(x, n-1);
+        }
+        
+    }
+
+    function boolean bit(int i){
+        return tempBin[i];
+    }
+
+    function void obtainTwosComplementBin(int x){
+        var boolean negative;
+        let negative = false;
+        if (x<0){
+            let negative = true;
+            let x = -x;
+        }
+
+        do Math.getBinFromDec(x);
+
+        if (negative){
+            do Math.flipTempBinArray();
+            do Math.getBinFromDec(Math.bin2Dec() + 1); // 47535 (-18001 in two's complement) 
+            let tempBin[15] = true;
+        }
+        return;
+    }
+
+    function void getBinFromDec(int x){
+        var int foundBinPos, bitPos;
+        do Math.resetTempBinArray();
+
+        let bitPos = 0;
+        let foundBinPos = 0;
+        while (~( bitPos=15 )){
+
+            if ( (powersOfTwo[bitPos] < x) | (powersOfTwo[bitPos] = x) ){
+                let foundBinPos = bitPos;
+            }
+            let bitPos = bitPos + 1;
+        } 
+
+        do Math.dec2Bin(x, foundBinPos);
+        return;
+    }
+
+    function void setTempBin(int bitPos, boolean val){
+        let tempBin[bitPos] = val; 
+        return;
+    }
+
+    function Array getTempBin(){
+        return tempBin; 
+    }
+
+}

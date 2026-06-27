@@ -1,0 +1,111 @@
+// compiling subroutine
+function Sys.init 0
+call Memory.init 0 // subroutine call (function)
+pop temp 0
+call Math.init 0 // subroutine call (function)
+pop temp 0
+call Screen.init 0 // subroutine call (function)
+pop temp 0
+call Output.init 0 // subroutine call (function)
+pop temp 0
+call Keyboard.init 0 // subroutine call (function)
+pop temp 0
+call Main.main 0 // subroutine call (function)
+pop temp 0
+call Sys.halt 0 // subroutine call (function)
+pop temp 0
+push constant 0
+return
+// compiling subroutine
+function Sys.halt 0
+label L1.1
+push constant 1 // pushing true
+neg // pushing true
+not
+if-goto L2.1
+goto L1.1
+label L2.1
+push constant 0
+return
+// compiling subroutine
+function Sys.wait 2
+push constant 0
+pop local 0 // symbol -> i
+label L1.2
+push local 0 // symbol -> i
+push argument 0 // symbol -> duration
+lt
+not
+if-goto L2.2
+push constant 1
+push constant 1
+add
+pop local 1 // symbol -> j
+push constant 1
+push constant 1
+add
+pop local 1 // symbol -> j
+push constant 1
+push constant 1
+add
+pop local 1 // symbol -> j
+push constant 1
+push constant 1
+add
+pop local 1 // symbol -> j
+push constant 1
+push constant 1
+add
+pop local 1 // symbol -> j
+push constant 1
+push constant 1
+add
+pop local 1 // symbol -> j
+push constant 1
+push constant 1
+add
+pop local 1 // symbol -> j
+push constant 1
+push constant 1
+add
+pop local 1 // symbol -> j
+push constant 1
+push constant 1
+add
+pop local 1 // symbol -> j
+push constant 1
+push constant 1
+add
+pop local 1 // symbol -> j
+push constant 1
+push constant 1
+add
+pop local 1 // symbol -> j
+push constant 1
+push constant 1
+add
+pop local 1 // symbol -> j
+push local 0 // symbol -> i
+push constant 1
+add
+pop local 0 // symbol -> i
+goto L1.2
+label L2.2
+push constant 0
+return
+// compiling subroutine
+function Sys.error 0
+// Instantiating String: ERR
+push constant 3
+call String.new 1
+push constant 69
+call String.appendChar 2
+push constant 82
+call String.appendChar 2
+push constant 82
+call String.appendChar 2
+call Output.printString 1 // subroutine call (function)
+pop temp 0
+push argument 0 // symbol -> errorCode
+call Output.printInt 1 // subroutine call (function)
+pop temp 0
