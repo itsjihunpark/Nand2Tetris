@@ -235,8 +235,6 @@
 <identifier> word </identifier>
 <symbol> , </symbol>
 <identifier> bitPos </identifier>
-<symbol> , </symbol>
-<identifier> temp </identifier>
 <symbol> ; </symbol>
 </varDec>
 <statements>
@@ -413,78 +411,12 @@
 </expression>
 <symbol> ; </symbol>
 </letStatement>
-<doStatement>
-<keyword> do </keyword>
-<identifier> Math </identifier>
-<symbol> . </symbol>
-<identifier> obtainTwosComplementBin </identifier>
-<symbol> ( </symbol>
-<expressionList>
-<expression>
-<term>
-<identifier> word </identifier>
-</term>
-</expression>
-</expressionList>
-<symbol> ) </symbol>
-<symbol> ; </symbol>
-</doStatement>
-<doStatement>
-<keyword> do </keyword>
-<identifier> Math </identifier>
-<symbol> . </symbol>
-<identifier> setTempBin </identifier>
-<symbol> ( </symbol>
-<expressionList>
-<expression>
-<term>
-<identifier> bitPos </identifier>
-</term>
-</expression>
-<symbol> , </symbol>
-<expression>
-<term>
-<identifier> currentColor </identifier>
-</term>
-</expression>
-</expressionList>
-<symbol> ) </symbol>
-<symbol> ; </symbol>
-</doStatement>
-<letStatement>
-<keyword> let </keyword>
-<identifier> temp </identifier>
-<symbol> = </symbol>
-<expression>
-<term>
-<identifier> Math </identifier>
-<symbol> . </symbol>
-<identifier> bin2Dec </identifier>
-<symbol> ( </symbol>
-<expressionList>
-</expressionList>
-<symbol> ) </symbol>
-</term>
-</expression>
-<symbol> ; </symbol>
-</letStatement>
 <ifStatement>
 <keyword> if </keyword>
 <symbol> ( </symbol>
 <expression>
 <term>
-<identifier> Math </identifier>
-<symbol> . </symbol>
-<identifier> bit </identifier>
-<symbol> ( </symbol>
-<expressionList>
-<expression>
-<term>
-<integerConstant> 15 </integerConstant>
-</term>
-</expression>
-</expressionList>
-<symbol> ) </symbol>
+<identifier> currentColor </identifier>
 </term>
 <symbol> = </symbol>
 <term>
@@ -496,25 +428,66 @@
 <statements>
 <letStatement>
 <keyword> let </keyword>
-<identifier> temp </identifier>
+<identifier> word </identifier>
 <symbol> = </symbol>
 <expression>
 <term>
-<identifier> temp </identifier>
+<identifier> word </identifier>
 </term>
-<symbol> + </symbol>
+<symbol> | </symbol>
+<term>
+<identifier> Math </identifier>
+<symbol> . </symbol>
+<identifier> getPowersOfTwo </identifier>
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+<term>
+<identifier> bitPos </identifier>
+</term>
+</expression>
+</expressionList>
+<symbol> ) </symbol>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+</statements>
+<symbol> } </symbol>
+<keyword> else </keyword>
+<symbol> { </symbol>
+<statements>
+<letStatement>
+<keyword> let </keyword>
+<identifier> word </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<identifier> word </identifier>
+</term>
+<symbol> &amp; </symbol>
+<term>
+<symbol> ~ </symbol>
 <term>
 <symbol> ( </symbol>
 <expression>
 <term>
-<integerConstant> 16384 </integerConstant>
-</term>
-<symbol> + </symbol>
+<identifier> Math </identifier>
+<symbol> . </symbol>
+<identifier> getPowersOfTwo </identifier>
+<symbol> ( </symbol>
+<expressionList>
+<expression>
 <term>
-<integerConstant> 16384 </integerConstant>
+<identifier> bitPos </identifier>
+</term>
+</expression>
+</expressionList>
+<symbol> ) </symbol>
 </term>
 </expression>
 <symbol> ) </symbol>
+</term>
 </term>
 </expression>
 <symbol> ; </symbol>
@@ -537,7 +510,7 @@
 <symbol> , </symbol>
 <expression>
 <term>
-<identifier> temp </identifier>
+<identifier> word </identifier>
 </term>
 </expression>
 </expressionList>
@@ -546,180 +519,6 @@
 </doStatement>
 <returnStatement>
 <keyword> return </keyword>
-<symbol> ; </symbol>
-</returnStatement>
-</statements>
-<symbol> } </symbol>
-</subroutineBody>
-</subroutineDec>
-<subroutineDec>
-<keyword> function </keyword>
-<keyword> int </keyword>
-<identifier> getUpdatedWord </identifier>
-<symbol> ( </symbol>
-<parameterList>
-<keyword> int </keyword>
-<identifier> x </identifier>
-<symbol> , </symbol>
-<keyword> int </keyword>
-<identifier> word </identifier>
-</parameterList>
-<symbol> ) </symbol>
-<subroutineBody>
-<symbol> { </symbol>
-<varDec>
-<keyword> var </keyword>
-<keyword> int </keyword>
-<identifier> bitPos </identifier>
-<symbol> , </symbol>
-<identifier> temp </identifier>
-<symbol> ; </symbol>
-</varDec>
-<statements>
-<letStatement>
-<keyword> let </keyword>
-<identifier> bitPos </identifier>
-<symbol> = </symbol>
-<expression>
-<term>
-<identifier> Math </identifier>
-<symbol> . </symbol>
-<identifier> mod </identifier>
-<symbol> ( </symbol>
-<expressionList>
-<expression>
-<term>
-<identifier> x </identifier>
-</term>
-</expression>
-<symbol> , </symbol>
-<expression>
-<term>
-<integerConstant> 16 </integerConstant>
-</term>
-</expression>
-</expressionList>
-<symbol> ) </symbol>
-</term>
-</expression>
-<symbol> ; </symbol>
-</letStatement>
-<doStatement>
-<keyword> do </keyword>
-<identifier> Math </identifier>
-<symbol> . </symbol>
-<identifier> obtainTwosComplementBin </identifier>
-<symbol> ( </symbol>
-<expressionList>
-<expression>
-<term>
-<identifier> word </identifier>
-</term>
-</expression>
-</expressionList>
-<symbol> ) </symbol>
-<symbol> ; </symbol>
-</doStatement>
-<doStatement>
-<keyword> do </keyword>
-<identifier> Math </identifier>
-<symbol> . </symbol>
-<identifier> setTempBin </identifier>
-<symbol> ( </symbol>
-<expressionList>
-<expression>
-<term>
-<identifier> bitPos </identifier>
-</term>
-</expression>
-<symbol> , </symbol>
-<expression>
-<term>
-<identifier> currentColor </identifier>
-</term>
-</expression>
-</expressionList>
-<symbol> ) </symbol>
-<symbol> ; </symbol>
-</doStatement>
-<letStatement>
-<keyword> let </keyword>
-<identifier> temp </identifier>
-<symbol> = </symbol>
-<expression>
-<term>
-<identifier> Math </identifier>
-<symbol> . </symbol>
-<identifier> bin2Dec </identifier>
-<symbol> ( </symbol>
-<expressionList>
-</expressionList>
-<symbol> ) </symbol>
-</term>
-</expression>
-<symbol> ; </symbol>
-</letStatement>
-<ifStatement>
-<keyword> if </keyword>
-<symbol> ( </symbol>
-<expression>
-<term>
-<identifier> Math </identifier>
-<symbol> . </symbol>
-<identifier> bit </identifier>
-<symbol> ( </symbol>
-<expressionList>
-<expression>
-<term>
-<integerConstant> 15 </integerConstant>
-</term>
-</expression>
-</expressionList>
-<symbol> ) </symbol>
-</term>
-<symbol> = </symbol>
-<term>
-<keyword> true </keyword>
-</term>
-</expression>
-<symbol> ) </symbol>
-<symbol> { </symbol>
-<statements>
-<letStatement>
-<keyword> let </keyword>
-<identifier> temp </identifier>
-<symbol> = </symbol>
-<expression>
-<term>
-<identifier> temp </identifier>
-</term>
-<symbol> + </symbol>
-<term>
-<symbol> ( </symbol>
-<expression>
-<term>
-<integerConstant> 16384 </integerConstant>
-</term>
-<symbol> + </symbol>
-<term>
-<integerConstant> 16384 </integerConstant>
-</term>
-</expression>
-<symbol> ) </symbol>
-</term>
-</expression>
-<symbol> ; </symbol>
-</letStatement>
-</statements>
-<symbol> } </symbol>
-</ifStatement>
-<returnStatement>
-<keyword> return </keyword>
-<expression>
-<term>
-<identifier> temp </identifier>
-</term>
-</expression>
 <symbol> ; </symbol>
 </returnStatement>
 </statements>
