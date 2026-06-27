@@ -415,3 +415,31 @@ label L1.14
 push constant 0 // pushing false
 return
 label L2.14
+// compiling subroutine
+function Math.getPowersOfTwo 0
+push argument 0 // symbol -> i
+push constant 15
+eq
+not
+if-goto L1.15
+push static 0 // symbol -> powersOfTwo (array)
+push constant 14
+add
+pop pointer 1
+push that 0
+push static 0 // symbol -> powersOfTwo (array)
+push constant 14
+add
+pop pointer 1
+push that 0
+add
+return
+goto L2.15
+label L1.15
+push static 0 // symbol -> powersOfTwo (array)
+push argument 0 // symbol -> i
+add
+pop pointer 1
+push that 0
+return
+label L2.15

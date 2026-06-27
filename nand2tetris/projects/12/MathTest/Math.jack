@@ -153,5 +153,12 @@ class Math {
             return false;
         }
     }
-
+    
+    function int getPowersOfTwo(int i){
+        if (i=15){
+            return (powersOfTwo[14] + powersOfTwo[14]); 
+        }else{
+           return powersOfTwo[i];
+        }
+    }
 }
