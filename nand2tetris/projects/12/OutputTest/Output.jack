@@ -196,8 +196,8 @@ class Output {
     /** Displays the given character at the cursor location,
      *  and advances the cursor one column forward. */
     function void printChar(char c) {
-        var int  xBase, yBase, i, j, tempInt; 
-        var Array fontMap, rowBin, tempArr;
+        var int  xBase, yBase, i, word, addr; 
+        var Array fontMap;
 
         if ( cursorRow > 22 ){ 
             let cursorRow = 0;
@@ -214,42 +214,29 @@ class Output {
         }
 
         let fontMap = Output.getMap(c);
-
+        
         let xBase = cursorCol * 8;
         let yBase = cursorRow * 11;
 
-        let i = 0;
         while (i<11){
-            let j = 0;
+            let addr = 16384 + ((yBase+i)*32) + (xBase/16);
+            let word = Memory.peek(addr);
 
-            do Math.getBinFromDec(fontMap[i]);
-            let rowBin = Math.getTempBin(); 
-            let tempInt = 0;
-            let tempArr = Array.new(8);
-            // !!!IMPROVEMENTS TO BE CONTINUED HERE!!! it works for now
-            // need to copy array like this, otherwise rowBin object is modified
-            // by line 239 before it is accessed in line 242
-            while (tempInt < 8){
-                let tempArr[tempInt] = rowBin[tempInt]; 
-                let tempInt = tempInt + 1;
+            if ((Math.mod(cursorCol,2)) = 0){
+                // cursor X position even
+                let word = word & (-256);
+                let word = word + fontMap[i]; 
+            }else{
+                //cursor X position odd
+                let word = word & 255;
+                let word = word + (256*fontMap[i]); 
             }
-            
-            while (j<8){
-
-                if (tempArr[j]=true){
-                    do Screen.setColor(true);
-                    do Screen.drawPixel((xBase+j), (yBase+i));
-                }else{
-                    do Screen.setColor(false);
-                    do Screen.drawPixel((xBase+j), (yBase+i));
-                }
-                let j = j + 1;
-            }
-            do tempArr.dispose();
+            do Memory.poke(addr, word);
             let i = i + 1;
         }
         
         let cursorCol = cursorCol + 1;
+
         if (cursorCol>63){
             let cursorCol = 0;
             let cursorRow = cursorRow + 1;

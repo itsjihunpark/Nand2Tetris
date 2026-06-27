@@ -43,7 +43,7 @@ class Screen {
 
     /** Draws the (x,y) pixel, using the current color. */
     function void drawPixel(int x, int y) {
-        var int addr, word, bitPos, temp;
+        var int addr, word, bitPos;
 
         if ( (y<0) | (y>255) ){
             return;
@@ -54,33 +54,14 @@ class Screen {
 
         let addr = 16384 + (y*32) + (x/16);
         let word = Memory.peek(addr);
-        // the below 7 lines can be replaced with getUpdatedWord function
-        // but it seems to slow down pixel drawing speed
-
         let bitPos = Math.mod(x, 16);
-        do Math.obtainTwosComplementBin(word);
-        do Math.setTempBin(bitPos, currentColor);
-        let temp = Math.bin2Dec();
-        if ( Math.bit(15) = true ){
-            let temp = temp+(16384+16384);
+        if (currentColor = true){
+            let word = word | Math.getPowersOfTwo(bitPos);
+        }else{
+            let word = word & ~(Math.getPowersOfTwo(bitPos));
         }
- 
-        do Memory.poke(addr, temp);
+        do Memory.poke(addr, word);
         return;
-    }
-
-    /**Unused but can replace line 49-55 for more readable code*/
-    function int getUpdatedWord(int x, int word){
-        var int bitPos, temp;
-        
-        let bitPos = Math.mod(x, 16);
-        do Math.obtainTwosComplementBin(word);
-        do Math.setTempBin(bitPos, currentColor);
-        let temp = Math.bin2Dec();
-        if ( Math.bit(15) = true ){
-            let temp = temp+(16384+16384);
-        }
-        return temp;
     }
 
     /** Draws a line from pixel (x1,y1) to pixel (x2,y2), using the current color. */
