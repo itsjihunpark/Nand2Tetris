@@ -56,10 +56,11 @@ class Screen {
         let word = Memory.peek(addr);
         let bitPos = Math.mod(x, 16);
         if (currentColor = true){
-            let word =  
+            let word = word | Math.getPowersOfTwo(bitPos);
+        }else{
+            let word = word & ~(Math.getPowersOfTwo(bitPos));
         }
-
-        do Memory.poke(addr, temp);
+        do Memory.poke(addr, word);
         return;
     }
 
