@@ -472,14 +472,11 @@ lt
 not
 if-goto L2.22
 push argument 0 // symbol -> x1
-push argument 1 // symbol -> y1
-push local 1 // symbol -> i
-add
 push argument 2 // symbol -> x2
 push argument 1 // symbol -> y1
 push local 1 // symbol -> i
 add
-call Screen.drawLine 4 // subroutine call (function)
+call Screen.drawHorizontalLine 3 // subroutine call (function)
 pop temp 0
 push local 1 // symbol -> i
 push constant 1
@@ -525,14 +522,11 @@ call Math.sqrt 1 // subroutine call (function)
 add
 pop local 2 // symbol -> bx
 push local 1 // symbol -> ax
-push argument 1 // symbol -> y
-push local 0 // symbol -> dy
-add
 push local 2 // symbol -> bx
 push argument 1 // symbol -> y
 push local 0 // symbol -> dy
 add
-call Screen.drawLine 4 // subroutine call (function)
+call Screen.drawHorizontalLine 3 // subroutine call (function)
 pop temp 0
 push local 0 // symbol -> dy
 push constant 1

@@ -1931,22 +1931,12 @@
 <keyword> do </keyword>
 <identifier> Screen </identifier>
 <symbol> . </symbol>
-<identifier> drawLine </identifier>
+<identifier> drawHorizontalLine </identifier>
 <symbol> ( </symbol>
 <expressionList>
 <expression>
 <term>
 <identifier> x1 </identifier>
-</term>
-</expression>
-<symbol> , </symbol>
-<expression>
-<term>
-<identifier> y1 </identifier>
-</term>
-<symbol> + </symbol>
-<term>
-<identifier> i </identifier>
 </term>
 </expression>
 <symbol> , </symbol>
@@ -2179,28 +2169,12 @@
 <keyword> do </keyword>
 <identifier> Screen </identifier>
 <symbol> . </symbol>
-<identifier> drawLine </identifier>
+<identifier> drawHorizontalLine </identifier>
 <symbol> ( </symbol>
 <expressionList>
 <expression>
 <term>
 <identifier> ax </identifier>
-</term>
-</expression>
-<symbol> , </symbol>
-<expression>
-<term>
-<symbol> ( </symbol>
-<expression>
-<term>
-<identifier> y </identifier>
-</term>
-<symbol> + </symbol>
-<term>
-<identifier> dy </identifier>
-</term>
-</expression>
-<symbol> ) </symbol>
 </term>
 </expression>
 <symbol> , </symbol>
