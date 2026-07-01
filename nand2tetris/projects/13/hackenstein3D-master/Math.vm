@@ -1,0 +1,445 @@
+// compiling subroutine
+function Math.init 0
+push constant 15
+call Array.new 1 // subroutine call (function)
+pop static 0 // symbol -> powersOfTwo
+push static 0 // symbol -> powersOfTwo (array)
+push constant 0
+add
+push constant 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> powersOfTwo (array)
+push constant 1
+add
+push constant 2
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> powersOfTwo (array)
+push constant 2
+add
+push constant 4
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> powersOfTwo (array)
+push constant 3
+add
+push constant 8
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> powersOfTwo (array)
+push constant 4
+add
+push constant 16
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> powersOfTwo (array)
+push constant 5
+add
+push constant 32
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> powersOfTwo (array)
+push constant 6
+add
+push constant 64
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> powersOfTwo (array)
+push constant 7
+add
+push constant 128
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> powersOfTwo (array)
+push constant 8
+add
+push constant 256
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> powersOfTwo (array)
+push constant 9
+add
+push constant 512
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> powersOfTwo (array)
+push constant 10
+add
+push constant 1024
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> powersOfTwo (array)
+push constant 11
+add
+push constant 2048
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> powersOfTwo (array)
+push constant 12
+add
+push constant 4096
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> powersOfTwo (array)
+push constant 13
+add
+push constant 8192
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> powersOfTwo (array)
+push constant 14
+add
+push constant 16384
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 0
+return
+// compiling subroutine
+function Math.multiply 3
+push constant 0
+pop local 0 // symbol -> i
+push constant 0
+pop local 1 // symbol -> sum
+push argument 0 // symbol -> x
+pop local 2 // symbol -> shiftedx
+label L1.1
+push local 0 // symbol -> i
+push constant 16
+eq
+not
+not
+if-goto L2.1
+push argument 1 // symbol -> y
+push local 0 // symbol -> i
+call Math.bit 2 // subroutine call (function)
+push constant 1 // pushing true
+neg // pushing true
+eq
+not
+if-goto L1.2
+push local 1 // symbol -> sum
+push local 2 // symbol -> shiftedx
+add
+pop local 1 // symbol -> sum
+goto L2.2
+label L1.2
+label L2.2
+push local 2 // symbol -> shiftedx
+push local 2 // symbol -> shiftedx
+add
+pop local 2 // symbol -> shiftedx
+push local 0 // symbol -> i
+push constant 1
+add
+pop local 0 // symbol -> i
+goto L1.1
+label L2.1
+push local 1 // symbol -> sum
+return
+// compiling subroutine
+function Math.divide 2
+push constant 1
+pop local 0 // symbol -> sign
+push argument 0 // symbol -> x
+push constant 0
+lt
+not
+if-goto L1.3
+push argument 0 // symbol -> x
+neg
+pop argument 0 // symbol -> x
+push local 0 // symbol -> sign
+neg
+pop local 0 // symbol -> sign
+goto L2.3
+label L1.3
+label L2.3
+push argument 1 // symbol -> y
+push constant 0
+lt
+not
+if-goto L1.4
+push argument 1 // symbol -> y
+neg
+pop argument 1 // symbol -> y
+push local 0 // symbol -> sign
+neg
+pop local 0 // symbol -> sign
+goto L2.4
+label L1.4
+label L2.4
+push argument 0 // symbol -> x
+push argument 1 // symbol -> y
+call Math.divideRecursively 2 // subroutine call (function)
+pop local 1 // symbol -> res
+push local 1 // symbol -> res
+push local 0 // symbol -> sign
+call Math.multiply 2
+return
+// compiling subroutine
+function Math.divideRecursively 1
+push argument 1 // symbol -> y
+push argument 0 // symbol -> x
+gt
+push argument 1 // symbol -> y
+push constant 0
+lt
+or
+not
+if-goto L1.5
+push constant 0
+return
+goto L2.5
+label L1.5
+label L2.5
+push argument 0 // symbol -> x
+push argument 1 // symbol -> y
+push argument 1 // symbol -> y
+add
+call Math.divideRecursively 2 // subroutine call (function)
+pop local 0 // symbol -> q
+push argument 0 // symbol -> x
+push local 0 // symbol -> q
+push local 0 // symbol -> q
+add
+push argument 1 // symbol -> y
+call Math.multiply 2
+sub
+push argument 1 // symbol -> y
+lt
+not
+if-goto L1.6
+push local 0 // symbol -> q
+push local 0 // symbol -> q
+add
+return
+goto L2.6
+label L1.6
+push local 0 // symbol -> q
+push local 0 // symbol -> q
+add
+push constant 1
+add
+return
+label L2.6
+// compiling subroutine
+function Math.sqrt 3
+push constant 0
+pop local 1 // symbol -> y
+push constant 7
+pop local 0 // symbol -> n
+label L1.7
+push local 0 // symbol -> n
+push constant 1
+neg
+gt
+not
+if-goto L2.7
+push local 1 // symbol -> y
+push static 0 // symbol -> powersOfTwo (array)
+push local 0 // symbol -> n
+add
+pop pointer 1
+push that 0
+add
+pop local 2 // symbol -> temp
+push local 2 // symbol -> temp
+push local 2 // symbol -> temp
+call Math.multiply 2
+pop local 2 // symbol -> temp
+push local 2 // symbol -> temp
+push constant 1
+neg
+gt
+not
+if-goto L1.8
+push local 2 // symbol -> temp
+push constant 1
+sub
+push argument 0 // symbol -> x
+lt
+not
+if-goto L1.9
+push local 1 // symbol -> y
+push static 0 // symbol -> powersOfTwo (array)
+push local 0 // symbol -> n
+add
+pop pointer 1
+push that 0
+add
+pop local 1 // symbol -> y
+goto L2.9
+label L1.9
+label L2.9
+goto L2.8
+label L1.8
+label L2.8
+push local 0 // symbol -> n
+push constant 1
+sub
+pop local 0 // symbol -> n
+goto L1.7
+label L2.7
+push local 1 // symbol -> y
+return
+// compiling subroutine
+function Math.max 0
+push argument 0 // symbol -> a
+push argument 1 // symbol -> b
+gt
+not
+if-goto L1.10
+push argument 0 // symbol -> a
+return
+goto L2.10
+label L1.10
+label L2.10
+push argument 1 // symbol -> b
+return
+// compiling subroutine
+function Math.min 0
+push argument 0 // symbol -> a
+push argument 1 // symbol -> b
+lt
+not
+if-goto L1.11
+push argument 0 // symbol -> a
+return
+goto L2.11
+label L1.11
+label L2.11
+push argument 1 // symbol -> b
+return
+// compiling subroutine
+function Math.abs 0
+push argument 0 // symbol -> x
+push constant 0
+lt
+not
+if-goto L1.12
+push argument 0 // symbol -> x
+neg
+return
+goto L2.12
+label L1.12
+label L2.12
+push argument 0 // symbol -> x
+return
+// compiling subroutine
+function Math.mod 1
+push argument 0 // symbol -> x
+push argument 1 // symbol -> y
+call Math.divide 2
+pop local 0 // symbol -> res
+push argument 0 // symbol -> x
+push local 0 // symbol -> res
+push argument 1 // symbol -> y
+call Math.multiply 2
+sub
+pop local 0 // symbol -> res
+push local 0 // symbol -> res
+return
+// compiling subroutine
+function Math.bit 2
+push argument 1 // symbol -> i
+push constant 15
+eq
+not
+if-goto L1.13
+push static 0 // symbol -> powersOfTwo (array)
+push constant 14
+add
+pop pointer 1
+push that 0
+push static 0 // symbol -> powersOfTwo (array)
+push constant 14
+add
+pop pointer 1
+push that 0
+add
+pop local 0 // symbol -> mask
+goto L2.13
+label L1.13
+push static 0 // symbol -> powersOfTwo (array)
+push argument 1 // symbol -> i
+add
+pop pointer 1
+push that 0
+pop local 0 // symbol -> mask
+label L2.13
+push argument 0 // symbol -> y
+push local 0 // symbol -> mask
+and
+pop local 1 // symbol -> masked
+push local 1 // symbol -> masked
+push local 0 // symbol -> mask
+eq
+not
+if-goto L1.14
+push constant 1 // pushing true
+neg // pushing true
+return
+goto L2.14
+label L1.14
+push constant 0 // pushing false
+return
+label L2.14
+// compiling subroutine
+function Math.getPowersOfTwo 0
+push argument 0 // symbol -> i
+push constant 15
+eq
+not
+if-goto L1.15
+push static 0 // symbol -> powersOfTwo (array)
+push constant 14
+add
+pop pointer 1
+push that 0
+push static 0 // symbol -> powersOfTwo (array)
+push constant 14
+add
+pop pointer 1
+push that 0
+add
+return
+goto L2.15
+label L1.15
+push static 0 // symbol -> powersOfTwo (array)
+push argument 0 // symbol -> i
+add
+pop pointer 1
+push that 0
+return
+label L2.15

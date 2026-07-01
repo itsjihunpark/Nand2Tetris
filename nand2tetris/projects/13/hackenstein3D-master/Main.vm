@@ -1,0 +1,544 @@
+// compiling subroutine
+function Main.main 16
+push constant 256
+call Array.new 1 // subroutine call (function)
+pop local 0 // symbol -> wallDistances
+push constant 256
+call Array.new 1 // subroutine call (function)
+pop local 1 // symbol -> wallPatterns
+push constant 7
+call Array.new 1 // subroutine call (function)
+pop local 2 // symbol -> playerLocation
+call Walls.init 0 // subroutine call (function)
+pop temp 0
+push constant 3
+push constant 32
+push constant 0
+push constant 6
+push constant 0
+call Walls.paths 0 // subroutine call (function)
+call Player.init 6 // subroutine call (function)
+pop temp 0
+call Display.init 0 // subroutine call (function)
+pop temp 0
+push constant 0
+pop local 3 // symbol -> key
+push constant 1 // pushing true
+neg // pushing true
+pop local 6 // symbol -> moved
+push constant 0 // pushing false
+pop local 4 // symbol -> exit
+push constant 0
+pop local 11 // symbol -> targets
+push constant 1
+pop local 15 // symbol -> stepDelta
+push constant 1000
+pop local 10 // symbol -> steps
+push constant 0
+pop local 9 // symbol -> bullet
+push constant 0 // pushing false
+pop local 7 // symbol -> pistolFired
+push constant 0 // pushing false
+pop local 8 // symbol -> sightFired
+call Display.startUp 0 // subroutine call (function)
+pop temp 0
+label L1.1
+push local 3 // symbol -> key
+push constant 0
+eq
+not
+not
+if-goto L2.1
+call Keyboard.keyPressed 0 // subroutine call (function)
+pop local 3 // symbol -> key
+goto L1.1
+label L2.1
+label L1.2
+push local 3 // symbol -> key
+push constant 0
+eq
+not
+if-goto L2.2
+call Keyboard.keyPressed 0 // subroutine call (function)
+pop local 3 // symbol -> key
+goto L1.2
+label L2.2
+label L1.3
+push local 3 // symbol -> key
+push constant 0
+eq
+not
+not
+if-goto L2.3
+call Keyboard.keyPressed 0 // subroutine call (function)
+pop local 3 // symbol -> key
+goto L1.3
+label L2.3
+label L1.4
+push local 4 // symbol -> exit
+not
+not
+if-goto L2.4
+push local 3 // symbol -> key
+push constant 32
+eq
+push local 9 // symbol -> bullet
+push constant 0
+eq
+and
+not
+if-goto L1.5
+push constant 4
+pop local 9 // symbol -> bullet
+push constant 1 // pushing true
+neg // pushing true
+pop local 6 // symbol -> moved
+goto L2.5
+label L1.5
+label L2.5
+push local 3 // symbol -> key
+push constant 131
+eq
+not
+if-goto L1.6
+push local 15 // symbol -> stepDelta
+call Player.reLocate 1 // subroutine call (function)
+pop temp 0
+push constant 1 // pushing true
+neg // pushing true
+pop local 6 // symbol -> moved
+goto L2.6
+label L1.6
+label L2.6
+push local 3 // symbol -> key
+push constant 133
+eq
+not
+if-goto L1.7
+push local 15 // symbol -> stepDelta
+neg
+call Player.reLocate 1 // subroutine call (function)
+pop temp 0
+push constant 1 // pushing true
+neg // pushing true
+pop local 6 // symbol -> moved
+goto L2.7
+label L1.7
+label L2.7
+push local 3 // symbol -> key
+push constant 130
+eq
+not
+if-goto L1.8
+push local 15 // symbol -> stepDelta
+neg
+call Player.reOrient 1 // subroutine call (function)
+pop temp 0
+push constant 1 // pushing true
+neg // pushing true
+pop local 6 // symbol -> moved
+goto L2.8
+label L1.8
+label L2.8
+push local 3 // symbol -> key
+push constant 132
+eq
+not
+if-goto L1.9
+push local 15 // symbol -> stepDelta
+call Player.reOrient 1 // subroutine call (function)
+pop temp 0
+push constant 1 // pushing true
+neg // pushing true
+pop local 6 // symbol -> moved
+goto L2.9
+label L1.9
+label L2.9
+push local 6 // symbol -> moved
+push local 9 // symbol -> bullet
+push constant 0
+gt
+or
+not
+if-goto L1.10
+push local 9 // symbol -> bullet
+push constant 0
+gt
+not
+if-goto L1.11
+push local 9 // symbol -> bullet
+push constant 1
+sub
+pop local 9 // symbol -> bullet
+goto L2.11
+label L1.11
+label L2.11
+push local 9 // symbol -> bullet
+push constant 2
+eq
+call Walls.targetInSight 0 // subroutine call (function)
+and
+not
+if-goto L1.12
+push local 11 // symbol -> targets
+push constant 1
+add
+pop local 11 // symbol -> targets
+call Walls.untarget 0 // subroutine call (function)
+pop temp 0
+goto L2.12
+label L1.12
+label L2.12
+push local 9 // symbol -> bullet
+push constant 3
+eq
+not
+if-goto L1.13
+push constant 1 // pushing true
+neg // pushing true
+pop local 8 // symbol -> sightFired
+goto L2.13
+label L1.13
+push constant 0 // pushing false
+pop local 8 // symbol -> sightFired
+label L2.13
+push local 9 // symbol -> bullet
+push constant 0
+gt
+not
+if-goto L1.14
+push constant 1 // pushing true
+neg // pushing true
+pop local 7 // symbol -> pistolFired
+goto L2.14
+label L1.14
+push constant 0 // pushing false
+pop local 7 // symbol -> pistolFired
+label L2.14
+push local 11 // symbol -> targets
+push constant 2
+gt
+call Player.roomNum 0 // subroutine call (function)
+call Walls.atExit 1 // subroutine call (function)
+and
+not
+if-goto L1.15
+push constant 1 // pushing true
+neg // pushing true
+pop local 4 // symbol -> exit
+push constant 1 // pushing true
+neg // pushing true
+pop local 5 // symbol -> win
+goto L2.15
+label L1.15
+label L2.15
+push local 10 // symbol -> steps
+push local 15 // symbol -> stepDelta
+sub
+pop local 10 // symbol -> steps
+push local 10 // symbol -> steps
+push constant 0
+eq
+not
+if-goto L1.16
+push constant 1 // pushing true
+neg // pushing true
+pop local 4 // symbol -> exit
+push constant 0 // pushing false
+pop local 5 // symbol -> win
+goto L2.16
+label L1.16
+label L2.16
+push local 2 // symbol -> playerLocation
+call Player.getLocation 1 // subroutine call (function)
+pop temp 0
+push local 2 // symbol -> playerLocation
+push local 0 // symbol -> wallDistances
+push local 1 // symbol -> wallPatterns
+call Walls.generate 3 // subroutine call (function)
+pop temp 0
+push local 0 // symbol -> wallDistances
+push local 1 // symbol -> wallPatterns
+call Display.walls 2 // subroutine call (function)
+pop temp 0
+push local 8 // symbol -> sightFired
+not
+if-goto L1.17
+call Display.drawSightFired 0 // subroutine call (function)
+pop temp 0
+goto L2.17
+label L1.17
+call Display.drawSightClear 0 // subroutine call (function)
+pop temp 0
+label L2.17
+push local 7 // symbol -> pistolFired
+not
+if-goto L1.18
+call Display.drawPistolFired 0 // subroutine call (function)
+pop temp 0
+goto L2.18
+label L1.18
+call Display.drawPistolClear 0 // subroutine call (function)
+pop temp 0
+label L2.18
+push local 11 // symbol -> targets
+push local 10 // symbol -> steps
+call Display.scores 2 // subroutine call (function)
+pop temp 0
+goto L2.10
+label L1.10
+label L2.10
+push constant 0 // pushing false
+pop local 6 // symbol -> moved
+call Keyboard.keyPressed 0 // subroutine call (function)
+pop local 3 // symbol -> key
+push local 3 // symbol -> key
+push constant 81
+eq
+push local 3 // symbol -> key
+push constant 113
+eq
+or
+not
+if-goto L1.19
+push constant 1 // pushing true
+neg // pushing true
+pop local 4 // symbol -> exit
+goto L2.19
+label L1.19
+label L2.19
+goto L1.4
+label L2.4
+call Screen.clearScreen 0 // subroutine call (function)
+pop temp 0
+push local 10 // symbol -> steps
+push constant 0
+gt
+push local 11 // symbol -> targets
+push constant 2
+gt
+and
+not
+if-goto L1.20
+push constant 5
+call String.new 1 // subroutine call (function)
+pop local 14 // symbol -> scoreText
+push local 14 // symbol -> scoreText
+push local 10 // symbol -> steps
+call String.setInt 2 // subroutine call (method)
+pop temp 0
+push constant 10
+call String.new 1 // subroutine call (function)
+pop local 13 // symbol -> endText
+push local 13 // symbol -> endText
+push constant 83
+call String.appendChar 2 // subroutine call (method)
+pop temp 0
+push local 13 // symbol -> endText
+push constant 99
+call String.appendChar 2 // subroutine call (method)
+pop temp 0
+push local 13 // symbol -> endText
+push constant 111
+call String.appendChar 2 // subroutine call (method)
+pop temp 0
+push local 13 // symbol -> endText
+push constant 114
+call String.appendChar 2 // subroutine call (method)
+pop temp 0
+push local 13 // symbol -> endText
+push constant 101
+call String.appendChar 2 // subroutine call (method)
+pop temp 0
+push local 13 // symbol -> endText
+push constant 32
+call String.appendChar 2 // subroutine call (method)
+pop temp 0
+push constant 0
+pop local 12 // symbol -> i
+label L1.21
+push local 12 // symbol -> i
+push local 14 // symbol -> scoreText
+call String.length 1 // subroutine call (method)
+lt
+not
+if-goto L2.21
+push local 13 // symbol -> endText
+push local 14 // symbol -> scoreText
+push local 12 // symbol -> i
+call String.charAt 2 // subroutine call (method)
+call String.appendChar 2 // subroutine call (method)
+pop temp 0
+push local 12 // symbol -> i
+push constant 1
+add
+pop local 12 // symbol -> i
+goto L1.21
+label L2.21
+// Instantiating String: YOU ESCAPED
+push constant 11
+call String.new 1
+push constant 89
+call String.appendChar 2
+push constant 79
+call String.appendChar 2
+push constant 85
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 69
+call String.appendChar 2
+push constant 83
+call String.appendChar 2
+push constant 67
+call String.appendChar 2
+push constant 65
+call String.appendChar 2
+push constant 80
+call String.appendChar 2
+push constant 69
+call String.appendChar 2
+push constant 68
+call String.appendChar 2
+push local 13 // symbol -> endText
+call Display.splash_screen 2 // subroutine call (function)
+pop temp 0
+push local 14 // symbol -> scoreText
+call String.dispose 1 // subroutine call (method)
+pop temp 0
+push local 13 // symbol -> endText
+call String.dispose 1 // subroutine call (method)
+pop temp 0
+goto L2.20
+label L1.20
+push constant 5
+call String.new 1 // subroutine call (function)
+pop local 14 // symbol -> scoreText
+push local 14 // symbol -> scoreText
+push local 11 // symbol -> targets
+call String.setInt 2 // subroutine call (method)
+pop temp 0
+push constant 10
+call String.new 1 // subroutine call (function)
+pop local 13 // symbol -> endText
+push local 13 // symbol -> endText
+push constant 72
+call String.appendChar 2 // subroutine call (method)
+pop temp 0
+push local 13 // symbol -> endText
+push constant 105
+call String.appendChar 2 // subroutine call (method)
+pop temp 0
+push local 13 // symbol -> endText
+push constant 116
+call String.appendChar 2 // subroutine call (method)
+pop temp 0
+push local 13 // symbol -> endText
+push constant 115
+call String.appendChar 2 // subroutine call (method)
+pop temp 0
+push local 13 // symbol -> endText
+push constant 32
+call String.appendChar 2 // subroutine call (method)
+pop temp 0
+push constant 0
+pop local 12 // symbol -> i
+label L1.22
+push local 12 // symbol -> i
+push local 14 // symbol -> scoreText
+call String.length 1 // subroutine call (method)
+lt
+not
+if-goto L2.22
+push local 13 // symbol -> endText
+push local 14 // symbol -> scoreText
+push local 12 // symbol -> i
+call String.charAt 2 // subroutine call (method)
+call String.appendChar 2 // subroutine call (method)
+pop temp 0
+push local 12 // symbol -> i
+push constant 1
+add
+pop local 12 // symbol -> i
+goto L1.22
+label L2.22
+// Instantiating String: GAME OVER
+push constant 9
+call String.new 1
+push constant 71
+call String.appendChar 2
+push constant 65
+call String.appendChar 2
+push constant 77
+call String.appendChar 2
+push constant 69
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 79
+call String.appendChar 2
+push constant 86
+call String.appendChar 2
+push constant 69
+call String.appendChar 2
+push constant 82
+call String.appendChar 2
+push local 13 // symbol -> endText
+call Display.splash_screen 2 // subroutine call (function)
+pop temp 0
+push local 14 // symbol -> scoreText
+call String.dispose 1 // subroutine call (method)
+pop temp 0
+push local 13 // symbol -> endText
+call String.dispose 1 // subroutine call (method)
+pop temp 0
+label L2.20
+label L1.23
+push local 3 // symbol -> key
+push constant 0
+eq
+not
+not
+if-goto L2.23
+call Keyboard.keyPressed 0 // subroutine call (function)
+pop local 3 // symbol -> key
+goto L1.23
+label L2.23
+label L1.24
+push local 3 // symbol -> key
+push constant 32
+eq
+not
+push local 3 // symbol -> key
+push constant 81
+eq
+not
+and
+push local 3 // symbol -> key
+push constant 113
+eq
+not
+and
+not
+if-goto L2.24
+call Keyboard.keyPressed 0 // subroutine call (function)
+pop local 3 // symbol -> key
+goto L1.24
+label L2.24
+push local 0 // symbol -> wallDistances
+call Array.dispose 1 // subroutine call (method)
+pop temp 0
+push local 1 // symbol -> wallPatterns
+call Array.dispose 1 // subroutine call (method)
+pop temp 0
+push local 2 // symbol -> playerLocation
+call Array.dispose 1 // subroutine call (method)
+pop temp 0
+call Walls.cleanup 0 // subroutine call (function)
+pop temp 0
+call Display.cleanup 0 // subroutine call (function)
+pop temp 0
+call Player.cleanup 0 // subroutine call (function)
+pop temp 0
+push constant 0
+return

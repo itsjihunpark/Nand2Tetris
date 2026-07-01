@@ -1,0 +1,7061 @@
+// compiling subroutine
+function Display.init 3
+push constant 10
+call String.new 1 // subroutine call (function)
+pop static 1 // symbol -> stepStr
+push constant 10
+call String.new 1 // subroutine call (function)
+pop static 2 // symbol -> targetStr
+// Instantiating String:  Score  
+push constant 8
+call String.new 1
+push constant 32
+call String.appendChar 2
+push constant 83
+call String.appendChar 2
+push constant 99
+call String.appendChar 2
+push constant 111
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+pop static 3 // symbol -> text1
+// Instantiating String: /3  Actions  
+push constant 13
+call String.new 1
+push constant 47
+call String.appendChar 2
+push constant 51
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 65
+call String.appendChar 2
+push constant 99
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 105
+call String.appendChar 2
+push constant 111
+call String.appendChar 2
+push constant 110
+call String.appendChar 2
+push constant 115
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+pop static 4 // symbol -> text2
+// Instantiating String:  
+push constant 1
+call String.new 1
+push constant 32
+call String.appendChar 2
+pop static 5 // symbol -> text3
+push constant 16384
+pop static 6 // symbol -> screenLocation
+push constant 16
+call Array.new 1 // subroutine call (function)
+pop static 0 // symbol -> patternMask
+push constant 0
+pop local 0 // symbol -> i
+push constant 3
+pop local 1 // symbol -> p
+push constant 1
+pop local 2 // symbol -> q
+label L1.1
+push local 0 // symbol -> i
+push constant 16
+lt
+not
+if-goto L2.1
+push static 0 // symbol -> patternMask (array)
+push local 0 // symbol -> i
+add
+push local 2 // symbol -> q
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 0 // symbol -> i
+push constant 1
+add
+pop local 0 // symbol -> i
+push local 1 // symbol -> p
+push local 1 // symbol -> p
+add
+push local 1 // symbol -> p
+add
+push local 1 // symbol -> p
+add
+pop local 1 // symbol -> p
+push local 2 // symbol -> q
+push local 2 // symbol -> q
+add
+pop local 2 // symbol -> q
+goto L1.1
+label L2.1
+push constant 0
+return
+// compiling subroutine
+function Display.walls 8
+push constant 0
+pop local 1 // symbol -> strip
+push constant 0
+pop local 0 // symbol -> pixel
+label L1.2
+push local 1 // symbol -> strip
+push constant 32
+lt
+not
+if-goto L2.2
+push constant 0
+pop static 7 // symbol -> cp0
+push constant 0
+pop static 8 // symbol -> cp1
+push constant 0
+pop static 9 // symbol -> cp2
+push constant 0
+pop static 10 // symbol -> cp3
+push constant 0
+pop static 11 // symbol -> cp4
+push constant 0
+pop static 12 // symbol -> cp5
+push constant 0
+pop static 13 // symbol -> cp6
+push constant 0
+pop static 14 // symbol -> cp7
+push constant 7
+pop static 15 // symbol -> sp0
+push constant 7
+pop static 16 // symbol -> sp1
+push constant 7
+pop static 17 // symbol -> sp2
+push constant 7
+pop static 18 // symbol -> sp3
+push constant 7
+pop static 19 // symbol -> sp4
+push constant 7
+pop static 20 // symbol -> sp5
+push constant 7
+pop static 21 // symbol -> sp6
+push constant 7
+pop static 22 // symbol -> sp7
+push constant 256
+pop static 39 // symbol -> pp0
+push constant 256
+pop static 40 // symbol -> pp1
+push constant 256
+pop static 41 // symbol -> pp2
+push constant 256
+pop static 42 // symbol -> pp3
+push constant 256
+pop static 43 // symbol -> pp4
+push constant 256
+pop static 44 // symbol -> pp5
+push constant 256
+pop static 45 // symbol -> pp6
+push constant 256
+pop static 46 // symbol -> pp7
+push argument 1 // symbol -> wallPatterns (array)
+push local 0 // symbol -> pixel
+add
+pop pointer 1
+push that 0
+pop static 47 // symbol -> wp0
+push argument 0 // symbol -> wallDistances (array)
+push local 0 // symbol -> pixel
+add
+pop pointer 1
+push that 0
+pop static 55 // symbol -> wd0
+push argument 1 // symbol -> wallPatterns (array)
+push local 0 // symbol -> pixel
+push constant 1
+add
+add
+pop pointer 1
+push that 0
+pop static 48 // symbol -> wp1
+push argument 0 // symbol -> wallDistances (array)
+push local 0 // symbol -> pixel
+push constant 1
+add
+add
+pop pointer 1
+push that 0
+pop static 56 // symbol -> wd1
+push argument 1 // symbol -> wallPatterns (array)
+push local 0 // symbol -> pixel
+push constant 2
+add
+add
+pop pointer 1
+push that 0
+pop static 49 // symbol -> wp2
+push argument 0 // symbol -> wallDistances (array)
+push local 0 // symbol -> pixel
+push constant 2
+add
+add
+pop pointer 1
+push that 0
+pop static 57 // symbol -> wd2
+push argument 1 // symbol -> wallPatterns (array)
+push local 0 // symbol -> pixel
+push constant 3
+add
+add
+pop pointer 1
+push that 0
+pop static 50 // symbol -> wp3
+push argument 0 // symbol -> wallDistances (array)
+push local 0 // symbol -> pixel
+push constant 3
+add
+add
+pop pointer 1
+push that 0
+pop static 58 // symbol -> wd3
+push argument 1 // symbol -> wallPatterns (array)
+push local 0 // symbol -> pixel
+push constant 4
+add
+add
+pop pointer 1
+push that 0
+pop static 51 // symbol -> wp4
+push argument 0 // symbol -> wallDistances (array)
+push local 0 // symbol -> pixel
+push constant 4
+add
+add
+pop pointer 1
+push that 0
+pop static 59 // symbol -> wd4
+push argument 1 // symbol -> wallPatterns (array)
+push local 0 // symbol -> pixel
+push constant 5
+add
+add
+pop pointer 1
+push that 0
+pop static 52 // symbol -> wp5
+push argument 0 // symbol -> wallDistances (array)
+push local 0 // symbol -> pixel
+push constant 5
+add
+add
+pop pointer 1
+push that 0
+pop static 60 // symbol -> wd5
+push argument 1 // symbol -> wallPatterns (array)
+push local 0 // symbol -> pixel
+push constant 6
+add
+add
+pop pointer 1
+push that 0
+pop static 53 // symbol -> wp6
+push argument 0 // symbol -> wallDistances (array)
+push local 0 // symbol -> pixel
+push constant 6
+add
+add
+pop pointer 1
+push that 0
+pop static 61 // symbol -> wd6
+push argument 1 // symbol -> wallPatterns (array)
+push local 0 // symbol -> pixel
+push constant 7
+add
+add
+pop pointer 1
+push that 0
+pop static 54 // symbol -> wp7
+push argument 0 // symbol -> wallDistances (array)
+push local 0 // symbol -> pixel
+push constant 7
+add
+add
+pop pointer 1
+push that 0
+pop static 62 // symbol -> wd7
+push static 47 // symbol -> wp0
+push constant 128
+and
+push constant 0
+eq
+not
+pop static 23 // symbol -> pt0
+push static 47 // symbol -> wp0
+push constant 256
+and
+push constant 0
+eq
+not
+pop static 31 // symbol -> pb0
+push static 48 // symbol -> wp1
+push constant 128
+and
+push constant 0
+eq
+not
+pop static 24 // symbol -> pt1
+push static 48 // symbol -> wp1
+push constant 256
+and
+push constant 0
+eq
+not
+pop static 32 // symbol -> pb1
+push static 49 // symbol -> wp2
+push constant 128
+and
+push constant 0
+eq
+not
+pop static 25 // symbol -> pt2
+push static 49 // symbol -> wp2
+push constant 256
+and
+push constant 0
+eq
+not
+pop static 33 // symbol -> pb2
+push static 50 // symbol -> wp3
+push constant 128
+and
+push constant 0
+eq
+not
+pop static 26 // symbol -> pt3
+push static 50 // symbol -> wp3
+push constant 256
+and
+push constant 0
+eq
+not
+pop static 34 // symbol -> pb3
+push static 51 // symbol -> wp4
+push constant 128
+and
+push constant 0
+eq
+not
+pop static 27 // symbol -> pt4
+push static 51 // symbol -> wp4
+push constant 256
+and
+push constant 0
+eq
+not
+pop static 35 // symbol -> pb4
+push static 52 // symbol -> wp5
+push constant 128
+and
+push constant 0
+eq
+not
+pop static 28 // symbol -> pt5
+push static 52 // symbol -> wp5
+push constant 256
+and
+push constant 0
+eq
+not
+pop static 36 // symbol -> pb5
+push static 53 // symbol -> wp6
+push constant 128
+and
+push constant 0
+eq
+not
+pop static 29 // symbol -> pt6
+push static 53 // symbol -> wp6
+push constant 256
+and
+push constant 0
+eq
+not
+pop static 37 // symbol -> pb6
+push static 54 // symbol -> wp7
+push constant 128
+and
+push constant 0
+eq
+not
+pop static 30 // symbol -> pt7
+push static 54 // symbol -> wp7
+push constant 256
+and
+push constant 0
+eq
+not
+pop static 38 // symbol -> pb7
+push constant 4064
+push local 1 // symbol -> strip
+add
+pop local 3 // symbol -> lineT
+push constant 4096
+push local 1 // symbol -> strip
+add
+pop local 5 // symbol -> lineB
+push constant 63
+pop local 2 // symbol -> vPos
+label L1.3
+push local 2 // symbol -> vPos
+push constant 1
+neg
+gt
+not
+if-goto L2.3
+push constant 0
+pop local 4 // symbol -> memValT
+push constant 0
+pop local 6 // symbol -> memValB
+push static 15 // symbol -> sp0
+push constant 1
+neg
+gt
+not
+if-goto L1.4
+push static 23 // symbol -> pt0
+not
+if-goto L1.5
+push local 4 // symbol -> memValT
+push constant 3
+add
+pop local 4 // symbol -> memValT
+goto L2.5
+label L1.5
+label L2.5
+push static 31 // symbol -> pb0
+not
+if-goto L1.6
+push local 6 // symbol -> memValB
+push constant 3
+add
+pop local 6 // symbol -> memValB
+goto L2.6
+label L1.6
+label L2.6
+goto L2.4
+label L1.4
+label L2.4
+push static 7 // symbol -> cp0
+push static 55 // symbol -> wd0
+add
+pop static 7 // symbol -> cp0
+label L1.7
+push static 7 // symbol -> cp0
+push constant 512
+gt
+not
+if-goto L2.7
+push static 7 // symbol -> cp0
+push constant 512
+sub
+pop static 7 // symbol -> cp0
+push static 15 // symbol -> sp0
+push constant 1
+sub
+pop static 15 // symbol -> sp0
+push static 39 // symbol -> pp0
+push static 39 // symbol -> pp0
+add
+pop static 39 // symbol -> pp0
+push static 47 // symbol -> wp0
+push static 0 // symbol -> patternMask (array)
+push static 15 // symbol -> sp0
+add
+pop pointer 1
+push that 0
+and
+push constant 0
+eq
+not
+pop static 23 // symbol -> pt0
+push static 47 // symbol -> wp0
+push static 39 // symbol -> pp0
+and
+push constant 0
+eq
+not
+pop static 31 // symbol -> pb0
+goto L1.7
+label L2.7
+push static 16 // symbol -> sp1
+push constant 1
+neg
+gt
+not
+if-goto L1.8
+push static 24 // symbol -> pt1
+not
+if-goto L1.9
+push local 4 // symbol -> memValT
+push constant 12
+add
+pop local 4 // symbol -> memValT
+goto L2.9
+label L1.9
+label L2.9
+push static 32 // symbol -> pb1
+not
+if-goto L1.10
+push local 6 // symbol -> memValB
+push constant 12
+add
+pop local 6 // symbol -> memValB
+goto L2.10
+label L1.10
+label L2.10
+goto L2.8
+label L1.8
+label L2.8
+push static 8 // symbol -> cp1
+push static 56 // symbol -> wd1
+add
+pop static 8 // symbol -> cp1
+label L1.11
+push static 8 // symbol -> cp1
+push constant 512
+gt
+not
+if-goto L2.11
+push static 8 // symbol -> cp1
+push constant 512
+sub
+pop static 8 // symbol -> cp1
+push static 16 // symbol -> sp1
+push constant 1
+sub
+pop static 16 // symbol -> sp1
+push static 40 // symbol -> pp1
+push static 40 // symbol -> pp1
+add
+pop static 40 // symbol -> pp1
+push static 48 // symbol -> wp1
+push static 0 // symbol -> patternMask (array)
+push static 16 // symbol -> sp1
+add
+pop pointer 1
+push that 0
+and
+push constant 0
+eq
+not
+pop static 24 // symbol -> pt1
+push static 48 // symbol -> wp1
+push static 40 // symbol -> pp1
+and
+push constant 0
+eq
+not
+pop static 32 // symbol -> pb1
+goto L1.11
+label L2.11
+push static 17 // symbol -> sp2
+push constant 1
+neg
+gt
+not
+if-goto L1.12
+push static 25 // symbol -> pt2
+not
+if-goto L1.13
+push local 4 // symbol -> memValT
+push constant 48
+add
+pop local 4 // symbol -> memValT
+goto L2.13
+label L1.13
+label L2.13
+push static 33 // symbol -> pb2
+not
+if-goto L1.14
+push local 6 // symbol -> memValB
+push constant 48
+add
+pop local 6 // symbol -> memValB
+goto L2.14
+label L1.14
+label L2.14
+goto L2.12
+label L1.12
+label L2.12
+push static 9 // symbol -> cp2
+push static 57 // symbol -> wd2
+add
+pop static 9 // symbol -> cp2
+label L1.15
+push static 9 // symbol -> cp2
+push constant 512
+gt
+not
+if-goto L2.15
+push static 9 // symbol -> cp2
+push constant 512
+sub
+pop static 9 // symbol -> cp2
+push static 17 // symbol -> sp2
+push constant 1
+sub
+pop static 17 // symbol -> sp2
+push static 41 // symbol -> pp2
+push static 41 // symbol -> pp2
+add
+pop static 41 // symbol -> pp2
+push static 49 // symbol -> wp2
+push static 0 // symbol -> patternMask (array)
+push static 17 // symbol -> sp2
+add
+pop pointer 1
+push that 0
+and
+push constant 0
+eq
+not
+pop static 25 // symbol -> pt2
+push static 49 // symbol -> wp2
+push static 41 // symbol -> pp2
+and
+push constant 0
+eq
+not
+pop static 33 // symbol -> pb2
+goto L1.15
+label L2.15
+push static 18 // symbol -> sp3
+push constant 1
+neg
+gt
+not
+if-goto L1.16
+push static 26 // symbol -> pt3
+not
+if-goto L1.17
+push local 4 // symbol -> memValT
+push constant 192
+add
+pop local 4 // symbol -> memValT
+goto L2.17
+label L1.17
+label L2.17
+push static 34 // symbol -> pb3
+not
+if-goto L1.18
+push local 6 // symbol -> memValB
+push constant 192
+add
+pop local 6 // symbol -> memValB
+goto L2.18
+label L1.18
+label L2.18
+goto L2.16
+label L1.16
+label L2.16
+push static 10 // symbol -> cp3
+push static 58 // symbol -> wd3
+add
+pop static 10 // symbol -> cp3
+label L1.19
+push static 10 // symbol -> cp3
+push constant 512
+gt
+not
+if-goto L2.19
+push static 10 // symbol -> cp3
+push constant 512
+sub
+pop static 10 // symbol -> cp3
+push static 18 // symbol -> sp3
+push constant 1
+sub
+pop static 18 // symbol -> sp3
+push static 42 // symbol -> pp3
+push static 42 // symbol -> pp3
+add
+pop static 42 // symbol -> pp3
+push static 50 // symbol -> wp3
+push static 0 // symbol -> patternMask (array)
+push static 18 // symbol -> sp3
+add
+pop pointer 1
+push that 0
+and
+push constant 0
+eq
+not
+pop static 26 // symbol -> pt3
+push static 50 // symbol -> wp3
+push static 42 // symbol -> pp3
+and
+push constant 0
+eq
+not
+pop static 34 // symbol -> pb3
+goto L1.19
+label L2.19
+push static 19 // symbol -> sp4
+push constant 1
+neg
+gt
+not
+if-goto L1.20
+push static 27 // symbol -> pt4
+not
+if-goto L1.21
+push local 4 // symbol -> memValT
+push constant 768
+add
+pop local 4 // symbol -> memValT
+goto L2.21
+label L1.21
+label L2.21
+push static 35 // symbol -> pb4
+not
+if-goto L1.22
+push local 6 // symbol -> memValB
+push constant 768
+add
+pop local 6 // symbol -> memValB
+goto L2.22
+label L1.22
+label L2.22
+goto L2.20
+label L1.20
+label L2.20
+push static 11 // symbol -> cp4
+push static 59 // symbol -> wd4
+add
+pop static 11 // symbol -> cp4
+label L1.23
+push static 11 // symbol -> cp4
+push constant 512
+gt
+not
+if-goto L2.23
+push static 11 // symbol -> cp4
+push constant 512
+sub
+pop static 11 // symbol -> cp4
+push static 19 // symbol -> sp4
+push constant 1
+sub
+pop static 19 // symbol -> sp4
+push static 43 // symbol -> pp4
+push static 43 // symbol -> pp4
+add
+pop static 43 // symbol -> pp4
+push static 51 // symbol -> wp4
+push static 0 // symbol -> patternMask (array)
+push static 19 // symbol -> sp4
+add
+pop pointer 1
+push that 0
+and
+push constant 0
+eq
+not
+pop static 27 // symbol -> pt4
+push static 51 // symbol -> wp4
+push static 43 // symbol -> pp4
+and
+push constant 0
+eq
+not
+pop static 35 // symbol -> pb4
+goto L1.23
+label L2.23
+push static 20 // symbol -> sp5
+push constant 1
+neg
+gt
+not
+if-goto L1.24
+push static 28 // symbol -> pt5
+not
+if-goto L1.25
+push local 4 // symbol -> memValT
+push constant 3072
+add
+pop local 4 // symbol -> memValT
+goto L2.25
+label L1.25
+label L2.25
+push static 36 // symbol -> pb5
+not
+if-goto L1.26
+push local 6 // symbol -> memValB
+push constant 3072
+add
+pop local 6 // symbol -> memValB
+goto L2.26
+label L1.26
+label L2.26
+goto L2.24
+label L1.24
+label L2.24
+push static 12 // symbol -> cp5
+push static 60 // symbol -> wd5
+add
+pop static 12 // symbol -> cp5
+label L1.27
+push static 12 // symbol -> cp5
+push constant 512
+gt
+not
+if-goto L2.27
+push static 12 // symbol -> cp5
+push constant 512
+sub
+pop static 12 // symbol -> cp5
+push static 20 // symbol -> sp5
+push constant 1
+sub
+pop static 20 // symbol -> sp5
+push static 44 // symbol -> pp5
+push static 44 // symbol -> pp5
+add
+pop static 44 // symbol -> pp5
+push static 52 // symbol -> wp5
+push static 0 // symbol -> patternMask (array)
+push static 20 // symbol -> sp5
+add
+pop pointer 1
+push that 0
+and
+push constant 0
+eq
+not
+pop static 28 // symbol -> pt5
+push static 52 // symbol -> wp5
+push static 44 // symbol -> pp5
+and
+push constant 0
+eq
+not
+pop static 36 // symbol -> pb5
+goto L1.27
+label L2.27
+push static 21 // symbol -> sp6
+push constant 1
+neg
+gt
+not
+if-goto L1.28
+push static 29 // symbol -> pt6
+not
+if-goto L1.29
+push local 4 // symbol -> memValT
+push constant 12288
+add
+pop local 4 // symbol -> memValT
+goto L2.29
+label L1.29
+label L2.29
+push static 37 // symbol -> pb6
+not
+if-goto L1.30
+push local 6 // symbol -> memValB
+push constant 12288
+add
+pop local 6 // symbol -> memValB
+goto L2.30
+label L1.30
+label L2.30
+goto L2.28
+label L1.28
+label L2.28
+push static 13 // symbol -> cp6
+push static 61 // symbol -> wd6
+add
+pop static 13 // symbol -> cp6
+label L1.31
+push static 13 // symbol -> cp6
+push constant 512
+gt
+not
+if-goto L2.31
+push static 13 // symbol -> cp6
+push constant 512
+sub
+pop static 13 // symbol -> cp6
+push static 21 // symbol -> sp6
+push constant 1
+sub
+pop static 21 // symbol -> sp6
+push static 45 // symbol -> pp6
+push static 45 // symbol -> pp6
+add
+pop static 45 // symbol -> pp6
+push static 53 // symbol -> wp6
+push static 0 // symbol -> patternMask (array)
+push static 21 // symbol -> sp6
+add
+pop pointer 1
+push that 0
+and
+push constant 0
+eq
+not
+pop static 29 // symbol -> pt6
+push static 53 // symbol -> wp6
+push static 45 // symbol -> pp6
+and
+push constant 0
+eq
+not
+pop static 37 // symbol -> pb6
+goto L1.31
+label L2.31
+push static 22 // symbol -> sp7
+push constant 1
+neg
+gt
+not
+if-goto L1.32
+push static 30 // symbol -> pt7
+not
+if-goto L1.33
+push local 4 // symbol -> memValT
+push constant 16384
+sub
+pop local 4 // symbol -> memValT
+goto L2.33
+label L1.33
+label L2.33
+push static 38 // symbol -> pb7
+not
+if-goto L1.34
+push local 6 // symbol -> memValB
+push constant 16384
+sub
+pop local 6 // symbol -> memValB
+goto L2.34
+label L1.34
+label L2.34
+goto L2.32
+label L1.32
+label L2.32
+push static 14 // symbol -> cp7
+push static 62 // symbol -> wd7
+add
+pop static 14 // symbol -> cp7
+label L1.35
+push static 14 // symbol -> cp7
+push constant 512
+gt
+not
+if-goto L2.35
+push static 14 // symbol -> cp7
+push constant 512
+sub
+pop static 14 // symbol -> cp7
+push static 22 // symbol -> sp7
+push constant 1
+sub
+pop static 22 // symbol -> sp7
+push static 46 // symbol -> pp7
+push static 46 // symbol -> pp7
+add
+pop static 46 // symbol -> pp7
+push static 54 // symbol -> wp7
+push static 0 // symbol -> patternMask (array)
+push static 22 // symbol -> sp7
+add
+pop pointer 1
+push that 0
+and
+push constant 0
+eq
+not
+pop static 30 // symbol -> pt7
+push static 54 // symbol -> wp7
+push static 46 // symbol -> pp7
+and
+push constant 0
+eq
+not
+pop static 38 // symbol -> pb7
+goto L1.35
+label L2.35
+push static 6 // symbol -> screenLocation (array)
+push local 3 // symbol -> lineT
+add
+push local 4 // symbol -> memValT
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push local 5 // symbol -> lineB
+add
+push local 6 // symbol -> memValB
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 3 // symbol -> lineT
+push constant 32
+sub
+pop local 3 // symbol -> lineT
+push local 5 // symbol -> lineB
+push constant 32
+add
+pop local 5 // symbol -> lineB
+push static 6 // symbol -> screenLocation (array)
+push local 3 // symbol -> lineT
+add
+push local 4 // symbol -> memValT
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push local 5 // symbol -> lineB
+add
+push local 6 // symbol -> memValB
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 3 // symbol -> lineT
+push constant 32
+sub
+pop local 3 // symbol -> lineT
+push local 5 // symbol -> lineB
+push constant 32
+add
+pop local 5 // symbol -> lineB
+push local 2 // symbol -> vPos
+push constant 1
+sub
+pop local 2 // symbol -> vPos
+goto L1.3
+label L2.3
+push local 1 // symbol -> strip
+push constant 1
+add
+pop local 1 // symbol -> strip
+push local 0 // symbol -> pixel
+push constant 8
+add
+pop local 0 // symbol -> pixel
+goto L1.2
+label L2.2
+push constant 0
+return
+// compiling subroutine
+function Display.scores 0
+push static 2 // symbol -> targetStr
+push argument 0 // symbol -> targets
+call String.setInt 2 // subroutine call (method)
+pop temp 0
+push static 1 // symbol -> stepStr
+push argument 1 // symbol -> steps
+call String.setInt 2 // subroutine call (method)
+pop temp 0
+push constant 0
+push constant 35
+call Output.moveCursor 2 // subroutine call (function)
+pop temp 0
+push static 3 // symbol -> text1
+call Output.printString 1 // subroutine call (function)
+pop temp 0
+push static 2 // symbol -> targetStr
+call Output.printString 1 // subroutine call (function)
+pop temp 0
+push static 4 // symbol -> text2
+call Output.printString 1 // subroutine call (function)
+pop temp 0
+push static 1 // symbol -> stepStr
+call Output.printString 1 // subroutine call (function)
+pop temp 0
+push static 5 // symbol -> text3
+call Output.printString 1 // subroutine call (function)
+pop temp 0
+push constant 0
+return
+// compiling subroutine
+function Display.startUp 0
+push constant 2
+push constant 18
+// Instantiating String:   H A C K E N S T E I N 
+push constant 24
+call String.new 1
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 72
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 65
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 67
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 75
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 69
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 78
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 83
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 84
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 69
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 73
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 78
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+call Display.printString 3 // subroutine call (function)
+pop temp 0
+push constant 4
+push constant 18
+// Instantiating String:      ####\\   ####\\ 
+push constant 21
+call String.new 1
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 35
+call String.appendChar 2
+push constant 35
+call String.appendChar 2
+push constant 35
+call String.appendChar 2
+push constant 35
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 35
+call String.appendChar 2
+push constant 35
+call String.appendChar 2
+push constant 35
+call String.appendChar 2
+push constant 35
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+call Display.printString 3 // subroutine call (function)
+pop temp 0
+push constant 5
+push constant 18
+// Instantiating String:      \\\\\\\\#\\  #\\\\\\\\#\\ 
+push constant 31
+call String.new 1
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 35
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 35
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 35
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+call Display.printString 3 // subroutine call (function)
+pop temp 0
+push constant 6
+push constant 18
+// Instantiating String:          #\\  #\\    #\\ 
+push constant 25
+call String.new 1
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 35
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 35
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 35
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+call Display.printString 3 // subroutine call (function)
+pop temp 0
+push constant 7
+push constant 18
+// Instantiating String:       ####\\  #\\    #\\ 
+push constant 25
+call String.new 1
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 35
+call String.appendChar 2
+push constant 35
+call String.appendChar 2
+push constant 35
+call String.appendChar 2
+push constant 35
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 35
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 35
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+call Display.printString 3 // subroutine call (function)
+pop temp 0
+push constant 8
+push constant 18
+// Instantiating String:       \\\\\\#\\  #\\    #\\ 
+push constant 28
+call String.new 1
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 35
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 35
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 35
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+call Display.printString 3 // subroutine call (function)
+pop temp 0
+push constant 9
+push constant 18
+// Instantiating String:          #\\  #\\   #\\\\ 
+push constant 26
+call String.new 1
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 35
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 35
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 35
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+call Display.printString 3 // subroutine call (function)
+pop temp 0
+push constant 10
+push constant 18
+// Instantiating String:      #####\\  #####\\\\ 
+push constant 24
+call String.new 1
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 35
+call String.appendChar 2
+push constant 35
+call String.appendChar 2
+push constant 35
+call String.appendChar 2
+push constant 35
+call String.appendChar 2
+push constant 35
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 35
+call String.appendChar 2
+push constant 35
+call String.appendChar 2
+push constant 35
+call String.appendChar 2
+push constant 35
+call String.appendChar 2
+push constant 35
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+call Display.printString 3 // subroutine call (function)
+pop temp 0
+push constant 11
+push constant 18
+// Instantiating String:      \\\\\\\\\\\\  \\\\\\\\\\\\ 
+push constant 32
+call String.new 1
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 92
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+call Display.printString 3 // subroutine call (function)
+pop temp 0
+push constant 13
+push constant 12
+// Instantiating String: Escape from Castle Hackenstein Part II
+push constant 38
+call String.new 1
+push constant 69
+call String.appendChar 2
+push constant 115
+call String.appendChar 2
+push constant 99
+call String.appendChar 2
+push constant 97
+call String.appendChar 2
+push constant 112
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 102
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+push constant 111
+call String.appendChar 2
+push constant 109
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 67
+call String.appendChar 2
+push constant 97
+call String.appendChar 2
+push constant 115
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 108
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 72
+call String.appendChar 2
+push constant 97
+call String.appendChar 2
+push constant 99
+call String.appendChar 2
+push constant 107
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 110
+call String.appendChar 2
+push constant 115
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 105
+call String.appendChar 2
+push constant 110
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 80
+call String.appendChar 2
+push constant 97
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 73
+call String.appendChar 2
+push constant 73
+call String.appendChar 2
+call Display.printString 3 // subroutine call (function)
+pop temp 0
+push constant 19
+push constant 0
+// Instantiating String: Use arrow keys to move. Press SPACE to shoot.
+push constant 45
+call String.new 1
+push constant 85
+call String.appendChar 2
+push constant 115
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 97
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+push constant 111
+call String.appendChar 2
+push constant 119
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 107
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 121
+call String.appendChar 2
+push constant 115
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 111
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 109
+call String.appendChar 2
+push constant 111
+call String.appendChar 2
+push constant 118
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 46
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 80
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 115
+call String.appendChar 2
+push constant 115
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 83
+call String.appendChar 2
+push constant 80
+call String.appendChar 2
+push constant 65
+call String.appendChar 2
+push constant 67
+call String.appendChar 2
+push constant 69
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 111
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 115
+call String.appendChar 2
+push constant 104
+call String.appendChar 2
+push constant 111
+call String.appendChar 2
+push constant 111
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 46
+call String.appendChar 2
+call Display.printString 3 // subroutine call (function)
+pop temp 0
+push constant 20
+push constant 0
+// Instantiating String: Destroy the targets and find the exit.
+push constant 38
+call String.new 1
+push constant 68
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 115
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+push constant 111
+call String.appendChar 2
+push constant 121
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 104
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 97
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+push constant 103
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 115
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 97
+call String.appendChar 2
+push constant 110
+call String.appendChar 2
+push constant 100
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 102
+call String.appendChar 2
+push constant 105
+call String.appendChar 2
+push constant 110
+call String.appendChar 2
+push constant 100
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 104
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 120
+call String.appendChar 2
+push constant 105
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 46
+call String.appendChar 2
+call Display.printString 3 // subroutine call (function)
+pop temp 0
+push constant 22
+push constant 0
+// Instantiating String:                                       [Press SPACE to start]
+push constant 60
+call String.new 1
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 91
+call String.appendChar 2
+push constant 80
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 115
+call String.appendChar 2
+push constant 115
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 83
+call String.appendChar 2
+push constant 80
+call String.appendChar 2
+push constant 65
+call String.appendChar 2
+push constant 67
+call String.appendChar 2
+push constant 69
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 111
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 115
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 97
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 93
+call String.appendChar 2
+call Display.printString 3 // subroutine call (function)
+pop temp 0
+push constant 0
+return
+// compiling subroutine
+function Display.splash_screen 1
+call Screen.clearScreen 0 // subroutine call (function)
+pop temp 0
+push constant 10
+push constant 25
+call Output.moveCursor 2 // subroutine call (function)
+pop temp 0
+push argument 0 // symbol -> line1
+call Output.printString 1 // subroutine call (function)
+pop temp 0
+push constant 11
+push constant 25
+call Output.moveCursor 2 // subroutine call (function)
+pop temp 0
+push argument 1 // symbol -> line2
+call Output.printString 1 // subroutine call (function)
+pop temp 0
+push constant 21
+push constant 40
+// Instantiating String: James Leibert 2017
+push constant 18
+call String.new 1
+push constant 74
+call String.appendChar 2
+push constant 97
+call String.appendChar 2
+push constant 109
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 115
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 76
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 105
+call String.appendChar 2
+push constant 98
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 50
+call String.appendChar 2
+push constant 48
+call String.appendChar 2
+push constant 49
+call String.appendChar 2
+push constant 55
+call String.appendChar 2
+call Display.printString 3 // subroutine call (function)
+pop temp 0
+label L1.36
+push local 0 // symbol -> key
+push constant 0
+eq
+not
+if-goto L2.36
+call Keyboard.keyPressed 0 // subroutine call (function)
+pop local 0 // symbol -> key
+goto L1.36
+label L2.36
+push constant 0
+return
+// compiling subroutine
+function Display.printString 0
+push argument 0 // symbol -> r
+push argument 1 // symbol -> c
+call Output.moveCursor 2 // subroutine call (function)
+pop temp 0
+push argument 2 // symbol -> s
+call Output.printString 1 // subroutine call (function)
+pop temp 0
+push argument 2 // symbol -> s
+call String.dispose 1 // subroutine call (method)
+pop temp 0
+push constant 0
+return
+// compiling subroutine
+function Display.cleanup 0
+push static 0 // symbol -> patternMask
+call Array.dispose 1 // subroutine call (method)
+pop temp 0
+push static 1 // symbol -> stepStr
+call String.dispose 1 // subroutine call (method)
+pop temp 0
+push static 2 // symbol -> targetStr
+call String.dispose 1 // subroutine call (method)
+pop temp 0
+push static 3 // symbol -> text1
+call String.dispose 1 // subroutine call (method)
+pop temp 0
+push static 4 // symbol -> text2
+call String.dispose 1 // subroutine call (method)
+pop temp 0
+push static 5 // symbol -> text3
+call String.dispose 1 // subroutine call (method)
+pop temp 0
+push constant 0
+return
+// compiling subroutine
+function Display.drawSightClear 0
+push static 6 // symbol -> screenLocation (array)
+push constant 3887
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 3887
+add
+pop pointer 1
+push that 0
+push constant 32767
+not
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 3888
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 3888
+add
+pop pointer 1
+push that 0
+push constant 1
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 3919
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 3919
+add
+pop pointer 1
+push that 0
+push constant 32767
+not
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 3920
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 3920
+add
+pop pointer 1
+push that 0
+push constant 1
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 3951
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 3951
+add
+pop pointer 1
+push that 0
+push constant 32767
+not
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 3952
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 3952
+add
+pop pointer 1
+push that 0
+push constant 1
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 3983
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 3983
+add
+pop pointer 1
+push that 0
+push constant 32767
+not
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 3984
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 3984
+add
+pop pointer 1
+push that 0
+push constant 1
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 4015
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 4015
+add
+pop pointer 1
+push that 0
+push constant 32767
+not
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 4016
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 4016
+add
+pop pointer 1
+push that 0
+push constant 1
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 4047
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 4047
+add
+pop pointer 1
+push that 0
+push constant 32767
+not
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 4048
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 4048
+add
+pop pointer 1
+push that 0
+push constant 1
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 4079
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 4079
+add
+pop pointer 1
+push that 0
+push constant 512
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 4080
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 4080
+add
+pop pointer 1
+push that 0
+push constant 127
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 4111
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 4111
+add
+pop pointer 1
+push that 0
+push constant 512
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 4112
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 4112
+add
+pop pointer 1
+push that 0
+push constant 127
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 4143
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 4143
+add
+pop pointer 1
+push that 0
+push constant 32767
+not
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 4144
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 4144
+add
+pop pointer 1
+push that 0
+push constant 1
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 4175
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 4175
+add
+pop pointer 1
+push that 0
+push constant 32767
+not
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 4176
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 4176
+add
+pop pointer 1
+push that 0
+push constant 1
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 4207
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 4207
+add
+pop pointer 1
+push that 0
+push constant 32767
+not
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 4208
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 4208
+add
+pop pointer 1
+push that 0
+push constant 1
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 4239
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 4239
+add
+pop pointer 1
+push that 0
+push constant 32767
+not
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 4240
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 4240
+add
+pop pointer 1
+push that 0
+push constant 1
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 4271
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 4271
+add
+pop pointer 1
+push that 0
+push constant 32767
+not
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 4272
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 4272
+add
+pop pointer 1
+push that 0
+push constant 1
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 4303
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 4303
+add
+pop pointer 1
+push that 0
+push constant 32767
+not
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 4304
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 4304
+add
+pop pointer 1
+push that 0
+push constant 1
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 0
+return
+// compiling subroutine
+function Display.drawSightFired 0
+push static 6 // symbol -> screenLocation (array)
+push constant 3887
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 3887
+add
+pop pointer 1
+push that 0
+push constant 32767
+not
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 3888
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 3888
+add
+pop pointer 1
+push that 0
+push constant 65
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 3919
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 3919
+add
+pop pointer 1
+push that 0
+push constant 32767
+not
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 3920
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 3920
+add
+pop pointer 1
+push that 0
+push constant 1
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 3951
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 3951
+add
+pop pointer 1
+push that 0
+push constant 8192
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 3952
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 3952
+add
+pop pointer 1
+push that 0
+push constant 7
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 3983
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 3983
+add
+pop pointer 1
+push that 0
+push constant 8192
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 3984
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 3984
+add
+pop pointer 1
+push that 0
+push constant 7
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 4015
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 4015
+add
+pop pointer 1
+push that 0
+push constant 2048
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 4016
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 4016
+add
+pop pointer 1
+push that 0
+push constant 31
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 4047
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 4047
+add
+pop pointer 1
+push that 0
+push constant 2048
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 4048
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 4048
+add
+pop pointer 1
+push that 0
+push constant 31
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 4079
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 4079
+add
+pop pointer 1
+push that 0
+push constant 512
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 4080
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 4080
+add
+pop pointer 1
+push that 0
+push constant 127
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 4111
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 4111
+add
+pop pointer 1
+push that 0
+push constant 512
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 4112
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 4112
+add
+pop pointer 1
+push that 0
+push constant 127
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 4143
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 4143
+add
+pop pointer 1
+push that 0
+push constant 2048
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 4144
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 4144
+add
+pop pointer 1
+push that 0
+push constant 31
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 4175
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 4175
+add
+pop pointer 1
+push that 0
+push constant 2048
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 4176
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 4176
+add
+pop pointer 1
+push that 0
+push constant 31
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 4207
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 4207
+add
+pop pointer 1
+push that 0
+push constant 7168
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 4208
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 4208
+add
+pop pointer 1
+push that 0
+push constant 7
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 4239
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 4239
+add
+pop pointer 1
+push that 0
+push constant 8192
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 4240
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 4240
+add
+pop pointer 1
+push that 0
+push constant 7
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 4271
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 4271
+add
+pop pointer 1
+push that 0
+push constant 32767
+not
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 4272
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 4272
+add
+pop pointer 1
+push that 0
+push constant 1
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 4303
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 4303
+add
+pop pointer 1
+push that 0
+push constant 32767
+not
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 4304
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 4304
+add
+pop pointer 1
+push that 0
+push constant 1
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 0
+return
+// compiling subroutine
+function Display.drawPistolClear 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6288
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6288
+add
+pop pointer 1
+push that 0
+push constant 16384
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6320
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6320
+add
+pop pointer 1
+push that 0
+push constant 16384
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6352
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6352
+add
+pop pointer 1
+push that 0
+push constant 4096
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6353
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6353
+add
+pop pointer 1
+push that 0
+push constant 15
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6384
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6384
+add
+pop pointer 1
+push that 0
+push constant 4096
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6385
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6385
+add
+pop pointer 1
+push that 0
+push constant 15
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6416
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6416
+add
+pop pointer 1
+push that 0
+push constant 1024
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6417
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6417
+add
+pop pointer 1
+push that 0
+push constant 63
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6448
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6448
+add
+pop pointer 1
+push that 0
+push constant 1024
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6449
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6449
+add
+pop pointer 1
+push that 0
+push constant 63
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6480
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6480
+add
+pop pointer 1
+push that 0
+push constant 1024
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6481
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6481
+add
+pop pointer 1
+push that 0
+push constant 255
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6512
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6512
+add
+pop pointer 1
+push that 0
+push constant 1024
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6513
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6513
+add
+pop pointer 1
+push that 0
+push constant 255
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6544
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6544
+add
+pop pointer 1
+push that 0
+push constant 1024
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6545
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6545
+add
+pop pointer 1
+push that 0
+push constant 1023
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6576
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6576
+add
+pop pointer 1
+push that 0
+push constant 1024
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6577
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6577
+add
+pop pointer 1
+push that 0
+push constant 1023
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6608
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6608
+add
+pop pointer 1
+push that 0
+push constant 4096
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6609
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6609
+add
+pop pointer 1
+push that 0
+push constant 4095
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6640
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6640
+add
+pop pointer 1
+push that 0
+push constant 4096
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6641
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6641
+add
+pop pointer 1
+push that 0
+push constant 4095
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6672
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6672
+add
+pop pointer 1
+push that 0
+push constant 16384
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6673
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6673
+add
+pop pointer 1
+push that 0
+push constant 1
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6704
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6704
+add
+pop pointer 1
+push that 0
+push constant 16384
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6705
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6705
+add
+pop pointer 1
+push that 0
+push constant 1
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6737
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6737
+add
+pop pointer 1
+push that 0
+push constant 1
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6738
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6738
+add
+pop pointer 1
+push that 0
+push constant 3
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6769
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6769
+add
+pop pointer 1
+push that 0
+push constant 1
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6770
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6770
+add
+pop pointer 1
+push that 0
+push constant 3
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6801
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6801
+add
+pop pointer 1
+push that 0
+push constant 1
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6802
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6802
+add
+pop pointer 1
+push that 0
+push constant 15
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6833
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6833
+add
+pop pointer 1
+push that 0
+push constant 1
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6834
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6834
+add
+pop pointer 1
+push that 0
+push constant 15
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6865
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6865
+add
+pop pointer 1
+push that 0
+push constant 1
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6866
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6866
+add
+pop pointer 1
+push that 0
+push constant 63
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6897
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6897
+add
+pop pointer 1
+push that 0
+push constant 1
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6898
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6898
+add
+pop pointer 1
+push that 0
+push constant 63
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6929
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6929
+add
+pop pointer 1
+push that 0
+push constant 16383
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6930
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6930
+add
+pop pointer 1
+push that 0
+push constant 780
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6961
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6961
+add
+pop pointer 1
+push that 0
+push constant 16383
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6962
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6962
+add
+pop pointer 1
+push that 0
+push constant 780
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6993
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6993
+add
+pop pointer 1
+push that 0
+push constant 16332
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6994
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6994
+add
+pop pointer 1
+push that 0
+push constant 768
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7025
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7025
+add
+pop pointer 1
+push that 0
+push constant 16332
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7026
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7026
+add
+pop pointer 1
+push that 0
+push constant 768
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7057
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7057
+add
+pop pointer 1
+push that 0
+push constant 196
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7058
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7058
+add
+pop pointer 1
+push that 0
+push constant 4095
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7089
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7089
+add
+pop pointer 1
+push that 0
+push constant 196
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7090
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7090
+add
+pop pointer 1
+push that 0
+push constant 4095
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7121
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7121
+add
+pop pointer 1
+push that 0
+push constant 784
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7122
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7122
+add
+pop pointer 1
+push that 0
+push constant 4095
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7153
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7153
+add
+pop pointer 1
+push that 0
+push constant 784
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7154
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7154
+add
+pop pointer 1
+push that 0
+push constant 4095
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7185
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7185
+add
+pop pointer 1
+push that 0
+push constant 16
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7186
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7186
+add
+pop pointer 1
+push that 0
+push constant 4095
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7217
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7217
+add
+pop pointer 1
+push that 0
+push constant 16
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7218
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7218
+add
+pop pointer 1
+push that 0
+push constant 4095
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7249
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7249
+add
+pop pointer 1
+push that 0
+push constant 16
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7250
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7250
+add
+pop pointer 1
+push that 0
+push constant 4095
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7281
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7281
+add
+pop pointer 1
+push that 0
+push constant 16
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7282
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7282
+add
+pop pointer 1
+push that 0
+push constant 4095
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7313
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7313
+add
+pop pointer 1
+push that 0
+push constant 16
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7314
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7314
+add
+pop pointer 1
+push that 0
+push constant 1
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7345
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7345
+add
+pop pointer 1
+push that 0
+push constant 16
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7346
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7346
+add
+pop pointer 1
+push that 0
+push constant 1
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7377
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7377
+add
+pop pointer 1
+push that 0
+push constant 16
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7378
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7378
+add
+pop pointer 1
+push that 0
+push constant 16383
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7379
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7379
+add
+pop pointer 1
+push that 0
+push constant 15
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7409
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7409
+add
+pop pointer 1
+push that 0
+push constant 16
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7410
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7410
+add
+pop pointer 1
+push that 0
+push constant 16383
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7411
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7411
+add
+pop pointer 1
+push that 0
+push constant 15
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7441
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7441
+add
+pop pointer 1
+push that 0
+push constant 64
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7442
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7442
+add
+pop pointer 1
+push that 0
+push constant 16383
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7443
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7443
+add
+pop pointer 1
+push that 0
+push constant 48
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7473
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7473
+add
+pop pointer 1
+push that 0
+push constant 64
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7474
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7474
+add
+pop pointer 1
+push that 0
+push constant 16383
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7475
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7475
+add
+pop pointer 1
+push that 0
+push constant 48
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7505
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7505
+add
+pop pointer 1
+push that 0
+push constant 4
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7506
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7506
+add
+pop pointer 1
+push that 0
+push constant 16383
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7507
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7507
+add
+pop pointer 1
+push that 0
+push constant 192
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7537
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7537
+add
+pop pointer 1
+push that 0
+push constant 4
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7538
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7538
+add
+pop pointer 1
+push that 0
+push constant 16383
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7539
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7539
+add
+pop pointer 1
+push that 0
+push constant 192
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7569
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7569
+add
+pop pointer 1
+push that 0
+push constant 49
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7570
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7570
+add
+pop pointer 1
+push that 0
+push constant 16383
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7571
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7571
+add
+pop pointer 1
+push that 0
+push constant 192
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7601
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7601
+add
+pop pointer 1
+push that 0
+push constant 49
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7602
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7602
+add
+pop pointer 1
+push that 0
+push constant 16383
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7603
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7603
+add
+pop pointer 1
+push that 0
+push constant 192
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7633
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7633
+add
+pop pointer 1
+push that 0
+push constant 973
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7634
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7634
+add
+pop pointer 1
+push that 0
+push constant 16383
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7635
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7635
+add
+pop pointer 1
+push that 0
+push constant 768
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7665
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7665
+add
+pop pointer 1
+push that 0
+push constant 973
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7666
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7666
+add
+pop pointer 1
+push that 0
+push constant 16383
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7667
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7667
+add
+pop pointer 1
+push that 0
+push constant 768
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7697
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7697
+add
+pop pointer 1
+push that 0
+push constant 4045
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7698
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7698
+add
+pop pointer 1
+push that 0
+push constant 16383
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7699
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7699
+add
+pop pointer 1
+push that 0
+push constant 3072
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7729
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7729
+add
+pop pointer 1
+push that 0
+push constant 4045
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7730
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7730
+add
+pop pointer 1
+push that 0
+push constant 16383
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7731
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7731
+add
+pop pointer 1
+push that 0
+push constant 3072
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7761
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7761
+add
+pop pointer 1
+push that 0
+push constant 16333
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7762
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7762
+add
+pop pointer 1
+push that 0
+push constant 4095
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7763
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7763
+add
+pop pointer 1
+push that 0
+push constant 3072
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7793
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7793
+add
+pop pointer 1
+push that 0
+push constant 16333
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7794
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7794
+add
+pop pointer 1
+push that 0
+push constant 4095
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7795
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7795
+add
+pop pointer 1
+push that 0
+push constant 3072
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7825
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7825
+add
+pop pointer 1
+push that 0
+push constant 12
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7826
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7826
+add
+pop pointer 1
+push that 0
+push constant 1023
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7827
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7827
+add
+pop pointer 1
+push that 0
+push constant 12288
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7857
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7857
+add
+pop pointer 1
+push that 0
+push constant 12
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7858
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7858
+add
+pop pointer 1
+push that 0
+push constant 1023
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7859
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7859
+add
+pop pointer 1
+push that 0
+push constant 12288
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7889
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7889
+add
+pop pointer 1
+push that 0
+push constant 12
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7890
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7890
+add
+pop pointer 1
+push that 0
+push constant 1020
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7891
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7891
+add
+pop pointer 1
+push that 0
+push constant 12288
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7921
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7921
+add
+pop pointer 1
+push that 0
+push constant 12
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7922
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7922
+add
+pop pointer 1
+push that 0
+push constant 1020
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7923
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7923
+add
+pop pointer 1
+push that 0
+push constant 12288
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7953
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7953
+add
+pop pointer 1
+push that 0
+push constant 48
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7954
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7954
+add
+pop pointer 1
+push that 0
+push constant 48
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7955
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7955
+add
+pop pointer 1
+push that 0
+push constant 12288
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7985
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7985
+add
+pop pointer 1
+push that 0
+push constant 48
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7986
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7986
+add
+pop pointer 1
+push that 0
+push constant 48
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7987
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7987
+add
+pop pointer 1
+push that 0
+push constant 12288
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 8017
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 8017
+add
+pop pointer 1
+push that 0
+push constant 192
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 8019
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 8019
+add
+pop pointer 1
+push that 0
+push constant 12288
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 8049
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 8049
+add
+pop pointer 1
+push that 0
+push constant 192
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 8051
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 8051
+add
+pop pointer 1
+push that 0
+push constant 12288
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 8081
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 8081
+add
+pop pointer 1
+push that 0
+push constant 768
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 8083
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 8083
+add
+pop pointer 1
+push that 0
+push constant 12288
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 8113
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 8113
+add
+pop pointer 1
+push that 0
+push constant 768
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 8115
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 8115
+add
+pop pointer 1
+push that 0
+push constant 12288
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 8145
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 8145
+add
+pop pointer 1
+push that 0
+push constant 3072
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 8147
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 8147
+add
+pop pointer 1
+push that 0
+push constant 12288
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 8177
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 8177
+add
+pop pointer 1
+push that 0
+push constant 3072
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 8179
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 8179
+add
+pop pointer 1
+push that 0
+push constant 12288
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 0
+return
+// compiling subroutine
+function Display.drawPistolFired 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6160
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6160
+add
+pop pointer 1
+push that 0
+push constant 64
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6161
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6161
+add
+pop pointer 1
+push that 0
+push constant 255
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6192
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6192
+add
+pop pointer 1
+push that 0
+push constant 64
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6193
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6193
+add
+pop pointer 1
+push that 0
+push constant 255
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6224
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6224
+add
+pop pointer 1
+push that 0
+push constant 784
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6225
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6225
+add
+pop pointer 1
+push that 0
+push constant 1023
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6256
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6256
+add
+pop pointer 1
+push that 0
+push constant 784
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6257
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6257
+add
+pop pointer 1
+push that 0
+push constant 1023
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6288
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6288
+add
+pop pointer 1
+push that 0
+push constant 16
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6289
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6289
+add
+pop pointer 1
+push that 0
+push constant 831
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6320
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6320
+add
+pop pointer 1
+push that 0
+push constant 16
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6321
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6321
+add
+pop pointer 1
+push that 0
+push constant 831
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6352
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6352
+add
+pop pointer 1
+push that 0
+push constant 16
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6353
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6353
+add
+pop pointer 1
+push that 0
+push constant 1023
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6384
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6384
+add
+pop pointer 1
+push that 0
+push constant 16
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6385
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6385
+add
+pop pointer 1
+push that 0
+push constant 1023
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6416
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6416
+add
+pop pointer 1
+push that 0
+push constant 208
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6417
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6417
+add
+pop pointer 1
+push that 0
+push constant 255
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6448
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6448
+add
+pop pointer 1
+push that 0
+push constant 208
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6449
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6449
+add
+pop pointer 1
+push that 0
+push constant 255
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6480
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6480
+add
+pop pointer 1
+push that 0
+push constant 16
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6481
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6481
+add
+pop pointer 1
+push that 0
+push constant 255
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6512
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6512
+add
+pop pointer 1
+push that 0
+push constant 16
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6513
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6513
+add
+pop pointer 1
+push that 0
+push constant 255
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6544
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6544
+add
+pop pointer 1
+push that 0
+push constant 64
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6545
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6545
+add
+pop pointer 1
+push that 0
+push constant 1023
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6576
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6576
+add
+pop pointer 1
+push that 0
+push constant 64
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6577
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6577
+add
+pop pointer 1
+push that 0
+push constant 1023
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6608
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6608
+add
+pop pointer 1
+push that 0
+push constant 4096
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6609
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6609
+add
+pop pointer 1
+push that 0
+push constant 4095
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6640
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6640
+add
+pop pointer 1
+push that 0
+push constant 4096
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6641
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6641
+add
+pop pointer 1
+push that 0
+push constant 4095
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6672
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6672
+add
+pop pointer 1
+push that 0
+push constant 16384
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6673
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6673
+add
+pop pointer 1
+push that 0
+push constant 1
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6704
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6704
+add
+pop pointer 1
+push that 0
+push constant 16384
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6705
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6705
+add
+pop pointer 1
+push that 0
+push constant 1
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6737
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6737
+add
+pop pointer 1
+push that 0
+push constant 1
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6738
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6738
+add
+pop pointer 1
+push that 0
+push constant 3
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6769
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6769
+add
+pop pointer 1
+push that 0
+push constant 1
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6770
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6770
+add
+pop pointer 1
+push that 0
+push constant 3
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6801
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6801
+add
+pop pointer 1
+push that 0
+push constant 1
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6802
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6802
+add
+pop pointer 1
+push that 0
+push constant 15
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6833
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6833
+add
+pop pointer 1
+push that 0
+push constant 1
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6834
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6834
+add
+pop pointer 1
+push that 0
+push constant 15
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6865
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6865
+add
+pop pointer 1
+push that 0
+push constant 1
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6866
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6866
+add
+pop pointer 1
+push that 0
+push constant 63
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6897
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6897
+add
+pop pointer 1
+push that 0
+push constant 1
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6898
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6898
+add
+pop pointer 1
+push that 0
+push constant 63
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6929
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6929
+add
+pop pointer 1
+push that 0
+push constant 16383
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6930
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6930
+add
+pop pointer 1
+push that 0
+push constant 780
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6961
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6961
+add
+pop pointer 1
+push that 0
+push constant 16383
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6962
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6962
+add
+pop pointer 1
+push that 0
+push constant 780
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6993
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6993
+add
+pop pointer 1
+push that 0
+push constant 16332
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 6994
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 6994
+add
+pop pointer 1
+push that 0
+push constant 768
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7025
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7025
+add
+pop pointer 1
+push that 0
+push constant 16332
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7026
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7026
+add
+pop pointer 1
+push that 0
+push constant 768
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7057
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7057
+add
+pop pointer 1
+push that 0
+push constant 196
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7058
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7058
+add
+pop pointer 1
+push that 0
+push constant 4095
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7089
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7089
+add
+pop pointer 1
+push that 0
+push constant 196
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7090
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7090
+add
+pop pointer 1
+push that 0
+push constant 4095
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7121
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7121
+add
+pop pointer 1
+push that 0
+push constant 784
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7122
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7122
+add
+pop pointer 1
+push that 0
+push constant 4095
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7153
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7153
+add
+pop pointer 1
+push that 0
+push constant 784
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7154
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7154
+add
+pop pointer 1
+push that 0
+push constant 4095
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7185
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7185
+add
+pop pointer 1
+push that 0
+push constant 16
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7186
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7186
+add
+pop pointer 1
+push that 0
+push constant 4095
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7217
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7217
+add
+pop pointer 1
+push that 0
+push constant 16
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7218
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7218
+add
+pop pointer 1
+push that 0
+push constant 4095
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7249
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7249
+add
+pop pointer 1
+push that 0
+push constant 16
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7250
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7250
+add
+pop pointer 1
+push that 0
+push constant 4095
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7281
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7281
+add
+pop pointer 1
+push that 0
+push constant 16
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7282
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7282
+add
+pop pointer 1
+push that 0
+push constant 4095
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7313
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7313
+add
+pop pointer 1
+push that 0
+push constant 16
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7314
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7314
+add
+pop pointer 1
+push that 0
+push constant 1
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7345
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7345
+add
+pop pointer 1
+push that 0
+push constant 16
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7346
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7346
+add
+pop pointer 1
+push that 0
+push constant 1
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7377
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7377
+add
+pop pointer 1
+push that 0
+push constant 16
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7378
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7378
+add
+pop pointer 1
+push that 0
+push constant 16383
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7379
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7379
+add
+pop pointer 1
+push that 0
+push constant 15
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7409
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7409
+add
+pop pointer 1
+push that 0
+push constant 16
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7410
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7410
+add
+pop pointer 1
+push that 0
+push constant 16383
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7411
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7411
+add
+pop pointer 1
+push that 0
+push constant 15
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7441
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7441
+add
+pop pointer 1
+push that 0
+push constant 64
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7442
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7442
+add
+pop pointer 1
+push that 0
+push constant 16383
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7443
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7443
+add
+pop pointer 1
+push that 0
+push constant 48
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7473
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7473
+add
+pop pointer 1
+push that 0
+push constant 64
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7474
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7474
+add
+pop pointer 1
+push that 0
+push constant 16383
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7475
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7475
+add
+pop pointer 1
+push that 0
+push constant 48
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7505
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7505
+add
+pop pointer 1
+push that 0
+push constant 4
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7506
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7506
+add
+pop pointer 1
+push that 0
+push constant 16383
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7507
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7507
+add
+pop pointer 1
+push that 0
+push constant 192
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7537
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7537
+add
+pop pointer 1
+push that 0
+push constant 4
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7538
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7538
+add
+pop pointer 1
+push that 0
+push constant 16383
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7539
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7539
+add
+pop pointer 1
+push that 0
+push constant 192
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7569
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7569
+add
+pop pointer 1
+push that 0
+push constant 49
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7570
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7570
+add
+pop pointer 1
+push that 0
+push constant 16383
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7571
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7571
+add
+pop pointer 1
+push that 0
+push constant 192
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7601
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7601
+add
+pop pointer 1
+push that 0
+push constant 49
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7602
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7602
+add
+pop pointer 1
+push that 0
+push constant 16383
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7603
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7603
+add
+pop pointer 1
+push that 0
+push constant 192
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7633
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7633
+add
+pop pointer 1
+push that 0
+push constant 973
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7634
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7634
+add
+pop pointer 1
+push that 0
+push constant 16383
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7635
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7635
+add
+pop pointer 1
+push that 0
+push constant 768
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7665
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7665
+add
+pop pointer 1
+push that 0
+push constant 973
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7666
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7666
+add
+pop pointer 1
+push that 0
+push constant 16383
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7667
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7667
+add
+pop pointer 1
+push that 0
+push constant 768
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7697
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7697
+add
+pop pointer 1
+push that 0
+push constant 4045
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7698
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7698
+add
+pop pointer 1
+push that 0
+push constant 16383
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7699
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7699
+add
+pop pointer 1
+push that 0
+push constant 3072
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7729
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7729
+add
+pop pointer 1
+push that 0
+push constant 4045
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7730
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7730
+add
+pop pointer 1
+push that 0
+push constant 16383
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7731
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7731
+add
+pop pointer 1
+push that 0
+push constant 3072
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7761
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7761
+add
+pop pointer 1
+push that 0
+push constant 16333
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7762
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7762
+add
+pop pointer 1
+push that 0
+push constant 4095
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7763
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7763
+add
+pop pointer 1
+push that 0
+push constant 3072
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7793
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7793
+add
+pop pointer 1
+push that 0
+push constant 16333
+neg
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7794
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7794
+add
+pop pointer 1
+push that 0
+push constant 4095
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7795
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7795
+add
+pop pointer 1
+push that 0
+push constant 3072
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7825
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7825
+add
+pop pointer 1
+push that 0
+push constant 12
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7826
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7826
+add
+pop pointer 1
+push that 0
+push constant 1023
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7827
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7827
+add
+pop pointer 1
+push that 0
+push constant 12288
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7857
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7857
+add
+pop pointer 1
+push that 0
+push constant 12
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7858
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7858
+add
+pop pointer 1
+push that 0
+push constant 1023
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7859
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7859
+add
+pop pointer 1
+push that 0
+push constant 12288
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7889
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7889
+add
+pop pointer 1
+push that 0
+push constant 12
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7890
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7890
+add
+pop pointer 1
+push that 0
+push constant 1020
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7891
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7891
+add
+pop pointer 1
+push that 0
+push constant 12288
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7921
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7921
+add
+pop pointer 1
+push that 0
+push constant 12
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7922
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7922
+add
+pop pointer 1
+push that 0
+push constant 1020
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7923
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7923
+add
+pop pointer 1
+push that 0
+push constant 12288
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7953
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7953
+add
+pop pointer 1
+push that 0
+push constant 48
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7954
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7954
+add
+pop pointer 1
+push that 0
+push constant 48
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7955
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7955
+add
+pop pointer 1
+push that 0
+push constant 12288
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7985
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7985
+add
+pop pointer 1
+push that 0
+push constant 48
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7986
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7986
+add
+pop pointer 1
+push that 0
+push constant 48
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 7987
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 7987
+add
+pop pointer 1
+push that 0
+push constant 12288
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 8017
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 8017
+add
+pop pointer 1
+push that 0
+push constant 192
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 8019
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 8019
+add
+pop pointer 1
+push that 0
+push constant 12288
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 8049
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 8049
+add
+pop pointer 1
+push that 0
+push constant 192
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 8051
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 8051
+add
+pop pointer 1
+push that 0
+push constant 12288
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 8081
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 8081
+add
+pop pointer 1
+push that 0
+push constant 768
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 8083
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 8083
+add
+pop pointer 1
+push that 0
+push constant 12288
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 8113
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 8113
+add
+pop pointer 1
+push that 0
+push constant 768
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 8115
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 8115
+add
+pop pointer 1
+push that 0
+push constant 12288
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 8145
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 8145
+add
+pop pointer 1
+push that 0
+push constant 3072
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 8147
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 8147
+add
+pop pointer 1
+push that 0
+push constant 12288
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 8177
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 8177
+add
+pop pointer 1
+push that 0
+push constant 3072
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 6 // symbol -> screenLocation (array)
+push constant 8179
+add
+push static 6 // symbol -> screenLocation (array)
+push constant 8179
+add
+pop pointer 1
+push that 0
+push constant 12288
+or
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 0
+return

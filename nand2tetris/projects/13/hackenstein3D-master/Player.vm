@@ -1,0 +1,2523 @@
+// compiling subroutine
+function Player.init 1
+push constant 64
+call Array.new 1 // subroutine call (function)
+pop static 1 // symbol -> cosTable
+push constant 64
+call Array.new 1 // subroutine call (function)
+pop static 0 // symbol -> sinTable
+push constant 64
+call Array.new 1 // subroutine call (function)
+pop static 2 // symbol -> stepX
+push constant 64
+call Array.new 1 // subroutine call (function)
+pop static 3 // symbol -> stepY
+push static 1 // symbol -> cosTable (array)
+push constant 0
+add
+push constant 64
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 1
+add
+push constant 63
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 2
+add
+push constant 62
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 3
+add
+push constant 61
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 4
+add
+push constant 59
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 5
+add
+push constant 56
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 6
+add
+push constant 53
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 7
+add
+push constant 49
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 8
+add
+push constant 45
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 9
+add
+push constant 40
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 10
+add
+push constant 35
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 11
+add
+push constant 30
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 12
+add
+push constant 24
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 13
+add
+push constant 18
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 14
+add
+push constant 12
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 15
+add
+push constant 6
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 16
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 17
+add
+push constant 6
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 18
+add
+push constant 12
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 19
+add
+push constant 18
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 20
+add
+push constant 24
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 21
+add
+push constant 30
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 22
+add
+push constant 35
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 23
+add
+push constant 40
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 24
+add
+push constant 45
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 25
+add
+push constant 49
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 26
+add
+push constant 53
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 27
+add
+push constant 56
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 28
+add
+push constant 59
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 29
+add
+push constant 61
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 30
+add
+push constant 62
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 31
+add
+push constant 63
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 32
+add
+push constant 64
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 33
+add
+push constant 63
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 34
+add
+push constant 62
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 35
+add
+push constant 61
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 36
+add
+push constant 59
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 37
+add
+push constant 56
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 38
+add
+push constant 53
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 39
+add
+push constant 49
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 40
+add
+push constant 45
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 41
+add
+push constant 40
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 42
+add
+push constant 35
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 43
+add
+push constant 30
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 44
+add
+push constant 24
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 45
+add
+push constant 18
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 46
+add
+push constant 12
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 47
+add
+push constant 6
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 48
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 49
+add
+push constant 6
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 50
+add
+push constant 12
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 51
+add
+push constant 18
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 52
+add
+push constant 24
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 53
+add
+push constant 30
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 54
+add
+push constant 35
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 55
+add
+push constant 40
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 56
+add
+push constant 45
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 57
+add
+push constant 49
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 58
+add
+push constant 53
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 59
+add
+push constant 56
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 60
+add
+push constant 59
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 61
+add
+push constant 61
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 62
+add
+push constant 62
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 1 // symbol -> cosTable (array)
+push constant 63
+add
+push constant 63
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 0
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 1
+add
+push constant 6
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 2
+add
+push constant 12
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 3
+add
+push constant 18
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 4
+add
+push constant 24
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 5
+add
+push constant 30
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 6
+add
+push constant 35
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 7
+add
+push constant 40
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 8
+add
+push constant 45
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 9
+add
+push constant 49
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 10
+add
+push constant 53
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 11
+add
+push constant 56
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 12
+add
+push constant 59
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 13
+add
+push constant 61
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 14
+add
+push constant 62
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 15
+add
+push constant 63
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 16
+add
+push constant 64
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 17
+add
+push constant 63
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 18
+add
+push constant 62
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 19
+add
+push constant 61
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 20
+add
+push constant 59
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 21
+add
+push constant 56
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 22
+add
+push constant 53
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 23
+add
+push constant 49
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 24
+add
+push constant 45
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 25
+add
+push constant 40
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 26
+add
+push constant 35
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 27
+add
+push constant 30
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 28
+add
+push constant 24
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 29
+add
+push constant 18
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 30
+add
+push constant 12
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 31
+add
+push constant 6
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 32
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 33
+add
+push constant 6
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 34
+add
+push constant 12
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 35
+add
+push constant 18
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 36
+add
+push constant 24
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 37
+add
+push constant 30
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 38
+add
+push constant 35
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 39
+add
+push constant 40
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 40
+add
+push constant 45
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 41
+add
+push constant 49
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 42
+add
+push constant 53
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 43
+add
+push constant 56
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 44
+add
+push constant 59
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 45
+add
+push constant 61
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 46
+add
+push constant 62
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 47
+add
+push constant 63
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 48
+add
+push constant 64
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 49
+add
+push constant 63
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 50
+add
+push constant 62
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 51
+add
+push constant 61
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 52
+add
+push constant 59
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 53
+add
+push constant 56
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 54
+add
+push constant 53
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 55
+add
+push constant 49
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 56
+add
+push constant 45
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 57
+add
+push constant 40
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 58
+add
+push constant 35
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 59
+add
+push constant 30
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 60
+add
+push constant 24
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 61
+add
+push constant 18
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 62
+add
+push constant 12
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 0 // symbol -> sinTable (array)
+push constant 63
+add
+push constant 6
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 0
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 1
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 2
+add
+push constant 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 3
+add
+push constant 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 4
+add
+push constant 2
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 5
+add
+push constant 3
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 6
+add
+push constant 3
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 7
+add
+push constant 4
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 8
+add
+push constant 4
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 9
+add
+push constant 4
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 10
+add
+push constant 5
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 11
+add
+push constant 5
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 12
+add
+push constant 5
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 13
+add
+push constant 6
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 14
+add
+push constant 6
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 15
+add
+push constant 6
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 16
+add
+push constant 6
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 17
+add
+push constant 6
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 18
+add
+push constant 6
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 19
+add
+push constant 6
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 20
+add
+push constant 5
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 21
+add
+push constant 5
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 22
+add
+push constant 5
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 23
+add
+push constant 4
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 24
+add
+push constant 4
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 25
+add
+push constant 4
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 26
+add
+push constant 3
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 27
+add
+push constant 3
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 28
+add
+push constant 2
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 29
+add
+push constant 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 30
+add
+push constant 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 31
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 32
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 33
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 34
+add
+push constant 1
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 35
+add
+push constant 1
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 36
+add
+push constant 2
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 37
+add
+push constant 3
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 38
+add
+push constant 3
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 39
+add
+push constant 4
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 40
+add
+push constant 4
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 41
+add
+push constant 4
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 42
+add
+push constant 5
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 43
+add
+push constant 5
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 44
+add
+push constant 5
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 45
+add
+push constant 6
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 46
+add
+push constant 6
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 47
+add
+push constant 6
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 48
+add
+push constant 6
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 49
+add
+push constant 6
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 50
+add
+push constant 6
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 51
+add
+push constant 6
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 52
+add
+push constant 5
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 53
+add
+push constant 5
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 54
+add
+push constant 5
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 55
+add
+push constant 4
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 56
+add
+push constant 4
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 57
+add
+push constant 4
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 58
+add
+push constant 3
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 59
+add
+push constant 3
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 60
+add
+push constant 2
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 61
+add
+push constant 1
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 62
+add
+push constant 1
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 2 // symbol -> stepX (array)
+push constant 63
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 0
+add
+push constant 6
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 1
+add
+push constant 6
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 2
+add
+push constant 6
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 3
+add
+push constant 6
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 4
+add
+push constant 5
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 5
+add
+push constant 5
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 6
+add
+push constant 5
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 7
+add
+push constant 4
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 8
+add
+push constant 4
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 9
+add
+push constant 4
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 10
+add
+push constant 3
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 11
+add
+push constant 3
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 12
+add
+push constant 2
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 13
+add
+push constant 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 14
+add
+push constant 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 15
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 16
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 17
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 18
+add
+push constant 1
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 19
+add
+push constant 1
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 20
+add
+push constant 2
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 21
+add
+push constant 3
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 22
+add
+push constant 3
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 23
+add
+push constant 4
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 24
+add
+push constant 4
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 25
+add
+push constant 4
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 26
+add
+push constant 5
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 27
+add
+push constant 5
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 28
+add
+push constant 5
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 29
+add
+push constant 6
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 30
+add
+push constant 6
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 31
+add
+push constant 6
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 32
+add
+push constant 6
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 33
+add
+push constant 6
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 34
+add
+push constant 6
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 35
+add
+push constant 6
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 36
+add
+push constant 5
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 37
+add
+push constant 5
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 38
+add
+push constant 5
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 39
+add
+push constant 4
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 40
+add
+push constant 4
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 41
+add
+push constant 4
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 42
+add
+push constant 3
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 43
+add
+push constant 3
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 44
+add
+push constant 2
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 45
+add
+push constant 1
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 46
+add
+push constant 1
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 47
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 48
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 49
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 50
+add
+push constant 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 51
+add
+push constant 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 52
+add
+push constant 2
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 53
+add
+push constant 3
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 54
+add
+push constant 3
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 55
+add
+push constant 4
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 56
+add
+push constant 4
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 57
+add
+push constant 4
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 58
+add
+push constant 5
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 59
+add
+push constant 5
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 60
+add
+push constant 5
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 61
+add
+push constant 6
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 62
+add
+push constant 6
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push static 3 // symbol -> stepY (array)
+push constant 63
+add
+push constant 6
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push argument 5 // symbol -> pathsRef
+pop static 4 // symbol -> roomPaths
+push argument 0 // symbol -> xR
+pop static 5 // symbol -> xRoom
+push argument 1 // symbol -> xP
+pop static 6 // symbol -> xPos
+push argument 2 // symbol -> yR
+push constant 8
+call Math.multiply 2
+pop static 7 // symbol -> yRoom8
+push argument 2 // symbol -> yR
+pop static 8 // symbol -> yRoom
+push argument 3 // symbol -> yP
+pop static 9 // symbol -> yPos
+push argument 4 // symbol -> o
+pop static 10 // symbol -> orientation
+push constant 0
+call Player.reOrient 1 // subroutine call (function)
+pop temp 0
+push constant 0
+call Player.reLocate 1 // subroutine call (function)
+pop temp 0
+push constant 0
+return
+// compiling subroutine
+function Player.reLocate 7
+push static 5 // symbol -> xRoom
+pop local 2 // symbol -> nxRoom
+push static 7 // symbol -> yRoom8
+pop local 4 // symbol -> nyRoom8
+push static 8 // symbol -> yRoom
+pop local 5 // symbol -> nyRoom
+push static 6 // symbol -> xPos
+push static 13 // symbol -> xstep
+push argument 0 // symbol -> steps
+call Math.multiply 2
+add
+pop local 3 // symbol -> nxPos
+push static 9 // symbol -> yPos
+push static 14 // symbol -> ystep
+push argument 0 // symbol -> steps
+call Math.multiply 2
+add
+pop local 6 // symbol -> nyPos
+push static 5 // symbol -> xRoom
+push static 7 // symbol -> yRoom8
+add
+push constant 4
+call Math.multiply 2
+pop local 0 // symbol -> roomLookup
+push constant 1 // pushing true
+neg // pushing true
+pop local 1 // symbol -> moved
+label L1.1
+push local 3 // symbol -> nxPos
+push constant 63
+gt
+not
+if-goto L2.1
+push static 4 // symbol -> roomPaths (array)
+push local 0 // symbol -> roomLookup
+push constant 3
+add
+add
+pop pointer 1
+push that 0
+not
+not
+if-goto L1.2
+push constant 0 // pushing false
+pop local 1 // symbol -> moved
+goto L2.2
+label L1.2
+label L2.2
+push local 2 // symbol -> nxRoom
+push constant 1
+add
+pop local 2 // symbol -> nxRoom
+push local 3 // symbol -> nxPos
+push constant 64
+sub
+pop local 3 // symbol -> nxPos
+goto L1.1
+label L2.1
+label L1.3
+push local 3 // symbol -> nxPos
+push constant 0
+lt
+not
+if-goto L2.3
+push static 4 // symbol -> roomPaths (array)
+push local 0 // symbol -> roomLookup
+push constant 2
+add
+add
+pop pointer 1
+push that 0
+not
+not
+if-goto L1.4
+push constant 0 // pushing false
+pop local 1 // symbol -> moved
+goto L2.4
+label L1.4
+label L2.4
+push local 2 // symbol -> nxRoom
+push constant 1
+sub
+pop local 2 // symbol -> nxRoom
+push local 3 // symbol -> nxPos
+push constant 64
+add
+pop local 3 // symbol -> nxPos
+goto L1.3
+label L2.3
+label L1.5
+push local 6 // symbol -> nyPos
+push constant 63
+gt
+not
+if-goto L2.5
+push static 4 // symbol -> roomPaths (array)
+push local 0 // symbol -> roomLookup
+push constant 0
+add
+add
+pop pointer 1
+push that 0
+not
+not
+if-goto L1.6
+push constant 0 // pushing false
+pop local 1 // symbol -> moved
+goto L2.6
+label L1.6
+label L2.6
+push local 4 // symbol -> nyRoom8
+push constant 8
+add
+pop local 4 // symbol -> nyRoom8
+push local 5 // symbol -> nyRoom
+push constant 1
+add
+pop local 5 // symbol -> nyRoom
+push local 6 // symbol -> nyPos
+push constant 64
+sub
+pop local 6 // symbol -> nyPos
+goto L1.5
+label L2.5
+label L1.7
+push local 6 // symbol -> nyPos
+push constant 0
+lt
+not
+if-goto L2.7
+push static 4 // symbol -> roomPaths (array)
+push local 0 // symbol -> roomLookup
+push constant 1
+add
+add
+pop pointer 1
+push that 0
+not
+not
+if-goto L1.8
+push constant 0 // pushing false
+pop local 1 // symbol -> moved
+goto L2.8
+label L1.8
+label L2.8
+push local 4 // symbol -> nyRoom8
+push constant 8
+sub
+pop local 4 // symbol -> nyRoom8
+push local 5 // symbol -> nyRoom
+push constant 1
+sub
+pop local 5 // symbol -> nyRoom
+push local 6 // symbol -> nyPos
+push constant 64
+add
+pop local 6 // symbol -> nyPos
+goto L1.7
+label L2.7
+push local 1 // symbol -> moved
+not
+if-goto L1.9
+push local 2 // symbol -> nxRoom
+pop static 5 // symbol -> xRoom
+push local 4 // symbol -> nyRoom8
+pop static 7 // symbol -> yRoom8
+push local 5 // symbol -> nyRoom
+pop static 8 // symbol -> yRoom
+push local 3 // symbol -> nxPos
+pop static 6 // symbol -> xPos
+push local 6 // symbol -> nyPos
+pop static 9 // symbol -> yPos
+goto L2.9
+label L1.9
+label L2.9
+push constant 0
+return
+// compiling subroutine
+function Player.reOrient 0
+push static 10 // symbol -> orientation
+push argument 0 // symbol -> rot
+add
+pop static 10 // symbol -> orientation
+push static 10 // symbol -> orientation
+push constant 0
+lt
+not
+if-goto L1.10
+push static 10 // symbol -> orientation
+push constant 64
+add
+pop static 10 // symbol -> orientation
+goto L2.10
+label L1.10
+label L2.10
+push static 10 // symbol -> orientation
+push constant 63
+gt
+not
+if-goto L1.11
+push static 10 // symbol -> orientation
+push constant 64
+sub
+pop static 10 // symbol -> orientation
+goto L2.11
+label L1.11
+label L2.11
+push static 1 // symbol -> cosTable (array)
+push static 10 // symbol -> orientation
+add
+pop pointer 1
+push that 0
+pop static 12 // symbol -> cosVal
+push static 0 // symbol -> sinTable (array)
+push static 10 // symbol -> orientation
+add
+pop pointer 1
+push that 0
+pop static 11 // symbol -> sinVal
+push static 2 // symbol -> stepX (array)
+push static 10 // symbol -> orientation
+add
+pop pointer 1
+push that 0
+pop static 13 // symbol -> xstep
+push static 3 // symbol -> stepY (array)
+push static 10 // symbol -> orientation
+add
+pop pointer 1
+push that 0
+pop static 14 // symbol -> ystep
+push constant 0
+return
+// compiling subroutine
+function Player.getLocation 0
+push argument 0 // symbol -> locArray (array)
+push constant 0
+add
+push static 5 // symbol -> xRoom
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push argument 0 // symbol -> locArray (array)
+push constant 1
+add
+push static 6 // symbol -> xPos
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push argument 0 // symbol -> locArray (array)
+push constant 2
+add
+push static 8 // symbol -> yRoom
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push argument 0 // symbol -> locArray (array)
+push constant 3
+add
+push static 9 // symbol -> yPos
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push argument 0 // symbol -> locArray (array)
+push constant 4
+add
+push static 10 // symbol -> orientation
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push argument 0 // symbol -> locArray (array)
+push constant 5
+add
+push static 12 // symbol -> cosVal
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push argument 0 // symbol -> locArray (array)
+push constant 6
+add
+push static 11 // symbol -> sinVal
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 0
+return
+// compiling subroutine
+function Player.roomNum 0
+push static 5 // symbol -> xRoom
+push static 7 // symbol -> yRoom8
+add
+return
+// compiling subroutine
+function Player.cleanup 0
+push static 0 // symbol -> sinTable
+call Array.dispose 1 // subroutine call (method)
+pop temp 0
+push static 1 // symbol -> cosTable
+call Array.dispose 1 // subroutine call (method)
+pop temp 0
+push static 2 // symbol -> stepX
+call Array.dispose 1 // subroutine call (method)
+pop temp 0
+push static 3 // symbol -> stepY
+call Array.dispose 1 // subroutine call (method)
+pop temp 0
+push constant 0
+return
