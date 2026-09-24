@@ -94,6 +94,7 @@ CHIP CPU {
 
 	PC(in=outAReg, load=load, reset=reset, inc=inc, out[0..14]=pc);
 	
+
 	And(a=instruction[15], b=instruction[3], out=writeM);
 	
 }
