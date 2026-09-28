@@ -80,7 +80,7 @@ CHIP CPU {
 	// check if jle and outALU=0 or outALU<0
 	And(a=jle, b=zr, out=le1);
 	And(a=jle, b=ng, out=le2);
-	Or(a=le1, a=le2, out=le);
+	Or(a=le1, b=le2, out=le);
 
 	Or8Way(in[0]=null, in[1]=gt, in[2]=eq, in[3]=ge, in[4]=lt, in[5]=ne, in[6]=le, in[7]=jmp, out=outJmpLoad1);
 		
