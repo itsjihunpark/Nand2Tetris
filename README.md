@@ -1,7 +1,7 @@
 
 
 
-# Nand 2 to Tetris  Project: Building a modern computer from first principles
+# Nand to Tetris Project: Building a modern computer from first principles
 This project based learning is credited entirely to the book:  [The Elements of Computing Systems: Building a Modern Computer from First Principles (The MIT Press): Nisan, Noam, Schocken, Shimon](https://www.amazon.co.uk/Elements-Computing-Systems-Building-Principles/dp/0262640686)
 
 This project is made up of two parts: Hardware and Software. 
